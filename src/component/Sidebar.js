@@ -13,13 +13,13 @@ import {
 function SideBar() {
   return (
     <>
-      <div className="flex h-full flex-column w-1/6 h-screen bg-light-gray overflow-auto">
+      <div className="flex h-full flex-column w-1/6 h-screen bg-light-gray shadow-sm">
         <div className="logo-section bg-primary-light px-3 py-4 shadow-inner shadow-sm">
-          <img src={logo} alt="guti-logo" className="px-5 logo-img" />
+          <img src={logo} alt="guti-logo" className="md:p-2 xl:px-5 logo-img" />
         </div>
-        <div className="py-2 mt-2 flex-col">
+        <div className="py-2 mt-2 flex-col overflow-y-auto">
           <div className="py-2 px-3 flex justify-between hover:border-l-2 border-primary-light">
-            <div className="flex">
+            <div className="flex text-ellipsis">
               <BsBoxSeam className="block my-auto" />
               <p className="pl-2">Assets</p>
             </div>
