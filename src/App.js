@@ -1,13 +1,15 @@
-import './App.css';
-import './component/Sidebar'
-import SideBar from './component/Sidebar';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Login from "./component/Login";
+import Dashboard from "./component/dashboard/Dashboard";
 
 function App() {
   return (
-    <div className="App">
-      <SideBar />
-      <h1 className='underline text-3xl p-3 bg-secondary-dark-bg'>Hello World!</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Dashboard />} />
+      </Routes>
+    </Router>
   );
 }
 

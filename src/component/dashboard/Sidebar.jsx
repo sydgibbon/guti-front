@@ -1,5 +1,5 @@
-import "../style/Sidebar.css";
-import logo from "../images/guti-logo.png";
+import '../../style/dashboard/Sidebar.css'
+import logo from "../../images/guti-logo.png";
 import {
   BsBoxSeam,
   BsHeadset,
