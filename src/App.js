@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./component/Login";
 import Dashboard from "./component/dashboard/Dashboard";
-import axios from "axios";
+import axiosPrivate from "./api/axios";
 
 function App() {
-  axios.get("http://127.0.0.1:8000/computers/")
+  axiosPrivate.get("http://127.0.0.1:8000/api/computers/")
     .then(function (response) {
       // handle success
       console.log(response);
@@ -13,12 +13,13 @@ function App() {
       // handle error
       console.log(error);
     });
+  
   const postComputer = (e) => {
     e.preventDefault();
-    console.log('posting');
-    axios({
+    console.log('posting...');
+    axiosPrivate({
       method: "POST",
-      url: "http://127.0.0.1:8000/computers/",
+      url: "http://127.0.0.1:8000/api/computers/",
       data: {
         id: 0,
         entities_id: 1,
@@ -29,7 +30,7 @@ function App() {
         contact_num: null,
         users_id_tech: 1,
         groups_id_tech: 1,
-        comment: "POSTED WITH AXIOS DEFINETLY",
+        comment: "POSTED WITH AXIOS IN A MEETING WITH THE BOYS",
         date_mod: null,
         autoupdatesystems_id: 11,
         locations_id: 1,
