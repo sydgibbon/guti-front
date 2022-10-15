@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./component/Login";
-import Dashboard from "./component/dashboard/Dashboard";
+import Main from "./component/dashboard/Main";
 import axiosPrivate from "./api/axios";
 
 function App() {
-  axiosPrivate.get("http://127.0.0.1:8000/api/computers/")
+  axiosPrivate
+    .get("http://127.0.0.1:8000/api/computers/")
     .then(function (response) {
       // handle success
       console.log(response);
@@ -13,10 +14,10 @@ function App() {
       // handle error
       console.log(error);
     });
-  
+
   const postComputer = (e) => {
     e.preventDefault();
-    console.log('posting...');
+    console.log("posting...");
     axiosPrivate({
       method: "POST",
       url: "http://127.0.0.1:8000/api/computers/",
@@ -54,16 +55,21 @@ function App() {
     })
       .then((res) => console.log(res.data))
       .catch((err) => console.log(err));
-  }
+  };
   return (
     <Router>
-      <button type="button" className="bg-primary text-white rounded-full" onClick={ postComputer }>
+
+      <Routes>
+        <Route path="/" element={<Main />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      <button
+        type="button"
+        className="bg-primary text-white rounded-full"
+        onClick={postComputer}
+      >
         POST WITH AXIOS
       </button>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Dashboard />} />
-      </Routes>
     </Router>
   );
 }

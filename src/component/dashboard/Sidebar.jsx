@@ -13,7 +13,7 @@ import {
 function SideBar() {
   return (
     <>
-      <div className="flex h-full flex-column w-1/6 h-screen bg-light-gray shadow-sm">
+      <div className="flex h-screen flex-col w-1/6 h-screen bg-light-gray shadow-sm">
         <div className="logo-section bg-primary-light px-3 py-4 shadow-inner shadow-sm">
           <img src={logo} alt="guti-logo" className="md:p-2 xl:px-5 logo-img" />
         </div>
