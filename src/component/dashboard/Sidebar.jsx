@@ -1,5 +1,7 @@
 import '../../style/dashboard/Sidebar.css'
 import logo from "../../images/guti-logo.png";
+import SidebarMenu from './SidebarMenu';
+import AssetsSubMenu from './assets/AssetsSubMenu';
 import {
   BsBoxSeam,
   BsHeadset,
@@ -7,7 +9,6 @@ import {
   BsBriefcase,
   BsShieldCheck,
   BsGear,
-  BsChevronCompactDown,
 } from "react-icons/bs";
 
 function SideBar() {
@@ -18,48 +19,12 @@ function SideBar() {
           <img src={logo} alt="guti-logo" className="md:p-2 xl:px-5 logo-img" />
         </div>
         <div className="py-2 mt-2 flex-col overflow-y-auto">
-          <div className="py-2 px-3 flex justify-between hover:border-l-2 border-primary-light">
-            <div className="flex text-ellipsis">
-              <BsBoxSeam className="block my-auto" />
-              <p className="pl-2">Assets</p>
-            </div>
-            <BsChevronCompactDown className="block my-auto" />
-          </div>
-          <div className="py-2 px-3 flex justify-between hover:border-l-2 border-primary-light hover:border-left border-primary-light">
-            <div className="flex">
-              <BsHeadset className="block my-auto" />
-              <p className="pl-2">Assistance</p>
-            </div>
-            <BsChevronCompactDown className="block my-auto" />
-          </div>
-          <div className="py-2 px-3 flex justify-between hover:border-l-2 border-primary-light hover:border-left border-primary-light">
-            <div className="flex">
-              <BsWallet2 className="block my-auto" />
-              <p className="pl-2">Management</p>
-            </div>
-            <BsChevronCompactDown className="block my-auto" />
-          </div>
-          <div className="py-2 px-3 flex justify-between hover:border-l-2 border-primary-light hover:border-left border-primary-light">
-            <div className="flex">
-              <BsBriefcase className="block my-auto" />
-              <p className="pl-2">Tools</p>
-            </div>
-            <BsChevronCompactDown className="block my-auto" />
-          </div>
-          <div className="py-2 px-3 flex justify-between hover:border-l-2 border-primary-light hover:border-left border-primary-light">
-            <div className="flex">
-              <BsShieldCheck className="block my-auto" />
-              <p className="pl-2">Administration</p>
-            </div>{" "}
-            <BsChevronCompactDown className="block my-auto" />
-          </div>
-          <div className="py-2 px-3 flex justify-between hover:border-l-2 border-primary-light hover:border-left border-primary-light">
-            <div className="flex">
-              <BsGear className="block my-auto" />
-              <p className="pl-2">Setup</p>
-            </div>{" "}
-            <BsChevronCompactDown className="block my-auto" />
-          </div>
+          <SidebarMenu text="Assets" icon= {<BsBoxSeam className="block my-auto" />} subMenu={<AssetsSubMenu />} />
+          <SidebarMenu text="Assistance" icon= {<BsHeadset className="block my-auto" />}/>
+          <SidebarMenu text="Management" icon= {<BsWallet2 className="block my-auto" />}/>
+          <SidebarMenu text="Tools" icon= {<BsBriefcase className="block my-auto" />}/>
+          <SidebarMenu text="Administration" icon= {<BsShieldCheck className="block my-auto" />}/>
+          <SidebarMenu text="Setup" icon= {<BsGear className="block my-auto" />}/>
         </div>
       </div>
     </>
