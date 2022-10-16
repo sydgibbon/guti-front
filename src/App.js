@@ -2,6 +2,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./component/Login";
 import Main from "./component/dashboard/Main";
 import axiosPrivate from "./api/axios";
+import './App.css';
+import Navbar from './component/Navbar';
+import './component/Sidebar'
+import SideBar from './component/Sidebar';
 
 function App() {
   axiosPrivate
@@ -71,6 +75,12 @@ function App() {
         POST WITH AXIOS
       </button>
     </Router>
+    <div className="App">
+      <Navbar />
+      <SideBar />
+      
+      <h1 className='underline text-3xl p-3 bg-secondary-dark-bg'>Hello World!</h1>
+    </div>
   );
 }
 
