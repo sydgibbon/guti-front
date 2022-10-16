@@ -1,11 +1,16 @@
-import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { Children } from 'react'
 import SideBar from './Sidebar'
+import SearchCard from "./assets/SearchCard";
 
-const Main = () => {
+
+const Main = ({content}) => {
   return (
-    <div className="main">
+    <div className="main flex">
       <SideBar />
-      <h1 className='underline text-3xl p-3 bg-secondary-dark-bg'>Hello World!</h1>
+      <div className="h-screen">
+        {content}
+      </div>
     </div>
   )
 }

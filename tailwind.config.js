@@ -19,6 +19,7 @@ module.exports = {
         'secondary-dark': '#d9d9d9',
         'light-gray': '#f4f5f7',
         'orange-dark': '#BB493E',
+        'medium-gray': '#fafbfc',
         'half-transparent': 'rgba(0, 0, 0, 0.5)',
       },      
       color: {
@@ -29,6 +30,7 @@ module.exports = {
         'secondary-light:': '#f5f7fb',
         'secondary-dark': '#d9d9d9',
         'orange-dark': '#BB493E',
+        'medium-gray': '#fafbfc',
         'half-transparent': 'rgba(0, 0, 0, 0.5)',
       },
       borderWidth: {
@@ -44,6 +46,7 @@ module.exports = {
         'secondary-dark': '#d9d9d9',
         'light-gray': '#f4f5f7',
         'orange-dark': '#BB493E',
+        'medium-gray': '#fafbfc',
         'half-transparent': 'rgba(0, 0, 0, 0.5)',
       },
       width: {
