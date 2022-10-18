@@ -40,7 +40,7 @@ const SearchCard = () => {
         </div>
       </div>
 
-      <table>
+      <table className='w-full'>
         <tr className='gap-2 border-secondary-dark border-y text-left text-xs font-semibold bg-medium-gray'>
           <th className='pl-2'><input type='checkbox' className='w-4 h-4 mt-2 ml-0.5 px-2'></input></th>
           <th className='px-2'><span>NAME</span><TbCaretDown className='inline my-auto' /></th>
