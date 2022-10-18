@@ -3,7 +3,7 @@ import { TbPlus, TbSearch, TbStar, TbTemplate } from 'react-icons/tb';
 
 const NavbarMenu = () => {
   return (
-    <div className='navbar-menu w-1/2 flex items-center gap-1 ml-2'>
+    <div className='navbar-menu flex items-center gap-1 ml-2'>
       <div className='add-button px-1 py-0.5 rounded border-orange-dark border-2 bg-primary-light text-light-gray cursor-pointer hover:border-black '>
         <TbPlus className='stroke-current' />
       </div>
