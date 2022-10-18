@@ -1,7 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import React, { Children } from 'react'
+import React from 'react'
 import SideBar from './Sidebar'
-import SearchCard from "./assets/SearchCard";
 import Navbar from './Navbar'
 
 

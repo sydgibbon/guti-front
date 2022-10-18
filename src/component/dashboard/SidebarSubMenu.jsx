@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const SidebarSubMenu = ({text, icon}) => {
   return (
