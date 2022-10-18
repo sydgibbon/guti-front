@@ -4,6 +4,9 @@ import Main from "./component/dashboard/Main";
 import axiosPrivate from "./api/axios";
 import SearchCard from "./component/dashboard/assets/SearchCard";
 
+
+
+
 function App() {
   axiosPrivate
     .get("http://127.0.0.1:8000/api/computers/")
@@ -73,6 +76,7 @@ function App() {
         POST WITH AXIOS
       </button>
     </Router>
+
   );
 }
 
