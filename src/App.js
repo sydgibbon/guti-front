@@ -3,6 +3,10 @@ import Login from "./component/Login";
 import Main from "./component/dashboard/Main";
 import AssetsDashboard from "./component/dashboard/AssetsDashboard";
 import axiosPrivate from "./api/axios";
+import SearchCard from "./component/dashboard/assets/SearchCard";
+
+
+
 
 function App() {
   axiosPrivate
@@ -63,7 +67,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/assets-dashboard" element={<AssetsDashboard />} />
+        <Route path="/assets" element={<AssetsDashboard />} />
+        <Route path="/computers" element={<Main content={ <SearchCard />} />} />
       </Routes>
       <button
         type="button"
@@ -73,6 +78,7 @@ function App() {
         POST WITH AXIOS
       </button>
     </Router>
+
   );
 }
 

@@ -1,13 +1,20 @@
-import React from 'react'
-import SideBar from './Sidebar'
+import React from "react";
+import SideBar from "./Sidebar";
+import Navbar from "./Navbar";
 
-const Main = () => {
+const Main = ({ content }) => {
   return (
-    <div className="main">
+    <div className="main flex">
       <SideBar />
-      <h1 className='underline text-3xl p-3 bg-secondary-dark-bg'>Hello World!</h1>
+      <div className="flex flex-col w-full">
+        <Navbar />
+        <div className="">{content}</div>
+        <h1 className="underline text-3xl p-3 bg-secondary-dark-bg">
+          Hello World!
+        </h1>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
