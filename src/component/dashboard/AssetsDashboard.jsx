@@ -1,7 +1,7 @@
 import React from 'react';
 import { BsPlusLg } from 'react-icons/bs';
 import { TbRefreshDot, TbCopy, TbShare, TbTrash, TbEdit, TbMaximize, TbDeviceLaptop, TbApps, TbSitemap, TbServer, TbColumns, TbDeviceDesktop, TbKey, TbPrinter, TbPlug, TbPhone, TbSubtask } from 'react-icons/tb';
-import GridItemComputers from './items-grid/GridItemComputers';
+import GridItemComputers from './items-grid/GridItem';
 
 
 const AssetsDashboard = () => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { TbDeviceLaptop } from 'react-icons/tb';
 
-const GridItemComputers = () => {
+const GridItem = ({ text,bgColor,color,icon, }) => {
   return (
     <div>
       <div
@@ -18,4 +18,4 @@ const GridItemComputers = () => {
   );
 };
 
-export default GridItemComputers;
+export default GridItem;
