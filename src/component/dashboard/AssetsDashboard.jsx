@@ -1,6 +1,7 @@
 import React from 'react';
 import { BsPlusLg } from 'react-icons/bs';
 import { TbRefreshDot, TbCopy, TbShare, TbTrash, TbEdit, TbMaximize, TbDeviceLaptop, TbApps, TbSitemap, TbServer, TbColumns, TbDeviceDesktop, TbKey, TbPrinter, TbPlug, TbPhone, TbSubtask } from 'react-icons/tb';
+import GridItemComputers from './items-grid/GridItemComputers';
 
 
 const AssetsDashboard = () => {
@@ -28,13 +29,7 @@ const AssetsDashboard = () => {
 
 
       <div className='items-grid grid gap-5 pl-5 py-5 grid-cols-5 '>
-        <div class="grid-item" className='border rounded-md border-black w-36 h-28 pl-1.5'>
-          <div className='flex flex-row items-center gap-24'>
-            <span className='text-3xl'>1</span>
-            <TbDeviceLaptop className='stroke-1 w-6 h-6' />
-          </div>
-          <span className=''>Computers</span>
-        </div>
+        <GridItemComputers />
         <div class="grid-item" className='border rounded-md border-black w-36 h-28 pl-1.5'>
           <div className='flex flex-row items-center gap-24'>
             <span className='text-3xl'>0</span>
