@@ -1,22 +1,22 @@
 import React from 'react';
-import { BsPlusLg } from 'react-icons/bs';
-import { TbRefreshDot, TbCopy, TbShare, TbTrash, TbEdit, TbMaximize, TbDeviceLaptop, TbApps, TbSitemap, TbServer, TbColumns, TbDeviceDesktop, TbKey, TbPrinter, TbPlug, TbPhone, TbSubtask } from 'react-icons/tb';
-import GridItemComputers from './items-grid/GridItem';
+import { TbRefreshDot, TbCopy, TbShare, TbTrash, TbEdit, TbMaximize, TbDeviceLaptop, TbApps, TbSitemap, TbServer, TbColumns, TbDeviceDesktop, TbKey, TbPrinter, TbPlug, TbPhone, TbSubtask, TbPlus } from 'react-icons/tb';
+import GraphGrid from './graph-grid/GraphGrid';
+import GridItem from './items-grid/GridItem';
 
 
 const AssetsDashboard = () => {
   return (
-    <div className='assets-dashboard flex flex-col items-start border rounded-md border-secondary-dark mx-6 my-5 '>
+    <div className='assets-dashboard flex flex-col items-start border rounded-md border-secondary-dark mx-6 my-5 bg-white'>
 
-      <div className='dashboard-header flex flex-row items-center px-5 py-4'>
-        <div className='dashboard-options flex flex-row items-center gap-2'>
+      <div className='dashboard-header flex items-center w-full justify-between px-5 py-4'>
+        <div className='dashboard-options flex items-center gap-2'>
           <select className='w-36 h-10 border border-secondary-dark rounded-md'>
             <option value="Assets" className='text-sm'>Assets</option>
           </select>
-          <BsPlusLg className='stroke-0' />
+          <TbPlus className='stroke-1 w-6 h-6' />
         </div>
 
-        <div className='buttons flex flex-row py-5 pr-6 gap-5'>
+        <div className='buttons flex py-5 gap-5'>
           <TbRefreshDot className='stroke-1 w-6 h-6' />
           <TbCopy className='stroke-1 w-6 h-6' />
           <TbShare className='stroke-1 w-6 h-6' />
@@ -26,98 +26,26 @@ const AssetsDashboard = () => {
         </div>
       </div>
 
-
-
       <div className='items-grid grid gap-5 pl-5 py-5 grid-cols-5 '>
-        <GridItemComputers />
-        <div class="grid-item" className='border rounded-md border-black w-36 h-28 pl-1.5'>
-          <div className='flex flex-row items-center gap-24'>
-            <span className='text-3xl'>0</span>
-            <TbApps className='stroke-1 w-6 h-6' />
-          </div>
-          <span className=''>Software</span>
-        </div>
-        <div class="grid-item" className='border rounded-md border-black w-36 h-28 pl-1.5'>
-          <div className='flex flex-row items-center gap-24'>
-            <span className='text-3xl'>1</span>
-            <TbSitemap className='stroke-1 w-6 h-6' />
-          </div>
-          <span className=''>Network divices</span>
-        </div>
-        <div class="grid-item" className='border rounded-md border-black w-36 h-28 pl-1.5'>
-          <div className='flex flex-row items-center gap-24'>
-            <span className='text-3xl'>0</span>
-            <TbServer className='stroke-1 w-6 h-6' />
-          </div>
-          <span className=''>Racks</span>
-        </div>
-        <div class="grid-item" className='border rounded-md border-black w-36 h-28 pl-1.5'>
-          <div className='flex flex-row items-center gap-24'>
-            <span className='text-3xl'>0</span>
-            <TbColumns className='stroke-1 w-6 h-6' />
-          </div>
-          <span className=''>Enclosures</span>
-        </div>
-        <div class="grid-item" className='border rounded-md border-black w-36 h-28 pl-1.5'>
-          <div className='flex flex-row items-center gap-24'>
-            <span className='text-3xl'>0</span>
-            <TbDeviceDesktop className='stroke-1 w-6 h-6' />
-          </div>
-          <span className=''>Monitors</span>
-        </div>
-        <div class="grid-item" className='border rounded-md border-black w-36 h-28 pl-1.5'>
-          <div className='flex flex-row items-center gap-24'>
-            <span className='text-3xl'>0</span>
-            <TbKey className='stroke-1 w-6 h-6' />
-          </div>
-          <span className=''>Licenses</span>
-        </div>
-        <div class="grid-item" className='border rounded-md border-black w-36 h-28 pl-1.5'>
-          <div className='flex flex-row items-center gap-24'>
-            <span className='text-3xl'>0</span>
-            <TbPrinter className='stroke-1 w-6 h-6' />
-          </div>
-          <span className=''>Printers</span>
-        </div>
-        <div class="grid-item" className='border rounded-md border-black w-36 h-28 pl-1.5'>
-          <div className='flex flex-row items-center gap-24'>
-            <span className='text-3xl'>0</span>
-            <TbPlug className='stroke-1 w-6 h-6' />
-          </div>
-          <span className=''>PDUs</span>
-        </div>
-        <div class="grid-item" className='border rounded-md border-black w-36 h-28 pl-1.5'>
-          <div className='flex flex-row items-center gap-24'>
-            <span className='text-3xl'>0</span>
-            <TbPhone className='stroke-1 w-6 h-6' />
-          </div>
-          <span className=''>Phones</span>
-        </div>
+        <GridItem text='Computers' bgColor='bg-[#F3D0D0]' textColor='text-[#C53232]' bgHoverColor='hover:bg-[#e39393]' borderHoverColor='hover:border-[#D45656]' icon={ <TbDeviceLaptop className="stroke-1 w-6 h-6" /> } />
+        <GridItem text='Software' bgColor='bg-[#d1f1a8]' textColor='text-[#70b11c]' bgHoverColor='hover:bg-[#aee666]' borderHoverColor='hover:border-[#8bdc24]' icon={ <TbApps className="stroke-1 w-6 h-6" /> } />
+        <GridItem text='Network devices' bgColor='bg-[#c8dae4]' textColor='text-[#4a7b96]' bgHoverColor='hover:bg-[#95b7cb]' borderHoverColor='hover:border-[#6195b2]' icon={ <TbSitemap className="stroke-1 w-6 h-6" /> } />
+        <GridItem text='Racks' bgColor='bg-[#f7d79a]' textColor='text-[#b77d0e]' bgHoverColor='hover:bg-[#f1bb53]' borderHoverColor='hover:border-[#e69d12]' icon={ <TbServer className="stroke-1 w-6 h-6" /> } />
+        <GridItem text='Enclosures' bgColor='bg-[#d7e8e4]' textColor='text-[#599a8b]' bgHoverColor='hover:bg-[#a6ccc3]' borderHoverColor='hover:border-[#76b0a2]' icon={ <TbColumns className="stroke-1 w-6 h-6" /> } />
+        <GridItem text='Monitors' bgColor='bg-[#dc6f6f]' textColor='text-[#661919]' bgHoverColor='hover:bg-[#cd3232]' borderHoverColor='hover:border-[#8f2323]' icon={ <TbDeviceDesktop className="stroke-1 w-6 h-6" /> } />
+        <GridItem text='Licenses' bgColor='bg-[#9bc06b]' textColor='text-[#32431c]' bgHoverColor='hover:bg-[#759c42]' borderHoverColor='hover:border-[#4d662c]' icon={ <TbKey className="stroke-1 w-6 h-6" /> } />
+        <GridItem text='Printers' bgColor='bg-[#5da8d6]' textColor='text-[#153b52]' bgHoverColor='hover:bg-[#2f84b8]' borderHoverColor='hover:border-[#1f587b]' icon={ <TbPrinter className="stroke-1 w-6 h-6" /> } />
+        <GridItem text='PDUs' bgColor='bg-[#ffb62f]' textColor='text-[#624000]' bgHoverColor='hover:bg-[#e29200]' borderHoverColor='hover:border-[#956100]' icon={ <TbPlug className="stroke-1 w-6 h-6" /> } />
+        <GridItem text='Phones' bgColor='bg-[#a0cec2]' textColor='text-[#376b5d]' bgHoverColor='hover:bg-[#6eb4a2]' borderHoverColor='hover:border-[#488d7b]' icon={ <TbPhone className="stroke-1 w-6 h-6" /> } />
       </div>
 
       <div className='graphs-grid grid grid-cols-5 gap-5 pl-5 py-5'>
-        <div className='w-36 h-36 border border-black rounded-md flex flex-row items-end p-1'>
-          <span className='text-sm'>Computers by Status</span>
-          <TbSubtask className='stroke-1 w-6 h-6' />
-        </div>
-        <div className='w-36 h-36 border border-black rounded-md flex flex-row items-end p-1'>
-          <span className='text-sm'>Computers by Manufacturers</span>
-          <TbEdit className='stroke-1 w-6 h-6' />
-        </div>
-        <div className='w-36 h-36 border border-black rounded-md flex flex-row items-end p-1'>
-          <span className='text-sm'>Computers by Types</span>
-          <TbDeviceLaptop className='stroke-1 w-6 h-6' />
-        </div>
-        <div className='w-36 h-36 border border-black rounded-md flex flex-row items-end p-1'>
-          <span className='text-sm'>Network devices by Manufacturers</span>
-          <TbEdit className='stroke-1 w-6 h-6' />
-        </div>
-        <div className='w-36 h-36 border border-black rounded-md flex flex-row items-end p-1'>
-          <span className='text-sm'>Monitors by Manufacturers</span>
-          <TbEdit className='stroke-1 w-6 h-6' />
-        </div>
+        <GraphGrid icon={ <TbSubtask className='stroke-2 w-6 h-6' /> } text='Computers by Status' bgColor='bg-[#fbf7f7]' textColor='text-[#b76f6f]'/>
+        <GraphGrid icon={ <TbEdit className='stroke-2 w-6 h-6' /> } text='Computers by Manufacturers' bgColor='bg-[#f3f5f1]' textColor='text-[#8da07a]'/>
+        <GraphGrid icon={ <TbDeviceLaptop className='stroke-2 w-6 h-6' /> } text='Computers by Types' bgColor='bg-[#f5f9fa]' textColor='text-[#6da7b6]'/>
+        <GraphGrid icon={ <TbEdit className='stroke-2 w-6 h-6' /> } text='Network devices by Manufacturers' bgColor='bg-[#fcf8ed]' textColor='text-[#dfb43e]'/>
+        <GraphGrid icon={ <TbEdit className='stroke-2 w-6 h-6' /> } text='Monitors by Manufacturers' bgColor='bg-[#f9fbfb]' textColor='text-[#7fa9a9]'/>
       </div>
-
     </div>
   )
 }

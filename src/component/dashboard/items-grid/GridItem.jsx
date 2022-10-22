@@ -1,19 +1,14 @@
 import React from "react";
-import { TbDeviceLaptop } from 'react-icons/tb';
 
-const GridItem = ({ text,bgColor,color,icon, }) => {
+const GridItem = ({ text, bgColor, textColor, bgHoverColor, borderHoverColor, icon }) => {
   return (
-    <div>
-      <div
-        class="grid-item"
-        className="border rounded-md border-black w-36 h-28 pl-1.5"
-      >
-        <div className="flex flex-row items-center gap-24">
-          <span className="text-3xl">1</span>
-          <TbDeviceLaptop className="stroke-1 w-6 h-6" />
-        </div>
-        <span className="">Computers</span>
+    <div class="grid-item"
+    className={`cursor-pointer hover:border-2 rounded-md w-36 h-28 px-1 py-1  ${bgColor} ${bgHoverColor} ${borderHoverColor}`}>
+      <div className='flex items-center justify-between'>
+          <span className={`text-3xl pl-1 ${textColor}`}>0</span>
+          <span className={`w-6 h-6 ${textColor}`}>{icon}</span>
       </div>
+      <span className={` pl-1 ${textColor}`}>{text}</span>
     </div>
   );
 };

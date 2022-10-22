@@ -67,7 +67,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/assets" element={<AssetsDashboard />} />
+        <Route path="/assets" element={<Main content={ <AssetsDashboard />} />} />
         <Route path="/computers" element={<Main content={ <SearchCard />} />} />
       </Routes>
       <button
