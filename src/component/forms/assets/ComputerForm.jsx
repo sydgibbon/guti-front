@@ -201,10 +201,10 @@ const ComputerForm = () => {
 			</div>
 			{/* <div> del footer */}
 			<div className='form-footer flex h-16 w-[calc(100%-1rem)] border rounded-b-md border-[#D9D9D9] justify-end mb-2 bg-white'>
-				<div className='flex mr-4 my-auto border-2 border-[#BB493E] rounded-md bg-[#E8594B] text-white'>
+				<button className='flex mr-4 my-auto border-2 border-[#BB493E] rounded-md bg-[#E8594B] text-white'>
 					<TbPlus className='inline ml-4 mr-1 my-2' />
 					<p className='text-base my-auto font-medium mr-2'>Add</p>
-				</div>
+				</button>
 			</div>
 
 		</div>
