@@ -3,19 +3,20 @@ import { TbCirclePlus, TbCircleX, TbCodePlus, TbListSearch, TbSquareMinus, TbSqu
 
 const SearchForm = () => {
   return (
-    <div className='searchform-container m-4 border pt-2 rounded'>
-      <div className='rule flex items-center bg-medium-gray p-2'>
-        <div className='remove-button'><TbSquareMinus /></div>
-        <select className='border rounded'>
-          <option value=''>----</option>
+    <div className='searchform-container m-4 border pt-2 rounded '>
+      <div className='rule flex items-center bg-medium-gray p-2 gap-1'>
+        <div className='remove-button'>
+          <TbSquareMinus className='m-2'/></div>
+        <select className='border rounded w-20 h-9 '>
+          <option value='' className='text-center text-lg'>----</option>
         </select>
-        <select className='border rounded'>
+        <select className='border rounded items-center w-32 h-9'>
           <option value=''>Items Seen</option>
         </select>
-        <select className='border rounded'>
+        <select className='border rounded items-center w-28 h-9'>
           <option>contains</option>
         </select>
-        <input type='text' className='bg-white border rounded'></input>
+        <input type='text' className='bg-white border rounded w-44 h-9'></input>
       </div>
 
 
@@ -41,7 +42,7 @@ const SearchForm = () => {
           <TbStar className='mx-auto' />
         </div>
         <div className='clear-button items-center flex border-transparent rounded w-8 h-6'>
-          <TbCircleX className='mx-auto' />
+          <TbCircleX className='mx-auto'/>
         </div>
       </div>
 
