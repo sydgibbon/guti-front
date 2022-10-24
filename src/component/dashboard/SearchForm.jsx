@@ -3,8 +3,8 @@ import { TbCirclePlus, TbCircleX, TbCodePlus, TbListSearch, TbSquareMinus, TbSqu
 
 const SearchForm = () => {
   return (
-    <div className='searchform-container m-4 border pt-2 rounded '>
-      <div className='rule flex items-center bg-me-[#FAFBFC] p-2 gap-1 hover:bg-medium-gray'>
+    <div className='searchform-container m-4 border pt-2 rounded bg-medium-gray'>
+      <div className='rule flex items-center p-2 gap-1'>
         <div className='remove-button cursor-pointer hover:bg-primary-light hover:text-white rounded'>
           <TbSquareMinus className='m-2' /></div>
         <select className='border rounded w-20 h-9 cursor-pointer'>

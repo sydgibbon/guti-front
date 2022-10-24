@@ -5,8 +5,8 @@ import Switch from "react-switch";
 const SearchCard = () => {
   return (
     <div className='search-card mx-4 border border-secondary-dark rounded my-4'>
-      <div className='search-card-header pl-5 flex align-center gap-2  h-16 border-b border-secondary-light bg-white'>
-        <div className='actions-button w-20 h-8 mt-4 ml-5 border border-black gap-2 flex rounded-md items-center px-2 py-0.5'>
+      <div className='search-card-header pl-5 flex align-center gap-2  h-16 border-b border-secondary-light bg-medium-gray'>
+        <div className='actions-button w-20 h-8 mt-4 ml-5 border border-black gap-2 flex rounded-md items-center px-2 py-0.5 bg-white'>
           <BsArrow90DegDown className='h-3 w-3' />
           <span className='font-sans not-italic font-normal text-xs leading-4'>Actions</span>
         </div>
