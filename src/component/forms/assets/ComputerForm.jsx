@@ -7,13 +7,13 @@ const ComputerForm = () => {
 		// <div> general
 		<div className='computer-form flex flex-col w-screen items-center h-screen divide-y divide-y-reverse'>
 			{/* <div> de Form Header */}
-			{/* usé el "w-[calc(100%-1rem)]" para poder ver los bordes */}
-			<div className='form-header flex bg-[#FAFBFC] h-14 w-[calc(100%-1rem)] border rounded-t-md border-[#D9D9D9] mt-2 mx-auto pl-2'>
+			{/* usé el "w-[calc(100%-1rem)]" para que quede separado en el eje X ayq eu con el mx no se podia darle margen */}
+			<div className='form-header flex bg-[#FAFBFC] h-1/6 w-full border rounded-t-md border-[#D9D9D9] mt-2 mx-auto pl-2'>
 				<BsLaptop className='inline my-auto mx-2' />
 				<p className='text-base my-auto font-medium'>New Item - Computers</p>
 			</div>
 			{/* <div> contenedor del Form */}
-			<div className='form-container h-full w-[calc(100%-1rem)] p-4 border border-[#D9D9D9] bg-white'>
+			<div className='form-container h-full w-full p-4 border border-[#D9D9D9] bg-white'>
 				<form className='flex justify-between'>
 					{/* se utilizan dos <div> para separar los inputs, este es el primero */}
 					<div className='first-form w-1/2 mx-8'>
@@ -200,7 +200,7 @@ const ComputerForm = () => {
 				</form>
 			</div>
 			{/* <div> del footer */}
-			<div className='form-footer flex h-16 w-[calc(100%-1rem)] border rounded-b-md border-[#D9D9D9] justify-end mb-2 bg-white'>
+			<div className='form-footer flex h-1/6 w-full border rounded-b-md border-[#D9D9D9] justify-end mb-2 bg-white'>
 				<button className='flex mr-4 my-auto border-2 border-[#BB493E] rounded-md bg-[#E8594B] text-white'>
 					<TbPlus className='inline ml-4 mr-1 my-2' />
 					<p className='text-base my-auto font-medium mr-2'>Add</p>

@@ -68,7 +68,7 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/assets" element={<Main content={ <SearchCard />} />} />
-        <Route path="/computers" element={<ComputerForm />} />
+        <Route path="/computers" element={<Main content={ <ComputerForm />} />} />
       </Routes>
       <button
         type="button"
