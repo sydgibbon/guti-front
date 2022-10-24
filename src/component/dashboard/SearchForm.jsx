@@ -16,7 +16,7 @@ const SearchForm = () => {
         <select className='border rounded items-center w-28 h-9 px-2 cursor-pointer'>
           <option>Contains</option>
         </select>
-        <input type='text' className='bg-white border rounded w-44 h-9 px-1'></input>
+        <input type='text' className='bg-white border rounded w-44 h-9 px-4'></input>
       </div>
       <div className='search-actions flex items-center border-t bg-white py-4 px-5 gap-1 rounded-b'>
         <div className='rule-button flex items-center justify-center rounded border border-black w-16 h-6 cursor-pointer hover:bg-primary-light hover:text-white'>
