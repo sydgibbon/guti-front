@@ -7,27 +7,27 @@ const SearchForm = () => {
       <div className='rule flex items-center bg-me-[#FAFBFC] p-2 gap-1 hover:bg-medium-gray'>
         <div className='remove-button cursor-pointer hover:bg-primary-light hover:text-white rounded'>
           <TbSquareMinus className='m-2' /></div>
-        <select className='border-2 rounded w-20 h-9 cursor-pointer'>
+        <select className='border rounded w-20 h-9 cursor-pointer'>
           <option value='' className='text-center text-lg'>----</option>
         </select>
-        <select className='border-2 rounded items-center w-32 h-9 px-2 cursor-pointer'>
+        <select className='border rounded items-center w-32 h-9 px-2 cursor-pointer'>
           <option value=''>Items Seen</option>
         </select>
-        <select className='border-2 rounded items-center w-28 h-9 px-2 cursor-pointer'>
+        <select className='border rounded items-center w-28 h-9 px-2 cursor-pointer'>
           <option>Contains</option>
         </select>
-        <input type='text' className='bg-white border-2 rounded w-44 h-9'></input>
+        <input type='text' className='bg-white border rounded w-44 h-9 px-1'></input>
       </div>
       <div className='search-actions flex items-center border-t bg-white py-4 px-5 gap-1 rounded-b'>
-        <div className='rule-button flex items-center justify-center rounded border-2 border-black w-16 h-6 cursor-pointer hover:bg-primary-light hover:text-white'>
+        <div className='rule-button flex items-center justify-center rounded border border-black w-16 h-6 cursor-pointer hover:bg-primary-light hover:text-white'>
           <TbSquarePlus className='mr-1' />
           <span className='text-sm cursor-pointer' >rule</span>
         </div>
-        <div className='global-rule-button flex items-center border-2 rounded border-black w-28 h-6 cursor-pointer hover:bg-primary-light hover:text-white'>
+        <div className='global-rule-button flex items-center border rounded border-black w-28 h-6 cursor-pointer hover:bg-primary-light hover:text-white'>
           <TbCirclePlus className='m-2' />
           <span className='text-sm'>global rule</span>
         </div>
-        <div className='group-button flex items-center justify-center border-2 rounded border-black w-20 h-6 cursor-pointer hover:bg-primary-light hover:text-white'>
+        <div className='group-button flex items-center justify-center border rounded border-black w-20 h-6 cursor-pointer hover:bg-primary-light hover:text-white'>
           <TbCodePlus className='mr-1' />
           <span className='text-sm'>group</span>
         </div>
