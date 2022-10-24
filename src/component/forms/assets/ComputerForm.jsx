@@ -203,7 +203,7 @@ const ComputerForm = () => {
 			<div className='form-footer flex h-1/6 w-full border rounded-b-md border-secondary-dark justify-end mb-2 bg-white py-4 px-5'>
 				<button className='flex items-center mr-4 border-2 border-orange-dark rounded-md bg-primary-light text-white hover:border-black py-2 px-4'>
 					<TbPlus className='mr-1' />
-					<p className='text-base my-auto font-medium'>Add</p>
+					<p className='text-lg font-medium'>Add</p>
 				</button>
 			</div>
 
