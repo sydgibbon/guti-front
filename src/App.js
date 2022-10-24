@@ -2,8 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./component/Login";
 import Main from "./component/dashboard/Main";
 import axiosPrivate from "./api/axios";
-import SearchCard from "./component/dashboard/assets/SearchCard";
-
+import Assets from "./pages/Assets";
 
 
 
@@ -66,7 +65,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/assets" element={<Main content={ <SearchCard />} />} />
+        <Route path="/assets" element={<Main content={ <Assets />} />} />
       </Routes>
       <button
         type="button"
