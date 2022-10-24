@@ -8,21 +8,21 @@ const AssetsDashboard = () => {
   return (
     <div className='assets-dashboard flex flex-col items-start border rounded-md border-secondary-dark mx-6 my-5 bg-white'>
 
-      <div className='dashboard-header flex items-center w-full justify-between px-5 py-4'>
+      <div className='dashboard-header flex items-center w-full justify-between px-5 py-4 h-16'>
         <div className='dashboard-options flex items-center gap-2'>
           <select className='w-36 h-10 border border-secondary-dark rounded-md'>
             <option value="Assets" className='text-sm'>Assets</option>
           </select>
-          <TbPlus className='stroke-1 w-6 h-6' />
+          <div className='cursor-pointer hover:bg-primary-light rounded p-2 mx-2 hover:text-white hover:border-2 border-orange-dark'><TbPlus className='stroke-1 w-6 h-6 stroke-current' /></div>
         </div>
 
-        <div className='buttons flex py-5 gap-5'>
-          <TbRefreshDot className='stroke-1 w-6 h-6' />
-          <TbCopy className='stroke-1 w-6 h-6' />
-          <TbShare className='stroke-1 w-6 h-6' />
-          <TbTrash className='stroke-1 w-6 h-6' />
-          <TbEdit className='stroke-1 w-6 h-6' />
-          <TbMaximize className='stroke-1 w-6 h-6' />
+        <div className='buttons flex items-center'>
+          <div className='cursor-pointer hover:bg-primary-light rounded p-2 mx-2 hover:text-white hover:border-2 border-orange-dark'><TbRefreshDot className='stroke-1 w-6 h-6 stroke-current' /></div>
+          <div className='cursor-pointer hover:bg-primary-light rounded p-2 mx-2 hover:text-white hover:border-2 border-orange-dark'><TbCopy className='stroke-1 w-6 h-6 stroke-current' /></div>
+          <div className='cursor-pointer hover:bg-primary-light rounded p-2 mx-2 hover:text-white hover:border-2 border-orange-dark'><TbShare className='stroke-1 w-6 h-6 stroke-current' /></div>
+          <div className='cursor-pointer hover:bg-primary-light rounded p-2 mx-2 hover:text-white hover:border-2 border-orange-dark'><TbTrash className='stroke-1 w-6 h-6 stroke-current' /></div>
+          <div className='cursor-pointer hover:bg-primary-light rounded p-2 mx-2 hover:text-white hover:border-2 border-orange-dark'><TbEdit className='stroke-1 w-6 h-6 stroke-current' /></div>
+          <div className='cursor-pointer hover:bg-primary-light rounded p-2 mx-2 hover:text-white hover:border-2 border-orange-dark'><TbMaximize className='stroke-1 w-6 h-6 stroke-current' /></div>
         </div>
       </div>
 
