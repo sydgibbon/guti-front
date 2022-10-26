@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import SidebarSubMenu from "../SidebarSubMenu";
 import { BsBoxSeam, BsDisplay, BsLaptop, BsSpeedometer } from "react-icons/bs";
 import {
@@ -19,6 +19,9 @@ import {
 } from "react-icons/tb";
 
 const AssetsSubMenu = () => {
+
+  const [selected, setSelected] = useState('');
+
   return (
     <>
       <SidebarSubMenu
