@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./component/Login";
 import Main from "./component/dashboard/Main";
+import AssetsDashboard from "./component/dashboard/AssetsDashboard";
 import axiosPrivate from "./api/axios";
-import Assets from "./pages/Assets";
-import SearchCard from "./component/dashboard/assets/SearchCard";
+import Computers from "./pages/Computers";
 import ComputerForm from "./component/forms/assets/ComputerForm";
 
 
@@ -67,9 +67,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/assets" element={<Main content={ <Assets />} />} />
-        <Route path="/assets" element={<Main content={ <SearchCard />} />} />
-        <Route path="/computers" element={<Main content={ <ComputerForm />} />} />
+        <Route path="/assets" element={<Main content={ <AssetsDashboard />} />} />
+        <Route path="/computer-form" element={<Main content={ <ComputerForm />} />} />
+        <Route path="/computers" element={<Main content={ <Computers />} />} />
       </Routes>
       <button
         type="button"
