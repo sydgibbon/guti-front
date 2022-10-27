@@ -61,8 +61,9 @@ const SoftwareForm = () => {
 						</div>
 						<div className='input-pictures mb-4'>
 							<p className='text-sm mb-2'>Pictures</p>
-							<div className='border border-dashed rounded-md py-2 px-12 border-secondary-dark bg-medium-gray'>
-								<p className='text-sm mb-3 font-semibold'>File(s) (40 Mio max)</p>
+							<div className='border border-dashed rounded-md py-2 px-12 border-secondary-dark bg-medium-gray text-center'>
+								<p className='text-sm mb-3 font-semibold'>File(s) (40 Mio max) <a href='' title='Help' className='text-[#3a5693] font-mono text-lg'>i</a></p>
+								
 								<p className='text-sm font-semibold'>Drag and drop your file here, or</p>
 								
 								<input type="file" accept=".jpg, .jpeg, .png" className='w-full m-0 border rounded-md border-secondary-dark bg-white' />
