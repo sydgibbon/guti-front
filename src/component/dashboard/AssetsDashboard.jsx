@@ -10,19 +10,19 @@ const AssetsDashboard = () => {
 
       <div className='dashboard-header flex items-center w-full justify-between px-5 py-4 h-16'>
         <div className='dashboard-options flex items-center gap-2'>
-          <select className='w-36 h-10 border border-secondary-dark rounded-md'>
+          <select className='cursor-pointer w-36 h-10 border border-secondary-dark rounded-md'>
             <option value="Assets" className='text-sm'>Assets</option>
           </select>
-          <div className='cursor-pointer hover:bg-primary-light rounded p-2 mx-2 hover:text-white hover:border-2 border-orange-dark'><TbPlus className='stroke-1 w-6 h-6 stroke-current' /></div>
+          <div className='cursor-pointer hover:bg-primary-light hover:text-white hover:border-orange-dark hover:border-2 border-transparent border-2 rounded p-2 mx-2'><TbPlus className='stroke-1 w-6 h-6 stroke-current' /></div>
         </div>
 
         <div className='buttons flex items-center'>
-          <div className='cursor-pointer hover:bg-primary-light rounded p-2 mx-2 hover:text-white hover:border-2 border-orange-dark'><TbRefreshDot className='stroke-1 w-6 h-6 stroke-current' /></div>
-          <div className='cursor-pointer hover:bg-primary-light rounded p-2 mx-2 hover:text-white hover:border-2 border-orange-dark'><TbCopy className='stroke-1 w-6 h-6 stroke-current' /></div>
-          <div className='cursor-pointer hover:bg-primary-light rounded p-2 mx-2 hover:text-white hover:border-2 border-orange-dark'><TbShare className='stroke-1 w-6 h-6 stroke-current' /></div>
-          <div className='cursor-pointer hover:bg-primary-light rounded p-2 mx-2 hover:text-white hover:border-2 border-orange-dark'><TbTrash className='stroke-1 w-6 h-6 stroke-current' /></div>
-          <div className='cursor-pointer hover:bg-primary-light rounded p-2 mx-2 hover:text-white hover:border-2 border-orange-dark'><TbEdit className='stroke-1 w-6 h-6 stroke-current' /></div>
-          <div className='cursor-pointer hover:bg-primary-light rounded p-2 mx-2 hover:text-white hover:border-2 border-orange-dark'><TbMaximize className='stroke-1 w-6 h-6 stroke-current' /></div>
+          <div className='cursor-pointer hover:bg-primary-light hover:text-white hover:border-orange-dark hover:border-2 border-transparent border-2 rounded p-2 mx-2'><TbRefreshDot className='stroke-1 w-6 h-6 stroke-current' /></div>
+          <div className='cursor-pointer hover:bg-primary-light hover:text-white hover:border-orange-dark hover:border-2 border-transparent border-2 rounded p-2 mx-2'><TbCopy className='stroke-1 w-6 h-6 stroke-current' /></div>
+          <div className='cursor-pointer hover:bg-primary-light hover:text-white hover:border-orange-dark hover:border-2 border-transparent border-2 rounded p-2 mx-2'><TbShare className='stroke-1 w-6 h-6 stroke-current' /></div>
+          <div className='cursor-pointer hover:bg-primary-light hover:text-white hover:border-orange-dark hover:border-2 border-transparent border-2 rounded p-2 mx-2'><TbTrash className='stroke-1 w-6 h-6 stroke-current' /></div>
+          <div className='cursor-pointer hover:bg-primary-light hover:text-white hover:border-orange-dark hover:border-2 border-transparent border-2 rounded p-2 mx-2'><TbEdit className='stroke-1 w-6 h-6 stroke-current' /></div>
+          <div className='cursor-pointer hover:bg-primary-light hover:text-white hover:border-orange-dark hover:border-2 border-transparent border-2 rounded p-2 mx-2'><TbMaximize className='stroke-1 w-6 h-6 stroke-current' /></div>
         </div>
       </div>
 
