@@ -5,6 +5,7 @@ import axiosPrivate from "./api/axios";
 import Assets from "./pages/Assets";
 import SearchCard from "./component/dashboard/assets/SearchCard";
 import ComputerForm from "./component/forms/assets/ComputerForm";
+import PrintersForm from "./component/forms/assets/PrintersForm";
 
 
 
@@ -69,6 +70,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/assets" element={<Main content={ <Assets />} />} />
         <Route path="/assets" element={<Main content={ <SearchCard />} />} />
+        <Route path="/printers" element={<Main content={ <PrintersForm />} />} />
         <Route path="/computers" element={<Main content={ <ComputerForm />} />} />
       </Routes>
       <button
