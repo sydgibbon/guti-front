@@ -42,7 +42,7 @@ const PrintersForm = () => {
                 <select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
                   <option value="-----">-----</option>
                 </select>
-                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
                   <TbList className='mx-2' />
                 </div>
               </div>
@@ -50,13 +50,13 @@ const PrintersForm = () => {
             <div className='input-group-in-charge my-4'>
               <p className='text-sm mb-2'>Group in Charge of the Hardware</p>
               <div className='flex divide-x divide-x-reverse'>
-                <select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
+                <select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray cursor-pointer'>
                   <option value="-----">-----</option>
                 </select>
-                <div className='h-9 border border-secondary-dark flex items-center'>
+                <div className='h-9 border border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
                   <TbList className='mx-2' />
                 </div>
-                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
                   <TbPlus className='mx-2' />
                 </div>
               </div>
@@ -88,10 +88,10 @@ const PrintersForm = () => {
                 <select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
                   <option value="-----">-----</option>
                 </select>
-                <div className='h-9 border border-secondary-dark flex items-center'>
+                <div className='h-9 border border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
                   <TbList className='mx-2' />
                 </div>
-                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
                   <TbPlus className='mx-2' />
                 </div>
               </div>
@@ -103,14 +103,14 @@ const PrintersForm = () => {
             <div className='input-memory my-4'>
               <p className='text-sm mb-2'>Memory</p>
               <div className='flex divide-x divide-x-reverse'>
-                <input type='number' min='0' className='w-full px-2 rounded h-9 border border-secondary-dark bg-medium-gray'>
+                <input type='number' placeholder='0' min='0' className='w-full px-2 rounded h-9 border border-secondary-dark bg-medium-gray'>
                 </input>
               </div>
             </div>
             <div className='input-current-counter my-4'>
               <p className='text-sm mb-2'>Current counter of pages</p>
               <div className='flex divide-x divide-x-reverse'>
-                <input type='number' min='0' className='w-full px-2 rounded h-9 border border-secondary-dark bg-medium-gray'>            
+                <input type='number' placeholder='0' min='0' className='w-full px-2 rounded h-9 border border-secondary-dark bg-medium-gray'>
                 </input>
               </div>
             </div>
@@ -123,10 +123,10 @@ const PrintersForm = () => {
                 <select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
                   <option value="-----">-----</option>
                 </select>
-                <div className='h-9 border border-secondary-dark flex items-center'>
-                  <TbList className='mx-2' />
+                <div className='h-9 border border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
+                  <TbList className='mx-2 ' />
                 </div>
-                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
                   <TbPlus className='mx-2' />
                 </div>
               </div>
@@ -137,10 +137,10 @@ const PrintersForm = () => {
                 <select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
                   <option value="-----">-----</option>
                 </select>
-                <div className='h-9 border border-secondary-dark flex items-center'>
+                <div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white'>
                   <TbList className='mx-2' />
                 </div>
-                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
                   <TbPlus className='mx-2' />
                 </div>
               </div>
@@ -151,10 +151,10 @@ const PrintersForm = () => {
                 <select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
                   <option value="-----">-----</option>
                 </select>
-                <div className='h-9 border border-secondary-dark flex items-center'>
+                <div className='h-9 border border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
                   <TbList className='mx-2' />
                 </div>
-                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
                   <TbPlus className='mx-2' />
                 </div>
               </div>
@@ -165,10 +165,10 @@ const PrintersForm = () => {
                 <select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
                   <option value="-----">-----</option>
                 </select>
-                <div className='h-9 border border-secondary-dark flex items-center'>
+                <div className='h-9 border border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
                   <TbList className='mx-2' />
                 </div>
-                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
                   <TbPlus className='mx-2' />
                 </div>
               </div>
@@ -187,7 +187,7 @@ const PrintersForm = () => {
                 <select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
                   <option value="-----">-----</option>
                 </select>
-                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
                   <TbList className='mx-2' />
                 </div>
               </div>
@@ -198,7 +198,7 @@ const PrintersForm = () => {
                 <select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
                   <option value="-----">-----</option>
                 </select>
-                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
                   <TbList className='mx-2' />
                 </div>
               </div>
@@ -213,10 +213,10 @@ const PrintersForm = () => {
                 <select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
                   <option value=''>-----</option>
                 </select>
-                <div className='h-9 border border-secondary-dark flex items-center'>
+                <div className='h-9 border border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
                   <TbList className='mx-2' />
                 </div>
-                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+                <div className='h-9 border rounded-r-md border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
                   <TbPlus className='mx-2' />
                 </div>
               </div>
@@ -224,7 +224,7 @@ const PrintersForm = () => {
             <div className='input-page my-4'>
               <p className='text-sm mb-2'>Initial page counter</p>
               <div className='flex divide-x divide-x-reverse'>
-                <input value='0' className='w-full px-2 rounded h-9 border border-secondary-dark bg-medium-gray'>
+                <input  type='number' placeholder='0' min='0' className='w-full px-2 rounded h-9 border border-secondary-dark bg-medium-gray'>
                 </input>
               </div>
             </div>
@@ -255,10 +255,6 @@ const PrintersForm = () => {
             </div>
           </div>
         </form>
-
-
-
-
       </div>
       <div className='form-footer flex h-1/6 w-full border rounded-b-md border-secondary-dark justify-end mb-2 bg-white py-4 px-5'>
         <button className='flex items-center mr-4 border-2 border-orange-dark rounded-md bg-primary-light text-white hover:border-black py-2 px-4'>
