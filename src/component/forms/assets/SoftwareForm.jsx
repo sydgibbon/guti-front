@@ -18,7 +18,7 @@ const SoftwareForm = () => {
 						</div>
 						<div className='input-associable-to-ticket my-4'>
 							<p className='text-sm mb-2'>Associable to a ticket</p>
-							<input type='checkbox' id='' checked className='h-4 w-4'></input>
+							<input type='checkbox' checked='checked' className='h-4 w-4 cursor-pointer'></input>
 						</div>
 						<div className='input-technitian my-4'>
 							<p className='text-sm mb-2'>Technician in Charge of the Hardware</p>
@@ -26,7 +26,7 @@ const SoftwareForm = () => {
 								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
 									<option value="-----">-----</option>
 								</select>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
 									<TbList className='mx-2' />
 								</div>
 							</div>
@@ -37,10 +37,10 @@ const SoftwareForm = () => {
 								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
 									<option value="-----">-----</option>
 								</select>
-								<div className='h-9 border border-secondary-dark flex items-center'>
+								<div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
 									<TbList className='mx-2' />
 								</div>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
 									<TbPlus className='mx-2' />
 								</div>
 							</div>
@@ -51,10 +51,10 @@ const SoftwareForm = () => {
 								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
 									<option value="-----">-----</option>
 								</select>
-								<div className='h-9 border border-secondary-dark flex items-center'>
+								<div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
 									<TbList className='mx-2' />
 								</div>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
 									<TbPlus className='mx-2' />
 								</div>
 							</div>
@@ -63,11 +63,8 @@ const SoftwareForm = () => {
 							<p className='text-sm mb-2'>Pictures</p>
 							<div className='border border-dashed rounded-md py-2 px-12 border-secondary-dark bg-medium-gray text-center'>
 								<p className='text-sm mb-3 font-semibold'>File(s) (40 Mio max) <a href='' title='Help' className='text-[#3a5693] font-mono text-lg'>i</a></p>
-								
 								<p className='text-sm font-semibold'>Drag and drop your file here, or</p>
-								
-								<input type="file" accept=".jpg, .jpeg, .png" className='w-full m-0 border rounded-md border-secondary-dark bg-white' />
-								
+								<input type="file" accept=".jpg, .jpeg, .png" multiple className='w-full m-0 border rounded-md border-secondary-dark bg-white' />
 							</div>
 
 						</div>
@@ -77,10 +74,10 @@ const SoftwareForm = () => {
 								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
 									<option value="-----">-----</option>
 								</select>
-								<div className='h-9 border border-secondary-dark flex items-center'>
+								<div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
 									<TbList className='mx-2' />
 								</div>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
 									<TbPlus className='mx-2' />
 								</div>
 							</div>
@@ -93,7 +90,7 @@ const SoftwareForm = () => {
 								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
 									<option value="-----">-----</option>
 								</select>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
 									<TbList className='mx-2' />
 								</div>
 							</div>
@@ -104,13 +101,13 @@ const SoftwareForm = () => {
 								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
 									<option value="-----">-----</option>
 								</select>
-								<div className='h-9 border border-secondary-dark flex items-center'>
+								<div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
 									<TbList className='mx-2' />
 								</div>
-								<div className='h-9 border border-secondary-dark flex items-center'>
+								<div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
 									<TbPlus className='mx-2' />
 								</div>
-								<div className='rounded-r-md h-9 border border-secondary-dark flex items-center'>
+								<div className='rounded-r-md h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
 									<TbMap className='mx-2' />
 								</div>
 							</div>
@@ -121,10 +118,10 @@ const SoftwareForm = () => {
 								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
 									<option value="-----">-----</option>
 								</select>
-								<div className='h-9 border border-secondary-dark flex items-center'>
+								<div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
 									<TbList className='mx-2' />
 								</div>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
 									<TbPlus className='mx-2' />
 								</div>
 							</div>
@@ -135,7 +132,7 @@ const SoftwareForm = () => {
 								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
 									<option value="-----">-----</option>
 								</select>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
+								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
 									<TbList className='mx-2' />
 								</div>
 							</div>
@@ -147,11 +144,11 @@ const SoftwareForm = () => {
 						<div className='input-upgrade my-4'>
 							<p className='text-sm mb-2'>Upgrade</p>
 							<div className='flex'>
-								<input type='checkbox' id='' className='h-4 w-4 mr-2'></input>
+								<input type='checkbox' id='' className='h-4 w-4 mr-2 cursor-pointer'></input>
 								<select className='w-1/4 px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
 									<option value="-----">-----</option>
 								</select>
-								<div className='h-9 border-y border-r rounded-r-md border-secondary-dark flex items-center'>
+								<div className='h-9 border-y border-r rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
 									<TbList className='mx-2' />
 								</div>
 							</div>
