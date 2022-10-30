@@ -224,7 +224,7 @@ const PhonesForm = () => {
           </div>
 
           <div className="input-number-of-lines">
-            <label className="text-sm mb-2">Number of Lines</label>
+            <p className="text-sm mb-2">Number of Lines</p>
             <input
               type="number"
               step="1"
@@ -256,12 +256,12 @@ const PhonesForm = () => {
                     type='checkbox'
                     className="w-3.5 h-3.5 px-2 rounded-md border-1 border-secondary-dark bg-medium-gray"
                 ></input>
-                <label>Headset</label>
+                <p>Headset</p>
                 <input 
                     type='checkbox'
                     className="w-3.5 h-3.5 px-2 rounded-md border-1 border-secondary-dark bg-medium-gray"
                 ></input>
-                <label>Speaker</label>
+                <p>Speaker</p>
             </div>
           </div>
 
