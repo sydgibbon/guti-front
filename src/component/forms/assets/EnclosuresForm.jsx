@@ -20,17 +20,17 @@ const EnclosuresForm = () => {
             <input className="w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray"></input>
           </div>
 
-          <div className="input-status">
+          <div className="input-status ">
             <p className="text-sm mb-2">Status</p>
-            <div className="flex divide-x divide-x-reverse">
-              <select className="w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray">
+            <div className="flex divide-x divide-x-reverse ">
+              <select className="cursor-pointer w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray">
                 <option value="-----">-----</option>
               </select>
-              <div className="h-9 border border-secondary-dark flex items-center">
-                <TbList className="mx-2" />
+              <div className="cursor-pointer h-9 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
+                <TbList className="mx-2 " />
               </div>
-              <div className="h-9 border rounded-r-md border-secondary-dark flex items-center">
-                <TbPlus className="mx-2" />
+              <div className="cursor-pointer h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
+                <TbPlus className="mx-2 " />
               </div>
             </div>
           </div>
@@ -38,17 +38,17 @@ const EnclosuresForm = () => {
 					<div className='input-locations'>
 							<p className='text-sm mb-2'>Locations</p>
 							<div className='flex divide-x divide-x-reverse'>
-								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
+								<select className='cursor-pointer w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
 									<option value="-----">-----</option>
 								</select>
-								<div className='h-9 border border-secondary-dark flex items-center'>
-									<TbList className='mx-2' />
+								<div className='cursor-pointer h-9 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white'>
+									<TbList className='mx-2 ' />
 								</div>
-								<div className='h-9 border border-secondary-dark flex items-center'>
-									<TbPlus className='mx-2' />
+								<div className='cursor-pointer h-9 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white'>
+									<TbPlus className='mx-2 ' />
 								</div>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
-									<TbMap className='mx-2' />
+								<div className='cursor-pointer h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white'>
+									<TbMap className='mx-2 ' />
 								</div>
 							</div>
 						</div>
@@ -56,11 +56,11 @@ const EnclosuresForm = () => {
 						<div className='input-technician-in-charge'>
 							<p className='text-sm mb-2'>Technician in Charge of the Hardware</p>
 							<div className='flex divide-x divide-x-reverse'>
-								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
+								<select className='cursor-pointer w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
 									<option value="-----">-----</option>
 								</select>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
-									<TbList className='mx-2' />
+								<div className='cursor-pointer h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white'>
+									<TbList className='mx-2 ' />
 								</div>
 							</div>
 						</div>
@@ -68,14 +68,14 @@ const EnclosuresForm = () => {
 						<div className='input-manufacturers'>
 							<p className='text-sm mb-2'>Manufacturers</p>
 							<div className='flex divide-x divide-x-reverse'>
-								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
+								<select className='cursor-pointer w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
 									<option value="-----">-----</option>
 								</select>
-								<div className='h-9 border border-secondary-dark flex items-center'>
-									<TbList className='mx-2' />
+								<div className='cursor-pointer h-9 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white'>
+									<TbList className='mx-2 ' />
 								</div>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
-									<TbPlus className='mx-2' />
+								<div className='cursor-pointer h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white'>
+									<TbPlus className='mx-2 ' />
 								</div>
 							</div>
 						</div>
@@ -83,14 +83,14 @@ const EnclosuresForm = () => {
 						<div className='input-group-in-charge'>
 							<p className='text-sm mb-2'>Group in Charge of the Hardware</p>
 							<div className='flex divide-x divide-x-reverse'>
-								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
+								<select className='cursor-pointer w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
 									<option value="-----">-----</option>
 								</select>
-								<div className='h-9 border border-secondary-dark flex items-center'>
-									<TbList className='mx-2' />
+								<div className='cursor-pointer h-9 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white'>
+									<TbList className='mx-2 ' />
 								</div>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
-									<TbPlus className='mx-2' />
+								<div className='cursor-pointer h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white'>
+									<TbPlus className='mx-2 ' />
 								</div>
 							</div>
 						</div>
@@ -98,14 +98,14 @@ const EnclosuresForm = () => {
 						<div className='input-model'>
 							<p className='text-sm mb-2'>Model</p>
 							<div className='flex divide-x divide-x-reverse'>
-								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
+								<select className='cursor-pointer w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
 									<option value="-----">-----</option>
 								</select>
-								<div className='h-9 border border-secondary-dark flex items-center'>
-									<TbList className='mx-2' />
-								</div>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center'>
-									<TbPlus className='mx-2' />
+								<div className='cursor-pointer h-9 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white'>
+									<TbList className='mx-2 ' />
+								</div> 
+								<div className='cursor-pointer h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white'>
+									<TbPlus className='mx-2 ' />
 								</div>
 							</div>
 						</div>
@@ -127,14 +127,10 @@ const EnclosuresForm = () => {
 
 						<div className='input-serial-number'>
 							<p className='text-sm mb-2'>Power supplies</p>
-							<input type='number' value='0' className='w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray'></input>
+							<input type='number' min='0' placeholder='0' className='w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray'></input>
 						</div>
-
         </form>
       </div>
-
-
-
 			
       {/* <div> del footer */}
       <div className="form-footer flex h-1/6 w-full border rounded-b-md border-secondary-dark justify-end mb-2 bg-white py-4 px-5">
