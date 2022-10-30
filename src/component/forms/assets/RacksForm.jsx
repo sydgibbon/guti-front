@@ -157,7 +157,7 @@ const RacksForm = () => {
           </div>
 
           <div className="">
-            <label>Position in room</label>
+            <p>Position in room</p>
             <div>
               <div>No room found or selected</div>
             </div>
@@ -176,7 +176,7 @@ const RacksForm = () => {
           </div>
 
           <div className="input-number-of-units">
-            <label className="text-sm mb-2">Number of units</label>
+            <p className="text-sm mb-2">Number of units</p>
             <input
               type="number"
               step="1"
@@ -187,7 +187,7 @@ const RacksForm = () => {
           </div>
 
           <div className="input-number-of-units">
-            <label className="text-sm mb-2">Width</label>
+            <p className="text-sm mb-2">Width</p>
             <input
               type="number"
               step="1"
@@ -198,7 +198,7 @@ const RacksForm = () => {
           </div>
 
           <div className="input-number-of-units">
-            <label className="text-sm mb-2">Height</label>
+            <p className="text-sm mb-2">Height</p>
             <input
               type="number"
               step="1"
@@ -209,7 +209,7 @@ const RacksForm = () => {
           </div>
 
           <div className="input-number-of-units">
-            <label className="text-sm mb-2">Depth</label>
+            <p className="text-sm mb-2">Depth</p>
             <input
               type="number"
               step="1"
@@ -220,7 +220,7 @@ const RacksForm = () => {
           </div>
 
           <div className="input-max-power-in-watts">
-            <label className="text-sm mb-2">Max. power (in watts)</label>
+            <p className="text-sm mb-2">Max. power (in watts)</p>
             <input
               type="number"
               step="1"
@@ -231,7 +231,7 @@ const RacksForm = () => {
           </div>
 
           <div className="input-measured-power">
-            <label className="text-sm mb-2">Measured Power (in watts)</label>
+            <p className="text-sm mb-2">Measured Power (in watts)</p>
             <input
               type="number"
               step="1"
@@ -242,7 +242,7 @@ const RacksForm = () => {
           </div>
 
           <div className="input-max-weight">
-            <label className="text-sm mb-2">Max. weight</label>
+            <p className="text-sm mb-2">Max. weight</p>
             <input
               type="number"
               step="1"
@@ -253,7 +253,7 @@ const RacksForm = () => {
           </div>
 
           <div className="input-number-of-units">
-            <label className="text-sm mb-2">Background color</label>
+            <p className="text-sm mb-2">Background color</p>
             <input
               type="color"
               value="#e8594b"
