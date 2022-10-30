@@ -256,6 +256,7 @@ const RacksForm = () => {
             <label className="text-sm mb-2">Background color</label>
             <input
               type="color"
+              value="#e8594b"
               className="w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray"
             ></input>
           </div>
