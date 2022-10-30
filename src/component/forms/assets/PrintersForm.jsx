@@ -72,7 +72,7 @@ const PrintersForm = () => {
               <p className='text-sm mb-2'>Sysdescr</p>
               <textarea rows='3' className='w-full p-2 border rounded-md border-secondary-dark bg-medium-gray'></textarea>
             </div>
-            <div className='input-technitian my-4'>
+            <div className='input-managment-type my-4'>
               <p className='text-sm mb-2'>Management type</p>
               <div className='flex divide-x divide-x-reverse'>
                 <select className='w-full px-2 rounded h-9 border border-secondary-dark bg-medium-gray'>
