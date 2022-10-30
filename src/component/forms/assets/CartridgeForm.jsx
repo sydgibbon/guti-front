@@ -36,7 +36,7 @@ const CartridgeForm = () => {
               </div>
             </div>
           </div>
-          <div className='input-types'>
+          <div className='input-type'>
             <p className='text-sm mb-2'>Type</p>
             <div className='flex divide-x divide-x-reverse'>
               <select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
@@ -54,7 +54,7 @@ const CartridgeForm = () => {
             <p className='text-sm mb-2'>Reference</p>
             <input className='w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray'></input>
           </div>
-          <div className='input-technitian'>
+          <div className='input-technician'>
             <p className='text-sm mb-2'>Technician in Charge of the Hardware</p>
             <div className='flex divide-x divide-x-reverse'>
               <select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
@@ -93,7 +93,7 @@ const CartridgeForm = () => {
               </div>
             </div>
           </div>
-          <div className='input-comment'>
+          <div className='input-comments'>
             <p className='text-sm mb-2'>Comments</p>
             <textarea rows='3' className='w-full p-2 border rounded-md border-secondary-dark bg-medium-gray'></textarea>
           </div>

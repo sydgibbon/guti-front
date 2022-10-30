@@ -8,6 +8,7 @@ import ComputerForm from "./component/forms/assets/ComputerForm";
 import PrintersForm from "./component/forms/assets/PrintersForm";
 import CartridgeForm from "./component/forms/assets/CartridgeForm";
 import ConsumablesForm from "./component/forms/assets/ConsumablesForm";
+import PassiveDevicesForm from "./component/forms/assets/PassiveDevicesForm";
 
 
 
@@ -76,6 +77,7 @@ function App() {
         <Route path="/computers" element={<Main content={ <ComputerForm />} />} />
         <Route path="/cartridges" element={<Main content={ <CartridgeForm />} />} />
         <Route path="/consumables" element={<Main content={ <ConsumablesForm />} />} />
+        <Route path="/passiveDevices" element={<Main content={ <PassiveDevicesForm />} />} />
       </Routes>
       <button
         type="button"

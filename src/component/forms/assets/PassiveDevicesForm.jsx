@@ -1,23 +1,32 @@
 import React from 'react';
-import { BsBoxSeam } from 'react-icons/bs';
-import { TbPlus, TbList, TbMap, } from 'react-icons/tb';
+import { TbPlus, TbList, TbMap, TbBrowser } from 'react-icons/tb';
 
-const ConsumablesForm = () => {
-
-  let values =
-    Array.from(Array(101).keys());
-
+const PassiveDevicesForm = () => {
   return (
     <div className='printers-form flex flex-col items-center divide-y divide-y-reverse m-4'>
       <div className='form-header flex bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5'>
-        <BsBoxSeam className='inline my-auto mx-2' />
-        <p className='text-base my-auto font-medium'>New Item - Consumables</p>
+        <TbBrowser className='inline my-auto mx-2' />
+        <p className='text-base my-auto font-medium'>New Item - Passive Devices</p>
       </div>
       <div className='form-container h-full w-full p-4 border border-secondary-dark bg-white'>
         <form className="grid grid-cols-2 gap-4 ">
           <div className='input-name mb-4'>
             <p className='text-sm mb-2'>Name</p>
             <input className='w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray'></input>
+          </div>
+          <div className='input-status'>
+            <p className='text-sm mb-2'>Status</p>
+            <div className='flex divide-x divide-x-reverse'>
+              <select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
+                <option value="-----">-----</option>
+              </select>
+              <div className='h-9 border border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
+                <TbList className='mx-2' />
+              </div>
+              <div className='h-9 border rounded-r-md border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
+                <TbPlus className='mx-2' />
+              </div>
+            </div>
           </div>
           <div className='input-locations'>
             <p className='text-sm mb-2'>Locations</p>
@@ -50,10 +59,6 @@ const ConsumablesForm = () => {
               </div>
             </div>
           </div>
-          <div className='input-reference mb-4'>
-            <p className='text-sm mb-2'>Reference</p>
-            <input className='w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray'></input>
-          </div>
           <div className='input-technitian'>
             <p className='text-sm mb-2'>Technician in Charge of the Hardware</p>
             <div className='flex divide-x divide-x-reverse'>
@@ -81,7 +86,7 @@ const ConsumablesForm = () => {
           </div>
           <div className='input-group-in-charge'>
             <p className='text-sm mb-2'>Group in Charge of the Hardware</p>
-            <div className='flex divide-x divide-x-reverse py-8'>
+            <div className='flex divide-x divide-x-reverse'>
               <select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray cursor-pointer'>
                 <option value="-----">-----</option>
               </select>
@@ -93,42 +98,31 @@ const ConsumablesForm = () => {
               </div>
             </div>
           </div>
-          <div className='input-name mb-4'>
-            <p className='text-sm mb-2'>Inventory number</p>
+          <div className='input-model'>
+            <p className='text-sm mb-2'>Model</p>
+            <div className='flex divide-x divide-x-reverse'>
+              <select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
+                <option value="-----">-----</option>
+              </select>
+              <div className='h-9 border border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
+                <TbList className='mx-2' />
+              </div>
+              <div className='h-9 border rounded-r-md border-secondary-dark flex items-center cursor-pointer hover:bg-primary-light hover:text-white'>
+                <TbPlus className='mx-2' />
+              </div>
+            </div>
+          </div>
+          <div className='input-serial-number mb-4'>
+            <p className='text-sm mb-2'>Serial Number</p>
+            <input className='w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray'></input>
+          </div>
+          <div className='input-inventory-number mb-4'>
+            <p className='text-sm mb-2'>Inventory Number</p>
             <input className='w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray'></input>
           </div>
           <div className='input-comment'>
             <p className='text-sm mb-2'>Comments</p>
             <textarea rows='3' className='w-full p-2 border rounded-md border-secondary-dark bg-medium-gray'></textarea>
-          </div>
-          <div className='input-alert-threshold'>
-            <p className='text-sm mb-2'>Alert Threshold</p>
-            <div className='flex divide-x divide-x-reverse py-8'>
-              <select className='w-full px-2 rounded h-9 border border-secondary-dark bg-medium-gray cursor-pointer'>
-                <option> </option>
-                {values.map((item) => {
-                  return <option value={item}> {item} </option>
-                })}
-                {values}
-              </select>
-            </div>
-          </div>
-          <div className='input-pictures'>
-            <p className='text-sm mb-2'>Pictures</p>
-            <div className='border border-dashed rounded-md py-2 px-12 border-secondary-dark bg-medium-gray text-center'>
-              <p className='text-sm mb-2 font-semibold'>File(s) (40 Mio max) <a href='' title='Help' className='text-[#3a5693] font-mono text-lg'>i</a></p>
-
-              <p className='text-sm font-semibold'>Drag and drop your file here, or</p>
-
-              <input type="file" accept=".jpg, .jpeg, .png" className='w-full md:w-auto border rounded-md border-secondary-dark bg-white' />
-            </div>
-          </div>
-          <div className='input-stock-target'>
-            <p className='text-sm mb-2'>Stock target</p>
-            <div className='flex py-8'>
-              <input type='number' placeholder='0' min='0' className='w-full px-2 rounded h-9 border border-secondary-dark bg-medium-gray'>
-              </input>
-            </div>
           </div>
         </form>
       </div>
@@ -142,4 +136,4 @@ const ConsumablesForm = () => {
   )
 }
 
-export default ConsumablesForm;
+export default PassiveDevicesForm;
