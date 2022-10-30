@@ -99,7 +99,7 @@ const CartridgeForm = () => {
           </div>
           <div className='input-alert-threshold'>
             <p className='text-sm mb-2'>Alert Threshold</p>
-            <div className='flex divide-x divide-x-reverse'>
+            <div className='flex divide-x divide-x-reverse py-8'>
               <select className='w-full px-2 rounded h-9 border border-secondary-dark bg-medium-gray cursor-pointer'>
                 <option> </option>
                 {values.map((item) => {
@@ -110,7 +110,16 @@ const CartridgeForm = () => {
             </div>
           </div>
 
-          {/* aca viene Pictures */}
+          <div className='input-pictures'>
+							<p className='text-sm mb-2'>Pictures</p>
+							<div className='border border-dashed rounded-md py-2 px-12 border-secondary-dark bg-medium-gray text-center'>
+								<p className='text-sm mb-3 font-semibold'>File(s) (40 Mio max) <a href='' title='Help' className='text-[#3a5693] font-mono text-lg'>i</a></p>
+								
+								<p className='text-sm font-semibold'>Drag and drop your file here, or</p>
+								
+								<input type="file" accept=".jpg, .jpeg, .png" className='w-full m-0 border rounded-md border-secondary-dark bg-white' />							
+							</div>
+						</div>
 
           <div className='input-stock-target'>
             <p className='text-sm mb-2'>Stock target</p>
