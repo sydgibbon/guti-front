@@ -248,6 +248,23 @@ const PhonesForm = () => {
               </div>
             </div>
           </div>
+
+          <div className="input-ports">
+            <p className="text-sm mb-2">Ports</p>
+            <div className="flex items-center gap-2">
+                <input 
+                    type='checkbox'
+                    className="w-3.5 h-3.5 px-2 rounded-md border-1 border-secondary-dark bg-medium-gray"
+                ></input>
+                <label>Headset</label>
+                <input 
+                    type='checkbox'
+                    className="w-3.5 h-3.5 px-2 rounded-md border-1 border-secondary-dark bg-medium-gray"
+                ></input>
+                <label>Speaker</label>
+            </div>
+          </div>
+
         </form>
       </div>
 
