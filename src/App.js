@@ -6,6 +6,7 @@ import Assets from "./pages/Assets";
 import SearchCard from "./component/dashboard/assets/SearchCard";
 import ComputerForm from "./component/forms/assets/ComputerForm";
 import PrintersForm from "./component/forms/assets/PrintersForm";
+import CartridgeForm from "./component/forms/assets/CartridgeForm";
 
 
 
@@ -72,6 +73,7 @@ function App() {
         <Route path="/assets" element={<Main content={ <SearchCard />} />} />
         <Route path="/printers" element={<Main content={ <PrintersForm />} />} />
         <Route path="/computers" element={<Main content={ <ComputerForm />} />} />
+        <Route path="/cartridges" element={<Main content={ <CartridgeForm />} />} />
       </Routes>
       <button
         type="button"

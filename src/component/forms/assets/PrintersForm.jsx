@@ -1,7 +1,7 @@
 // rafce
 import React from 'react';
 import { BsPrinter } from 'react-icons/bs';
-import { TbPlus, TbList, TbMap, TbCheckbox } from 'react-icons/tb';
+import { TbPlus, TbList, TbMap } from 'react-icons/tb';
 
 const PrintersForm = () => {
   return (
@@ -10,7 +10,6 @@ const PrintersForm = () => {
         <BsPrinter className='inline my-auto mx-2' />
         <p className='text-base my-auto font-medium'>New Item - Printer</p>
       </div>
-
       <div className='form-container h-full w-full p-4 border border-secondary-dark bg-white'>
         <form className='flex justify-between'>
           {/* se utilizan dos <div> para separar los inputs, este es el primero */}
@@ -69,7 +68,7 @@ const PrintersForm = () => {
               <p className='text-sm mb-2'>Alternate Username</p>
               <input className='w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray'></input>
             </div>
-            <div className='input-comment'>
+            <div className='input-sysdescr'>
               <p className='text-sm mb-2'>Sysdescr</p>
               <textarea rows='3' className='w-full p-2 border rounded-md border-secondary-dark bg-medium-gray'></textarea>
             </div>
