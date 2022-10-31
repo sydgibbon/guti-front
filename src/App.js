@@ -17,6 +17,7 @@ import ConsumableForm from "./component/forms/assets/ConsumableForm";
 import PassiveDeviceForm from "./component/forms/assets/PassiveDeviceForm";
 import PhoneForm from "./component/forms/assets/PhoneForm";
 import SimcardForm from "./component/forms/assets/SimcardForm";
+import RackForm from "./component/forms/assets/RackForm";
 
 
 
@@ -94,6 +95,7 @@ function App() {
         <Route path="/phone-form" element={<Main content={ <PhoneForm />} />} />
         <Route path="/printer-form" element={<Main content={ <PrinterForm />} />} />
         <Route path="/simcard-form" element={<Main content={ <SimcardForm />} />} />
+        <Route path="/rack-form" element={<Main content={ <RackForm />} />} />
       </Routes>
       <button
         type="button"
