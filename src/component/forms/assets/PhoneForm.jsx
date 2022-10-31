@@ -9,7 +9,7 @@ const PhoneForm = () => {
       {/* usé el "w-[calc(100%-1rem)]" para que quede separado en el eje X ayq eu con el mx no se podia darle margen */}
       <div className="form-header flex bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5">
         <TbPhone className="inline my-auto mx-2 w-6 h-5" />
-        <p className="text-base my-auto font-medium">New Item - Racks</p>
+        <p className="text-base my-auto font-medium">New Item - Phone</p>
       </div>
 
       {/* <div> contenedor del Form */}
