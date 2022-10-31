@@ -90,7 +90,23 @@ const CableForm = () => {
             </div>
           </div>
 
-          
+          <div className="input-color">
+            <p className="text-sm mb-2">Color</p>
+            <input
+              type="color"
+              value="#e8594b"
+              className="w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray"
+            ></input>
+          </div>
+
+
+          <div className="w-full flex h-8 p-5 border-y-1 items-center bg-[#FAFBFE] ">
+            <span className="w-">Endpoint A</span>
+          </div>
+
+          <div className="w-full flex h-8 p-5 border-y-1 items-center bg-[#FAFBFE] ">
+            <span className="w-">Endpoint A</span>
+          </div>
 
         </form>
       </div>
