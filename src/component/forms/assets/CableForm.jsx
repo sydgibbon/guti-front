@@ -1,5 +1,5 @@
 import React from "react";
-import { TbPlus, TbList, TbMap, TbColumns } from "react-icons/tb";
+import { TbPlus, TbList, TbColumns } from "react-icons/tb";
 
 const CableForm = () => {
   return (
@@ -35,20 +35,17 @@ const CableForm = () => {
             </div>
           </div>
 
-          <div className="input-locations">
-            <p className="text-sm mb-2">Locations</p>
+          <div className="input-type">
+            <p className="text-sm mb-2">Type</p>
             <div className="flex divide-x divide-x-reverse">
               <select className="cursor-pointer w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray">
                 <option value="-----">-----</option>
               </select>
-              <div className="cursor-pointer h-9 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
-                <TbList className="mx-2 " />
+              <div className="h-9 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white cursor-pointer">
+                <TbList className="mx-2" />
               </div>
-              <div className="cursor-pointer h-9 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
-                <TbPlus className="mx-2 " />
-              </div>
-              <div className="cursor-pointer h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
-                <TbMap className="mx-2 " />
+              <div className="h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white cursor-pointer">
+                <TbPlus className="mx-2" />
               </div>
             </div>
           </div>
@@ -65,56 +62,6 @@ const CableForm = () => {
             </div>
           </div>
 
-          <div className="input-manufacturers">
-            <p className="text-sm mb-2">Manufacturers</p>
-            <div className="flex divide-x divide-x-reverse">
-              <select className="cursor-pointer w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray">
-                <option value="-----">-----</option>
-              </select>
-              <div className="cursor-pointer h-9 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
-                <TbList className="mx-2 " />
-              </div>
-              <div className="cursor-pointer h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
-                <TbPlus className="mx-2 " />
-              </div>
-            </div>
-          </div>
-
-          <div className="input-group-in-charge">
-            <p className="text-sm mb-2">Group in Charge of the Hardware</p>
-            <div className="flex divide-x divide-x-reverse">
-              <select className="cursor-pointer w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray">
-                <option value="-----">-----</option>
-              </select>
-              <div className="cursor-pointer h-9 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
-                <TbList className="mx-2 " />
-              </div>
-              <div className="cursor-pointer h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
-                <TbPlus className="mx-2 " />
-              </div>
-            </div>
-          </div>
-
-          <div className="input-model">
-            <p className="text-sm mb-2">Model</p>
-            <div className="flex divide-x divide-x-reverse">
-              <select className="cursor-pointer w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray">
-                <option value="-----">-----</option>
-              </select>
-              <div className="cursor-pointer h-9 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
-                <TbList className="mx-2 " />
-              </div>
-              <div className="cursor-pointer h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
-                <TbPlus className="mx-2 " />
-              </div>
-            </div>
-          </div>
-
-          <div className="input-serial-number">
-            <p className="text-sm mb-2">Serial Number</p>
-            <input className="w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray"></input>
-          </div>
-
           <div className="input-inventory-asset-number">
             <p className="text-sm mb-2">Inventory/Asset Number</p>
             <input className="w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray"></input>
@@ -128,15 +75,23 @@ const CableForm = () => {
             ></textarea>
           </div>
 
-          <div className="input-serial-number">
-            <p className="text-sm mb-2">Power supplies</p>
-            <input
-              type="number"
-              min="0"
-              placeholder="0"
-              className="w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray"
-            ></input>
+          <div className="select-cable-strand">
+            <p className="text-sm mb-2">Cable strand</p>
+            <div className="flex divide-x divide-x-reverse ">
+              <select className="cursor-pointer w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray">
+                <option value="-----">-----</option>
+              </select>
+              <div className="cursor-pointer h-9 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
+                <TbList className="mx-2 " />
+              </div>
+              <div className="cursor-pointer h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
+                <TbPlus className="mx-2 " />
+              </div>
+            </div>
           </div>
+
+          
+
         </form>
       </div>
 
