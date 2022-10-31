@@ -70,7 +70,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/assets" element={<Main content={ <AssetsDashboard />} />} />
         <Route path="/computer-form" element={<Main content={ <ComputerForm />} />} />
-        <Route path="/simcards-form" element={<Main content={ <SimcardForm />} />} />
+        <Route path="/simcard-form" element={<Main content={ <SimcardForm />} />} />
         <Route path="/computers" element={<Main content={ <Computers />} />} />
       </Routes>
       <button
