@@ -1,7 +1,7 @@
 import React from "react";
 import { TbPlus, TbList, TbMap, TbPhone } from "react-icons/tb";
 
-const PhonesForm = () => {
+const PhoneForm = () => {
   return (
     // <div> general
     <div className="computer-form flex flex-col items-center divide-y divide-y-reverse m-4">
@@ -279,4 +279,4 @@ const PhonesForm = () => {
   );
 };
 
-export default PhonesForm;
+export default PhoneForm;
