@@ -1,12 +1,18 @@
-import React from 'react';
+import React from "react";
 import Item from "../atomic/Item";
+import { NavLink } from "react-router-dom";
+import "../../style/dashboard/SidebarSubMenu.css"
 
-const SidebarSubMenu = ({text, icon}) => {
+const SidebarSubMenu = ({ text, icon, selected, onClick, href }) => {
   return (
-    <div className="py-2 pl-6 flex justify-between hover:border-l-2 border-primary-light cursor-normal select-none">
-      <Item icon={ icon } text={ text }/>
-    </div>
-  )
-}
+    <NavLink
+      to={href}
+      className="py-2 pl-6 flex justify-between hover:border-l-2 hover:bg-secondary-dark border-primary-light cursor-normal select-none"
+      onClick={onClick}
+    >
+      <Item icon={icon} text={text} />
+    </NavLink>
+  );
+};
 
-export default SidebarSubMenu
+export default SidebarSubMenu;
