@@ -1,8 +1,8 @@
 import React from "react";
-import { FaPaste, FaRegEye } from 'react-icons/fa';
+import { FaPaste, FaRegEye, FaInfo } from 'react-icons/fa';
 import { TbPlus, TbList, TbMap, TbFileBarcode } from "react-icons/tb";
 
-const SimcardsForm = () => {
+const SimcardForm = () => {
   return (
     // <div> general
     <div className="computer-form flex flex-col items-center divide-y divide-y-reverse m-4">
@@ -19,7 +19,7 @@ const SimcardsForm = () => {
         <form className="grid grid-cols-2 gap-4 ">
           <div className="item">
             <p className="text-sm mb-2">Item</p>
-            <p className="w-full px-2 h-9 ">No asociated items</p>
+            <p className="w-full ">No asociated items</p>
           </div>
 
           <div className="select-component ">
@@ -132,6 +132,57 @@ const SimcardsForm = () => {
             </div>
           </div>
 
+          <div className="select-lines">
+            <p className="text-sm mb-2">Lines</p>
+            <div className="flex divide-x divide-x-reverse">
+              <select className="cursor-pointer w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray">
+                <option value="-----">-----</option>
+              </select>
+              <div className="h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white cursor-pointer">
+                <TbList className="mx-2" />
+              </div>
+            </div>
+          </div>
+
+          <div className="input-mobile-suscriber-identification-number">
+            <div className="name-and-info flex">
+              <p className="text-sm mb-2">Mobile Subscriber Identification Number</p>
+              <FaInfo className="stroke-1 h-3 w-3 ml-2"/>
+              </div>
+              <input className="w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray"></input>
+          </div>
+
+          <div className="input-user">
+            <p className="text-sm mb-2">User</p>
+            <div className="flex divide-x divide-x-reverse">
+              <select className="cursor-pointer w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray">
+                <option value="-----">-----</option>
+                <option value="glpi">glpi</option>
+                <option value="normal">normal</option>
+                <option value="post-only">post-only</option>
+                <option value="tech">tech</option>
+              </select>
+              <div className="h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white cursor-pointer">
+                <TbList className="mx-2" />
+              </div>
+            </div>
+          </div>
+
+          <div className="select-groups ">
+            <p className="text-sm mb-2">Groups</p>
+            <div className="flex divide-x divide-x-reverse ">
+              <select className="cursor-pointer w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray">
+                <option value="-----">-----</option>
+              </select>
+              <div className="cursor-pointer h-9 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
+                <TbList className="mx-2 " />
+              </div>
+              <div className="cursor-pointer h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
+                <TbPlus className="mx-2 " />
+              </div>
+            </div>
+          </div>
+
         </form>
       </div>
 
@@ -146,4 +197,4 @@ const SimcardsForm = () => {
   );
 };
 
-export default SimcardsForm;
+export default SimcardForm;
