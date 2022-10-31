@@ -3,7 +3,7 @@ import React from 'react';
 import { BsPrinter } from 'react-icons/bs';
 import { TbPlus, TbList, TbMap } from 'react-icons/tb';
 
-const PrintersForm = () => {
+const PrinterForm = () => {
   return (
     <div className='printers-form flex flex-col items-center divide-y divide-y-reverse m-4'>
       <div className='form-header flex bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5'>
@@ -265,4 +265,4 @@ const PrintersForm = () => {
   )
 }
 
-export default PrintersForm;
+export default PrinterForm;

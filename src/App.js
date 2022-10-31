@@ -5,10 +5,10 @@ import axiosPrivate from "./api/axios";
 import Assets from "./pages/Assets";
 import SearchCard from "./component/dashboard/assets/SearchCard";
 import ComputerForm from "./component/forms/assets/ComputerForm";
-import PrintersForm from "./component/forms/assets/PrintersForm";
+import PrinterForm from "./component/forms/assets/PrinterForm";
 import CartridgeForm from "./component/forms/assets/CartridgeForm";
-import ConsumablesForm from "./component/forms/assets/ConsumablesForm";
-import PassiveDevicesForm from "./component/forms/assets/PassiveDevicesForm";
+import ConsumableForm from "./component/forms/assets/ConsumableForm";
+import PassiveDeviceForm from "./component/forms/assets/PassiveDeviceForm";
 import PhoneForm from "./component/forms/assets/PhoneForm";
 
 
@@ -74,12 +74,13 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/assets" element={<Main content={ <Assets />} />} />
         <Route path="/assets" element={<Main content={ <SearchCard />} />} />
-        <Route path="/printers" element={<Main content={ <PrintersForm />} />} />
         <Route path="/computers" element={<Main content={ <ComputerForm />} />} />
-        <Route path="/cartridges" element={<Main content={ <CartridgeForm />} />} />
-        <Route path="/consumables" element={<Main content={ <ConsumablesForm />} />} />
-        <Route path="/passivedevices" element={<Main content={ <PassiveDevicesForm />} />} />
-        <Route path="/phone" element={<Main content={ <PhoneForm />} />} />
+
+        <Route path="/cartridge-form" element={<Main content={ <CartridgeForm />} />} />
+        <Route path="/consumable-form" element={<Main content={ <ConsumableForm />} />} />
+        <Route path="/passivedevice-form" element={<Main content={ <PassiveDeviceForm />} />} />
+        <Route path="/phone-form" element={<Main content={ <PhoneForm />} />} />
+        <Route path="/printer-form" element={<Main content={ <PrinterForm />} />} />
       </Routes>
       <button
         type="button"

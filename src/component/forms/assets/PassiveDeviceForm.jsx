@@ -1,12 +1,12 @@
 import React from 'react';
 import { TbPlus, TbList, TbMap, TbBrowser } from 'react-icons/tb';
 
-const PassiveDevicesForm = () => {
+const PassiveDeviceForm = () => {
   return (
     <div className='printers-form flex flex-col items-center divide-y divide-y-reverse m-4'>
       <div className='form-header flex bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5'>
         <TbBrowser className='inline my-auto mx-2' />
-        <p className='text-base my-auto font-medium'>New Item - Passive Devices</p>
+        <p className='text-base my-auto font-medium'>New Item - Passive Device</p>
       </div>
       <div className='form-container h-full w-full p-4 border border-secondary-dark bg-white'>
         <form className="grid grid-cols-2 gap-4 ">
@@ -136,4 +136,4 @@ const PassiveDevicesForm = () => {
   )
 }
 
-export default PassiveDevicesForm;
+export default PassiveDeviceForm;
