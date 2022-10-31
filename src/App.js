@@ -6,9 +6,9 @@ import Assets from "./pages/Assets";
 import SearchCard from "./component/dashboard/assets/SearchCard";
 import ComputerForm from "./component/forms/assets/ComputerForm";
 import SoftwareForm from "./component/forms/assets/SoftwareForm";
-import NetworkDevicesForm from "./component/forms/assets/NetworkDevicesForm";
-import DevicesForm from "./component/forms/assets/DevicesForm";
-import PdusForm from "./component/forms/assets/PdusForm";
+import NetworkDeviceForm from "./component/forms/assets/NetworkDeviceForm";
+import DeviceForm from "./component/forms/assets/DeviceForm";
+import PduForm from "./component/forms/assets/PduForm";
 
 
 
@@ -73,11 +73,11 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/assets" element={<Main content={ <Assets />} />} />
         <Route path="/assets" element={<Main content={ <SearchCard />} />} />
-        <Route path="/computers" element={<Main content={ <ComputerForm />} />} />
-        <Route path="/software" element={<Main content={ <SoftwareForm />} />} />
-        <Route path="/netdevices" element={<Main content={ <NetworkDevicesForm />} />} />
-        <Route path="/devices" element={<Main content={ <DevicesForm />} />} />
-        <Route path="/pdus" element={<Main content={ <PdusForm />} />} />
+        <Route path="/computer-form" element={<Main content={ <ComputerForm />} />} />
+        <Route path="/software-form" element={<Main content={ <SoftwareForm />} />} />
+        <Route path="/netdevice-form" element={<Main content={ <NetworkDeviceForm />} />} />
+        <Route path="/device-form" element={<Main content={ <DeviceForm />} />} />
+        <Route path="/pdu-form" element={<Main content={ <PduForm />} />} />
       </Routes>
       <button
         type="button"

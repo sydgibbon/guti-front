@@ -1,13 +1,13 @@
 import React from 'react';
 import { TbPlus, TbList, TbMap, TbUsb } from 'react-icons/tb';
 
-const DevicesForm = () => {
+const DeviceForm = () => {
     return (
         <div className='computer-form flex flex-col items-center m-4'>
             <form className='w-full divide-y divide-y-reverse'>
                 <div className='form-header flex bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark py-4 px-5'>
                     <TbUsb className='inline my-auto mr-2' size='24' />
-                    <p className='text-base my-auto font-medium'>New Item - Devices</p>
+                    <p className='text-base my-auto font-medium'>New Item - Device</p>
                 </div>
                 <div className='form-container h-full w-full p-4 border border-secondary-dark bg-white flex justify-between'>
                     <div className='first-form w-1/2 mx-4'>
@@ -206,4 +206,4 @@ const DevicesForm = () => {
     )
 }
 
-export default DevicesForm
+export default DeviceForm

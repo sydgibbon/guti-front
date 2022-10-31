@@ -1,7 +1,7 @@
 import React from 'react'
 import { TbPlus, TbList, TbMap, TbSitemap } from 'react-icons/tb';
 
-const NetworkDevicesForm = () => {
+const NetworkDeviceForm = () => {
 	return (
 		<div className='computer-form flex flex-col items-center m-4'>
 			<form className='w-full divide-y divide-y-reverse'>
@@ -213,4 +213,4 @@ const NetworkDevicesForm = () => {
 	)
 }
 
-export default NetworkDevicesForm
+export default NetworkDeviceForm
