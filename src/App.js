@@ -5,7 +5,7 @@ import AssetsDashboard from "./component/dashboard/AssetsDashboard";
 import axiosPrivate from "./api/axios";
 import Computers from "./pages/Computers";
 import ComputerForm from "./component/forms/assets/ComputerForm";
-import PhonesForm from "./component/forms/assets/PhonesForm";
+import PhoneForm from "./component/forms/assets/PhoneForm";
 
 
 
@@ -70,7 +70,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/assets" element={<Main content={ <AssetsDashboard />} />} />
         <Route path="/computer-form" element={<Main content={ <ComputerForm />} />} />
-        <Route path="/phones-form" element={<Main content={ <PhonesForm />} />} />
+        <Route path="/phone-form" element={<Main content={ <PhoneForm />} />} />
         <Route path="/computers" element={<Main content={ <Computers />} />} />
       </Routes>
       <button
