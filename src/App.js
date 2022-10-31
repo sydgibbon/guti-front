@@ -5,6 +5,7 @@ import AssetsDashboard from "./component/dashboard/AssetsDashboard";
 import axiosPrivate from "./api/axios";
 import Computers from "./pages/Computers";
 import ComputerForm from "./component/forms/assets/ComputerForm";
+import SimcardsForm from "./component/forms/assets/SimcardsForm";
 
 
 
@@ -69,6 +70,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/assets" element={<Main content={ <AssetsDashboard />} />} />
         <Route path="/computer-form" element={<Main content={ <ComputerForm />} />} />
+        <Route path="/simcards-form" element={<Main content={ <SimcardsForm />} />} />
         <Route path="/computers" element={<Main content={ <Computers />} />} />
       </Routes>
       <button
