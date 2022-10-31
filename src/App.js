@@ -11,6 +11,11 @@ import SoftwareForm from "./component/forms/assets/SoftwareForm";
 import NetworkDeviceForm from "./component/forms/assets/NetworkDeviceForm";
 import DeviceForm from "./component/forms/assets/DeviceForm";
 import PduForm from "./component/forms/assets/PduForm";
+import PrinterForm from "./component/forms/assets/PrinterForm";
+import CartridgeForm from "./component/forms/assets/CartridgeForm";
+import ConsumableForm from "./component/forms/assets/ConsumableForm";
+import PassiveDeviceForm from "./component/forms/assets/PassiveDeviceForm";
+import PhoneForm from "./component/forms/assets/PhoneForm";
 
 
 
@@ -82,6 +87,11 @@ function App() {
         <Route path="/netdevice-form" element={<Main content={ <NetworkDeviceForm />} />} />
         <Route path="/device-form" element={<Main content={ <DeviceForm />} />} />
         <Route path="/pdu-form" element={<Main content={ <PduForm />} />} />
+        <Route path="/cartridge-form" element={<Main content={ <CartridgeForm />} />} />
+        <Route path="/consumable-form" element={<Main content={ <ConsumableForm />} />} />
+        <Route path="/passivedevice-form" element={<Main content={ <PassiveDeviceForm />} />} />
+        <Route path="/phone-form" element={<Main content={ <PhoneForm />} />} />
+        <Route path="/printer-form" element={<Main content={ <PrinterForm />} />} />
       </Routes>
       <button
         type="button"
