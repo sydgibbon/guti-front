@@ -7,6 +7,10 @@ import Computers from "./pages/Computers";
 import ComputerForm from "./component/forms/assets/ComputerForm";
 import EnclosuresForm from "./component/forms/assets/EnclosuresForm";
 import MonitorForm from "./component/forms/assets/MonitorForm";
+import SoftwareForm from "./component/forms/assets/SoftwareForm";
+import NetworkDeviceForm from "./component/forms/assets/NetworkDeviceForm";
+import DeviceForm from "./component/forms/assets/DeviceForm";
+import PduForm from "./component/forms/assets/PduForm";
 
 
 
@@ -70,10 +74,14 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/assets" element={<Main content={ <AssetsDashboard />} />} />
+        <Route path="/computers" element={<Main content={ <Computers />} />} />
         <Route path="/computer-form" element={<Main content={ <ComputerForm />} />} />
         <Route path="/enclosures-form" element={<Main content={ <EnclosuresForm />} />} />
         <Route path="/monitor-form" element={<Main content={ <MonitorForm />} />} />
-        <Route path="/computers" element={<Main content={ <Computers />} />} />
+        <Route path="/software-form" element={<Main content={ <SoftwareForm />} />} />
+        <Route path="/netdevice-form" element={<Main content={ <NetworkDeviceForm />} />} />
+        <Route path="/device-form" element={<Main content={ <DeviceForm />} />} />
+        <Route path="/pdu-form" element={<Main content={ <PduForm />} />} />
       </Routes>
       <button
         type="button"
