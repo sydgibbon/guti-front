@@ -5,16 +5,15 @@ import { TbPlus, TbList, TbMap } from 'react-icons/tb';
 const ComputerForm = () => {
 	return (
 		// <div> general
-		<div className='computer-form flex flex-col items-center divide-y divide-y-reverse m-4'>
-			{/* <div> de Form Header */}
-			{/* usé el "w-[calc(100%-1rem)]" para que quede separado en el eje X ayq eu con el mx no se podia darle margen */}
-			<div className='form-header flex bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5'>
-				<BsLaptop className='inline my-auto mx-2' />
-				<p className='text-base my-auto font-medium'>New Item - Computers</p>
-			</div>
-			{/* <div> contenedor del Form */}
-			<div className='form-container h-full w-full p-4 border border-secondary-dark bg-white'>
-				<form className='flex justify-between'>
+		<div className='computer-form flex flex-col items-center m-4'>
+			<form className='w-full divide-y divide-y-reverse'>
+				{/* <div> de Form Header */}
+				<div className='form-header flex bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5'>
+					<BsLaptop className='inline my-auto mr-2' size='24' />
+					<p className='text-base my-auto font-medium'>New Item - Computers</p>
+				</div>
+				{/* <div> contenedor del Form */}
+				<div className='form-container h-full w-full p-4 border border-secondary-dark bg-white flex justify-between'>
 					{/* se utilizan dos <div> para separar los inputs, este es el primero */}
 					<div className='first-form w-1/2 mx-4'>
 						<div className='input-name mb-4'>
@@ -197,15 +196,16 @@ const ComputerForm = () => {
 							</div>
 						</div>
 					</div>
-				</form>
-			</div>
-			{/* <div> del footer */}
-			<div className='form-footer flex h-1/6 w-full border rounded-b-md border-secondary-dark justify-end mb-2 bg-white py-4 px-5'>
-				<button className='flex items-center mr-4 border-2 border-orange-dark rounded-md bg-primary-light text-white hover:border-black py-2 px-4'>
-					<TbPlus className='mr-1' />
-					<p className='text-lg font-medium'>Add</p>
-				</button>
-			</div>
+
+				</div>
+				{/* <div> del footer */}
+				<div className='form-footer flex h-1/6 w-full border rounded-b-md border-secondary-dark justify-end mb-2 bg-white py-4 px-5'>
+					<button className='flex items-center mr-4 border-2 border-orange-dark rounded-md bg-primary-light text-white hover:border-black py-2 px-4'>
+						<TbPlus className='mr-1' />
+						<p className='text-lg font-medium'>Add</p>
+					</button>
+				</div>
+			</form>
 
 		</div>
 	)
