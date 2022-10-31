@@ -1,7 +1,7 @@
 import React from "react";
 import { TbPlus, TbList, TbMap, TbServer } from "react-icons/tb";
 
-const RacksForm = () => {
+const RackForm = () => {
   return (
     // <div> general
     <div className="computer-form flex flex-col items-center divide-y divide-y-reverse m-4">
@@ -274,4 +274,4 @@ const RacksForm = () => {
   );
 };
 
-export default RacksForm;
+export default RackForm;
