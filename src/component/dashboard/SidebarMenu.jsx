@@ -2,7 +2,7 @@ import { BsChevronCompactDown } from "react-icons/bs";
 import Item from "../atomic/Item";
 
 const SidebarMenu = ({ text, icon, subMenu, selected, setSelected }) => {
-  const toggle = () => setSelected(text)
+  const toggle = () => {selected !== text ? setSelected(text) : setSelected(false)}
   return (
     <>
       <div

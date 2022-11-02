@@ -23,7 +23,7 @@ import RackForm from "./component/forms/assets/RackForm";
 
 function App() {
   axiosPrivate
-    .get("http://127.0.0.1:8000/api/computers/")
+    .get("http://127.0.0.1:8000/api/assets/computers/")
     .then(function (response) {
       // handle success
       console.log(response);
@@ -38,7 +38,7 @@ function App() {
     console.log("posting...");
     axiosPrivate({
       method: "POST",
-      url: "http://127.0.0.1:8000/api/computers/",
+      url: "http://127.0.0.1:8000/api/assets/computers/",
       data: {
         id: 0,
         entities_id: 1,
