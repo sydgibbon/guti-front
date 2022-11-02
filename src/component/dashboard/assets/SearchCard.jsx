@@ -5,21 +5,21 @@ import {
   TbMap2,
   TbSearch,
   TbFileDownload,
-  TbCaretDown,
 } from "react-icons/tb";
 import { BsChevronCompactDown, BsArrow90DegDown } from "react-icons/bs";
 import Switch from "react-switch";
 import axiosPrivate from "../../../api/axios";
+import Table from "../../atomic/Table";
 
-const SearchCard = () => {
-  const [checked, setChecked] = useState(false)
+const SearchCard = ({asset, columns, itemProps }) => {
+  const [checked, setChecked] = useState(false);
   const [loadingData, setLoadingData] = useState(true);
   const [data, setData] = useState([]);
 
   useEffect(() => {
     async function getData() {
       await axiosPrivate
-        .get("http://127.0.0.1:8000/api/computers/")
+        .get("http://127.0.0.1:8000/api/"+asset+"/")
         .then((response) => {
           // check if the data is populated
           console.log(response.data);
@@ -112,53 +112,7 @@ const SearchCard = () => {
         </div>
       </div>
 
-      <table className="w-full">
-        <thead>
-          <tr className="gap-2 border-secondary-dark border-y text-left text-xs font-semibold bg-medium-gray">
-            <th className="pl-2">
-              <input
-                type="checkbox"
-                className="w-4 h-4 mt-2 ml-0.5 px-2"
-              ></input>
-            </th>
-            <th className="px-2">
-              <span>NAME</span>
-              <TbCaretDown className="inline my-auto" />
-            </th>
-            <th className="px-2">STATUS</th>
-            <th className="px-2">MANUFACTURERS</th>
-            <th className="px-2">SERIAL NUMBER</th>
-            <th className="px-2">TYPES</th>
-            <th className="px-2">MODEL</th>
-            <th className="px-2">OPERATING SYSTEM - NAME</th>
-            <th className="px-2">LOCATIONS</th>
-            <th className="px-2">LAST UPDATE</th>
-            <th className="px-2">COMPONENTS - PROCESSORS</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((item) => (
-            <tr
-              key={item.id}
-              className="gap-2 text-xs bg-white border-secondary-dark border-b "
-            >
-              <td className="pl-2">
-                <input type="checkbox" className="w-4 h-4 mt-2 ml-0.5" />
-              </td>
-              <td className="pl-2">{item.name}</td>
-              <td className="pl-2">{item.manufacturers_id}</td>
-              <td className="pl-2">{item.serial}</td>
-              <td className="pl-2">{item.computertypes_id}</td>
-              <td className="pl-2">{item.computermodels_id}</td>
-              <td className="pl-2">{item.states_id}</td>
-              <td className="pl-2">{item.entities_id}</td>
-              <td className="pl-2">{item.locations_id}</td>
-              <td className="pl-2">{item.last_inventory_update}</td>
-              <td className="pl-2">{item.comment}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      <Table data={data} columns={columns} itemProps={itemProps} />
 
       <div className="search-card-footer flex items-center w-full bg-medium-gray">
         <div className="footer-section w-1/2 my-5 ">
