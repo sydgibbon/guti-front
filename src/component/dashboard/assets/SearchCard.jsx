@@ -19,7 +19,7 @@ const SearchCard = ({asset, columns, itemProps }) => {
   useEffect(() => {
     async function getData() {
       await axiosPrivate
-        .get("http://127.0.0.1:8000/api/"+asset+"/")
+        .get("http://127.0.0.1:8000/api/assets/"+asset+"/")
         .then((response) => {
           // check if the data is populated
           console.log(response.data);
