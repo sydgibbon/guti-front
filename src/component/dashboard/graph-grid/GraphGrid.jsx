@@ -2,10 +2,14 @@ import React from "react";
 
 const GraphGrid = ({ icon, graph, text, bgColor, textColor }) => {
   return (
-    <div className={`select-none w-36 h-36 border rounded-md flex items-end drop-shadow-lg p-1 ${bgColor}`}>
-      <span className={`text-sm font-bold ${textColor}`}>{ text }</span>
-      <span className="">{graph}</span>
-      <span className={` ${textColor}` }>{ icon }</span>
+    <div className={`graph-grid-container grid grid-cols-1 select-none w-36 h-50 border rounded-md  drop-shadow-lg p-1 ${bgColor}`} >
+      <div className=" ">
+        {graph}
+      </div>
+      <div className="flex items-center">
+        <span className={`text-sm font-bold ${textColor}`}>{text}</span>
+        <span className={` ${textColor}`}>{icon}</span>
+      </div>
     </div>
   );
 };

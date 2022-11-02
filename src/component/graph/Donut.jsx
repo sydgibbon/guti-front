@@ -29,7 +29,7 @@ const data = {
 const Donut = () => {
   return (
     <div> 
-        <Doughnut data={data} />
+        <Doughnut className='' data={data} />
     </div>
   )
 }
