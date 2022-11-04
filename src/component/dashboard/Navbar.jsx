@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  BsHouse,
   BsSearch,
   BsChevronCompactDown,
 } from "react-icons/bs";
