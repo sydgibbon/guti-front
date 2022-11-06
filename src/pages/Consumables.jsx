@@ -4,12 +4,12 @@ import SearchForm from '../component/dashboard/SearchForm';
 
 const Consumables = () => {
   const itemProps = [
-    "consumables_id",
-    "serial",
-    "computermodels_id",
-    "states_id",
-    "entities_id",
+    "name",
+    "ref",
+    "consumableitemtypes_id",
+    "manufacturers_id",
     "locations_id",
+    "locations_id", // Acá debería ir consumables EJ: Total: 1, New: 1, Used: 0
   ];
   const columns = [
     "NAME",
