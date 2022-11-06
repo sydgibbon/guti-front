@@ -81,7 +81,8 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/assets" element={<Main content={ <AssetsDashboard />} />} />
-        <Route path="/computers" element={<Main content={ <Computers />} />} />
+        <Route path="/assets/computers" element={<Main content={ <Computers />} />} />
+
         <Route path="/computer-form" element={<Main content={ <ComputerForm />} />} />
         <Route path="/enclosures-form" element={<Main content={ <EnclosuresForm />} />} />
         <Route path="/monitor-form" element={<Main content={ <MonitorForm />} />} />

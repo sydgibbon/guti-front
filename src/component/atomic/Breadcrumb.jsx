@@ -1,36 +1,9 @@
 import React from "react";
-import { BsHouse, BsBoxSeam, BsLaptop } from "react-icons/bs";
-import { Link, useLocation } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom";
+import { appItems } from "../../contexts/AppItems";
 
 const Breadcrumb = () => {
-  const apps = [
-    {
-      name: "Home",
-      icon: function() {
-        return <BsHouse/>;
-      },
-      link: "/",
-      itemContent: [
-        {
-          name: "Assets",
-          icon: function() {
-            return <BsBoxSeam/>;
-          },
-          link: "/assets",
-          itemContent: [
-            {
-              name: "Computers",
-              icon: function() {
-                return <BsLaptop/>;
-              },
-              link: "/computers",
-            },
-          ],
-        },
-      ],
-    },
-  ];
-  
+
    let location = useLocation().pathname;
 
   const renderBreadcrumb = (apps, loc) => apps.map((app) => (
@@ -47,8 +20,7 @@ const Breadcrumb = () => {
 
     return (
       <>
-      {location.pathname}
-      {renderBreadcrumb(apps, location)}
+      {renderBreadcrumb(appItems, location)}
       </>
     );
 };
