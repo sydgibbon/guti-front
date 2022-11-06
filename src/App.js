@@ -5,6 +5,7 @@ import AssetsDashboard from "./component/dashboard/AssetsDashboard";
 import axiosPrivate from "./api/axios";
 import Computers from "./pages/Computers";
 import Monitors from "./pages/Monitors";
+import Software from "./pages/Software";
 
 import ComputerForm from "./component/forms/assets/ComputerForm";
 import EnclosuresForm from "./component/forms/assets/EnclosuresForm";
@@ -84,7 +85,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/assets" element={<Main content={ <AssetsDashboard />} />} />
         <Route path="/computers" element={<Main content={ <Computers />} />} />
-        <Route path="/monitors" element={<Main content={ <Monitors />} />} />
+        <Route path="/assets/monitors" element={<Main content={ <Monitors />} />} />
+        <Route path="/assets/software" element={<Main content={ <Software />} />} />
 
         <Route path="/computer-form" element={<Main content={ <ComputerForm />} />} />
         <Route path="/enclosures-form" element={<Main content={ <EnclosuresForm />} />} />
