@@ -19,6 +19,11 @@ import PhoneForm from "./component/forms/assets/PhoneForm";
 import SimcardForm from "./component/forms/assets/SimcardForm";
 import RackForm from "./component/forms/assets/RackForm";
 import NotFound from "./pages/NotFound";
+import Devices from "./pages/Devices";
+import Printers from "./pages/Printers";
+import Cartridges from "./pages/Cartridges";
+import PDUs from "./pages/PDUs";
+import UnmanagedDevices from "./pages/UnmanagedDevices";
 
 
 
@@ -83,6 +88,11 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/assets" element={<Main content={ <AssetsDashboard />} />} />
         <Route path="/assets/computers" element={<Main content={ <Computers />} />} />
+        <Route path="/assets/devices" element={<Main content={ <Devices />} />} />
+        <Route path="/assets/printers" element={<Main content={ <Printers />} />} />
+        <Route path="/assets/cartridges" element={<Main content={ <Cartridges />} />} />
+        <Route path="/assets/pdus" element={<Main content={ <PDUs />} />} />
+        <Route path="/assets/unmanaged-devices" element={<Main content={ <UnmanagedDevices />} />} />
 
         <Route path="/computer-form" element={<Main content={ <ComputerForm />} />} />
         <Route path="/enclosures-form" element={<Main content={ <EnclosuresForm />} />} />

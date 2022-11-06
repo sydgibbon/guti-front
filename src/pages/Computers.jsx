@@ -4,7 +4,7 @@ import SearchForm from '../component/dashboard/SearchForm';
 
 const Computers = () => {
   const itemProps = [
-    "status",
+    "name",
     "manufacturers_id",
     "serial",
     "computertypes_id",
@@ -12,7 +12,7 @@ const Computers = () => {
     "states_id",
     "entities_id",
     "locations_id",
-    "last_inventory_update",
+    "date_mod",
     "comment",
   ];
   const columns = [
