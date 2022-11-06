@@ -33,9 +33,22 @@ const Donut = ({ asset }) => {
     }
   }, []);
 
+  const options = {
+    plugins:{
+     legend: {
+      display: false
+     }
+    }
+   }
+
   const dataSet = {
+    labels: [
+      'Laptop',
+      'Allinone',
+      'Desk'
+    ],
     datasets: [{
-        data: { data },
+        data: [ 300, 50, 15 ],
         backgroundColor: [
             'rgb(255, 99, 132)',
             'rgb(54, 162, 235)',
@@ -46,7 +59,7 @@ const Donut = ({ asset }) => {
 
   return (
     <div> 
-        <Doughnut className='' data={dataSet} />
+        <Doughnut className='' data={dataSet} options = {options} />
     </div>
   )
 }
