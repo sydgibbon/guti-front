@@ -3,9 +3,11 @@ import Login from "./component/Login";
 import Main from "./component/dashboard/Main";
 import AssetsDashboard from "./component/dashboard/AssetsDashboard";
 import axiosPrivate from "./api/axios";
+import Cables from "./pages/Cables";
 import Computers from "./pages/Computers";
 import Consumables from "./pages/Consumables";
 import Enclosures from "./pages/Enclosures";
+import Global from "./pages/Global";
 import Phones from "./pages/Phones";
 import Racks from "./pages/Racks";
 import ComputerForm from "./component/forms/assets/ComputerForm";
@@ -86,8 +88,10 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/assets" element={<Main content={ <AssetsDashboard />} />} />
         <Route path="/computers" element={<Main content={ <Computers />} />} />
+        <Route path="/assets/cables" element={<Main content={ <Cables />} />} />        
         <Route path="/assets/consumables" element={<Main content={ <Consumables />} />} />
         <Route path="/assets/enclosures" element={<Main content={ <Enclosures />} />} />
+        <Route path="/assets/global" element={<Main content={ <Global />} />} />
         <Route path="/assets/phones" element={<Main content={ <Phones />} />} />
         <Route path="/assets/racks" element={<Main content={ <Racks />} />} />
         <Route path="/computer-form" element={<Main content={ <ComputerForm />} />} />

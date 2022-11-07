@@ -2,19 +2,25 @@ import React from 'react';
 import SearchCard from '../component/dashboard/assets/SearchCard';
 import SearchForm from '../component/dashboard/SearchForm';
 
-const Enclosures = () => {
+const Global = () => {
   const itemProps = [
     "name",
+    "states_id",
+    "name",
+
   ];
   const columns = [
     "NAME",
+    "STATUS",
+    "ITEM TYPE",
+
   ];
   return (
-    <div className='enclosures'>
+    <div className='global'>
       <SearchForm />
-      <SearchCard asset="enclosures" columns={columns} itemProps={itemProps}/>
+      <SearchCard asset="global" columns={columns} itemProps={itemProps}/>
     </div>
   )
 }
 
-export default Enclosures
+export default Global
