@@ -9,7 +9,6 @@ import Software from "./pages/Software";
 import NetworkDevices from "./pages/NetworkDevice";
 import PassiveDevices from "./pages/PassiveDevices";
 import Simcards from "./pages/Simcards";
-
 import ComputerForm from "./component/forms/assets/ComputerForm";
 import EnclosuresForm from "./component/forms/assets/EnclosuresForm";
 import MonitorForm from "./component/forms/assets/MonitorForm";
@@ -93,7 +92,6 @@ function App() {
         <Route path="/assets/network-devices" element={<Main content={ <NetworkDevices />} />} />
         <Route path="/assets/passive-devices" element={<Main content={ <PassiveDevices />} />} />
         <Route path="/assets/simcards" element={<Main content={ <Simcards />} />} />
-
         <Route path="/computer-form" element={<Main content={ <ComputerForm />} />} />
         <Route path="/enclosures-form" element={<Main content={ <EnclosuresForm />} />} />
         <Route path="/monitor-form" element={<Main content={ <MonitorForm />} />} />
