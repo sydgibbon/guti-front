@@ -4,6 +4,11 @@ import Main from "./component/dashboard/Main";
 import AssetsDashboard from "./component/dashboard/AssetsDashboard";
 import axiosPrivate from "./api/axios";
 import Computers from "./pages/Computers";
+import Monitors from "./pages/Monitors";
+import Software from "./pages/Software";
+import NetworkDevices from "./pages/NetworkDevice";
+import PassiveDevices from "./pages/PassiveDevices";
+import Simcards from "./pages/Simcards";
 import ComputerForm from "./component/forms/assets/ComputerForm";
 import EnclosuresForm from "./component/forms/assets/EnclosuresForm";
 import MonitorForm from "./component/forms/assets/MonitorForm";
@@ -88,11 +93,16 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/assets" element={<Main content={ <AssetsDashboard />} />} />
         <Route path="/assets/computers" element={<Main content={ <Computers />} />} />
+        <Route path="/assets/monitors" element={<Main content={ <Monitors />} />} />
+        <Route path="/assets/software" element={<Main content={ <Software />} />} />
+        <Route path="/assets/network-devices" element={<Main content={ <NetworkDevices />} />} />
         <Route path="/assets/devices" element={<Main content={ <Devices />} />} />
         <Route path="/assets/printers" element={<Main content={ <Printers />} />} />
         <Route path="/assets/cartridges" element={<Main content={ <Cartridges />} />} />
         <Route path="/assets/pdus" element={<Main content={ <PDUs />} />} />
+        <Route path="/assets/passive-devices" element={<Main content={ <PassiveDevices />} />} />
         <Route path="/assets/unmanaged-devices" element={<Main content={ <UnmanagedDevices />} />} />
+        <Route path="/assets/simcards" element={<Main content={ <Simcards />} />} />
 
         <Route path="/computer-form" element={<Main content={ <ComputerForm />} />} />
         <Route path="/enclosures-form" element={<Main content={ <EnclosuresForm />} />} />
