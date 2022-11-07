@@ -3,12 +3,18 @@ import Login from "./component/Login";
 import Main from "./component/dashboard/Main";
 import AssetsDashboard from "./component/dashboard/AssetsDashboard";
 import axiosPrivate from "./api/axios";
+import Cables from "./pages/Cables";
 import Computers from "./pages/Computers";
 import Monitors from "./pages/Monitors";
 import Software from "./pages/Software";
 import NetworkDevices from "./pages/NetworkDevice";
 import PassiveDevices from "./pages/PassiveDevices";
 import Simcards from "./pages/Simcards";
+import Consumables from "./pages/Consumables";
+import Enclosures from "./pages/Enclosures";
+import Global from "./pages/Global";
+import Phones from "./pages/Phones";
+import Racks from "./pages/Racks";
 import ComputerForm from "./component/forms/assets/ComputerForm";
 import EnclosuresForm from "./component/forms/assets/EnclosuresForm";
 import MonitorForm from "./component/forms/assets/MonitorForm";
@@ -98,12 +104,18 @@ function App() {
         <Route path="/assets/network-devices" element={<Main content={ <NetworkDevices />} />} />
         <Route path="/assets/devices" element={<Main content={ <Devices />} />} />
         <Route path="/assets/printers" element={<Main content={ <Printers />} />} />
-        <Route path="/assets/cartridges" element={<Main content={ <Cartridges />} />} />
+        <Route path="/assets/cartridges" element={<Main content={ <Cartridges />} />} />        
+        <Route path="/assets/consumables" element={<Main content={ <Consumables />} />} />
+        <Route path="/assets/phones" element={<Main content={ <Phones />} />} />
+        <Route path="/assets/racks" element={<Main content={ <Racks />} />} />
+        <Route path="/assets/enclosures" element={<Main content={ <Enclosures />} />} />
         <Route path="/assets/pdus" element={<Main content={ <PDUs />} />} />
         <Route path="/assets/passive-devices" element={<Main content={ <PassiveDevices />} />} />
         <Route path="/assets/unmanaged-devices" element={<Main content={ <UnmanagedDevices />} />} />
+        <Route path="/assets/cables" element={<Main content={ <Cables />} />} />
         <Route path="/assets/simcards" element={<Main content={ <Simcards />} />} />
-
+        <Route path="/assets/global" element={<Main content={ <Global />} />} />
+        
         <Route path="/computer-form" element={<Main content={ <ComputerForm />} />} />
         <Route path="/enclosures-form" element={<Main content={ <EnclosuresForm />} />} />
         <Route path="/monitor-form" element={<Main content={ <MonitorForm />} />} />
