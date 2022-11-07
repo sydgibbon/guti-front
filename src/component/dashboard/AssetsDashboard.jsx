@@ -2,6 +2,7 @@ import React from 'react';
 import { TbRefreshDot, TbCopy, TbShare, TbTrash, TbEdit, TbMaximize, TbDeviceLaptop, TbApps, TbSitemap, TbServer, TbColumns, TbDeviceDesktop, TbKey, TbPrinter, TbPlug, TbPhone, TbSubtask, TbPlus } from 'react-icons/tb';
 import GraphGrid from './graph-grid/GraphGrid';
 import GridItem from './items-grid/GridItem';
+import Donut from '../graph/Donut';
 
 
 const AssetsDashboard = () => {
@@ -40,11 +41,11 @@ const AssetsDashboard = () => {
       </div>
 
       <div className='graphs-grid grid grid-cols-5 gap-5 pl-5 py-5'>
-        <GraphGrid icon={ <TbSubtask className='stroke-2 w-6 h-6' /> } text='Computers by Status' bgColor='bg-[#fbf7f7]' textColor='text-[#b76f6f]'/>
-        <GraphGrid icon={ <TbEdit className='stroke-2 w-6 h-6' /> } text='Computers by Manufacturers' bgColor='bg-[#f3f5f1]' textColor='text-[#8da07a]'/>
-        <GraphGrid icon={ <TbDeviceLaptop className='stroke-2 w-6 h-6' /> } text='Computers by Types' bgColor='bg-[#f5f9fa]' textColor='text-[#6da7b6]'/>
-        <GraphGrid icon={ <TbEdit className='stroke-2 w-6 h-6' /> } text='Network devices by Manufacturers' bgColor='bg-[#fcf8ed]' textColor='text-[#dfb43e]'/>
-        <GraphGrid icon={ <TbEdit className='stroke-2 w-6 h-6' /> } text='Monitors by Manufacturers' bgColor='bg-[#f9fbfb]' textColor='text-[#7fa9a9]'/>
+        <GraphGrid icon={ <TbSubtask className='stroke-2 w-6 h-6' /> } graph={ <Donut asset='computers' /> } text='Computers by Status' bgColor='bg-[#fbf7f7]' textColor='text-[#b76f6f]'/>
+        <GraphGrid icon={ <TbEdit className='stroke-2 w-6 h-6' /> } graph={ <Donut asset='computers'/> } text='Computers by Manufacturers' bgColor='bg-[#f3f5f1]' textColor='text-[#8da07a]'/>
+        <GraphGrid icon={ <TbDeviceLaptop className='stroke-2 w-6 h-6' /> } graph={ <Donut asset='computers'/> } text='Computers by Types' bgColor='bg-[#f5f9fa]' textColor='text-[#6da7b6]' />
+        <GraphGrid icon={ <TbEdit className='stroke-2 w-6 h-6' /> } graph={ <Donut asset='computers' /> } text='Network devices by Manufacturers' bgColor='bg-[#fcf8ed]' textColor='text-[#dfb43e]' />
+        <GraphGrid icon={ <TbEdit className='stroke-2 w-6 h-6' /> } graph={ <Donut asset='computers'/> } text='Monitors by Manufacturers' bgColor='bg-[#f9fbfb]' textColor='text-[#7fa9a9]'/>
       </div>
     </div>
   )
