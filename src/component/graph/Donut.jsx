@@ -8,8 +8,6 @@ Chart.register(
 );
 
 
- 
-
 const Donut = ({ asset }) => {
   const [checked, setChecked] = useState(false);
   const [loadingData, setLoadingData] = useState(true);
@@ -37,7 +35,8 @@ const Donut = ({ asset }) => {
     plugins:{
      legend: {
       display: false
-     }
+     },
+     weight: 3
     }
    }
 
@@ -59,7 +58,7 @@ const Donut = ({ asset }) => {
 
   return (
     <div> 
-        <Doughnut className='' data={dataSet} options = {options} />
+        <Doughnut className='' data={dataSet} options={options} />
     </div>
   )
 }
