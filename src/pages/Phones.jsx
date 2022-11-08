@@ -2,37 +2,33 @@ import React from 'react';
 import SearchCard from '../component/dashboard/assets/SearchCard';
 import SearchForm from '../component/dashboard/SearchForm';
 
-const Computers = () => {
+const Phones = () => {
   const itemProps = [
     "name",
-    "manufacturers_id",
-    "serial",
-    "computermodels_id",
-    "computertypes_id",
     "states_id",
-    "entities_id",
+    "manufacturers_id",
     "locations_id",
+    "phonetypes_id",
+    "phonemodels_id",
     "date_mod",
-    "comment",
+    "contact", 
   ];
   const columns = [
     "NAME",
     "STATUS",
     "MANUFACTURERS",
-    "SERIAL NUMBER",
-    "TYPES",
-    "MODEL",
-    "OPERATING SYSTEM - NAME",
     "LOCATIONS",
+    "TYPE",
+    "MODEL",
     "LAST UPDATE",
-    "COMPONENTS - PROCESSORS",
+    "ALTERNATE USERNAME",
   ];
   return (
-    <div className='computers'>
+    <div className='phones'>
       <SearchForm />
-      <SearchCard asset="computers" columns={columns} itemProps={itemProps}/>
+      <SearchCard asset="phones" columns={columns} itemProps={itemProps}/>
     </div>
   )
 }
 
-export default Computers
+export default Phones

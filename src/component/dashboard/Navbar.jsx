@@ -1,10 +1,10 @@
 import React from 'react'
 import {
-  BsHouse,
   BsSearch,
   BsChevronCompactDown,
 } from "react-icons/bs";
 import user from '../../images/user.png';
+import Breadcrumb from '../atomic/Breadcrumb';
 import NavbarMenu from './NavbarMenu';
 
 
@@ -13,8 +13,7 @@ function Navbar() {
     <div className='navbar-section w-full h-12 bg-light-gray flex justify-between border-b border-secondary-dark'>
       <div className='breadcrumb-section w-1/2 pl-2 items-center flex'>
         <div className='breadcrumb-content w-3/5 flex items-center border-r border-secondary-dark h-full'>
-          <BsHouse className='inline' />
-          <span className='text-sm ml-2 inline'>Home</span >
+        <Breadcrumb />
         </div>
         <NavbarMenu />
       </div>

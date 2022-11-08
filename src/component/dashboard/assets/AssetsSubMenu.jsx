@@ -38,116 +38,116 @@ const AssetsSubMenu = () => {
         icon={<BsLaptop className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("Computers") }
-        href="/computers"
+        href="/assets/computers"
       />
       <SidebarSubMenu
         text="Monitors"
         icon={<BsDisplay className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("Monitors") }
-        href="/monitors"
+        href="/assets/monitors"
       />
       <SidebarSubMenu
         text="Software"
         icon={<TbApps className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("Software") }
-        href="/software"
+        href="/assets/software"
       />
       <SidebarSubMenu
         text="Network devices"
         icon={<TbSitemap className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("Network devices") }
-        href="/network-devices"
+        href="/assets/network-devices"
       />
       <SidebarSubMenu
         text="Devices"
         icon={<TbUsb className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("Devices") }
-        href="/devices"
+        href="/assets/devices"
       />
       <SidebarSubMenu
         text="Printers"
         icon={<TbPrinter className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("Printers") }
-        href="/printers"
+        href="/assets/printers"
       />
       <SidebarSubMenu
         text="Cartridges"
         icon={<TbDropletFilled2 className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("Cartridges") }
-        href="/cartridges"
+        href="/assets/cartridges"
       />
       <SidebarSubMenu
         text="Consumables"
         icon={<BsBoxSeam className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("Consumables") }
-        href="/consumables"
+        href="/assets/consumables"
       />
       <SidebarSubMenu
         text="Phones"
         icon={<TbPhone className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("Phones") }
-        href="/phones"
+        href="/assets/phones"
       />
       <SidebarSubMenu
         text="Racks"
         icon={<TbServer className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("Racks") }
-        href="/racks"
+        href="/assets/racks"
       />
       <SidebarSubMenu
         text="Enclosures"
         icon={<TbColumns className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("Enclosures") }
-        href="/enclosures"
+        href="/assets/enclosures"
       />
       <SidebarSubMenu text="PDUs" icon={<TbPlug className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("PDUs") } 
-        href="/pdus" />
+        href="/assets/pdus" />
       <SidebarSubMenu
         text="Passive devices"
         icon={<TbBrowser className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("Passive devices") }
-        href="/passive-devices"
+        href="/assets/passive-devices"
       />
       <SidebarSubMenu
         text="Unmanaged devices"
         icon={<TbQuestionMark className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("Unmanaged devices") }
-        href="/unmanaged-devices"
+        href="/assets/unmanaged-devices"
       />
       <SidebarSubMenu
         text="Cables"
         icon={<TbLine className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("Cables") }
-        href="/cables"
+        href="/assets/cables"
       />
       <SidebarSubMenu
         text="Simcards"
         icon={<TbFileBarcode className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("Simcards") }
-        href="/simcards"
+        href="/assets/simcards"
       />
       <SidebarSubMenu
         text="Global"
         icon={<TbList className="block my-auto" />}
         selected={ isSelected }
         onClick={ () => toggle("Global") }
-        href="/global"
+        href="/assets/global"
       />
     </>
   );
