@@ -112,17 +112,8 @@ const SearchCard = ({ asset, columns}) => {
         </div>
       </div>
 
-      <DataTable columns={columns} data={data} />
+      <DataTable columns={columns} data={data} pagination paginationPerPage={20} paginationRowsPerPageOptions={[5, 10, 15, 20, 30, 40, 50, 100, 150, 200, 250, 500,750, 1000, 2000, 3000, 10000]} defaultSortFieldId={1} />
 
-      <div className="search-card-footer flex items-center w-full bg-medium-gray">
-        <div className="footer-section w-1/2 my-5 ">
-          <select className="w-24 ml-5 border-secondary-dark border rounded">
-            <option value="20">20</option>
-          </select>
-          <span className="ml-4 ">rows / page</span>
-        </div>
-        <span className="w-1/2 text-lg mt-5">Showing 1 to 1 of 1 Rows</span>
-      </div>
     </div>
   );
 };
