@@ -1,38 +1,53 @@
-import React from 'react';
-import SearchCard from '../component/dashboard/assets/SearchCard';
-import SearchForm from '../component/dashboard/SearchForm';
+import React from "react";
+import SearchCard from "../component/dashboard/assets/SearchCard";
+import SearchForm from "../component/dashboard/SearchForm";
 
 const Computers = () => {
-  const itemProps = [
-    "name",
-    "manufacturers_id",
-    "serial",
-    "computermodels_id",
-    "computertypes_id",
-    "states_id",
-    "entities_id",
-    "locations_id",
-    "date_mod",
-    "comment",
-  ];
   const columns = [
-    "NAME",
-    "STATUS",
-    "MANUFACTURERS",
-    "SERIAL NUMBER",
-    "TYPES",
-    "MODEL",
-    "OPERATING SYSTEM - NAME",
-    "LOCATIONS",
-    "LAST UPDATE",
-    "COMPONENTS - PROCESSORS",
+    {
+      name: "NAME",
+      selector: (row) => row.name,
+    },
+    {
+      name: "STATUS",
+      selector: (row) => row.states_id[0]["name"], // hace referencia al objeto que contiene states_id dentro (mirar consola chrome)
+    },
+    {
+      name: "MANUFACTURERS",
+      selector: (row) => row.manufacturers_id[0]["name"],
+    },
+    {
+      name: "SERIAL NUMBER",
+      selector: (row) => row.serial,
+    },
+    {
+      name: "TYPES",
+      selector: (row) => row.computertypes_id[0]["name"], // hace referencia al objeto que contiene states_id dentro (mirar consola chrome)
+    },
+    {
+      name: "OPERATING SYSTEM - NAME",
+      selector: (row) => row.computertypes_id[0]["name"], // codigo de momento hasta que se puedan relacionar sistemas operativos con computers
+    },
+    {
+      name: "LOCATIONS",
+      selector: (row) => row.locations_id[0]["name"], // hace referencia al objeto que contiene states_id dentro (mirar consola chrome)
+    },
+    {
+      name: "LAST UPDATE",
+      selector: (row) => row.date_mod, // hace referencia al objeto que contiene states_id dentro (mirar consola chrome)
+    },
+    {
+      name: "COMPONENTS - PROCESSORS",
+      selector: (row) => row.computertypes_id[0]["name"], // No anda en el GLPI, se verá como arreglar mas tarde
+    },
+    
   ];
   return (
-    <div className='computers'>
+    <div className="computers">
       <SearchForm />
-      <SearchCard asset="computers" columns={columns} itemProps={itemProps}/>
+      <SearchCard asset="computers" columns={columns} />
     </div>
-  )
-}
+  );
+};
 
-export default Computers
+export default Computers;
