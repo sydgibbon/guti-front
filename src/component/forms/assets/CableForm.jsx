@@ -4,7 +4,7 @@ import { TbPlus, TbList, TbColumns } from "react-icons/tb";
 const CableForm = () => {
   return (
     // <div> general
-    <div className="computer-form flex flex-col items-center m-4 border border-secondary-dark">
+    <div className="computer-form flex flex-col items-center m-4 border rounded-md border-secondary-dark">
       {/* <div> de Form Header */}
       {/* usé el "w-[calc(100%-1rem)]" para que quede separado en el eje X ayq eu con el mx no se podia darle margen */}
       <div className="form-header flex bg-medium-gray h-1/6 w-full  mt-2 mx-auto py-4 px-5 border-b border-secondary-dark">
@@ -104,8 +104,8 @@ const CableForm = () => {
       {/* <div> contenedor del Endpoint */}
       <div className="endpoint-form-container grid grid-cols-2 w-full bg-white">
         <div className="endpoint-content mb-4">
-          <div className="card-header py-4 px-5 ml-2 bg-secondary-dark  border-black rounded-tl h-1/6 ">
-            <h4 className="font-medium">Endpoint A</h4>
+          <div className="card-header py-4 px-5 ml-2 bg-primary-light bg-opacity-50 border-y border-primary-light rounded-tl h-1/6 ">
+            <h4 className="font-medium text-orange-600 ">Endpoint A</h4>
           </div>
 
           <form className="card-body p-4 px-5 grid grid-cols gap-4">
@@ -167,8 +167,8 @@ const CableForm = () => {
         </div>
 
         <div className="endpoint-content mb-4">
-          <div className="card-header p-4 px-5 mr-3 bg-secondary-dark rounded-tr-lg h-1/6">
-            <h4 className="font-medium">Endpoint B</h4>
+          <div className="card-header p-4 px-5 mr-3 bg-opacity-50 bg-primary-light border-y border-primary-light rounded-tr-lg h-1/6">
+            <h4 className="font-medium text-orange-600">Endpoint B</h4>
           </div>
           <form className="card-body p-4 px-5 grid grid-cols gap-4">
             <div className="input-asset ">
