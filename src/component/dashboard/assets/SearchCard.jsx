@@ -9,9 +9,9 @@ import {
 import { BsChevronCompactDown, BsArrow90DegDown } from "react-icons/bs";
 import Switch from "react-switch";
 import axiosPrivate from "../../../api/axios";
-import Table from "../../atomic/Table";
+import DataTable from "react-data-table-component";
 
-const SearchCard = ({asset, columns, itemProps }) => {
+const SearchCard = ({ asset, columns}) => {
   const [checked, setChecked] = useState(false);
   const [loadingData, setLoadingData] = useState(true);
   const [data, setData] = useState([]);
@@ -19,7 +19,7 @@ const SearchCard = ({asset, columns, itemProps }) => {
   useEffect(() => {
     async function getData() {
       await axiosPrivate
-        .get("http://127.0.0.1:8000/api/assets/"+asset+"/")
+        .get("http://127.0.0.1:8000/api/assets/" + asset + "/")
         .then((response) => {
           // check if the data is populated
           console.log(response.data);
@@ -112,17 +112,8 @@ const SearchCard = ({asset, columns, itemProps }) => {
         </div>
       </div>
 
-      <Table data={data} columns={columns} itemProps={itemProps} />
+      <DataTable columns={columns} data={data} pagination paginationPerPage={20} paginationRowsPerPageOptions={[5, 10, 15, 20, 30, 40, 50, 100, 150, 200, 250, 500,750, 1000, 2000, 3000, 10000]} defaultSortFieldId={1} />
 
-      <div className="search-card-footer flex items-center w-full bg-medium-gray">
-        <div className="footer-section w-1/2 my-5 ">
-          <select className="w-24 ml-5 border-secondary-dark border rounded">
-            <option value="20">20</option>
-          </select>
-          <span className="ml-4 ">rows / page</span>
-        </div>
-        <span className="w-1/2 text-lg mt-5">Showing 1 to 1 of 1 Rows</span>
-      </div>
     </div>
   );
 };
