@@ -31,9 +31,9 @@ const Consumables = () => {
   ];
   return (
     <div className="consumables">
-    <SearchForm />
-    <SearchCard asset="consumableitems" columns={columns} />
-  </div>
+      <SearchForm />
+      <SearchCard asset="consumableitems" columns={columns} />
+    </div>
   )
 }
 
