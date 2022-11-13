@@ -1,41 +1,56 @@
-import React from 'react';
-import SearchCard from '../component/dashboard/assets/SearchCard';
-import SearchForm from '../component/dashboard/SearchForm';
+import React from "react";
+import SearchCard from "../component/dashboard/assets/SearchCard";
+import SearchForm from "../component/dashboard/SearchForm";
 
 const Cables = () => {
-  const itemProps = [
-    "name",
-    "cabletypes_id",
-    "states_id",
-    "name",
-    "color",
-    "users_id_tech",
-    "users_id_tech",
-    "users_id_tech",
-    "sockets_id_endpoint_a",
-    "sockets_id_endpoint_b",
-
-
-  ];
   const columns = [
-    "NAME",
-    "CABLE TYPE",
-    "STATUS",
-    "INVENTORY/ASSET NUMBER",
-    "COLOR",
-    "TECHNICIAN IN CHARGE OF THE HARDWARE",
-    "ASSOCIATED ITEMS (ENDPOINT B)",
-    "ASSOCIATED ITEMS (ENDPOINT A)",
-    "SOCKET (ENDPOINT A)",
-    "SOCKET (ENDPOINT B)",
-
+    {
+      name: "NAME",
+      selector: (row) => row.name,
+    },
+    {
+      name: "TYPES",
+      selector: (row) => row.cabletypes_id[0]["name"], // hace referencia al objeto que contiene states_id dentro (mirar consola chrome)
+    },
+    {
+      name: "STATUS",
+      selector: (row) => row.states_id[0]["name"], // hace referencia al objeto que contiene states_id dentro (mirar consola chrome)
+    },
+    {
+      name: "INVENTORY NUMBER",
+      selector: (row) => row.otherserial,
+    },
+    {
+      name: "COLOR",
+      selector: (row) => row.color,
+    },
+    {
+      name: "TECHNICIAN IN CHARGE OF THE HARDWARE",
+      selector: (row) => row.users_id_tech[0]["name"],
+    },
+    {
+      name: "ASSOCIATED ITEM (ENDPOINT B)",
+      selector: (row) => row.itemtype_endpoint_b,
+    },
+    {
+      name: "ASSOCIATED ITEM (ENDPOINT A)",
+      selector: (row) => row.itemtype_endpoint_a,
+    },
+    {
+      name: "SOCKET (ENDPOINT B)",
+      selector: (row) => row.sockets_id_endpoint_b,
+    },
+    {
+      name: "SOCKET (ENDPOINT A)",
+      selector: (row) => row.sockets_id_endpoint_a,
+    },
   ];
   return (
-    <div className='cables'>
+    <div className="cables">
       <SearchForm />
-      <SearchCard asset="cables" columns={columns} itemProps={itemProps}/>
+      <SearchCard asset="cables" columns={columns} />
     </div>
-  )
-}
+  );
+};
 
-export default Cables
+export default Cables;

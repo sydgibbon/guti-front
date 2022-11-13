@@ -1,20 +1,21 @@
-import React from 'react';
-import SearchCard from '../component/dashboard/assets/SearchCard';
-import SearchForm from '../component/dashboard/SearchForm';
+import React from "react";
+import SearchCard from "../component/dashboard/assets/SearchCard";
+import SearchForm from "../component/dashboard/SearchForm";
 
 const Enclosures = () => {
-  const itemProps = [
-    "name",
-  ];
   const columns = [
-    "NAME",
+    {
+      name: "NAME",
+      selector: (row) => row.name,
+    },
+
   ];
   return (
-    <div className='enclosures'>
+    <div className="enclosures">
       <SearchForm />
-      <SearchCard asset="enclosures" columns={columns} itemProps={itemProps}/>
+      <SearchCard asset="enclosures" columns={columns} />
     </div>
-  )
-}
+  );
+};
 
-export default Enclosures
+export default Enclosures;

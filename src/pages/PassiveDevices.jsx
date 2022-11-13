@@ -3,21 +3,19 @@ import SearchCard from '../component/dashboard/assets/SearchCard';
 import SearchForm from '../component/dashboard/SearchForm';
 
 const PassiveDevices = () => {
-  // Va en minusculas
-  const itemProps = [
-   'name',
-  ];
-  // Va en mayusculas
   const columns = [
-    'NAME',
-
+    {
+      name: "NAME",
+      selector: (row) => row.name,
+    },
+    
   ];
   return (
-    <div className='passivedevices'>
+    <div className="passivedevices">
       <SearchForm />
-      <SearchCard asset="passivedcequipments" columns={columns} itemProps={itemProps}/>
+      <SearchCard asset="passivedcequipments" columns={columns} />
     </div>
-  )
-}
+  );
+};
 
-export default PassiveDevices
+export default PassiveDevices;
