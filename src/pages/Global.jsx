@@ -16,6 +16,7 @@ const Global = () => {
       name: "ITEM TYPE",
       selector: (row) => row.name,
     },
+    // revisar item Type
   ];
   return (
     // no encontré la tabla GLOBAL ni en glpi ni en nuestro soft
