@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import Login from "./component/Login";
 import Main from "./component/dashboard/Main";
 import AssetsDashboard from "./component/dashboard/AssetsDashboard";
@@ -98,6 +98,7 @@ function App() {
         <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/assets" element={<Main content={ <AssetsDashboard />} />} />
+        <Route path="/assets/dashboard" element={<Main content={ <AssetsDashboard />} />} />
         <Route path="/assets/computers" element={<Main content={ <Computers />} />} />
         <Route path="/assets/monitors" element={<Main content={ <Monitors />} />} />
         <Route path="/assets/software" element={<Main content={ <Software />} />} />
