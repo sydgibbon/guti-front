@@ -3,22 +3,26 @@ import SearchCard from '../component/dashboard/assets/SearchCard';
 import SearchForm from '../component/dashboard/SearchForm';
 
 const Global = () => {
-  const itemProps = [
-    "name",
-    "states_id",
-    "name",
-
-  ];
   const columns = [
-    "NAME",
-    "STATUS",
-    "ITEM TYPE",
-
+    {
+      name: "NAME",
+      selector: (row) => row.name,
+    },
+    {
+      name: "STATUS",
+      selector: (row) => row.states_id[0]["name"],
+    },
+    {
+      name: "ITEM TYPE",
+      selector: (row) => row.name,
+    },
+    // revisar item Type
   ];
   return (
-    <div className='global'>
+    // no encontré la tabla GLOBAL ni en glpi ni en nuestro soft
+    <div className="global">
       <SearchForm />
-      <SearchCard asset="global" columns={columns} itemProps={itemProps}/>
+      <SearchCard asset="global" columns={columns} />
     </div>
   )
 }
