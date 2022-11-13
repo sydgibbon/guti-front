@@ -1,22 +1,20 @@
-import React from 'react';
-import SearchCard from '../component/dashboard/assets/SearchCard';
-import SearchForm from '../component/dashboard/SearchForm';
+import React from "react";
+import SearchCard from "../component/dashboard/assets/SearchCard";
+import SearchForm from "../component/dashboard/SearchForm";
 
 const Simcards = () => {
-  // Va en minusculas
-  const itemProps = [
-    'id'
-  ];
-  // Va en mayusculas
   const columns = [
-    'ID'
+    {
+      name: "ID",
+      selector: (row) => row.id,
+    },
   ];
   return (
-    <div className='simcards'>
+    <div className="simcard">
       <SearchForm />
-      <SearchCard asset="devicesimcards" columns={columns} itemProps={itemProps}/>
+      <SearchCard asset="devicesimcards" columns={columns} />
     </div>
-  )
-}
+  );
+};
 
-export default Simcards
+export default Simcards;
