@@ -3,32 +3,44 @@ import SearchCard from '../component/dashboard/assets/SearchCard';
 import SearchForm from '../component/dashboard/SearchForm';
 
 const Monitors = () => {
-  // Va en minusculas
-  const itemProps = [
-    'name',
-    'states_id',
-    'manufacturers_id',
-    'locations_id',
-    'monitortypes_id',
-    'monitormodels_id',
-    'date_mod',
-    'contact'
-  ];
-  // Va en mayusculas
   const columns = [
-    'NAME',
-    'STATUS',
-    'MANUFACTURER',
-    'LOCATION',
-    'TYPE',
-    'MODEL',
-    'LAST UPDATE',
-    'ALTERNATE USERNAME', 
-  ];
+    {
+      name: "NAME",
+      selector: (row) => row.name,
+    },
+    {
+      name: "STATUS",
+      selector: (row) => row.states_id[0]["name"], 
+    },
+    {
+      name: "MANUFACTURERS",
+      selector: (row) => row.manufacturers_id[0]["name"],
+    },
+    {
+      name: "LOCATIONS",
+      selector: (row) => row.locations_id[0]["name"],
+    },
+    {
+      name: "TYPES",
+      selector: (row) => row.monitortypes_id[0]["name"],
+    },
+    {
+      name: "MODEL",
+      selector: (row) => row.monitortypes_id[0]["name"],
+    },
+    {
+      name: "LAST UPDATE",
+      selector: (row) => row.date_mod,
+    },
+    {
+      name: "ALTERNATE USERNAME",
+      selector: (row) => row.contact,
+    },
+  ]
   return (
     <div className='monitors'>
       <SearchForm />
-      <SearchCard asset="monitors" columns={columns} itemProps={itemProps}/>
+      <SearchCard asset="monitors" columns={columns}/>
     </div>
   )
 }

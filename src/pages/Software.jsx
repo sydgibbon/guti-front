@@ -3,28 +3,36 @@ import SearchCard from '../component/dashboard/assets/SearchCard';
 import SearchForm from '../component/dashboard/SearchForm';
 
 const Software = () => {
-  // Va en minusculas
-  const itemProps = [
-    'name',
-    'manufacturers_id',
-    'manufacturers_id', //software-version
-    'manufacturers_id', //version-operating system
-    'manufacturers_id', //number of installations
-    'manufacturers_id', //licenses - number of licenses
-  ];
-  // Va en mayusculas
   const columns = [
-    'NAME',
-    'PUBLISHER',
-    'VERSION-NAME',
-    'VERSION - OPERATING SYSTEM',
-    'NUMBER OF INSTALLATIONS',
-    'LICENSES - NUMBER OF LICENSES'
-  ];
+    {
+      name: "NAME",
+      selector: (row) => row.name,
+    },
+    {
+      name: "PUBLISHER",
+      selector: (row) => row.manufacturers_id[0]["name"], 
+    },
+    {
+      name: "VERSIONS - NAME",
+      selector: (row) => row.manufacturers_id["name"], //hay que trabajar la logica de versions
+    },
+    {
+      name: "VERSION - OPERATING SYSTEMS",
+      selector: (row) => row.manufacturers_id["name"], //hay que trabajar la logica de versions
+    },
+    {
+      name: "NUMBER OF INSTALLATIONS",
+      selector: (row) => row.manufacturers_id["name"], //hay que trabajar la logica de versions
+    },
+    {
+      name: "LICENSES - NUMBER OF LICESNSES",
+      selector: (row) => row.manufacturers_id["name"], //hay que trabajar la logica de licenses
+    },
+   ];
   return (
     <div className='software'>
       <SearchForm />
-      <SearchCard asset="softwares" columns={columns} itemProps={itemProps}/>
+      <SearchCard asset="softwares" columns={columns} />
     </div>
   )
 }

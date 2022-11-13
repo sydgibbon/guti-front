@@ -7,7 +7,7 @@ import Cables from "./pages/Cables";
 import Computers from "./pages/Computers";
 import Monitors from "./pages/Monitors";
 import Software from "./pages/Software";
-import NetworkDevices from "./pages/NetworkDevice";
+import NetworkDevices from "./pages/NetworkDevices";
 import PassiveDevices from "./pages/PassiveDevices";
 import Simcards from "./pages/Simcards";
 import Consumables from "./pages/Consumables";
