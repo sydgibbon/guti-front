@@ -105,7 +105,7 @@ const CableForm = () => {
       <div className="endpoint-form-container grid grid-cols-2 w-full bg-white">
         <div className="endpoint-content mb-4">
           <div className="card-header py-4 px-5 ml-2 bg-primary-light bg-opacity-50 border-y border-primary-light rounded-tl h-1/6 ">
-            <h4 className="font-medium text-orange-600 ">Endpoint A</h4>
+            <h4 className="font-medium">Endpoint A</h4>
           </div>
 
           <form className="card-body p-4 px-5 grid grid-cols gap-4">
@@ -168,7 +168,7 @@ const CableForm = () => {
 
         <div className="endpoint-content mb-4">
           <div className="card-header p-4 px-5 mr-3 bg-opacity-50 bg-primary-light border-y border-primary-light rounded-tr-lg h-1/6">
-            <h4 className="font-medium text-orange-600">Endpoint B</h4>
+            <h4 className="font-medium">Endpoint B</h4>
           </div>
           <form className="card-body p-4 px-5 grid grid-cols gap-4">
             <div className="input-asset ">
