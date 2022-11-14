@@ -68,37 +68,11 @@ const AssetsDashboard = () => {
       </div>
 
       <div className="graphs-grid grid-flow-row grid w-full grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 px-5 py-5">
-        <GraphGrid
-          icon={<TbSubtask className="stroke-2 w-6 h-6" />}
-          text="Computers by Status"
-          bgColor="bg-[#fbf7f7]"
-          textColor="text-[#b76f6f]"
-        />
-        <GraphGrid
-          icon={<TbEdit className="stroke-2 w-6 h-6" />}
-          text="Computers by Manufacturers"
-          bgColor="bg-[#f3f5f1]"
-          textColor="text-[#8da07a]"
-        />
-        <GraphGrid
-          icon={<TbDeviceLaptop className="stroke-2 w-6 h-6" />}
-          graph={<Donut asset="computers" />}
-          text="Computers by Types"
-          bgColor="bg-[#f5f9fa]"
-          textColor="text-[#6da7b6]"
-        />
-        <GraphGrid
-          icon={<TbEdit className="stroke-2 w-6 h-6" />}
-          text="Network devices by Manufacturers"
-          bgColor="bg-[#fcf8ed]"
-          textColor="text-[#dfb43e]"
-        />
-        <GraphGrid
-          icon={<TbEdit className="stroke-2 w-6 h-6" />}
-          text="Monitors by Manufacturers"
-          bgColor="bg-[#f9fbfb]"
-          textColor="text-[#7fa9a9]"
-        />
+        <GraphGrid icon={ <TbSubtask className='stroke-2 w-6 h-6' /> } graph={ <Donut asset='computers' itemProp='states_id' /> } text='Computers by Status' bgColor='bg-[#fbf7f7]' textColor='text-[#b76f6f]'/>
+        <GraphGrid icon={ <TbEdit className='stroke-2 w-6 h-6' /> } text='Computers by Manufacturers' bgColor='bg-[#f3f5f1]' textColor='text-[#8da07a]'/>
+        <GraphGrid icon={ <TbDeviceLaptop className='stroke-2 w-6 h-6' /> } graph={ <Donut asset='computers' itemProp='computertypes_id' /> } text='Computers by Types' bgColor='bg-[#f5f9fa]' textColor='text-[#6da7b6]' />
+        <GraphGrid icon={ <TbEdit className='stroke-2 w-6 h-6' /> } text='Network devices by Manufacturers' bgColor='bg-[#fcf8ed]' textColor='text-[#dfb43e]' />
+        <GraphGrid icon={ <TbEdit className='stroke-2 w-6 h-6' /> } text='Monitors by Manufacturers' bgColor='bg-[#f9fbfb]' textColor='text-[#7fa9a9]'/>
       </div>
     </div>
   );
