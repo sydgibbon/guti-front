@@ -219,6 +219,8 @@ export const assetsGridItems = [
     textColor: "#C53232",
     hoverBgColor: "#e39393",
     hoverBorderColor: "#D45656",
+    asset: "computers",
+    path: "/assets/computers",
     icon: function () {
       return <TbDeviceLaptop className="stroke-1 w-6 h-6" />;
     },
@@ -229,6 +231,8 @@ export const assetsGridItems = [
     textColor: "#70b11c",
     hoverBgColor: "#aee666",
     hoverBorderColor: "#8bdc24",
+    asset: "softwares",
+    path: "/assets/software",
     icon: function () {
       return <TbApps className="stroke-1 w-6 h-6" />;
     },
@@ -239,6 +243,8 @@ export const assetsGridItems = [
     textColor: "#4a7b96",
     hoverBgColor: "#95b7cb",
     hoverBorderColor: "#6195b2",
+    asset: "networkequipments",
+    path: "/assets/network-devices",
     icon: function () {
       return <TbSitemap className="stroke-1 w-6 h-6" />;
     },
@@ -249,6 +255,8 @@ export const assetsGridItems = [
     textColor: "#b77d0e",
     hoverBgColor: "#f1bb53",
     hoverBorderColor: "#e69d12",
+    asset: "racks",
+    path: "/assets/racks",
     icon: function () {
       return <TbServer className="stroke-1 w-6 h-6" />;
     },
@@ -259,6 +267,8 @@ export const assetsGridItems = [
     textColor: "#599a8b",
     hoverBgColor: "#a6ccc3",
     hoverBorderColor: "#76b0a2",
+    asset: "enclosures",
+    path: "/assets/enclosures",
     icon: function () {
       return <TbColumns className="stroke-1 w-6 h-6" />;
     },
@@ -269,6 +279,8 @@ export const assetsGridItems = [
     textColor: "#661919",
     hoverBgColor: "#cd3232",
     hoverBorderColor: "#8f2323",
+    asset: "monitors",
+    path: "/assets/monitors",
     icon: function () {
       return <TbDeviceDesktop className="stroke-1 w-6 h-6" />;
     },
@@ -279,6 +291,8 @@ export const assetsGridItems = [
     textColor: "#32431c",
     hoverBgColor: "#759c42",
     hoverBorderColor: "#4d662c",
+    asset: "softwarelicenses",
+    path: "/assets/dashboard",
     icon: function () {
       return <TbKey className="stroke-1 w-6 h-6" />;
     },
@@ -289,6 +303,8 @@ export const assetsGridItems = [
     textColor: "#153b52",
     hoverBgColor: "#2f84b8",
     hoverBorderColor: "#1f587b",
+    asset: "printers",
+    path: "/assets/printers",
     icon: function () {
       return <TbPrinter className="stroke-1 w-6 h-6" />;
     },
@@ -299,6 +315,8 @@ export const assetsGridItems = [
     textColor: "#624000",
     hoverBgColor: "#e29200",
     hoverBorderColor: "#956100",
+    asset: "pdus",
+    path: "/assets/pdus",
     icon: function () {
       return <TbPlug className="stroke-1 w-6 h-6" />;
     },
@@ -309,6 +327,8 @@ export const assetsGridItems = [
     textColor: "#376b5d",
     hoverBgColor: "#6eb4a2",
     hoverBorderColor: "#488d7b",
+    asset: "phones",
+    path: "/assets/phones",
     icon: function () {
       return <TbPhone className="stroke-1 w-6 h-6" />;
     },
