@@ -5,7 +5,7 @@ import { Chart, Tooltip, Title, ArcElement, Legend } from "chart.js";
 
 Chart.register(Tooltip, Title, ArcElement, Legend);
 
-const Donut = ({ asset }) => {
+const Donut = ({ asset, itemProp }) => {
   const [checked, setChecked] = useState(false);
   const [loadingData, setLoadingData] = useState(true);
   const [data, setData] = useState([]);
@@ -16,7 +16,6 @@ const Donut = ({ asset }) => {
         .get("http://127.0.0.1:8000/api/assets/" + asset + "/")
         .then((response) => {
           // check if the data is populated
-          console.log(response.data);
           setData(response.data);
           // you tell it that you had the result
           setLoadingData(false);
@@ -28,22 +27,23 @@ const Donut = ({ asset }) => {
     }
   }, []);
 
-  const getComputersPerType = (data) => {
-    let repeatedTypes = [];
+  const getItemByProp = () => {
+    let repeatedItemProp = [];
 
     data.map((obj) => {
-      repeatedTypes.push(obj.computertypes_id);
+      repeatedItemProp.push(obj[itemProp][0]);
     });
-    const objTypeCounter = {};
+    console.log(repeatedItemProp)
+    const objItemPropCounter = {};
 
-    repeatedTypes.forEach((element) => {
-      objTypeCounter[element] = (objTypeCounter[element] || 0) + 1;
+    repeatedItemProp.forEach((element) => {
+      objItemPropCounter[element] = (objItemPropCounter[element] || 0) + 1;
     });
-    return objTypeCounter;
+    return objItemPropCounter;
   };
-  let keys = Object.keys(getComputersPerType(data));
+  let keys = Object.keys(getItemByProp());
 
-  let values = Object.values(getComputersPerType(data));
+  let values = Object.values(getItemByProp());
 
 
   const options = {

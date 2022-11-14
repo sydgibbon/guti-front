@@ -22,7 +22,6 @@ const SearchCard = ({ asset, columns}) => {
         .get("http://127.0.0.1:8000/api/assets/" + asset + "/")
         .then((response) => {
           // check if the data is populated
-          console.log(response.data);
           setData(response.data);
           // you tell it that you had the result
           setLoadingData(false);

@@ -21,7 +21,6 @@ import {
 const AssetsSubMenu = () => {
   const [isSelected, setIsSelected] = useState(false);
   const toggle = (state) => {
-    console.log(state);
     setIsSelected(state);
   };
   return (

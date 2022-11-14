@@ -43,16 +43,13 @@ function App() {
     .get("http://127.0.0.1:8000/api/assets/computers/")
     .then(function (response) {
       // handle success
-      console.log(response);
     })
     .catch(function (error) {
       // handle error
-      console.log(error);
     });
 
   const postComputer = (e) => {
     e.preventDefault();
-    console.log("posting...");
     axiosPrivate({
       method: "POST",
       url: "http://127.0.0.1:8000/api/assets/computers/",
@@ -88,8 +85,6 @@ function App() {
         last_inventory_update: null,
       },
     })
-      .then((res) => console.log(res.data))
-      .catch((err) => console.log(err));
   };
   return (
     <Router>
