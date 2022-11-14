@@ -17,6 +17,7 @@ import Phones from "./pages/Phones";
 import Racks from "./pages/Racks";
 import ComputerForm from "./component/forms/assets/ComputerForm";
 import EnclosuresForm from "./component/forms/assets/EnclosuresForm";
+import CableForm from "./component/forms/assets/CableForm";
 import MonitorForm from "./component/forms/assets/MonitorForm";
 import SoftwareForm from "./component/forms/assets/SoftwareForm";
 import NetworkDeviceForm from "./component/forms/assets/NetworkDeviceForm";
@@ -118,6 +119,9 @@ function App() {
         <Route path="/assets/global" element={<Main content={ <Global />} />} />
         
         <Route path="/computer-form" element={<Main content={ <ComputerForm />} />} />
+        <Route path="/enclosure-form" element={<Main content={ <EnclosuresForm />} />} />
+        <Route path="/cable-form" element={<Main content={ <CableForm />} />} />
+        <Route path="/computers" element={<Main content={ <Computers />} />} />
         <Route path="/enclosures-form" element={<Main content={ <EnclosuresForm />} />} />
         <Route path="/monitor-form" element={<Main content={ <MonitorForm />} />} />
         <Route path="/software-form" element={<Main content={ <SoftwareForm />} />} />
