@@ -9,6 +9,14 @@ import {
   BsShieldCheck,
   BsGear,
   BsSpeedometer,
+  BsExclamationCircle,
+  BsExclamationTriangle,
+  BsFillBarChartFill,
+  BsPerson,
+  BsPeople,
+  BsLayers,
+  BsBook,
+  BsPersonBadge,
 } from "react-icons/bs";
 import {
   TbApps,
@@ -28,6 +36,13 @@ import {
   TbServer,
   TbSitemap,
   TbUsb,
+  TbPlus,
+  TbCheckupList,
+  TbCalendarTime,
+  TbHistory,
+  TbNotes,
+  TbMessageReport,
+  TbClipboardCheck,
 } from "react-icons/tb";
 
 export const appItems = [
@@ -179,6 +194,71 @@ export const appItems = [
           return <BsHeadset className="block my-auto" />;
         },
         link: "/assistance",
+        itemContent: [
+          {
+            name: "Dashboard",
+            icon: function () {
+              return <BsSpeedometer className="block my-auto" />;
+            },
+            link: "/assistance/dashboard",
+          },
+          {
+            name: "Tickets",
+            icon: function () {
+              return <BsExclamationCircle className="block my-auto" />;
+            },
+            link: "/assistance/tickets",
+          },
+          {
+            name: "Create Ticket",
+            icon: function () {
+              return <TbPlus className="block my-auto" />;
+            },
+            link: "/ticket-form",
+          },
+          {
+            name: "Problems",
+            icon: function () {
+              return <BsExclamationTriangle className="block my-auto" />;
+            },
+            link: "/assistance/problems",
+          },
+          {
+            name: "Changes",
+            icon: function () {
+              return <TbCheckupList className="block my-auto" />;
+            },
+            link: "/assistance/changes",
+          },
+          {
+            name: "Planing",
+            icon: function () {
+              return <TbCalendarTime className="block my-auto" />;
+            },
+            link: "/assistance/planing",
+          },
+          {
+            name: "Statistics",
+            icon: function () {
+              return <BsFillBarChartFill className="block my-auto" />;
+            },
+            link: "/assistance/statistics",
+          },
+          {
+            name: "Recurring Tickets",
+            icon: function () {
+              return <TbHistory className="block my-auto" />;
+            },
+            link: "/assistance/recurring-tickets",
+          },
+          {
+            name: "Reocurring Changes",
+            icon: function () {
+              return <TbHistory className="block my-auto" />;
+            },
+            link: "/assistance/recurring-changes",
+          },
+        ],
       },
       {
         name: "Management",
@@ -200,6 +280,71 @@ export const appItems = [
           return <BsShieldCheck className="block my-auto" />;
         },
         link: "/administration",
+        itemContent: [
+          {
+            name: "Users",
+            icon: function () {
+              return <BsPerson className="block my-auto" />;
+            },
+            link: "/administration/users",
+          },
+          {
+            name: "Groups",
+            icon: function () {
+              return <BsPeople className="block my-auto" />;
+            },
+            link: "/administration/groups",
+          },
+          {
+            name: "Entities",
+            icon: function () {
+              return <BsLayers className="block my-auto" />;
+            },
+            link: "/administration/entities",
+          },
+          {
+            name: "Rules",
+            icon: function () {
+              return <BsBook className="block my-auto" />;
+            },
+            link: "/administration/rules",
+          },
+          {
+            name: "Dictionaries",
+            icon: function () {
+              return <BsBook className="block my-auto" />;
+            },
+            link: "/administration/dictionaries",
+          },
+          {
+            name: "Profiles",
+            icon: function () {
+              return <BsPersonBadge className="block my-auto" />;
+            },
+            link: "/administration/profiles",
+          },
+          {
+            name: "Notification Queue",
+            icon: function () {
+              return <TbMessageReport className="block my-auto" />;
+            },
+            link: "/administration/notification-queue",
+          },
+          {
+            name: "Logs",
+            icon: function () {
+              return <TbNotes className="block my-auto" />;
+            },
+            link: "/administration/logs",
+          },
+          {
+            name: "Inventory",
+            icon: function () {
+              return <TbClipboardCheck className="block my-auto" />;
+            },
+            link: "/administration/inventory",
+          },
+        ],
       },
       {
         name: "Setup",
