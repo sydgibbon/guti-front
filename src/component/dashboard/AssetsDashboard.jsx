@@ -102,6 +102,7 @@ const AssetsDashboard = () => {
         />
         <GraphGrid
           icon={<TbEdit className="stroke-2 w-6 h-6" />}
+          graph={<Donut asset="monitors" itemProp="manufacturers_id"/>}
           text="Monitors by Manufacturers"
           bgColor="bg-[#f9fbfb]"
           textColor="text-[#7fa9a9]"
