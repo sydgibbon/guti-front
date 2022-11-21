@@ -9,6 +9,16 @@ import {
   BsShieldCheck,
   BsGear,
   BsSpeedometer,
+  // Management
+  BsPersonFill,
+  // Setup
+  BsListNested,
+  BsUiChecks,
+  BsUiChecksGrid,
+  BsFillPlayBtnFill,
+  BsPersonCheckFill,
+  BsFillInboxFill,
+  BsLink45Deg
 } from "react-icons/bs";
 import {
   TbApps,
@@ -28,6 +38,33 @@ import {
   TbServer,
   TbSitemap,
   TbUsb,
+  // Management
+  TbLicense,
+  TbReportMoney,
+  TbPackage,
+  TbSignature,
+  TbFileText,
+  TbPhoneCalling,
+  TbCertificate,
+  TbBuildingWarehouse,
+  TbVectorTriangle,
+  TbWorld,
+  TbMouse2,
+  TbDatabase,
+  // Tools
+  TbIdBadge2,
+  TbWallpaper,
+  TbWifi,
+  TbBooks,
+  TbId,
+  TbFileTime,
+  TbChecklist,
+  // Setup
+  TbComponents,
+  TbBellRinging,
+  TbAdjustments,
+  TbPuzzle,
+
 } from "react-icons/tb";
 
 export const appItems = [
@@ -174,7 +211,7 @@ export const appItems = [
         ],
       },
       {
-        name: "Assistance",
+        name: "assistance",
         icon: function () {
           return <BsHeadset className="block my-auto" />;
         },
@@ -186,6 +223,99 @@ export const appItems = [
           return <BsWallet2 className="block my-auto" />;
         },
         link: "/management",
+        itemContent: [
+          {
+            name: "Licenses",
+            icon: function () {
+              return <TbLicense className="block my-auto" />;
+            },
+            link: "/management/Licenses",
+          },
+          {
+            name: "Budgets",
+            icon: function () {
+              return <TbReportMoney className="block my-auto" />;
+            },
+            link: "/management/Budgets",
+          },
+          {
+            name: "Suppliers",
+            icon: function () {
+              return <TbPackage className="block my-auto" />;
+            },
+            link: "/management/Suppliers",
+          },
+          {
+            name: "Contacts",
+            icon: function () {
+              return <BsPersonFill className="block my-auto" />;
+            },
+            link: "/management/Contacts",
+          },
+          {
+            name: "Contracts",
+            icon: function () {
+              return <TbSignature className="block my-auto" />;
+            },
+            link: "/management/Contracts",
+          },
+          {
+            name: "Documents",
+            icon: function () {
+              return <TbFileText className="block my-auto" />;
+            },
+            link: "/management/Documents",
+          },
+          {
+            name: "Lines",
+            icon: function () {
+              return <TbPhoneCalling className="block my-auto" />;
+            },
+            link: "/management/Lines",
+          },
+          {
+            name: "Certificates",
+            icon: function () {
+              return <TbCertificate className="block my-auto" />;
+            },
+            link: "/management/Certificates",
+          },
+          {
+            name: "Data centers",
+            icon: function () {
+              return <TbBuildingWarehouse className="block my-auto" />;
+            },
+            link: "/management/Data centers",
+          },
+          {
+            name: "Clusters",
+            icon: function () {
+              return <TbVectorTriangle className="block my-auto" />;
+            },
+            link: "/management/Clusters",
+          },
+          {
+            name: "Domains",
+            icon: function () {
+              return <TbWorld className="block my-auto" />;
+            },
+            link: "/management/Domains",
+          },
+          {
+            name: "Appliances",
+            icon: function () {
+              return <TbMouse2 className="block my-auto" />;
+            },
+            link: "/management/Appliances",
+          },
+          {
+            name: "Databases",
+            icon: function () {
+              return <TbDatabase className="block my-auto" />;
+            },
+            link: "/management/Databases",
+          },
+        ]
       },
       {
         name: "Tools",
@@ -193,6 +323,57 @@ export const appItems = [
           return <BsBriefcase className="block my-auto" />;
         },
         link: "/tools",
+        itemContent: [
+          {
+            name: "Projects",
+            icon: function () {
+              return <TbIdBadge2 className="block my-auto" />;
+            },
+            link: "/tools/projects",
+          },
+          {
+            name: "Reminders",
+            icon: function () {
+              return <TbWallpaper className="block my-auto" />;
+            },
+            link: "/tools/reminders",
+          },
+          {
+            name: "RSS feed",
+            icon: function () {
+              return <TbWifi className="block my-auto" />;
+            },
+            link: "/tools/rss-feed",
+          },
+          {
+            name: "Knowledge Base",
+            icon: function () {
+              return <TbBooks className="block my-auto" />;
+            },
+            link: "/tools/knowledge-base",
+          },
+          {
+            name: "Reservations",
+            icon: function () {
+              return <TbId className="block my-auto" />;
+            },
+            link: "/tools/reservations",
+          },
+          {
+            name: "Reports",
+            icon: function () {
+              return <TbFileTime className="block my-auto" />;
+            },
+            link: "/tools/reports",
+          },
+          {
+            name: "Saved searches",
+            icon: function () {
+              return <TbChecklist className="block my-auto" />;
+            },
+            link: "/tools/saved-searches",
+          },
+        ]
       },
       {
         name: "Administration",
@@ -207,6 +388,85 @@ export const appItems = [
           return <BsGear className="block my-auto" />;
         },
         link: "/setup",
+        itemContent: [
+          {
+            name: "Dropdowns",
+            icon: function () {
+              return <BsListNested className="block my-auto" />;
+            },
+            link: "/setup/Dropdowns",
+          },
+          {
+            name: "Components",
+            icon: function () {
+              return <TbComponents className="block my-auto" />;
+            },
+            link: "/setup/Components",
+          },
+          {
+            name: "Notifications",
+            icon: function () {
+              return <TbBellRinging className="block my-auto" />;
+            },
+            link: "/setup/Notifications",
+          },
+          {
+            name: "Service levels",
+            icon: function () {
+              return <BsUiChecks className="block my-auto" />;
+            },
+            link: "/setup/service-levels",
+          },
+          {
+            name: "General",
+            icon: function () {
+              return <TbAdjustments className="block my-auto" />;
+            },
+            link: "/setup/general",
+          },
+          {
+            name: "Fields Uniqueness",
+            icon: function () {
+              return <BsUiChecksGrid className="block my-auto" />;
+            },
+            link: "/setup/fields-uniqueness",
+          },
+          {
+            name: "Automatic actions",
+            icon: function () {
+              return <BsFillPlayBtnFill className="block my-auto" />;
+            },
+            link: "/setup/automatic-actions",
+          },
+          {
+            name: "Authentication",
+            icon: function () {
+              return <BsPersonCheckFill className="block my-auto" />;
+            },
+            link: "/setup/authentication",
+          },
+          {
+            name: "Receivers",
+            icon: function () {
+              return <BsFillInboxFill className="block my-auto" />;
+            },
+            link: "/setup/receivers",
+          },
+          {
+            name: "External links",
+            icon: function () {
+              return <BsLink45Deg className="block my-auto" />;
+            },
+            link: "/setup/external-links",
+          },
+          {
+            name: "Plugins",
+            icon: function () {
+              return <TbPuzzle className="block my-auto" />;
+            },
+            link: "/setup/plugins",
+          },
+        ]
       },
     ],
   },
