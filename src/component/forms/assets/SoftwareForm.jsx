@@ -10,7 +10,7 @@ const SoftwareForm = () => {
 					<p className='text-base my-auto font-medium'>New Item - Software</p>
 				</div>
 
-				<div className='form-container h-full w-full md:p-4 border border-secondary-dark bg-white flex md:justify-between md:flex-row flex-col'>
+				<div className='form-container h-full w-full md:px-4 py-4 border border-secondary-dark bg-white flex md:justify-between md:flex-row flex-col'>
 					<div className='first-form md:w-1/2 mx-4'>
 						<div className='input-name mb-4'>
 							<p className='text-sm mb-2'>Name</p>
