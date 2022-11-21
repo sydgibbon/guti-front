@@ -14,15 +14,15 @@ const Consumables = () => {
     },
     {
       name: "TYPE",
-      selector: (row) => row.consumableitemtypes_id[0]["name"],
+      selector: (row) => row.consumableitemtypes["name"],
     },
     {
       name: "MANUFACTURERS",
-      selector: (row) => row.manufacturers_id[0]["name"],
+      selector: (row) => row.manufacturers["name"],
     },
     {
       name: "LOCATIONS",
-      selector: (row) => row.locations_id[0]["name"],
+      selector: (row) => row.locations["name"],
     },
     {
       name: "CONSUMABLES",

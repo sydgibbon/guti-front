@@ -10,23 +10,23 @@ const Phones = () => {
     },
     {
       name: "STATUS",
-      selector: (row) => row.states_id[0]["name"],
+      selector: (row) => row.states["name"],
     },
     {
       name: "MANUFACTURERS",
-      selector: (row) => row.manufacturers_id[0]["name"],
+      selector: (row) => row.manufacturers["name"],
     },
     {
       name: "LOCATIONS",
-      selector: (row) => row.locations_id[0]["name"],
+      selector: (row) => row.locations["name"],
     },
     {
       name: "TYPE",
-      selector: (row) => row.phonetypes_id[0]["name"],
+      selector: (row) => row.phonetypes["name"],
     },
     {
       name: "MODEL",
-      selector: (row) => row.phonemodels_id[0]["name"],
+      selector: (row) => row.phonemodels["name"],
     },
     {
       name: "LAST UPDATE",

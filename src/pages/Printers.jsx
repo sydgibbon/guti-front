@@ -10,23 +10,23 @@ const Printers = () => {
         },
         {
           name: "STATUS",
-          selector: (row) => row.states_id[0]["name"], // hace referencia al objeto que contiene states_id dentro (mirar consola chrome)
+          selector: (row) => row.states["name"], // hace referencia al objeto que contiene states dentro (mirar consola chrome)
         },
         {
           name: "MANUFACTURERS",
-          selector: (row) => row.manufacturers_id[0]["name"],
+          selector: (row) => row.manufacturers["name"],
         },
         {
           name: "LOCATIONS",
-          selector: (row) => row.locations_id[0]["name"], 
+          selector: (row) => row.locations["name"], 
         },
         {
           name: "TYPES",
-          selector: (row) => row.printertypes_id[0]["name"], 
+          selector: (row) => row.printertypes["name"], 
         },
         {
           name: "MODEL",
-          selector: (row) => row.printermodels_id[0]["name"]
+          selector: (row) => row.printermodels["name"]
         },
         {
           name: "LAST UPDATE",

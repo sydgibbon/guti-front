@@ -10,23 +10,23 @@ const Monitors = () => {
     },
     {
       name: "STATUS",
-      selector: (row) => row.states_id[0]["name"], 
+      selector: (row) => row.states["name"], 
     },
     {
       name: "MANUFACTURERS",
-      selector: (row) => row.manufacturers_id[0]["name"],
+      selector: (row) => row.manufacturers["name"],
     },
     {
       name: "LOCATIONS",
-      selector: (row) => row.locations_id[0]["name"],
+      selector: (row) => row.locations["name"],
     },
     {
       name: "TYPES",
-      selector: (row) => row.monitortypes_id[0]["name"],
+      selector: (row) => row.monitortypes["name"],
     },
     {
       name: "MODEL",
-      selector: (row) => row.monitortypes_id[0]["name"],
+      selector: (row) => row.monitortypes["name"],
     },
     {
       name: "LAST UPDATE",

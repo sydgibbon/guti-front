@@ -53,7 +53,7 @@ const BarChart = ({ asset, itemProp, title, color }) => {
     const objItemPropCounter = {};
 
     repeatedItemProp.forEach((element) => {
-      objItemPropCounter[element[0].name] =
+      objItemPropCounter[element.name] =
         (objItemPropCounter[element] || 0) + 1;
     });
     return objItemPropCounter;

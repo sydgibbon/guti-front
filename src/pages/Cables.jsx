@@ -10,11 +10,11 @@ const Cables = () => {
     },
     {
       name: "TYPES",
-      selector: (row) => row.cabletypes_id[0]["name"], // hace referencia al objeto que contiene states_id dentro (mirar consola chrome)
+      selector: (row) => row.cabletypes["name"], // hace referencia al objeto que contiene states dentro (mirar consola chrome)
     },
     {
       name: "STATUS",
-      selector: (row) => row.states_id[0]["name"], // hace referencia al objeto que contiene states_id dentro (mirar consola chrome)
+      selector: (row) => row.states["name"], // hace referencia al objeto que contiene states dentro (mirar consola chrome)
     },
     {
       name: "INVENTORY NUMBER",
@@ -26,7 +26,7 @@ const Cables = () => {
     },
     {
       name: "TECHNICIAN IN CHARGE OF THE HARDWARE",
-      selector: (row) => row.users_id_tech[0]["name"],
+      selector: (row) => row.users_tech["name"],
     },
     {
       name: "ASSOCIATED ITEM (ENDPOINT B)",
@@ -38,11 +38,11 @@ const Cables = () => {
     },
     {
       name: "SOCKET (ENDPOINT B)",
-      selector: (row) => row.sockets_id_endpoint_b,
+      selector: (row) => row.sockets_endpoint_b,
     },
     {
       name: "SOCKET (ENDPOINT A)",
-      selector: (row) => row.sockets_id_endpoint_a,
+      selector: (row) => row.sockets_endpoint_a,
     },
   ];
   return (
