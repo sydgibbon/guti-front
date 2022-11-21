@@ -10,19 +10,19 @@ const NetworkDevices = () => {
     },
     {
       name: "STATUS",
-      selector: (row) => row.states_id[0]["name"], // hace referencia al objeto que contiene states_id dentro (mirar consola chrome)
+      selector: (row) => row.states["name"], // hace referencia al objeto que contiene states dentro (mirar consola chrome)
     },
     {
       name: "MANUFACTURERS",
-      selector: (row) => row.manufacturers_id[0]["name"],
+      selector: (row) => row.manufacturers["name"],
     },
     {
       name: "LOCATIONS",
-      selector: (row) => row.locations_id[0]["name"], // hace referencia al objeto que contiene states_id dentro (mirar consola chrome)
+      selector: (row) => row.locations["name"], // hace referencia al objeto que contiene states dentro (mirar consola chrome)
     },
     {
       name: "TYPES",
-      selector: (row) => row.networkequipmenttypes_id[0]["name"], // hace referencia al objeto que contiene states_id dentro (mirar consola chrome)
+      selector: (row) => row.networkequipmenttypes["name"], // hace referencia al objeto que contiene states dentro (mirar consola chrome)
     },
     {
       name: "MODEL",

@@ -74,28 +74,28 @@ const AssetsDashboard = () => {
       <div className="graphs-grid grid-flow-row grid w-full grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-5 px-5 py-5">
         <GraphGrid
           icon={<TbSubtask className="stroke-2 w-6 h-6" />}
-          graph={<Donut asset="computers" itemProp="states_id" />}
+          graph={<Donut asset="computers" itemProp="states" />}
           text="Computers by Status"
           bgColor="bg-[#fbf7f7]"
           textColor="text-[#b76f6f]"
         />
         <GraphGrid
           icon={<TbEdit className="stroke-2 w-6 h-6" />}
-          graph={<BarChart asset="computers" itemProp="manufacturers_id" color="rgb(255, 99, 132)"/>}
+          graph={<BarChart asset="computers" itemProp="manufacturers" color="rgb(255, 99, 132)"/>}
           text="Computers by Manufacturers"
           bgColor="bg-[#f3f5f1]"
           textColor="text-[#8da07a]"
         />
         <GraphGrid
           icon={<TbDeviceLaptop className="stroke-2 w-6 h-6" />}
-          graph={<Donut asset="computers" itemProp="computertypes_id"/>}
+          graph={<Donut asset="computers" itemProp="computertypes"/>}
           text="Computers by Types"
           bgColor="bg-[#f5f9fa]"
           textColor="text-[#6da7b6]"
         />
         <GraphGrid
           icon={<TbEdit className="stroke-2 w-6 h-6" />}
-          graph={<BarChart asset="networkequipments" itemProp="manufacturers_id" color="rgb(54, 162, 235)" />}
+          graph={<BarChart asset="networkequipments" itemProp="manufacturers" color="rgb(54, 162, 235)" />}
           text="Network devices by Manufacturers"
           bgColor="bg-[#fcf8ed]"
           textColor="text-[#dfb43e]"

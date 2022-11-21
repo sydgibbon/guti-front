@@ -10,7 +10,7 @@ const Global = () => {
     },
     {
       name: "STATUS",
-      selector: (row) => row.states_id[0]["name"],
+      selector: (row) => row.states["name"],
     },
     {
       name: "ITEM TYPE",

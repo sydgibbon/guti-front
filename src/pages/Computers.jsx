@@ -10,11 +10,11 @@ const Computers = () => {
     },
     {
       name: "STATUS",
-      selector: (row) => row.states_id[0]["name"], // hace referencia al objeto que contiene states_id dentro (mirar consola chrome)
+      selector: (row) => row.states["name"], // hace referencia al objeto que contiene states dentro (mirar consola chrome)
     },
     {
       name: "MANUFACTURERS",
-      selector: (row) => row.manufacturers_id[0]["name"],
+      selector: (row) => row.manufacturers["name"],
     },
     {
       name: "SERIAL NUMBER",
@@ -22,23 +22,23 @@ const Computers = () => {
     },
     {
       name: "TYPES",
-      selector: (row) => row.computertypes_id[0]["name"], // hace referencia al objeto que contiene states_id dentro (mirar consola chrome)
+      selector: (row) => row.computertypes["name"], // hace referencia al objeto que contiene states dentro (mirar consola chrome)
     },
     {
       name: "OPERATING SYSTEM - NAME",
-      selector: (row) => row.computertypes_id[0]["name"], // codigo de momento hasta que se puedan relacionar sistemas operativos con computers
+      selector: (row) => row.computertypes["name"], // codigo de momento hasta que se puedan relacionar sistemas operativos con computers
     },
     {
       name: "LOCATIONS",
-      selector: (row) => row.locations_id[0]["name"], // hace referencia al objeto que contiene states_id dentro (mirar consola chrome)
+      selector: (row) => row.locations["name"], // hace referencia al objeto que contiene states dentro (mirar consola chrome)
     },
     {
       name: "LAST UPDATE",
-      selector: (row) => row.date_mod, // hace referencia al objeto que contiene states_id dentro (mirar consola chrome)
+      selector: (row) => row.date_mod, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
     },
     {
       name: "COMPONENTS - PROCESSORS",
-      selector: (row) => row.computertypes_id[0]["name"], // No anda en el GLPI, se verá como arreglar mas tarde
+      selector: (row) => row.computertypes["name"], // No anda en el GLPI, se verá como arreglar mas tarde
     },
     
   ];
