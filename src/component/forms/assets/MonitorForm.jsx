@@ -8,14 +8,14 @@ const MonitorForm = () => {
     <div className="computer-form flex flex-col items-center divide-y divide-y-reverse m-4">
       {/* <div> de Form Header */}
       {/* usé el "w-[calc(100%-1rem)]" para que quede separado en el eje X ayq eu con el mx no se podia darle margen */}
-      <div className="form-header flex bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5">
+      <div className="form-header justify-center md:justify-start flex bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5">
         <BsDisplay className="inline my-auto mx-2 w-6 h-5" />
         <p className="text-base my-auto font-medium">New Item - Monitor</p>
       </div>
 
       {/* <div> contenedor del Form */}
       <div className=" form-container h-full w-full p-4 border border-secondary-dark bg-white">
-        <form className="grid grid-cols-2 gap-4 ">
+        <form className="grid grid-cols-1 md:grid-cols-2 gap-4 ">
           <div className="input-name">
             <p className="text-sm mb-2">Name</p>
             <input className="w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray"></input>
@@ -217,7 +217,7 @@ const MonitorForm = () => {
           </div>
           <div className="input-group-in-charge">
             <p className="text-sm mb-2">Ports</p>
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap flex-col md:flex-row ml-4 md:ml-0">
               <div className="px-4">
                 <input type="checkbox" className="mr-2"></input>
                 <span>Microphone</span>
@@ -256,8 +256,8 @@ const MonitorForm = () => {
       </div>
 
       {/* <div> del footer */}
-      <div className="form-footer flex h-1/6 w-full border rounded-b-md border-secondary-dark justify-end mb-2 bg-white py-4 px-5">
-        <button className="flex items-center mr-4 border-2 border-orange-dark rounded-md bg-primary-light text-white hover:border-black py-2 px-4">
+      <div className="form-footer flex h-1/6 w-full border rounded-b-md border-secondary-dark justify-center md:justify-end mb-2 bg-white py-4 px-5 ">
+        <button className="flex items-center md:mr-4 border-2 border-orange-dark rounded-md bg-primary-light text-white hover:border-black py-2 px-4">
           <TbPlus className="mr-1" />
           <p className="text-lg font-medium">Add</p>
         </button>
