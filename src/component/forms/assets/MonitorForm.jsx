@@ -8,7 +8,7 @@ const MonitorForm = () => {
     <div className="computer-form flex flex-col items-center divide-y divide-y-reverse m-4">
       {/* <div> de Form Header */}
       {/* usé el "w-[calc(100%-1rem)]" para que quede separado en el eje X ayq eu con el mx no se podia darle margen */}
-      <div className="form-header flex bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5">
+      <div className="form-header justify-center md:justify-start flex bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5">
         <BsDisplay className="inline my-auto mx-2 w-6 h-5" />
         <p className="text-base my-auto font-medium">New Item - Monitor</p>
       </div>
