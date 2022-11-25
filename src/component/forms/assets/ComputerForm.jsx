@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsLaptop } from "react-icons/bs";
 import { TbPlus, TbList, TbMap } from "react-icons/tb";
+import LocationsSubForm from "../../subforms/LocationsSubForm";
 
 const ComputerForm = () => {
+  const [ButtonPopup, setButtonPopup] = useState(false);
+
   return (
     // <div> general
     <div className="computer-form flex flex-col items-center m-4">
+      <LocationsSubForm trigger={ButtonPopup} setTrigger={setButtonPopup}></LocationsSubForm>
       <form className="w-full divide-y divide-y-reverse">
         {/* <div> de Form Header */}
         <div className="form-header flex justify-center md:justify-start bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5">
@@ -23,10 +27,10 @@ const ComputerForm = () => {
             <div className=" mx-4 input-locations my-4">
               <p className="text-sm mb-2">Locations</p>
               <div className="flex divide-x divide-x-reverse">
-                <select className="w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray">
+                <select className="w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray ">
                   <option value="-----">-----</option>
                 </select>
-                <div className="h-9 border border-secondary-dark flex items-center">
+                <div className="h-9 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white" onClick={() => setButtonPopup(true)}>
                   <TbList className="mx-2" />
                 </div>
                 <div className="h-9 border border-secondary-dark flex items-center">
