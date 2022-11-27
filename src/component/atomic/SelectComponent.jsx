@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Select  from "react-select";
 import { axiosPrivate } from "../../api/axios";
+import "../../style/atomic/SelectComponent.css";
 
 
 
-const SelectComponent = ({asset}) => {
+const SelectComponent = ({asset, className}) => {
 
   const [loadingData, setLoadingData] = useState(true);
   const [data, setData] = useState([]);
@@ -28,18 +29,15 @@ const SelectComponent = ({asset}) => {
   }, []);
 
   const options = []
-  data.map((item) => {
+  data.forEach((item) => {
     options.push({value: item.id, label: item.name}) 
   });
 
-  const styles = {
-    fontSize: 14,
-    backgroundColor: 'blue',
-  }
 
 
-  return (
-    <Select options={options} unstyled='true' style={styles.select} />
+  return (<>
+    <Select options={options} className={className}  />
+    </>
     );
 };
 
