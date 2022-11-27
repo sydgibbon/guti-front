@@ -1,6 +1,7 @@
 import React from "react";
 import { BsLaptop } from "react-icons/bs";
 import { TbPlus, TbList, TbMap } from "react-icons/tb";
+import SelectComponent from "../../atomic/SelectComponent";
 
 const ComputerForm = () => {
   return (
@@ -42,9 +43,7 @@ const ComputerForm = () => {
                 Technician in Charge of the Hardware
               </p>
               <div className="flex divide-x divide-x-reverse">
-                <select className="w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray">
-                  <option value="-----">-----</option>
-                </select>
+                <SelectComponent  asset='computermodels'/>
                 <div className="h-9 border rounded-r-md border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
