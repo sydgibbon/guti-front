@@ -6,27 +6,27 @@ const Software = () => {
   const columns = [
     {
       name: "NAME",
-      selector: (row) => row.name,
+      selector: (row) => row?.name,
     },
     {
       name: "PUBLISHER",
-      selector: (row) => row.manufacturers["name"], 
+      selector: (row) => row?.manufacturers?.name, 
     },
     {
       name: "VERSIONS - NAME",
-      selector: (row) => row.manufacturers["name"], //hay que trabajar la logica de versions
+      selector: (row) => row?.manufacturers?.name, //hay que trabajar la logica de versions
     },
     {
       name: "VERSION - OPERATING SYSTEMS",
-      selector: (row) => row.manufacturers["name"], //hay que trabajar la logica de versions
+      selector: (row) => row?.manufacturers?.name, //hay que trabajar la logica de versions
     },
     {
       name: "NUMBER OF INSTALLATIONS",
-      selector: (row) => row.manufacturers["name"], //hay que trabajar la logica de versions
+      selector: (row) => row?.manufacturers?.name, //hay que trabajar la logica de versions
     },
     {
       name: "LICENSES - NUMBER OF LICESNSES",
-      selector: (row) => row.manufacturers["name"], //hay que trabajar la logica de licenses
+      selector: (row) => row?.manufacturers?.name, //hay que trabajar la logica de licenses
     },
    ];
   return (

@@ -6,15 +6,15 @@ const Global = () => {
   const columns = [
     {
       name: "NAME",
-      selector: (row) => row.name,
+      selector: (row) => row?.name,
     },
     {
       name: "STATUS",
-      selector: (row) => row.states["name"],
+      selector: (row) => row?.states?.name,
     },
     {
       name: "ITEM TYPE",
-      selector: (row) => row.name,
+      selector: (row) => row?.name,
     },
     // revisar item Type
   ];

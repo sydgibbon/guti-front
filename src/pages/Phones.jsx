@@ -6,35 +6,35 @@ const Phones = () => {
   const columns = [
     {
       name: "NAME",
-      selector: (row) => row.name,
+      selector: (row) => row?.name,
     },
     {
       name: "STATUS",
-      selector: (row) => row.states["name"],
+      selector: (row) => row?.states.name,
     },
     {
       name: "MANUFACTURERS",
-      selector: (row) => row.manufacturers["name"],
+      selector: (row) => row?.manufacturers.name,
     },
     {
       name: "LOCATIONS",
-      selector: (row) => row.locations["name"],
+      selector: (row) => row?.locations.name,
     },
     {
       name: "TYPE",
-      selector: (row) => row.phonetypes["name"],
+      selector: (row) => row?.phonetypes.name,
     },
     {
       name: "MODEL",
-      selector: (row) => row.phonemodels["name"],
+      selector: (row) => row?.phonemodels.name,
     },
     {
       name: "LAST UPDATE",
-      selector: (row) => row.date_mod,
+      selector: (row) => row?.date_mod,
     },
     {
       name: "ALTERNATE USERNAM",
-      selector: (row) => row.contact,
+      selector: (row) => row?.contact,
     },
   ];
   return (

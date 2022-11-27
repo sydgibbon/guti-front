@@ -6,27 +6,27 @@ const Consumables = () => {
   const columns = [
     {
       name: "NAME",
-      selector: (row) => row.name,
+      selector: (row) => row?.name,
     },
     {
       name: "REFERENCE",
-      selector: (row) => row.ref,
+      selector: (row) => row?.ref,
     },
     {
       name: "TYPE",
-      selector: (row) => row.consumableitemtypes["name"],
+      selector: (row) => row?.consumableitemtypes?.name,
     },
     {
       name: "MANUFACTURERS",
-      selector: (row) => row.manufacturers["name"],
+      selector: (row) => row?.manufacturers?.name,
     },
     {
       name: "LOCATIONS",
-      selector: (row) => row.locations["name"],
+      selector: (row) => row?.locations?.name,
     },
     {
       name: "CONSUMABLES",
-      selector: (row) => row.id,
+      selector: (row) => row?.id,
     }, // Acá debería ir consumables EJ: Total: 1, New: 1, Used: 0
   ];
   return (

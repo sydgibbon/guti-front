@@ -6,7 +6,7 @@ const PassiveDevices = () => {
   const columns = [
     {
       name: "NAME",
-      selector: (row) => row.name,
+      selector: (row) => row?.name,
     },
     
   ];

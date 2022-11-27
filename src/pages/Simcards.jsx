@@ -6,7 +6,7 @@ const Simcards = () => {
   const columns = [
     {
       name: "ID",
-      selector: (row) => row.id,
+      selector: (row) => row?.id,
     },
   ];
   return (
