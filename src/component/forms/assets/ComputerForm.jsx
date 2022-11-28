@@ -24,7 +24,7 @@ const ComputerForm = () => {
             <div className=" mx-4 input-locations my-4">
               <p className="text-sm mb-2">Locations</p>
               <div className="flex divide-x divide-x-reverse">
-              <SelectComponent  asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
+                <SelectComponent asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray" />
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
@@ -41,7 +41,7 @@ const ComputerForm = () => {
                 Technician in Charge of the Hardware
               </p>
               <div className="flex divide-x divide-x-reverse">
-                <SelectComponent  asset='computermodels' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
+                <SelectComponent asset='computermodels' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray" />
                 <div className="h-10 border rounded-r-md border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
@@ -50,7 +50,7 @@ const ComputerForm = () => {
             <div className=" mx-4 input-group-in-charge my-4">
               <p className="text-sm mb-2">Group in Charge of the Hardware</p>
               <div className="flex divide-x divide-x-reverse">
-              <SelectComponent  asset='computertypes' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
+                <SelectComponent asset='computertypes' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray" />
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
@@ -192,9 +192,13 @@ const ComputerForm = () => {
                 </div>
               </div>
             </div>
+            {/* empezar aqui */}
+            
+
           </div>
         </div>
         {/* <div> del footer */}
+
         <div className="form-footer flex h-1/6 w-full border rounded-b-md border-secondary-dark justify-center md:justify-end mb-2 bg-white py-4 px-5">
           <button className="flex items-center md:mr-4 border-2 border-orange-dark rounded-md bg-primary-light text-white hover:border-black py-2 px-4">
             <TbPlus className="mr-1" />
