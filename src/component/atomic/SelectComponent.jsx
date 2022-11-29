@@ -5,7 +5,7 @@ import "../../style/atomic/SelectComponent.css";
 
 
 
-const SelectComponent = ({asset, className}) => {
+const SelectComponent = ({asset, className, onChange}) => {
 
   const [loadingData, setLoadingData] = useState(true);
   const [data, setData] = useState([]);
@@ -36,7 +36,7 @@ const SelectComponent = ({asset, className}) => {
 
 
   return (<>
-    <Select options={options} className={className}  />
+    <Select onChange={onChange} options={options} className={className}  />
     </>
     );
 };
