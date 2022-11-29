@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsLaptop } from "react-icons/bs";
 import { TbPlus, TbList, TbMap } from "react-icons/tb";
 import SelectComponent from "../../atomic/SelectComponent";
+import LocationsSubForm from "../../subforms/LocationsSubForm";
+
 
 const ComputerForm = () => {
+  const [ButtonPopup, setButtonPopup] = useState(false);
+
   return (
     // <div> general
     <div className="computer-form flex flex-col items-center m-4">
+      
       <form className="w-full divide-y divide-y-reverse">
         {/* <div> de Form Header */}
+        <LocationsSubForm trigger={ButtonPopup} setTrigger={setButtonPopup}></LocationsSubForm>
         <div className="form-header flex justify-center md:justify-start bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5">
           <BsLaptop className="inline my-auto mr-2" size="24" />
           <p className="text-base my-auto font-medium">New Item - Computers</p>
