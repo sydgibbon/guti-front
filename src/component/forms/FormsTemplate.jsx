@@ -1,7 +1,7 @@
 import React from 'react';
 import SelectComponent from "../atomic/SelectComponent";
 import { appItems } from "../../contexts/AppItems"
-import { TbPlus } from "react-icons/tb";
+import { TbPlus, TbList, TbMap } from "react-icons/tb";
 
 
 
@@ -23,6 +23,32 @@ function FormsTemplate() {
       key: "locations",
       addNew: true,
     },
+    {
+      title: "Locations",
+      type: "select",
+      key: "locations",
+      addNew: true,
+    },
+    {
+      title: "Locations",
+      type: "select",
+      key: "locations",
+      addNew: true,
+    },
+    {
+      title: "Locations",
+      type: "select",
+      key: "locations",
+      addNew: true,
+    },
+    {
+      title: "Locations",
+      type: "select",
+      key: "locations",
+      addList: true,
+      addNew: true,
+      addMap: true,
+    },
   ]
 
   const FormHeader = [
@@ -31,7 +57,7 @@ function FormsTemplate() {
     },
   ]
 
-  const IconStyle = [
+  const HeaderIconStyle = [
     {
       style: "inline my-auto mr-2"
     },
@@ -39,6 +65,9 @@ function FormsTemplate() {
       size: 24
     },
   ]
+
+  const FieldIconStyle = "cursor-pointer h-10 border border-l-0 border-secondary-dark flex items-center hover:bg-primary-light hover:text-white hover:border-primary-light"
+
   return (
     <div className='contenedor flex flex-col items-center m-4 divide-y-reverse'>
         {FormHeader.map((header) => (
@@ -46,7 +75,7 @@ function FormsTemplate() {
             {appItems[0].itemContent[0].itemContent.map((app) => {
               // debugger;
               return (header.title === app.name ?
-                app.icon(IconStyle[0].style, IconStyle[1].size) : "");
+                app.icon(HeaderIconStyle[0].style, HeaderIconStyle[1].size) : "");
             })}
             <p className="text-base my-auto font-medium">New Item - {header.title}</p>
           </div>
@@ -63,9 +92,23 @@ function FormsTemplate() {
                     : <SelectComponent asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray" />
                 }
                 {
+                  field.addList ?
+                    <div className={FieldIconStyle}>
+                      <TbList className="mx-2 " />
+                    </div>
+                    : ""
+                }
+                {
                   field.addNew ?
-                    <div className="cursor-pointer h-10 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
+                    <div className={FieldIconStyle}>
                       <TbPlus className="mx-2 " />
+                    </div>
+                    : ""
+                }
+                {
+                  field.addMap ?
+                    <div className={FieldIconStyle}>
+                      <TbMap className="mx-2 " />
                     </div>
                     : ""
                 }
