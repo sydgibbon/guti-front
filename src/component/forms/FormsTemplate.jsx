@@ -25,45 +25,50 @@ function FormsTemplate() {
     },
   ]
 
-  const FormPageName = [
+  const FormHeader = [
     {
       title: "Computers",
     },
   ]
 
-
+  const IconStyle = [
+    {
+      style: "inline my-auto mr-2"
+    },
+    {
+      size: 24
+    },
+  ]
   return (
     <div className='contenedor flex flex-col items-center m-4 divide-y-reverse'>
-      <div className='header divide-y-reverse flex justify-center md:justify-start bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5'>
-        {FormPageName.map((header) => (
-          <div>
+        {FormHeader.map((header) => (
+          <div className='header flex justify-center md:justify-start bg-medium-gray h-1/6 w-full border border-b-0 rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5'>
             {appItems[0].itemContent[0].itemContent.map((app) => {
               // debugger;
-              return (header.title == app.name ?
-                app.icon() : "");
+              return (header.title === app.name ?
+                app.icon(IconStyle[0].style, IconStyle[1].size) : "");
             })}
             <p className="text-base my-auto font-medium">New Item - {header.title}</p>
           </div>
         ))}
-      </div>
       <form action="" className='h-full w-full divide-y divide-y-reverse'>
         <div className='imputs-container grid grid-cols-2 gap-x-8 h-full w-full px-9 py-2 border border-secondary-dark bg-white'>
           {inputPropierties.map((field) => (
             <div className={`mx-4 input-${field.key} my-4`}>
               <p className="text-sm mb-2">{field.title}</p>
               <div className='flex'>
-              {
-                field.type === "input" ?
-                  <input className="w-full px-2 rounded-md h-10 border-1 border-secondary-dark bg-medium-gray" />
-                  : <SelectComponent asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray" />
-              }
-              {
-                field.addNew ?
-                  <div className="cursor-pointer h-10 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
-                    <TbPlus className="mx-2 " />
-                  </div>
-                  : ""
-              }
+                {
+                  field.type === "input" ?
+                    <input className="w-full px-2 rounded-md h-10 border-1 border-secondary-dark bg-medium-gray" />
+                    : <SelectComponent asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray" />
+                }
+                {
+                  field.addNew ?
+                    <div className="cursor-pointer h-10 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
+                      <TbPlus className="mx-2 " />
+                    </div>
+                    : ""
+                }
               </div>
             </div>
           ))}
