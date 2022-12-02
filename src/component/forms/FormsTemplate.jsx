@@ -54,15 +54,8 @@ function FormsTemplate() {
   const FormHeader = [
     {
       title: "Computers",
-    },
-  ]
-
-  const HeaderIconStyle = [
-    {
-      style: "inline my-auto mr-2"
-    },
-    {
-      size: 24
+      style: "inline my-auto mr-2",
+      size: 24,
     },
   ]
 
@@ -75,7 +68,7 @@ function FormsTemplate() {
             {appItems[0].itemContent[0].itemContent.map((app) => {
               // debugger;
               return (header.title === app.name ?
-                app.icon(HeaderIconStyle[0].style, HeaderIconStyle[1].size) : "");
+                app.icon(header.style, header.size) : "");
             })}
             <p className="text-base my-auto font-medium">New Item - {header.title}</p>
           </div>
@@ -89,7 +82,7 @@ function FormsTemplate() {
                 {
                   field.type === "input" ?
                     <input className="w-full px-2 rounded-md h-10 border-1 border-secondary-dark bg-medium-gray" />
-                    : <SelectComponent asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray" />
+                    : <SelectComponent asset={field.key} className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray" />
                 }
                 {
                   field.addList ?

@@ -14,7 +14,7 @@ const ComputerForm = () => {
       
       <form className="w-full divide-y divide-y-reverse">
         {/* <div> de Form Header */}
-        <LocationsSubForm trigger={ButtonPopup} setTrigger={setButtonPopup}></LocationsSubForm>
+        <LocationsSubForm trigger={ButtonPopup} setTrigger={setButtonPopup} />
         <div className="form-header flex justify-center md:justify-start bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5">
           <BsLaptop className="inline my-auto mr-2" size="24" />
           <p className="text-base my-auto font-medium">New Item - Computers</p>
@@ -34,7 +34,7 @@ const ComputerForm = () => {
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
-                <div className="h-10 border border-secondary-dark flex items-center">
+                <div className="h-10 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white" onClick={() => setButtonPopup(true)}>
                   <TbPlus className="mx-2" />
                 </div>
                 <div className="rounded-r-md h-10 border border-secondary-dark flex items-center">
