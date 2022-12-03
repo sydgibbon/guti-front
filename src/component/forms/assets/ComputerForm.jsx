@@ -20,8 +20,6 @@ const ComputerForm = () => {
   const handleChangeSelect = (choice) => {
     console.log(choice);
   }
-
-  const ComputerForm = () => {
     const [ButtonPopup, setButtonPopup] = useState(false);
   
     return (
@@ -101,9 +99,7 @@ const ComputerForm = () => {
             <div className=" mx-4 input-groups my-4">
               <p className="text-sm mb-2">Groups</p>
               <div className="flex divide-x divide-x-reverse">
-                <select className="w-full px-2 rounded-l-md h-10 border border-secondary-dark bg-medium-gray">
-                  <option value="-----">-----</option>
-                </select>
+              <SelectComponent  onChange={handleChangeSelect} asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
@@ -134,9 +130,7 @@ const ComputerForm = () => {
             <div className=" mx-4 input-types my-4">
               <p className="text-sm mb-2">Types</p>
               <div className="flex divide-x divide-x-reverse">
-                <select className="w-full px-2 rounded-l-md h-10 border border-secondary-dark bg-medium-gray">
-                  <option value="-----">-----</option>
-                </select>
+              <SelectComponent  onChange={handleChangeSelect} asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
@@ -160,9 +154,7 @@ const ComputerForm = () => {
             <div className=" mx-4 input-model my-4">
               <p className="text-sm mb-2">Model</p>
               <div className="flex divide-x divide-x-reverse">
-                <select className="w-full px-2 rounded-l-md h-10 border border-secondary-dark bg-medium-gray">
-                  <option value="-----">-----</option>
-                </select>
+              <SelectComponent  onChange={handleChangeSelect} asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
