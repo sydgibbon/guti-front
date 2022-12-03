@@ -50,7 +50,7 @@ const ComputerForm = () => {
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
-                <div className="h-10 border border-secondary-dark flex items-center">
+                <div className="h-10 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white" onClick={() => setButtonPopup(true)}>
                   <TbPlus className="mx-2" />
                 </div>
                 <div className="rounded-r-md h-10 border border-secondary-dark flex items-center">
