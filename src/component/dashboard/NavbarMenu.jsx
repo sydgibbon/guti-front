@@ -1,12 +1,15 @@
 import React from 'react';
 import { TbPlus, TbSearch, TbStar, TbTemplate } from 'react-icons/tb';
+import { Link, useLocation } from "react-router-dom";
 
 const NavbarMenu = () => {
+
+
   return (
     <div className='navbar-menu flex items-center gap-1 ml-2'>
-      <div className='add-button px-1 py-0.5 rounded border-orange-dark border-2 bg-primary-light text-light-gray cursor-pointer hover:border-black '>
+      <Link to="/computer-form" className='add-button px-1 py-0.5 rounded border-orange-dark border-2 bg-primary-light text-light-gray cursor-pointer hover:border-black '>
         <TbPlus className='stroke-current' />
-      </div>
+      </Link>
       <div className='search-button px-1 py-0.5 rounded border-black border-2 hover:bg-primary-light cursor-pointer text-black hover:text-white'>
         <TbSearch className='stroke-current' />
       </div>
