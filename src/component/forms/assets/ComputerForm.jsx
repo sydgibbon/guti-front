@@ -17,8 +17,8 @@ const ComputerForm = () => {
   const handleChange = (e) => {
     formFields[e.target.id] = e.target.value;
   }
-  const handleChangeSelect = (choice) => {
-    console.log(choice);
+  const handleChangeSelect = (data) => {
+    formFields[data.id] = data.value;
   }
     const [ButtonPopup, setButtonPopup] = useState(false);
   
@@ -44,7 +44,7 @@ const ComputerForm = () => {
             <div className=" mx-4 input-locations my-4">
               <p className="text-sm mb-2">Locations</p>
               <div className="flex divide-x divide-x-reverse">
-              <SelectComponent  onChange={(choice) => handleChangeSelect(choice)} asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
+              <SelectComponent  onChange={handleChangeSelect} id='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
@@ -61,7 +61,7 @@ const ComputerForm = () => {
                 Technician in Charge of the Hardware
               </p>
               <div className="flex divide-x divide-x-reverse">
-                <SelectComponent  onChange={handleChangeSelect} asset='computermodels' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
+                <SelectComponent  onChange={handleChangeSelect} id='computermodels' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
                 <div className="h-10 border rounded-r-md border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
@@ -70,7 +70,7 @@ const ComputerForm = () => {
             <div className=" mx-4 input-group-in-charge my-4">
               <p className="text-sm mb-2">Group in Charge of the Hardware</p>
               <div className="flex divide-x divide-x-reverse">
-              <SelectComponent  onChange={handleChangeSelect} asset='computertypes' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
+              <SelectComponent  onChange={handleChangeSelect} id='computertypes' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
@@ -90,7 +90,7 @@ const ComputerForm = () => {
             <div className=" mx-4 input-user my-4">
               <p className="text-sm mb-2">User</p>
               <div className="flex divide-x divide-x-reverse">
-              <SelectComponent  onChange={handleChangeSelect} asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
+              <SelectComponent  onChange={handleChangeSelect} id='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
                 <div className="h-10 border rounded-r-md border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
@@ -99,7 +99,7 @@ const ComputerForm = () => {
             <div className=" mx-4 input-groups my-4">
               <p className="text-sm mb-2">Groups</p>
               <div className="flex divide-x divide-x-reverse">
-              <SelectComponent  onChange={handleChangeSelect} asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
+              <SelectComponent  onChange={handleChangeSelect} id='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
@@ -118,7 +118,7 @@ const ComputerForm = () => {
             <div className=" mx-4 input-status my-4">
               <p className="text-sm mb-2">Status</p>
               <div className="flex divide-x divide-x-reverse">
-              <SelectComponent  onChange={handleChangeSelect} asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
+              <SelectComponent  onChange={handleChangeSelect} id='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
@@ -130,7 +130,7 @@ const ComputerForm = () => {
             <div className=" mx-4 input-types my-4">
               <p className="text-sm mb-2">Types</p>
               <div className="flex divide-x divide-x-reverse">
-              <SelectComponent  onChange={handleChangeSelect} asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
+              <SelectComponent  onChange={handleChangeSelect} id='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
@@ -142,7 +142,7 @@ const ComputerForm = () => {
             <div className=" mx-4 input-manufacturers my-4">
               <p className="text-sm mb-2">Manufacturers</p>
               <div className="flex divide-x divide-x-reverse">
-              <SelectComponent  onChange={handleChangeSelect} asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
+              <SelectComponent  onChange={handleChangeSelect} id='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
@@ -154,7 +154,7 @@ const ComputerForm = () => {
             <div className=" mx-4 input-model my-4">
               <p className="text-sm mb-2">Model</p>
               <div className="flex divide-x divide-x-reverse">
-              <SelectComponent  onChange={handleChangeSelect} asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
+              <SelectComponent  onChange={handleChangeSelect} id='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
@@ -174,7 +174,7 @@ const ComputerForm = () => {
             <div className=" mx-4 input-network my-4">
               <p className="text-sm mb-2">Network</p>
               <div className="flex divide-x divide-x-reverse">
-              <SelectComponent  onChange={handleChangeSelect} asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
+              <SelectComponent  onChange={handleChangeSelect} id='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
                 <div className="h-10 border rounded-r-md border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
@@ -187,7 +187,7 @@ const ComputerForm = () => {
             <div className=" mx-4 input-update-sources my-4">
               <p className="text-sm mb-2">Update Sources</p>
               <div className="flex divide-x divide-x-reverse">
-              <SelectComponent  onChange={handleChangeSelect} asset='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
+              <SelectComponent  onChange={handleChangeSelect} id='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray"/>
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>

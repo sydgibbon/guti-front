@@ -14,11 +14,11 @@ export const axiosPrivate = axios.create({
 
 export async function saveAsset (asset, assetData) {
     try {
-        const response = await axios({
-            url: BASE_URL + asset ,
-            method: 'POST',
-            data: assetData
-        })
+
+        const response = await axiosPrivate.post( BASE_URL + asset + '/', assetData, {
+            headers: { Authorization: `Token ${TOKEN}`,
+            "Content-Type": "multipart/form-data", },
+          });
         return response
     } catch (e) {
         console.log(e)
