@@ -117,7 +117,7 @@ export const appItems = [
               return <BsDisplay className="block my-auto" />;
             },
             link: "/assets/monitors",
-            formLink: "/monitors-form",
+            formLink: "/monitor-form",
           },
           {
             name: "Software",
