@@ -133,7 +133,7 @@ export const appItems = [
               return <TbSitemap className="block my-auto" />;
             },
             link: "/assets/network-devices",
-            formLink: "/networkdevice-form",
+            formLink: "/netdevice-form",
           },
           {
             name: "Devices",
@@ -141,7 +141,7 @@ export const appItems = [
               return <TbUsb className="block my-auto" />;
             },
             link: "/assets/devices",
-            formLink: "/devices-form",
+            formLink: "/device-form",
           },
           {
             name: "Printers",
@@ -149,7 +149,7 @@ export const appItems = [
               return <TbPrinter className="block my-auto" />;
             },
             link: "/assets/printers",
-            formLink: "/printers-form",
+            formLink: "/printer-form",
           },
           {
             name: "Cartridges",
@@ -173,7 +173,7 @@ export const appItems = [
               return <TbPhone className="block my-auto" />;
             },
             link: "/assets/phones",
-            formLink: "/phones-form",
+            formLink: "/phone-form",
           },
           {
             name: "Racks",
@@ -181,7 +181,7 @@ export const appItems = [
               return <TbServer className="block my-auto" />;
             },
             link: "/assets/racks",
-            formLink: "/racks-form",
+            formLink: "/rack-form",
           },
           {
             name: "Enclosures",
@@ -205,7 +205,7 @@ export const appItems = [
               return <TbBrowser className="block my-auto" />;
             },
             link: "/assets/passive-devices",
-            formLink: "/passivedevices-form",
+            formLink: "/passivedevice-form",
           },
           {
             name: "Unmanaged devices",
@@ -220,7 +220,7 @@ export const appItems = [
               return <TbLine className="block my-auto" />;
             },
             link: "/assets/cables",
-            formLink: "/cables-form",
+            formLink: "/cable-form",
           },
           {
             name: "Simcards",
@@ -228,7 +228,7 @@ export const appItems = [
               return <TbFileBarcode className="block my-auto" />;
             },
             link: "/assets/simcards",
-            formLink: "/simcards-form",
+            formLink: "/simcard-form",
           },
           {
             name: "Global",
