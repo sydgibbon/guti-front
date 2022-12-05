@@ -5,106 +5,77 @@ import { TbPlus, TbList, TbMap } from "react-icons/tb";
 
 
 
-function FormsTemplate() {
-  const inputPropierties = [
-    {
-      title: "Name",
-      type: "input",
-      key: "name",
-    },
-    {
-      title: "Otro",
-      type: "input",
-      key: "otro",
-    },
-    {
-      title: "Locations",
-      type: "select",
-      key: "locations",
-      addNew: true,
-    },
-    {
-      title: "Locations",
-      type: "select",
-      key: "locations",
-      addNew: true,
-    },
-    {
-      title: "Locations",
-      type: "select",
-      key: "locations",
-      addNew: true,
-    },
-    {
-      title: "Locations",
-      type: "select",
-      key: "locations",
-      addNew: true,
-    },
-    {
-      title: "Locations",
-      type: "select",
-      key: "locations",
-      addList: true,
-      addNew: true,
-      addMap: true,
-    },
-  ]
+function FormsTemplate(inputPropierties, FormHeader) {
 
-  const FormHeader = [
-    {
-      title: "Computers",
-      style: "inline my-auto mr-2",
-      size: 24,
-    },
-  ]
+  const renderInputType = (fieldType, fieldKey, renombrarPropiedad) => {
+    switch (fieldType) {
+      // case "input":
+      //   return (<input className="w-full px-2 h-10 rounded-md bg-medium-gray" />)
+      case "select":
+        return (<SelectComponent asset={fieldKey} className="w-full rounded-md" />)
+        break;
 
-  const FieldIconStyle = "cursor-pointer h-10 border border-l-0 border-secondary-dark flex items-center hover:bg-primary-light hover:text-white hover:border-primary-light"
+      case "input":
+        return (<input className="w-full px-2 h-10 rounded-md bg-medium-gray" />)
+        break;
+      case "textarea":
+        return (<textarea rows="3" className="w-full p-2 rounded-md border-secondary-dark bg-medium-gray"></textarea>)
+        break;
+      case "checkbox":
+      debugger
+
+        // return (
+        //   <>
+        //     <input type='checkbox' className="mr-2"></input>
+        //     <span>oli</span>
+        //   </>)
+
+        return (
+          renombrarPropiedad.map((cosito) => { <>hola</> })
+        )
+        break;
+
+      default:
+        <></>
+        break;
+    }
+  };
+
+  const FieldIconStyle = "cursor-pointer h-10 flex items-center border-secondary-dark px-2"
 
   return (
     <div className='contenedor flex flex-col items-center m-4 divide-y-reverse'>
-        {FormHeader.map((header) => (
-          <div className='header flex justify-center md:justify-start bg-medium-gray h-1/6 w-full border border-b-0 rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5'>
-            {appItems[0].itemContent[0].itemContent.map((app) => {
-              // debugger;
-              return (header.title === app.name ?
-                app.icon(header.style, header.size) : "");
-            })}
-            <p className="text-base my-auto font-medium">New Item - {header.title}</p>
-          </div>
-        ))}
+      {FormHeader.map((header) => (
+        <div className='header flex justify-center md:justify-start bg-medium-gray h-1/6 w-full border border-b-0 rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5'>
+          {appItems[0].itemContent[0].itemContent.map((app) => {
+            return (header.title === app.name ?
+              app.icon(header.style, header.size) : "");
+          })}
+          <p className="text-base my-auto font-medium">New Item - {header.title}</p>
+        </div>
+      ))}
       <form action="" className='h-full w-full divide-y divide-y-reverse'>
-        <div className='imputs-container grid grid-cols-2 gap-x-8 h-full w-full px-9 py-2 border border-secondary-dark bg-white'>
+        <div className='inputs-container grid grid-cols-2 gap-x-8 h-full w-full px-9 py-2 border border-secondary-dark bg-white'>
           {inputPropierties.map((field) => (
             <div className={`mx-4 input-${field.key} my-4`}>
               <p className="text-sm mb-2">{field.title}</p>
-              <div className='flex'>
-                {
-                  field.type === "input" ?
-                    <input className="w-full px-2 rounded-md h-10 border-1 border-secondary-dark bg-medium-gray" />
-                    : <SelectComponent asset={field.key} className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray" />
-                }
-                {
-                  field.addList ?
-                    <div className={FieldIconStyle}>
-                      <TbList className="mx-2 " />
-                    </div>
-                    : ""
-                }
-                {
-                  field.addNew ?
-                    <div className={FieldIconStyle}>
-                      <TbPlus className="mx-2 " />
-                    </div>
-                    : ""
-                }
-                {
-                  field.addMap ?
-                    <div className={FieldIconStyle}>
-                      <TbMap className="mx-2 " />
-                    </div>
-                    : ""
-                }
+              <div className={`flex ${field.type != 'checkbox' ? 'border border-secondary-dark bg-medium-gray divide-x' : ''} rounded-md  `}>
+                {renderInputType(field.type, field.key, field.renombrarPropiedad)}
+                {field.addList ?
+                  <div className={FieldIconStyle}>
+                    <TbList />
+                  </div>
+                  : ""}
+                {field.addNew ?
+                  <div className={FieldIconStyle}>
+                    <TbPlus />
+                  </div>
+                  : ""}
+                {field.addMap ?
+                  <div className={FieldIconStyle}>
+                    <TbMap />
+                  </div>
+                  : ""}
               </div>
             </div>
           ))}
