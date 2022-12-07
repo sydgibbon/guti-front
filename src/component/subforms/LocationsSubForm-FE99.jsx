@@ -26,7 +26,7 @@ function LocationsSubFormFE99() {
       {botonAbrir()}
       <Modal open={open} onClose={handleClose}>
         <div className="contenedor-popup outline-none overflow-y-scroll absolute px-10 pb-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white border rounded-md border-secondary-dark w-3/4 h-5/6">
-          <div className='sticky top-0 border' >
+          <div className='sticky top-0 w-full flex justify-end p-2 bg-white border-b' >
             <TbCircleX onClick={handleClose} size="30" className="hover:text-orange-dark" />
           </div>
           <div className='contenedor-subform'>
