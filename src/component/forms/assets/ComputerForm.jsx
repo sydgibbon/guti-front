@@ -4,6 +4,8 @@ import { TbPlus, TbList, TbMap } from "react-icons/tb";
 import LocationsSubForm from "../../subforms/LocationsSubForm";
 import SelectComponent from "../../atomic/SelectComponent";
 import {saveAsset, BASE_URL} from "../../../api/axios";
+import LocationsSubFormFE99 from "../../subforms/LocationsSubForm-FE99";
+
 const ComputerForm = () => {
   let formFields = {}
   let formData = new FormData()
@@ -21,10 +23,13 @@ const ComputerForm = () => {
     formFields[data.id] = data.value;
   }
     const [ButtonPopup, setButtonPopup] = useState(false);
+
+
   
     return (
       // <div> general
     <div className="computer-form flex flex-col items-center m-4">
+ 
       
     <form onSubmit={handleSubmit} action={`${BASE_URL}computers/`} method="POST" encType="multipart/form-date" className="w-full divide-y divide-y-reverse">
         {/* <div> de Form Header */}
@@ -48,7 +53,8 @@ const ComputerForm = () => {
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
-                <div className="h-10 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white" onClick={() => setButtonPopup(true)}>
+                <LocationsSubFormFE99></LocationsSubFormFE99>
+                <div className="h-10 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
                   <TbPlus className="mx-2" />
                 </div>
                 <div className="rounded-r-md h-10 border border-secondary-dark flex items-center">
