@@ -6,6 +6,7 @@ const Simcards = () => {
   const columns = [
     {
       name: "ID",
+      sortable: true,
       selector: (row) => row?.id,
     },
   ];

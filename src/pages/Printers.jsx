@@ -6,31 +6,38 @@ const Printers = () => {
       const columns = [
         {
           name: "NAME",
-          selector: (row) => row?.name,
+          sortable: true,
+      selector: (row) => row?.name,
         },
         {
           name: "STATUS",
-          selector: (row) => row?.states?.name, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
+          sortable: true,
+      selector: (row) => row?.states?.name, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
         },
         {
           name: "MANUFACTURERS",
-          selector: (row) => row?.manufacturers?.name,
+          sortable: true,
+      selector: (row) => row?.manufacturers?.name,
         },
         {
           name: "LOCATIONS",
-          selector: (row) => row?.locations?.name, 
+          sortable: true,
+      selector: (row) => row?.locations?.name, 
         },
         {
           name: "TYPES",
-          selector: (row) => row?.printertypes?.name, 
+          sortable: true,
+      selector: (row) => row?.printertypes?.name, 
         },
         {
           name: "MODEL",
-          selector: (row) => row?.printermodels?.name
+          sortable: true,
+      selector: (row) => row?.printermodels?.name
         },
         {
           name: "LAST UPDATE",
-          selector: (row) => row?.date_mod, 
+          sortable: true,
+      selector: (row) => row?.date_mod, 
         },
       ];
       return (

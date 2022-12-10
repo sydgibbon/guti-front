@@ -6,14 +6,17 @@ const Global = () => {
   const columns = [
     {
       name: "NAME",
+      sortable: true,
       selector: (row) => row?.name,
     },
     {
       name: "STATUS",
+      sortable: true,
       selector: (row) => row?.states?.name,
     },
     {
       name: "ITEM TYPE",
+      sortable: true,
       selector: (row) => row?.name,
     },
     // revisar item Type

@@ -6,26 +6,32 @@ const Cartridges = () => {
   const columns = [
     {
       name: "NAME",
+      sortable: true,
       selector: (row) => row?.name,
     },
     {
       name: "REFERENCE",
+      sortable: true,
       selector: (row) => row?.ref,
     },
     {
       name: "TYPE",
+      sortable: true,
       selector: (row) => row?.cartridgeitemtypes?.name,
     },
     {
       name: "MANUFACTURERS",
+      sortable: true,
       selector: (row) => row?.manufacturers?.name,
     },
     {
       name: "LOCATIONS",
+      sortable: true,
       selector: (row) => row?.locations?.name,
     },
     {
       name: "CARTRIDGES",
+      sortable: true,
       selector: (row) => row?.id,
     }, // revisar
   ];

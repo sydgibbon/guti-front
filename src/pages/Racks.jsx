@@ -6,6 +6,7 @@ const Racks = () => {
   const columns = [
     {
       name: "NAME",
+      sortable: true,
       selector: (row) => row?.name,
     },
   ];
