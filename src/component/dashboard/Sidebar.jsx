@@ -11,6 +11,13 @@ function SideBar() {
   const toggleSubMenu = (state) => {
     setSubMenuSelected(state);
   };
+
+  const prueba = 
+    {
+      style: "block my-auto"
+    }
+  
+
   return (
     <>
       <div className="hidden md:flex h-screen flex-col w-1/6 h-screen bg-light-gray shadow-sm">
@@ -25,7 +32,7 @@ function SideBar() {
               subMenu={app.itemContent ? app.itemContent.map((submenu) => (
                 <SidebarSubMenu
                   text={submenu.name}
-                  icon={submenu.icon()}
+                  icon={submenu.icon(prueba.style)}
                   selected={submenuSelected}
                   onClick={() => toggleSubMenu(submenu.name)}
                   href={submenu.link}

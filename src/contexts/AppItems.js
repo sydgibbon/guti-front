@@ -105,8 +105,8 @@ export const appItems = [
           },
           {
             name: "Computers",
-            icon: function () {
-              return <BsLaptop className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsLaptop className={style} size={size}/>;
             },
             link: "/assets/computers",
             formLink: "/computer-form",

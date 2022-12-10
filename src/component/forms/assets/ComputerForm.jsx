@@ -28,7 +28,7 @@ const ComputerForm = () => {
       
     <form onSubmit={handleSubmit} action={`${BASE_URL}computers/`} method="POST" encType="multipart/form-date" className="w-full divide-y divide-y-reverse">
         {/* <div> de Form Header */}
-        <LocationsSubForm trigger={ButtonPopup} setTrigger={setButtonPopup}></LocationsSubForm>
+        <LocationsSubForm trigger={ButtonPopup} setTrigger={setButtonPopup} />
         <div className="form-header flex justify-center md:justify-start bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5">
           <BsLaptop className="inline my-auto mr-2" size="24" />
           <p className="text-base my-auto font-medium">New Item - Computers</p>
