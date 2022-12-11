@@ -21,10 +21,12 @@ const ComputerForm = () => {
   const handleChangeSelect = (data) => {
     formFields[data.id] = data.value;
   }
-
+  
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   if (open) { console.log("ola")}
+
+
 
   return (
     // <div> general
@@ -53,7 +55,7 @@ const ComputerForm = () => {
                   <TbList className="mx-2" />
                 </div>
 
-                <LocationsSubForm trigger={open}></LocationsSubForm>
+                {/* <LocationsSubForm></LocationsSubForm> */}
                 <div onClick={handleOpen} className="h-10 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
                   <TbPlus className="mx-2" />
                   <span>ola</span>

@@ -10,18 +10,18 @@ function LocationsSubForm() {
   const handleClose = () => setOpen(false);
 
   const botonAbrir = () => {
-    // return (
-    //   <div onClick={handleOpen} className="h-10 border border-secondary-dark flex items-center">
-    //     <TbList className="mx-2" />
-    //   </div>
-    // )
+    return (
+      <div onClick={handleOpen} className="h-10 border border-secondary-dark flex items-center">
+        <TbPlus className="mx-2" />
+      </div>
+    )
     
   };
 
 
   return (
     <div>
-      {/* {botonAbrir()} */}
+      {botonAbrir()}
       <Modal open={open} onClose={handleClose}>
         <Box className="popup-container outline-none overflow-y-scroll absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white border rounded-md border-secondary-dark w-4/6 h-5/6">
           <div className="form-header sticky top-0 flex justify-center md:justify-start bg-medium-gray h-1/8 w-full border-b rounded-t-md border-secondary-dark mx-auto py-4 px-5">
