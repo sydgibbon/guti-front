@@ -80,7 +80,7 @@ function FormsTemplate(inputPropierties, FormHeader) {
                   </div>
                   : ""}
                 {field.addNew ?
-                  <div className={FieldIconStyle}>
+                  <div onClick={""} className={FieldIconStyle}>
                     <TbPlus />
                   </div>
                   : ""}
