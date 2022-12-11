@@ -109,7 +109,7 @@ export const appItems = [
               return <BsLaptop className="block my-auto" />;
             },
             link: "/assets/computers",
-            formLink: "/assets/form/computer",
+            formLink: "/assets/forms/computers",
           },
           {
             name: "Monitors",
@@ -117,7 +117,7 @@ export const appItems = [
               return <BsDisplay className="block my-auto" />;
             },
             link: "/assets/monitors",
-            formLink: "/assets/form/monitor",
+            formLink: "/assets/forms/monitors",
           },
           {
             name: "Software",
@@ -125,7 +125,7 @@ export const appItems = [
               return <TbApps className="block my-auto" />;
             },
             link: "/assets/software",
-            formLink: "/assets/form/software",
+            formLink: "/assets/forms/software",
           },
           {
             name: "Network devices",
@@ -133,7 +133,7 @@ export const appItems = [
               return <TbSitemap className="block my-auto" />;
             },
             link: "/assets/network-devices",
-            formLink: "/assets/form/network-devices",
+            formLink: "/assets/forms/network-devices",
           },
           {
             name: "Devices",
@@ -141,7 +141,7 @@ export const appItems = [
               return <TbUsb className="block my-auto" />;
             },
             link: "/assets/devices",
-            formLink: "/assets/form/device",
+            formLink: "/assets/forms/devices",
           },
           {
             name: "Printers",
@@ -149,7 +149,7 @@ export const appItems = [
               return <TbPrinter className="block my-auto" />;
             },
             link: "/assets/printers",
-            formLink: "/assets/form/printer",
+            formLink: "/assets/forms/printers",
           },
           {
             name: "Cartridges",
@@ -157,7 +157,7 @@ export const appItems = [
               return <TbDropletFilled2 className="block my-auto" />;
             },
             link: "/assets/cartridges",
-            formLink: "/assets/form/cartridge",
+            formLink: "/assets/forms/cartridges",
           },
           {
             name: "Consumables",
@@ -165,7 +165,7 @@ export const appItems = [
               return <BsBoxSeam className="block my-auto" />;
             },
             link: "/assets/consumables",
-            formLink: "/assets/form/consumable",
+            formLink: "/assets/forms/consumables",
           },
           {
             name: "Phones",
@@ -173,7 +173,7 @@ export const appItems = [
               return <TbPhone className="block my-auto" />;
             },
             link: "/assets/phones",
-            formLink: "/assets/form/phone",
+            formLink: "/assets/forms/phones",
           },
           {
             name: "Racks",
@@ -181,7 +181,7 @@ export const appItems = [
               return <TbServer className="block my-auto" />;
             },
             link: "/assets/racks",
-            formLink: "/assets/form/rack",
+            formLink: "/assets/forms/racks",
           },
           {
             name: "Enclosures",
@@ -189,7 +189,7 @@ export const appItems = [
               return <TbColumns className="block my-auto" />;
             },
             link: "/assets/enclosures",
-            formLink: "/assets/form/enclosures",
+            formLink: "/assets/forms/enclosures",
           },
           {
             name: "PDUs",
@@ -197,7 +197,7 @@ export const appItems = [
               return <TbPlug className="block my-auto" />;
             },
             link: "/assets/pdus",
-            formLink: "/assets/form/pdu",
+            formLink: "/assets/forms/pdus",
           },
           {
             name: "Passive devices",
@@ -205,7 +205,7 @@ export const appItems = [
               return <TbBrowser className="block my-auto" />;
             },
             link: "/assets/passive-devices",
-            formLink: "/assets/form/passive-device",
+            formLink: "/assets/forms/passive-devices",
           },
           {
             name: "Unmanaged devices",
@@ -220,7 +220,7 @@ export const appItems = [
               return <TbLine className="block my-auto" />;
             },
             link: "/assets/cables",
-            formLink: "/assets/cables/form",
+            formLink: "/assets/forms/cables",
           },
           {
             name: "Simcards",
@@ -228,7 +228,7 @@ export const appItems = [
               return <TbFileBarcode className="block my-auto" />;
             },
             link: "/assets/simcards",
-            formLink: "/assets/form/simcard",
+            formLink: "/assets/forms/simcards",
           },
           {
             name: "Global",
