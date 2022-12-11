@@ -38,7 +38,7 @@ const Donut = ({ asset, itemProp }) => {
     const objItemPropCounter = {};
 
     repeatedItemProp.forEach((element) => {
-      objItemPropCounter[element.name] = (objItemPropCounter[element] || 0) + 1;
+      objItemPropCounter[element?.name] = (objItemPropCounter[element] || 0) + 1;
     });
     return objItemPropCounter;
   };

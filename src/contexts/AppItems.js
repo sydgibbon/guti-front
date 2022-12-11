@@ -105,10 +105,11 @@ export const appItems = [
           },
           {
             name: "Computers",
-            icon: function () {
-              return <BsLaptop className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsLaptop className={style} size={size}/>;
             },
             link: "/assets/computers",
+            formLink: "/computer-form",
           },
           {
             name: "Monitors",
@@ -116,6 +117,7 @@ export const appItems = [
               return <BsDisplay className="block my-auto" />;
             },
             link: "/assets/monitors",
+            formLink: "/monitor-form",
           },
           {
             name: "Software",
@@ -123,6 +125,7 @@ export const appItems = [
               return <TbApps className="block my-auto" />;
             },
             link: "/assets/software",
+            formLink: "/software-form",
           },
           {
             name: "Network devices",
@@ -130,6 +133,7 @@ export const appItems = [
               return <TbSitemap className="block my-auto" />;
             },
             link: "/assets/network-devices",
+            formLink: "/netdevice-form",
           },
           {
             name: "Devices",
@@ -137,6 +141,7 @@ export const appItems = [
               return <TbUsb className="block my-auto" />;
             },
             link: "/assets/devices",
+            formLink: "/device-form",
           },
           {
             name: "Printers",
@@ -144,6 +149,7 @@ export const appItems = [
               return <TbPrinter className="block my-auto" />;
             },
             link: "/assets/printers",
+            formLink: "/printer-form",
           },
           {
             name: "Cartridges",
@@ -151,6 +157,7 @@ export const appItems = [
               return <TbDropletFilled2 className="block my-auto" />;
             },
             link: "/assets/cartridges",
+            formLink: "/cartridge-form",
           },
           {
             name: "Consumables",
@@ -158,6 +165,7 @@ export const appItems = [
               return <BsBoxSeam className="block my-auto" />;
             },
             link: "/assets/consumables",
+            formLink: "/consumable-form",
           },
           {
             name: "Phones",
@@ -165,6 +173,7 @@ export const appItems = [
               return <TbPhone className="block my-auto" />;
             },
             link: "/assets/phones",
+            formLink: "/phone-form",
           },
           {
             name: "Racks",
@@ -172,6 +181,7 @@ export const appItems = [
               return <TbServer className="block my-auto" />;
             },
             link: "/assets/racks",
+            formLink: "/rack-form",
           },
           {
             name: "Enclosures",
@@ -179,6 +189,7 @@ export const appItems = [
               return <TbColumns className="block my-auto" />;
             },
             link: "/assets/enclosures",
+            formLink: "/enclosures-form",
           },
           {
             name: "PDUs",
@@ -186,6 +197,7 @@ export const appItems = [
               return <TbPlug className="block my-auto" />;
             },
             link: "/assets/pdus",
+            formLink: "/pdu-form",
           },
           {
             name: "Passive devices",
@@ -193,6 +205,7 @@ export const appItems = [
               return <TbBrowser className="block my-auto" />;
             },
             link: "/assets/passive-devices",
+            formLink: "/passivedevice-form",
           },
           {
             name: "Unmanaged devices",
@@ -207,6 +220,7 @@ export const appItems = [
               return <TbLine className="block my-auto" />;
             },
             link: "/assets/cables",
+            formLink: "/cable-form",
           },
           {
             name: "Simcards",
@@ -214,6 +228,7 @@ export const appItems = [
               return <TbFileBarcode className="block my-auto" />;
             },
             link: "/assets/simcards",
+            formLink: "/simcard-form",
           },
           {
             name: "Global",
