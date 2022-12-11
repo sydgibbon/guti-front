@@ -113,23 +113,23 @@ function App() {
         <Route path="/assets/simcards" element={<Main content={ <Simcards />} />} />
         <Route path="/assets/global" element={<Main content={ <Global />} />} />
         
-        <Route path="/assets/computers/form" element={<Main content={ <ComputerForm />} />} />
-        <Route path="/assets/enclosures/form" element={<Main content={ <EnclosuresForm />} />} />
-        <Route path="/assets/cables/form" element={<Main content={ <CableForm />} />} />
+        <Route path="/assets/form/computer" element={<Main content={ <ComputerForm />} />} />
+        <Route path="/assets/form/enclosures" element={<Main content={ <EnclosuresForm />} />} />
+        <Route path="/assets/form/cable" element={<Main content={ <CableForm />} />} />
         {/* <Route path="/computers" element={<Main content={ <Computers />} />} /> */}
         {/* <Route path="/enclosures-form" element={<Main content={ <EnclosuresForm />} />} /> */}
-        <Route path="/assets/monitors/form" element={<Main content={ <MonitorForm />} />} />
-        <Route path="/assets/software/form" element={<Main content={ <SoftwareForm />} />} />
-        <Route path="/assets/network-devices/form" element={<Main content={ <NetworkDeviceForm />} />} />
-        <Route path="/assets/devices/form" element={<Main content={ <DeviceForm />} />} />
-        <Route path="/assets/pdus/form" element={<Main content={ <PduForm />} />} />
-        <Route path="/assets/cartridges/form" element={<Main content={ <CartridgeForm />} />} />
-        <Route path="/assets/consumables/form" element={<Main content={ <ConsumableForm />} />} />
-        <Route path="/assets/passive-devices/form" element={<Main content={ <PassiveDeviceForm />} />} />
-        <Route path="/assets/phones/form" element={<Main content={ <PhoneForm />} />} />
-        <Route path="/assets/printers/form" element={<Main content={ <PrinterForm />} />} />
-        <Route path="/assets/simcards/form" element={<Main content={ <SimcardForm />} />} />
-        <Route path="/assets/racks/form" element={<Main content={ <RackForm />} />} />
+        <Route path="/assets/form/monitor" element={<Main content={ <MonitorForm />} />} />
+        <Route path="/assets/form/software" element={<Main content={ <SoftwareForm />} />} />
+        <Route path="/assets/form/network-devices" element={<Main content={ <NetworkDeviceForm />} />} />
+        <Route path="/assets/form/device" element={<Main content={ <DeviceForm />} />} />
+        <Route path="/assets/form/pdu" element={<Main content={ <PduForm />} />} />
+        <Route path="/assets/form/cartridge" element={<Main content={ <CartridgeForm />} />} />
+        <Route path="/assets/form/consumable" element={<Main content={ <ConsumableForm />} />} />
+        <Route path="/assets/form/passive-device" element={<Main content={ <PassiveDeviceForm />} />} />
+        <Route path="/assets/form/phone" element={<Main content={ <PhoneForm />} />} />
+        <Route path="/assets/form/printer" element={<Main content={ <PrinterForm />} />} />
+        <Route path="/assets/form/simcard" element={<Main content={ <SimcardForm />} />} />
+        <Route path="/assets/form/rack" element={<Main content={ <RackForm />} />} />
         <Route path="*" element={<Main content={ <NotFound />} />} />
       </Routes>
       <button
