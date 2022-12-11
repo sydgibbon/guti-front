@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { BsLaptop } from "react-icons/bs";
 import { TbPlus, TbList, TbMap } from "react-icons/tb";
 import SelectComponent from "../../atomic/SelectComponent";
 import { saveAsset, BASE_URL } from "../../../api/axios";
-import LocationsSubFormFE99 from "../../subforms/LocationsSubForm-FE99";
+import LocationsSubForm from "../../subforms/LocationsSubForm";
 
 const ComputerForm = () => {
   let formFields = {}
@@ -22,7 +22,9 @@ const ComputerForm = () => {
     formFields[data.id] = data.value;
   }
 
-
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  if (open) { console.log("ola")}
 
   return (
     // <div> general
@@ -47,14 +49,16 @@ const ComputerForm = () => {
               <p className="text-sm mb-2">Locations</p>
               <div className="flex divide-x divide-x-reverse">
                 <SelectComponent onChange={handleChangeSelect} id='locations' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray" />
-                <LocationsSubFormFE99>
-                  {/* <div className="h-10 border border-secondary-dark flex items-center">
+                <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
-                </div> */}
-                </LocationsSubFormFE99>
-                <div className="h-10 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
-                  <TbPlus className="mx-2" />
                 </div>
+
+                <LocationsSubForm trigger={open}></LocationsSubForm>
+                <div onClick={handleOpen} className="h-10 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
+                  <TbPlus className="mx-2" />
+                  <span>ola</span>
+                </div>
+
                 <div className="rounded-r-md h-10 border border-secondary-dark flex items-center">
                   <TbMap className="mx-2" />
                 </div>
