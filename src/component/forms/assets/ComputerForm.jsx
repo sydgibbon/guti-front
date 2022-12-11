@@ -4,6 +4,7 @@ import { TbPlus, TbList, TbMap } from "react-icons/tb";
 import LocationsSubForm from "../../subforms/LocationsSubForm";
 import SelectComponent from "../../atomic/SelectComponent";
 import {saveAsset, BASE_URL} from "../../../api/axios";
+
 const ComputerForm = () => {
   let formFields = {}
   let formData = new FormData()
