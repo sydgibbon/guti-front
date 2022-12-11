@@ -22,26 +22,18 @@ const ComputerForm = () => {
     formFields[data.id] = data.value;
   }
   
+  // Modal Validations
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
-  if (open) { console.log("ola")}
-
-
+  const handleClose = () => setOpen(false);
 
   return (
-    // <div> general
-    <div className="computer-form flex flex-col items-center m-4">
-
-
-      <form onSubmit={handleSubmit} action={`${BASE_URL}computers/`} method="POST" encType="multipart/form-date" className="w-full divide-y divide-y-reverse">
-
+    <div className="computer-form flex flex-col items-center m-4"><form onSubmit={handleSubmit} action={`${BASE_URL}computers/`} method="POST" encType="multipart/form-date" className="w-full divide-y divide-y-reverse">
         <div className="form-header flex justify-center md:justify-start bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5">
           <BsLaptop className="inline my-auto mr-2" size="24" />
           <p className="text-base my-auto font-medium">New Item - Computers</p>
         </div>
-        {/* <div> contenedor del Form */}
         <div className="form-container h-full w-full md:p-4 border border-secondary-dark bg-white flex justify-between">
-          {/* se utilizan dos <div> para separar los inputs, este es el primero */}
           <div className="first-form w-full grid md:grid-cols-2 md:mx-4">
             <div className=" mx-4 input-name my-4">
               <p className="text-sm mb-2">Name</p>
@@ -54,13 +46,10 @@ const ComputerForm = () => {
                 <div className="h-10 border border-secondary-dark flex items-center">
                   <TbList className="mx-2" />
                 </div>
-
-                {/* <LocationsSubForm></LocationsSubForm> */}
                 <div onClick={handleOpen} className="h-10 border border-secondary-dark flex items-center hover:bg-primary-light hover:text-white">
                   <TbPlus className="mx-2" />
-                  <span>ola</span>
                 </div>
-
+                <LocationsSubForm trigger={open} setTrigger={handleClose}></LocationsSubForm>
                 <div className="rounded-r-md h-10 border border-secondary-dark flex items-center">
                   <TbMap className="mx-2" />
                 </div>
@@ -208,7 +197,6 @@ const ComputerForm = () => {
             </div>
           </div>
         </div>
-        {/* <div> del footer */}
         <div className="form-footer flex h-1/6 w-full border rounded-b-md border-secondary-dark justify-center md:justify-end mb-2 bg-white py-4 px-5">
           <button className="flex items-center md:mr-4 border-2 border-orange-dark rounded-md bg-primary-light text-white hover:border-black py-2 px-4">
             <TbPlus className="mr-1" />

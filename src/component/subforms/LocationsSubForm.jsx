@@ -1,34 +1,38 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import Modal from '@mui/material/Modal';
-import { TbCircleX, TbPlus, TbList, TbMap } from "react-icons/tb";
+import { TbCircleX, TbPlus, TbList } from "react-icons/tb";
 import { BsLaptop } from "react-icons/bs";
+import SelectComponent from "../atomic/SelectComponent";
+import { saveAsset, BASE_URL } from "../../api/axios";
 
-function LocationsSubForm() {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+function LocationsSubForm(props) {
 
-  const botonAbrir = () => {
-    return (
-      <div onClick={handleOpen} className="h-10 border border-secondary-dark flex items-center">
-        <TbPlus className="mx-2" />
-      </div>
-    )
-    
-  };
-
+  let formFields = {}
+  let formData = new FormData()
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    Object.keys(formFields).forEach(key => {
+      formData.append(key, formFields[key])
+    })
+    saveAsset('computers', formData)
+  }
+  const handleChange = (e) => {
+    formFields[e.target.id] = e.target.value;
+  }
+  const handleChangeSelect = (data) => {
+    formFields[data.id] = data.value;
+  }
 
   return (
     <div>
-      {botonAbrir()}
-      <Modal open={open} onClose={handleClose}>
+      <Modal open={props.trigger} onClose={props.setTrigger}>
         <Box className="popup-container outline-none overflow-y-scroll absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white border rounded-md border-secondary-dark w-4/6 h-5/6">
           <div className="form-header sticky top-0 flex justify-center md:justify-start bg-medium-gray h-1/8 w-full border-b rounded-t-md border-secondary-dark mx-auto py-4 px-5">
             <BsLaptop className="inline my-auto mr-2" size="24" />
             <p className="text-base my-auto font-medium grow">New Item - Computers</p>
             <div className='close-button flex justify-end p-2 grow-0' >
-              <TbCircleX onClick={handleClose} size="30" className="hover:text-orange-dark" />
+              <TbCircleX onClick={props.setTrigger} size="30" className="hover:text-orange-dark" />
             </div>
           </div>
           <div className='contenedor-subform pb-10'>
@@ -50,7 +54,7 @@ function LocationsSubForm() {
                     As child of
                   </p>
                   <div className="flex divide-x divide-x-reverse">
-                    {/* <SelectComponent onChange={handleChangeSelect} id='computermodels' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray" /> */}
+                    <SelectComponent onChange={handleChangeSelect} id='computermodels' className="w-full rounded-l-md h- border border-secondary-dark bg-medium-gray" />
                     <div className="h-10 border rounded-r-md border-secondary-dark flex items-center">
                       <TbList className="mx-2" />
                     </div>
