@@ -50,7 +50,7 @@ function FormsTemplate(inputPropierties, FormHeader) {
         </div>
       ))}
       <form action="" className='h-full w-full divide-y divide-y-reverse'>
-        <div className='inputs-container grid grid-cols-2 gap-x-2 h-full w-full px-2 py-2 border border-secondary-dark bg-white'>
+        <div className='inputs-container grid grid-cols-1 md:grid-cols-2 gap-x-2 h-full w-full px-2 py-2 border border-secondary-dark bg-white'>
           {inputPropierties.map((field) => (
             <div className={`mx-4 input-${field.key} my-4`}>
               <p className="text-sm mb-2">{field.title}</p>
