@@ -27,17 +27,17 @@ function LocationsSubForm(props) {
   return (
     <div>
       <Modal open={props.trigger} onClose={props.setTrigger}>
-        <Box className="popup-container outline-none overflow-y-scroll absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white border rounded-md border-secondary-dark w-4/6 h-5/6">
+        <Box className="popup-container outline-none overflow-y-scroll absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white border rounded-md border-secondary-dark w-5/6 md:w-4/6 h-5/6">
           <div className="form-header sticky top-0 flex justify-center md:justify-start bg-medium-gray h-1/8 w-full border-b rounded-t-md border-secondary-dark mx-auto py-4 px-5">
             <BsLaptop className="inline my-auto mr-2" size="24" />
-            <p className="text-base my-auto font-medium grow">New Item - Computers</p>
-            <div className='close-button flex justify-end p-2 grow-0' >
+            <p className="text-base my-auto font-medium md:grow">New Item - Computers</p>
+            <div className='close-button absolute md:relative top-0 right-0 md:top-1/2 md:px-2 ' >
               <TbCircleX onClick={props.setTrigger} size="30" className="hover:text-orange-dark" />
             </div>
           </div>
           <div className='contenedor-subform pb-10'>
             <form action="" className=''>
-              <div className='grid grid-cols-2 gap-4 p-5'>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-5'>
                 <div className="input-name">
                   <p className="text-sm mb-2">Name</p>
                   <input className="w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray"></input>
