@@ -84,22 +84,22 @@ import {
 export const appItems = [
   {
     name: "Home",
-    icon: function () {
-      return <BsHouse />;
+    icon: function (style, size) {
+      return <BsHouse className={style} size={size}/>;
     },
     link: "/",
     itemContent: [
       {
         name: "Assets",
-        icon: function () {
-          return <BsBoxSeam className="block my-auto" />;
+        icon: function (style, size) {
+          return <BsBoxSeam className={style} size={size} />;
         },
         link: "/assets",
         itemContent: [
           {
             name: "Dashboard",
-            icon: function () {
-              return <BsSpeedometer className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsSpeedometer className={style} size={size} />;
             },
             link: "/assets/dashboard",
           },
@@ -113,127 +113,127 @@ export const appItems = [
           },
           {
             name: "Monitors",
-            icon: function () {
-              return <BsDisplay className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsDisplay className={style} size={size} />;
             },
             link: "/assets/monitors",
             formLink: "/monitor-form",
           },
           {
             name: "Software",
-            icon: function () {
-              return <TbApps className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbApps className={style} size={size} />;
             },
             link: "/assets/software",
             formLink: "/software-form",
           },
           {
             name: "Network devices",
-            icon: function () {
-              return <TbSitemap className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbSitemap className={style} size={size} />;
             },
             link: "/assets/network-devices",
             formLink: "/netdevice-form",
           },
           {
             name: "Devices",
-            icon: function () {
-              return <TbUsb className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbUsb className={style} size={size} />;
             },
             link: "/assets/devices",
             formLink: "/device-form",
           },
           {
             name: "Printers",
-            icon: function () {
-              return <TbPrinter className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbPrinter className={style} size={size} />;
             },
             link: "/assets/printers",
             formLink: "/printer-form",
           },
           {
             name: "Cartridges",
-            icon: function () {
-              return <TbDropletFilled2 className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbDropletFilled2 className={style} size={size} />;
             },
             link: "/assets/cartridges",
             formLink: "/cartridge-form",
           },
           {
             name: "Consumables",
-            icon: function () {
-              return <BsBoxSeam className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsBoxSeam className={style} size={size} />;
             },
             link: "/assets/consumables",
             formLink: "/consumable-form",
           },
           {
             name: "Phones",
-            icon: function () {
-              return <TbPhone className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbPhone className={style} size={size} />;
             },
             link: "/assets/phones",
             formLink: "/phone-form",
           },
           {
             name: "Racks",
-            icon: function () {
-              return <TbServer className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbServer className={style} size={size} />;
             },
             link: "/assets/racks",
             formLink: "/rack-form",
           },
           {
             name: "Enclosures",
-            icon: function () {
-              return <TbColumns className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbColumns className={style} size={size} />;
             },
             link: "/assets/enclosures",
             formLink: "/enclosures-form",
           },
           {
             name: "PDUs",
-            icon: function () {
-              return <TbPlug className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbPlug className={style} size={size} />;
             },
             link: "/assets/pdus",
             formLink: "/pdu-form",
           },
           {
             name: "Passive devices",
-            icon: function () {
-              return <TbBrowser className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbBrowser className={style} size={size} />;
             },
             link: "/assets/passive-devices",
             formLink: "/passivedevice-form",
           },
           {
             name: "Unmanaged devices",
-            icon: function () {
-              return <TbQuestionMark className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbQuestionMark className={style} size={size} />;
             },
             link: "/assets/unmanaged-devices",
           },
           {
             name: "Cables",
-            icon: function () {
-              return <TbLine className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbLine className={style} size={size} />;
             },
             link: "/assets/cables",
             formLink: "/cable-form",
           },
           {
             name: "Simcards",
-            icon: function () {
-              return <TbFileBarcode className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbFileBarcode className={style} size={size} />;
             },
             link: "/assets/simcards",
             formLink: "/simcard-form",
           },
           {
             name: "Global",
-            icon: function () {
-              return <TbList className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbList className={style} size={size} />;
             },
             link: "/assets/global",
           },
@@ -241,71 +241,71 @@ export const appItems = [
       },
       {
         name: "assistance",
-        icon: function () {
-          return <BsHeadset className="block my-auto" />;
+        icon: function (style, size) {
+          return <BsHeadset className={style} size={size} />;
         },
         link: "/assistance",
         itemContent: [
           {
             name: "Dashboard",
-            icon: function () {
-              return <BsSpeedometer className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsSpeedometer className={style} size={size} />;
             },
             link: "/assistance/dashboard",
           },
           {
             name: "Tickets",
-            icon: function () {
-              return <BsExclamationCircle className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsExclamationCircle className={style} size={size} />;
             },
             link: "/assistance/tickets",
           },
           {
             name: "Create Ticket",
-            icon: function () {
-              return <TbPlus className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbPlus className={style} size={size} />;
             },
             link: "/ticket-form",
           },
           {
             name: "Problems",
-            icon: function () {
-              return <BsExclamationTriangle className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsExclamationTriangle className={style} size={size} />;
             },
             link: "/assistance/problems",
           },
           {
             name: "Changes",
-            icon: function () {
-              return <TbCheckupList className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbCheckupList className={style} size={size} />;
             },
             link: "/assistance/changes",
           },
           {
             name: "Planing",
-            icon: function () {
-              return <TbCalendarTime className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbCalendarTime className={style} size={size} />;
             },
             link: "/assistance/planing",
           },
           {
             name: "Statistics",
-            icon: function () {
-              return <BsFillBarChartFill className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsFillBarChartFill className={style} size={size} />;
             },
             link: "/assistance/statistics",
           },
           {
             name: "Recurring Tickets",
-            icon: function () {
-              return <TbHistory className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbHistory className={style} size={size} />;
             },
             link: "/assistance/recurring-tickets",
           },
           {
             name: "Reocurring Changes",
-            icon: function () {
-              return <TbHistory className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbHistory className={style} size={size} />;
             },
             link: "/assistance/recurring-changes",
           },
@@ -313,99 +313,99 @@ export const appItems = [
       },
       {
         name: "Management",
-        icon: function () {
-          return <BsWallet2 className="block my-auto" />;
+        icon: function (style, size) {
+          return <BsWallet2 className={style} size={size} />;
         },
         link: "/management",
         itemContent: [
           {
             name: "Licenses",
-            icon: function () {
-              return <TbLicense className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbLicense className={style} size={size} />;
             },
             link: "/management/Licenses",
           },
           {
             name: "Budgets",
-            icon: function () {
-              return <TbReportMoney className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbReportMoney className={style} size={size} />;
             },
             link: "/management/Budgets",
           },
           {
             name: "Suppliers",
-            icon: function () {
-              return <TbPackage className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbPackage className={style} size={size} />;
             },
             link: "/management/Suppliers",
           },
           {
             name: "Contacts",
-            icon: function () {
-              return <BsPersonFill className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsPersonFill className={style} size={size} />;
             },
             link: "/management/Contacts",
           },
           {
             name: "Contracts",
-            icon: function () {
-              return <TbSignature className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbSignature className={style} size={size} />;
             },
             link: "/management/Contracts",
           },
           {
             name: "Documents",
-            icon: function () {
-              return <TbFileText className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbFileText className={style} size={size} />;
             },
             link: "/management/Documents",
           },
           {
             name: "Lines",
-            icon: function () {
-              return <TbPhoneCalling className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbPhoneCalling className={style} size={size} />;
             },
             link: "/management/Lines",
           },
           {
             name: "Certificates",
-            icon: function () {
-              return <TbCertificate className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbCertificate className={style} size={size} />;
             },
             link: "/management/Certificates",
           },
           {
             name: "Data centers",
-            icon: function () {
-              return <TbBuildingWarehouse className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbBuildingWarehouse className={style} size={size} />;
             },
             link: "/management/Data centers",
           },
           {
             name: "Clusters",
-            icon: function () {
-              return <TbVectorTriangle className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbVectorTriangle className={style} size={size} />;
             },
             link: "/management/Clusters",
           },
           {
             name: "Domains",
-            icon: function () {
-              return <TbWorld className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbWorld className={style} size={size} />;
             },
             link: "/management/Domains",
           },
           {
             name: "Appliances",
-            icon: function () {
-              return <TbMouse2 className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbMouse2 className={style} size={size} />;
             },
             link: "/management/Appliances",
           },
           {
             name: "Databases",
-            icon: function () {
-              return <TbDatabase className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbDatabase className={style} size={size} />;
             },
             link: "/management/Databases",
           },
@@ -413,57 +413,57 @@ export const appItems = [
       },
       {
         name: "Tools",
-        icon: function () {
-          return <BsBriefcase className="block my-auto" />;
+        icon: function (style, size) {
+          return <BsBriefcase className={style} size={size} />;
         },
         link: "/tools",
         itemContent: [
           {
             name: "Projects",
-            icon: function () {
-              return <TbIdBadge2 className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbIdBadge2 className={style} size={size} />;
             },
             link: "/tools/projects",
           },
           {
             name: "Reminders",
-            icon: function () {
-              return <TbWallpaper className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbWallpaper className={style} size={size} />;
             },
             link: "/tools/reminders",
           },
           {
             name: "RSS feed",
-            icon: function () {
-              return <TbWifi className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbWifi className={style} size={size} />;
             },
             link: "/tools/rss-feed",
           },
           {
             name: "Knowledge Base",
-            icon: function () {
-              return <TbBooks className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbBooks className={style} size={size} />;
             },
             link: "/tools/knowledge-base",
           },
           {
             name: "Reservations",
-            icon: function () {
-              return <TbId className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbId className={style} size={size} />;
             },
             link: "/tools/reservations",
           },
           {
             name: "Reports",
-            icon: function () {
-              return <TbFileTime className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbFileTime className={style} size={size} />;
             },
             link: "/tools/reports",
           },
           {
             name: "Saved searches",
-            icon: function () {
-              return <TbChecklist className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbChecklist className={style} size={size} />;
             },
             link: "/tools/saved-searches",
           },
@@ -471,71 +471,71 @@ export const appItems = [
       },
       {
         name: "Administration",
-        icon: function () {
-          return <BsShieldCheck className="block my-auto" />;
+        icon: function (style, size) {
+          return <BsShieldCheck className={style} size={size} />;
         },
         link: "/administration",
         itemContent: [
           {
             name: "Users",
-            icon: function () {
-              return <BsPerson className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsPerson className={style} size={size} />;
             },
             link: "/administration/users",
           },
           {
             name: "Groups",
-            icon: function () {
-              return <BsPeople className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsPeople className={style} size={size} />;
             },
             link: "/administration/groups",
           },
           {
             name: "Entities",
-            icon: function () {
-              return <BsLayers className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsLayers className={style} size={size} />;
             },
             link: "/administration/entities",
           },
           {
             name: "Rules",
-            icon: function () {
-              return <BsBook className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsBook className={style} size={size} />;
             },
             link: "/administration/rules",
           },
           {
             name: "Dictionaries",
-            icon: function () {
-              return <BsBook className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsBook className={style} size={size} />;
             },
             link: "/administration/dictionaries",
           },
           {
             name: "Profiles",
-            icon: function () {
-              return <BsPersonBadge className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsPersonBadge className={style} size={size} />;
             },
             link: "/administration/profiles",
           },
           {
             name: "Notification Queue",
-            icon: function () {
-              return <TbMessageReport className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbMessageReport className={style} size={size} />;
             },
             link: "/administration/notification-queue",
           },
           {
             name: "Logs",
-            icon: function () {
-              return <TbNotes className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbNotes className={style} size={size} />;
             },
             link: "/administration/logs",
           },
           {
             name: "Inventory",
-            icon: function () {
-              return <TbClipboardCheck className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbClipboardCheck className={style} size={size} />;
             },
             link: "/administration/inventory",
           },
@@ -543,85 +543,85 @@ export const appItems = [
       },
       {
         name: "Setup",
-        icon: function () {
-          return <BsGear className="block my-auto" />;
+        icon: function (style, size) {
+          return <BsGear className={style} size={size} />;
         },
         link: "/setup",
         itemContent: [
           {
             name: "Dropdowns",
-            icon: function () {
-              return <BsListNested className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsListNested className={style} size={size} />;
             },
             link: "/setup/Dropdowns",
           },
           {
             name: "Components",
-            icon: function () {
-              return <TbComponents className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbComponents className={style} size={size} />;
             },
             link: "/setup/Components",
           },
           {
             name: "Notifications",
-            icon: function () {
-              return <TbBellRinging className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbBellRinging className={style} size={size} />;
             },
             link: "/setup/Notifications",
           },
           {
             name: "Service levels",
-            icon: function () {
-              return <BsUiChecks className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsUiChecks className={style} size={size} />;
             },
             link: "/setup/service-levels",
           },
           {
             name: "General",
-            icon: function () {
-              return <TbAdjustments className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbAdjustments className={style} size={size} />;
             },
             link: "/setup/general",
           },
           {
             name: "Fields Uniqueness",
-            icon: function () {
-              return <BsUiChecksGrid className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsUiChecksGrid className={style} size={size} />;
             },
             link: "/setup/fields-uniqueness",
           },
           {
             name: "Automatic actions",
-            icon: function () {
-              return <BsFillPlayBtnFill className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsFillPlayBtnFill className={style} size={size} />;
             },
             link: "/setup/automatic-actions",
           },
           {
             name: "Authentication",
-            icon: function () {
-              return <BsPersonCheckFill className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsPersonCheckFill className={style} size={size} />;
             },
             link: "/setup/authentication",
           },
           {
             name: "Receivers",
-            icon: function () {
-              return <BsFillInboxFill className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsFillInboxFill className={style} size={size} />;
             },
             link: "/setup/receivers",
           },
           {
             name: "External links",
-            icon: function () {
-              return <BsLink45Deg className="block my-auto" />;
+            icon: function (style, size) {
+              return <BsLink45Deg className={style} size={size} />;
             },
             link: "/setup/external-links",
           },
           {
             name: "Plugins",
-            icon: function () {
-              return <TbPuzzle className="block my-auto" />;
+            icon: function (style, size) {
+              return <TbPuzzle className={style} size={size} />;
             },
             link: "/setup/plugins",
           },
@@ -640,7 +640,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#D45656",
     asset: "computers",
     path: "/assets/computers",
-    icon: function () {
+    icon: function (style, size) {
       return <TbDeviceLaptop className="stroke-1 w-6 h-6" />;
     },
   },
@@ -652,7 +652,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#8bdc24",
     asset: "softwares",
     path: "/assets/software",
-    icon: function () {
+    icon: function (style, size) {
       return <TbApps className="stroke-1 w-6 h-6" />;
     },
   },
@@ -664,7 +664,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#6195b2",
     asset: "networkequipments",
     path: "/assets/network-devices",
-    icon: function () {
+    icon: function (style, size) {
       return <TbSitemap className="stroke-1 w-6 h-6" />;
     },
   },
@@ -676,7 +676,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#e69d12",
     asset: "racks",
     path: "/assets/racks",
-    icon: function () {
+    icon: function (style, size) {
       return <TbServer className="stroke-1 w-6 h-6" />;
     },
   },
@@ -688,7 +688,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#76b0a2",
     asset: "enclosures",
     path: "/assets/enclosures",
-    icon: function () {
+    icon: function (style, size) {
       return <TbColumns className="stroke-1 w-6 h-6" />;
     },
   },
@@ -700,7 +700,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#8f2323",
     asset: "monitors",
     path: "/assets/monitors",
-    icon: function () {
+    icon: function (style, size) {
       return <TbDeviceDesktop className="stroke-1 w-6 h-6" />;
     },
   },
@@ -712,7 +712,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#4d662c",
     asset: "softwarelicenses",
     path: "/assets/dashboard",
-    icon: function () {
+    icon: function (style, size) {
       return <TbKey className="stroke-1 w-6 h-6" />;
     },
   },
@@ -724,7 +724,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#1f587b",
     asset: "printers",
     path: "/assets/printers",
-    icon: function () {
+    icon: function (style, size) {
       return <TbPrinter className="stroke-1 w-6 h-6" />;
     },
   },
@@ -736,7 +736,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#956100",
     asset: "pdus",
     path: "/assets/pdus",
-    icon: function () {
+    icon: function (style, size) {
       return <TbPlug className="stroke-1 w-6 h-6" />;
     },
   },
@@ -748,7 +748,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#488d7b",
     asset: "phones",
     path: "/assets/phones",
-    icon: function () {
+    icon: function (style, size) {
       return <TbPhone className="stroke-1 w-6 h-6" />;
     },
   },

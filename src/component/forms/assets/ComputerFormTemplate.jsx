@@ -22,25 +22,30 @@ const ComputerFormTemplate = () => {
     {
       title: "Check Box",
       type: "checkbox",
-      key: "checkbox",
       renombrarPropiedad: [
         {
-          subTitle: "check1"
+          subTitle: "check1",
+          key: "checkbox",
         },
         {
-          subTitle: "check2"
+          subTitle: "check2",
+          key: "checkbox",
         },
         {
-          subTitle: "check3"
+          subTitle: "check3",
+          key: "checkbox",
         },
         {
-          subTitle: "check4"
+          subTitle: "check4",
+          key: "checkbox",
         },
         {
-          subTitle: "check5"
+          subTitle: "check5",
+          key: "checkbox",
         },
         {
-          subTitle: "check6"
+          subTitle: "check6",
+          key: "checkbox",
         },
       ]
     },
