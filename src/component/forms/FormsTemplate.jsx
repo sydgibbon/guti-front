@@ -9,12 +9,9 @@ function FormsTemplate(inputPropierties, FormHeader) {
 
   const renderInputType = (fieldType, fieldKey, renombrarPropiedad) => {
     switch (fieldType) {
-      // case "input":
-      //   return (<input className="w-full px-2 h-10 rounded-md bg-medium-gray" />)
       case "select":
         return (<SelectComponent asset={fieldKey} className="w-full rounded-md" />)
         break;
-
       case "input":
         return (<input className="w-full px-2 h-10 rounded-md bg-medium-gray" />)
         break;
@@ -22,19 +19,17 @@ function FormsTemplate(inputPropierties, FormHeader) {
         return (<textarea rows="3" className="w-full p-2 rounded-md border-secondary-dark bg-medium-gray"></textarea>)
         break;
       case "checkbox":
-      debugger
-
-        // return (
-        //   <>
-        //     <input type='checkbox' className="mr-2"></input>
-        //     <span>oli</span>
-        //   </>)
-
         return (
-          renombrarPropiedad.map((cosito) => { <>hola</> })
+          renombrarPropiedad.map((cosito) => {
+            return (
+              <div className='px-4'>
+                <input type='checkbox' className="mr-2"></input>
+                <span>{cosito.subTitle}</span>
+              </div>
+            )
+          })
         )
         break;
-
       default:
         <></>
         break;
@@ -46,7 +41,7 @@ function FormsTemplate(inputPropierties, FormHeader) {
   return (
     <div className='contenedor flex flex-col items-center m-4 divide-y-reverse'>
       {FormHeader.map((header) => (
-        <div className='header flex justify-center md:justify-start bg-medium-gray h-1/6 w-full border border-b-0 rounded-t-md border-secondary-dark mt-2 mx-auto py-4 px-5'>
+        <div className='header flex justify-center md:justify-start bg-medium-gray h-1/6 w-full border border-b-0 rounded-t-md border-secondary-dark py-4 px-5'>
           {appItems[0].itemContent[0].itemContent.map((app) => {
             return (header.title === app.name ?
               app.icon(header.style, header.size) : "");
@@ -55,11 +50,11 @@ function FormsTemplate(inputPropierties, FormHeader) {
         </div>
       ))}
       <form action="" className='h-full w-full divide-y divide-y-reverse'>
-        <div className='inputs-container grid grid-cols-2 gap-x-8 h-full w-full px-9 py-2 border border-secondary-dark bg-white'>
+        <div className='inputs-container grid grid-cols-2 gap-x-2 h-full w-full px-2 py-2 border border-secondary-dark bg-white'>
           {inputPropierties.map((field) => (
             <div className={`mx-4 input-${field.key} my-4`}>
               <p className="text-sm mb-2">{field.title}</p>
-              <div className={`flex ${field.type != 'checkbox' ? 'border border-secondary-dark bg-medium-gray divide-x' : ''} rounded-md  `}>
+              <div className={`flex ${field.type != 'checkbox' ? 'border border-secondary-dark bg-medium-gray divide-x' : 'flex flex-wrap flex-col md:flex-row ml-4 md:ml-0'} rounded-md  `}>
                 {renderInputType(field.type, field.key, field.renombrarPropiedad)}
                 {field.addList ?
                   <div className={FieldIconStyle}>

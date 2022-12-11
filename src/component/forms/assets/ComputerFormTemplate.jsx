@@ -33,6 +33,15 @@ const ComputerFormTemplate = () => {
         {
           subTitle: "check3"
         },
+        {
+          subTitle: "check4"
+        },
+        {
+          subTitle: "check5"
+        },
+        {
+          subTitle: "check6"
+        },
       ]
     },
     {
