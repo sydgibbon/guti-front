@@ -36,6 +36,7 @@ import Printers from "./pages/Printers";
 import Cartridges from "./pages/Cartridges";
 import PDUs from "./pages/PDUs";
 import UnmanagedDevices from "./pages/UnmanagedDevices";
+import ComputerFormTemplate from "./component/forms/assets/ComputerFormTemplate"
 
 
 
@@ -114,6 +115,7 @@ function App() {
         <Route path="/assets/global" element={<Main content={ <Global />} />} />
         
         <Route path="/computer-form" element={<Main content={ <ComputerForm />} />} />
+        <Route path="/computer-form-template" element={<Main content={ <ComputerFormTemplate />} />} />
         <Route path="/enclosure-form" element={<Main content={ <EnclosuresForm />} />} />
         <Route path="/cable-form" element={<Main content={ <CableForm />} />} />
         <Route path="/computers" element={<Main content={ <Computers />} />} />
