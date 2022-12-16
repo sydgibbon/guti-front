@@ -240,7 +240,7 @@ export const appItems = [
         ],
       },
       {
-        name: "assistance",
+        name: "Assistance",
         icon: function (style, size) {
           return <BsHeadset className={style} size={size} />;
         },

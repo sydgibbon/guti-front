@@ -29,7 +29,7 @@ function SideBar() {
           {appItems[0].itemContent.map((app) => (
             <SidebarMenu
               text={app.name}
-              icon={app.icon()}
+              icon={app.icon(iconStyles.style)}
               subMenu={app.itemContent ? app.itemContent.map((submenu) => (
                 <SidebarSubMenu
                   text={submenu.name}
