@@ -109,7 +109,7 @@ export const appItems = [
               return <BsLaptop className={style} size={size}/>;
             },
             link: "/assets/computers",
-            formLink: "/computer-form",
+            formLink: "/assets/forms/computers",
           },
           {
             name: "Monitors",
@@ -117,7 +117,7 @@ export const appItems = [
               return <BsDisplay className={style} size={size} />;
             },
             link: "/assets/monitors",
-            formLink: "/monitor-form",
+            formLink: "/assets/forms/monitors",
           },
           {
             name: "Software",
@@ -125,7 +125,7 @@ export const appItems = [
               return <TbApps className={style} size={size} />;
             },
             link: "/assets/software",
-            formLink: "/software-form",
+            formLink: "/assets/forms/software",
           },
           {
             name: "Network devices",
@@ -133,7 +133,7 @@ export const appItems = [
               return <TbSitemap className={style} size={size} />;
             },
             link: "/assets/network-devices",
-            formLink: "/netdevice-form",
+            formLink: "/assets/forms/network-devices",
           },
           {
             name: "Devices",
@@ -141,7 +141,7 @@ export const appItems = [
               return <TbUsb className={style} size={size} />;
             },
             link: "/assets/devices",
-            formLink: "/device-form",
+            formLink: "/assets/forms/devices",
           },
           {
             name: "Printers",
@@ -149,7 +149,7 @@ export const appItems = [
               return <TbPrinter className={style} size={size} />;
             },
             link: "/assets/printers",
-            formLink: "/printer-form",
+            formLink: "/assets/forms/printers",
           },
           {
             name: "Cartridges",
@@ -157,7 +157,7 @@ export const appItems = [
               return <TbDropletFilled2 className={style} size={size} />;
             },
             link: "/assets/cartridges",
-            formLink: "/cartridge-form",
+            formLink: "/assets/forms/cartridges",
           },
           {
             name: "Consumables",
@@ -165,7 +165,7 @@ export const appItems = [
               return <BsBoxSeam className={style} size={size} />;
             },
             link: "/assets/consumables",
-            formLink: "/consumable-form",
+            formLink: "/assets/forms/consumables",
           },
           {
             name: "Phones",
@@ -173,7 +173,7 @@ export const appItems = [
               return <TbPhone className={style} size={size} />;
             },
             link: "/assets/phones",
-            formLink: "/phone-form",
+            formLink: "/assets/forms/phones",
           },
           {
             name: "Racks",
@@ -181,7 +181,7 @@ export const appItems = [
               return <TbServer className={style} size={size} />;
             },
             link: "/assets/racks",
-            formLink: "/rack-form",
+            formLink: "/assets/forms/racks",
           },
           {
             name: "Enclosures",
@@ -189,7 +189,7 @@ export const appItems = [
               return <TbColumns className={style} size={size} />;
             },
             link: "/assets/enclosures",
-            formLink: "/enclosures-form",
+            formLink: "/assets/forms/enclosures",
           },
           {
             name: "PDUs",
@@ -197,7 +197,7 @@ export const appItems = [
               return <TbPlug className={style} size={size} />;
             },
             link: "/assets/pdus",
-            formLink: "/pdu-form",
+            formLink: "/assets/forms/pdus",
           },
           {
             name: "Passive devices",
@@ -205,7 +205,7 @@ export const appItems = [
               return <TbBrowser className={style} size={size} />;
             },
             link: "/assets/passive-devices",
-            formLink: "/passivedevice-form",
+            formLink: "/assets/forms/passive-devices",
           },
           {
             name: "Unmanaged devices",
@@ -220,7 +220,7 @@ export const appItems = [
               return <TbLine className={style} size={size} />;
             },
             link: "/assets/cables",
-            formLink: "/cable-form",
+            formLink: "/assets/forms/cables",
           },
           {
             name: "Simcards",
@@ -228,7 +228,7 @@ export const appItems = [
               return <TbFileBarcode className={style} size={size} />;
             },
             link: "/assets/simcards",
-            formLink: "/simcard-form",
+            formLink: "/assets/forms/simcards",
           },
           {
             name: "Global",
