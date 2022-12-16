@@ -6,6 +6,7 @@ const UnmanagedDevices = () => {
   const columns = [
     {
       name: "NAME",
+      sortable: true,
       selector: (row) => row?.name,
     },
 

@@ -5,35 +5,43 @@ const Devices = () => {
       const columns = [
         {
           name: "NAME",
-          selector: (row) => row?.name,
+          sortable: true,
+      selector: (row) => row?.name,
         },
         {
           name: "STATUS",
-          selector: (row) => row?.states?.name, 
+          sortable: true,
+      selector: (row) => row?.states?.name, 
         },
         {
           name: "MANUFACTURERS",
-          selector: (row) => row?.manufacturers?.name,
+          sortable: true,
+      selector: (row) => row?.manufacturers?.name,
         },
         {
           name: "LOCATIONS",
-          selector: (row) => row?.locations?.name, 
+          sortable: true,
+      selector: (row) => row?.locations?.name, 
         },
         {
           name: "TYPES",
-          selector: (row) => row?.peripheraltypes?.name, 
+          sortable: true,
+      selector: (row) => row?.peripheraltypes?.name, 
         },
         {
           name: "MODEL",
-          selector: (row) => row?.peripheralmodels?.name
+          sortable: true,
+      selector: (row) => row?.peripheralmodels?.name
         },
         {
           name: "LAST UPDATE",
-          selector: (row) => row?.date_mod, 
+          sortable: true,
+      selector: (row) => row?.date_mod, 
         },
         {
           name: "ALTERNATE USERNAME",
-          selector: (row) => row?.contact, 
+          sortable: true,
+      selector: (row) => row?.contact, 
         },
       ];
       return (

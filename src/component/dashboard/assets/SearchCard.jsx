@@ -111,7 +111,7 @@ const SearchCard = ({ asset, columns}) => {
         </div>
       </div>
 
-      <DataTable columns={columns} data={data} pagination paginationPerPage={20} paginationRowsPerPageOptions={[5, 10, 15, 20, 30, 40, 50, 100, 150, 200, 250, 500,750, 1000, 2000, 3000, 10000]} defaultSortFieldId={1} />
+      <DataTable columns={columns} selectableRows data={data} pagination paginationPerPage={20} paginationRowsPerPageOptions={[5, 10, 15, 20, 30, 40, 50, 100, 150, 200, 250, 500,750, 1000, 2000, 3000, 10000]} defaultSortFieldId={1} />
 
     </div>
   );
