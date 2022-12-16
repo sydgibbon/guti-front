@@ -6,6 +6,7 @@ import {
 import user from '../../images/user.png';
 import Breadcrumb from '../atomic/Breadcrumb';
 import NavbarMenu from './NavbarMenu';
+import Tooltip from '@mui/material/Tooltip';
 
 
 function Navbar() {
@@ -13,7 +14,7 @@ function Navbar() {
     <div className='navbar-section w-full h-12 bg-light-gray flex justify-between border-b border-secondary-dark'>
       <div className='breadcrumb-section w-1/2 pl-2 items-center flex'>
         <div className='breadcrumb-content w-3/5 flex items-center border-r border-secondary-dark h-full'>
-        <Breadcrumb />
+          <Breadcrumb />
         </div>
         <NavbarMenu />
       </div>
@@ -30,8 +31,7 @@ function Navbar() {
         <div className='user-section flex my-auto justify-around ml-2'>
           <div className='user-name flex flex-col my-auto mr-2'>
             <span className='text-sm'>Super Admin</span>
-            <span className='text-xs'>GUTI User</span>
-
+              <span className='text-xs'>GUTI User</span>
           </div>
           <div className='user-options flex'>
             <img src={user} alt='User' />
