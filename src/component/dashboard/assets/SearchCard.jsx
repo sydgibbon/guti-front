@@ -8,7 +8,7 @@ import {
 } from "react-icons/tb";
 import { BsChevronCompactDown, BsArrow90DegDown } from "react-icons/bs";
 import Switch from "react-switch";
-import axiosPrivate from "../../../api/axios";
+import axiosPrivate, { deleteAsset } from "../../../api/axios";
 import DataTable from "react-data-table-component";
 
 const SearchCard = ({ asset, columns}) => {
@@ -113,6 +113,12 @@ const SearchCard = ({ asset, columns}) => {
 
       <DataTable columns={columns} data={data} pagination paginationPerPage={20} paginationRowsPerPageOptions={[5, 10, 15, 20, 30, 40, 50, 100, 150, 200, 250, 500,750, 1000, 2000, 3000, 10000]} defaultSortFieldId={1} />
 
+      <div>
+        <button
+        className="border-2"
+        onClick={() => deleteAsset('computers')}
+        >Delete Item</button>
+      </div>
     </div>
   );
 };

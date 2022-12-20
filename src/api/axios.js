@@ -24,3 +24,13 @@ export async function saveAsset (asset, assetData) {
         console.log(e)
     }
 }
+
+export async function deleteAsset (asset) {
+    try {
+
+        axiosPrivate.delete( BASE_URL + asset + '/3', {
+            headers: { Authorization: `Token ${TOKEN}`}});
+    } catch (e) {
+        console.log(e)
+    }
+}
