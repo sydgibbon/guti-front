@@ -10,11 +10,29 @@ import { BsChevronCompactDown, BsArrow90DegDown } from "react-icons/bs";
 import Switch from "react-switch";
 import axiosPrivate, { deleteAsset } from "../../../api/axios";
 import DataTable from "react-data-table-component";
+import { saveAsset, isDeletedAsset, BASE_URL } from "../../../api/axios";
 
-const SearchCard = ({ asset, columns}) => {
+const SearchCard = ({ asset, columns }) => {
   const [checked, setChecked] = useState(false);
   const [loadingData, setLoadingData] = useState(true);
   const [data, setData] = useState([]);
+
+ // codigo guty
+  let formFields = {}
+    let formData = new FormData()
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      Object.keys(formFields).forEach(key => {
+        formData.append(key, formFields[key])
+      })
+      deleteAsset('computers/3', formData)
+    }
+    const handleChange = (e) => {
+      formFields[e.target.id] = e.target.value;
+    }
+
+    // codigo guty
+
 
   useEffect(() => {
     async function getData() {
@@ -111,14 +129,26 @@ const SearchCard = ({ asset, columns}) => {
         </div>
       </div>
 
-      <DataTable columns={columns} data={data} pagination paginationPerPage={20} paginationRowsPerPageOptions={[5, 10, 15, 20, 30, 40, 50, 100, 150, 200, 250, 500,750, 1000, 2000, 3000, 10000]} defaultSortFieldId={1} />
+      <DataTable columns={columns} data={data} pagination paginationPerPage={20} paginationRowsPerPageOptions={[5, 10, 15, 20, 30, 40, 50, 100, 150, 200, 250, 500, 750, 1000, 2000, 3000, 10000]} defaultSortFieldId={1} />
 
-      <div>
-        <button
-        className="border-2"
-        onClick={() => deleteAsset('computers')}
-        >Delete Item</button>
-      </div>
+      <form onSubmit={handleSubmit} action={`${BASE_URL}computers/`} method="POST" encType="multipart/form-date" className='h-full w-full divide-y divide-y-reverse'>
+
+        <div className="flex justify-between">
+          <input onChange={handleChange} id="is_deleted" className="border-2" />
+          <button
+            className="border-2"
+            // onClick={() => deleteAsset('computers')}
+          >Delete Item</button>
+
+          <button
+            id='is_deleted'
+            className="border-2"
+            // onClick={() => isDeletedAsset('computers')}
+          >Is Deleted</button>
+        </div>
+      </form>
+
+
     </div>
   );
 };

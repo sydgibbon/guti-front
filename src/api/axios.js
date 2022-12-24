@@ -25,11 +25,24 @@ export async function saveAsset (asset, assetData) {
     }
 }
 
-export async function deleteAsset (asset) {
+export async function isDeletedAsset (asset) {
     try {
 
         axiosPrivate.delete( BASE_URL + asset + '/3', {
             headers: { Authorization: `Token ${TOKEN}`}});
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+export async function deleteAsset (asset, assetData) {
+    try {
+
+        const response = await axiosPrivate.put( BASE_URL + asset + '/', assetData, {
+            headers: { Authorization: `Token ${TOKEN}`,
+            "Content-Type": "multipart/form-data", },
+          });
+        return response
     } catch (e) {
         console.log(e)
     }
