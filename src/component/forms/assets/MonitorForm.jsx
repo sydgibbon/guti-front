@@ -92,9 +92,9 @@ const MonitorForm = () => {
       key: "user",
     },
     {
-      title: "User",
+      title: "Size",
       type: "number",
-      key: "user",
+      key: "size",
     },
     {
       title: "Group",
