@@ -1,18 +1,18 @@
 import React from "react";
 import { TbPlus, TbList, TbColumns } from "react-icons/tb";
+import FormsTemplate from "../FormsTemplate";
 
 const CableForm = () => {
+
+  
+
   return (
-    // <div> general
     <div className="computer-form flex flex-col items-center m-4 border rounded-md border-secondary-dark">
-      {/* <div> de Form Header */}
-      {/* usé el "w-[calc(100%-1rem)]" para que quede separado en el eje X ayq eu con el mx no se podia darle margen */}
       <div className="form-header flex bg-medium-gray h-1/6 w-full  mt-2 mx-auto py-4 px-5 border-b border-secondary-dark">
         <TbColumns className="inline my-auto mx-2 w-6 h-5" />
         <p className="text-base my-auto font-medium">New Item - Enclosures</p>
       </div>
 
-      {/* <div> contenedor del Form */}
       <div className=" form-container h-full w-full p-4 bg-white ">
         <form className="grid grid-cols-2 gap-4">
           <div className="input-name">
@@ -101,7 +101,6 @@ const CableForm = () => {
         </form>
       </div>
 
-      {/* <div> contenedor del Endpoint */}
       <div className="endpoint-form-container grid grid-cols-2 w-full bg-white">
         <div className="endpoint-content mb-4">
           <div className="card-header py-4 px-5 ml-2 bg-primary-light bg-opacity-50 border-y border-primary-light rounded-tl h-1/6 ">
@@ -229,7 +228,6 @@ const CableForm = () => {
         </div>
       </div>
 
-      {/* <div> del footer */}
       <div className="form-footer flex h-1/6 w-full  justify-end mb-2 bg-white py-4 px-5 border-t border-secondary-dark">
         <button className="flex items-center mr-4 border-2 border-orange-dark rounded-md bg-primary-light text-white hover:border-black py-2 px-4">
           <TbPlus className="mr-1" />
