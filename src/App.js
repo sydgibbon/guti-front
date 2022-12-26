@@ -37,6 +37,7 @@ import Cartridges from "./pages/Cartridges";
 import PDUs from "./pages/PDUs";
 import UnmanagedDevices from "./pages/UnmanagedDevices";
 import ComputerFormTemplate from "./component/forms/assets/ComputerFormTemplate"
+import CableFormTemplate from "./component/forms/assets/CableFormTemplate";
 
 
 
@@ -116,7 +117,7 @@ function App() {
         
         <Route path="/assets/forms/computers" element={<Main content={ <ComputerForm />} />} />
         <Route path="/assets/forms/enclosures" element={<Main content={ <EnclosuresForm />} />} />
-        <Route path="/assets/forms/cables" element={<Main content={ <CableForm />} />} />
+        <Route path="/assets/forms/cables" element={<Main content={ <CableFormTemplate />} />} />
         {/* <Route path="/computers" element={<Main content={ <Computers />} />} /> */}
         {/* <Route path="/enclosures-form" element={<Main content={ <EnclosuresForm />} />} /> */}
         <Route path="/assets/forms/monitors" element={<Main content={ <MonitorForm />} />} />
