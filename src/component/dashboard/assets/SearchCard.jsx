@@ -139,7 +139,6 @@ const SearchCard = ({ asset, columns }) => {
       <DataTable columns={columns} data={data} pagination paginationPerPage={20} paginationRowsPerPageOptions={[5, 10, 15, 20, 30, 40, 50, 100, 150, 200, 250, 500, 750, 1000, 2000, 3000, 10000]} defaultSortFieldId={1} />
 
       <form onSubmit={handleIsDeleted} action={`${BASE_URL}computers/`} method="POST" encType="multipart/form-date" className='h-full w-full divide-y divide-y-reverse'>
-
         <div className="flex justify-between">
           <input onChange={handleChange} id="is_deleted" className="border-2" />
           <button
