@@ -145,8 +145,6 @@ const SearchCard = ({ asset, columns }) => {
           <button
             className="border-2"
           >is_deleted</button>
-
-
         </div>
       </form>
 
