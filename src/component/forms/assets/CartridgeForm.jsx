@@ -67,8 +67,8 @@ const CartridgeForm = () => {
     },
     {
       title: "Pictures",
-      type: "input",
-      key: "pictures", // agregar imputfile en template de los forms
+      type: "file",
+      key: "pictures",
     },
     {
       title: "Stock Target",

@@ -71,7 +71,7 @@ const ConsumablesForm = () => {
     },
     {
       title: "Pictures",
-      type: "input",
+      type: "file",
       key: "pictures",
     },
     {
