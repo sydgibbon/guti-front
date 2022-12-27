@@ -24,7 +24,7 @@ const SearchCard = ({ asset, columns }) => {
     Object.keys(formFields).forEach(key => {
       formData.append(key, formFields[key])
     })
-    isDeletedAsset('computers/3', formData)
+    isDeletedAsset('computers/13', formData)
   }
 
   const handleDelete = (e) => {
@@ -32,7 +32,7 @@ const SearchCard = ({ asset, columns }) => {
     Object.keys(formFields).forEach(key => {
       formData.append(key, formFields[key])
     })
-    deleteAsset('computers/3', formData)
+    deleteAsset('computers/13', formData)
   }
   const handleChange = (e) => {
     formFields[e.target.id] = e.target.value;
