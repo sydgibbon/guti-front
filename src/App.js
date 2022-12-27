@@ -37,6 +37,7 @@ import Cartridges from "./pages/Cartridges";
 import PDUs from "./pages/PDUs";
 import UnmanagedDevices from "./pages/UnmanagedDevices";
 import ComputerFormTemplate from "./component/forms/assets/ComputerFormTemplate"
+import AssetTemplate from "./component/dashboard/assets/AssetTemplate";
 
 
 
@@ -50,44 +51,6 @@ function App() {
       // handle error
     });
 
-  const postComputer = (e) => {
-    e.preventDefault();
-    axiosPrivate({
-      method: "POST",
-      url: "http://127.0.0.1:8000/api/assets/computers/",
-      data: {
-        id: 0,
-        entities: 1,
-        name: null,
-        serial: null,
-        otherserial: null,
-        contact: null,
-        contact_num: null,
-        users_tech: 1,
-        groups_tech: 1,
-        comment: "POSTED WITH AXIOS LAST TEST I HOPE",
-        date_mod: null,
-        autoupdatesystems: 11,
-        locations: 1,
-        networks: 11,
-        computermodels: 11,
-        computertypes: 0,
-        is_template: 1,
-        template_name: null,
-        manufacturers: 11,
-        is_deleted: 11,
-        is_dynamic: 1,
-        users: 1,
-        groups: 1,
-        states: 1,
-        ticket_tco: null,
-        uuid: null,
-        date_creation: null,
-        is_recursive: 1,
-        last_inventory_update: null,
-      },
-    })
-  };
   return (
     <Router>
 
@@ -114,11 +77,11 @@ function App() {
         <Route path="/assets/simcards" element={<Main content={ <Simcards />} />} />
         <Route path="/assets/global" element={<Main content={ <Global />} />} />
         
+        <Route path="/template" element={<Main content={ <ComputerFormTemplate />} />} />
+        
         <Route path="/assets/forms/computers" element={<Main content={ <ComputerForm />} />} />
         <Route path="/assets/forms/enclosures" element={<Main content={ <EnclosuresForm />} />} />
         <Route path="/assets/forms/cables" element={<Main content={ <CableForm />} />} />
-        {/* <Route path="/computers" element={<Main content={ <Computers />} />} /> */}
-        {/* <Route path="/enclosures-form" element={<Main content={ <EnclosuresForm />} />} /> */}
         <Route path="/assets/forms/monitors" element={<Main content={ <MonitorForm />} />} />
         <Route path="/assets/forms/software" element={<Main content={ <SoftwareForm />} />} />
         <Route path="/assets/forms/network-devices" element={<Main content={ <NetworkDeviceForm />} />} />
@@ -132,14 +95,10 @@ function App() {
         <Route path="/assets/forms/simcards" element={<Main content={ <SimcardForm />} />} />
         <Route path="/assets/forms/racks" element={<Main content={ <RackForm />} />} />
         <Route path="*" element={<Main content={ <NotFound />} />} />
+
+        
+        <Route path="/asset" element={<Main content={ <AssetTemplate />} />} />
       </Routes>
-      <button
-        type="button"
-        className="bg-primary text-white rounded-full"
-        onClick={postComputer}
-      >
-        POST WITH AXIOS
-      </button>
     </Router>
 
   );

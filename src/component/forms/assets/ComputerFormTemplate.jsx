@@ -5,7 +5,7 @@ const ComputerFormTemplate = () => {
   
   const inputPropierties = [
     {
-      title: "Name",
+      title: "Nombre",
       type: "input",
       key: "name",
     },
