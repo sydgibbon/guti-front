@@ -15,14 +15,14 @@ const PrinterForm = () => {
     {
       title: "Status",
       type: "select",
-      key: "status",
+      key: "states_id	",
       addList: true,
       addNew: true,
     },
     {
       title: "Locations",
       type: "select",
-      key: "locations",
+      key: "locations_id",
       addList: true,
       addNew: true,
       addMap: true,
@@ -30,7 +30,7 @@ const PrinterForm = () => {
     {
       title: "Types",
       type: "select",
-      key: "types",
+      key: "printertypes_id",
       addList: true,
       addNew: true,
     },
@@ -57,7 +57,7 @@ const PrinterForm = () => {
     {
       title: "Model",
       type: "select",
-      key: "monitormodels_id",
+      key: "printermodels_id",
       addList: true,
       addNew: true,
     },
@@ -89,18 +89,18 @@ const PrinterForm = () => {
     {
       title: "User",
       type: "select",
-      key: "user",
+      key: "users_id",
       addList: true,
     },
     {
       title: "Managment Type",
       type: "select",
-      key: "user",
+      key: "user",  //key?
     },
     {
       title: "Network",
       type: "select",
-      key: "network",
+      key: "networks_id",
       addList: true,
     },
     {
@@ -133,7 +133,7 @@ const PrinterForm = () => {
     {
       title: "Current counter of pages",
       type: "number",
-      key: "init_pages_counter",
+      key: "last_pages_counter",
     },
     {
       title: "Ports",
@@ -141,23 +141,23 @@ const PrinterForm = () => {
       subCheckBox: [
 				{
 					subTitle: "Serial",
-					key: "check1",
+					key: "have_serial",
 				},
         {
 					subTitle: "Parallel",
-					key: "check2",
+					key: "have_parallel",
 				},
         {
 					subTitle: "USB",
-					key: "check3",
+					key: "have_usb",
 				},
         {
 					subTitle: "Ethernet",
-					key: "check4",
+					key: "have_ethernet",
 				},
         {
 					subTitle: "Wifi",
-					key: "check5",
+					key: "have_wifi",
 				},
       ]
     }

@@ -13,14 +13,14 @@ const EnclosuresForm = () => {
     {
       title: "Status",
       type: "select",
-      key: "status",
+      key: "states_id",
       addList: true,
       addNew: true,
     },
     {
       title: "Locations",
       type: "select",
-      key: "locations",
+      key: "locations_id",
       addList: true,
       addNew: true,
       addMap: true,
@@ -48,7 +48,7 @@ const EnclosuresForm = () => {
     {
       title: "Model",
       type: "select",
-      key: "monitormodels_id",
+      key: "enclosuremodels_id",
       addList: true,
       addNew: true,
     },
@@ -70,7 +70,7 @@ const EnclosuresForm = () => {
     {
       title: "Power Suplies",
       type: "number",
-      key: "size",
+      key: "power_supplies",
     },
   ]
 

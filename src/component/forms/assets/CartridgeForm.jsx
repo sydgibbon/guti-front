@@ -16,7 +16,7 @@ const CartridgeForm = () => {
     {
       title: "Locations",
       type: "select",
-      key: "locations",
+      key: "locations_id",
       addList: true,
       addNew: true,
       addMap: true,
@@ -24,7 +24,7 @@ const CartridgeForm = () => {
     {
       title: "Types",
       type: "select",
-      key: "types",
+      key: "cartridgeitemtypes_id",
       addList: true,
       addNew: true,
     },

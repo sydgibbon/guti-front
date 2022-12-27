@@ -13,14 +13,14 @@ const NetworkDeviceForm = () => {
 		{
       title: "Status",
       type: "select",
-      key: "status",
+      key: "states_id",
       addList: true,
       addNew: true,
     },
 		{
       title: "Locations",
       type: "select",
-      key: "locations",
+      key: "locations_id",
       addList: true,
       addNew: true,
       addMap: true,
@@ -28,7 +28,7 @@ const NetworkDeviceForm = () => {
 		{
       title: "Types",
       type: "select",
-      key: "types",
+      key: "networkequipmenttypes_id",
       addList: true,
       addNew: true,
     },
@@ -41,7 +41,7 @@ const NetworkDeviceForm = () => {
 		{
       title: "Manufacturers",
       type: "select",
-      key: "manufacturers",
+      key: "manufacturers_id",
       addList: true,
       addNew: true,
     },
@@ -55,14 +55,14 @@ const NetworkDeviceForm = () => {
 		{
       title: "Model",
       type: "select",
-      key: "model",
+      key: "networkequipmentmodels_id",
       addList: true,
       addNew: true,
     },
 		{
       title: "Alternate Username Number",
       type: "input",
-      key: "name", // ?
+      key: "contact_num", // ?
     },
 		{
       title: "Serial Number",
@@ -72,7 +72,7 @@ const NetworkDeviceForm = () => {
 		{
       title: "Alternate Username",
       type: "input",
-      key: "name", // ?
+      key: "contact", // ?
     },
 		{
       title: "Inventory",
@@ -87,7 +87,7 @@ const NetworkDeviceForm = () => {
 		{
       title: "User",
       type: "select",
-      key: "user",
+      key: "users_id",
       addList: true,
     },
 		{
@@ -100,7 +100,7 @@ const NetworkDeviceForm = () => {
 		{
       title: "Groups",
       type: "select",
-      key: "group",
+      key: "groups_id",
       addList: true,
       addNew: true,
     },

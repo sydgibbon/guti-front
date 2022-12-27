@@ -17,7 +17,7 @@ const ConsumablesForm = () => {
     {
       title: "Locations",
       type: "select",
-      key: "locations",
+      key: "locations_id",
       addList: true,
       addNew: true,
       addMap: true,
@@ -25,14 +25,14 @@ const ConsumablesForm = () => {
     {
       title: "Types",
       type: "select",
-      key: "types",
+      key: "consumableitemtypes_id",
       addList: true,
       addNew: true,
     },
     {
       title: "Reference",
       type: "input",
-      key: "name",
+      key: "ref",
     },
     {
       title: "Technician in Charge of the Hardware",
@@ -57,7 +57,7 @@ const ConsumablesForm = () => {
     {
       title: "Inventory Number",
       type: "input",
-      key: "name",
+      key: "otherserial",
     },
     {
       title: "Comment",
@@ -67,7 +67,7 @@ const ConsumablesForm = () => {
     {
       title: "Alert Threshold",
       type: "number",
-      key: "comment",
+      key: "alarm_threshold",
     },
     {
       title: "Pictures",
@@ -77,7 +77,7 @@ const ConsumablesForm = () => {
     {
       title: "Stock Target",
       type: "number",
-      key: "comment",
+      key: "stock_target",
     },
   ]
 

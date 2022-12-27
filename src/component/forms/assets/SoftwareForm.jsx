@@ -22,14 +22,14 @@ const SoftwareForm = () => {
       subCheckBox: [
 				{
 					subTitle: "",
-					key: "check1",
+					key: "ticket_tco",
 				},
 			]
 		},
 		{
       title: "Locations",
       type: "select",
-      key: "locations",
+      key: "locations_id",
       addList: true,
       addNew: true,
       addMap: true,
@@ -57,13 +57,13 @@ const SoftwareForm = () => {
 		{
       title: "User",
       type: "select",
-      key: "user",
+      key: "users_id",
       addList: true,
     },
 		{
       title: "Group",
       type: "select",
-      key: "group",
+      key: "groups_id",
       addList: true,
       addNew: true,
     },
@@ -74,7 +74,7 @@ const SoftwareForm = () => {
     },
 		{
       title: "Pictures",
-      type: "input",
+      type: "file",
       key: "pictures",
     },
 		{

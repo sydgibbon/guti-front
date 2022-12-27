@@ -13,14 +13,14 @@ const RackForm = () => {
     {
       title: "Status",
       type: "select",
-      key: "status",
+      key: "states_id",
       addList: true,
       addNew: true,
     },
     {
       title: "Locations",
       type: "select",
-      key: "locations",
+      key: "locations_id",
       addList: true,
       addNew: true,
       addMap: true,
@@ -28,7 +28,7 @@ const RackForm = () => {
     {
       title: "Types",
       type: "select",
-      key: "types",
+      key: "racktypes_id",
       addList: true,
       addNew: true,
     },
@@ -55,7 +55,7 @@ const RackForm = () => {
     {
       title: "Model",
       type: "select",
-      key: "monitormodels_id",
+      key: "rackmodels_id",
       addList: true,
       addNew: true,
     },
@@ -83,51 +83,52 @@ const RackForm = () => {
     {
       title: "Position in room",
       text: "No room found or selected", // ver con syd
+      key: "position"
     },
     {
       title: "Door orientation in room",
       type: "select",
-      key: "users_tech_id", // ver con syd
+      key: "room_orientation", // ver con syd
     },
     {
       title: "Number of units",
-      type: "number",
+      type: "number_units",
       key: "size",
     },
     {
       title: "Width",
       type: "number",
-      key: "size",
+      key: "width",
     },
     {
       title: "Height",
       type: "number",
-      key: "size",
+      key: "height",
     },
     {
       title: "Depth",
       type: "number",
-      key: "size",
+      key: "depth",
     },
     {
       title: "Max. power (in watts)",
       type: "number",
-      key: "size",
+      key: "max_power",
     },
     {
       title: "Measured Power (in watts)",
       type: "number",
-      key: "size",
+      key: "mesured_power",
     },
     {
       title: "Max. weight",
       type: "number",
-      key: "size",
+      key: "max_weight",
     },
     {
       title: "Background color",
       type: "select",
-      key: "users_tech_id", // ver con syd
+      key: "bgcolor", // ver con syd
     },
   ]
 

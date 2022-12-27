@@ -37,7 +37,7 @@ const ComputerForm = () => {
     {
       title: "Locations",
       type: "select",
-      key: "locations",
+      key: "locations_id",
       addList: true,
       addNew: true,
       addMap: true,
@@ -45,20 +45,20 @@ const ComputerForm = () => {
     {
       title: "Technician in Charge of the Hardware",
       type: "select",
-      key: "computermodels",
+      key: "users_tech_id",
       addNew: true,
     },
     {
       title: "Group in Charge of the Hardware",
       type: "select",
-      key: "computertypes",
+      key: "groups_tech_id",
       addList: true,
       addNew: true,
     },
     {
       title: "Alternate Username Number",
       type: "input",
-      key: "contact_number",
+      key: "contact_num",
     },
     {
       title: "Alternate Username",
@@ -68,13 +68,13 @@ const ComputerForm = () => {
     {
       title: "User",
       type: "select",
-      key: "user",
+      key: "users_id",
       addList: true,
     },
     {
       title: "Group",
       type: "select",
-      key: "group",
+      key: "groups_id",
       addList: true,
       addNew: true,
     },
@@ -87,28 +87,28 @@ const ComputerForm = () => {
     {
       title: "Status",
       type: "select",
-      key: "status",
+      key: "states_id",
       addList: true,
       addNew: true,
     },
     {
       title: "Types",
       type: "select",
-      key: "types",
+      key: "computertypes_id",
       addList: true,
       addNew: true,
     },
     {
       title: "Manufacturers",
       type: "select",
-      key: "manufacturers",
+      key: "manufacturers_id",
       addList: true,
       addNew: true,
     },
     {
       title: "Model",
       type: "select",
-      key: "model",
+      key: "computermodels_id",
       addList: true,
       addNew: true,
     },
@@ -125,7 +125,7 @@ const ComputerForm = () => {
     {
       title: "Network",
       type: "select",
-      key: "network",
+      key: "networks_id",
       addList: true,
     },
     {
@@ -136,7 +136,7 @@ const ComputerForm = () => {
     {
       title: "Update Sources",
       type: "select",
-      key: "update_sources",
+      key: "update_sources", // key?
       addList: true,
       addNew: true,
     },

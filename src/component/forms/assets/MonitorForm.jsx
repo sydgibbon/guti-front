@@ -14,14 +14,14 @@ const MonitorForm = () => {
     {
       title: "Status",
       type: "select",
-      key: "status",
+      key: "states_id",
       addList: true,
       addNew: true,
     },
     {
       title: "Locations",
       type: "select",
-      key: "locations",
+      key: "locations_id",
       addList: true,
       addNew: true,
       addMap: true,
@@ -29,7 +29,7 @@ const MonitorForm = () => {
     {
       title: "Types",
       type: "select",
-      key: "types",
+      key: "monitortypes_id",
       addList: true,
       addNew: true,
     },
@@ -83,7 +83,7 @@ const MonitorForm = () => {
     {
       title: "User",
       type: "select",
-      key: "user",
+      key: "users_id",
       addList: true,
     },
     {
@@ -99,7 +99,7 @@ const MonitorForm = () => {
     {
       title: "Group",
       type: "select",
-      key: "group",
+      key: "groups_id",
       addList: true,
       addNew: true,
     },
@@ -126,35 +126,35 @@ const MonitorForm = () => {
       subCheckBox: [
 				{
 					subTitle: "Microphone",
-					key: "check1",
+					key: "have_micro",
 				},
         {
 					subTitle: "Speakers",
-					key: "check2",
+					key: "have_speaker",
 				},
         {
 					subTitle: "Sub-D",
-					key: "check3",
+					key: "have_subd",
 				},
         {
 					subTitle: "BNC",
-					key: "check4",
+					key: "have_bnc",
 				},
         {
 					subTitle: "DVI",
-					key: "check5",
+					key: "have_dvi",
 				},
         {
 					subTitle: "Pivot",
-					key: "check6",
+					key: "have_pivot",
 				},
         {
 					subTitle: "HDMI",
-					key: "check7",
+					key: "have_hdmi",
 				},
         {
 					subTitle: "DisplayPort",
-					key: "check8",
+					key: "have_displayport",
 				},
 			],
     },

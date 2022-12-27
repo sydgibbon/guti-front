@@ -13,14 +13,14 @@ const PduForm = () => {
     {
       title: "Status",
       type: "select",
-      key: "status",
+      key: "states_id",
       addList: true,
       addNew: true,
     },
     {
       title: "Locations",
       type: "select",
-      key: "locations",
+      key: "locations_id",
       addList: true,
       addNew: true,
       addMap: true,
@@ -28,7 +28,7 @@ const PduForm = () => {
     {
       title: "Types",
       type: "select",
-      key: "types",
+      key: "pdutypes_id",
       addList: true,
       addNew: true,
     },
@@ -55,7 +55,7 @@ const PduForm = () => {
     {
       title: "Model",
       type: "select",
-      key: "monitormodels_id",
+      key: "pdumodels_id",
       addList: true,
       addNew: true,
     },

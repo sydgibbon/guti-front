@@ -13,14 +13,14 @@ const PassiveDeviceForm = () => {
     {
       title: "Status",
       type: "select",
-      key: "status",
+      key: "states_id",
       addList: true,
       addNew: true,
     },
     {
       title: "Locations",
       type: "select",
-      key: "locations",
+      key: "locations_id",
       addList: true,
       addNew: true,
       addMap: true,
@@ -28,7 +28,7 @@ const PassiveDeviceForm = () => {
     {
       title: "Types",
       type: "select",
-      key: "types",
+      key: "passivedcequipmenttypes_id",
       addList: true,
       addNew: true,
     },
@@ -55,7 +55,7 @@ const PassiveDeviceForm = () => {
     {
       title: "Model",
       type: "select",
-      key: "monitormodels_id",
+      key: "passivedcequipmentmodels_id",
       addList: true,
       addNew: true,
     },

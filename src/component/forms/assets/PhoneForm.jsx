@@ -13,14 +13,14 @@ const PhoneForm = () => {
     {
       title: "Status",
       type: "select",
-      key: "status",
+      key: "states_id",
       addList: true,
       addNew: true,
     },
     {
       title: "Locations",
       type: "select",
-      key: "locations",
+      key: "locations_id",
       addList: true,
       addNew: true,
       addMap: true,
@@ -28,7 +28,7 @@ const PhoneForm = () => {
     {
       title: "Types",
       type: "select",
-      key: "types",
+      key: "phonetypes_id",
       addList: true,
       addNew: true,
     },
@@ -55,7 +55,7 @@ const PhoneForm = () => {
     {
       title: "Model",
       type: "select",
-      key: "monitormodels_id",
+      key: "phonemodels_id",
       addList: true,
       addNew: true,
     },
@@ -82,18 +82,18 @@ const PhoneForm = () => {
     {
       title: "User",
       type: "select",
-      key: "user",
+      key: "users_id",
       addList: true,
     },
     {
       title: "Managment Type",
       type: "select",
-      key: "user",
+      key: "user", // key?
     },
     {
       title: "Group",
       type: "select",
-      key: "group",
+      key: "groups_id",
       addList: true,
       addNew: true,
     },
@@ -110,7 +110,7 @@ const PhoneForm = () => {
     {
       title: "Brand",
       type: "input",
-      key: "brand", //backend key?
+      key: "brand",
     },
     {
       title: "Update Sources",
@@ -122,12 +122,12 @@ const PhoneForm = () => {
     {
       title: "Number of lines",
       type: "number",
-      key: "size", //key?
+      key: "number_line",
     },
     {
       title: "Phone power supply types",
       type: "select",
-      key: "update_sources",
+      key: "phonepowersupplies_id",
       addList: true,
       addNew: true,
     },
@@ -137,11 +137,11 @@ const PhoneForm = () => {
       subCheckBox: [
 				{
 					subTitle: "Headset",
-					key: "check1",
+					key: "have_headset",
 				},
         {
 					subTitle: "Speakers",
-					key: "check2",
+					key: "have_hp", //key speakers?
 				},
       ]
     },

@@ -20,7 +20,7 @@ const CableFormTemplate = () => {
     {
       title: "Types",
       type: "select",
-      key: "types",
+      key: "cabletypes_id",
       addList: true,
       addNew: true,
     },
@@ -43,7 +43,7 @@ const CableFormTemplate = () => {
     {
       title: "Cable Strand",
       type: "select",
-      key: "group",
+      key: "cablestrands_id",
       addList: true,
       addNew: true,
     },
@@ -55,37 +55,37 @@ const CableFormTemplate = () => {
     {
       title: "Asset",
       type: "select",
-      key: "user",    //ver con syd
+      key: "items_endpoint_a_id",    //ver con syd
     },
     {
       title: "Asset",
       type: "select",
-      key: "user",
+      key: "items_endpoint_b_id",
     },
     {
       title: "Socket model",
       type: "select",
-      key: "group",
+      key: "socketmodels_endpoint_a_id",
       addList: true,
       addNew: true,
     },
     {
       title: "Socket model",
       type: "select",
-      key: "group",
+      key: "socketmodels_endpoint_b_id",
       addList: true,
       addNew: true,
     },
     {
       title: "Socket",
       type: "select",
-      key: "group",
+      key: "sockets_endpoint_a_id",
       addList: true,
     },
     {
       title: "Socket",
       type: "select",
-      key: "group",
+      key: "sockets_endpoint_b_id",
       addList: true,
     },
     {
