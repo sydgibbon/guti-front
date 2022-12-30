@@ -1,4 +1,6 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// ? importando componentes y paginas 
 import Login from "./component/Login";
 import Main from "./component/dashboard/Main";
 import AssetsDashboard from "./component/dashboard/AssetsDashboard";
@@ -39,7 +41,17 @@ import UnmanagedDevices from "./pages/UnmanagedDevices";
 import ComputerFormTemplate from "./component/forms/assets/ComputerFormTemplate"
 import AssetTemplate from "./component/dashboard/assets/AssetTemplate";
 
+import { useServiceUser } from './hooks/useServiceUser'
 
+
+// componente para proteger las rutas 
+const ProtectedRoute = ({children}) => {
+  const { user } = useServiceUser()
+  
+  if(!user) return <Login/>
+  return children
+
+}
 
 function App() {
   axiosPrivate
@@ -55,8 +67,8 @@ function App() {
     <Router>
 
       <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={ <ProtectedRoute> <Main /> </ProtectedRoute> } />
+        {/* <Route path="/login" element={<Login />} /> */}
         <Route path="/assets" element={<Main content={ <AssetsDashboard />} />} />
         <Route path="/assets/dashboard" element={<Main content={ <AssetsDashboard />} />} />
         <Route path="/assets/computers" element={<Main content={ <Computers />} />} />
@@ -95,7 +107,6 @@ function App() {
         <Route path="/assets/forms/simcards" element={<Main content={ <SimcardForm />} />} />
         <Route path="/assets/forms/racks" element={<Main content={ <RackForm />} />} />
         <Route path="*" element={<Main content={ <NotFound />} />} />
-
         
         <Route path="/asset" element={<Main content={ <AssetTemplate />} />} />
       </Routes>
