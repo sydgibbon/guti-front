@@ -2,28 +2,30 @@ import React from 'react';
 import SelectComponent from "../atomic/SelectComponent";
 import { appItems } from "../../contexts/AppItems"
 import { TbPlus, TbList, TbMap } from "react-icons/tb";
-import {saveAsset, BASE_URL} from "../../api/axios";
+import { saveAsset, BASE_URL } from "../../api/axios";
+import { FaPaste, FaRegEye, FaInfo } from 'react-icons/fa';
 
 
 
 
 function FormsTemplate(inputPropierties, FormHeader) {
 
-    let formFields = {}
-    let formData = new FormData()
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      Object.keys(formFields).forEach(key => {
-        formData.append(key, formFields[key])
-      })
-      saveAsset('computers', formData)
-    }
-    const handleChange = (e) => {
-      formFields[e.target.id] = e.target.value;
-    }
-    const handleChangeSelect = (data) => {
-      formFields[data.id] = data.value;
-    }
+  let values = Array.from(Array(101).keys());
+  let formFields = {}
+  let formData = new FormData()
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    Object.keys(formFields).forEach(key => {
+      formData.append(key, formFields[key])
+    })
+    saveAsset('computers', formData)
+  }
+  const handleChange = (e) => {
+    formFields[e.target.id] = e.target.value;
+  }
+  const handleChangeSelect = (data) => {
+    formFields[data.id] = data.value;
+  }
 
   const renderInputType = (props) => {
     switch (props.type) {
@@ -41,13 +43,76 @@ function FormsTemplate(inputPropierties, FormHeader) {
           props.subCheckBox.map((checkBox) => {
             return (
               <div className='px-4'>
-                <input type='checkbox' className="mr-2"></input>
+                <input id={props.key} type='checkbox' className="mr-2"></input>
+                {/* falta idkey */}
                 <span>{checkBox.subTitle}</span>
               </div>
             )
           })
         )
         break;
+      case "checkboxselect":
+        return (
+          props.subCheckBox.map((checkBox) => {
+            return (
+              <div className='flex flex-wrap flex-col md:flex-row ml-4 md:ml-0 items-center'>
+                <div className='px-3'>
+                  <input id={props.key} type='checkbox' className="mr-2"></input>
+                  {/* falta idkey */}
+                  <span>{checkBox.subTitle}</span>
+                </div>
+                <div><SelectComponent onChange={handleChangeSelect} id={props.key} /> </div>
+              </div>
+            )
+          })
+        )
+        break;
+      case "number":
+        return (<input type="number" onChange={handleChange} id={props.key} className="w-full px-2 h-10 rounded-md bg-medium-gray" min="0" />)
+        break;
+
+      case "file":
+        return (<div className='border border-dashed rounded-md py-2 px-12 border-secondary-dark bg-medium-gray text-center'>
+          <p className='text-sm mb-3 font-semibold'>File(s) (40 Mio max) <a href='' title='Help' className='text-[#3a5693] font-mono text-lg'>i</a></p>
+          <p className='text-sm font-semibold'>Drag and drop your file here, or</p>
+          <input type="file" accept=".jpg, .jpeg, .png" multiple className='w-full m-0 border rounded-md border-secondary-dark bg-white' />
+        </div>
+        )
+        break;
+      case "select2":
+        return (
+          <select className="w-full rounded-md m-2 border-secondary-dark bg-medium-gray">
+            {values.map((item) => {
+              return <option value={item}> {item} </option>
+            })}
+            {values}
+          </select>
+        )
+        break;
+      case "orientation":
+        return (
+          <select className="w-full rounded-md m-2 border-secondary-dark bg-medium-gray">
+            <SelectComponent onChange={handleChangeSelect} id={props.key} className="w-full rounded-md" />
+            <option>North</option>
+            <option>East</option>
+            <option>South</option>
+            <option>West</option>
+          </select>
+        )
+        break;
+      case "text":
+        return (<div className='m-2'>No room found or selected</div>)
+        break;
+      case "color":
+        return (
+          <input
+            type="color"
+            value="#e8594b"
+            className="w-full h-9 px-2 rounded-md border-secondary-dark bg-medium-gray" >
+          </input>
+        )
+        break;
+
       default:
         <></>
         break;
@@ -72,7 +137,7 @@ function FormsTemplate(inputPropierties, FormHeader) {
           {inputPropierties.map((field) => (
             <div className={`mx-4 input-${field.key} my-4`}>
               <p className="text-sm mb-2">{field.title}</p>
-              <div className={`flex ${field.type != 'checkbox' ? 'border border-secondary-dark bg-medium-gray divide-x' : 'flex flex-wrap flex-col md:flex-row ml-4 md:ml-0'} rounded-md  `}>
+              <div className={`flex ${(field.type === 'checkbox' || field.type === 'file') ? 'flex flex-wrap flex-col md:flex-row ml-4 md:ml-0' : 'border border-secondary-dark bg-medium-gray divide-x'} rounded-md  `}>
                 {renderInputType(field)}
                 {field.addList ?
                   <div className={FieldIconStyle}>
@@ -87,6 +152,16 @@ function FormsTemplate(inputPropierties, FormHeader) {
                 {field.addMap ?
                   <div className={FieldIconStyle}>
                     <TbMap />
+                  </div>
+                  : ""}
+                {field.addEye ?
+                  <div className={FieldIconStyle}>
+                    <FaRegEye />
+                  </div>
+                  : ""}
+                {field.addPaste ?
+                  <div className={FieldIconStyle}>
+                    <FaPaste />
                   </div>
                   : ""}
               </div>
@@ -104,4 +179,4 @@ function FormsTemplate(inputPropierties, FormHeader) {
   )
 }
 
-export default FormsTemplate
+export default FormsTemplate;
