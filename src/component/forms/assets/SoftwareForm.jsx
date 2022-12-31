@@ -79,13 +79,13 @@ const SoftwareForm = () => {
     },
 		{
       title: "Upgrade",
-      type: "checkbox",
+      type: "checkboxselect",
       subCheckBox: [
 				{
-					type: "select",
+          subTitle: "from:",
 					key: "check1",
-					addList: true,	//Select interno del checkbox?
 				},
+
 			]
 		},
 		{

@@ -49,7 +49,7 @@ const CableFormTemplate = () => {
     },
     {
       title: "Color",
-      type: "input",
+      type: "color",
       key: "color",
     },
     {

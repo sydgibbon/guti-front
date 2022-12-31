@@ -60,10 +60,8 @@ const CartridgeForm = () => {
     },
     {
       title: "Alert Threshold",
-      type: "select",
+      type: "select2",
       key: "alarm_threshold", //como aplico logica?
-      options: function () {
-      }, // ver con guty/syd
     },
     {
       title: "Pictures",

@@ -66,7 +66,7 @@ const ConsumablesForm = () => {
     },
     {
       title: "Alert Threshold",
-      type: "number",
+      type: "select2",
       key: "alarm_threshold",
     },
     {

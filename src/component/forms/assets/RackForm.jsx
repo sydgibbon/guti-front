@@ -82,18 +82,18 @@ const RackForm = () => {
     },
     {
       title: "Position in room",
-      text: "No room found or selected", // ver con syd
+      type: "text",
       key: "position"
     },
     {
       title: "Door orientation in room",
-      type: "select",
+      type: "orientation",
       key: "room_orientation", // ver con syd
     },
     {
       title: "Number of units",
-      type: "number_units",
-      key: "size",
+      type: "number",
+      key: "number_units",
     },
     {
       title: "Width",
@@ -127,7 +127,7 @@ const RackForm = () => {
     },
     {
       title: "Background color",
-      type: "select",
+      type: "color",
       key: "bgcolor", // ver con syd
     },
   ]
