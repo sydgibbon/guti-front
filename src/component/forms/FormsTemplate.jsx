@@ -79,7 +79,7 @@ function FormsTemplate(inputPropierties, FormHeader) {
         </div>
         )
         break;
-      case "select2":
+      case "threshold":
         return (
           <select className="w-full rounded-md m-2 border-secondary-dark bg-medium-gray">
             {values.map((item) => {
