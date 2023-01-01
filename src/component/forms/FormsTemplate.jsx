@@ -48,6 +48,15 @@ function FormsTemplate(inputPropierties, FormHeader) {
           })
         )
         break;
+        case "choise":
+          return (
+            <select className="w-20 rounded-md m-2 border-secondary-dark bg-medium-gray">
+              <SelectComponent onChange={handleChangeSelect} id={props.key} className="w-full rounded-md" />
+              <option>Yes</option>
+              <option>No</option>
+            </select>
+          )
+          break;
       default:
         <></>
         break;
