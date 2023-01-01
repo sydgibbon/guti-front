@@ -38,8 +38,9 @@ import PDUs from "./pages/PDUs";
 import UnmanagedDevices from "./pages/UnmanagedDevices";
 import ComputerFormTemplate from "./component/forms/assets/ComputerFormTemplate"
 import AssetTemplate from "./component/dashboard/assets/AssetTemplate";
-
-
+import GroupSubForm from "./component/forms/assets/GroupInChargeSubForm";
+import LocSubForm from "./component/forms/assets/LocationSubForm";
+import StatusSubForm from "./component/forms/assets/StatusSubForm";
 
 function App() {
   axiosPrivate
@@ -96,7 +97,10 @@ function App() {
         <Route path="/assets/forms/racks" element={<Main content={ <RackForm />} />} />
         <Route path="*" element={<Main content={ <NotFound />} />} />
 
-        
+        <Route path="/assets/forms/groupsubform" element={<Main content={ <GroupSubForm />} />} />
+        <Route path="/assets/forms/locationsubform" element={<Main content={ <LocSubForm />} />} />
+        <Route path="/assets/forms/statussubform" element={<Main content={ <StatusSubForm />} />} />
+
         <Route path="/asset" element={<Main content={ <AssetTemplate />} />} />
       </Routes>
     </Router>
