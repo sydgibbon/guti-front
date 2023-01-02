@@ -65,50 +65,48 @@ function App() {
 
   return (
     <Router>
-
       <Routes>
         <Route path="/" element={ <ProtectedRoute> <Main /> </ProtectedRoute> } />
-        {/* <Route path="/login" element={<Login />} /> */}
-        <Route path="/assets" element={<Main content={ <AssetsDashboard />} />} />
-        <Route path="/assets/dashboard" element={<Main content={ <AssetsDashboard />} />} />
-        <Route path="/assets/computers" element={<Main content={ <Computers />} />} />
-        <Route path="/assets/monitors" element={<Main content={ <Monitors />} />} />
-        <Route path="/assets/software" element={<Main content={ <Software />} />} />
-        <Route path="/assets/network-devices" element={<Main content={ <NetworkDevices />} />} />
-        <Route path="/assets/devices" element={<Main content={ <Devices />} />} />
-        <Route path="/assets/printers" element={<Main content={ <Printers />} />} />
-        <Route path="/assets/cartridges" element={<Main content={ <Cartridges />} />} />        
-        <Route path="/assets/consumables" element={<Main content={ <Consumables />} />} />
-        <Route path="/assets/phones" element={<Main content={ <Phones />} />} />
-        <Route path="/assets/racks" element={<Main content={ <Racks />} />} />
-        <Route path="/assets/enclosures" element={<Main content={ <Enclosures />} />} />
-        <Route path="/assets/pdus" element={<Main content={ <PDUs />} />} />
-        <Route path="/assets/passive-devices" element={<Main content={ <PassiveDevices />} />} />
-        <Route path="/assets/unmanaged-devices" element={<Main content={ <UnmanagedDevices />} />} />
-        <Route path="/assets/cables" element={<Main content={ <Cables />} />} />
-        <Route path="/assets/simcards" element={<Main content={ <Simcards />} />} />
-        <Route path="/assets/global" element={<Main content={ <Global />} />} />
+        <Route path="/assets" element={<ProtectedRoute> <Main content={ <AssetsDashboard />} /> </ProtectedRoute>} />
+        <Route path="/assets/dashboard" element={<ProtectedRoute> <Main content={ <AssetsDashboard />} /> </ProtectedRoute>} />
+        <Route path="/assets/computers" element={<ProtectedRoute> <Main content={ <Computers />} /> </ProtectedRoute>} />
+        <Route path="/assets/monitors" element={ <ProtectedRoute> <Main content={ <Monitors />} /> </ProtectedRoute>} />
+        <Route path="/assets/software" element={<ProtectedRoute> <Main content={ <Software />} /> </ProtectedRoute>} />
+        <Route path="/assets/network-devices" element={<ProtectedRoute> <Main content={ <NetworkDevices />} /> </ProtectedRoute>} />
+        <Route path="/assets/devices" element={<ProtectedRoute> <Main content={ <Devices />} /> </ProtectedRoute>} />
+        <Route path="/assets/printers" element={<ProtectedRoute> <Main content={ <Printers />} /> </ProtectedRoute>} />
+        <Route path="/assets/cartridges" element={<ProtectedRoute> <Main content={ <Cartridges />} /> </ProtectedRoute>} />        
+        <Route path="/assets/consumables" element={<ProtectedRoute> <Main content={ <Consumables />} /> </ProtectedRoute>} />
+        <Route path="/assets/phones" element={<ProtectedRoute> <Main content={ <Phones />} /> </ProtectedRoute>} />
+        <Route path="/assets/racks" element={<ProtectedRoute> <Main content={ <Racks />} /> </ProtectedRoute>} />
+        <Route path="/assets/enclosures" element={<ProtectedRoute> <Main content={ <Enclosures />} /> </ProtectedRoute>} />
+        <Route path="/assets/pdus" element={<ProtectedRoute> <Main content={ <PDUs />} /> </ProtectedRoute>} />
+        <Route path="/assets/passive-devices" element={<ProtectedRoute> <Main content={ <PassiveDevices />} /> </ProtectedRoute>} />
+        <Route path="/assets/unmanaged-devices" element={<ProtectedRoute> <Main content={ <UnmanagedDevices />} /> </ProtectedRoute>} />
+        <Route path="/assets/cables" element={<ProtectedRoute> <Main content={ <Cables />} /> </ProtectedRoute>} />
+        <Route path="/assets/simcards" element={<ProtectedRoute> <Main content={ <Simcards />} /> </ProtectedRoute>} />
+        <Route path="/assets/global" element={<ProtectedRoute> <Main content={ <Global />} /> </ProtectedRoute>} />
         
-        <Route path="/template" element={<Main content={ <ComputerFormTemplate />} />} />
+        <Route path="/template" element={<ProtectedRoute> <Main content={<ComputerFormTemplate />} /> </ProtectedRoute>} />
         
-        <Route path="/assets/forms/computers" element={<Main content={ <ComputerForm />} />} />
-        <Route path="/assets/forms/enclosures" element={<Main content={ <EnclosuresForm />} />} />
-        <Route path="/assets/forms/cables" element={<Main content={ <CableForm />} />} />
-        <Route path="/assets/forms/monitors" element={<Main content={ <MonitorForm />} />} />
-        <Route path="/assets/forms/software" element={<Main content={ <SoftwareForm />} />} />
-        <Route path="/assets/forms/network-devices" element={<Main content={ <NetworkDeviceForm />} />} />
-        <Route path="/assets/forms/devices" element={<Main content={ <DeviceForm />} />} />
-        <Route path="/assets/forms/pdus" element={<Main content={ <PduForm />} />} />
-        <Route path="/assets/forms/cartridges" element={<Main content={ <CartridgeForm />} />} />
-        <Route path="/assets/forms/consumables" element={<Main content={ <ConsumableForm />} />} />
-        <Route path="/assets/forms/passive-devices" element={<Main content={ <PassiveDeviceForm />} />} />
-        <Route path="/assets/forms/phones" element={<Main content={ <PhoneForm />} />} />
-        <Route path="/assets/forms/printers" element={<Main content={ <PrinterForm />} />} />
-        <Route path="/assets/forms/simcards" element={<Main content={ <SimcardForm />} />} />
-        <Route path="/assets/forms/racks" element={<Main content={ <RackForm />} />} />
-        <Route path="*" element={<Main content={ <NotFound />} />} />
+        <Route path="/assets/forms/computers" element={<ProtectedRoute> <Main content={ <ComputerForm />} /> </ProtectedRoute>} />
+        <Route path="/assets/forms/enclosures" element={<ProtectedRoute> <Main content={ <EnclosuresForm />} /> </ProtectedRoute>} />
+        <Route path="/assets/forms/cables" element={<ProtectedRoute> <Main content={ <CableForm />} /> </ProtectedRoute>} />
+        <Route path="/assets/forms/monitors" element={<ProtectedRoute> <Main content={ <MonitorForm />} /> </ProtectedRoute>} />
+        <Route path="/assets/forms/software" element={<ProtectedRoute> <Main content={ <SoftwareForm />} /> </ProtectedRoute>} />
+        <Route path="/assets/forms/network-devices" element={<ProtectedRoute> <Main content={ <NetworkDeviceForm />} /> </ProtectedRoute>} />
+        <Route path="/assets/forms/devices" element={<ProtectedRoute> <Main content={ <DeviceForm />} /> </ProtectedRoute>} />
+        <Route path="/assets/forms/pdus" element={<ProtectedRoute> <Main content={ <PduForm />} /> </ProtectedRoute>} />
+        <Route path="/assets/forms/cartridges" element={<ProtectedRoute> <Main content={ <CartridgeForm />} /> </ProtectedRoute>} />
+        <Route path="/assets/forms/consumables" element={<ProtectedRoute> <Main content={ <ConsumableForm />} /> </ProtectedRoute>} />
+        <Route path="/assets/forms/passive-devices" element={<ProtectedRoute> <Main content={ <PassiveDeviceForm />} /> </ProtectedRoute>} />
+        <Route path="/assets/forms/phones" element={<ProtectedRoute> <Main content={<PhoneForm />} /> </ProtectedRoute>} />
+        <Route path="/assets/forms/printers" element={<ProtectedRoute> <Main content={<PrinterForm />} /> </ProtectedRoute>} />
+        <Route path="/assets/forms/simcards" element={<ProtectedRoute> <Main content={<SimcardForm />} /> </ProtectedRoute>} />
+        <Route path="/assets/forms/racks" element={<ProtectedRoute> <Main content={ <RackForm />} /> </ProtectedRoute>} />
+        <Route path="*" element={<ProtectedRoute> <Main content={ <NotFound />} /> </ProtectedRoute>} />
         
-        <Route path="/asset" element={<Main content={ <AssetTemplate />} />} />
+        <Route path="/asset" element={<ProtectedRoute> <Main content={ <AssetTemplate />} /> </ProtectedRoute>} />
       </Routes>
     </Router>
 
