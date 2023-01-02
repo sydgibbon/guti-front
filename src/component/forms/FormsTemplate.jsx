@@ -57,6 +57,18 @@ function FormsTemplate(inputPropierties, FormHeader) {
             </select>
           )
           break;
+          case "number":
+            return (<input type="number" onChange={handleChange} id={props.key} className="w-full px-2 h-10 rounded-md bg-medium-gray" min="0" />)
+            break;
+    
+          case "file":
+            return (<div className='border border-dashed rounded-md py-2 px-12 border-secondary-dark bg-medium-gray text-center'>
+              <p className='text-sm mb-3 font-semibold'>File(s) (40 Mio max) <a href='' title='Help' className='text-[#3a5693] font-mono text-lg'>i</a></p>
+              <p className='text-sm font-semibold'>Drag and drop your file here, or</p>
+              <input type="file" accept=".jpg, .jpeg, .png" multiple className='w-full m-0 border rounded-md border-secondary-dark bg-white' />
+            </div>
+            )
+            break;
       default:
         <></>
         break;

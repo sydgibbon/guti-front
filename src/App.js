@@ -38,11 +38,18 @@ import PDUs from "./pages/PDUs";
 import UnmanagedDevices from "./pages/UnmanagedDevices";
 import ComputerFormTemplate from "./component/forms/assets/ComputerFormTemplate"
 import AssetTemplate from "./component/dashboard/assets/AssetTemplate";
-import GroupSubForm from "./component/forms/assets/GroupInChargeSubForm";
+import GroupInChargeSubForm from "./component/forms/assets/GroupInChargeSubForm";
 import LocSubForm from "./component/forms/assets/LocationSubForm";
 import StatusSubForm from "./component/forms/assets/StatusSubForm";
 import TypeSubForm from "./component/forms/assets/TypeSubForm";
 import ManufacturerSubForm from "./component/forms/assets/ManufacturerSubForm";
+import ModelSubForm from "./component/forms/assets/ModelSubForm";
+import NetworkSubForm from "./component/forms/assets/NetworkSubForm";
+import UpdateSourceSubForm from "./component/forms/assets/UpdateSourceSubForm";
+import GroupSubForm from "./component/forms/assets/GroupSubForm";
+import PublisherSubForm from "./component/forms/assets/PublisherSubForm";
+import SoftwareCategorySubForm from "./component/forms/assets/SoftwareCategorySubForm";
+import PhonePowerSubForm from "./component/forms/assets/PhonePowerSubForm";
 
 function App() {
   axiosPrivate
@@ -99,11 +106,18 @@ function App() {
         <Route path="/assets/forms/racks" element={<Main content={ <RackForm />} />} />
         <Route path="*" element={<Main content={ <NotFound />} />} />
 
-        <Route path="/assets/forms/groupsubform" element={<Main content={ <GroupSubForm />} />} />
+        <Route path="/assets/forms/groupinchargesubform" element={<Main content={ <GroupInChargeSubForm />} />} />
         <Route path="/assets/forms/locationsubform" element={<Main content={ <LocSubForm />} />} />
         <Route path="/assets/forms/statussubform" element={<Main content={ <StatusSubForm />} />} />
         <Route path="/assets/forms/typesubform" element={<Main content={ <TypeSubForm />} />} />
         <Route path="/assets/forms/manufacturersubform" element={<Main content={ <ManufacturerSubForm />} />} />
+        <Route path="/assets/forms/modelsubform" element={<Main content={ <ModelSubForm />} />} />
+        <Route path="/assets/forms/networksubform" element={<Main content={ <NetworkSubForm />} />} />
+        <Route path="/assets/forms/updatesourcesubform" element={<Main content={ <UpdateSourceSubForm />} />} />
+        <Route path="/assets/forms/groupsubform" element={<Main content={ <GroupSubForm />} />} />
+        <Route path="/assets/forms/publishersubform" element={<Main content={ <PublisherSubForm />} />} />
+        <Route path="/assets/forms/softwarecategorysubform" element={<Main content={ <SoftwareCategorySubForm />} />} />
+        <Route path="/assets/forms/phonepowersubform" element={<Main content={ <PhonePowerSubForm />} />} />
 
         <Route path="/asset" element={<Main content={ <AssetTemplate />} />} />
       </Routes>
