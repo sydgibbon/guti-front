@@ -41,6 +41,8 @@ import AssetTemplate from "./component/dashboard/assets/AssetTemplate";
 import GroupSubForm from "./component/forms/assets/GroupInChargeSubForm";
 import LocSubForm from "./component/forms/assets/LocationSubForm";
 import StatusSubForm from "./component/forms/assets/StatusSubForm";
+import TypeSubForm from "./component/forms/assets/TypeSubForm";
+import ManufacturerSubForm from "./component/forms/assets/ManufacturerSubForm";
 
 function App() {
   axiosPrivate
@@ -100,6 +102,8 @@ function App() {
         <Route path="/assets/forms/groupsubform" element={<Main content={ <GroupSubForm />} />} />
         <Route path="/assets/forms/locationsubform" element={<Main content={ <LocSubForm />} />} />
         <Route path="/assets/forms/statussubform" element={<Main content={ <StatusSubForm />} />} />
+        <Route path="/assets/forms/typesubform" element={<Main content={ <TypeSubForm />} />} />
+        <Route path="/assets/forms/manufacturersubform" element={<Main content={ <ManufacturerSubForm />} />} />
 
         <Route path="/asset" element={<Main content={ <AssetTemplate />} />} />
       </Routes>
