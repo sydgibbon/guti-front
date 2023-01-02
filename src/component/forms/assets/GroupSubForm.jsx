@@ -1,7 +1,7 @@
 import React from 'react';
 import FormsTemplate from '../FormsTemplate';
 
-const GroupInChargeSubForm = () => {
+const GroupSubForm = () => {
   
   const inputPropierties = [
     {
@@ -64,7 +64,7 @@ const GroupInChargeSubForm = () => {
 
   const FormHeader = [
     {
-      title: "Group in charge of the hardware",
+      title: "Group",
     },
   ]
   return (
@@ -72,4 +72,4 @@ const GroupInChargeSubForm = () => {
   )
 }
 
-export default GroupInChargeSubForm;
+export default GroupSubForm;

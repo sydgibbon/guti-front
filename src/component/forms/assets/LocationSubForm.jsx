@@ -11,7 +11,7 @@ const LocSubForm = () => {
     },
     {
       title: "Comments",
-      type: "input",
+      type: "textarea",
       key: "comment",
     },
     {
