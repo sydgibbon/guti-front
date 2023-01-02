@@ -35,9 +35,9 @@ const ComputerForm = () => {
       key: "name",
     },
     {
-      title: "Locations",
+      title: "Location",
       type: "select",
-      key: "locations_id",
+      key: "locations",
       addList: true,
       addNew: true,
       addMap: true,
@@ -45,13 +45,13 @@ const ComputerForm = () => {
     {
       title: "Technician in Charge of the Hardware",
       type: "select",
-      key: "users_tech_id",
+      key: "users_tech",
       addNew: true,
     },
     {
       title: "Group in Charge of the Hardware",
       type: "select",
-      key: "groups_tech_id",
+      key: "groups_tech",
       addList: true,
       addNew: true,
     },
@@ -68,13 +68,13 @@ const ComputerForm = () => {
     {
       title: "User",
       type: "select",
-      key: "users_id",
+      key: "users",
       addList: true,
     },
     {
       title: "Group",
       type: "select",
-      key: "groups_id",
+      key: "groups",
       addList: true,
       addNew: true,
     },
@@ -87,28 +87,28 @@ const ComputerForm = () => {
     {
       title: "Status",
       type: "select",
-      key: "states_id",
+      key: "states",
       addList: true,
       addNew: true,
     },
     {
-      title: "Types",
+      title: "Type",
       type: "select",
-      key: "computertypes_id",
+      key: "computertypes",
       addList: true,
       addNew: true,
     },
     {
-      title: "Manufacturers",
+      title: "Manufacturer",
       type: "select",
-      key: "manufacturers_id",
+      key: "manufacturers",
       addList: true,
       addNew: true,
     },
     {
       title: "Model",
       type: "select",
-      key: "computermodels_id",
+      key: "computermodels",
       addList: true,
       addNew: true,
     },
@@ -125,7 +125,7 @@ const ComputerForm = () => {
     {
       title: "Network",
       type: "select",
-      key: "networks_id",
+      key: "networks",
       addList: true,
     },
     {
@@ -134,7 +134,7 @@ const ComputerForm = () => {
       key: "uuid",
     },
     {
-      title: "Update Sources",
+      title: "Update Source",
       type: "select",
       key: "update_sources", // key?
       addList: true,
@@ -144,7 +144,7 @@ const ComputerForm = () => {
 
   const FormHeader = [
     {
-      title: "Computers",
+      title: "Computer",
       style: "inline my-auto mr-2",
       size: 24,
     },

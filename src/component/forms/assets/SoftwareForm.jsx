@@ -27,9 +27,9 @@ const SoftwareForm = () => {
 			]
 		},
 		{
-      title: "Locations",
+      title: "Location",
       type: "select",
-      key: "locations_id",
+      key: "locations",
       addList: true,
       addNew: true,
       addMap: true,
@@ -37,7 +37,7 @@ const SoftwareForm = () => {
 		{
       title: "Technician in Charge of the Hardware",
       type: "select",
-      key: "users_tech_id",
+      key: "users_tech",
       addNew: true,
     },
 		{
@@ -50,20 +50,20 @@ const SoftwareForm = () => {
 		{
       title: "Group in Charge of the Hardware",
       type: "select",
-      key: "groups_tech_id",
+      key: "groups_tech",
       addList: true,
       addNew: true,
     },
 		{
       title: "User",
       type: "select",
-      key: "users_id",
+      key: "users",
       addList: true,
     },
 		{
       title: "Group",
       type: "select",
-      key: "groups_id",
+      key: "groups",
       addList: true,
       addNew: true,
     },
@@ -73,7 +73,7 @@ const SoftwareForm = () => {
       key: "comment",
     },
 		{
-      title: "Pictures",
+      title: "Picture",
       type: "file",
       key: "pictures",
     },
@@ -91,11 +91,10 @@ const SoftwareForm = () => {
 		{
       title: "Software category",
       type: "select",
-      key: "softwarecategories_id",
+      key: "softwarecategories",
       addList: true,
       addNew: true,
     },
-
 	]
 
 	const FormHeader = [

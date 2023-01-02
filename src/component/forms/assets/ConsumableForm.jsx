@@ -17,15 +17,15 @@ const ConsumablesForm = () => {
     {
       title: "Locations",
       type: "select",
-      key: "locations_id",
+      key: "locations",
       addList: true,
       addNew: true,
       addMap: true,
     },
     {
-      title: "Types",
+      title: "Type",
       type: "select",
-      key: "consumableitemtypes_id",
+      key: "consumableitemtypes",
       addList: true,
       addNew: true,
     },
@@ -37,20 +37,20 @@ const ConsumablesForm = () => {
     {
       title: "Technician in Charge of the Hardware",
       type: "select",
-      key: "users_tech_id",
+      key: "users_tech",
       addNew: true,
     },
     {
-      title: "Manufacturers",
+      title: "Manufacturer",
       type: "select",
-      key: "manufacturers_id",
+      key: "manufacturers",
       addList: true,
       addNew: true,
     },
     {
       title: "Group in Charge of the Hardware",
       type: "select",
-      key: "groups_tech_id",
+      key: "groups_tech",
       addList: true,
       addNew: true,
     },
@@ -70,7 +70,7 @@ const ConsumablesForm = () => {
       key: "alarm_threshold",
     },
     {
-      title: "Pictures",
+      title: "Picture",
       type: "file",
       key: "pictures",
     },
@@ -83,7 +83,7 @@ const ConsumablesForm = () => {
 
   const FormHeader = [
     {
-      title: "Consumables",
+      title: "Consumable",
       style: "inline my-auto mr-2",
       size: 24,
     },

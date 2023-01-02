@@ -13,49 +13,49 @@ const RackForm = () => {
     {
       title: "Status",
       type: "select",
-      key: "states_id",
+      key: "states",
       addList: true,
       addNew: true,
     },
     {
-      title: "Locations",
+      title: "Location",
       type: "select",
-      key: "locations_id",
+      key: "locations",
       addList: true,
       addNew: true,
       addMap: true,
     },
     {
-      title: "Types",
+      title: "Type",
       type: "select",
-      key: "racktypes_id",
+      key: "racktypes",
       addList: true,
       addNew: true,
     },
     {
       title: "Technician in Charge of the Hardware",
       type: "select",
-      key: "users_tech_id",
+      key: "users_tech",
       addNew: true,
     },
     {
-      title: "Manufacturers",
+      title: "Manufacturer",
       type: "select",
-      key: "manufacturers_id",
+      key: "manufacturers",
       addList: true,
       addNew: true,
     },
     {
       title: "Group in Charge of the Hardware",
       type: "select",
-      key: "groups_tech_id",
+      key: "groups_tech",
       addList: true,
       addNew: true,
     },
     {
       title: "Model",
       type: "select",
-      key: "rackmodels_id",
+      key: "rackmodels",
       addList: true,
       addNew: true,
     },
@@ -75,9 +75,9 @@ const RackForm = () => {
       key: "comment",
     },
     {
-      title: "Server rooms",
+      title: "Server room",
       type: "select",
-      key: "users_tech_id",
+      key: "users_tech",
       addNew: true,
     },
     {
@@ -91,7 +91,7 @@ const RackForm = () => {
       key: "room_orientation", // ver con syd
     },
     {
-      title: "Number of units",
+      title: "Number of unit",
       type: "number",
       key: "number_units",
     },
@@ -134,7 +134,7 @@ const RackForm = () => {
 
   const FormHeader = [
     {
-      title: "Racks",
+      title: "Rack",
       style: "inline my-auto mr-2",
       size: 24,
     }

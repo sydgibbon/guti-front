@@ -27,9 +27,9 @@ const SimcardForm = () => {
       key: "otherserial",
     },
     {
-      title: "Locations",
+      title: "Location",
       type: "select",
-      key: "locations_id",
+      key: "locations",
       addList: true,
       addNew: true,
       addMap: true,
@@ -37,7 +37,7 @@ const SimcardForm = () => {
     {
       title: "Status",
       type: "select",
-      key: "states_id",
+      key: "states",
       addList: true,
       addNew: true,
     },
@@ -72,24 +72,24 @@ const SimcardForm = () => {
     {
       title: "Lines",
       type: "select",
-      key: "lines_id",
+      key: "lines",
       addList: true,
     },
     {
       title: "Mobile Subscriber Identification Number",
       type: "input",
-      key: "manufacturers_id", //key
+      key: "manufacturers", //key
     },
     {
       title: "User",
       type: "select",
-      key: "users_id",
+      key: "users",
       addList: true,
     },
     {
       title: "User",
       type: "select",
-      key: "users_id",
+      key: "users",
       addList: true,
       addNew: true,
     },
@@ -97,7 +97,7 @@ const SimcardForm = () => {
 
   const FormHeader = [
     {
-      title: "Simcards",
+      title: "Simcard",
       style: "inline my-auto mr-2",
       size: 24,
     },

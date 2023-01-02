@@ -14,49 +14,49 @@ const MonitorForm = () => {
     {
       title: "Status",
       type: "select",
-      key: "states_id",
+      key: "states",
       addList: true,
       addNew: true,
     },
     {
-      title: "Locations",
+      title: "Location",
       type: "select",
-      key: "locations_id",
+      key: "locations",
       addList: true,
       addNew: true,
       addMap: true,
     },
     {
-      title: "Types",
+      title: "Type",
       type: "select",
-      key: "monitortypes_id",
+      key: "monitortypes",
       addList: true,
       addNew: true,
     },
     {
       title: "Technician in Charge of the Hardware",
       type: "select",
-      key: "users_tech_id",
+      key: "users_tech",
       addNew: true,
     },
     {
-      title: "Manufacturers",
+      title: "Manufacturer",
       type: "select",
-      key: "manufacturers_id",
+      key: "manufacturers",
       addList: true,
       addNew: true,
     },
     {
       title: "Group in Charge of the Hardware",
       type: "select",
-      key: "groups_tech_id",
+      key: "groups_tech",
       addList: true,
       addNew: true,
     },
     {
       title: "Model",
       type: "select",
-      key: "monitormodels_id",
+      key: "monitormodels",
       addList: true,
       addNew: true,
     },
@@ -83,7 +83,7 @@ const MonitorForm = () => {
     {
       title: "User",
       type: "select",
-      key: "users_id",
+      key: "users",
       addList: true,
     },
     {
@@ -99,7 +99,7 @@ const MonitorForm = () => {
     {
       title: "Group",
       type: "select",
-      key: "groups_id",
+      key: "groups",
       addList: true,
       addNew: true,
     },
@@ -114,14 +114,14 @@ const MonitorForm = () => {
       key: "comment",
     },
     {
-      title: "Update Sources",
+      title: "Update Source",
       type: "select",
       key: "update_sources",
       addList: true,
       addNew: true,
     },
     {
-      title: "Ports",
+      title: "Port",
       type: "checkbox",
       subCheckBox: [
 				{
@@ -129,7 +129,7 @@ const MonitorForm = () => {
 					key: "have_micro",
 				},
         {
-					subTitle: "Speakers",
+					subTitle: "Speaker",
 					key: "have_speaker",
 				},
         {
@@ -162,7 +162,7 @@ const MonitorForm = () => {
 
   const FormHeader = [
     {
-      title: "Monitors",
+      title: "Monitor",
       style: "inline my-auto mr-2",
       size: 24,
     },

@@ -18,7 +18,7 @@ const DeviceForm = () => {
       addNew: true,
     },
     {
-      title: "Locations",
+      title: "Location",
       type: "select",
       key: "locations",
       addList: true,
@@ -26,7 +26,7 @@ const DeviceForm = () => {
       addMap: true,
     },
     {
-      title: "Types",
+      title: "Type",
       type: "select",
       key: "types",
       addList: true,
@@ -35,27 +35,27 @@ const DeviceForm = () => {
     {
       title: "Technician in Charge of the Hardware",
       type: "select",
-      key: "users_tech_id",
+      key: "users_tech",
       addNew: true,
     },
     {
-      title: "Manufacturers",
+      title: "Manufacturer",
       type: "select",
-      key: "manufacturers_id",
+      key: "manufacturers",
       addList: true,
       addNew: true,
     },
     {
       title: "Group in Charge of the Hardware",
       type: "select",
-      key: "groups_tech_id",
+      key: "groups_tech",
       addList: true,
       addNew: true,
     },
     {
       title: "Model",
       type: "select",
-      key: "monitormodels_id",
+      key: "monitormodels",
       addList: true,
       addNew: true,
     },
@@ -113,7 +113,7 @@ const DeviceForm = () => {
       key: "brand", //backend key?
     },
     {
-      title: "Update Sources",
+      title: "Update Source",
       type: "select",
       key: "update_sources",
       addList: true,
@@ -123,7 +123,7 @@ const DeviceForm = () => {
   
   const FormHeader = [
     {
-      title: "Devices",
+      title: "Device",
       style: "inline my-auto mr-2",
       size: 24,
     },

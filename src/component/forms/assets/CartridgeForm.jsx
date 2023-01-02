@@ -14,17 +14,17 @@ const CartridgeForm = () => {
       key: "name",
     },
     {
-      title: "Locations",
+      title: "Location",
       type: "select",
-      key: "locations_id",
+      key: "locations",
       addList: true,
       addNew: true,
       addMap: true,
     },
     {
-      title: "Types",
+      title: "Type",
       type: "select",
-      key: "cartridgeitemtypes_id",
+      key: "cartridgeitemtypes",
       addList: true,
       addNew: true,
     },
@@ -36,20 +36,20 @@ const CartridgeForm = () => {
     {
       title: "Technician in Charge of the Hardware",
       type: "select",
-      key: "users_tech_id",//key en backend?
+      key: "users_tech",//key en backend?
       addNew: true,
     },
     {
-      title: "Manufacturers",
+      title: "Manufacturer",
       type: "select",
-      key: "manufacturers_id",
+      key: "manufacturers",
       addList: true,
       addNew: true,
     },
     {
       title: "Group in Charge of the Hardware",
       type: "select",
-      key: "groups_tech_id",
+      key: "groups_tech",
       addList: true,
       addNew: true,
     },
@@ -64,7 +64,7 @@ const CartridgeForm = () => {
       key: "alarm_threshold", //como aplico logica?
     },
     {
-      title: "Pictures",
+      title: "Picture",
       type: "file",
       key: "pictures",
     },
@@ -77,7 +77,7 @@ const CartridgeForm = () => {
 
   const FormHeader = [
     {
-      title: "Cartridges",
+      title: "Cartridge",
       style: "inline my-auto mr-2",
       size: 24,
     },

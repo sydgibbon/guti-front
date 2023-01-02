@@ -18,16 +18,16 @@ const CableFormTemplate = () => {
       addNew: true,
     },
     {
-      title: "Types",
+      title: "Type",
       type: "select",
-      key: "cabletypes_id",
+      key: "cabletypes",
       addList: true,
       addNew: true,
     },
     {
       title: "Technician in Charge of the Hardware",
       type: "select",
-      key: "users_tech_id",
+      key: "users_tech",
       addNew: true,
     },
     {
@@ -43,7 +43,7 @@ const CableFormTemplate = () => {
     {
       title: "Cable Strand",
       type: "select",
-      key: "cablestrands_id",
+      key: "cablestrands",
       addList: true,
       addNew: true,
     },
@@ -55,37 +55,37 @@ const CableFormTemplate = () => {
     {
       title: "Asset",
       type: "select",
-      key: "items_endpoint_a_id",    //ver con syd
+      key: "items_endpoint_a",    //ver con syd
     },
     {
       title: "Asset",
       type: "select",
-      key: "items_endpoint_b_id",
+      key: "items_endpoint_b",
     },
     {
       title: "Socket model",
       type: "select",
-      key: "socketmodels_endpoint_a_id",
+      key: "socketmodels_endpoint_a",
       addList: true,
       addNew: true,
     },
     {
       title: "Socket model",
       type: "select",
-      key: "socketmodels_endpoint_b_id",
+      key: "socketmodels_endpoint_b",
       addList: true,
       addNew: true,
     },
     {
       title: "Socket",
       type: "select",
-      key: "sockets_endpoint_a_id",
+      key: "sockets_endpoint_a",
       addList: true,
     },
     {
       title: "Socket",
       type: "select",
-      key: "sockets_endpoint_b_id",
+      key: "sockets_endpoint_b",
       addList: true,
     },
     {
@@ -98,7 +98,7 @@ const CableFormTemplate = () => {
 
   const FormHeader = [
 		{
-      title: "Cables",
+      title: "Cable",
       style: "inline my-auto mr-2",
       size: 24,
     },
