@@ -11,7 +11,7 @@ const StatusSubForm = () => {
     },
     {
       title: "Comments",
-      type: "input",
+      type: "textarea",
       key: "comment",
     },
     {
