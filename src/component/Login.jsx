@@ -6,7 +6,7 @@ import logo from '../images/guti-logo.png'
 import { useServiceUser } from '../hooks/useServiceUser.js'
 
 // importando servicios 
-import { userLoguin } from '../api/axios';
+import { userLogin } from '../api/axios';
 
 const Login = () => {
 
@@ -15,7 +15,7 @@ const Login = () => {
   const username = useRef()
   const password = useRef()
   
-  const handleLoguin = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
 
     const user = {
@@ -25,14 +25,14 @@ const Login = () => {
 
     try {
       
-      const response = await userLoguin(user)
+      const response = await userLogin(user)
       
       if(response.status === 201 ){
         // ! aqui debemoos guardar el token que envie el backend
-        alert('Loguin exitoso')
+        alert('Login exitoso')
         login(true)
       }else{
-        alert('Loguin Fallido')
+        alert('Login Fallido')
       }
 
     } catch (error) {
@@ -50,7 +50,7 @@ const Login = () => {
           <span className=''>Account Login</span>
         </div>
         <div className='login-form items-center mx-auto w-full text-center'>
-          <form onSubmit={handleLoguin}>
+          <form onSubmit={handleLogin}>
             <div className='user-input w-1/3 mx-auto mt-8'>
               <p className='text-left mb-1'>Username</p>
               <input ref={username} type="text" name="username" id="username" className='w-full h-10 pl-2.5 bg-secondary-light border border-secondary-dark rounded-md' />
