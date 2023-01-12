@@ -79,14 +79,8 @@ const SoftwareForm = () => {
     },
 		{
       title: "Upgrade",
-      type: "checkboxselect",
-      subCheckBox: [
-				{
-          subTitle: "from:",
-					key: "check1",
-				},
-
-			]
+      type: "select",
+      key: "softwares"
 		},
 		{
       title: "Software category",

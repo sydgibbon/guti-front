@@ -4,9 +4,6 @@ import FormsTemplate from '../FormsTemplate';
 
 const CartridgeForm = () => {
 
-  let values =
-    Array.from(Array(101).keys());
-
   const formPropierties = [
     {
       title: "Name",
@@ -60,8 +57,9 @@ const CartridgeForm = () => {
     },
     {
       title: "Alert Threshold",
-      type: "threshold",
-      key: "alarm_threshold", //como aplico logica?
+      type: "select",
+      data: Array.from(Array(101).keys()),
+      key: "alarm_threshold",
     },
     {
       title: "Picture",

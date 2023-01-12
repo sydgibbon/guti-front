@@ -87,7 +87,8 @@ const RackForm = () => {
     },
     {
       title: "Door orientation in room",
-      type: "orientation",
+      type: "select",
+      data: ["North", "South", "East", "West"],
       key: "room_orientation", // ver con syd
     },
     {

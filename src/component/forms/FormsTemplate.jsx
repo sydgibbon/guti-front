@@ -3,14 +3,13 @@ import SelectComponent from "../atomic/SelectComponent";
 import { appItems } from "../../contexts/AppItems"
 import { TbPlus, TbList, TbMap } from "react-icons/tb";
 import { saveAsset, BASE_URL } from "../../api/axios";
-import { FaPaste, FaRegEye, FaInfo } from 'react-icons/fa';
+import { FaPaste, FaRegEye, } from 'react-icons/fa';
 
 
 
 
 function FormsTemplate(inputPropierties, FormHeader) {
 
-  let values = Array.from(Array(101).keys());
   let formFields = {}
   let formData = new FormData()
   const handleSubmit = (e) => {
@@ -30,14 +29,24 @@ function FormsTemplate(inputPropierties, FormHeader) {
   const renderInputType = (props) => {
     switch (props.type) {
       case "select":
+        if (props.data) {
+          return (
+            <select className="w-full rounded-md m-2 border-secondary-dark bg-medium-gray">
+              {props.data.map((item) => {
+                return <option value={item}> {item} </option>
+              })}
+              {props.data}
+            </select>
+          )
+        }
         return (<SelectComponent onChange={handleChangeSelect} id={props.key} className="w-full rounded-md" />)
-        break;
+
       case "input":
-        return (<input onChange={handleChange} id={props.key} className="w-full px-2 h-10 rounded-md bg-medium-gray" />)
-        break;
+        return (<input type={props.isPassword ? "password" : "text"} onChange={handleChange} id={props.key} className="w-full px-2 h-10 rounded-md bg-medium-gray" />)
+
       case "textarea":
         return (<textarea rows="3" className="w-full p-2 rounded-md border-secondary-dark bg-medium-gray"></textarea>)
-        break;
+
       case "checkbox":
         return (
           props.subCheckBox.map((checkBox) => {
@@ -50,26 +59,9 @@ function FormsTemplate(inputPropierties, FormHeader) {
             )
           })
         )
-        break;
-      case "checkboxselect":
-        return (
-          props.subCheckBox.map((checkBox) => {
-            return (
-              <div className='flex flex-wrap flex-col md:flex-row ml-4 md:ml-0 items-center'>
-                <div className='px-3'>
-                  <input id={props.key} type='checkbox' className="mr-2"></input>
-                  {/* falta idkey */}
-                  <span>{checkBox.subTitle}</span>
-                </div>
-                <div><SelectComponent onChange={handleChangeSelect} id={props.key} /> </div>
-              </div>
-            )
-          })
-        )
-        break;
+
       case "number":
         return (<input type="number" onChange={handleChange} id={props.key} className="w-full px-2 h-10 rounded-md bg-medium-gray" min="0" />)
-        break;
 
       case "file":
         return (<div className='border border-dashed rounded-md py-2 px-12 border-secondary-dark bg-medium-gray text-center'>
@@ -78,31 +70,10 @@ function FormsTemplate(inputPropierties, FormHeader) {
           <input type="file" accept=".jpg, .jpeg, .png" multiple className='w-full m-0 border rounded-md border-secondary-dark bg-white' />
         </div>
         )
-        break;
-      case "threshold":
-        return (
-          <select className="w-full rounded-md m-2 border-secondary-dark bg-medium-gray">
-            {values.map((item) => {
-              return <option value={item}> {item} </option>
-            })}
-            {values}
-          </select>
-        )
-        break;
-      case "orientation":
-        return (
-          <select className="w-full rounded-md m-2 border-secondary-dark bg-medium-gray">
-            <SelectComponent onChange={handleChangeSelect} id={props.key} className="w-full rounded-md" />
-            <option>North</option>
-            <option>East</option>
-            <option>South</option>
-            <option>West</option>
-          </select>
-        )
-        break;
+
       case "text":
         return (<div className='m-2'>No room found or selected</div>)
-        break;
+
       case "color":
         return (
           <input
@@ -111,11 +82,6 @@ function FormsTemplate(inputPropierties, FormHeader) {
             className="w-full h-9 px-2 rounded-md border-secondary-dark bg-medium-gray" >
           </input>
         )
-        break;
-
-      default:
-        <></>
-        break;
     }
   };
 
@@ -154,8 +120,10 @@ function FormsTemplate(inputPropierties, FormHeader) {
                     <TbMap />
                   </div>
                   : ""}
-                {field.addEye ?
-                  <div className={FieldIconStyle}>
+                {field.isPassword ?
+                  <div onMouseDown={(e) => { document.getElementById(field.key).type = "text" }}
+                    onMouseUp={(e) => { document.getElementById(field.key).type = "password" }}
+                    className={FieldIconStyle}>
                     <FaRegEye />
                   </div>
                   : ""}
