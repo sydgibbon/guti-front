@@ -27,7 +27,7 @@ const Login = () => {
       
       const response = await userLogin(user)
       
-      if(response.status === 200 ){
+      if(response.status === 202 ){
         // ! aqui debemoos guardar el token que envie el backend
         alert('Login exitoso')
         login(true)

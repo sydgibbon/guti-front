@@ -70,5 +70,5 @@ export async function getAssetById(asset, id ,setData) {
 }
 
 export async function userLogin(user) {
-  return await axios.post('https://reqres.in/api/login', user)
+  return await axios.post('http://127.0.0.1:8000/api/assets/login/', user)
 }
