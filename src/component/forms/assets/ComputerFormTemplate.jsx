@@ -10,7 +10,7 @@ const ComputerFormTemplate = () => {
       key: "name",
     },
     {
-      title: "Locations",
+      title: "Location",
       type: "select",
       key: "locations",
       addList: true,
@@ -66,14 +66,14 @@ const ComputerFormTemplate = () => {
       addNew: true,
     },
     {
-      title: "Types",
+      title: "Type",
       type: "select",
       key: "types",
       addList: true,
       addNew: true,
     },
     {
-      title: "Manufacturers",
+      title: "Manufacturer",
       type: "select",
       key: "manufacturers",
       addList: true,
@@ -118,7 +118,7 @@ const ComputerFormTemplate = () => {
 
   const FormHeader = [
     {
-      title: "Computers",
+      title: "Computer",
       style: "inline my-auto mr-2",
       size: 24,
     },

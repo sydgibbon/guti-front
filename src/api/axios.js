@@ -68,3 +68,7 @@ export async function getAssetById(asset, id ,setData) {
     console.log(e);
   }
 }
+
+export async function userLogin(user) {
+  return await axios.post('http://127.0.0.1:8000/api/assets/login/', user)
+}

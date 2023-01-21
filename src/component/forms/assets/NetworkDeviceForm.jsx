@@ -1,216 +1,145 @@
 import React from 'react'
 import { TbPlus, TbList, TbMap, TbSitemap } from 'react-icons/tb';
+import FormsTemplate from '../FormsTemplate';
 
 const NetworkDeviceForm = () => {
-	return (
-		<div className='computer-form flex flex-col items-center m-4'>
-			<form className='w-full divide-y divide-y-reverse'>
-				<div className='form-header flex bg-medium-gray h-1/6 w-full border rounded-t-md border-secondary-dark py-4 px-5'>
-					<TbSitemap className='inline my-auto mr-2' size='24' />
-					<p className='text-base my-auto font-medium'>New Item - Network Device</p>
-				</div>
-				<div className='form-container h-full w-full p-4 border border-secondary-dark bg-white flex justify-between'>
-					<div className='first-form w-1/2 mx-4'>
-						<div className='input-name mb-4'>
-							<p className='text-sm mb-2'>Name</p>
-							<input className='w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray'></input>
-						</div>
-						<div className='input-locations my-4'>
-							<p className='text-sm mb-2'>Locations</p>
-							<div className='flex divide-x divide-x-reverse'>
-								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
-									<option value="-----">-----</option>
-								</select>
-								<div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbList className='mx-2' />
-								</div>
-								<div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbPlus className='mx-2' />
-								</div>
-								<div className='rounded-r-md h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbMap className='mx-2' />
-								</div>
-							</div>
-						</div>
-						<div className='input-technitian my-4'>
-							<p className='text-sm mb-2'>Technician in Charge of the Hardware</p>
-							<div className='flex divide-x divide-x-reverse'>
-								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
-									<option value="-----">-----</option>
-								</select>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbList className='mx-2' />
-								</div>
-							</div>
-						</div>
-						<div className='input-group-in-charge my-4'>
-							<p className='text-sm mb-2'>Group in Charge of the Hardware</p>
-							<div className='flex divide-x divide-x-reverse'>
-								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
-									<option value="-----">-----</option>
-								</select>
-								<div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbList className='mx-2' />
-								</div>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbPlus className='mx-2' />
-								</div>
-							</div>
-						</div>
-						<div className='input-alternate-username-number my-4'>
-							<p className='text-sm mb-2'>Alternate Username Number</p>
-							<input className='w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray'></input>
-						</div>
-						<div className='input-alternate-username my-4'>
-							<p className='text-sm mb-2'>Alternate Username</p>
-							<input className='w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray'></input>
-						</div>
-						<div className='input-system-description'>
-							<p className='text-sm mb-2'>System description</p>
-							<textarea rows='3' className='w-full p-2 border rounded-md border-secondary-dark bg-medium-gray'></textarea>
-						</div>
-						<div className='input-network my-4'>
-							<p className='text-sm mb-2'>Network</p>
-							<div className='flex divide-x divide-x-reverse'>
-								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
-									<option value="-----">-----</option>
-								</select>
-								<div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbList className='mx-2' />
-								</div>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbPlus className='mx-2' />
-								</div>
-							</div>
-						</div>
-						<div className='input-uuid my-4'>
-							<p className='text-sm mb-2'>UUID</p>
-							<input className='w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray'></input>
-						</div>
-						<div className='input-memory my-4'>
-							<p className='text-sm mb-2'>Memory (MB)</p>
-							<input type='number' className='w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray'></input>
-						</div>
-					</div>
-					<div className='second-form w-1/2 mx-4'>
-						<div className='input-status mb-4'>
-							<p className='text-sm mb-2'>Status</p>
-							<div className='flex divide-x divide-x-reverse'>
-								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
-									<option value="-----">-----</option>
-								</select>
-								<div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbList className='mx-2' />
-								</div>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbPlus className='mx-2' />
-								</div>
-							</div>
-						</div>
-						<div className='input-types my-4'>
-							<p className='text-sm mb-2'>Types</p>
-							<div className='flex divide-x divide-x-reverse'>
-								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
-									<option value="-----">-----</option>
-								</select>
-								<div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbList className='mx-2' />
-								</div>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbPlus className='mx-2' />
-								</div>
-							</div>
-						</div>
-						<div className='input-manufacturers my-4'>
-							<p className='text-sm mb-2'>Manufacturers</p>
-							<div className='flex divide-x divide-x-reverse'>
-								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
-									<option value="-----">-----</option>
-								</select>
-								<div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbList className='mx-2' />
-								</div>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbPlus className='mx-2' />
-								</div>
-							</div>
-						</div>
-						<div className='input-model my-4'>
-							<p className='text-sm mb-2'>Model</p>
-							<div className='flex divide-x divide-x-reverse'>
-								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
-									<option value="-----">-----</option>
-								</select>
-								<div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbList className='mx-2' />
-								</div>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbPlus className='mx-2' />
-								</div>
-							</div>
-						</div>
-						<div className='input-serial-number my-4'>
-							<p className='text-sm mb-2'>Serial Number</p>
-							<input className='w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray'></input>
-						</div>
-						<div className='input-inventory-asset-number my-4'>
-							<p className='text-sm mb-2'>Inventory/Asset Number</p>
-							<input className='w-full px-2 rounded-md h-9 border-1 border-secondary-dark bg-medium-gray'></input>
-						</div>
-						<div className='input-user my-4'>
-							<p className='text-sm mb-2'>User</p>
-							<div className='flex divide-x divide-x-reverse'>
-								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
-									<option value="-----">-----</option>
-								</select>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbList className='mx-2' />
-								</div>
-							</div>
-						</div>
-						<div className='input-groups my-4'>
-							<p className='text-sm mb-2'>Groups</p>
-							<div className='flex divide-x divide-x-reverse'>
-								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
-									<option value="-----">-----</option>
-								</select>
-								<div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbList className='mx-2' />
-								</div>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbPlus className='mx-2' />
-								</div>
-							</div>
-						</div>
-						<div className='input-comments'>
-							<p className='text-sm mb-2'>Comments</p>
-							<textarea rows='3' className='w-full p-2 border rounded-md border-secondary-dark bg-medium-gray'></textarea>
-						</div>
-						<div className='input-update-sources my-4'>
-							<p className='text-sm mb-2'>Update Sources</p>
-							<div className='flex divide-x divide-x-reverse'>
-								<select className='w-full px-2 rounded-l-md h-9 border border-secondary-dark bg-medium-gray'>
-									<option value="-----">-----</option>
-								</select>
-								<div className='h-9 border border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbList className='mx-2' />
-								</div>
-								<div className='h-9 border rounded-r-md border-secondary-dark flex items-center hover:bg-primary-light cursor-pointer hover:text-white'>
-									<TbPlus className='mx-2' />
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div className='form-footer flex h-1/6 w-full border rounded-b-md border-secondary-dark justify-end mb-2 bg-white py-4 px-5'>
-					<button className='flex items-center border-2 border-orange-dark rounded-md bg-primary-light text-white hover:border-black py-2 px-4'>
-						<TbPlus className='mr-1' size="20" />
-						<p className='text-lg font-medium'>Add</p>
-					</button>
-				</div>
-			</form>
-		</div>
-	)
-}
 
-export default NetworkDeviceForm
+	const formPropierties = [
+    {
+      title: "Name",
+      type: "input",
+      key: "name",
+    },
+		{
+      title: "Status",
+      type: "select",
+      key: "states",
+      addList: true,
+      addNew: true,
+    },
+		{
+      title: "Location",
+      type: "select",
+      key: "locations",
+      addList: true,
+      addNew: true,
+      addMap: true,
+    },
+		{
+      title: "Type",
+      type: "select",
+      key: "networkequipmenttypes",
+      addList: true,
+      addNew: true,
+    },
+		{
+      title: "Technician in Charge of the Hardware",
+      type: "select",
+      key: "users_tech",
+      addNew: true,
+    },
+		{
+      title: "Manufacturer",
+      type: "select",
+      key: "manufacturers",
+      addList: true,
+      addNew: true,
+    },
+		{
+      title: "Group in Charge of the Hardware",
+      type: "select",
+      key: "groups_tech",
+      addList: true,
+      addNew: true,
+    },
+		{
+      title: "Model",
+      type: "select",
+      key: "networkequipmentmodels",
+      addList: true,
+      addNew: true,
+    },
+		{
+      title: "Alternate Username Number",
+      type: "input",
+      key: "contact_num", // ?
+    },
+		{
+      title: "Serial Number",
+      type: "input",
+      key: "serial",
+    },
+		{
+      title: "Alternate Username",
+      type: "input",
+      key: "contact", // ?
+    },
+		{
+      title: "Inventory",
+      type: "input",
+      key: "otherserial",
+    },
+		{
+      title: "System Description",
+      type: "input",
+      key: "sysdescr",
+    },
+		{
+      title: "User",
+      type: "select",
+      key: "users",
+      addList: true,
+    },
+		{
+      title: "Network",
+      type: "input",
+      key: "network",
+			addList: true,
+      addNew: true,
+    },
+		{
+      title: "Group",
+      type: "select",
+      key: "groups",
+      addList: true,
+      addNew: true,
+    },
+		{
+      title: "UUID",
+      type: "input",
+      key: "uuid",
+    },
+		{
+      title: "Comment",
+      type: "textarea",
+      key: "comment",
+    },
+		{
+      title: "Memory",
+      type: "input",
+      key: "ram",
+    },
+		{
+      title: "Update Source",
+      type: "select",
+      key: "update_sources",
+      addList: true,
+      addNew: true,
+    },
+  ]
+
+	const FormHeader = [
+		{
+      title: "Network device",
+      style: "inline my-auto mr-2",
+      size: 24,
+    },
+	]
+
+
+	return (
+		FormsTemplate (formPropierties, FormHeader,)
+	);
+};
+
+export default NetworkDeviceForm;

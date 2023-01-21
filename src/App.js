@@ -1,7 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
-import Login from "./component/Login";
-import Main from "./component/dashboard/Main";
-import AssetsDashboard from "./component/dashboard/AssetsDashboard";
+import { Outlet } from "react-router-dom";
 import axiosPrivate from "./api/axios";
 import Cables from "./pages/Cables";
 import Computers from "./pages/Computers";
