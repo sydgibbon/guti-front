@@ -1,7 +1,7 @@
 import React from 'react';
 import FormsTemplate from '../FormsTemplate';
 
-const GroupInChargeSubForm = () => {
+const GroupInChargeForm = () => {
   
   const inputPropierties = [
     {
@@ -72,4 +72,4 @@ const GroupInChargeSubForm = () => {
   )
 }
 
-export default GroupInChargeSubForm;
+export default GroupInChargeForm;
