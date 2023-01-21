@@ -17,17 +17,17 @@ const GroupInChargeForm = () => {
     },
     {
       title: "Requester",
-      type: "choise",
+      type: "select",
       key: "user",
     },
     {
       title: "Watcher",
-      type: "choise",
+      type: "select",
       key: "user",
     },
     {
       title: "Assigned to",
-      type: "choise",
+      type: "select",
       key: "user",
     },
     {
@@ -37,27 +37,27 @@ const GroupInChargeForm = () => {
     },
     {
       title: "Task",
-      type: "choise",
+      type: "select",
       key: "user",
     },
     {
       title: "Can be notified	",
-      type: "choise",
+      type: "select",
       key: "user",
     },
     {
       title: "Can be manager",
-      type: "choise",
+      type: "select",
       key: "user",
     },
     {
       title: "Items",
-      type: "choise",
+      type: "select",
       key: "user",
     },
     {
       title: "User",
-      type: "choise",
+      type: "select",
       key: "user",
     },
   ]

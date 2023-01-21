@@ -1,24 +1,28 @@
 import React from 'react';
 import FormsTemplate from '../FormsTemplate';
 
-const NetworkSubForm = () => {
+const ManufacturerForm = () => {
   
   const inputPropierties = [
     {
-      title: "Name",
+      title: "Nombre",
       type: "input",
       key: "name",
     },
     {
-      title: "Comments",
+      title: "Comment",
       type: "textarea",
-      key: "comment",
+      key: "user",
+    },
+    {
+      title: "Registered IDs (issued by PCI-SIG)",
+      type: "select",
+      key: "name",
     },
   ]
-
   const FormHeader = [
     {
-      title: "Network",
+      title: "Manufacturer",
     },
   ]
   return (
@@ -26,4 +30,4 @@ const NetworkSubForm = () => {
   )
 }
 
-export default NetworkSubForm;
+export default ManufacturerForm;

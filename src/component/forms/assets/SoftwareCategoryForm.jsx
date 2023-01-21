@@ -1,23 +1,29 @@
 import React from 'react';
 import FormsTemplate from '../FormsTemplate';
 
-const TypeSubForm = () => {
+const SoftwareCategoryForm = () => {
   
   const inputPropierties = [
     {
-      title: "Nombre",
+      title: "Name",
       type: "input",
       key: "name",
     },
     {
-      title: "Comment",
+      title: "Comments",
       type: "textarea",
-      key: "user",
+      key: "comment",
+    },
+    {
+      title: "As Child of",
+      type: "select",
+      key: "name",
     },
   ]
+
   const FormHeader = [
     {
-      title: "Type",
+      title: "Software category",
     },
   ]
   return (
@@ -25,4 +31,4 @@ const TypeSubForm = () => {
   )
 }
 
-export default TypeSubForm;
+export default SoftwareCategoryForm;

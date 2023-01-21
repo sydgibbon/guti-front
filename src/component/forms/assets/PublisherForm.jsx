@@ -1,24 +1,28 @@
 import React from 'react';
 import FormsTemplate from '../FormsTemplate';
 
-const UpdateSourceSubForm = () => {
+const PublisherForm = () => {
   
   const inputPropierties = [
     {
-      title: "Name",
+      title: "Nombre",
       type: "input",
       key: "name",
     },
     {
-      title: "Comments",
+      title: "Comment",
       type: "textarea",
-      key: "comment",
+      key: "user",
+    },
+    {
+      title: "Registered IDs (issued by PCI-SIG)",
+      type: "select",
+      key: "name",
     },
   ]
-
   const FormHeader = [
     {
-      title: "Update Source",
+      title: "Publisher",
     },
   ]
   return (
@@ -26,4 +30,4 @@ const UpdateSourceSubForm = () => {
   )
 }
 
-export default UpdateSourceSubForm;
+export default PublisherForm;

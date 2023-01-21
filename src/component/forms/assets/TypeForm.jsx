@@ -1,7 +1,7 @@
 import React from 'react';
 import FormsTemplate from '../FormsTemplate';
 
-const PhonePowerSubForm = () => {
+const TypeForm = () => {
   
   const inputPropierties = [
     {
@@ -17,7 +17,7 @@ const PhonePowerSubForm = () => {
   ]
   const FormHeader = [
     {
-      title: "Manufacturer",
+      title: "Type",
     },
   ]
   return (
@@ -25,4 +25,4 @@ const PhonePowerSubForm = () => {
   )
 }
 
-export default PhonePowerSubForm;
+export default TypeForm;

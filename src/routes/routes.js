@@ -41,19 +41,18 @@ import PDUs from "../pages/PDUs";
 import UnmanagedDevices from "../pages/UnmanagedDevices";
 import ComputerFormTemplate from "../component/forms/assets/ComputerFormTemplate"
 import AssetTemplate from "../component/dashboard/assets/AssetTemplate";
-
-import GroupInChargeForm from "../component/forms/assets/GroupInChargeForm";
-import LocSubForm from "../component/forms/assets/LocationSubForm";
-import StatusSubForm from "../component/forms/assets/StatusSubForm";
-import TypeSubForm from "../component/forms/assets/TypeSubForm";
-import ManufacturerSubForm from "../component/forms/assets/ManufacturerSubForm";
-import ModelSubForm from "../component/forms/assets/ModelSubForm";
-import NetworkSubForm from "../component/forms/assets/NetworkSubForm";
-import UpdateSourceSubForm from "../component/forms/assets/UpdateSourceSubForm";
-import GroupSubForm from "../component/forms/assets/GroupSubForm";
-import PublisherSubForm from "../component/forms/assets/PublisherSubForm";
-import SoftwareCategorySubForm from "../component/forms/assets/SoftwareCategorySubForm";
-import PhonePowerSubForm from "../component/forms/assets/PhonePowerSubForm";
+import GroupInChargeForm from "../component/forms/assets/GroupInChargeForm"; //
+import LocForm from "../component/forms/assets/LocationForm"; //
+import StatusForm from "../component/forms/assets/StatusForm";//
+import TypeForm from "../component/forms/assets/TypeForm"; //
+import ManufacturerForm from "../component/forms/assets/ManufacturerForm";//
+import ModelForm from "../component/forms/assets/ModelForm"; //
+import NetworkForm from "../component/forms/assets/NetworkForm"; //
+import UpdateSourceForm from "../component/forms/assets/UpdateSourceForm"; //
+import GroupForm from "../component/forms/assets/GroupForm"; //
+import PublisherForm from "../component/forms/assets/PublisherForm"; //
+import SoftwareCategoryForm from "../component/forms/assets/SoftwareCategoryForm"; //
+import PhonePowerForm from "../component/forms/assets/PhonePowerForm"; //
 
 // ? servicio
 import { useServiceUser } from '../hooks/useServiceUser';
@@ -95,7 +94,7 @@ const RoutesComponent = () => {
             <Route path="/assets/global" element={<ProtectedRoute> <Main content={<Global />} /> </ProtectedRoute>} />
 
             <Route path="/template" element={<ProtectedRoute> <Main content={<ComputerFormTemplate />} /> </ProtectedRoute>} />
-
+            {/* Forms */}
             <Route path="/assets/forms/computers" element={<ProtectedRoute> <Main content={<ComputerForm />} /> </ProtectedRoute>} />
             <Route path="/assets/forms/enclosures" element={<ProtectedRoute> <Main content={<EnclosuresForm />} /> </ProtectedRoute>} />
             <Route path="/assets/forms/cables" element={<ProtectedRoute> <Main content={<CableForm />} /> </ProtectedRoute>} />
@@ -112,19 +111,19 @@ const RoutesComponent = () => {
             <Route path="/assets/forms/simcards" element={<ProtectedRoute> <Main content={<SimcardForm />} /> </ProtectedRoute>} />
             <Route path="/assets/forms/racks" element={<ProtectedRoute> <Main content={<RackForm />} /> </ProtectedRoute>} />
             <Route path="*" element={<ProtectedRoute> <Main content={<NotFound />} /> </ProtectedRoute>} />
-
-            <Route path="/assets/forms/groupinchargeform" element={<Main content={<GroupInChargeForm />} />} />
-            <Route path="/assets/forms/locationform" element={<Main content={<LocSubForm />} />} />
-            <Route path="/assets/forms/statusform" element={<Main content={<StatusSubForm />} />} />
-            <Route path="/assets/forms/typeorm" element={<Main content={<TypeSubForm />} />} />
-            <Route path="/assets/forms/manufacturerform" element={<Main content={<ManufacturerSubForm />} />} />
-            <Route path="/assets/forms/modelform" element={<Main content={<ModelSubForm />} />} />
-            <Route path="/assets/forms/networkform" element={<Main content={<NetworkSubForm />} />} />
-            <Route path="/assets/forms/updatesourceform" element={<Main content={<UpdateSourceSubForm />} />} />
-            <Route path="/assets/forms/groupform" element={<Main content={<GroupSubForm />} />} />
-            <Route path="/assets/forms/publisherform" element={<Main content={<PublisherSubForm />} />} />
-            <Route path="/assets/forms/softwarecategoryform" element={<Main content={<SoftwareCategorySubForm />} />} />
-            <Route path="/assets/forms/phonepowerform" element={<Main content={<PhonePowerSubForm />} />} />
+            {/* Subforms */}
+            <Route path="/assets/forms/groupincharge" element={<Main content={<GroupInChargeForm />} />} />
+            <Route path="/assets/forms/location" element={<Main content={<LocForm />} />} />
+            <Route path="/assets/forms/status" element={<Main content={<StatusForm />} />} />
+            <Route path="/assets/forms/type" element={<Main content={<TypeForm />} />} />
+            <Route path="/assets/forms/manufacturer" element={<Main content={<ManufacturerForm />} />} />
+            <Route path="/assets/forms/model" element={<Main content={<ModelForm />} />} />
+            <Route path="/assets/forms/network" element={<Main content={<NetworkForm />} />} />
+            <Route path="/assets/forms/updatesource" element={<Main content={<UpdateSourceForm />} />} />
+            <Route path="/assets/forms/group" element={<Main content={<GroupForm />} />} />
+            <Route path="/assets/forms/publisher" element={<Main content={<PublisherForm />} />} />
+            <Route path="/assets/forms/softwarecategory" element={<Main content={<SoftwareCategoryForm />} />} />
+            <Route path="/assets/forms/phonepower" element={<Main content={<PhonePowerForm />} />} />
 
             <Route path="/asset" element={<ProtectedRoute> <Main content={<AssetTemplate />} /> </ProtectedRoute>} />
           </Route>

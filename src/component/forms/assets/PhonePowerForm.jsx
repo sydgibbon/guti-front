@@ -1,29 +1,23 @@
 import React from 'react';
 import FormsTemplate from '../FormsTemplate';
 
-const SoftwareCategorySubForm = () => {
+const PhonePowerForm = () => {
   
   const inputPropierties = [
     {
-      title: "Name",
+      title: "Nombre",
       type: "input",
       key: "name",
     },
     {
-      title: "Comments",
+      title: "Comment",
       type: "textarea",
-      key: "comment",
-    },
-    {
-      title: "As Child of",
-      type: "select",
-      key: "name",
+      key: "user",
     },
   ]
-
   const FormHeader = [
     {
-      title: "Software category",
+      title: "Manufacturer",
     },
   ]
   return (
@@ -31,4 +25,4 @@ const SoftwareCategorySubForm = () => {
   )
 }
 
-export default SoftwareCategorySubForm;
+export default PhonePowerForm;

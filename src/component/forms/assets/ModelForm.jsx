@@ -1,7 +1,7 @@
 import React from 'react';
 import FormsTemplate from '../FormsTemplate';
 
-const ModelSubForm = () => {
+const ModelForm = () => {
   
   const inputPropierties = [
     {
@@ -76,4 +76,4 @@ const ModelSubForm = () => {
   )
 }
 
-export default ModelSubForm;
+export default ModelForm;

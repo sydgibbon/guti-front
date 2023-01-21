@@ -1,7 +1,7 @@
 import React from 'react';
 import FormsTemplate from '../FormsTemplate';
 
-const StatusSubForm = () => {
+const StatusForm = () => {
   
   const inputPropierties = [
     {
@@ -21,92 +21,92 @@ const StatusSubForm = () => {
     },
     {
       title: "Computers",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "Monitors",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "Network devices",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "Devices",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "Phones",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "Printers",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "Licenses",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "Certificates",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "Enclosures",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "PDUs",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "Lines",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "Racks",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "Versions",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "Clusters",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "Contracts",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "Appliances",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "Database instances",
-      type: "choise",
+      type: "select",
       key: "name",
     },
     {
       title: "Cables",
-      type: "choise",
+      type: "select",
       key: "name",
     },
   ]
@@ -121,4 +121,4 @@ const StatusSubForm = () => {
   )
 }
 
-export default StatusSubForm;
+export default StatusForm;

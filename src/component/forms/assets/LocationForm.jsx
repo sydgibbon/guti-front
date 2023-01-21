@@ -1,7 +1,7 @@
 import React from 'react';
 import FormsTemplate from '../FormsTemplate';
 
-const LocSubForm = () => {
+const LocForm = () => {
   
   const inputPropierties = [
     {
@@ -87,4 +87,4 @@ const LocSubForm = () => {
   )
 }
 
-export default LocSubForm;
+export default LocForm;
