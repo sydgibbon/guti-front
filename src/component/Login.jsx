@@ -1,4 +1,4 @@
-import React , { useRef } from 'react';
+import React , { useRef, useEffect } from 'react';
 import '../style/Login.css'
 import logo from '../images/guti-logo.png'
 
@@ -9,11 +9,18 @@ import { useServiceUser } from '../hooks/useServiceUser.js'
 import { userLogin } from '../api/axios';
 
 const Login = () => {
+  const username = useRef()
+  const password = useRef()
 
   const { login } = useServiceUser()
 
-  const username = useRef()
-  const password = useRef()
+  useEffect(() => {
+  const loggedUserJSON = window.localStorage.getItem('logguedUser')
+  if(loggedUserJSON){
+    const user = JSON.parse(loggedUserJSON)
+    login(user)
+  }  
+  }, [login])
   
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -28,9 +35,11 @@ const Login = () => {
       const response = await userLogin(user)
       
       if(response.status === 202 ){
-        // ! aqui debemoos guardar el token que envie el backend
         alert('Login exitoso')
-        login(true)
+        login(user)
+        window.localStorage.setItem(
+          'logguedUser', JSON.stringify(user)
+        )
       }else{
         alert('Login Fallido')
       }

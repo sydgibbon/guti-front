@@ -17,7 +17,6 @@ const SelectComponent = ({id, className, onChange}) => {
         .then((response) => {
           // check if the data is populated
           setData(response.data);
-          console.log(response.data);
           // you tell it that you had the result
           setLoadingData(false);
         });

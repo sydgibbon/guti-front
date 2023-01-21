@@ -28,10 +28,12 @@ function SideBar() {
         <div className="py-2 mt-2 flex-col overflow-y-auto">
           {appItems[0].itemContent.map((app) => (
             <SidebarMenu
+              key={app.name}
               text={app.name}
               icon={app.icon(iconStyles.style)}
               subMenu={app.itemContent ? app.itemContent.map((submenu) => (
                 <SidebarSubMenu
+                  key={submenu.name}
                   text={submenu.name}
                   icon={submenu.icon(iconStyles.style, iconStyles.size)}
                   selected={submenuSelected}

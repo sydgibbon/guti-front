@@ -5,11 +5,11 @@ export const useServiceUser = () => {
   
   const { user , setUser } = useContext(contextUser);
 
-  const login = () => {
-    setUser(true)
+  const login = (user) => {
+    setUser(user)
   }
   const logout = () => {
-    setUser(false)
+    setUser(null)
   }
 
   return {

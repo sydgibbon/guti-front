@@ -17,7 +17,6 @@ const Donut = ({ asset, itemProp }) => {
         .then((response) => {
           // check if the data is populated
           setData(response.data);
-          console.log(response.data);
           // you tell it that you had the result
           setLoadingData(false);
         });
@@ -34,7 +33,6 @@ const Donut = ({ asset, itemProp }) => {
     data.map((obj) => {
       repeatedItemProp.push(obj[itemProp]);
     });
-    console.log(repeatedItemProp)
     const objItemPropCounter = {};
 
     repeatedItemProp.forEach((element) => {
@@ -43,7 +41,6 @@ const Donut = ({ asset, itemProp }) => {
     return objItemPropCounter;
   };
   let keys = Object.keys(getItemByProp());
-  console.log(keys);
 
   let values = Object.values(getItemByProp());
 
