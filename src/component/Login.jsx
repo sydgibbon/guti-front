@@ -20,7 +20,7 @@ const Login = () => {
       const user = JSON.parse(loggedUserJSON)
       login(user)
     }
-  }, [])
+  }, [login])
   
   const handleLogin = async (e) => {
     e.preventDefault();

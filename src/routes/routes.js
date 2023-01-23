@@ -48,8 +48,9 @@ import { useServiceUser } from '../hooks/useServiceUser';
 // componente para proteger las rutas 
 const ProtectedRoute = ({children}) => {
   const { user } = useServiceUser()
+  console.log("🚀 ~ file: routes.js:51 ~ ProtectedRoute ~ user", user)
   
-  if(user !== null) return <Login/>
+  if( !user ) return <Login/>
   return children
 
 }
