@@ -49,7 +49,7 @@ import { useServiceUser } from '../hooks/useServiceUser';
 const ProtectedRoute = ({children}) => {
   const { user } = useServiceUser()
   
-  if(!user) return <Login/>
+  if(user !== null) return <Login/>
   return children
 
 }

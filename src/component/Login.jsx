@@ -15,12 +15,12 @@ const Login = () => {
   const { login } = useServiceUser()
 
   useEffect(() => {
-  const loggedUserJSON = window.localStorage.getItem('logguedUser')
-  if(loggedUserJSON){
-    const user = JSON.parse(loggedUserJSON)
-    login(user)
-  }  
-  }, [login])
+    const loggedUserJSON = window.localStorage.getItem('logguedUser')
+    if(loggedUserJSON){
+      const user = JSON.parse(loggedUserJSON)
+      login(user)
+    }
+  }, [])
   
   const handleLogin = async (e) => {
     e.preventDefault();
