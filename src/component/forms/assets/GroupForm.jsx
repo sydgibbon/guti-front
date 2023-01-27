@@ -19,16 +19,19 @@ const GroupForm = () => {
       title: "Requester",
       type: "select",
       key: "user",
+      data: ["Yes", "No"]
     },
     {
       title: "Watcher",
       type: "select",
       key: "user",
+      data: ["Yes", "No"]
     },
     {
       title: "Assigned to",
       type: "select",
       key: "user",
+      data: ["Yes", "No"]
     },
     {
       title: "Comment",
@@ -39,26 +42,31 @@ const GroupForm = () => {
       title: "Task",
       type: "select",
       key: "user",
+      data: ["Yes", "No"]
     },
     {
       title: "Can be notified	",
       type: "select",
       key: "user",
+      data: ["Yes", "No"]
     },
     {
       title: "Can be manager",
       type: "select",
       key: "user",
+      data: ["Yes", "No"]
     },
     {
       title: "Items",
       type: "select",
       key: "user",
+      data: ["Yes", "No"]
     },
     {
       title: "User",
       type: "select",
       key: "user",
+      data: ["Yes", "No"]
     },
   ]
 
