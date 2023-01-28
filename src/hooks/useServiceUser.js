@@ -9,6 +9,7 @@ export const useServiceUser = () => {
     setUser(user)
   }
   const logout = () => {
+    window.localStorage.removeItem('logguedUser');
     setUser(null)
   }
 

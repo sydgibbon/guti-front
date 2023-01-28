@@ -6,10 +6,20 @@ import {
 import user from '../../images/user.png';
 import Breadcrumb from '../atomic/Breadcrumb';
 import NavbarMenu from './NavbarMenu';
-import Tooltip from '@mui/material/Tooltip';
+
+// IMPORTANDO CUSTOM HOOKS UserService
+import { useServiceUser } from '../../hooks/useServiceUser.js' 
+
 
 
 function Navbar() {
+
+  const { logout } = useServiceUser()
+
+  const handleLogout = () => {
+    logout()
+  }
+
   return (
     <div className='navbar-section w-full h-12 bg-light-gray flex justify-between border-b border-secondary-dark'>
       <div className='breadcrumb-section w-1/2 pl-2 items-center flex'>
@@ -28,7 +38,7 @@ function Navbar() {
 
           </div>
         </div>
-        <div className='user-section flex my-auto justify-around ml-2'>
+        <div onClick={ handleLogout } className='user-section flex my-auto justify-around ml-2 cursor-pointer'>
           <div className='user-name flex flex-col my-auto mr-2'>
             <span className='text-sm'>Super Admin</span>
               <span className='text-xs'>GUTI User</span>
