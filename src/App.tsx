@@ -1,21 +1,23 @@
 import { Outlet } from "react-router-dom";
-import axiosPrivate from "./api/axios";
+import { axiosPrivate } from "./api/axios";
+ 
 
-function App() {
+const App = () => {
   axiosPrivate
     .get("http://127.0.0.1:8000/api/assets/computers/")
-    .then(function (response) {
+    .then(function (response: any) {
       // handle success
     })
-    .catch(function (error) {
+    .catch(function (error: any) {
       // handle error
     });
 
   return (
-      <>
-        <Outlet/>
-      </>
+    <>
+    
+      <Outlet />
+    </>
   );
-}
+};
 
 export default App;
