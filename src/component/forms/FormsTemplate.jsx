@@ -17,7 +17,6 @@ function FormsTemplate(inputPropierties, FormHeader) {
     Object.keys(formFields).forEach((key) => {
       formData.append(key, formFields[key]);
     });
-  const [openErrorAlert, setOpenErrorAlert] = useState(false);
   saveAsset("computers", formData, setOpenSuccessAlert, setOpenErrorAlert);
   };
   const handleChange = (e) => {
