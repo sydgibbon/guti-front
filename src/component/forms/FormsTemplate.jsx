@@ -1,24 +1,19 @@
-import {React, useState} from "react";
+import React from "react";
 import SelectComponent from "../atomic/SelectComponent";
 import { appItems } from "../../contexts/AppItems";
 import { TbPlus, TbList, TbMap } from "react-icons/tb";
 import { saveAsset, BASE_URL } from "../../api/axios";
 import { FaPaste, FaRegEye } from "react-icons/fa";
-import Alert from "../../component/atomic/Alert";
 
 function FormsTemplate(inputPropierties, FormHeader) {
-  const [openSuccessAlert, setOpenSuccessAlert] = useState(false);
-  const [openErrorAlert, setOpenErrorAlert] = useState(false);
   let formFields = {};
   let formData = new FormData();
-  const HandleSubmit = (e) => {
-    
+  const handleSubmit = (e) => {
     e.preventDefault();
     Object.keys(formFields).forEach((key) => {
       formData.append(key, formFields[key]);
     });
-  const [openErrorAlert, setOpenErrorAlert] = useState(false);
-  saveAsset("computers", formData, setOpenSuccessAlert, setOpenErrorAlert);
+    saveAsset("computers", formData);
   };
   const handleChange = (e) => {
     formFields[e.target.id] = e.target.value;
@@ -142,7 +137,7 @@ function FormsTemplate(inputPropierties, FormHeader) {
         </div>
       ))}
       <form
-        onSubmit={HandleSubmit}
+        onSubmit={handleSubmit}
         action={`${BASE_URL}computers/`}
         method="POST"
         encType="multipart/form-date"
@@ -217,8 +212,6 @@ function FormsTemplate(inputPropierties, FormHeader) {
             <TbPlus className="mr-1" />
             <p className="text-lg font-medium">Add</p>
           </button>
-          <Alert alertType="success" message="Asset Saved Successfully!" open={openSuccessAlert} setOpen={setOpenSuccessAlert} />
-          <Alert alertType="error" message="There was an error while saving this asset" open={openErrorAlert} setOpen={setOpenErrorAlert} />
         </div>
       </form>
     </div>

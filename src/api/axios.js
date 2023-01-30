@@ -12,7 +12,7 @@ export const axiosPrivate = axios.create({
   headers: { Authorization: `Token ${TOKEN}` },
 });
 
-export async function saveAsset(asset, assetData, successCallback, errorCallback) {
+export async function saveAsset(asset, assetData) {
   try {
     const response = await axiosPrivate.post(
       BASE_URL + asset + "/",
@@ -24,11 +24,9 @@ export async function saveAsset(asset, assetData, successCallback, errorCallback
         },
       }
     );
-    successCallback(true);
     return response;
   } catch (e) {
     console.log(e);
-    errorCallback(true);
   }
 }
 
