@@ -41,18 +41,39 @@ import PDUs from "../pages/PDUs";
 import UnmanagedDevices from "../pages/UnmanagedDevices";
 import ComputerFormTemplate from "../component/forms/assets/ComputerFormTemplate"
 import AssetTemplate from "../component/dashboard/assets/AssetTemplate";
-import GroupInChargeForm from "../component/forms/assets/GroupInChargeForm"; //
-import LocForm from "../component/forms/assets/LocationForm"; //
-import StatusForm from "../component/forms/assets/StatusForm";//
-import TypeForm from "../component/forms/assets/TypeForm"; //
-import ManufacturerForm from "../component/forms/assets/ManufacturerForm";//
-import ModelForm from "../component/forms/assets/ModelForm"; //
-import NetworkForm from "../component/forms/assets/NetworkForm"; //
-import UpdateSourceForm from "../component/forms/assets/UpdateSourceForm"; //
-import GroupForm from "../component/forms/assets/GroupForm"; //
-import PublisherForm from "../component/forms/assets/PublisherForm"; //
-import SoftwareCategoryForm from "../component/forms/assets/SoftwareCategoryForm"; //
-import PhonePowerForm from "../component/forms/assets/PhonePowerForm"; //
+import GroupInChargeForm from "../component/forms/assets/GroupInChargeForm";
+import LocForm from "../component/forms/assets/LocationForm";
+import StatusForm from "../component/forms/assets/StatusForm";
+import ComputerTypeForm from "../component/forms/assets/ComputerTypeForm";
+import MonitorTypeForm from "../component/forms/assets/MonitorTypeForm";
+import NetDeviceTypeForm from "../component/forms/assets/NetDeviceTypeForm";
+import DeviceTypeForm from "../component/forms/assets/DeviceTypeForm";
+import PrinterTypeForm from "../component/forms/assets/PrinterTypeForm";
+import CartridgeTypeForm from "../component/forms/assets/CartridgeTypeForm";
+import ConsumableTypeForm from "../component/forms/assets/ConsumableTypeForm";
+import PhoneTypeForm from "../component/forms/assets/PhoneTypeForm";
+import RackTypeForm from "../component/forms/assets/RackTypeForm";
+import PduTypeForm from "../component/forms/assets/PduTypeForm";
+import PassiveDeviceTypeForm from "../component/forms/assets/PassiveDeviceTypeForm";
+import CableTypeForm from "../component/forms/assets/CableTypeForm";
+import ManufacturerForm from "../component/forms/assets/ManufacturerForm";
+import ComputerModelForm from "../component/forms/assets/ComputerModelForm";
+import MonitorModelForm from "../component/forms/assets/MonitorModelForm";
+import NetDeviceModelForm from "../component/forms/assets/NetDeviceModelForm";
+import DeviceModelForm from "../component/forms/assets/DeviceModelForm";
+import PrinterModelForm from "../component/forms/assets/PrinterModelForm";
+import PhoneModelForm from "../component/forms/assets/PhoneModelForm";
+import RackModelForm from "../component/forms/assets/RackModelForm";
+import EnclosuresModelForm from "../component/forms/assets/EnclosuresModelForm";
+import PduModelForm from "../component/forms/assets/PduModelForm";
+import PassiveDeviceModelForm from "../component/forms/assets/PassiveDeviceModelForm";
+
+import NetworkForm from "../component/forms/assets/NetworkForm";
+import UpdateSourceForm from "../component/forms/assets/UpdateSourceForm";
+import GroupForm from "../component/forms/assets/GroupForm";
+import PublisherForm from "../component/forms/assets/PublisherForm";
+import SoftwareCategoryForm from "../component/forms/assets/SoftwareCategoryForm";
+import PhonePowerForm from "../component/forms/assets/PhonePowerForm";
 
 // ? servicio
 import { useServiceUser } from '../hooks/useServiceUser';
@@ -115,9 +136,31 @@ const RoutesComponent = () => {
             <Route path="/assets/forms/groupincharge" element={<Main content={<GroupInChargeForm />} />} />
             <Route path="/assets/forms/location" element={<Main content={<LocForm />} />} />
             <Route path="/assets/forms/status" element={<Main content={<StatusForm />} />} />
-            <Route path="/assets/forms/type" element={<Main content={<TypeForm />} />} />
+            <Route path="/assets/forms/computertype" element={<Main content={<ComputerTypeForm />} />} />
+            <Route path="/assets/forms/monitortype" element={<Main content={<MonitorTypeForm />} />} />
+            <Route path="/assets/forms/netdevicetype" element={<Main content={<NetDeviceTypeForm />} />} />
+            <Route path="/assets/forms/devicetype" element={<Main content={<DeviceTypeForm />} />} />
+            <Route path="/assets/forms/printertype" element={<Main content={<PrinterTypeForm />} />} />
+            <Route path="/assets/forms/cartridgetype" element={<Main content={<CartridgeTypeForm />} />} />
+            <Route path="/assets/forms/consumabletype" element={<Main content={<ConsumableTypeForm />} />} />
+            <Route path="/assets/forms/phonetype" element={<Main content={<PhoneTypeForm />} />} />
+            <Route path="/assets/forms/racktype" element={<Main content={<RackTypeForm />} />} />
+            <Route path="/assets/forms/pdutype" element={<Main content={<PduTypeForm />} />} />
+            <Route path="/assets/forms/passivedevicetype" element={<Main content={<PassiveDeviceTypeForm />} />} />
+            <Route path="/assets/forms/cabletype" element={<Main content={<CableTypeForm />} />} />
             <Route path="/assets/forms/manufacturer" element={<Main content={<ManufacturerForm />} />} />
-            <Route path="/assets/forms/model" element={<Main content={<ModelForm />} />} />
+            <Route path="/assets/forms/computermodel" element={<Main content={<ComputerModelForm />} />} />
+            <Route path="/assets/forms/monitormodel" element={<Main content={<MonitorModelForm />} />} />
+            <Route path="/assets/forms/netdevicemodel" element={<Main content={<NetDeviceModelForm />} />} />
+            <Route path="/assets/forms/devicemodel" element={<Main content={<DeviceModelForm />} />} />
+            <Route path="/assets/forms/printermodel" element={<Main content={<PrinterModelForm />} />} />
+            <Route path="/assets/forms/phonemodel" element={<Main content={<PhoneModelForm />} />} />
+            <Route path="/assets/forms/rackmodel" element={<Main content={<RackModelForm />} />} />
+            <Route path="/assets/forms/enclosuresmodel" element={<Main content={<EnclosuresModelForm />} />} />
+            <Route path="/assets/forms/pdumodel" element={<Main content={<PduModelForm />} />} />
+            <Route path="/assets/forms/passivedevicemodel" element={<Main content={<PassiveDeviceModelForm />} />} />
+
+
             <Route path="/assets/forms/network" element={<Main content={<NetworkForm />} />} />
             <Route path="/assets/forms/updatesource" element={<Main content={<UpdateSourceForm />} />} />
             <Route path="/assets/forms/group" element={<Main content={<GroupForm />} />} />

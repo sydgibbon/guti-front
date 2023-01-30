@@ -1,7 +1,7 @@
 import React from 'react';
 import FormsTemplate from '../FormsTemplate';
 
-const ModelForm = () => {
+const PassiveDeviceModelForm = () => {
   
   const inputPropierties = [
     {
@@ -46,8 +46,9 @@ const ModelForm = () => {
     },
     {
       title: "Is Half Rack",
-      type: "choise",
+      type: "select",
       key: "name",
+      data: ["Yes", "No"]
     },
     {
       title: "Front Picture",
@@ -68,7 +69,7 @@ const ModelForm = () => {
 
   const FormHeader = [
     {
-      title: "Model",
+      title: "Passive Device Model",
     },
   ]
   return (
@@ -76,4 +77,4 @@ const ModelForm = () => {
   )
 }
 
-export default ModelForm;
+export default PassiveDeviceModelForm;

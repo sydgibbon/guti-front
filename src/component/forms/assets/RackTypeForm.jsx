@@ -1,11 +1,11 @@
 import React from 'react';
 import FormsTemplate from '../FormsTemplate';
 
-const TypeForm = () => {
+const RackTypeForm = () => {
   
   const inputPropierties = [
     {
-      title: "Nombre",
+      title: "Name",
       type: "input",
       key: "name",
     },
@@ -17,7 +17,7 @@ const TypeForm = () => {
   ]
   const FormHeader = [
     {
-      title: "Type",
+      title: "Rack Type",
     },
   ]
   return (
@@ -25,4 +25,4 @@ const TypeForm = () => {
   )
 }
 
-export default TypeForm;
+export default RackTypeForm;
