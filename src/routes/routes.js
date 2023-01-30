@@ -67,7 +67,6 @@ import RackModelForm from "../component/forms/assets/RackModelForm";
 import EnclosuresModelForm from "../component/forms/assets/EnclosuresModelForm";
 import PduModelForm from "../component/forms/assets/PduModelForm";
 import PassiveDeviceModelForm from "../component/forms/assets/PassiveDeviceModelForm";
-
 import NetworkForm from "../component/forms/assets/NetworkForm";
 import UpdateSourceForm from "../component/forms/assets/UpdateSourceForm";
 import GroupForm from "../component/forms/assets/GroupForm";
@@ -159,8 +158,6 @@ const RoutesComponent = () => {
             <Route path="/assets/forms/enclosuresmodel" element={<Main content={<EnclosuresModelForm />} />} />
             <Route path="/assets/forms/pdumodel" element={<Main content={<PduModelForm />} />} />
             <Route path="/assets/forms/passivedevicemodel" element={<Main content={<PassiveDeviceModelForm />} />} />
-
-
             <Route path="/assets/forms/network" element={<Main content={<NetworkForm />} />} />
             <Route path="/assets/forms/updatesource" element={<Main content={<UpdateSourceForm />} />} />
             <Route path="/assets/forms/group" element={<Main content={<GroupForm />} />} />
