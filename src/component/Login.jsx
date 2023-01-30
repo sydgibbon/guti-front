@@ -2,7 +2,7 @@ import React , { useRef, useEffect } from 'react';
 import '../style/Login.css'
 import logo from '../images/guti-logo.png'
 
-// importando hooks 
+// importando cumtom hooks UserService 
 import { useServiceUser } from '../hooks/useServiceUser.js'
 
 // importando servicios 
