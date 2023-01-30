@@ -17,8 +17,8 @@ function Alert({alertType, message, open, setOpen}) {
   };
 
   return (
-    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
-      <AlertComponent onClose={handleClose} severity={alertType} sx={{ width: "100%" }}>
+    <Snackbar open={open} autoHideDuration={6000} onClose={handleClose} key={"bottom right"} anchorOrigin={{ vertical: "bottom", horizontal: "right" }}>
+      <AlertComponent onClose={handleClose} severity={alertType} >
         {message}
       </AlertComponent>
     </Snackbar>
