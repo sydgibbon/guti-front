@@ -2,8 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { UserContextProvider } from "./migrate/infrastructure/contexts/userContext";
-import { RouterProvider } from "react-router-dom";
-import router from "./migrate/infrastructure/routes";
+import App from "./App";
 
 
 const root = ReactDOM.createRoot(
@@ -13,7 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <UserContextProvider>
-      <RouterProvider router={router} />
+      <App/>
     </UserContextProvider>
   </React.StrictMode>
 );

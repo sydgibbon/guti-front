@@ -80,7 +80,7 @@ import {
   TbMessageReport,
   TbClipboardCheck,
 } from "react-icons/tb";
-import { Item } from "../../domain/models/Icons";
+import { GridItemType, Item } from "../../domain/models/Others";
 
 export const appItems: Item[] = [
   {
@@ -632,7 +632,7 @@ export const appItems: Item[] = [
   },
 ];
 
-export const assetsGridItems = [
+export const assetsGridItems:GridItemType[] = [
   {
     name: "Computers",
     bgColor: "#F3D0D0",
@@ -641,7 +641,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#D45656",
     asset: "computers",
     path: "/assets/computers",
-    icon: (style: string, size: string) => {
+    icon: (style?: string, size?: string) => {
       return <TbDeviceLaptop className="w-6 h-6 stroke-1" />;
     },
   },
@@ -653,7 +653,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#8bdc24",
     asset: "softwares",
     path: "/assets/software",
-    icon: (style: string, size: string) => {
+    icon: (style?: string, size?: string) => {
       return <TbApps className="w-6 h-6 stroke-1" />;
     },
   },
@@ -665,7 +665,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#6195b2",
     asset: "networkequipments",
     path: "/assets/network-devices",
-    icon: (style: string, size: string) => {
+    icon: (style?: string, size?: string) => {
       return <TbSitemap className="w-6 h-6 stroke-1" />;
     },
   },
@@ -677,7 +677,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#e69d12",
     asset: "racks",
     path: "/assets/racks",
-    icon: (style: string, size: string) => {
+    icon: (style?: string, size?: string) => {
       return <TbServer className="w-6 h-6 stroke-1" />;
     },
   },
@@ -689,7 +689,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#76b0a2",
     asset: "enclosures",
     path: "/assets/enclosures",
-    icon: (style: string, size: string) => {
+    icon: (style?: string, size?: string) => {
       return <TbColumns className="w-6 h-6 stroke-1" />;
     },
   },
@@ -701,7 +701,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#8f2323",
     asset: "monitors",
     path: "/assets/monitors",
-    icon: (style: string, size: string) => {
+    icon: (style?: string, size?: string) => {
       return <TbDeviceDesktop className="w-6 h-6 stroke-1" />;
     },
   },
@@ -713,7 +713,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#4d662c",
     asset: "softwarelicenses",
     path: "/assets/dashboard",
-    icon: (style: string, size: string) => {
+    icon: (style?: string, size?: string) => {
       return <TbKey className="w-6 h-6 stroke-1" />;
     },
   },
@@ -725,7 +725,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#1f587b",
     asset: "printers",
     path: "/assets/printers",
-    icon: (style: string, size: string) => {
+    icon: (style?: string, size?: string) => {
       return <TbPrinter className="w-6 h-6 stroke-1" />;
     },
   },
@@ -737,7 +737,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#956100",
     asset: "pdus",
     path: "/assets/pdus",
-    icon: (style: string, size: string) => {
+    icon: (style?: string, size?: string) => {
       return <TbPlug className="w-6 h-6 stroke-1" />;
     },
   },
@@ -749,7 +749,7 @@ export const assetsGridItems = [
     hoverBorderColor: "#488d7b",
     asset: "phones",
     path: "/assets/phones",
-    icon: (style: string, size: string) => {
+    icon: (style?: string, size?: string) => {
       return <TbPhone className="w-6 h-6 stroke-1" />;
     },
   },

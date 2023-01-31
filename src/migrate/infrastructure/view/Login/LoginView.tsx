@@ -13,23 +13,25 @@ const LoginView = () => {
       const user = JSON.parse(loggedUserJSON);
       login(user);
     }
-  }, [login]);
+    
+  }, []);
 
   const handleLogin = async (event: React.SyntheticEvent) => {
     event.preventDefault();
-
+    
     const target = event.target as typeof event.target & {
       username: { value: string };
       password: { value: string };
     };
-
+    
     const user = {
       username: target.username.value,
       password: target.password.value,
     };
+    console.log(user);
 
     try {
-      if (user) throw new Error("Username empty");
+      if (!user) throw new Error("Username empty");
 
       const response = await userLogin(user);
 

@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { appItems } from "../../contexts/AppItems";
-import { Item } from "../../../domain/models/Icons";
+import { Item } from "../../../domain/models/Others";
 
 const Breadcrumb = () => {
   let location = useLocation().pathname;

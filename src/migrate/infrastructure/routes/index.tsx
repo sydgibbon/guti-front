@@ -1,6 +1,9 @@
-// ? importamos las paginas
+import { createBrowserRouter } from "react-router-dom";
+
 import LoginView from "../view/Login/LoginView";
 import Main from "../components/dashboard/Main";
+import AssetsDashboard from "../components/dashboard/AssetsDashboard";
+
 // import AssetsDashboard from "../component/dashboard/AssetsDashboard";
 // import Cables from "../pages/Cables";
 // import Computers from "../pages/Computers";
@@ -39,8 +42,6 @@ import Main from "../components/dashboard/Main";
 // import AssetTemplate from "../component/dashboard/assets/AssetTemplate";
 
 // ? servicio
-import { createBrowserRouter } from "react-router-dom";
-
 
 const router = createBrowserRouter([
   {
@@ -48,7 +49,26 @@ const router = createBrowserRouter([
     element: <Main />,
   },
   { path: "login", element: <LoginView /> },
+  {
+    path: "assets/dashboard",
+    element: (
+      <Main>
+        <AssetsDashboard />
+      </Main>
+    ),
+  },
 ]);
+{
+  /* <Route */
+}
+//               path="/assets/dashboard"
+//               element={
+//                 <ProtectedRoute>
+//                   {" "}
+//                   <Main content={<AssetsDashboard />} />{" "}
+//                 </ProtectedRoute>
+//               }
+//             />
 // const RoutesComponent = () => {
 //   return (
 //     <>
@@ -71,15 +91,7 @@ const router = createBrowserRouter([
 //                 </ProtectedRoute>
 //               }
 //             />
-//             <Route
-//               path="/assets/dashboard"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<AssetsDashboard />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
+//
 //             <Route
 //               path="/assets/computers"
 //               element={
