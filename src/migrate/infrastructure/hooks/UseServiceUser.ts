@@ -10,7 +10,7 @@ export const useServiceUser = () => {
   const login = (UserContext: User) => {
     setUserContext(UserContext);
   };
-  
+
   const logout = () => {
     setUserContext(null);
   };
@@ -18,6 +18,6 @@ export const useServiceUser = () => {
   return {
     login,
     logout,
-    user:UserContext,
+    user: UserContext,
   };
 };

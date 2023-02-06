@@ -1,6 +1,7 @@
-import { CartesianScaleTypeRegistry, ScaleOptionsByType, ScaleType, ScaleTypeRegistry } from "chart.js";
+import { CartesianScaleTypeRegistry, ScaleOptionsByType } from "chart.js";
 import { _DeepPartialObject } from "chart.js/types/utils";
 import { ReactNode } from "react";
+import { Primitive } from "react-data-table-component/dist/src/DataTable/types";
 
 export type Item = {
   name: string;
@@ -37,11 +38,13 @@ export interface ElementsType {
 }
 
 export interface TicksType {
-  beginAtZero: boolean| undefined;
+  beginAtZero: boolean | undefined;
 }
 
 export interface YAxType {
-  ticks: _DeepPartialObject<{ [key: string]: ScaleOptionsByType<keyof CartesianScaleTypeRegistry>; }>;
+  ticks: _DeepPartialObject<{
+    [key: string]: ScaleOptionsByType<keyof CartesianScaleTypeRegistry>;
+  }>;
 }
 
 export interface LegendType {
@@ -71,12 +74,56 @@ export interface OptionsBarType {
   elements: ElementsType;
   responsive: boolean;
   maintainAspectRatio: boolean;
-  scales: _DeepPartialObject<{ [key: string]: ScaleOptionsByType<keyof CartesianScaleTypeRegistry>; }> | undefined
+  scales:
+    | _DeepPartialObject<{
+        [key: string]: ScaleOptionsByType<keyof CartesianScaleTypeRegistry>;
+      }>
+    | undefined;
   plugins: PluginsType;
 }
- 
 
 export interface DonutType {
   asset: string;
   itemProp: string;
+}
+
+export interface Row {
+  name: Primitive;
+  states: RowProp;
+  manufacturers: RowProp;
+  serial: Primitive;
+  otherserial: Primitive;
+  computertypes: RowProp;
+  locations: RowProp;
+  monitortypes: RowProp;
+  contact: Primitive;
+  date_mod: Primitive;
+  color: Primitive;
+  networkequipmenttypes: RowProp;
+  peripheraltypes: RowProp;
+  peripheralmodels: RowProp;
+  printertypes: RowProp;
+  printermodels: RowProp;
+  cartridgeitemtypes: RowProp;
+  consumableitemtypes: RowProp;
+  phonetypes: RowProp;
+  phonemodels: RowProp;
+  cabletypes: RowProp;
+  itemtype_endpoint_a: Primitive;
+  itemtype_endpoint_b: Primitive;
+  sockets_endpoint_a: Primitive;
+  sockets_endpoint_b: Primitive;
+  users_tech: RowProp;
+  ref: Primitive;
+  id: Primitive;
+}
+
+export interface RowProp {
+  name: Primitive;
+}
+
+export interface ColumnSearch {
+  name: string;
+  sortable: boolean;
+  selector: ({ computertypes }: Row) => Primitive;
 }

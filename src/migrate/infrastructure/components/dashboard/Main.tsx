@@ -6,6 +6,7 @@ interface PropsMain {
   children?: ReactNode;
 }
 const Main = ({ children }: PropsMain) => {
+   
   return (
     <div className="flex main">
       <SideBar />

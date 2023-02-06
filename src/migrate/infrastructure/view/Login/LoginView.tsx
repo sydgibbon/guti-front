@@ -1,10 +1,9 @@
 import { useEffect } from "react";
 import "./LoginView.css";
 import { userLogin } from "../../../../api/axios";
-import { useServiceUser } from "../../hooks/UseServiceUser";
+import { useServiceUser } from "../../hooks/useServiceUser";
 
 const LoginView = () => {
-
   const { login } = useServiceUser();
 
   useEffect(() => {
@@ -13,17 +12,16 @@ const LoginView = () => {
       const user = JSON.parse(loggedUserJSON);
       login(user);
     }
-    
   }, []);
 
   const handleLogin = async (event: React.SyntheticEvent) => {
     event.preventDefault();
-    
+
     const target = event.target as typeof event.target & {
       username: { value: string };
       password: { value: string };
     };
-    
+
     const user = {
       username: target.username.value,
       password: target.password.value,

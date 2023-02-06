@@ -1,22 +1,28 @@
 import { createBrowserRouter } from "react-router-dom";
 
+// PAGES
 import LoginView from "../view/Login/LoginView";
 import Main from "../components/dashboard/Main";
 import AssetsDashboard from "../components/dashboard/AssetsDashboard";
+import Computers from "../view/Computers/Computers";
+import Monitors from "../view/Monitors/Monitors";
+import Software from "../view/Software/Software";
+import NetworkDevices from "../view/NetworkDevices/NetworkDevices";
+import Devices from "../view/Devices/Devices";
+import PrintersView from "../view/Printers/PrintersView";
+import CartridgesView from "../view/Cartridges/CartridgesView";
+import PhonesView from "../view/Phones/PhonesView";
+import RackView from "../view/Rack/RackView";
+import ConsumablesView from "../view/Consumables/ConsumablesView";
+import Enclosures from "../view/Enclosures/EnclosuresView";
+import PDUsView from "../view/PDUs/PDUsView";
+import PassiveDevices from "../view/PassiveDevices/PassiveDevicesView";
+import CablesView from "../view/Cables/CablesView";
+import SimCardView from "../view/SimCard/SimCardView";
+import GlobalView from "../view/Global/GlobalView";
+import UnmanagedDevicesView from "../view/UnmanagedDevices/UnmanagedDevicesView";
+import NotFoundView from "../view/NotFoundView";
 
-// import AssetsDashboard from "../component/dashboard/AssetsDashboard";
-// import Cables from "../pages/Cables";
-// import Computers from "../pages/Computers";
-// import Monitors from "../pages/Monitors";
-// import Software from "../pages/Software";
-// import NetworkDevices from "../pages/NetworkDevices";
-// import PassiveDevices from "../pages/PassiveDevices";
-// import Simcards from "../pages/Simcards";
-// import Consumables from "../pages/Consumables";
-// import Enclosures from "../pages/Enclosures";
-// import Global from "../pages/Global";
-// import Phones from "../pages/Phones";
-// import Racks from "../pages/Racks";
 // import ComputerForm from "../component/forms/assets/ComputerForm";
 // import EnclosuresForm from "../component/forms/assets/EnclosuresForm";
 // import CableForm from "../component/forms/assets/CableForm";
@@ -32,14 +38,6 @@ import AssetsDashboard from "../components/dashboard/AssetsDashboard";
 // import PhoneForm from "../component/forms/assets/PhoneForm";
 // import SimcardForm from "../component/forms/assets/SimcardForm";
 // import RackForm from "../component/forms/assets/RackForm";
-// import NotFound from "../pages/NotFound";
-// import Devices from "../pages/Devices";
-// import Printers from "../pages/Printers";
-// import Cartridges from "../pages/Cartridges";
-// import PDUs from "../pages/PDUs";
-// import UnmanagedDevices from "../pages/UnmanagedDevices";
-// import ComputerFormTemplate from "../component/forms/assets/ComputerFormTemplate"
-// import AssetTemplate from "../component/dashboard/assets/AssetTemplate";
 
 // ? servicio
 
@@ -50,6 +48,14 @@ const router = createBrowserRouter([
   },
   { path: "login", element: <LoginView /> },
   {
+    path: "assets",
+    element: (
+      <Main>
+        <AssetsDashboard />
+      </Main>
+    ),
+  },
+  {
     path: "assets/dashboard",
     element: (
       <Main>
@@ -57,194 +63,151 @@ const router = createBrowserRouter([
       </Main>
     ),
   },
+  {
+    path: "assets/computers",
+    element: (
+      <Main>
+        <Computers />
+      </Main>
+    ),
+  },
+  {
+    path: "assets/monitors",
+    element: (
+      <Main>
+        <Monitors />
+      </Main>
+    ),
+  },
+  {
+    path: "assets/software",
+    element: (
+      <Main>
+        <Software />
+      </Main>
+    ),
+  },
+  {
+    path: "assets/network-devices",
+    element: (
+      <Main>
+        <NetworkDevices />
+      </Main>
+    ),
+  },
+  {
+    path: "assets/devices",
+    element: (
+      <Main>
+        <Devices />
+      </Main>
+    ),
+  },
+  {
+    path: "assets/printers",
+    element: (
+      <Main>
+        <PrintersView />
+      </Main>
+    ),
+  },
+  {
+    path: "assets/cartridges",
+    element: (
+      <Main>
+        <CartridgesView />
+      </Main>
+    ),
+  },
+  {
+    path: "assets/consumables",
+    element: (
+      <Main>
+        <ConsumablesView />
+      </Main>
+    ),
+  },
+  {
+    path: "assets/phones",
+    element: (
+      <Main>
+        <PhonesView />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/racks",
+    element: (
+      <Main>
+        <RackView />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/enclosures",
+    element: (
+      <Main>
+        <Enclosures />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/pdus",
+    element: (
+      <Main>
+        <PDUsView />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/passive-devices",
+    element: (
+      <Main>
+        <PassiveDevices />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/cables",
+    element: (
+      <Main>
+        <CablesView />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/simcards",
+    element: (
+      <Main>
+        <SimCardView />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/global",
+    element: (
+      <Main>
+        <GlobalView />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/unmanaged-devices",
+    element: (
+      <Main>
+        <UnmanagedDevicesView />
+      </Main>
+    ),
+  },
+  {
+    path: "*",
+    element: (
+      <Main>
+        <NotFoundView />
+      </Main>
+    ),
+  },
 ]);
-{
-  /* <Route */
-}
-//               path="/assets/dashboard"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<AssetsDashboard />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-// const RoutesComponent = () => {
-//   return (
-//     <>
-//       <Router>
-//         <Routes>
-//           <Route
-//             path="/"
-//             element={
-//               <ProtectedRoute>
-//                 <Main />
-//               </ProtectedRoute>
-//             }
-//           >
-//             {/* <Route
-//               path="/assets"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<AssetsDashboard />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//
-//             <Route
-//               path="/assets/computers"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<Computers />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//             <Route
-//               path="/assets/monitors"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<Monitors />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//             <Route
-//               path="/assets/software"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<Software />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//             <Route
-//               path="/assets/network-devices"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<NetworkDevices />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//             <Route
-//               path="/assets/devices"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<Devices />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//             <Route
-//               path="/assets/printers"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<Printers />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//             <Route
-//               path="/assets/cartridges"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<Cartridges />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//             <Route
-//               path="/assets/consumables"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<Consumables />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//             <Route
-//               path="/assets/phones"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<Phones />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//             <Route
-//               path="/assets/racks"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<Racks />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//             <Route
-//               path="/assets/enclosures"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<Enclosures />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//             <Route
-//               path="/assets/pdus"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<PDUs />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//             <Route
-//               path="/assets/passive-devices"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<PassiveDevices />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//             <Route
-//               path="/assets/unmanaged-devices"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<UnmanagedDevices />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//             <Route
-//               path="/assets/cables"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<Cables />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//             <Route
-//               path="/assets/simcards"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<Simcards />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
-//             <Route
-//               path="/assets/global"
-//               element={
-//                 <ProtectedRoute>
-//                   {" "}
-//                   <Main content={<Global />} />{" "}
-//                 </ProtectedRoute>
-//               }
-//             />
 
 //             <Route
 //               path="/template"
@@ -409,12 +372,6 @@ const router = createBrowserRouter([
 //                   <Main content={<AssetTemplate />} />{" "}
 //                 </ProtectedRoute>
 //               }
-//             />*/}
-//           </Route>
-//         </Routes>
-//       </Router>
-//     </>
-//   );
-// };
+//             />
 
 export default router;

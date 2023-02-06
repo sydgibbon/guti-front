@@ -1,6 +1,5 @@
 import { RouterProvider } from "react-router-dom";
 import { axiosPrivate } from "./api/axios";
-import Main from "./migrate/infrastructure/components/dashboard/Main";
 import router from "./migrate/infrastructure/routes";
 
 const App = () => {
@@ -15,7 +14,6 @@ const App = () => {
 
   return (
     <div className="app">
-      {" "}
       <RouterProvider router={router} />
     </div>
   );
