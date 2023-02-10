@@ -22,8 +22,8 @@ import SimCardView from "../view/SimCard/SimCardView";
 import GlobalView from "../view/Global/GlobalView";
 import UnmanagedDevicesView from "../view/UnmanagedDevices/UnmanagedDevicesView";
 import NotFoundView from "../view/NotFoundView";
+import ComputerForm from "../components/forms/assets/ComputerForm";
 
-// import ComputerForm from "../component/forms/assets/ComputerForm";
 // import EnclosuresForm from "../component/forms/assets/EnclosuresForm";
 // import CableForm from "../component/forms/assets/CableForm";
 // import MonitorForm from "../component/forms/assets/MonitorForm";
@@ -199,6 +199,15 @@ const router = createBrowserRouter([
       </Main>
     ),
   },
+  {
+    path: "/assets/forms/computers",
+    element: (
+      <Main>
+        <ComputerForm />
+      </Main>
+    ),
+  },
+
   {
     path: "*",
     element: (

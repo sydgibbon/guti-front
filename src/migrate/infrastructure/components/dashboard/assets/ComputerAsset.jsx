@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BsLaptop } from "react-icons/bs";
 import { TbPlus, TbList, TbMap } from "react-icons/tb";
-import SelectComponent from "../../atomic/SelectComponent";
+import SelectComponent from "../../atomic/Select/SelectComponent";
 import { saveAsset, BASE_URL } from "../../../api/axios";
 import LocationsSubForm from "../../subforms/LocationsSubForm";
 
