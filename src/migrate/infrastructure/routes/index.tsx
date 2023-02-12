@@ -23,6 +23,7 @@ import GlobalView from "../view/Global/GlobalView";
 import UnmanagedDevicesView from "../view/UnmanagedDevices/UnmanagedDevicesView";
 import NotFoundView from "../view/NotFoundView";
 import ComputerForm from "../components/forms/assets/ComputerForm";
+import RefactorFormTemplate from "../components/forms/ComputerForm";
 
 // import EnclosuresForm from "../component/forms/assets/EnclosuresForm";
 // import CableForm from "../component/forms/assets/CableForm";
@@ -204,6 +205,14 @@ const router = createBrowserRouter([
     element: (
       <Main>
         <ComputerForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/computers-refactor",
+    element: (
+      <Main>
+        <RefactorFormTemplate />
       </Main>
     ),
   },

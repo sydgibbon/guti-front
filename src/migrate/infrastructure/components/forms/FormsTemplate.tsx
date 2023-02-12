@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SelectComponent from "../atomic/Select/SelectComponent";
-// import { appItems } from "../../contexts/AppItems";
+
 import { TbPlus, TbList, TbMap } from "react-icons/tb";
 import { FaPaste, FaRegEye } from "react-icons/fa";
 import { BASE_URL, saveAsset } from "../../../../api/axios";
@@ -19,8 +19,9 @@ export default function FormsTemplate({
 
   const [openErrorAlert, setOpenErrorAlert] = useState(false);
 
-  const HandleSubmit = (e: any) => {
-    e.preventDefault();
+  const HandleSubmit = (event: React.SyntheticEvent) => {
+    event.preventDefault();
+
     Object.keys(formFields).forEach((key) => {
       formData.append(key, formFields[key]);
     });
@@ -134,10 +135,6 @@ export default function FormsTemplate({
         );
     }
   };
-
-  useEffect(() => {
-    console.log("useEffect");
-  }, []);
 
   const FieldIconStyle =
     "cursor-pointer h-10 flex items-center border-secondary-dark px-2";
