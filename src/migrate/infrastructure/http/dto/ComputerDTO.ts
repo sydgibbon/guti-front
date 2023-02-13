@@ -28,5 +28,4 @@ export interface ComputerDTO  {
     last_inventory_update?: any;
     users_tech?: any;
     groups_tech?: any;
-
 }

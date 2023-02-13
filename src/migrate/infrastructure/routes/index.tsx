@@ -43,19 +43,8 @@ import RefactorFormTemplate from "../components/forms/ComputerForm";
 // ? servicio
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Main />,
-  },
   { path: "login", element: <LoginView /> },
-  {
-    path: "assets",
-    element: (
-      <Main>
-        <AssetsDashboard />
-      </Main>
-    ),
-  },
+
   {
     path: "assets/dashboard",
     element: (

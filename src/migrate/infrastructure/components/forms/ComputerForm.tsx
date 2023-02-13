@@ -3,7 +3,7 @@ import SelectOption from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import { ComputerDTO } from "../../http/dto/ComputerDTO";
-import { useCreateComputer } from "../../hooks/Computers/useCreateComputer";
+import useCreateComputer from "../../hooks/Computers/useCreateComputer";
 import { useEffect } from "react";
 
 export default function RefactorFormTemplate() {
@@ -52,21 +52,18 @@ export default function RefactorFormTemplate() {
       users_tech: null,
     };
 
-    computer.post({ data });
+    computer.post(data);
   };
-
+  
   useEffect(() => {
-    console.log("useEffect");
-  }, []);
-
-  useEffect(() => {
-    alert("Error on the create computer");
+    if (computer.error) {
+      alert(computer.error);
+    }
   }, [computer.error]);
 
-  // const handleReset()=>{}
-
+ 
   return (
-    <div className="container m-6 bg-white rounded ">
+    <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
         <TextInput
           id={"name"}

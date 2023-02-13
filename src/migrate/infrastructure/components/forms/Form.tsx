@@ -1,13 +1,14 @@
 interface formProps {
   children: React.ReactNode;
-  handleSubmit: (e: React.SyntheticEvent) => void;
+  handleSubmit: (event: React.SyntheticEvent) => void;
 }
+
 export default function Form(formProps: formProps) {
   const { children, handleSubmit } = formProps;
 
   return (
     <div className="container bg-white rounded-lg shadow-lg">
-      <form onSubmit={handleSubmit} className="">
+      <form onSubmit={(handleSubmit)}>
         <div className="grid grid-cols-2 gap-10 p-6 container__content">
           {children}
         </div>
