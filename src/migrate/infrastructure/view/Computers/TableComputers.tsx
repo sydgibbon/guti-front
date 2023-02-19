@@ -1,10 +1,9 @@
- 
-import SearchCard from "../../../../component/dashboard/assets/SearchCard";
-import SearchForm from "../../../../component/dashboard/SearchForm";
-import { ColumnSearch, Row } from "../../../domain/models/Others";
+import { Row } from "../../../domain/models/Others";
+import SearchCard from "../../components/dashboard/assets/SearchCard";
+import SearchForm from "../../components/dashboard/SearchForm";
 
 const Computers = () => {
-  const columns= [
+  const columns = [
     {
       name: "NAME",
       sortable: true,
@@ -51,6 +50,7 @@ const Computers = () => {
       selector: (row: Row) => row?.computertypes?.name, // No anda en el GLPI, se verá como arreglar mas tarde
     },
   ];
+
   return (
     <div className="computers">
       <SearchForm />

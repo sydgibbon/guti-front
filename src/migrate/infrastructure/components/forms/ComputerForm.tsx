@@ -2,9 +2,9 @@ import Form from "./Form";
 import SelectOption from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
-import { ComputerDTO } from "../../http/dto/ComputerDTO";
 import useCreateComputer from "../../hooks/Computers/useCreateComputer";
 import { useEffect } from "react";
+import { ComputerDTO } from "../../../domain/http/dto/ComputerDTO";
 
 export default function RefactorFormTemplate() {
   const computer = useCreateComputer();
@@ -54,14 +54,13 @@ export default function RefactorFormTemplate() {
 
     computer.post(data);
   };
-  
+
   useEffect(() => {
     if (computer.error) {
       alert(computer.error);
     }
   }, [computer.error]);
 
- 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>

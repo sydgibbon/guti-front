@@ -15,6 +15,7 @@ import axiosPrivate, {
   BASE_URL,
 } from "../../../../../api/axios";
 import { ColumnSearch } from "../../../../domain/models/Others";
+import { useGetAllComputers } from "../../../hooks/Computers/useGetAllComputers";
 export interface SearchCardProps {
   asset: string;
   columns: ColumnSearch[];
@@ -22,12 +23,12 @@ export interface SearchCardProps {
 
 const SearchCard = ({ asset, columns }: SearchCardProps) => {
   const [checked, setChecked] = useState(false);
-  const [loadingData, setLoadingData] = useState(true);
-  const [data, setData] = useState([]);
+  const computers = useGetAllComputers();
 
   // codigo guty
   let formFields: any = {};
   let formData = new FormData();
+
   const handleIsDeleted = (e: React.SyntheticEvent) => {
     e.preventDefault();
     Object.keys(formFields).forEach((key) => {
@@ -43,28 +44,19 @@ const SearchCard = ({ asset, columns }: SearchCardProps) => {
     });
     deleteAsset("computers/13", formData);
   };
+
   const handleChange = (e: any) => {
     formFields[e.target.id] = e.target.value;
   };
 
-  // codigo guty
+  useEffect(() => {
+    computers.get();
+  }, []);
 
   useEffect(() => {
-    async function getData() {
-      await axiosPrivate
-        .get("http://127.0.0.1:8000/api/assets/" + asset + "/")
-        .then((response) => {
-          // check if the data is populated
-          setData(response.data);
-          // you tell it that you had the result
-          setLoadingData(false);
-        });
-    }
-    if (loadingData) {
-      // if the result is not ready so you make the axios call
-      getData();
-    }
-  }, []);
+    console.log(computers.data);
+  }, [computers.data]);
+
   return (
     <div className="mx-4 my-4 border rounded search-card border-secondary-dark">
       <div className="flex h-16 gap-2 pl-5 border-b search-card-header align-center border-secondary-light bg-medium-gray">
@@ -143,10 +135,9 @@ const SearchCard = ({ asset, columns }: SearchCardProps) => {
           </div>
         </div>
       </div>
-
       <DataTable
         columns={columns}
-        data={data}
+        data={computers.data}
         pagination
         paginationPerPage={20}
         paginationRowsPerPageOptions={[
@@ -168,7 +159,6 @@ const SearchCard = ({ asset, columns }: SearchCardProps) => {
           <button className="border-2">is_deleted</button>
         </div>
       </form>
-
       <form
         onSubmit={handleDelete}
         action={`${BASE_URL}computers/`}
