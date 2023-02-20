@@ -1,6 +1,6 @@
 
 import SearchCard from "../component/dashboard/assets/SearchCard";
-
+import SearchForm from "../component/dashboard/SearchForm";
 
 const Computers = () => {
   const columns = [
@@ -53,7 +53,7 @@ const Computers = () => {
   ];
   return (
     <div className="computers">
-      {/* <SearchForm /> */}
+      <SearchForm />
       <SearchCard asset="computers" columns={columns} />
     </div>
   );

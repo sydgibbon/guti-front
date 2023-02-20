@@ -4,7 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 import LoginView from "../view/Login/LoginView";
 import Main from "../components/dashboard/Main";
 import AssetsDashboard from "../components/dashboard/AssetsDashboard";
-import Computers from "../view/Computers/TableComputers";
+import Computers from "../view/Computers/Computer";
 import Monitors from "../view/Monitors/Monitors";
 import Software from "../view/Software/Software";
 import NetworkDevices from "../view/NetworkDevices/NetworkDevices";
