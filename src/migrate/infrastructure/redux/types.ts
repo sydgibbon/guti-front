@@ -1,10 +1,10 @@
 import { AlertColor } from "@mui/material";
 
-export interface GlobalsData {}
-
-export interface GlobalsStatus {
+export interface GlobalsData {
   notification: Notification;
 }
+
+export interface GlobalsStatus {}
 export interface Notification {
   status: boolean;
   message: string;

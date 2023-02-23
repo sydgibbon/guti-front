@@ -12,6 +12,8 @@ import DataTable from "react-data-table-component";
 import SkeletonTable from "../../../Skeletons/SkeletonTable";
 import { TableMonitorsProps } from "./types";
 import { useGetAllMonitors } from "../../../../hooks/Monitors/useGetAllMonitors";
+import useShowError from "../../../../hooks/useShowError";
+import { MessageError } from "../../../../utilis/MessagesErrors";
 
 export default function TableMonitors(tableMonitorsProps: TableMonitorsProps) {
   const { columns } = tableMonitorsProps;
@@ -20,13 +22,15 @@ export default function TableMonitors(tableMonitorsProps: TableMonitorsProps) {
 
   const monitors = useGetAllMonitors()
 
+  const showError = useShowError()
+
   useEffect(() => {
     monitors.get()
   }, []);
 
   useEffect(() => {
     if(monitors.error){
-      console.log(monitors.error)
+      showError.get(MessageError.FETCH_FAILED)
     }
   }, [monitors.error]);
 

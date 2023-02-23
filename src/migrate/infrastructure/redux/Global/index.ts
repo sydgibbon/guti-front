@@ -21,4 +21,4 @@ export const globalStatusSlice = createSlice({
 export const { setNotification } = globalStatusSlice.actions;
 
 export const getNotification = (state: RootState) =>
-  state.globalStatus.status.notification;
+  state.globalStatus.data.notification;
