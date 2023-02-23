@@ -4,7 +4,7 @@ import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import useCreateComputer from "../../hooks/Computers/useCreateComputer";
 import { useEffect } from "react";
-import { ComputerDTO } from "../../../domain/http/dto/ComputerDTO";
+import { ComputerDTO } from "../../../domain/dto/ComputerDTO";
 
 export default function RefactorFormTemplate() {
   const computer = useCreateComputer();

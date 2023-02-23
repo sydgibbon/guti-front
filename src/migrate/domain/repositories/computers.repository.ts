@@ -1,4 +1,4 @@
-import { ComputerDTO } from "../http/dto/ComputerDTO";
+import { ComputerDTO } from "../dto/ComputerDTO";
 import http from "../http/http";
 
 export const computersRepository = {

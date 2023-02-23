@@ -9,52 +9,14 @@ import {
 import { BsChevronCompactDown, BsArrow90DegDown } from "react-icons/bs";
 import Switch from "react-switch";
 import DataTable from "react-data-table-component";
-import { useGetAllComputers } from "../../../hooks/Computers/useGetAllComputers";
-import { TableComputersProp } from "./types";
-import SkeletonTable from "../../Skeletons/SkeletonTable";
-import { useAppDispatch } from "../../../redux/hooks";
-import { setNotification } from "../../../redux/Global";
+import { useGetAllComputers } from "../../../../hooks/Computers/useGetAllComputers";
+import { TableComputersProps } from "./types";
+import SkeletonTable from "../../../Skeletons/SkeletonTable";
 
-export default function TableComputers(tableComputersProp: TableComputersProp) {
+export default function TableComputers(tableComputersProp: TableComputersProps) {
   const { columns } = tableComputersProp;
   const [checked, setChecked] = useState(false);
   const computers = useGetAllComputers();
-
-  // codigo guty
-  // let formFields: any = {};
-  // let formData = new FormData();
-
-  // const handleIsDeleted = (e: React.SyntheticEvent) => {
-  //   e.preventDefault();
-  //   Object.keys(formFields).forEach((key) => {
-  //     formData.append(key, formFields[key]);
-  //   });
-  //   isDeletedAsset("computers/13", formData);
-  // };
-
-  // const handleDelete = (e: React.SyntheticEvent) => {
-  //   e.preventDefault();
-  //   Object.keys(formFields).forEach((key) => {
-  //     formData.append(key, formFields[key]);
-  //   });
-  //   deleteAsset("computers/13", formData);
-  // };
-
-  // const handleChange = (e: any) => {
-  //   formFields[e.target.id] = e.target.value;
-  // };
-
-  const dispatch = useAppDispatch();
-
-  const clickExample = () => {
-    dispatch(
-      setNotification({
-        status: true,
-        message: "Mensaje de prueba",
-        type: "warning",
-      })
-    );
-  };
 
   useEffect(() => {
     computers.get();

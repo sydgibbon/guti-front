@@ -1,6 +1,6 @@
 import { ColumnSearch, Row } from "../../../domain/models/Others";
-import SearchCard from "../../components/dashboard/assets/SearchCard";
 import SearchForm from "../../components/dashboard/SearchForm";
+import TableMonitors from "../../components/dashboard/Tables/Monitors/TableMonitors";
 
 const Monitors = () => {
   const columns:ColumnSearch[]  = [
@@ -48,7 +48,7 @@ const Monitors = () => {
   return (
     <div className="monitors">
       <SearchForm />
-      <SearchCard asset="monitors" columns={columns} />
+      <TableMonitors columns={columns} />
     </div>
   );
 };

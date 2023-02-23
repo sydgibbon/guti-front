@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { ComputerDTO } from "../../../domain/http/dto/ComputerDTO";
+import { ComputerDTO } from "../../../domain/dto/ComputerDTO";
 import { computersService } from "../../../domain/services/Computers.service"; 
 
 const useCreateComputer = () => {

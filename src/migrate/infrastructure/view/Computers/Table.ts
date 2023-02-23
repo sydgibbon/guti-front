@@ -1,5 +1,5 @@
 import { TableColumn } from "react-data-table-component";
-import { ComputerDTO } from "../../../domain/http/dto/ComputerDTO";
+import { ComputerDTO } from "../../../domain/dto/ComputerDTO";
 
 export const columns: TableColumn<ComputerDTO>[] = [
   {
