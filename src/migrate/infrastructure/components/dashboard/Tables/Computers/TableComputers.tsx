@@ -8,16 +8,11 @@ import {
 } from "react-icons/tb";
 import { BsChevronCompactDown, BsArrow90DegDown } from "react-icons/bs";
 import Switch from "react-switch";
-import DataTable from "react-data-table-component";
 import { useGetAllComputers } from "../../../../hooks/Computers/useGetAllComputers";
-import { TableComputersProps } from "./types";
-import SkeletonTable from "../../../Skeletons/SkeletonTable";
 import TableComponent from "../../../Table/Table";
+import { columns } from "./TableData";
 
-export default function TableComputers(
-  tableComputersProp: TableComputersProps
-) {
-  const { columns } = tableComputersProp;
+export default function TableComputers() {
   const [checked, setChecked] = useState(false);
   const computers = useGetAllComputers();
 

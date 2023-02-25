@@ -10,7 +10,7 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "status",
     sortable: true,
-    selector: (row) => row.status.name,
+    selector: (row) => row.states.name,
   },
   {
     name: "manufacterers",

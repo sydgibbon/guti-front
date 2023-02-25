@@ -1,6 +1,6 @@
 export interface DataRow {
   name: string;
-  status: { name: string };
+  states: { name: string };
   manufacterers: { name: string };
   locations: { name: string };
   monitortypes: { name: string };

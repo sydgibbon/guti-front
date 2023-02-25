@@ -1,52 +1,50 @@
 import { TableColumn } from "react-data-table-component";
-import { ComputerDTO } from "../../../domain/dto/ComputerDTO";
+import { DataRow } from "./types";
 
-export const columns: TableColumn<ComputerDTO>[] = [
+export const columns: TableColumn<DataRow>[] = [
   {
-    name: "NAME",
+    name: "name",
     sortable: true,
     selector: (row) => row?.name,
   },
   {
-    name: "STATUS",
+    name: "status",
     sortable: true,
     selector: (row) => row.states?.name, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
-    name: "MANUFACTURERS",
+    name: "manufacturers",
     sortable: true,
     selector: (row) => row.manufacturers?.name,
   },
   {
-    name: "SERIAL NUMBER",
+    name: "serialNumber",
     sortable: true,
     selector: (row) => row?.serial,
   },
   {
-    name: "TYPES",
+    name: "types",
     sortable: true,
     selector: (row) => row.computertypes?.name, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
-    name: "OPERATING SYSTEM - NAME",
+    name: "operatingSystemName",
     sortable: true,
     selector: (row) => row.computertypes?.name, // codigo de momento hasta que se puedan relacionar sistemas operativos con computers
   },
   {
-    name: "LOCATIONS",
+    name: "locations",
     sortable: true,
     selector: (row) => row?.locations, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
-    name: "LAST UPDATE",
+    name: "lastUpdate",
     sortable: true,
     selector: (row) => row?.date_mod, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
-    name: "COMPONENTS - PROCESSORS",
+    name: "componentsProcessors",
     sortable: true,
     selector: (row) => row.computertypes?.name, // No anda en el GLPI, se verá como arreglar mas tarde
   },
 ];
-
-
