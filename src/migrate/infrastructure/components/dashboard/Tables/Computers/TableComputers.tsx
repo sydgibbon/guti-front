@@ -12,8 +12,11 @@ import DataTable from "react-data-table-component";
 import { useGetAllComputers } from "../../../../hooks/Computers/useGetAllComputers";
 import { TableComputersProps } from "./types";
 import SkeletonTable from "../../../Skeletons/SkeletonTable";
+import TableComponent from "../../../Table/Table";
 
-export default function TableComputers(tableComputersProp: TableComputersProps) {
+export default function TableComputers(
+  tableComputersProp: TableComputersProps
+) {
   const { columns } = tableComputersProp;
   const [checked, setChecked] = useState(false);
   const computers = useGetAllComputers();
@@ -21,8 +24,6 @@ export default function TableComputers(tableComputersProp: TableComputersProps) 
   useEffect(() => {
     computers.get();
   }, []);
-
-  // data provides access to your row data
 
   return (
     <div className="mx-4 my-4 border rounded search-card border-secondary-dark">
@@ -102,22 +103,11 @@ export default function TableComputers(tableComputersProp: TableComputersProps) 
           </div>
         </div>
       </div>
-      {computers.isLoading ? (
-        <SkeletonTable />
-      ) : (
-        <DataTable
-          onSelectedRowsChange={(selected) => console.log(selected)}
-          columns={columns}
-          data={computers.data}
-          pagination
-          paginationPerPage={20}
-          paginationRowsPerPageOptions={[
-            5, 10, 15, 20, 30, 40, 50, 100, 150, 200, 250, 500, 750, 1000, 2000,
-            3000, 10000,
-          ]}
-          defaultSortFieldId={1}
-        />
-      )}
+      <TableComponent
+        progressPending={computers.isLoading}
+        columns={columns}
+        rows={computers.data}
+      />
     </div>
   );
 }
