@@ -8,29 +8,26 @@ import {
 } from "react-icons/tb";
 import { BsChevronCompactDown, BsArrow90DegDown } from "react-icons/bs";
 import Switch from "react-switch";
-import DataTable from "react-data-table-component";
-import SkeletonTable from "../../../Skeletons/SkeletonTable";
-import { TableMonitorsProps } from "./types";
 import { useGetAllMonitors } from "../../../../hooks/Monitors/useGetAllMonitors";
 import useShowError from "../../../../hooks/useShowError";
 import { MessageError } from "../../../../utilis/MessagesErrors";
+import TableComponent from "../../../Table/Table";
+import { columns } from "./TableData";
 
-export default function TableMonitors(tableMonitorsProps: TableMonitorsProps) {
-  const { columns } = tableMonitorsProps;
-
+export default function TableMonitors() {
   const [checked, setChecked] = useState(false);
 
-  const monitors = useGetAllMonitors()
+  const monitors = useGetAllMonitors();
 
-  const showError = useShowError()
+  const showError = useShowError();
 
   useEffect(() => {
-    monitors.get()
+    monitors.get();
   }, []);
 
   useEffect(() => {
-    if(monitors.error){
-      showError.get(MessageError.FETCH_FAILED)
+    if (monitors.error) {
+      showError.get(MessageError.FETCH_FAILED);
     }
   }, [monitors.error]);
 
@@ -112,22 +109,11 @@ export default function TableMonitors(tableMonitorsProps: TableMonitorsProps) {
           </div>
         </div>
       </div>
-      { monitors.isLoading ? (
-        <SkeletonTable />
-      ) : (
-        <DataTable
-          onSelectedRowsChange={(selected) => console.log(selected)}
-          columns={columns}
-          data={monitors.data}
-          pagination
-          paginationPerPage={20}
-          paginationRowsPerPageOptions={[
-            5, 10, 15, 20, 30, 40, 50, 100, 150, 200, 250, 500, 750, 1000, 2000,
-            3000, 10000,
-          ]}
-          defaultSortFieldId={1}
-        />
-      )}
+      <TableComponent
+        progressPending={monitors.isLoading}
+        columns={columns}
+        rows={monitors.data}
+      />
     </div>
   );
 }
