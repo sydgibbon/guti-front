@@ -8,28 +8,18 @@ import {
 } from "react-icons/tb";
 import { BsChevronCompactDown, BsArrow90DegDown } from "react-icons/bs";
 import Switch from "react-switch";
-import { useGetAllMonitors } from "../../../../hooks/Monitors/useGetAllMonitors";
-import useShowError from "../../../../hooks/useShowError";
-import { MessageError } from "../../../../utilis/MessagesErrors";
+import { useGetAllComputers } from "../../../../hooks/Computers/useGetAllComputers";
 import TableComponent from "../../../Table/Table";
 import { columns } from "./TableData";
 
-export default function TableMonitors() {
+export default function TableComputers() {
   const [checked, setChecked] = useState(false);
-
-  const monitors = useGetAllMonitors();
-
-  const showError = useShowError();
+  const computers = useGetAllComputers();
 
   useEffect(() => {
-    monitors.get();
+    computers.get();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    if (monitors.error) {
-      showError.get(MessageError.FETCH_FAILED);
-    }
-  }, [monitors.error]);
 
   return (
     <div className="mx-4 my-4 border rounded search-card border-secondary-dark">
@@ -110,9 +100,9 @@ export default function TableMonitors() {
         </div>
       </div>
       <TableComponent
-        progressPending={monitors.isLoading}
+        progressPending={computers.isLoading}
         columns={columns}
-        rows={monitors.data}
+        rows={computers.data}
       />
     </div>
   );

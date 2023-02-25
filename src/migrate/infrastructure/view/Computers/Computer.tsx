@@ -1,5 +1,5 @@
 import SearchForm from "../../components/dashboard/SearchForm";
-import TableComputers from "../../components/dashboard/Tables/Computers/TableComputers";
+import TableComputers from "../../components/dashboard/Tables/Computers/Table";
 
 const Computers = () => {
   return (
