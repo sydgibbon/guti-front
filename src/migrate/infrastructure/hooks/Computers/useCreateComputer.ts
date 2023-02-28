@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
-import { computersService } from "../../../domain/services/Computers.service";
-import { ComputerDTO } from "../../http/dto/ComputerDTO";
+import { ComputerDTO } from "../../../domain/dto/ComputerDTO";
+import { computersService } from "../../../domain/services/Computers.service"; 
 
 const useCreateComputer = () => {
   const [data, setData] = useState<any>(undefined);

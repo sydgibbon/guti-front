@@ -1,21 +1,13 @@
-import { ColumnSearch } from "../../../domain/models/Others";
-import SearchCard from "../../components/dashboard/assets/SearchCard";
 import SearchForm from "../../components/dashboard/SearchForm";
+import TableSimcards from "../../components/dashboard/Tables/Simcards/Table";
 
-const SimCardView = () => {
-  const columns: ColumnSearch[] = [
-    {
-      name: "ID",
-      sortable: true,
-      selector: (row) => row?.id,
-    },
-  ];
+const Monitors = () => {
   return (
-    <div className="simcard">
+    <div className="monitors">
       <SearchForm />
-      <SearchCard asset="devicesimcards" columns={columns} />
+      <TableSimcards />
     </div>
   );
 };
 
-export default SimCardView;
+export default Monitors;

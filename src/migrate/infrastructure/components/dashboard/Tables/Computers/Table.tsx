@@ -8,54 +8,18 @@ import {
 } from "react-icons/tb";
 import { BsChevronCompactDown, BsArrow90DegDown } from "react-icons/bs";
 import Switch from "react-switch";
-import DataTable from "react-data-table-component";
-import {
-  deleteAsset,
-  isDeletedAsset,
-  BASE_URL,
-} from "../../../../../api/axios";
-import { ColumnSearch } from "../../../../domain/models/Others";
-import { useGetAllComputers } from "../../../hooks/Computers/useGetAllComputers";
-export interface SearchCardProps {
-  asset: string;
-  columns: ColumnSearch[];
-}
+import { useGetAllComputers } from "../../../../hooks/Computers/useGetAllComputers";
+import TableComponent from "../../../Table/Table";
+import { columns } from "./TableData";
 
-const SearchCard = ({ asset, columns }: SearchCardProps) => {
+export default function TableComputers() {
   const [checked, setChecked] = useState(false);
   const computers = useGetAllComputers();
 
-  // codigo guty
-  let formFields: any = {};
-  let formData = new FormData();
-
-  const handleIsDeleted = (e: React.SyntheticEvent) => {
-    e.preventDefault();
-    Object.keys(formFields).forEach((key) => {
-      formData.append(key, formFields[key]);
-    });
-    isDeletedAsset("computers/13", formData);
-  };
-
-  const handleDelete = (e: React.SyntheticEvent) => {
-    e.preventDefault();
-    Object.keys(formFields).forEach((key) => {
-      formData.append(key, formFields[key]);
-    });
-    deleteAsset("computers/13", formData);
-  };
-
-  const handleChange = (e: any) => {
-    formFields[e.target.id] = e.target.value;
-  };
-
   useEffect(() => {
     computers.get();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    console.log(computers.data);
-  }, [computers.data]);
 
   return (
     <div className="mx-4 my-4 border rounded search-card border-secondary-dark">
@@ -135,43 +99,11 @@ const SearchCard = ({ asset, columns }: SearchCardProps) => {
           </div>
         </div>
       </div>
-      <DataTable
+      <TableComponent
+        progressPending={computers.isLoading}
         columns={columns}
-        data={computers.data}
-        pagination
-        paginationPerPage={20}
-        paginationRowsPerPageOptions={[
-          5, 10, 15, 20, 30, 40, 50, 100, 150, 200, 250, 500, 750, 1000, 2000,
-          3000, 10000,
-        ]}
-        defaultSortFieldId={1}
+        rows={computers.data}
       />
-
-      <form
-        onSubmit={handleIsDeleted}
-        action={`${BASE_URL}computers/`}
-        method="POST"
-        encType="multipart/form-date"
-        className="w-full h-full divide-y divide-y-reverse"
-      >
-        <div className="flex justify-between">
-          <input onChange={handleChange} id="is_deleted" className="border-2" />
-          <button className="border-2">is_deleted</button>
-        </div>
-      </form>
-      <form
-        onSubmit={handleDelete}
-        action={`${BASE_URL}computers/`}
-        method="POST"
-        encType="multipart/form-date"
-        className="w-full h-full divide-y divide-y-reverse"
-      >
-        <div>
-          <button className="border-2">Delete</button>
-        </div>
-      </form>
     </div>
   );
-};
-
-export default SearchCard;
+}
