@@ -1,0 +1,35 @@
+export interface NetworkDevicesDTO {
+  name: string;
+  ram: string;
+  serial: string;
+  otherserial: string;
+  contact: string;
+  contact_num: string;
+  comment: string;
+  template_name: string;
+  uudi: string;
+  sysdescr: string;
+  uptime: string;
+  entities: number;
+  users_tech: number;
+  groups_tech: number;
+  locations: string;
+  networks: number;
+  networkequipmenttypes: string
+  networkequipmentmodels: number;
+  manufacturers: string;
+  users: number;
+  groups: number;
+  states: string;
+  autoupdatesystems: number;
+  snpmcredentials: number;
+  cpu: number;
+  ticket_tco: number;
+  date_mod: string;
+  date_creation: string;
+  last_inventory_update: string;
+  is_recursive: boolean;
+  is_deleted: boolean;
+  is_template: boolean;
+  is_dynamic: boolean;
+}

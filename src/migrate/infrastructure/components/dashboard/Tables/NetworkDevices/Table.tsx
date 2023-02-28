@@ -11,27 +11,27 @@ import Switch from "react-switch";
 import useShowError from "../../../../hooks/useShowError";
 import { MessageError } from "../../../../utilis/MessagesErrors";
 import TableComponent from "../../../Table/Table";
-import { columns } from "./TableData"; 
-import { useGetAllSimcards } from "../../../../hooks/Simcards/useGetAllSimcards";
+import { columns } from "./TableData";
+import { useGetAllNetworkDevices } from "../../../../hooks/NetworksDevices/useGetAllNetworkDevices";
 
-export default function TableSimcards() {
+export default function TableNetworkDevices() {
   const [checked, setChecked] = useState(false);
 
-  const simcards = useGetAllSimcards();
+  const networkDevices = useGetAllNetworkDevices();
 
   const showError = useShowError();
 
   useEffect(() => {
-    simcards.get();
+    networkDevices.get();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    if (simcards.error) {
+    if (networkDevices.error) {
       showError.get(MessageError.FETCH_FAILED);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [simcards.error]);
+  }, [networkDevices.error]);
 
   return (
     <div className="mx-4 my-4 border rounded search-card border-secondary-dark">
@@ -112,9 +112,9 @@ export default function TableSimcards() {
         </div>
       </div>
       <TableComponent
-        progressPending={simcards.isLoading}
+        progressPending={networkDevices.isLoading}
         columns={columns}
-        rows={simcards.data}
+        rows={networkDevices.data}
       />
     </div>
   );

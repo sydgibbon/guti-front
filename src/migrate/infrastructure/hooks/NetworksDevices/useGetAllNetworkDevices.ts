@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
-import { simcardsService } from "../../../domain/services/Simcards.service";
+import { networkDevicesService } from "../../../domain/services/NetworkDevices.service";
 
-export const useGetAllSimcards = () => {
+export const useGetAllNetworkDevices = () => {
   const [data, setData] = useState<any>(undefined);
   const [error, setError] = useState<undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
@@ -9,9 +9,8 @@ export const useGetAllSimcards = () => {
   const get = useCallback(async () => {
     setIsLoading(true);
     try {
-      const simcards = await simcardsService.getAllSimcards();
-
-      setData(simcards);
+      const networkDevices = await networkDevicesService.getAllNetworkDevices();
+      setData(networkDevices);
     } catch (e: any) {
       setError(e);
       console.error(e);
