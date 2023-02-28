@@ -23,7 +23,19 @@ import GlobalView from "../view/Global/GlobalView";
 import UnmanagedDevicesView from "../view/UnmanagedDevices/UnmanagedDevicesView";
 import NotFoundView from "../view/NotFoundView";
 import ComputerForm from "../components/forms/assets/ComputerForm";
-import RefactorFormTemplate from "../components/forms/ComputerForm";
+import SoftwareForm from "../components/forms/assets/SoftwareForm";
+import RefactorComputersFormTemplate from "../components/forms/ComputerForm";
+import RefactorSoftwareFormTemplate from "../components/forms/SoftwareForm";
+import RefactorMonitorFormTemplate from "../components/forms/MonitorForm";
+import RefactorNetDeviceFormTemplate from "../components/forms/NetworkDeviceForm";
+import RefactorDeviceFormTemplate from "../components/forms/DeviceForm";
+import RefactorPrinterFormTemplate from "../components/forms/PrinterForm";
+import RefactorCartridgeFormTemplate from "../components/forms/CartridgeForm";
+import RefactorConsumableFormTemplate from "../components/forms/ConsumableForm";
+import RefactorPhoneFormTemplate from "../components/forms/PhoneForm";
+import RefactorRackFormTemplate from "../components/forms/RackForm";
+import RefactorEnclosuresFormTemplate from "../components/forms/EnclosuresForm";
+
 
 // import EnclosuresForm from "../component/forms/assets/EnclosuresForm";
 // import CableForm from "../component/forms/assets/CableForm";
@@ -74,14 +86,6 @@ const router = createBrowserRouter([
     element: (
       <Main>
         <Software />
-      </Main>
-    ),
-  },
-  {
-    path: "assets/network-devices",
-    element: (
-      <Main>
-        <NetworkDevices />
       </Main>
     ),
   },
@@ -189,23 +193,95 @@ const router = createBrowserRouter([
       </Main>
     ),
   },
-  {
-    path: "/assets/forms/computers",
-    element: (
-      <Main>
-        <ComputerForm />
-      </Main>
-    ),
-  },
+
   {
     path: "/assets/forms/computers-refactor",
     element: (
       <Main>
-        <RefactorFormTemplate />
+        <RefactorComputersFormTemplate />
       </Main>
     ),
   },
-
+  {
+    path: "/assets/forms/software-refactor",
+    element: (
+      <Main>
+        <RefactorSoftwareFormTemplate />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/monitors-refactor",
+    element: (
+      <Main>
+        <RefactorMonitorFormTemplate />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/network-devices-refactor",
+    element: (
+      <Main>
+        <RefactorNetDeviceFormTemplate />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/devices-refactor",
+    element: (
+      <Main>
+        <RefactorDeviceFormTemplate />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/printer-refactor",
+    element: (
+      <Main>
+        <RefactorPrinterFormTemplate />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/cartridge-refactor",
+    element: (
+      <Main>
+        <RefactorCartridgeFormTemplate />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/consumable-refactor",
+    element: (
+      <Main>
+        <RefactorConsumableFormTemplate />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/phone-refactor",
+    element: (
+      <Main>
+        <RefactorPhoneFormTemplate />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/rack-refactor",
+    element: (
+      <Main>
+        <RefactorRackFormTemplate />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/enclosures-refactor",
+    element: (
+      <Main>
+        <RefactorEnclosuresFormTemplate />
+      </Main>
+    ),
+  },
   {
     path: "*",
     element: (
