@@ -1,5 +1,4 @@
-import { monitorsRepository } from "../repositories/Monitors.repository";
-
+import { monitorsRepository } from "../repositories/monitors.repository";
 
 export const monitorsService = {
   getAllMonitors: () => {
