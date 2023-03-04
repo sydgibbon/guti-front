@@ -1,0 +1,43 @@
+export interface PrinterDTO {
+    id: number;
+    entities?: any;
+    users_tech?: any;
+    groups_tech?: any;
+    locations?: any;
+    networks?: any;
+    printertypes?: any;
+    manufacturers?: any;
+    users?: any;
+    groups?: any;
+    states?: any;
+    snmpcredentials?: any;
+    autoupdatesystems?: any;
+    is_recursive: number;
+    name: string;
+    date_mod?: any;
+    contact: string;
+    contact_num?: any;
+    serial?: any;
+    otherserial?: any;
+    have_serial: number;
+    have_parallel: number;
+    have_usb: number;
+    have_wifi: number;
+    have_ethernet: number;
+    comment?: any;
+    memory_size?: any;
+    is_global: number;
+    is_deleted: number;
+    is_template: number;
+    template_name?: any;
+    init_pages_counter: number;
+    last_pages_counter: number;
+    ticket_tco?: any;
+    is_dynamic: number;
+    uuid?: any;
+    date_creation?: any;
+    sysdescr?: any;
+    last_inventory_update?: any;
+    printermodels?: any;
+}
+
