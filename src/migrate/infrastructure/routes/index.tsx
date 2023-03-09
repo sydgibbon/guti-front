@@ -10,7 +10,7 @@ import Software from "../view/Software/Software";
 import NetworkDevices from "../view/NetworkDevices/NetworkDevices";
 import Devices from "../view/Devices/Devices";
 import PrintersView from "../view/Printers/PrintersView";
-import CartridgesView from "../view/Cartridges/CartridgesView";
+import Cartridges from "../view/Cartridges/Cartridges";
 import PhonesView from "../view/Phones/PhonesView";
 import RackView from "../view/Rack/RackView";
 import ConsumablesView from "../view/Consumables/ConsumablesView";
@@ -105,7 +105,7 @@ const router = createBrowserRouter([
     path: "assets/cartridges",
     element: (
       <Main>
-        <CartridgesView />
+        <Cartridges />
       </Main>
     ),
   },

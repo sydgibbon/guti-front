@@ -1,7 +1,7 @@
 import SearchForm from "../../components/dashboard/SearchForm";
 import TableComputers from "../../components/dashboard/Tables/Computers/Table";
 
-const Computers = () => {
+export default function Computers () {
   return (
     <div className="computers">
       <SearchForm />
@@ -10,4 +10,3 @@ const Computers = () => {
   );
 };
 
-export default Computers;
