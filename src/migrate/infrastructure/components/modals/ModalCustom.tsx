@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
-import { PopupCustomProps } from "./types";
+import { ModalCustomProps } from "./types";
 
-export default function PopupCustom(popupCustomProps: PopupCustomProps) {
+export default function ModalCustom(modalCustomProps: ModalCustomProps) {
   const {
     children,
     state,
@@ -16,7 +16,7 @@ export default function PopupCustom(popupCustomProps: PopupCustomProps) {
     handleClose,
     primaryButtonHandle,
     secondaryButtonHandle,
-  } = popupCustomProps;
+  } = modalCustomProps;
 
   const ref = useRef<any>();
 

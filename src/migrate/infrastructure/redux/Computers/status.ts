@@ -2,14 +2,14 @@ import { PayloadAction } from "@reduxjs/toolkit";
 import { ComputersIndexProps, ComputersStatus } from "../types";
 
 export const computersStatus: ComputersStatus = {
-  popupIsOpen: false
+  modalIsOpen: false
 };
 
 export const computersStatusReducer = {
-  setPopupIsOpen: (
+  setModalIsOpen: (
     state: ComputersIndexProps,
     action: PayloadAction<boolean>
   ) => {
-    state.status.popupIsOpen = action.payload
+    state.status.modalIsOpen = action.payload
   },
 };

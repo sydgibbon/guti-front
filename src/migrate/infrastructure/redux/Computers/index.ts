@@ -18,7 +18,7 @@ export const computersStatusSlice = createSlice({
   },
 });
 
-export const { setPopupIsOpen } = computersStatusSlice.actions;
+export const { setModalIsOpen } = computersStatusSlice.actions;
 
-export const getPopupIsOpen = (state: RootState) =>
-  state.computersStatus.status.popupIsOpen
+export const getModalIsOpen = (state: RootState) =>
+  state.computersStatus.status.modalIsOpen

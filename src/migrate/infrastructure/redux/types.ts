@@ -9,7 +9,7 @@ export interface GlobalsStatus {}
 export interface ComputersData {}
 
 export interface ComputersStatus {
-  popupIsOpen: boolean
+  modalIsOpen: boolean
 }
 export interface Notification {
   status: boolean;

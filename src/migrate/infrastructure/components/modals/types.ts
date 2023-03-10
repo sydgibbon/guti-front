@@ -1,4 +1,4 @@
-export interface PopupCustomProps {
+export interface ModalCustomProps {
   children?: React.ReactNode;
   state: boolean;
   handleClose: () => void;

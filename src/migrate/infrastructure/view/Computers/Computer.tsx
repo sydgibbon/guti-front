@@ -1,21 +1,21 @@
 import { useEffect } from "react";
 import SearchForm from "../../components/dashboard/SearchForm";
 import TableComputers from "../../components/dashboard/Tables/Computers/Table";
-import PopupCustom from "../../components/popups/PopupCustom";
-import { getPopupIsOpen, setPopupIsOpen } from "../../redux/Computers";
+import ModalCustom from "../../components/modals/ModalCustom";
+import { getModalIsOpen, setModalIsOpen } from "../../redux/Computers";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
 export default function Computers() {
-  const popupIsOpen = useAppSelector(getPopupIsOpen);
+  const modalIsOpen = useAppSelector(getModalIsOpen);
 
   const dispatch = useAppDispatch();
 
   const handleClose = () => {
-    dispatch(setPopupIsOpen(false));
+    dispatch(setModalIsOpen(false));
   };
 
   useEffect(() => {
-    dispatch(setPopupIsOpen(true));
+    dispatch(setModalIsOpen(true));
   }, []);
 
   const secondaryButtonHandle = () => {
@@ -26,8 +26,8 @@ export default function Computers() {
     <div className="computers">
       <SearchForm />
       <TableComputers />
-      <PopupCustom
-        state={popupIsOpen}
+      <ModalCustom
+        state={modalIsOpen}
         handleClose={handleClose}
         title="esto es un titulo"
         crossClassName="text-blue-500"
