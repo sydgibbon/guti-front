@@ -1,0 +1,29 @@
+export interface RackDTO {
+  name: string;
+  comment: string;
+  entities: number;
+  is_recursive: number;
+  locations: number;
+  serial: string;
+  otherserial: string;
+  rackmodels: number;
+  manufacturers: number;
+  racktypes: number;
+  states: number;
+  users_tech: number;
+  groups_tech: number;
+  width: number;
+  heigth: number;
+  depth: number;
+  number_units: number;
+  is_template: number;
+  template_name: string;
+  is_deleted: number;
+  dcrooms: number;
+  room_orientation: number;
+  position: string;
+  bgcolor: string;
+  max_power: number;
+  date_mod: string;
+  date_creation: string;
+}
