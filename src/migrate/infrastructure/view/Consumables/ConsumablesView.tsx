@@ -1,46 +1,13 @@
-import { ColumnSearch } from "../../../domain/models/Others";
-import SearchCard from "../../components/dashboard/assets/SearchCard";
-import SearchForm from "../../components/dashboard/SearchForm";
+import SearchForm from "../../../../component/dashboard/SearchForm";
+import TableConsumableItems from "../../../infrastructure/components/dashboard/Tables/Consumables/Table";
 
-const Consumables = () => {
-  const columns: ColumnSearch[] = [
-    {
-      name: "NAME",
-      sortable: true,
-      selector: (row) => row?.name,
-    },
-    {
-      name: "REFERENCE",
-      sortable: true,
-      selector: (row) => row?.ref,
-    },
-    {
-      name: "TYPE",
-      sortable: true,
-      selector: (row) => row?.consumableitemtypes?.name,
-    },
-    {
-      name: "MANUFACTURERS",
-      sortable: true,
-      selector: (row) => row?.manufacturers?.name,
-    },
-    {
-      name: "LOCATIONS",
-      sortable: true,
-      selector: (row) => row?.locations?.name,
-    },
-    {
-      name: "CONSUMABLES",
-      sortable: true,
-      selector: (row) => row?.id,
-    }, // Acá debería ir consumables EJ: Total: 1, New: 1, Used: 0
-  ];
+const ConsumableItems = () => {
   return (
-    <div className="consumables">
+    <div className="softwares">
       <SearchForm />
-      <SearchCard asset="consumableitems" columns={columns} />
+      <TableConsumableItems />
     </div>
   );
 };
 
-export default Consumables;
+export default ConsumableItems;
