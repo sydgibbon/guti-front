@@ -12,7 +12,7 @@ import Devices from "../view/Devices/Devices";
 import PrintersView from "../view/Printers/PrintersView";
 import CartridgesView from "../view/Cartridges/CartridgesView";
 import PhonesView from "../view/Phones/PhonesView";
-import RackView from "../view/Rack/RackView";
+import RackView from "../view/Rack/Rack";
 import ConsumablesView from "../view/Consumables/ConsumablesView";
 import Enclosures from "../view/Enclosures/EnclosuresView";
 import PDUsView from "../view/PDUs/PDUsView";
