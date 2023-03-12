@@ -12,7 +12,7 @@ import useShowError from "../../../../hooks/useShowError";
 import { MessageError } from "../../../../utilis/MessagesErrors";
 import TableComponent from "../../../Table/Table";
 import { columns } from "./TableData";
-import { useGetAllConsumableItems } from "../../../../../../hooks/Consumables/GetAllConsumableItems";
+import { useGetAllConsumableItems } from "../../../../hooks/Consumables/GetAllConsumableItems";
 
 export default function TableSimcards() {
   const [checked, setChecked] = useState(false);

@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { consumableItemsService } from "../../migrate/domain/services/ConsumableItems.service";
+import { consumableItemsService } from "../../../domain/services/ConsumableItems.service";
 
 export const useGetAllConsumableItems = () => {
   const [data, setData] = useState<any>(undefined);
