@@ -18,11 +18,6 @@ export const columns: TableColumn<DataRow>[] = [
     selector: (row) => row.locations,
   },
   {
-    name: "states",
-    sortable: true,
-    selector: (row) => row.states,
-  },
-  {
     name: "updated_at",
     sortable: true,
     selector: (row) => row.date_mod,
