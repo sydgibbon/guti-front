@@ -16,6 +16,7 @@ export default function Computers() {
 
   useEffect(() => {
     dispatch(setModalIsOpen(true));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const secondaryButtonHandle = () => {
