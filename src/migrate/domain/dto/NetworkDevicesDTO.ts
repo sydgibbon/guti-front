@@ -15,12 +15,12 @@ export interface NetworkDevicesDTO {
   groups_tech: number;
   locations: string;
   networks: number;
-  networkequipmenttypes: string
+  networkequipmenttypes: number
   networkequipmentmodels: number;
   manufacturers: string;
   users: number;
   groups: number;
-  states: string;
+  states: number;
   autoupdatesystems: number;
   snpmcredentials: number;
   cpu: number;

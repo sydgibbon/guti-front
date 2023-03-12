@@ -1,4 +1,4 @@
-import { NetworkDevice } from "../../adapter/NetworkDevices";
+import { NetworkDevice } from "../adapter/NetworkDevices";
 import { NetworkDevicesDTO } from "../dto/NetworkDevicesDTO";
 import http from "../http/http";
 

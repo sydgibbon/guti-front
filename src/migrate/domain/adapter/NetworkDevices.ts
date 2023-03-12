@@ -1,9 +1,9 @@
 export interface NetworkDevice {
   name: string;
-  states: string;
+  states: number;
   manufacturers: string;
   locations: string;
-  networkequipmenttypes: string;
+  networkequipmenttypes: number;
   serial: string;
   date_mod: string;
 }
