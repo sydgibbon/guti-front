@@ -3,7 +3,7 @@ import TableConsumableItems from "../../../infrastructure/components/dashboard/T
 
 const ConsumableItems = () => {
   return (
-    <div className="softwares">
+    <div className="consumableitems">
       <SearchForm />
       <TableConsumableItems />
     </div>
