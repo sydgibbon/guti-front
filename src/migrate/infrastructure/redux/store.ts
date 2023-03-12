@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+import { computersStatusSlice } from "./Computers";
 import { globalStatusSlice } from "./Global";
 
 export const store = configureStore({
@@ -6,6 +7,7 @@ export const store = configureStore({
     getDefaultMiddleware({ serializableCheck: false }),
   reducer: {
     globalStatus: globalStatusSlice.reducer,
+    computersStatus: computersStatusSlice.reducer,
   },
 });
 
