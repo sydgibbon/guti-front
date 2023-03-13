@@ -2,7 +2,7 @@ export interface RackDTO {
   name: string;
   comment: string;
   entities: number;
-  is_recursive: number;
+  is_recursive: boolean;
   locations: number;
   serial: string;
   otherserial: string;
@@ -16,9 +16,9 @@ export interface RackDTO {
   heigth: number;
   depth: number;
   number_units: number;
-  is_template: number;
+  is_template: boolean;
   template_name: string;
-  is_deleted: number;
+  is_deleted: boolean;
   dcrooms: number;
   room_orientation: number;
   position: string;
