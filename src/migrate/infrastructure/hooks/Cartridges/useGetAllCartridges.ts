@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
-import { computersService } from "../../../domain/services/Computers.service";
+import { cartridgesService } from "../../../domain/services/Cartridges.service";
 
-export const useGetAllComputers = () => {
+export const useGetAllCartridges = () => {
   const [data, setData] = useState<any>(undefined);
   const [error, setError] = useState<undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
@@ -9,9 +9,9 @@ export const useGetAllComputers = () => {
   const get = useCallback(async () => {
     setIsLoading(true);
     try {
-      const computers = await computersService.getAllComputers();
+      const cartridges = await cartridgesService.getAllCartrdiges();
 
-      setData(computers);
+      setData(cartridges);
     } catch (e: any) {
       setError(e);
       console.error(e);
