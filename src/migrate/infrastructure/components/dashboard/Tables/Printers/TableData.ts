@@ -5,36 +5,36 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "NAME",
     sortable: true,
-    selector: (row) => row?.name,
+    selector: (row) => row.name,
   },
   {
     name: "STATUS",
     sortable: true,
-    selector: (row) => row?.states?.name, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
+    selector: (row) => row.states, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
     name: "MANUFACTURERS",
     sortable: true,
-    selector: (row) => row?.manufacturers?.name,
+    selector: (row) => row.manufacturers,
   },
   {
     name: "LOCATIONS",
     sortable: true,
-    selector: (row) => row?.locations?.name,
+    selector: (row) => row.locations,
   },
   {
     name: "TYPES",
     sortable: true,
-    selector: (row) => row?.printertypes?.name,
+    selector: (row) => row.printertypes,
   },
   {
     name: "MODEL",
     sortable: true,
-    selector: (row) => row?.printermodels?.name,
+    selector: (row) => row.printermodels,
   },
   {
     name: "LAST UPDATE",
     sortable: true,
-    selector: (row) => row?.date_mod,
+    selector: (row) => row.date_mod,
   },
 ];
