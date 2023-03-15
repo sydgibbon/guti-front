@@ -8,30 +8,18 @@ import {
 } from "react-icons/tb";
 import { BsChevronCompactDown, BsArrow90DegDown } from "react-icons/bs";
 import Switch from "react-switch";
-import useShowError from "../../../../hooks/useShowError";
-import { MessageError } from "../../../../utilis/MessagesErrors";
 import TableComponent from "../../../Table/Table";
-import { columns } from "./TableData"; 
-import { useGetAllSimcards } from "../../../../hooks/Simcards/useGetAllSimcards";
+import { columns } from "./TableData";
+import { useGetAllCartridges } from "../../../../hooks/Cartridges/useGetAllCartridges";
 
-export default function TableSimcards() {
+export default function TableCartridges() {
   const [checked, setChecked] = useState(false);
-
-  const simcards = useGetAllSimcards();
-
-  const showError = useShowError();
+  const cartridges = useGetAllCartridges();
 
   useEffect(() => {
-    simcards.get();
+    cartridges.get();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    if (simcards.error) {
-      showError.get(MessageError.FETCH_FAILED);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [simcards.error]);
 
   return (
     <div className="mx-4 my-4 border rounded search-card border-secondary-dark">
@@ -112,9 +100,9 @@ export default function TableSimcards() {
         </div>
       </div>
       <TableComponent
-        progressPending={simcards.isLoading}
+        progressPending={cartridges.isLoading}
         columns={columns}
-        rows={simcards.data}
+        rows={cartridges.data}
       />
     </div>
   );
