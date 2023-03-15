@@ -23,7 +23,6 @@ export default function Computers() {
     alert("Aceptaste")
   }
 
-export default function Computers () {
   return (
     <div className="computers">
       <SearchForm />
