@@ -10,7 +10,7 @@ import Software from "../view/Software/Software";
 import NetworkDevices from "../view/NetworkDevices/NetworkDevices";
 import Devices from "../view/Devices/Devices";
 import PrintersView from "../view/Printers/PrintersView";
-import CartridgesView from "../view/Cartridges/CartridgesView";
+import Cartridges from "../view/Cartridges/Cartridges";
 import PhonesView from "../view/Phones/PhonesView";
 import RackView from "../view/Rack/RackView";
 import ConsumablesView from "../view/Consumables/ConsumablesView";
@@ -18,7 +18,7 @@ import Enclosures from "../view/Enclosures/EnclosuresView";
 import PDUsView from "../view/PDUs/PDUsView";
 import PassiveDevices from "../view/PassiveDevices/PassiveDevicesView";
 import CablesView from "../view/Cables/CablesView";
-import SimCardView from "../view/SimCard/SimCardView";
+import SimCardView from "../view/SimCards/SimCard";
 import GlobalView from "../view/Global/GlobalView";
 import UnmanagedDevicesView from "../view/UnmanagedDevices/UnmanagedDevicesView";
 import NotFoundView from "../view/NotFoundView";
@@ -105,7 +105,7 @@ const router = createBrowserRouter([
     path: "assets/cartridges",
     element: (
       <Main>
-        <CartridgesView />
+        <Cartridges />
       </Main>
     ),
   },

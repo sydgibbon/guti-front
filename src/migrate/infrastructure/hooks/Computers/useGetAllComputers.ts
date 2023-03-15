@@ -9,9 +9,9 @@ export const useGetAllComputers = () => {
   const get = useCallback(async () => {
     setIsLoading(true);
     try {
-      const newComputer = await computersService.getAllComputers();
+      const computers = await computersService.getAllComputers();
 
-      setData(newComputer);
+      setData(computers);
     } catch (e: any) {
       setError(e);
       console.error(e);
