@@ -20,10 +20,9 @@ export default function Computers() {
   }, []);
 
   const secondaryButtonHandle = () => {
-    alert("Aceptaste")
-  }
+    alert("Aceptaste");
+  };
 
-export default function Computers () {
   return (
     <div className="computers">
       <SearchForm />
@@ -42,5 +41,4 @@ export default function Computers () {
       />
     </div>
   );
-};
-
+}
