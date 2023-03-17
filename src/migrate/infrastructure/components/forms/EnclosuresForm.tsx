@@ -3,7 +3,7 @@ import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import Form from "./Form";
 
-export default function RefactorEnclosuresFormTemplate() {
+export default function  EnclosuresForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {

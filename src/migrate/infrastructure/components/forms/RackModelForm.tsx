@@ -4,7 +4,7 @@ import TextInput from "../TextInput";
 import Form from "./Form";
 
 
-export default function RefactorRackModelFormTemplate() {
+export default function  RackModelForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {

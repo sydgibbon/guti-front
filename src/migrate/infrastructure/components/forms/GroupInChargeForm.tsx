@@ -13,7 +13,7 @@ const textOption: OptionValue[] = [
     value: "2"
   }]
 
-export default function RefactorGroupInChargeFormTemplate() {
+export default function  GroupInChargeForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {

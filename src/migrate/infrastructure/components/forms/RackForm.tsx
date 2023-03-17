@@ -21,7 +21,7 @@ const textOption: OptionValue[] = [
     value: "4"
   }]
 
-export default function RefactorRackFormTemplate() {
+export default function  RackForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {

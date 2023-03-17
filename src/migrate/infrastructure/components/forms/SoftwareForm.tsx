@@ -12,7 +12,7 @@ import Form from "./Form";
 //   value: "river"
 // }]
 
-export default function RefactorSoftwareFormTemplate() {
+export default function SoftwareForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {

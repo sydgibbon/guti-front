@@ -31,7 +31,7 @@ const numberOption: OptionValue[] = [
     value: "1"
   }]
 
-export default function RefactorPassiveDeviceModelFormTemplate() {
+export default function  PassiveDeviceModelForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {

@@ -3,7 +3,7 @@ import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import Form from "./Form";
 
-export default function RefactorDeviceFormTemplate() {
+export default function  DeviceForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {

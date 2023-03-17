@@ -14,7 +14,7 @@ const textOption: OptionValue[] = [
   }]
 
 
-export default function RefactorSimCardComponentFormTemplate() {
+export default function  SimCardComponentForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {

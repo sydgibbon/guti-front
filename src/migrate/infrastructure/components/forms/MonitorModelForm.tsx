@@ -31,7 +31,7 @@ const numberOption: OptionValue[] = [
     value: "1"
   }]
 
-export default function RefactorMonitorModelFormTemplate() {
+export default function  MonitorModelForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {

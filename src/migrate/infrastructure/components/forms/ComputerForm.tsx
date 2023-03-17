@@ -6,7 +6,7 @@ import useCreateComputer from "../../hooks/Computers/useCreateComputer";
 import { useEffect } from "react";
 import { ComputerDTO } from "../../../domain/dto/ComputerDTO";
 
-export default function RefactorComputersFormTemplate() {
+export default function  ComputersForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {

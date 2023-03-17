@@ -31,7 +31,7 @@ const numberOption: OptionValue[] = [
     value: "1"
   }]
 
-export default function RefactorEnclosuresModelFormTemplate() {
+export default function  EnclosuresModelForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {

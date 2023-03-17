@@ -1,4 +1,4 @@
-export interface FormTemplateProps {
+export interface FormProps {
   inputPropierties: any;
   FormHeader: any;
 }

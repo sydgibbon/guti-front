@@ -31,7 +31,7 @@ const numberOption: OptionValue[] = [
     value: "1"
   }]
 
-export default function RefactorPduModelFormTemplate() {
+export default function  PduModelForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {

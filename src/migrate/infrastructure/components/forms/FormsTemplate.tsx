@@ -5,7 +5,7 @@ import { TbPlus, TbList, TbMap } from "react-icons/tb";
 import { FaPaste, FaRegEye } from "react-icons/fa";
 import { BASE_URL, saveAsset } from "../../../../api/axios";
 import Alert from "../../../../component/atomic/Alert";
-import { FormTemplateProps } from "./types";
+import { FormProps } from "./types";
 
 let formData = new FormData();
 
@@ -14,7 +14,7 @@ let formFields: any = {};
 export default function FormsTemplate({
   inputPropierties,
   FormHeader,
-}: FormTemplateProps) {
+}: FormProps) {
   const [openSuccessAlert, setOpenSuccessAlert] = useState(false);
 
   const [openErrorAlert, setOpenErrorAlert] = useState(false);

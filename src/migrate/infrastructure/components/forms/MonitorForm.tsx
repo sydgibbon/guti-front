@@ -12,7 +12,7 @@ import Form from "./Form";
 //   value: "river"
 // }]
 
-export default function RefactorMonitorFormTemplate() {
+export default function  MonitorForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {

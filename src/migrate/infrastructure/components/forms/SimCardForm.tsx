@@ -2,7 +2,7 @@ import SelectOption from "../SelectOption";
 import TextInput from "../TextInput";
 import Form from "./Form";
 
-export default function RefactorSimCardFormTemplate() {
+export default function  SimCardForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {

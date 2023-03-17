@@ -22,57 +22,55 @@ import SimCardView from "../view/SimCard/SimCardView";
 import GlobalView from "../view/Global/GlobalView";
 import UnmanagedDevicesView from "../view/UnmanagedDevices/UnmanagedDevicesView";
 import NotFoundView from "../view/NotFoundView";
-import ComputerForm from "../components/forms/assets/ComputerForm";
-import SoftwareForm from "../components/forms/assets/SoftwareForm";
-import RefactorComputersFormTemplate from "../components/forms/ComputerForm";
-import RefactorSoftwareFormTemplate from "../components/forms/SoftwareForm";
-import RefactorMonitorFormTemplate from "../components/forms/MonitorForm";
-import RefactorNetDeviceFormTemplate from "../components/forms/NetworkDeviceForm";
-import RefactorDeviceFormTemplate from "../components/forms/DeviceForm";
-import RefactorPrinterFormTemplate from "../components/forms/PrinterForm";
-import RefactorCartridgeFormTemplate from "../components/forms/CartridgeForm";
-import RefactorConsumableFormTemplate from "../components/forms/ConsumableForm";
-import RefactorPhoneFormTemplate from "../components/forms/PhoneForm";
-import RefactorRackFormTemplate from "../components/forms/RackForm";
-import RefactorEnclosuresFormTemplate from "../components/forms/EnclosuresForm";
-import RefactorPduFormTemplate from "../components/forms/PduForm";
-import RefactorPassiveDeviceFormTemplate from "../components/forms/PassiveDeviceForm";
-import RefactorCableFormTemplate from "../components/forms/CableForm";
-import RefactorSimCardFormTemplate from "../components/forms/SimCardForm";
-import RefactorStatusFormTemplate from "../components/forms/StatusForm";
-import RefactorLocationFormTemplate from "../components/forms/LocationForm";
-import RefactorComputerTypeFormTemplate from "../components/forms/ComputerTypeForm";
-import RefactorManufacturerFormTemplate from "../components/forms/ManufacturerForm";
-import RefactorGroupInChargeFormTemplate from "../components/forms/GroupInChargeForm";
-import RefactorComputerModelFormTemplate from "../components/forms/ComputerModelForm";
-import RefactorNetworkFormTemplate from "../components/forms/NetworkForm";
-import RefactorGroupFormTemplate from "../components/forms/GroupForm";
-import RefactorUpdateSourceFormTemplate from "../components/forms/UpdateSourceForm";
-import RefactorMonitorTypeFormTemplate from "../components/forms/MonitorTypeForm";
-import RefactorMonitorModelFormTemplate from "../components/forms/MonitorModelForm";
-import RefactorSoftwareCategoryFormTemplate from "../components/forms/SoftwareCategory";
-import RefactorNetworkDeviceTypeFormTemplate from "../components/forms/NetworkDevicesTypeForm";
-import RefactorNetworkDeviceModelFormTemplate from "../components/forms/NetworkDeviceModelForm";
-import RefactorDeviceTypeFormTemplate from "../components/forms/DeviceTypeForm";
-import RefactorDeviceModelFormTemplate from "../components/forms/DeviceModelForm";
-import RefactorPrinterTypeFormTemplate from "../components/forms/PrinterTypeForm";
-import RefactorPrinterModelFormTemplate from "../components/forms/PrinterModelForm";
-import RefactorCartridgeTypeFormTemplate from "../components/forms/CartridgesTypeForm";
-import RefactorConsumableTypeFormTemplate from "../components/forms/ConsumableTypeForm";
-import RefactorPhoneTypeFormTemplate from "../components/forms/PhoneTypeForm";
-import RefactorPhoneModelFormTemplate from "../components/forms/PhoneModelForm";
-import RefactorPhonePowerFormTemplate from "../components/forms/PhonePowerForm";
-import RefactorRackTypeFormTemplate from "../components/forms/RackTypeForm";
-import RefactorRackModelFormTemplate from "../components/forms/RackModelForm";
-import RefactorEnclosuresModelFormTemplate from "../components/forms/EnclosuresModelForm";
-import RefactorPduTypeFormTemplate from "../components/forms/PduTypeForm";
-import RefactorPduModelFormTemplate from "../components/forms/PduModelForm";
-import RefactorPassiveDeviceTypeFormTemplate from "../components/forms/PassiveDeviceTypeForm";
-import RefactorPassiveDeviceModelFormTemplate from "../components/forms/PassiveDeviceModelForm";
-import RefactorCableTypeFormTemplate from "../components/forms/CableTypeForm";
-import RefactorCableStrandFormTemplate from "../components/forms/CableStrandForm";
-import RefactorSocketModelFormTemplate from "../components/forms/SocketModelForm";
-import RefactorSimCardComponentFormTemplate from "../components/forms/SimCardComponentForm";
+import ComputersForm from "../components/forms/ComputerForm";
+import SoftwareForm from "../components/forms/SoftwareForm";
+import MonitorForm from "../components/forms/MonitorForm";
+import NetDeviceForm from "../components/forms/NetworkDeviceForm";
+import DeviceForm from "../components/forms/DeviceForm";
+import PrinterForm from "../components/forms/PrinterForm";
+import CartridgeForm from "../components/forms/CartridgeForm";
+import ConsumableForm from "../components/forms/ConsumableForm";
+import PhoneForm from "../components/forms/PhoneForm";
+import RackForm from "../components/forms/RackForm";
+import EnclosuresForm from "../components/forms/EnclosuresForm";
+import PduForm from "../components/forms/PduForm";
+import PassiveDeviceForm from "../components/forms/PassiveDeviceForm";
+import CableForm from "../components/forms/CableForm";
+import SimCardForm from "../components/forms/SimCardForm";
+import StatusForm from "../components/forms/StatusForm";
+import LocationForm from "../components/forms/LocationForm";
+import ComputerTypeForm from "../components/forms/ComputerTypeForm";
+import ManufacturerForm from "../components/forms/ManufacturerForm";
+import GroupInChargeForm from "../components/forms/GroupInChargeForm";
+import ComputerModelForm from "../components/forms/ComputerModelForm";
+import NetworkForm from "../components/forms/NetworkForm";
+import GroupForm from "../components/forms/GroupForm";
+import UpdateSourceForm from "../components/forms/UpdateSourceForm";
+import MonitorTypeForm from "../components/forms/MonitorTypeForm";
+import MonitorModelForm from "../components/forms/MonitorModelForm";
+import SoftwareCategoryForm from "../components/forms/SoftwareCategory";
+import NetworkDeviceTypeForm from "../components/forms/NetworkDevicesTypeForm";
+import NetworkDeviceModelForm from "../components/forms/NetworkDeviceModelForm";
+import DeviceTypeForm from "../components/forms/DeviceTypeForm";
+import DeviceModelForm from "../components/forms/DeviceModelForm";
+import PrinterTypeForm from "../components/forms/PrinterTypeForm";
+import PrinterModelForm from "../components/forms/PrinterModelForm";
+import CartridgeTypeForm from "../components/forms/CartridgesTypeForm";
+import ConsumableTypeForm from "../components/forms/ConsumableTypeForm";
+import PhoneTypeForm from "../components/forms/PhoneTypeForm";
+import PhoneModelForm from "../components/forms/PhoneModelForm";
+import PhonePowerForm from "../components/forms/PhonePowerForm";
+import RackTypeForm from "../components/forms/RackTypeForm";
+import RackModelForm from "../components/forms/RackModelForm";
+import EnclosuresModelForm from "../components/forms/EnclosuresModelForm";
+import PduTypeForm from "../components/forms/PduTypeForm";
+import PduModelForm from "../components/forms/PduModelForm";
+import PassiveDeviceTypeForm from "../components/forms/PassiveDeviceTypeForm";
+import PassiveDeviceModelForm from "../components/forms/PassiveDeviceModelForm";
+import CableTypeForm from "../components/forms/CableTypeForm";
+import CableStrandForm from "../components/forms/CableStrandForm";
+import SocketModelForm from "../components/forms/SocketModelForm";
+import SimCardComponentForm from "../components/forms/SimCardComponentForm";
 
 
 // import EnclosuresForm from "../component/forms/assets/EnclosuresForm";
@@ -232,395 +230,396 @@ const router = createBrowserRouter([
     ),
   },
 
+
   {
-    path: "/assets/forms/computers-refactor",
+    path: "/assets/forms/computers-form",
     element: (
       <Main>
-        <RefactorComputersFormTemplate />
+        <ComputersForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/software-refactor",
+    path: "/assets/forms/software-form",
     element: (
       <Main>
-        <RefactorSoftwareFormTemplate />
+        <SoftwareForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/monitors-refactor",
+    path: "/assets/forms/monitors-form",
     element: (
       <Main>
-        <RefactorMonitorFormTemplate />
+        <MonitorForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/network-devices-refactor",
+    path: "/assets/forms/network-devices-form",
     element: (
       <Main>
-        <RefactorNetDeviceFormTemplate />
+        <NetDeviceForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/devices-refactor",
+    path: "/assets/forms/devices-form",
     element: (
       <Main>
-        <RefactorDeviceFormTemplate />
+        <DeviceForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/printer-refactor",
+    path: "/assets/forms/printer-form",
     element: (
       <Main>
-        <RefactorPrinterFormTemplate />
+        <PrinterForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/cartridge-refactor",
+    path: "/assets/forms/cartridge-form",
     element: (
       <Main>
-        <RefactorCartridgeFormTemplate />
+        <CartridgeForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/consumable-refactor",
+    path: "/assets/forms/consumable-form",
     element: (
       <Main>
-        <RefactorConsumableFormTemplate />
+        <ConsumableForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/phone-refactor",
+    path: "/assets/forms/phone-form",
     element: (
       <Main>
-        <RefactorPhoneFormTemplate />
+        <PhoneForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/rack-refactor",
+    path: "/assets/forms/rack-form",
     element: (
       <Main>
-        <RefactorRackFormTemplate />
+        <RackForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/enclosures-refactor",
+    path: "/assets/forms/enclosures-form",
     element: (
       <Main>
-        <RefactorEnclosuresFormTemplate />
+        <EnclosuresForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/pdu-refactor",
+    path: "/assets/forms/pdu-form",
     element: (
       <Main>
-        <RefactorPduFormTemplate />
+        <PduForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/passivedevice-refactor",
+    path: "/assets/forms/passivedevice-form",
     element: (
       <Main>
-        <RefactorPassiveDeviceFormTemplate />
+        <PassiveDeviceForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/cable-refactor",
+    path: "/assets/forms/cable-form",
     element: (
       <Main>
-        <RefactorCableFormTemplate />
+        <CableForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/simcard-refactor",
+    path: "/assets/forms/simcard-form",
     element: (
       <Main>
-        <RefactorSimCardFormTemplate />
+        <SimCardForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/status-refactor",
+    path: "/assets/forms/status-form",
     element: (
       <Main>
-        <RefactorStatusFormTemplate />
+        <StatusForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/location-refactor",
+    path: "/assets/forms/location-form",
     element: (
       <Main>
-        <RefactorLocationFormTemplate />
+        <LocationForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/computertype-refactor",
+    path: "/assets/forms/computertype-form",
     element: (
       <Main>
-        <RefactorComputerTypeFormTemplate />
+        <ComputerTypeForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/manufacturer-refactor",
+    path: "/assets/forms/manufacturer-form",
     element: (
       <Main>
-        <RefactorManufacturerFormTemplate />
+        <ManufacturerForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/groupincharge-refactor",
+    path: "/assets/forms/groupincharge-form",
     element: (
       <Main>
-        <RefactorGroupInChargeFormTemplate />
+        <GroupInChargeForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/computermodel-refactor",
+    path: "/assets/forms/computermodel-form",
     element: (
       <Main>
-        <RefactorComputerModelFormTemplate />
+        <ComputerModelForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/network-refactor",
+    path: "/assets/forms/network-form",
     element: (
       <Main>
-        <RefactorNetworkFormTemplate />
+        <NetworkForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/group-refactor",
+    path: "/assets/forms/group-form",
     element: (
       <Main>
-        <RefactorGroupFormTemplate />
+        <GroupForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/updatesource-refactor",
+    path: "/assets/forms/updatesource-form",
     element: (
       <Main>
-        <RefactorUpdateSourceFormTemplate />
+        <UpdateSourceForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/monitortype-refactor",
+    path: "/assets/forms/monitortype-form",
     element: (
       <Main>
-        <RefactorMonitorTypeFormTemplate />
+        <MonitorTypeForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/monitormodel-refactor",
+    path: "/assets/forms/monitormodel-form",
     element: (
       <Main>
-        <RefactorMonitorModelFormTemplate />
+        <MonitorModelForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/softwarecategory-refactor",
+    path: "/assets/forms/softwarecategory-form",
     element: (
       <Main>
-        <RefactorSoftwareCategoryFormTemplate />
+        <SoftwareCategoryForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/networkdevicetype-refactor",
+    path: "/assets/forms/networkdevicetype-form",
     element: (
       <Main>
-        <RefactorNetworkDeviceTypeFormTemplate />
+        <NetworkDeviceTypeForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/networkdevicesmodel-refactor",
+    path: "/assets/forms/networkdevicesmodel-form",
     element: (
       <Main>
-        <RefactorNetworkDeviceModelFormTemplate />
+        <NetworkDeviceModelForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/devicetype-refactor",
+    path: "/assets/forms/devicetype-form",
     element: (
       <Main>
-        <RefactorDeviceTypeFormTemplate />
+        <DeviceTypeForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/devicemodel-refactor",
+    path: "/assets/forms/devicemodel-form",
     element: (
       <Main>
-        <RefactorDeviceModelFormTemplate />
+        <DeviceModelForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/printertype-refactor",
+    path: "/assets/forms/printertype-form",
     element: (
       <Main>
-        <RefactorPrinterTypeFormTemplate />
+        <PrinterTypeForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/printermodel-refactor",
+    path: "/assets/forms/printermodel-form",
     element: (
       <Main>
-        <RefactorPrinterModelFormTemplate />
+        <PrinterModelForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/cartridgetype-refactor",
+    path: "/assets/forms/cartridgetype-form",
     element: (
       <Main>
-        <RefactorCartridgeTypeFormTemplate />
+        <CartridgeTypeForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/consumabletype-refactor",
+    path: "/assets/forms/consumabletype-form",
     element: (
       <Main>
-        <RefactorConsumableTypeFormTemplate />
+        <ConsumableTypeForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/phonetype-refactor",
+    path: "/assets/forms/phonetype-form",
     element: (
       <Main>
-        <RefactorPhoneTypeFormTemplate />
+        <PhoneTypeForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/phonemodel-refactor",
+    path: "/assets/forms/phonemodel-form",
     element: (
       <Main>
-        <RefactorPhoneModelFormTemplate />
+        <PhoneModelForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/phonepower-refactor",
+    path: "/assets/forms/phonepower-form",
     element: (
       <Main>
-        <RefactorPhonePowerFormTemplate />
+        <PhonePowerForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/racktype-refactor",
+    path: "/assets/forms/racktype-form",
     element: (
       <Main>
-        <RefactorRackTypeFormTemplate />
+        <RackTypeForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/rackmodel-refactor",
+    path: "/assets/forms/rackmodel-form",
     element: (
       <Main>
-        <RefactorRackModelFormTemplate />
+        <RackModelForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/enclosuresmodel-refactor",
+    path: "/assets/forms/enclosuresmodel-form",
     element: (
       <Main>
-        <RefactorEnclosuresModelFormTemplate />
+        <EnclosuresModelForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/pdutype-refactor",
+    path: "/assets/forms/pdutype-form",
     element: (
       <Main>
-        <RefactorPduTypeFormTemplate />
+        <PduTypeForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/pdumodel-refactor",
+    path: "/assets/forms/pdumodel-form",
     element: (
       <Main>
-        <RefactorPduModelFormTemplate />
+        <PduModelForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/passivedevicetype-refactor",
+    path: "/assets/forms/passivedevicetype-form",
     element: (
       <Main>
-        <RefactorPassiveDeviceTypeFormTemplate />
+        <PassiveDeviceTypeForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/passivedevicemodel-refactor",
+    path: "/assets/forms/passivedevicemodel-form",
     element: (
       <Main>
-        <RefactorPassiveDeviceModelFormTemplate />
+        <PassiveDeviceModelForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/cabletype-refactor",
+    path: "/assets/forms/cabletype-form",
     element: (
       <Main>
-        <RefactorCableTypeFormTemplate />
+        <CableTypeForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/cablestrand-refactor",
+    path: "/assets/forms/cablestrand-form",
     element: (
       <Main>
-        <RefactorCableStrandFormTemplate />
+        <CableStrandForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/socketmodel-refactor",
+    path: "/assets/forms/socketmodel-form",
     element: (
       <Main>
-        <RefactorSocketModelFormTemplate />
+        <SocketModelForm />
       </Main>
     ),
   },
   {
-    path: "/assets/forms/simcardcomponent-refactor",
+    path: "/assets/forms/simcardcomponent-form",
     element: (
       <Main>
-        <RefactorSimCardComponentFormTemplate />
+        <SimCardComponentForm />
       </Main>
     ),
   },
@@ -639,7 +638,7 @@ const router = createBrowserRouter([
 //               element={
 //                 <ProtectedRoute>
 //                   {" "}
-//                   <Main content={<ComputerFormTemplate />} />{" "}
+//                   <Main content={<ComputerForm />} />{" "}
 //                 </ProtectedRoute>
 //               }
 //             />

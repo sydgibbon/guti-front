@@ -4,7 +4,7 @@ import TextInput from "../TextInput";
 import Form from "./Form";
 
 
-export default function RefactorPhoneModelFormTemplate() {
+export default function  PhoneModelForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {

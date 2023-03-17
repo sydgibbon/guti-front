@@ -13,7 +13,7 @@ const textOption: OptionValue[] = [
     value: "2"
   }]
 
-export default function RefactorStatusFormTemplate() {
+export default function  StatusForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {
