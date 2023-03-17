@@ -126,6 +126,14 @@ const router = createBrowserRouter([
     ),
   },
   {
+    path: "assets/network-devices",
+    element: (
+      <Main>
+        <NetworkDevices />
+      </Main>
+    ),
+  },
+  {
     path: "assets/devices",
     element: (
       <Main>
@@ -232,7 +240,7 @@ const router = createBrowserRouter([
 
 
   {
-    path: "/assets/forms/computers-form",
+    path: "/assets/forms/computers",
     element: (
       <Main>
         <ComputersForm />
@@ -240,7 +248,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/software-form",
+    path: "/assets/forms/software",
     element: (
       <Main>
         <SoftwareForm />
@@ -248,7 +256,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/monitors-form",
+    path: "/assets/forms/monitors",
     element: (
       <Main>
         <MonitorForm />
@@ -256,7 +264,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/network-devices-form",
+    path: "/assets/forms/network-devices",
     element: (
       <Main>
         <NetDeviceForm />
@@ -264,7 +272,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/devices-form",
+    path: "/assets/forms/devices",
     element: (
       <Main>
         <DeviceForm />
@@ -272,7 +280,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/printer-form",
+    path: "/assets/forms/printers",
     element: (
       <Main>
         <PrinterForm />
@@ -280,7 +288,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/cartridge-form",
+    path: "/assets/forms/cartridges",
     element: (
       <Main>
         <CartridgeForm />
@@ -288,7 +296,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/consumable-form",
+    path: "/assets/forms/consumables",
     element: (
       <Main>
         <ConsumableForm />
@@ -296,7 +304,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/phone-form",
+    path: "/assets/forms/phones",
     element: (
       <Main>
         <PhoneForm />
@@ -304,7 +312,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/rack-form",
+    path: "/assets/forms/racks",
     element: (
       <Main>
         <RackForm />
@@ -312,7 +320,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/enclosures-form",
+    path: "/assets/forms/enclosures",
     element: (
       <Main>
         <EnclosuresForm />
@@ -320,7 +328,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/pdu-form",
+    path: "/assets/forms/pdus",
     element: (
       <Main>
         <PduForm />
@@ -328,7 +336,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/passivedevice-form",
+    path: "/assets/forms/passive-devices",
     element: (
       <Main>
         <PassiveDeviceForm />
@@ -336,7 +344,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/cable-form",
+    path: "/assets/forms/cables",
     element: (
       <Main>
         <CableForm />
@@ -344,7 +352,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/simcard-form",
+    path: "/assets/forms/simcards",
     element: (
       <Main>
         <SimCardForm />
@@ -352,7 +360,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/status-form",
+    path: "/assets/forms/status",
     element: (
       <Main>
         <StatusForm />
@@ -360,7 +368,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/location-form",
+    path: "/assets/forms/locations",
     element: (
       <Main>
         <LocationForm />
@@ -368,7 +376,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/computertype-form",
+    path: "/assets/forms/computertypes",
     element: (
       <Main>
         <ComputerTypeForm />
@@ -376,7 +384,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/manufacturer-form",
+    path: "/assets/forms/manufacturers",
     element: (
       <Main>
         <ManufacturerForm />
@@ -384,7 +392,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/groupincharge-form",
+    path: "/assets/forms/groupincharge",
     element: (
       <Main>
         <GroupInChargeForm />
@@ -392,7 +400,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/computermodel-form",
+    path: "/assets/forms/computermodels",
     element: (
       <Main>
         <ComputerModelForm />
@@ -400,7 +408,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/network-form",
+    path: "/assets/forms/networks",
     element: (
       <Main>
         <NetworkForm />
@@ -408,7 +416,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/group-form",
+    path: "/assets/forms/groups",
     element: (
       <Main>
         <GroupForm />
@@ -416,7 +424,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/updatesource-form",
+    path: "/assets/forms/updatesources",
     element: (
       <Main>
         <UpdateSourceForm />
@@ -424,7 +432,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/monitortype-form",
+    path: "/assets/forms/monitortypes",
     element: (
       <Main>
         <MonitorTypeForm />
@@ -432,7 +440,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/monitormodel-form",
+    path: "/assets/forms/monitormodels",
     element: (
       <Main>
         <MonitorModelForm />
@@ -440,7 +448,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/softwarecategory-form",
+    path: "/assets/forms/softwarecategories",
     element: (
       <Main>
         <SoftwareCategoryForm />
@@ -448,7 +456,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/networkdevicetype-form",
+    path: "/assets/forms/networkdevicetypes",
     element: (
       <Main>
         <NetworkDeviceTypeForm />
@@ -456,7 +464,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/networkdevicesmodel-form",
+    path: "/assets/forms/networkdevicesmodels",
     element: (
       <Main>
         <NetworkDeviceModelForm />
@@ -464,7 +472,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/devicetype-form",
+    path: "/assets/forms/devicetypes",
     element: (
       <Main>
         <DeviceTypeForm />
@@ -472,7 +480,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/devicemodel-form",
+    path: "/assets/forms/devicemodels",
     element: (
       <Main>
         <DeviceModelForm />
@@ -480,7 +488,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/printertype-form",
+    path: "/assets/forms/printertypes",
     element: (
       <Main>
         <PrinterTypeForm />
@@ -488,7 +496,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/printermodel-form",
+    path: "/assets/forms/printermodels",
     element: (
       <Main>
         <PrinterModelForm />
@@ -496,7 +504,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/cartridgetype-form",
+    path: "/assets/forms/cartridgetypes",
     element: (
       <Main>
         <CartridgeTypeForm />
@@ -504,7 +512,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/consumabletype-form",
+    path: "/assets/forms/consumabletypes",
     element: (
       <Main>
         <ConsumableTypeForm />
@@ -512,7 +520,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/phonetype-form",
+    path: "/assets/forms/phonetypes",
     element: (
       <Main>
         <PhoneTypeForm />
@@ -520,7 +528,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/phonemodel-form",
+    path: "/assets/forms/phonemodels",
     element: (
       <Main>
         <PhoneModelForm />
@@ -528,7 +536,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/phonepower-form",
+    path: "/assets/forms/phonepower",
     element: (
       <Main>
         <PhonePowerForm />
@@ -536,7 +544,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/racktype-form",
+    path: "/assets/forms/racktypes",
     element: (
       <Main>
         <RackTypeForm />
@@ -544,7 +552,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/rackmodel-form",
+    path: "/assets/forms/rackmodels",
     element: (
       <Main>
         <RackModelForm />
@@ -552,7 +560,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/enclosuresmodel-form",
+    path: "/assets/forms/enclosuresmodels",
     element: (
       <Main>
         <EnclosuresModelForm />
@@ -560,7 +568,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/pdutype-form",
+    path: "/assets/forms/pdutypes",
     element: (
       <Main>
         <PduTypeForm />
@@ -568,7 +576,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/pdumodel-form",
+    path: "/assets/forms/pdumodels",
     element: (
       <Main>
         <PduModelForm />
@@ -576,7 +584,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/passivedevicetype-form",
+    path: "/assets/forms/passivedevicetypes",
     element: (
       <Main>
         <PassiveDeviceTypeForm />
@@ -584,7 +592,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/passivedevicemodel-form",
+    path: "/assets/forms/passivedevicemodels",
     element: (
       <Main>
         <PassiveDeviceModelForm />
@@ -592,7 +600,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/cabletype-form",
+    path: "/assets/forms/cabletypes",
     element: (
       <Main>
         <CableTypeForm />
@@ -600,7 +608,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/cablestrand-form",
+    path: "/assets/forms/cablestrands",
     element: (
       <Main>
         <CableStrandForm />
@@ -608,7 +616,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/socketmodel-form",
+    path: "/assets/forms/socketmodels",
     element: (
       <Main>
         <SocketModelForm />
@@ -616,7 +624,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: "/assets/forms/simcardcomponent-form",
+    path: "/assets/forms/simcardcomponents",
     element: (
       <Main>
         <SimCardComponentForm />
