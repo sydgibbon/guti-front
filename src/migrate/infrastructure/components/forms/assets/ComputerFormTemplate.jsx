@@ -1,7 +1,7 @@
 import React from 'react';
 import FormsTemplate from '../FormsTemplate';
 
-const ComputerFormTemplate = () => {
+const ComputerForm = () => {
   
   const inputPropierties = [
     {
@@ -128,4 +128,4 @@ const ComputerFormTemplate = () => {
   )
 }
 
-export default ComputerFormTemplate
+export default ComputerForm

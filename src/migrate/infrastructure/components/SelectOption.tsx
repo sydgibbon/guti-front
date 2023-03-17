@@ -1,7 +1,11 @@
 interface SelectOptionProps {
   id: string;
   label?: string;
-  options?: string[];
+  options?: OptionValue[];
+}
+export interface OptionValue {
+  text: string;
+  value: string;
 }
 
 export default function SelectOption(selectOptionProps: SelectOptionProps) {
@@ -23,12 +27,13 @@ export default function SelectOption(selectOptionProps: SelectOptionProps) {
           Unassigned
         </option>
         {options &&
-          options.map((option: string, index: number) => (
-            <option key={index} value={option.trim().toLocaleLowerCase()}>
-              {option}
+          options.map((option: OptionValue, index: number) => (
+            <option key={index} value={option.value}>
+              {option.text}
             </option>
           ))}
       </select>
     </div>
   );
 }
+

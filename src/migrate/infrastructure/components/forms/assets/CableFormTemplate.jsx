@@ -2,7 +2,7 @@ import React from 'react'
 import { Form } from 'react-router-dom';
 import FormsTemplate from '../FormsTemplate';
 
-const CableFormTemplate = () => {
+const CableForm = () => {
 
   const formPropierties = [
     {
@@ -109,4 +109,4 @@ const CableFormTemplate = () => {
   );
 };
 
-export default CableFormTemplate;
+export default CableForm;

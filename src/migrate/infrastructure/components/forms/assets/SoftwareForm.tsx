@@ -101,7 +101,7 @@ const SoftwareForm = () => {
 
 
 	return (
-		FormsTemplate (formPropierties, FormHeader)
+		FormsTemplate ({inputPropierties: formPropierties,FormHeader})
 	)
 };
 
