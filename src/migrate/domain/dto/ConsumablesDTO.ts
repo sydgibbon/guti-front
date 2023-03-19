@@ -1,3 +1,10 @@
+import { Consumableitemtypes } from "../models/ConsumableItemTypes";
+import { Entities } from "../models/Entities";
+import { GrounpsTech } from "../models/GroupsTech";
+import { Manufacturers } from "../models/Manufacturers";
+import { UsersTech } from "../models/UsersTech";
+
+
 export interface ConsumablesDTO {
   id: number;
   name: string;
@@ -6,12 +13,12 @@ export interface ConsumablesDTO {
   comment: string;
   otherserial: string;
   pictures: string;
-  entities: number;
+  entities: Entities;
   locations: number;
-  consumableitemtypes: number;
-  manufacturers: number;
-  users_tech: number;
-  groups_tech: number;
+  consumableitemtypes: Consumableitemtypes;
+  manufacturers: Manufacturers;
+  users_tech: UsersTech;
+  groups_tech: GrounpsTech;
   stock_target: number;
   is_recursive: boolean;
   alarm_threshold: number;
