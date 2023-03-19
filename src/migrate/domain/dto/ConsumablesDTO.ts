@@ -1,6 +1,7 @@
 import { Consumableitemtypes } from "../models/ConsumableItemTypes";
 import { Entities } from "../models/Entities";
 import { GrounpsTech } from "../models/GroupsTech";
+import { Locations } from "../models/Locations";
 import { Manufacturers } from "../models/Manufacturers";
 import { UsersTech } from "../models/UsersTech";
 
@@ -14,7 +15,7 @@ export interface ConsumablesDTO {
   otherserial: string;
   pictures: string;
   entities: Entities;
-  locations: number;
+  locations: Locations;
   consumableitemtypes: Consumableitemtypes;
   manufacturers: Manufacturers;
   users_tech: UsersTech;
