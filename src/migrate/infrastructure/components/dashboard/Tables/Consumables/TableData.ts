@@ -28,7 +28,7 @@ export const columns: TableColumn<DataRow>[] = [
     selector: (row) => row.locations?.name,
   },
   {
-    name: "onsumables",
+    name: "Consumables",
     sortable: true,
     selector: (row) => row.id,
   },
