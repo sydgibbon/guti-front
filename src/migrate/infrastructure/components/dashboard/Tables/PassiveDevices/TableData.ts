@@ -8,38 +8,33 @@ export const columns: TableColumn<DataRow>[] = [
     selector: (row) => row.name,
   },
   {
-    name: "status",
+    name: "serial",
     sortable: true,
-    selector: (row) => row.states.name,
+    selector: (row) => row.serial,
   },
   {
-    name: "manufacturers",
+    name: "state",
     sortable: true,
-    selector: (row) => row.manufacturers.name,
+    selector: (row) => row.states,
   },
   {
     name: "locations",
     sortable: true,
-    selector: (row) => row.locations.name,
+    selector: (row) => row.locations,
   },
   {
-    name: "types",
+    name: "networkequipmenttypes",
     sortable: true,
-    selector: (row) => row.monitortypes.name,
+    selector: (row) => row.networkequipmenttypes,
   },
   {
-    name: "model",
+    name: "manufacturers",
     sortable: true,
-    selector: (row) => row.monitortypes.name,
+    selector: (row) => row.manufacturers,
   },
   {
-    name: "lastUpdate",
+    name: "date_mod",
     sortable: true,
     selector: (row) => row.date_mod,
-  },
-  {
-    name: "alternateUsername",
-    sortable: true,
-    selector: (row) => row.contact,
   },
 ];
