@@ -1,5 +1,3 @@
-import { CartridgesDTO } from "../../../../../domain/dto/CartridgesDTO";
-
 export interface DataRow {
   name: string;
   reference: string;
