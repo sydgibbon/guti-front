@@ -2,34 +2,33 @@ import { TableColumn } from "react-data-table-component";
 import { DataRow } from "./types";
 
 export const columns: TableColumn<DataRow>[] = [
-  
   {
-    name: "reference",
-    sortable: true,
-    selector: (row) => row.ref,
-  },
-  {
-    name: "name",
+    name: "Name",
     sortable: true,
     selector: (row) => row.name,
   },
   {
-    name: "type",
+    name: "Reference",
+    sortable: true,
+    selector: (row) => row.ref,
+  },
+  {
+    name: "Type",
     sortable: true,
     selector: (row) => row.consumableitemtypes?.name,
   },
   {
-    name: "manufacturers",
+    name: "Manufacturers",
     sortable: true,
     selector: (row) => row.manufacturers?.name,
   },
   {
-    name: "locations",
+    name: "Locations",
     sortable: true,
     selector: (row) => row.locations?.name,
   },
   {
-    name: "consumables",
+    name: "onsumables",
     sortable: true,
     selector: (row) => row.id,
   },
