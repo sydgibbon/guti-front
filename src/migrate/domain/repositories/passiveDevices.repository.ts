@@ -4,7 +4,7 @@ import http from "../http/http";
 export const passiveDevicesRepository = {
 
   getAllPassiveDevices: async () => {
-    const response = await http.get<PassiveDevicesDTO>("passivedevicesitems/");    
+    const response = await http.get<PassiveDevicesDTO>("passivedcequipments/");    
 
     return response.data;
   },
