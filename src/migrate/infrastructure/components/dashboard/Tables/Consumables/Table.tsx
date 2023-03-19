@@ -12,26 +12,26 @@ import useShowError from "../../../../hooks/useShowError";
 import { MessageError } from "../../../../utilis/MessagesErrors";
 import TableComponent from "../../../Table/Table";
 import { columns } from "./TableData";
-import { useGetAllConsumableItems } from "../../../../hooks/Consumables/GetAllConsumableItems";
+import { useGetAllConsumables } from "../../../../hooks/Consumables/GetAllConsumable";
 
 export default function TableSimcards() {
   const [checked, setChecked] = useState(false);
 
-  const consumableItems = useGetAllConsumableItems();
+  const consumables = useGetAllConsumables();
 
   const showError = useShowError();
 
   useEffect(() => {
-    consumableItems.get();
+    consumables.get();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    if (consumableItems.error) {
+    if (consumables.error) {
       showError.get(MessageError.FETCH_FAILED);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [consumableItems.error]);
+  }, [consumables.error]);
 
   return (
     <div className="mx-4 my-4 border rounded search-card border-secondary-dark">
@@ -112,9 +112,9 @@ export default function TableSimcards() {
         </div>
       </div>
       <TableComponent
-        progressPending={consumableItems.isLoading}
+        progressPending={consumables.isLoading}
         columns={columns}
-        rows={consumableItems.data}
+        rows={consumables.data}
       />
     </div>
   );

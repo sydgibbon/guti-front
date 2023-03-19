@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
-import { consumableItemsService } from "../../../domain/services/ConsumableItems.service";
+import { consumablesService } from "../../../domain/services/Consumables.service";
 
-export const useGetAllConsumableItems = () => {
+export const useGetAllConsumables = () => {
   const [data, setData] = useState<any>(undefined);
   const [error, setError] = useState<undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
@@ -9,10 +9,10 @@ export const useGetAllConsumableItems = () => {
   const get = useCallback(async () => {
     setIsLoading(true);
     try {
-      const newConsumableItems =
-        await consumableItemsService.getAllConsumableItems();
+      const newConsumables =
+        await consumablesService.getAllConsumables();
 
-      setData(newConsumableItems);
+      setData(newConsumables);
     } catch (e: any) {
       setError(e);
       console.error(e);
