@@ -1,4 +1,4 @@
-export interface GrounpsTech {
+export interface Grounps {
   id:              number;
   name:            string;
   entities_id:     number;

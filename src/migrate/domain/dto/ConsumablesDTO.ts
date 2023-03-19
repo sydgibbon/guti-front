@@ -1,6 +1,6 @@
 import { Consumableitemtypes } from "../models/ConsumableItemTypes";
 import { Entities } from "../models/Entities";
-import { GrounpsTech } from "../models/GroupsTech";
+import { Grounps } from "../models/Groups";
 import { Locations } from "../models/Locations";
 import { Manufacturers } from "../models/Manufacturers";
 import { UsersTech } from "../models/UsersTech";
@@ -19,7 +19,7 @@ export interface ConsumablesDTO {
   consumableitemtypes: Consumableitemtypes;
   manufacturers: Manufacturers;
   users_tech: UsersTech;
-  groups_tech: GrounpsTech;
+  groups_tech: Grounps;
   stock_target: number;
   is_recursive: boolean;
   alarm_threshold: number;
