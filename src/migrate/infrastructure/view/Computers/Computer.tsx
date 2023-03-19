@@ -16,12 +16,14 @@ export default function Computers() {
 
   useEffect(() => {
     dispatch(setModalIsOpen(true));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const secondaryButtonHandle = () => {
     alert("Aceptaste")
   }
 
+export default function Computers () {
   return (
     <div className="computers">
       <SearchForm />
@@ -40,4 +42,5 @@ export default function Computers() {
       />
     </div>
   );
-}
+};
+

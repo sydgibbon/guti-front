@@ -9,9 +9,9 @@ export const useGetAllSimcards = () => {
   const get = useCallback(async () => {
     setIsLoading(true);
     try {
-      const newSimcards = await simcardsService.getAllSimcards();
+      const simcards = await simcardsService.getAllSimcards();
 
-      setData(newSimcards);
+      setData(simcards);
     } catch (e: any) {
       setError(e);
       console.error(e);

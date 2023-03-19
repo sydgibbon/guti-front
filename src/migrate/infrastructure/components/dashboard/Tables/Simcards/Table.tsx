@@ -11,7 +11,7 @@ import Switch from "react-switch";
 import useShowError from "../../../../hooks/useShowError";
 import { MessageError } from "../../../../utilis/MessagesErrors";
 import TableComponent from "../../../Table/Table";
-import { columns } from "./TableData";
+import { columns } from "./TableData"; 
 import { useGetAllSimcards } from "../../../../hooks/Simcards/useGetAllSimcards";
 
 export default function TableSimcards() {
@@ -23,14 +23,14 @@ export default function TableSimcards() {
 
   useEffect(() => {
     simcards.get();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (simcards.error) {
       showError.get(MessageError.FETCH_FAILED);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [simcards.error]);
 
   return (
