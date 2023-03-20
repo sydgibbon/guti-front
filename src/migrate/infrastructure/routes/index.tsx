@@ -14,7 +14,7 @@ import Cartridges from "../view/Cartridges/Cartridges";
 import PhonesView from "../view/Phones/PhonesView";
 import RackView from "../view/Rack/Rack";
 import ConsumablesView from "../view/Consumables/ConsumablesView";
-import Enclosures from "../view/Enclosures/EnclosuresView";
+import Enclosures from "../view/Enclosures/Enclosures";
 import PDUsView from "../view/PDUs/PDUsView";
 import PassiveDevices from "../view/PassiveDevices/PassiveDevicesView";
 import CablesView from "../view/Cables/CablesView";
