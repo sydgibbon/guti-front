@@ -1,0 +1,20 @@
+export interface PdusDTO {
+  name: string,
+  serial: string,
+  otherserial: string,
+  template_name: string,
+  comment: string,
+  entities: Object,
+  locations: Object,
+  pdumodels: Object,
+  user_tech: Object,
+  groups_tech: Object,
+  states: Object,
+  manufacturers: Object,
+  pdutypes: Object,
+  is_recursive: boolean,
+  is_template: boolean,
+  is_deleted: boolean,
+  date_mod: string,
+  date_creation: string
+}
