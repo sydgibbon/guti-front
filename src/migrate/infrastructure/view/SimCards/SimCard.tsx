@@ -1,13 +1,11 @@
 import SearchForm from "../../components/dashboard/SearchForm";
 import TableSimcards from "../../components/dashboard/Tables/Simcards/Table";
 
-const Monitors = () => {
+export default function Simcards() {
   return (
     <div className="monitors">
       <SearchForm />
       <TableSimcards />
     </div>
   );
-};
-
-export default Monitors;
+}

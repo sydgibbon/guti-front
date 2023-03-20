@@ -20,8 +20,8 @@ export default function Computers() {
   }, []);
 
   const secondaryButtonHandle = () => {
-    alert("Aceptaste")
-  }
+    alert("Aceptaste");
+  };
 
   return (
     <div className="computers">
@@ -41,5 +41,4 @@ export default function Computers() {
       />
     </div>
   );
-};
-
+}
