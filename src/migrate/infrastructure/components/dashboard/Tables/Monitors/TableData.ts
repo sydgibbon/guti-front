@@ -13,9 +13,9 @@ export const columns: TableColumn<DataRow>[] = [
     selector: (row) => row.states.name,
   },
   {
-    name: "manufacterers",
+    name: "manufacturers",
     sortable: true,
-    selector: (row) => row.manufacterers.name,
+    selector: (row) => row.manufacturers.name,
   },
   {
     name: "locations",

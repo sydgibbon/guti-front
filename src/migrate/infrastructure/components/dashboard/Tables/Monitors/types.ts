@@ -1,7 +1,7 @@
 export interface DataRow {
   name: string;
   states: { name: string };
-  manufacterers: { name: string };
+  manufacturers: { name: string };
   locations: { name: string };
   monitortypes: { name: string };
   model: { name: string };
