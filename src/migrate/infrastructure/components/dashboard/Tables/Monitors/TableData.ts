@@ -10,7 +10,7 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "status",
     sortable: true,
-    selector: (row) => row.states.name,
+    selector: (row) => row.states?.name,
   },
   {
     name: "manufacturers",
@@ -20,17 +20,17 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "locations",
     sortable: true,
-    selector: (row) => row.locations.name,
+    selector: (row) => row.locations?.name,
   },
   {
     name: "types",
     sortable: true,
-    selector: (row) => row.monitortypes.name,
+    selector: (row) => row.monitortypes?.name,
   },
   {
     name: "model",
     sortable: true,
-    selector: (row) => row.monitortypes.name,
+    selector: (row) => row.monitortypes?.name,
   },
   {
     name: "lastUpdate",
