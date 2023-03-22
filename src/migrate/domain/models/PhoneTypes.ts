@@ -1,4 +1,4 @@
-export interface Manufacturers {
+export interface PhoneTypes {
   id: number;
   name: string;
   comment: string;

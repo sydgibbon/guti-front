@@ -1,4 +1,4 @@
-import { simcardsRepository } from "../repositories/Simcards.repository";
+import { simcardsRepository } from "../repositories/simcards.repository";
 
 export const simcardsService = {
   getAllSimcards: () => {

@@ -1,5 +1,4 @@
-
-export interface UsersTech {
+export interface Users {
   id: number;
   name: string;
 }
