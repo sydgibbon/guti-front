@@ -17,21 +17,21 @@ import { useGetAllSoftwares } from "../../../../hooks/Softwares/useGetAllSoftwar
 export default function TableSimcards() {
   const [checked, setChecked] = useState(false);
 
-  const software = useGetAllSoftwares();
+  const softwares = useGetAllSoftwares();
 
   const showError = useShowError();
 
   useEffect(() => {
-    software.get();
+    softwares.get();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    if (software.error) {
+    if (softwares.error) {
       showError.get(MessageError.FETCH_FAILED);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [software.error]);
+  }, [softwares.error]);
 
   return (
     <div className="mx-4 my-4 border rounded search-card border-secondary-dark">
@@ -112,9 +112,9 @@ export default function TableSimcards() {
         </div>
       </div>
       <TableComponent
-        progressPending={software.isLoading}
+        progressPending={softwares.isLoading}
         columns={columns}
-        rows={software.data}
+        rows={softwares.data}
       />
     </div>
   );
