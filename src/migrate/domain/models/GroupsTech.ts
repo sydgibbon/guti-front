@@ -1,5 +1,5 @@
-export interface Groups {
-  id:              number;
+export interface GroupsTech {
+  id?:              number;
   name?:            string;
   entities_id?:     number;
   is_recursive?:    number;
