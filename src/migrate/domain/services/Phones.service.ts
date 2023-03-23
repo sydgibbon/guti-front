@@ -1,7 +1,8 @@
+import { PhoneAdapter } from "../adapter/PhoneAdapter";
 import { phonesRepository } from "../repositories/phones.repository";
 
 export const phonesService = {
-  getAllphones: () => {
-    return phonesRepository.getAllPhones();
+  getAllphones: async (): Promise<PhoneAdapter[]> => {
+    return await phonesRepository.getAllPhones();
   },
 };

@@ -1,4 +1,4 @@
-export interface Manufacturers {
+export interface PhonePowerSupplies {
   id: number;
   name: string;
   comment: string;

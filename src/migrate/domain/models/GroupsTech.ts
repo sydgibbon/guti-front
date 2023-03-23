@@ -1,4 +1,4 @@
-export interface Groups {
+export interface GroupsTech {
   id: number;
   name: string;
   entities_id: number;
