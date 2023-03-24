@@ -45,3 +45,4 @@ export const columns: TableColumn<PhoneAdapter>[] = [
     selector: (row) => row.last_inventory_update,
   },
 ];
+
