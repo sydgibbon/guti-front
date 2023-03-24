@@ -30,7 +30,7 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "MODEL",
     sortable: true,
-    selector: (row) => row.printermodels,
+    selector: (row) => row.printermodels.name
   },
   {
     name: "LAST UPDATE",

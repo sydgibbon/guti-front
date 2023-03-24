@@ -5,6 +5,7 @@ import { GroupsTech } from "../models/GroupsTech";
 import { Locations } from "../models/Locations";
 import { Manufacturers } from "../models/Manufacturers";
 import { Networks } from "../models/Networks";
+import { PrinterModels } from "../models/PrinterModels";
 import { PrintersTypes } from "../models/PrintersTypes";
 import { Snmpcredentials } from "../models/Snmpcredentials";
 import { States } from "../models/States";
@@ -27,7 +28,7 @@ export interface PrinterDTO {
     locations: Locations,
     networks: Networks,
     printertypes: PrintersTypes,
-    printermodels:number,
+    printermodels: PrinterModels,
     manufacturers: Manufacturers,
     users: Users,
     groups: Groups,

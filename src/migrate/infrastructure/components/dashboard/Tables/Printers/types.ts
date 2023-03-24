@@ -1,5 +1,6 @@
 import { Locations } from "../../../../../domain/models/Locations";
 import { Manufacturers } from "../../../../../domain/models/Manufacturers";
+import { PrinterModels } from "../../../../../domain/models/PrinterModels";
 import { PrintersTypes } from "../../../../../domain/models/PrintersTypes";
 import { States } from "../../../../../domain/models/States";
 
@@ -11,5 +12,5 @@ export interface DataRow {
   states: States;
   name: string;
   date_mod: string;
-  printermodels: number;
+  printermodels: PrinterModels;
 }
