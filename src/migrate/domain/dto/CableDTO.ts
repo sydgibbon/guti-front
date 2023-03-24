@@ -6,12 +6,12 @@ import { UsersTech } from "../models/UsersTech";
 
 export interface CableDTO {
   id: number;
+  name: string;
   entities: Entities;
   users_tech: UsersTech;
   cablestrands: Cablestrands;
   cabletypes: Cabletypes;
   states: States;
-  name: string;
   is_recursive: number;
   itemtype_endpoint_a: string;
   itemtype_endpoint_b: string;
