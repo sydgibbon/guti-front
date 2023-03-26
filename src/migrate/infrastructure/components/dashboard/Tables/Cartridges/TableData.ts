@@ -15,7 +15,7 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "type",
     sortable: true,
-    selector: (row) => row.type,
+    selector: (row) => row.cartridgeitemtypes.name,
   },
   {
     name: "manufacturers",
