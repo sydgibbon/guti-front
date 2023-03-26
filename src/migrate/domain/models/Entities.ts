@@ -1,5 +1,5 @@
 export interface Entities {
-  id?: number
+  id: number
   name?: string
   completename?: string
   comment?: string
