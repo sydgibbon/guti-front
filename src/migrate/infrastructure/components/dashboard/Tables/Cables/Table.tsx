@@ -10,14 +10,14 @@ import { BsChevronCompactDown, BsArrow90DegDown } from "react-icons/bs";
 import Switch from "react-switch";
 import TableComponent from "../../../Table/Table";
 import { columns } from "./TableData";
-import { useGetAllCartridges } from "../../../../hooks/Cartridges/useGetAllCartridges";
+import { useGetAllCables } from "../../../../hooks/Cables/useGetAllCables";
 
-export default function TableCartridges() {
+export default function TableCables() {
   const [checked, setChecked] = useState(false);
-  const cartridges = useGetAllCartridges();
+  const cables = useGetAllCables();
 
   useEffect(() => {
-    cartridges.get();
+    cables.get();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -100,9 +100,9 @@ export default function TableCartridges() {
         </div>
       </div>
       <TableComponent
-        progressPending={cartridges.isLoading}
+        progressPending={cables.isLoading}
         columns={columns}
-        rows={cartridges.data}
+        rows={cables.data}
       />
     </div>
   );
