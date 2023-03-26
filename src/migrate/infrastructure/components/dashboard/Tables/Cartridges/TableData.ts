@@ -10,26 +10,26 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "reference",
     sortable: true,
-    selector: (row) => row.reference
-  },
-  {
-    name: "manufacturers",
-    sortable: true,
-    selector: (row) => row.manufacturers
+    selector: (row) => row.ref
   },
   {
     name: "type",
     sortable: true,
-    selector: (row) => row.type,
+    selector: (row) => row.cartridgeitemtypes.name,
   },
   {
-    name: "cartridges",
+    name: "manufacturers",
     sortable: true,
-    selector: (row) => row.cartridges // codigo de momento hasta que se puedan relacionar sistemas operativos con computers
+    selector: (row) => row.manufacturers.name
   },
   {
     name: "locations",
     sortable: true,
-    selector: (row) => row.locations
+    selector: (row) => row.locations.name
   },
+  {
+    name: "cartridges",
+    sortable: true,
+    selector: (row) => row.cartridges
+  }
 ];
