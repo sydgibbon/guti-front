@@ -15,17 +15,17 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "type",
     sortable: true,
-    selector: (row) => row.cartridgeitemtypes.name,
+    selector: (row) => row.cartridgeitemtypes?.name,
   },
   {
     name: "manufacturers",
     sortable: true,
-    selector: (row) => row.manufacturers.name
+    selector: (row) => row.manufacturers?.name
   },
   {
     name: "locations",
     sortable: true,
-    selector: (row) => row.locations.name
+    selector: (row) => row.locations?.name
   },
   {
     name: "cartridges",

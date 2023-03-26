@@ -1,4 +1,4 @@
 export interface DataRow {
   name: string,
-  manufacturers: number
+  manufacturers: { name: string };
 }
