@@ -3,37 +3,42 @@ import { DataRow } from "./types";
 
 export const columns: TableColumn<DataRow>[] = [
   {
-    name: "name",
+    name: "NAME",
     sortable: true,
     selector: (row) => row.name,
   },
   {
-    name: "serial",
+    name: "STATUS",
     sortable: true,
-    selector: (row) => row.serial,
+    selector: (row) => row.states?.name,
   },
   {
-    name: "state",
+    name: "MANUFACTURERS",
     sortable: true,
-    selector: (row) => row.states,
+    selector: (row) => row.manufacturers?.name,
   },
   {
-    name: "locations",
+    name: "LOCATIONS",
     sortable: true,
-    selector: (row) => row.locations,
+    selector: (row) => row.locations?.name,
   },
   {
-    name: "networkequipmenttypes",
+    name: "TYPE",
     sortable: true,
-    selector: (row) => row.networkequipmenttypes,
+    selector: (row) => row.networkequipmenttypes?.name,
   },
   {
-    name: "manufacturers",
+    name: "MODEL",
     sortable: true,
-    selector: (row) => row.manufacturers,
+    selector: (row) => row.networkequipmentmodels?.name,
   },
   {
-    name: "date_mod",
+    name: "FIRMWARE",
+    sortable: true,
+    selector: (row) => row.date_mod, // Corresponde a una tabla que no esta vinculada a networkequipments de ninguna manera
+  },
+  {
+    name: "LAST UPDATE",
     sortable: true,
     selector: (row) => row.date_mod,
   },

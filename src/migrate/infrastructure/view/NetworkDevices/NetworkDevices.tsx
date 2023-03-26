@@ -1,11 +1,11 @@
 import SearchForm from "../../components/dashboard/SearchForm";
-import TableSimcards from "../../components/dashboard/Tables/Simcards/Table";
+import TableNetworkDevices from "../../components/dashboard/Tables/NetworkDevices/Table";
 
 export default function NetworkDevices() {
   return (
-    <div className="monitors">
+    <div className="networkdevices">
       <SearchForm />
-      <TableSimcards />
+      <TableNetworkDevices />
     </div>
   );
 }

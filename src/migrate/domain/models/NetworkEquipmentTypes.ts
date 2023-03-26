@@ -1,4 +1,4 @@
-export interface Networks {
+export interface NetworkEquipmentTypes {
   id:            number;
   name?:          string;
   comment?:       string;
