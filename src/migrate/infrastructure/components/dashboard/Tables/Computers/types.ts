@@ -4,6 +4,7 @@ export interface DataRow {
   manufacturers: { name: string };
   serial: string;
   computertypes: { name: string };
-  locations: string;
+  computermodels: { name: string };
+  locations: { name: string} ;
   date_mod: string;
 }
