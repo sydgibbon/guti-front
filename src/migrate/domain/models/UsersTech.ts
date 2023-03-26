@@ -1,5 +1,5 @@
 
 export interface UsersTech {
   id: number
-  name: string
+  name?: string
 }
