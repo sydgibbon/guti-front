@@ -1,10 +1,10 @@
 export interface DataRow {
-name: string;
-status: string;
-manufacturers: { name: string };
-locations: { name: string };
-devicestype: { name: string };
-devicesmodel: { name: string};
-date_mod: string;
-alternateusername: string
+  name: string;
+  states: { name: string };
+  manufacturers: { name: string };
+  locations: { name: string };
+  peripheraltypes: { name: string };
+  peripheralmodels: { name: string };
+  date_mod: string;
+  contact: string
 }
