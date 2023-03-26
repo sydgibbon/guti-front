@@ -14,7 +14,7 @@ import TableComponent from "../../../Table/Table";
 import { columns } from "./TableData";
 import { useGetAllSoftwares } from "../../../../hooks/Softwares/useGetAllSoftwares";
 
-export default function TableSimcards() {
+export default function TableSoftwares() {
   const [checked, setChecked] = useState(false);
 
   const softwares = useGetAllSoftwares();
