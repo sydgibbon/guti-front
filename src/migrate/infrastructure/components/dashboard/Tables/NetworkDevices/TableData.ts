@@ -35,7 +35,7 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "FIRMWARE",
     sortable: true,
-    selector: (row) => row.date_mod,
+    selector: (row) => row.date_mod, // Corresponde a una tabla que no esta vinculada a networkequipments de ninguna manera
   },
   {
     name: "LAST UPDATE",
