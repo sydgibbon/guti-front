@@ -1,13 +1,9 @@
-import { Cabletypes } from "../../../../../domain/models/Cabletypes";
-import { States } from "../../../../../domain/models/States";
-import { UsersTech } from "../../../../../domain/models/UsersTech";
-
 export interface DataRow {
   id: number,
   name: string;
-  cabletypes: Cabletypes;
-  states: States;
-  users_tech: UsersTech;
+  cabletypes: { name: string };
+  states: { name: string };
+  users_tech: { name: string };
   otherserial: string;
   color: string;
   items_endpoint_b: number;
