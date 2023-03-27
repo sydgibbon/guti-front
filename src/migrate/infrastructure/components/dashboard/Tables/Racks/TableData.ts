@@ -1,30 +1,10 @@
 import { TableColumn } from "react-data-table-component";
-import { DataRow } from "./types";
+import { RackDTO } from "../../../../../domain/dto/RackDTO";
 
-export const columns: TableColumn<DataRow>[] = [
+export const columns: TableColumn<RackDTO>[] = [
   {
-    name: "name",
+    name: "NAME",
     sortable: true,
     selector: (row) => row.name,
-  },
-  {
-    name: "comment",
-    sortable: true,
-    selector: (row) => row.comment,
-  },
-  {
-    name: "entities",
-    sortable: true,
-    selector: (row) => row.entities,
-  },
-  {
-    name: "created_at",
-    sortable: true,
-    selector: (row) => row.date_creation,
-  },
-  {
-    name: "updated_at",
-    sortable: true,
-    selector: (row) => row.date_mod,
   },
 ];
