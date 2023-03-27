@@ -1,4 +1,4 @@
-import { AutoUpdatesSystems } from "../models/AutoUpdatesSystems";
+import { AutoUpdateSystems } from "../models/AutoUpdateSystems";
 import { Entities } from "../models/Entities";
 import { Groups } from "../models/Groups";
 import { GroupsTech } from "../models/GroupsTech";
@@ -22,7 +22,7 @@ export interface DevicesDTO {
   users: Users;
   groups: Groups;
   states: States;
-  autoupdatesystems: AutoUpdatesSystems;
+  autoupdatesystems: AutoUpdateSystems;
   name: string;
   date_mod: string;
   contact: string;
