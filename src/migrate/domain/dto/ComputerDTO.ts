@@ -6,7 +6,7 @@ import { Locations } from "../models/Locations";
 import { Manufacturers } from "../models/Manufacturers";
 import { Networks } from "../models/Networks";
 import { States } from "../models/States";
-import { AutoUpdateSystems } from "../models/TEST";
+import { AutoUpdateSystems } from "../models/AutoUpdateSystems";
 import { Users } from "../models/Users";
 
 export interface ComputerDTO {
