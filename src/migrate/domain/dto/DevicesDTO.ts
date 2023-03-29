@@ -1,4 +1,4 @@
-import { AutoUpdateSystems } from "../models/AutoUpdateSystems";
+import { AutoUpdateSystems } from "../models/TEST";
 import { Entities } from "../models/Entities";
 import { Groups } from "../models/Groups";
 import { GroupsTech } from "../models/GroupsTech";
