@@ -1,6 +1,6 @@
-import SelectOption, { OptionValue } from "../SelectOption";
+import SelectOptionPrimary, { OptionValue } from "../Globals/SelectOption/SelectOption";
 import TextArea from "../TextArea";
-import TextInput from "../TextInput";
+import TextInputPrimary from "../Globals/Inputs/TextInputPrimary";
 import Form from "./Form";
 
 export default function  PduForm() {
@@ -21,27 +21,27 @@ export default function  PduForm() {
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
+        <TextInputPrimary
           id={"name"}
           label={"Name"}
           placeholder={"ingrese su nombre"}
         />
 
-        <SelectOption id={"status"} label={"Status"} />
-        <SelectOption id={"location"} label={"Location"} />
-        <SelectOption id={"pdutypes"} label="Type" />
-        <SelectOption id={"user_tech"} label={"Technician in charge of the hardware"} />
-        <SelectOption id={"manufacturers"} label="Manufactuter" />
-        <SelectOption id={"groups_tech"} label={"Group in charge of the hardware"} />
-        <SelectOption id={"pdumodels"} label="Model" />
+        <SelectOptionPrimary id={"status"} label={"Status"} />
+        <SelectOptionPrimary id={"location"} label={"Location"} />
+        <SelectOptionPrimary id={"pdutypes"} label="Type" />
+        <SelectOptionPrimary id={"user_tech"} label={"Technician in charge of the hardware"} />
+        <SelectOptionPrimary id={"manufacturers"} label="Manufactuter" />
+        <SelectOptionPrimary id={"groups_tech"} label={"Group in charge of the hardware"} />
+        <SelectOptionPrimary id={"pdumodels"} label="Model" />
 
-        <TextInput
+        <TextInputPrimary
           id={"serialnumber"}
           label="Serial Number"
           placeholder="Enter your Serial Number here"
           required
         />
-        <TextInput
+        <TextInputPrimary
           id={"serial"}
           label="Inventory Number"
           placeholder="Enter your Inventory Number here"

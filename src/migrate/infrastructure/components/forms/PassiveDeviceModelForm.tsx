@@ -1,6 +1,6 @@
-import SelectOption, { OptionValue } from "../SelectOption";
+import SelectOptionPrimary, { OptionValue } from "../Globals/SelectOption/SelectOption";
 import TextArea from "../TextArea";
-import TextInput from "../TextInput";
+import TextInputPrimary from "../Globals/Inputs/TextInputPrimary";
 import Form from "./Form";
 
 const textOption: OptionValue[] = [
@@ -49,7 +49,7 @@ export default function  PassiveDeviceModelForm() {
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
+        <TextInputPrimary
           id={"testing"}
           label={"Name"}
           placeholder={"ingrese su nombre"}
@@ -61,34 +61,34 @@ export default function  PassiveDeviceModelForm() {
           rows={3}
         />
 
-        <TextInput
+        <TextInputPrimary
           id={"testing"}
           label={"Product Number"}
         />
 
-        <TextInput
+        <TextInputPrimary
           id={"testing"}
           label={"Weight"}
         />
 
-        <TextInput
+        <TextInputPrimary
           id={"testing"}
           label={"Required units"}
         />
 
-        <SelectOption id={"testing"} label={"Depth"} options={numberOption} />
+        <SelectOptionPrimary id={"testing"} label={"Depth"} possibleOptions={numberOption} />
 
-        <TextInput
+        <TextInputPrimary
           id={"testing"}
           label={"Power connections"}
         />
 
-        <TextInput
+        <TextInputPrimary
           id={"testing"}
           label={"Power consumption"}
         />
 
-        <SelectOption id={"testing"} label={"Is half rack"} options={textOption} />
+        <SelectOptionPrimary id={"testing"} label={"Is half rack"} possibleOptions={textOption} />
 
       </Form>
     </div>

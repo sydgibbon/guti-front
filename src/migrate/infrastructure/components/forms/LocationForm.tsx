@@ -1,6 +1,6 @@
-import SelectOption from "../SelectOption";
+import SelectOptionPrimary from "../Globals/SelectOption/SelectOption";
 import TextArea from "../TextArea";
-import TextInput from "../TextInput";
+import TextInputPrimary from "../Globals/Inputs/TextInputPrimary";
 import Form from "./Form";
 
 export default function  LocationForm() {
@@ -21,7 +21,7 @@ export default function  LocationForm() {
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
+        <TextInputPrimary
           id={"testing"}
           label={"Name"}
           placeholder={"ingrese su nombre"}
@@ -33,18 +33,18 @@ export default function  LocationForm() {
           rows={3}
         />
 
-        <SelectOption id={"testing"} label={"As Child of"} />
+        <SelectOptionPrimary id={"testing"} label={"As Child of"} />
 
-        <TextInput id={"testing"} label={"Address"}  />
-        <TextInput id={"testing"} label={"Postal code"}  />
-        <TextInput id={"testing"} label={"Town"}  />
-        <TextInput id={"testing"} label={"State"}  />
-        <TextInput id={"testing"} label={"Country"}  />
-        <TextInput id={"testing"} label={"Building number"}  />
-        <TextInput id={"testing"} label={"Room number"}  />
-        <TextInput id={"testing"} label={"Latitude"}  />
-        <TextInput id={"testing"} label={"Longitude"}  />
-        <TextInput id={"testing"} label={"Altitude"}  />
+        <TextInputPrimary id={"testing"} label={"Address"}  />
+        <TextInputPrimary id={"testing"} label={"Postal code"}  />
+        <TextInputPrimary id={"testing"} label={"Town"}  />
+        <TextInputPrimary id={"testing"} label={"State"}  />
+        <TextInputPrimary id={"testing"} label={"Country"}  />
+        <TextInputPrimary id={"testing"} label={"Building number"}  />
+        <TextInputPrimary id={"testing"} label={"Room number"}  />
+        <TextInputPrimary id={"testing"} label={"Latitude"}  />
+        <TextInputPrimary id={"testing"} label={"Longitude"}  />
+        <TextInputPrimary id={"testing"} label={"Altitude"}  />
  
       </Form>
     </div>

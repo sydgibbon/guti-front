@@ -1,15 +1,12 @@
-interface TextInputProps {
-  id: string;
-  label?: string;
-  type?: string;
-  placeholder?: string;
-  required?: boolean;
-  maxCharacters?: number;
-}
+import { TextInputProps } from "./types";
 
-export default function TextInput(textInputProps: TextInputProps) {
-  const { id, label, type, required, maxCharacters, placeholder } =
+export default function TextInputPrimary(textInputProps: TextInputProps) {
+  const { id, label, type, required, maxCharacters, placeholder, onChange } =
     textInputProps;
+
+  const handleInputChange = (event: any) => {
+    onChange(event.target.value);
+  };
 
   return (
     <div className="container flex flex-col gap-y-2">
@@ -20,6 +17,7 @@ export default function TextInput(textInputProps: TextInputProps) {
       )}
 
       <input
+        onChange={handleInputChange}
         className="px-2 bg-gray-100 border rounded-md h-11 container__input"
         type={type ?? "text"}
         required={required}

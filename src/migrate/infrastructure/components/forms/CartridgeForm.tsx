@@ -1,6 +1,6 @@
-import SelectOption, { OptionValue } from "../SelectOption";
+import SelectOptionPrimary, { OptionValue } from "../Globals/SelectOption/SelectOption";
 import TextArea from "../TextArea";
-import TextInput from "../TextInput";
+import TextInputPrimary from "../Globals/Inputs/TextInputPrimary";
 import Form from "./Form";
 
 export default function  CartridgeForm() {
@@ -21,24 +21,24 @@ export default function  CartridgeForm() {
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
+        <TextInputPrimary
           id={"testing"}
           label={"Name"}
           placeholder={"ingrese su nombre"}
         />
 
-        <SelectOption id={"location"} label={"Location"} />
-        <SelectOption id="type" label="Type" />
+        <SelectOptionPrimary id={"location"} label={"Location"} />
+        <SelectOptionPrimary id="type" label="Type" />
 
-        <TextInput
+        <TextInputPrimary
           id={"reference"}
           label={"Reference"}
         />
 
 
-        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"} />
-        <SelectOption id="manufacturer" label="Manufactuter" />
-        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} />
+        <SelectOptionPrimary id={"hardware"} label={"Technician in charge of the hardware"} />
+        <SelectOptionPrimary id="manufacturer" label="Manufactuter" />
+        <SelectOptionPrimary id={"group-hardware"} label={"Group in charge of the hardware"} />
 
         <TextArea
           id={"comment"}
@@ -46,14 +46,14 @@ export default function  CartridgeForm() {
           rows={3}
         />
 
-        <TextInput
+        <TextInputPrimary
           id={"alertthreshold"}
           label={"Alert Threshold"}
         />
 
-        <SelectOption id={"pictures"} label={"Pictures"} />
+        <SelectOptionPrimary id={"pictures"} label={"Pictures"} />
 
-        <TextInput
+        <TextInputPrimary
           id={"stocktarget"}
           label="Stock Target"
         />

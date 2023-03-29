@@ -1,6 +1,6 @@
-import SelectOption, { OptionValue } from "../SelectOption";
+import SelectOptionPrimary, { OptionValue } from "../Globals/SelectOption/SelectOption";
 import TextArea from "../TextArea";
-import TextInput from "../TextInput";
+import TextInputPrimary from "../Globals/Inputs/TextInputPrimary";
 import Form from "./Form";
 
 const textOption: OptionValue[] = [
@@ -39,27 +39,27 @@ export default function  RackForm() {
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
+        <TextInputPrimary
           id={"testing"}
           label={"Name"}
           placeholder={"ingrese su nombre"}
         />
 
-        <SelectOption id={"status"} label={"Status"} />
-        <SelectOption id={"location"} label={"Location"} />
-        <SelectOption id="type" label="Type" />
-        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"} />
-        <SelectOption id="manufacturer" label="Manufactuter" />
-        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} />
-        <SelectOption id="model" label="Model" />
+        <SelectOptionPrimary id={"status"} label={"Status"} />
+        <SelectOptionPrimary id={"location"} label={"Location"} />
+        <SelectOptionPrimary id="type" label="Type" />
+        <SelectOptionPrimary id={"hardware"} label={"Technician in charge of the hardware"} />
+        <SelectOptionPrimary id="manufacturer" label="Manufactuter" />
+        <SelectOptionPrimary id={"group-hardware"} label={"Group in charge of the hardware"} />
+        <SelectOptionPrimary id="model" label="Model" />
 
-        <TextInput
+        <TextInputPrimary
           id={"serialnumber"}
           label="Serial Number"
           placeholder="Enter your Serial Number here"
           required
         />
-        <TextInput
+        <TextInputPrimary
           id={"otherserial"}
           label="Inventory Number"
           placeholder="Enter your Inventory Number here"
@@ -70,38 +70,38 @@ export default function  RackForm() {
           label="Comment"
           rows={3}
         />
-        <SelectOption id="serverroom" label="Server Room" />
-        <SelectOption id={"room_orientation"} label="Door orientation in room" options={textOption} />
+        <SelectOptionPrimary id="serverroom" label="Server Room" />
+        <SelectOptionPrimary id={"room_orientation"} label="Door orientation in room" possibleOptions={textOption} />
 
-        <TextInput
+        <TextInputPrimary
           id={"numberofunits"}
           label="Number of units"
         />
-        <TextInput
+        <TextInputPrimary
           id={"width"}
           label="Width"
         />
-        <TextInput
+        <TextInputPrimary
           id={"height"}
           label="Height"
         />
-        <TextInput
+        <TextInputPrimary
           id={"depth"}
           label="Depth"
         />
-        <TextInput
+        <TextInputPrimary
           id={"maxpower"}
           label="Max. power (in watts)"
         />
-        <TextInput
+        <TextInputPrimary
           id={"measuredpower"}
           label="Measured power (in watts)"
         />
-        <TextInput
+        <TextInputPrimary
           id={"maxweight"}
           label="Max. weight"
         />
-        <TextInput
+        <TextInputPrimary
           id={"color"}
           label={"Color"}
           placeholder={"Aca se eligen los colores"}
