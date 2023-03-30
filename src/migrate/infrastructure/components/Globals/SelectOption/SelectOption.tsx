@@ -4,12 +4,12 @@ import { SelectOptionProps } from "./types";
 export default function SelectOptionPrimary(
   selectOptionProps: SelectOptionProps
 ) {
-  const { id, label, possibleOptions, isLoading, onChange } = selectOptionProps;
+  const { id, label, unselectLabel, possibleOptions, isLoading, onChange } =
+    selectOptionProps;
 
   const handleChange = (event: any) => {
     if (!possibleOptions) return;
 
-    console.log(event.target.value);
     const selectedOption = possibleOptions.find(
       (option) => option.value === event.target.value
     );
@@ -35,6 +35,9 @@ export default function SelectOptionPrimary(
         onChange={handleChange}
         className="px-4 bg-gray-100 border rounded-md h-11"
       >
+        <option selected value={undefined}>
+          {unselectLabel ?? "-"}
+        </option>
         {possibleOptions &&
           possibleOptions.map((option: OptionValue) => (
             <option key={option.value} value={option.value}>

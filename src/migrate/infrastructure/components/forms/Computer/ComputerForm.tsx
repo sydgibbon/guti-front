@@ -10,17 +10,24 @@ import { MessageError } from "../../../utilis/MessagesErrors";
 import { CreateComputer, FieldTypes } from "./types";
 import { OptionValue } from "../../Globals/types";
 import { LocationDTO } from "../../../../domain/dto/LocationDTO";
+import { useGetAllUsers } from "../../../hooks/Users/useGetAllUser";
+import { UserDTO } from "../../../../domain/dto/UserDTO";
 
 const INITIAL_DATA = {
   name: "",
   location: undefined,
+  user: undefined,
 };
 
 export default function ComputersForm() {
   // const computer = useCreateComputer();
   const locationsService = useGetAllLocations();
 
+  const usersService = useGetAllUsers();
+
   const [locations, setLocations] = useState<OptionValue[]>();
+
+  const [users, setUsers] = useState<OptionValue[]>();
 
   const [data, setData] = useState<CreateComputer>(INITIAL_DATA);
 
@@ -89,9 +96,19 @@ export default function ComputersForm() {
     );
   };
 
+  const adaptedUserToOptionValue = (values: UserDTO[]): void => {
+    setUsers(
+      values.map((user) => ({
+        text: user.name,
+        value: user.id.toString(),
+        customValues: user,
+      }))
+    );
+  };
+
   useEffect(() => {
     locationsService.get();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    usersService.get();
   }, []);
 
   useEffect(() => {
@@ -99,6 +116,18 @@ export default function ComputersForm() {
       adaptedLocationToOptionValue(locationsService.data);
     }
   }, [locationsService.data]);
+
+  useEffect(() => {
+    if (locationsService.error) {
+      showError.get(MessageError.FETCH_FAILED);
+    }
+  }, [locationsService.error]);
+
+  useEffect(() => {
+    if (usersService.data) {
+      adaptedUserToOptionValue(usersService.data);
+    }
+  }, [usersService.data]);
 
   useEffect(() => {
     if (locationsService.error) {
@@ -124,6 +153,7 @@ export default function ComputersForm() {
         <SelectOptionPrimary
           id="locations"
           label="Location"
+          unselectLabel="Seleccionar localidad"
           possibleOptions={locations}
           onChange={(value) => handleChangedData(FieldTypes.LOCATION, value)}
           isLoading={locationsService.isLoading}
@@ -140,22 +170,35 @@ export default function ComputersForm() {
         /> */}
 
         <TextInputPrimary
-          id={"alternativeusernamenumber"}
+          id={"alternativeUsernameNumber"}
           label="Alternate username number"
           placeholder="Enter your alternate username number here"
           required
-          onChange={(value) => handleChangedData(FieldTypes.NAME, value)}
+          onChange={(value) =>
+            handleChangedData(FieldTypes.ALTERNATIVE_USERNAME_NUMBER, value)
+          }
         />
 
         <TextInputPrimary
-          id={"alternativeusername"}
+          id={"alternativeUsername"}
           label="Alternate Username"
           placeholder="Enter your Alternate Username here"
           required
-          onChange={(value) => handleChangedData(FieldTypes.NAME, value)}
+          onChange={(value) =>
+            handleChangedData(FieldTypes.ALTERNATIVE_USERNAME, value)
+          }
         />
 
-        {/* <SelectOptionPrimary id="user" label="User" />
+        <SelectOptionPrimary
+          id="user"
+          label="User"
+          unselectLabel="Seleccionar usuario"
+          possibleOptions={users}
+          onChange={(value) => handleChangedData(FieldTypes.USER, value)}
+          isLoading={usersService.isLoading}
+        />
+
+        {/*
 
         <SelectOptionPrimary id="group" label="Group" /> */}
 

@@ -22,5 +22,5 @@
   },
   "include": [
     "src"
-  ]
+, "src/migrate/domain/repositories/users.repository.ts"  ]
 }
