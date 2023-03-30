@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Form from "../Form";
 import SelectOptionPrimary from "../../Globals/SelectOption/SelectOption";
 import TextArea from "../../TextArea";
@@ -77,6 +78,7 @@ export default function ComputersForm() {
   ) => {
     setData({ ...data, [field]: value });
   };
+
   const adaptedLocationToOptionValue = (values: LocationDTO[]): void => {
     setLocations(
       values.map((location) => ({
@@ -96,14 +98,12 @@ export default function ComputersForm() {
     if (locationsService.data) {
       adaptedLocationToOptionValue(locationsService.data);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [locationsService.data]);
 
   useEffect(() => {
     if (locationsService.error) {
       showError.get(MessageError.FETCH_FAILED);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [locationsService.error]);
 
   useEffect(() => {
@@ -129,7 +129,7 @@ export default function ComputersForm() {
           isLoading={locationsService.isLoading}
         />
 
-        <SelectOptionPrimary
+        {/* <SelectOptionPrimary
           id="hardware"
           label="Technician in Charge of the Hardware"
         />
@@ -137,13 +137,14 @@ export default function ComputersForm() {
         <SelectOptionPrimary
           id="group-hardware"
           label="Group in Charge of the Hardware"
-        />
+        /> */}
 
         <TextInputPrimary
           id={"alternativeusernamenumber"}
           label="Alternate username number"
           placeholder="Enter your alternate username number here"
           required
+          onChange={(value) => handleChangedData(FieldTypes.NAME, value)}
         />
 
         <TextInputPrimary
@@ -151,11 +152,12 @@ export default function ComputersForm() {
           label="Alternate Username"
           placeholder="Enter your Alternate Username here"
           required
+          onChange={(value) => handleChangedData(FieldTypes.NAME, value)}
         />
 
-        <SelectOptionPrimary id="user" label="User" />
+        {/* <SelectOptionPrimary id="user" label="User" />
 
-        <SelectOptionPrimary id="group" label="Group" />
+        <SelectOptionPrimary id="group" label="Group" /> */}
 
         <TextArea
           id="comment"
@@ -163,31 +165,41 @@ export default function ComputersForm() {
           placeholder="Enter your comment here"
         />
 
-        <SelectOptionPrimary id="status" label="Status" />
+        {/* <SelectOptionPrimary id="status" label="Status" />
+
         <SelectOptionPrimary id="type" label="Type" />
+
         <SelectOptionPrimary id="manufacturer" label="Manufactuter" />
-        <SelectOptionPrimary id="model" label="Model" />
+
+        <SelectOptionPrimary id="model" label="Model" /> */}
 
         <TextInputPrimary
           id={"serialnumber"}
           label="Serial Number"
           placeholder="Enter your Serial Number here"
           required
+          onChange={(value) => handleChangedData(FieldTypes.NAME, value)}
         />
+
         <TextInputPrimary
           id={"inventoryassetnumber"}
           label="Inventory/Asset Number"
           placeholder="Enter your Inventory/Asset Number here"
           required
+          onChange={(value) => handleChangedData(FieldTypes.NAME, value)}
         />
-        <SelectOptionPrimary id="network" label="Network" />
+
+        {/* <SelectOptionPrimary id="network" label="Network" /> */}
+
         <TextInputPrimary
           id="uuid"
           label="UUID"
           placeholder="Enter your UUID here"
           required
+          onChange={(value) => handleChangedData(FieldTypes.NAME, value)}
         />
-        <SelectOptionPrimary id="updatesource" label="Update Source" />
+
+        {/* <SelectOptionPrimary id="updatesource" label="Update Source" /> */}
       </Form>
     </div>
   );

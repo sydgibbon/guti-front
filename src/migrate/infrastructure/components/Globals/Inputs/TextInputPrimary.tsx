@@ -5,6 +5,8 @@ export default function TextInputPrimary(textInputProps: TextInputProps) {
     textInputProps;
 
   const handleInputChange = (event: any) => {
+    if (!onChange) return;
+
     onChange(event.target.value);
   };
 

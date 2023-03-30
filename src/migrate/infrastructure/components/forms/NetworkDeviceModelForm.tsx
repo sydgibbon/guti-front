@@ -1,7 +1,8 @@
-import SelectOptionPrimary, { OptionValue } from "../Globals/SelectOption/SelectOption";
+import SelectOptionPrimary from "../Globals/SelectOption/SelectOption";
 import TextArea from "../TextArea";
 import TextInputPrimary from "../Globals/Inputs/TextInputPrimary";
 import Form from "./Form";
+import { OptionValue } from "../Globals/types";
 
 const textOption: OptionValue[] = [
   {

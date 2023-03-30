@@ -5,5 +5,5 @@ export interface SelectOptionProps {
   label?: string;
   possibleOptions?: OptionValue[];
   isLoading?: boolean;
-  onChange: (value: OptionValue) => void;
+  onChange?: (value: OptionValue) => void;
 }

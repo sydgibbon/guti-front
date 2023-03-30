@@ -1,4 +1,4 @@
-import SelectOptionPrimary, { OptionValue } from "../Globals/SelectOption/SelectOption";
+import SelectOptionPrimary from "../Globals/SelectOption/SelectOption";
 import TextArea from "../TextArea";
 import TextInputPrimary from "../Globals/Inputs/TextInputPrimary";
 import Form from "./Form";
@@ -17,7 +17,7 @@ export default function SoftwareForm() {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    console.log('Enviando Formulario')
+    console.log("Enviando Formulario");
   };
 
   // useEffect(() => {
@@ -25,7 +25,6 @@ export default function SoftwareForm() {
   //     alert(computer.error);
   //   }
   // }, [computer.error]);
-
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -37,9 +36,15 @@ export default function SoftwareForm() {
         />
         <SelectOptionPrimary id={"childof"} label={"As child of"} />
         <SelectOptionPrimary id={"location"} label={"Location"} />
-        <SelectOptionPrimary id={"hardware"} label={"Technician in charge of the hardware"} />
+        <SelectOptionPrimary
+          id={"hardware"}
+          label={"Technician in charge of the hardware"}
+        />
         <SelectOptionPrimary id={"publisher"} label={"Publisher"} />
-        <SelectOptionPrimary id={"group-hardware"} label={"Group in charge of the hardware"} />
+        <SelectOptionPrimary
+          id={"group-hardware"}
+          label={"Group in charge of the hardware"}
+        />
         <SelectOptionPrimary id={"user"} label={"User"} />
 
         <TextArea
@@ -54,7 +59,10 @@ export default function SoftwareForm() {
           placeholder={"Aca va un checkbox"}
           rows={2}
         />
-        <SelectOptionPrimary id={"softwarecategories"} label={"Software Category"} />
+        <SelectOptionPrimary
+          id={"softwarecategories"}
+          label={"Software Category"}
+        />
       </Form>
     </div>
   );

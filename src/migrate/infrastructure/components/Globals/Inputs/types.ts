@@ -5,5 +5,5 @@ export interface TextInputProps {
   placeholder?: string;
   required?: boolean;
   maxCharacters?: number;
-  onChange: (value: string) => void;
+  onChange?: (value: string) => void;
 }

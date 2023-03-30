@@ -16,6 +16,8 @@ export default function SelectOptionPrimary(
 
     if (!selectedOption) return;
 
+    if (!onChange) return;
+
     onChange(selectedOption);
   };
 
