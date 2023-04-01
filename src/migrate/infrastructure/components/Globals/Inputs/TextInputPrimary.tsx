@@ -1,8 +1,16 @@
 import { TextInputProps } from "./types";
 
 export default function TextInputPrimary(textInputProps: TextInputProps) {
-  const { id, label, type, required, maxCharacters, placeholder, onChange } =
-    textInputProps;
+  const {
+    id,
+    label,
+    type,
+    required,
+    disabled,
+    maxCharacters,
+    placeholder,
+    onChange,
+  } = textInputProps;
 
   const handleInputChange = (event: any) => {
     if (!onChange) return;
@@ -19,6 +27,7 @@ export default function TextInputPrimary(textInputProps: TextInputProps) {
       )}
 
       <input
+        disabled={disabled}
         onChange={handleInputChange}
         className="px-2 bg-gray-100 border rounded-md h-11 container__input"
         type={type ?? "text"}

@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import Form from "../Form";
 import SelectOptionPrimary from "../../Globals/SelectOption/SelectOption";
-import TextArea from "../../TextArea";
 import TextInputPrimary from "../../Globals/Inputs/TextInputPrimary";
 import { useEffect, useState } from "react";
 import { useGetAllLocations } from "../../../hooks/Locations/useGetAllLocations";
@@ -12,15 +11,21 @@ import { OptionValue } from "../../Globals/types";
 import { LocationDTO } from "../../../../domain/dto/LocationDTO";
 import { useGetAllUsers } from "../../../hooks/Users/useGetAllUser";
 import { UserDTO } from "../../../../domain/dto/UserDTO";
+import useCreateComputer from "../../../hooks/Computers/useCreateComputer";
 
 const INITIAL_DATA = {
   name: "",
-  location: undefined,
-  user: undefined,
+  locations_id: undefined,
+  users_id: undefined,
+  contact_num: undefined,
+  contact: undefined,
+  serial: undefined,
+  uuid: undefined,
 };
 
 export default function ComputersForm() {
-  // const computer = useCreateComputer();
+  const computerService = useCreateComputer();
+
   const locationsService = useGetAllLocations();
 
   const usersService = useGetAllUsers();
@@ -29,54 +34,23 @@ export default function ComputersForm() {
 
   const [users, setUsers] = useState<OptionValue[]>();
 
-  const [data, setData] = useState<CreateComputer>(INITIAL_DATA);
+  const [data, setData] = useState<any>(INITIAL_DATA);
 
   const showError = useShowError();
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
+    const newComputer = {
+      name: data.name,
+      locations_id: data.locations_id?.customValues?.id,
+      users_id: data.users_id,
+      contact_num: data.contact_num,
+      contact: data.contact,
+      serial: data.serial,
+      uuid: data.uuid,
+    };
 
-    // const target = e.target as typeof e.target & {
-    //   name: { value: string };
-    //   locations: { value: string };
-    //   uuid: { value: string };
-    //   inventoryassetnumber: { value: string };
-    //   alternativeusername: { value: string };
-    //   alternativeusernamenumber: { value: string };
-    // };
-
-    // const data: ComputerDTO = {
-    //   id: 1,
-    //   name: target.name.value,
-    //   locations: target.locations.value,
-    //   otherserial: target.inventoryassetnumber.value,
-    //   contact: target.alternativeusername.value,
-    //   uuid: target.uuid.value,
-    //   contact_num: target.alternativeusernamenumber.value,
-    //   is_template: 0,
-    //   is_deleted: 0,
-    //   is_dynamic: 0,
-    //   is_recursive: 0,
-    //   comment: null,
-    //   computermodels: null,
-    //   computertypes: null,
-    //   date_creation: null,
-    //   date_mod: null,
-    //   entities: null,
-    //   groups: null,
-    //   groups_tech: null,
-    //   last_inventory_update: null,
-    //   manufacturers: null,
-    //   networks: null,
-    //   serial: null,
-    //   states: null,
-    //   template_name: null,
-    //   ticket_tco: null,
-    //   users: null,
-    //   users_tech: null,
-    // };
-
-    // computer.post(data);
+    computerService.post(newComputer);
   };
 
   const handleChangedData = (
@@ -104,6 +78,10 @@ export default function ComputersForm() {
         customValues: user,
       }))
     );
+  };
+
+  const handleUser = (field: FieldTypes, value: OptionValue) => {
+    handleChangedData(field, value.customValues.id);
   };
 
   useEffect(() => {
@@ -135,10 +113,6 @@ export default function ComputersForm() {
     }
   }, [locationsService.error]);
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
@@ -151,7 +125,7 @@ export default function ComputersForm() {
         />
 
         <SelectOptionPrimary
-          id="locations"
+          id="locations_id"
           label="Location"
           unselectLabel="Seleccionar localidad"
           possibleOptions={locations}
@@ -170,37 +144,35 @@ export default function ComputersForm() {
         /> */}
 
         <TextInputPrimary
-          id={"alternativeUsernameNumber"}
+          id={"contact_number"}
           label="Alternate username number"
           placeholder="Enter your alternate username number here"
           required
           onChange={(value) =>
-            handleChangedData(FieldTypes.ALTERNATIVE_USERNAME_NUMBER, value)
+            handleChangedData(FieldTypes.CONTACT_NUMBER, value)
           }
         />
 
         <TextInputPrimary
-          id={"alternativeUsername"}
+          id={"contact"}
           label="Alternate Username"
           placeholder="Enter your Alternate Username here"
           required
-          onChange={(value) =>
-            handleChangedData(FieldTypes.ALTERNATIVE_USERNAME, value)
-          }
+          onChange={(value) => handleChangedData(FieldTypes.CONTACT, value)}
         />
 
         <SelectOptionPrimary
-          id="user"
+          id="users_id"
           label="User"
           unselectLabel="Seleccionar usuario"
           possibleOptions={users}
-          onChange={(value) => handleChangedData(FieldTypes.USER, value)}
+          onChange={(value) => handleUser(FieldTypes.USER, value)}
           isLoading={usersService.isLoading}
         />
 
         {/*
 
-        <SelectOptionPrimary id="group" label="Group" /> */}
+        <SelectOptionPrimary id="group" label="Group" /> 
 
         <TextArea
           id="comment"
@@ -208,7 +180,7 @@ export default function ComputersForm() {
           placeholder="Enter your comment here"
         />
 
-        {/* <SelectOptionPrimary id="status" label="Status" />
+        <SelectOptionPrimary id="status" label="Status" />
 
         <SelectOptionPrimary id="type" label="Type" />
 
@@ -217,29 +189,34 @@ export default function ComputersForm() {
         <SelectOptionPrimary id="model" label="Model" /> */}
 
         <TextInputPrimary
-          id={"serialnumber"}
+          id={"serial"}
           label="Serial Number"
           placeholder="Enter your Serial Number here"
           required
-          onChange={(value) => handleChangedData(FieldTypes.NAME, value)}
+          onChange={(value) =>
+            handleChangedData(FieldTypes.SERIAL_NUMBER, value)
+          }
         />
 
+        {/*
         <TextInputPrimary
           id={"inventoryassetnumber"}
           label="Inventory/Asset Number"
           placeholder="Enter your Inventory/Asset Number here"
           required
-          onChange={(value) => handleChangedData(FieldTypes.NAME, value)}
+          onChange={(value) =>
+            handleChangedData(FieldTypes.INVENTORY_ASSET_NUMBER, value)
+          }
         />
 
-        {/* <SelectOptionPrimary id="network" label="Network" /> */}
+         <SelectOptionPrimary id="network" label="Network" /> */}
 
         <TextInputPrimary
           id="uuid"
           label="UUID"
           placeholder="Enter your UUID here"
           required
-          onChange={(value) => handleChangedData(FieldTypes.NAME, value)}
+          onChange={(value) => handleChangedData(FieldTypes.UUID, value)}
         />
 
         {/* <SelectOptionPrimary id="updatesource" label="Update Source" /> */}
