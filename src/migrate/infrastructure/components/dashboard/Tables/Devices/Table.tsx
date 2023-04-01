@@ -8,7 +8,7 @@ import {
 } from "react-icons/tb";
 import { BsChevronCompactDown, BsArrow90DegDown } from "react-icons/bs";
 import Switch from "react-switch";
-import useShowError from "../../../../hooks/useShowError";
+import useShowNotification from "../../../../hooks/useShowError";
 import { MessageError } from "../../../../utilis/MessagesErrors";
 import TableComponent from "../../../Table/Table";
 import { columns } from "./TableData";
@@ -20,7 +20,7 @@ export default function TableDevices() {
 
   const devices = useGetAllDevices();
 
-  const showError = useShowError();
+  const showError = useShowNotification();
 
   useEffect(() => {
     devices.get();

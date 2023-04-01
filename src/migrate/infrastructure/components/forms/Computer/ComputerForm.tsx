@@ -4,7 +4,7 @@ import SelectOptionPrimary from "../../Globals/SelectOption/SelectOption";
 import TextInputPrimary from "../../Globals/Inputs/TextInputPrimary";
 import { useEffect, useState } from "react";
 import { useGetAllLocations } from "../../../hooks/Locations/useGetAllLocations";
-import useShowError from "../../../hooks/useShowError";
+import useShowNotification from "../../../hooks/useShowError";
 import { MessageError } from "../../../utilis/MessagesErrors";
 import { CreateComputer, FieldTypes } from "./types";
 import { OptionValue } from "../../Globals/types";
@@ -12,6 +12,7 @@ import { LocationDTO } from "../../../../domain/dto/LocationDTO";
 import { useGetAllUsers } from "../../../hooks/Users/useGetAllUser";
 import { UserDTO } from "../../../../domain/dto/UserDTO";
 import useCreateComputer from "../../../hooks/Computers/useCreateComputer";
+import { AlertType } from "../../../../domain/models/AlertsTypes";
 
 const INITIAL_DATA = {
   name: "",
@@ -36,7 +37,7 @@ export default function ComputersForm() {
 
   const [data, setData] = useState<any>(INITIAL_DATA);
 
-  const showError = useShowError();
+  const showError = useShowNotification();
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -97,7 +98,7 @@ export default function ComputersForm() {
 
   useEffect(() => {
     if (locationsService.error) {
-      showError.get(MessageError.FETCH_FAILED);
+      showError.get(MessageError.FETCH_FAILED, AlertType.ERROR);
     }
   }, [locationsService.error]);
 
@@ -109,9 +110,21 @@ export default function ComputersForm() {
 
   useEffect(() => {
     if (locationsService.error) {
-      showError.get(MessageError.FETCH_FAILED);
+      showError.get(MessageError.FETCH_FAILED, AlertType.ERROR);
     }
   }, [locationsService.error]);
+
+  useEffect(() => {
+    if (computerService.data) {
+      showError.get(MessageError.COMPUTERS_POST_SUCESS, AlertType.SUCCESS);
+    }
+  }, [computerService.data]);
+
+  useEffect(() => {
+    if (computerService.error) {
+      showError.get(MessageError.COMPUTERS_POST_FAILED, AlertType.ERROR);
+    }
+  }, [computerService.error]);
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">

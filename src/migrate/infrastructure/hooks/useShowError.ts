@@ -1,22 +1,21 @@
-import { AlertType } from "../../domain/models/AlertsTypes"
-import { setNotification } from "../redux/Global"
-import { useAppDispatch } from "../redux/hooks"
+import { AlertType } from "../../domain/models/AlertsTypes";
+import { setNotification } from "../redux/Global";
+import { useAppDispatch } from "../redux/hooks";
 
-const useShowError = () => {
-  const dispatch = useAppDispatch()
+const useShowNotification = () => {
+  const dispatch = useAppDispatch();
 
-  const get = (messageError : string) => {
-    dispatch( 
+  const get = (message: string, alertType?: AlertType) => {
+    dispatch(
       setNotification({
         status: true,
-        message: messageError ,
-        type: AlertType.ERROR
+        message,
+        type: alertType ?? AlertType.ERROR,
       })
-    )
-  }
+    );
+  };
 
-  return { get }
+  return { get };
+};
 
-}
-
-export default useShowError;
+export default useShowNotification;
