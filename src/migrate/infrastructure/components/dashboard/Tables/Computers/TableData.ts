@@ -3,47 +3,52 @@ import { DataRow } from "./types";
 
 export const columns: TableColumn<DataRow>[] = [
   {
-    name: "name",
+    name: "Name",
     sortable: true,
-    selector: (row) => row?.name,
+    selector: (row) => row.name,
   },
   {
-    name: "status",
+    name: "Status",
     sortable: true,
     selector: (row) => row.states?.name, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
-    name: "manufacturers",
+    name: "Manufacturers",
     sortable: true,
     selector: (row) => row.manufacturers?.name,
   },
   {
-    name: "serialNumber",
+    name: "Serial Number",
     sortable: true,
-    selector: (row) => row?.serial,
+    selector: (row) => row.serial,
   },
   {
-    name: "types",
+    name: "Type",
     sortable: true,
     selector: (row) => row.computertypes?.name, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
-    name: "operatingSystemName",
+    name: "Model",
+    sortable: true,
+    selector: (row) => row.computermodels?.name, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
+  },
+  {
+    name: "Operating System-Name",
     sortable: true,
     selector: (row) => row.computertypes?.name, // codigo de momento hasta que se puedan relacionar sistemas operativos con computers
   },
   {
-    name: "locations",
+    name: "Locations",
     sortable: true,
-    selector: (row) => row?.locations, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
+    selector: (row) => row.locations?.name, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
-    name: "lastUpdate",
+    name: "LastUpdate",
     sortable: true,
-    selector: (row) => row?.date_mod, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
+    selector: (row) => row.date_mod, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
-    name: "componentsProcessors",
+    name: "ComponentsProcessors",
     sortable: true,
     selector: (row) => row.computertypes?.name, // No anda en el GLPI, se verá como arreglar mas tarde
   },

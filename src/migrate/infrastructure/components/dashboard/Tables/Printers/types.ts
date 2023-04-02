@@ -1,10 +1,10 @@
 export interface DataRow {
   id: number;
-  locations: number;
-  printertypes: number;
-  manufacturers: number;
-  states: number;
+  locations: { name: string };
+  printertypes: { name: string };
+  manufacturers: { name: string };
+  states: { name: string};
   name: string;
   date_mod: string;
-  printermodels: number;
+  printermodels: { name: string};
 }

@@ -1,5 +1,5 @@
-import { Entities } from "../models/Entities"; 
-import { GroupsTech } from "../models/GroupsTech";
+import { Entities } from "../models/Entities";
+import { Groups } from "../models/Groups";
 import { Locations } from "../models/Locations";
 import { Manufacturers } from "../models/Manufacturers";
 import { PassiveDcEquipmentsModels } from "../models/PassiveDcEquipmentModels";
@@ -8,7 +8,7 @@ import { States } from "../models/States";
 import { UsersTech } from "../models/UsersTech";
 
 export interface PassiveDevicesDTO {
-  name?: string;
+  name?: string; 
   entities?: Entities;
   is_recursive?: number;
   locations?: Locations;
@@ -17,7 +17,7 @@ export interface PassiveDevicesDTO {
   passivedcequipmentmodels?: PassiveDcEquipmentsModels;
   passivedcequipmenttypes?: PassiveDcEquipmentTypes;
   users_tech?: UsersTech;
-  groups_tech?: GroupsTech;
+  groups_tech?: Groups;
   is_template?: number;
   template_name?: string;
   states?: States;

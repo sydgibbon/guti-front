@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import { phonesService } from "../../../domain/services/Phones.service";
 
 export const useGetAllPhones = () => {
-  const [data, setData] = useState<any>();
+  const [data, setData] = useState<any>(undefined);
   const [error, setError] = useState<undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
 

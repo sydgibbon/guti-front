@@ -3,33 +3,53 @@ import { DataRow } from "./types";
 
 export const columns: TableColumn<DataRow>[] = [
   {
-    name: "id",
-    sortable: true,
-    selector: (row) => row.id,
-  },
-  {
-    name: "name",
+    name: "NAME",
     sortable: true,
     selector: (row) => row.name,
   },
   {
-    name: "color",
+    name: "TYPES",
+    sortable: true,
+    selector: (row) => row.cabletypes?.name
+  },
+  {
+    name: "STATUS",
+    sortable: true,
+    selector: (row) => row.states?.name,
+  },
+  {
+    name: "INVENTORY NUMBER",
+    sortable: true,
+    selector: (row) => row.otherserial,
+  },
+  {
+    name: "COLOR",
     sortable: true,
     selector: (row) => row.color,
   },
   {
-    name: "comment",
+    name: "TECHNICIAN IN CHARGE OF THE HARDWARE",
     sortable: true,
-    selector: (row) => row.comment,
+    selector: (row) => row.users_tech?.name,
   },
   {
-    name: "date_mod",
+    name: "ASSOCIATED ITEM (ENDPOINT B)",
     sortable: true,
-    selector: (row) => row.date_mod,
+    selector: (row) => row.items_endpoint_b
   },
   {
-    name: "date_creation",
+    name: "ASSOCIATED ITEM (ENDPOINT A)",
     sortable: true,
-    selector: (row) => row.date_creation, // codigo de momento hasta que se puedan relacionar sistemas operativos con computers
+    selector: (row) => row.items_endpoint_a
+  },
+  {
+    name: "SOCKET (ENDPOINT B)",
+    sortable: true,
+    selector: (row) => row.sockets_endpoint_b,
+  },
+  {
+    name: "SOCKET (ENDPOINT A)",
+    sortable: true,
+    selector: (row) => row.sockets_endpoint_a,
   },
 ];
