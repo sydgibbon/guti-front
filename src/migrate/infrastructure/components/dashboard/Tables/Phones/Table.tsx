@@ -31,7 +31,7 @@ export default function TablePhones() {
       locations: value.locations ?? "-",
       phonetypes: value.phonetypes ?? "-",
       phonemodels: value.phonemodels ?? "-",
-      last_inventory_update: value.last_inventory_update ?? "-",
+      date_mod: value.date_mod ?? "-",
     }));
   };
 

@@ -13,7 +13,7 @@ export const phonesRepository = {
       locations: phone.locations.name,
       phonetypes: phone.phonetypes.name,
       phonemodels: phone.phonemodels.name,
-      last_inventory_update: phone.last_inventory_update,
+      date_mod: phone.date_mod,
     }));
   },
 };

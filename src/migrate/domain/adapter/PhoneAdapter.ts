@@ -5,5 +5,5 @@ export interface PhoneAdapter {
   locations: string;
   phonetypes: string;
   phonemodels: string;
-  last_inventory_update: string;
+  date_mod: string;
 }

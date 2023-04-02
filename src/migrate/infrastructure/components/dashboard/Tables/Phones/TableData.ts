@@ -35,6 +35,6 @@ export const columns: TableColumn<PhoneAdapter>[] = [
   {
     name: "LAST INVENTORY UPDATE",
     sortable: true,
-    selector: (row) => row.last_inventory_update,
+    selector: (row) => row.date_mod,
   },
 ];

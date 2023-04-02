@@ -45,7 +45,6 @@ export interface PhoneDTO {
   uuid: string;
   date_creation: string;
   is_recursive: number;
-  last_inventory_update: string;
 }
 
 
