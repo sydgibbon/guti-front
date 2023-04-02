@@ -14,24 +14,24 @@ import TableComponent from "../../../Table/Table";
 import { columns } from "./TableData";
 import { useGetAllSoftwares } from "../../../../hooks/Softwares/useGetAllSoftwares";
 
-export default function TableSoftwares() {
+export default function TableSimcards() {
   const [checked, setChecked] = useState(false);
 
-  const softwares = useGetAllSoftwares();
+  const software = useGetAllSoftwares();
 
   const showError = useShowError();
 
   useEffect(() => {
-    softwares.get();
+    software.get();
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    if (softwares.error) {
+    if (software.error) {
       showError.get(MessageError.FETCH_FAILED);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [softwares.error]);
+  }, [software.error]);
 
   return (
     <div className="mx-4 my-4 border rounded search-card border-secondary-dark">
@@ -112,9 +112,9 @@ export default function TableSoftwares() {
         </div>
       </div>
       <TableComponent
-        progressPending={softwares.isLoading}
+        progressPending={software.isLoading}
         columns={columns}
-        rows={softwares.data}
+        rows={software.data}
       />
     </div>
   );

@@ -3,53 +3,33 @@ import { DataRow } from "./types";
 
 export const columns: TableColumn<DataRow>[] = [
   {
-    name: "NAME",
+    name: "id",
+    sortable: true,
+    selector: (row) => row.id,
+  },
+  {
+    name: "name",
     sortable: true,
     selector: (row) => row.name,
   },
   {
-    name: "TYPES",
-    sortable: true,
-    selector: (row) => row.cabletypes?.name
-  },
-  {
-    name: "STATUS",
-    sortable: true,
-    selector: (row) => row.states?.name,
-  },
-  {
-    name: "INVENTORY NUMBER",
-    sortable: true,
-    selector: (row) => row.otherserial,
-  },
-  {
-    name: "COLOR",
+    name: "color",
     sortable: true,
     selector: (row) => row.color,
   },
   {
-    name: "TECHNICIAN IN CHARGE OF THE HARDWARE",
+    name: "comment",
     sortable: true,
-    selector: (row) => row.users_tech?.name,
+    selector: (row) => row.comment,
   },
   {
-    name: "ASSOCIATED ITEM (ENDPOINT B)",
+    name: "date_mod",
     sortable: true,
-    selector: (row) => row.items_endpoint_b
+    selector: (row) => row.date_mod,
   },
   {
-    name: "ASSOCIATED ITEM (ENDPOINT A)",
+    name: "date_creation",
     sortable: true,
-    selector: (row) => row.items_endpoint_a
-  },
-  {
-    name: "SOCKET (ENDPOINT B)",
-    sortable: true,
-    selector: (row) => row.sockets_endpoint_b,
-  },
-  {
-    name: "SOCKET (ENDPOINT A)",
-    sortable: true,
-    selector: (row) => row.sockets_endpoint_a,
+    selector: (row) => row.date_creation, // codigo de momento hasta que se puedan relacionar sistemas operativos con computers
   },
 ];

@@ -21,7 +21,6 @@ export default function TableCartridges() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(cartridges.data)
   return (
     <div className="mx-4 my-4 border rounded search-card border-secondary-dark">
       <div className="flex h-16 gap-2 pl-5 border-b search-card-header align-center border-secondary-light bg-medium-gray">

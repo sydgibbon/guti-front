@@ -17,6 +17,8 @@ import { useGetAllPhones } from "../../../../hooks/Phones/useGetAllPhones";
 export default function TablePhones() {
   const [checked, setChecked] = useState(false);
 
+  const [data, setData] = useState<any>();
+
   const phones = useGetAllPhones();
 
   const showError = useShowError();
@@ -37,6 +39,11 @@ export default function TablePhones() {
     phones.get();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  useEffect(() => {
+    if (phones.data) {
+      setData(adapterPhonesToColumnsData(phones.data));
+    }
+  }, [phones.data]);
 
   useEffect(() => {
     if (phones.error) {
@@ -126,7 +133,7 @@ export default function TablePhones() {
       <TableComponent
         progressPending={phones.isLoading}
         columns={columns}
-        rows={phones.data}
+        rows={data}
       />
     </div>
   );

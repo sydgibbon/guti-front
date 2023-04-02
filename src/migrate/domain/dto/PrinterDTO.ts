@@ -1,17 +1,3 @@
-import { AutoUpdateSystems } from "../models/AutoUpdateSystems";
-import { Entities } from "../models/Entities";
-import { Groups } from "../models/Groups";
-import { GroupsTech } from "../models/GroupsTech";
-import { Locations } from "../models/Locations";
-import { Manufacturers } from "../models/Manufacturers";
-import { Networks } from "../models/Networks";
-import { PrinterModels } from "../models/PrinterModels";
-import { PrintersTypes } from "../models/PrintersTypes";
-import { SnmpCredentials } from "../models/SnmpCredentials";
-import { States } from "../models/States";
-import { Users } from "../models/Users";
-import { UsersTech } from "../models/UsersTech";
-
 export interface PrinterDTO {
     name:string,
     contact:string,
@@ -22,19 +8,19 @@ export interface PrinterDTO {
     template_name:string,
     uuid:string,
     sysdescr:string,
-    entities: Entities,
-    users_tech: UsersTech,
-    groups_tech: GroupsTech,
-    locations: Locations,
-    networks: Networks,
-    printertypes: PrintersTypes,
-    printermodels: PrinterModels,
-    manufacturers: Manufacturers,
-    users: Users,
-    groups: Groups,
-    states: States,
-    snmpcredentials: SnmpCredentials,
-    autoupdatesystems: AutoUpdateSystems,
+    entities:number,
+    users_tech:number,
+    groups_tech:number,
+    locations:number,
+    networks:number,
+    printertypes:number,
+    printermodels:number,
+    manufacturers:number,
+    users:number,
+    groups:number,
+    states:number,
+    snmpcredentials:number,
+    autoupdatesystems:number,
     init_pages_counter:number,
     last_pages_counter:number,
     ticket_tco:number,
