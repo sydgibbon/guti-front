@@ -1,6 +1,6 @@
-import SelectOption from "../SelectOption";
+import SelectOptionPrimary from "../Globals/SelectOption/SelectOption";
 import TextArea from "../TextArea";
-import TextInput from "../TextInput";
+import TextInputPrimary from "../Globals/Inputs/TextInputPrimary";
 import Form from "./Form";
 
 export default function  ManufacturerForm() {
@@ -21,7 +21,7 @@ export default function  ManufacturerForm() {
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
+        <TextInputPrimary
           id={"testing"}
           label={"Name"}
           placeholder={"ingrese su nombre"}
@@ -33,7 +33,7 @@ export default function  ManufacturerForm() {
           rows={3}
         />
 
-        <SelectOption id={"testing"} label={"Registered IDs (issued by PCI-SIG)"} />
+        <SelectOptionPrimary id={"testing"} label={"Registered IDs (issued by PCI-SIG)"} />
 
       </Form>
     </div>

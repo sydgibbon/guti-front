@@ -1,6 +1,6 @@
 import { useCallback, useState } from "react";
-import { ComputerDTO } from "../../../domain/dto/ComputerDTO";
-import { computersService } from "../../../domain/services/Computers.service"; 
+import { computersService } from "../../../domain/services/Computers.service";
+import { CreateComputer } from "../../components/forms/Computer/types";
 
 const useCreateComputer = () => {
   const [data, setData] = useState<any>(undefined);
@@ -8,7 +8,7 @@ const useCreateComputer = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const post = useCallback(
-    async (computerData: ComputerDTO) => {
+    async (computerData: CreateComputer) => {
       setIsLoading(true);
       try {
         const newComputer = await computersService.createComputer(computerData);

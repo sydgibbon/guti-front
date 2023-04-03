@@ -1,24 +1,26 @@
-import SelectOption, { OptionValue } from "../SelectOption";
+import SelectOptionPrimary from "../Globals/SelectOption/SelectOption";
 import TextArea from "../TextArea";
-import TextInput from "../TextInput";
+import TextInputPrimary from "../Globals/Inputs/TextInputPrimary";
 import Form from "./Form";
+import { OptionValue } from "../Globals/types";
 
 const textOption: OptionValue[] = [
   {
     text: "Yes",
-    value: "1"
+    value: "1",
   },
   {
     text: "No",
-    value: "2"
-  }]
+    value: "2",
+  },
+];
 
-export default function  StatusForm() {
+export default function StatusForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    console.log('Enviando Formulario')
+    console.log("Enviando Formulario");
   };
 
   // useEffect(() => {
@@ -27,43 +29,109 @@ export default function  StatusForm() {
   //   }
   // }, [computer.error]);
 
-
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
+        <TextInputPrimary
           id={"testing"}
           label={"Name"}
           placeholder={"ingrese su nombre"}
         />
 
-        <TextArea
-          id={"comment"}
-          label="Comment"
-          rows={3}
+        <TextArea id={"comment"} label="Comment" rows={3} />
+
+        <SelectOptionPrimary id={"testing"} label={"As Child of"} />
+
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Computers"
+          possibleOptions={textOption}
         />
-
-        <SelectOption id={"testing"} label={"As Child of"} />
-
-        <SelectOption id={"testing"} label="Computers" options={textOption} />
-        <SelectOption id={"testing"} label="Monitors" options={textOption} />
-        <SelectOption id={"testing"} label="Network Devices" options={textOption} />
-        <SelectOption id={"testing"} label="Devices" options={textOption} />
-        <SelectOption id={"testing"} label="Phones" options={textOption} />
-        <SelectOption id={"testing"} label="Printers" options={textOption} />
-        <SelectOption id={"testing"} label="Licenses" options={textOption} />
-        <SelectOption id={"testing"} label="Certificates" options={textOption} />
-        <SelectOption id={"testing"} label="Enclosures" options={textOption} />
-        <SelectOption id={"testing"} label="PDUs" options={textOption} />
-        <SelectOption id={"testing"} label="Lines" options={textOption} />
-        <SelectOption id={"testing"} label="Racks" options={textOption} />
-        <SelectOption id={"testing"} label="Versions" options={textOption} />
-        <SelectOption id={"testing"} label="Clusters" options={textOption} />
-        <SelectOption id={"testing"} label="Contracts" options={textOption} />
-        <SelectOption id={"testing"} label="Appliances" options={textOption} />
-        <SelectOption id={"testing"} label="Database instances" options={textOption} />
-        <SelectOption id={"testing"} label="Cables" options={textOption} />
-
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Monitors"
+          possibleOptions={textOption}
+        />
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Network Devices"
+          possibleOptions={textOption}
+        />
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Devices"
+          possibleOptions={textOption}
+        />
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Phones"
+          possibleOptions={textOption}
+        />
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Printers"
+          possibleOptions={textOption}
+        />
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Licenses"
+          possibleOptions={textOption}
+        />
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Certificates"
+          possibleOptions={textOption}
+        />
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Enclosures"
+          possibleOptions={textOption}
+        />
+        <SelectOptionPrimary
+          id={"testing"}
+          label="PDUs"
+          possibleOptions={textOption}
+        />
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Lines"
+          possibleOptions={textOption}
+        />
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Racks"
+          possibleOptions={textOption}
+        />
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Versions"
+          possibleOptions={textOption}
+        />
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Clusters"
+          possibleOptions={textOption}
+        />
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Contracts"
+          possibleOptions={textOption}
+        />
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Appliances"
+          possibleOptions={textOption}
+        />
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Database instances"
+          possibleOptions={textOption}
+        />
+        <SelectOptionPrimary
+          id={"testing"}
+          label="Cables"
+          possibleOptions={textOption}
+        />
       </Form>
     </div>
   );

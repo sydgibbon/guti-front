@@ -1,6 +1,6 @@
-import SelectOption, { OptionValue } from "../SelectOption";
+import SelectOptionPrimary from "../Globals/SelectOption/SelectOption";
 import TextArea from "../TextArea";
-import TextInput from "../TextInput";
+import TextInputPrimary from "../Globals/Inputs/TextInputPrimary";
 import Form from "./Form";
 
 export default function  CableForm() {
@@ -21,17 +21,17 @@ export default function  CableForm() {
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
+        <TextInputPrimary
           id={"name"}
           label={"Name"}
           placeholder={"ingrese su nombre"}
         />
 
-        <SelectOption id={"status"} label={"Status"} />
-        <SelectOption id={"cabletypes"} label="Type" />
-        <SelectOption id={"user_tech"} label={"Technician in charge of the hardware"} />
+        <SelectOptionPrimary id={"status"} label={"Status"} />
+        <SelectOptionPrimary id={"cabletypes"} label="Type" />
+        <SelectOptionPrimary id={"user_tech"} label={"Technician in charge of the hardware"} />
 
-        <TextInput
+        <TextInputPrimary
           id={"serial"}
           label="Inventory Number"
           placeholder="Enter your Inventory Number here"
@@ -43,22 +43,22 @@ export default function  CableForm() {
           rows={3}
         />
 
-        <SelectOption id={"cablestrands"} label="Cable strand" />
+        <SelectOptionPrimary id={"cablestrands"} label="Cable strand" />
 
-        <TextInput
+        <TextInputPrimary
           id={"color"}
           label={"Color"}
           placeholder={"Aca se eligen los colores"}
         />
 
-        <SelectOption id={"items_endpoint_a"} label="Asset" />
-        <SelectOption id={"items_endpoint_b"} label="Asset" />
+        <SelectOptionPrimary id={"items_endpoint_a"} label="Asset" />
+        <SelectOptionPrimary id={"items_endpoint_b"} label="Asset" />
 
-        <SelectOption id={"socketmodels_endpoint_a"} label="Socket Model" />
-        <SelectOption id={"socketmodels_endpoint_b"} label="Socket Model" />
+        <SelectOptionPrimary id={"socketmodels_endpoint_a"} label="Socket Model" />
+        <SelectOptionPrimary id={"socketmodels_endpoint_b"} label="Socket Model" />
 
-        <SelectOption id={"sockets_endpoint_a"} label="Socket" />
-        <SelectOption id={"sockets_endpoint_b"} label="Socket" />
+        <SelectOptionPrimary id={"sockets_endpoint_a"} label="Socket" />
+        <SelectOptionPrimary id={"sockets_endpoint_b"} label="Socket" />
         
       </Form>
     </div>

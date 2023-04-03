@@ -22,7 +22,7 @@ import SimCardView from "../view/SimCards/SimCard";
 import GlobalView from "../view/Global/GlobalView";
 import UnmanagedDevicesView from "../view/UnmanagedDevices/UnmanagedDevicesView";
 import NotFoundView from "../view/NotFoundView";
-import ComputersForm from "../components/forms/ComputerForm";
+import ComputersForm from "../components/forms/Computer/ComputerForm";
 import SoftwareForm from "../components/forms/SoftwareForm";
 import MonitorForm from "../components/forms/MonitorForm";
 import NetDeviceForm from "../components/forms/NetworkDeviceForm";

@@ -1,7 +1,8 @@
-import SelectOption, { OptionValue } from "../SelectOption";
+import SelectOptionPrimary from "../Globals/SelectOption/SelectOption";
 import TextArea from "../TextArea";
-import TextInput from "../TextInput";
+import TextInputPrimary from "../Globals/Inputs/TextInputPrimary";
 import Form from "./Form";
+import { OptionValue } from "../Globals/types";
 
 const textOption: OptionValue[] = [
   {
@@ -31,19 +32,19 @@ export default function  GroupForm() {
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
+        <TextInputPrimary
           id={"testing"}
           label={"Name"}
           placeholder={"ingrese su nombre"}
         />
 
-        <SelectOption id={"testing"} label={"As Child of"} />
+        <SelectOptionPrimary id={"testing"} label={"As Child of"} />
 
-        <SelectOption id={"testing"} label="Requester" options={textOption} />
-        <SelectOption id={"testing"} label="Watcher" options={textOption} />
-        <SelectOption id={"testing"} label="Assigned to" options={textOption} />
-        <SelectOption id={"testing"} label="Task" options={textOption} />
-        <SelectOption id={"testing"} label="Can be notified" options={textOption} />
+        <SelectOptionPrimary id={"testing"} label="Requester" possibleOptions={textOption} />
+        <SelectOptionPrimary id={"testing"} label="Watcher" possibleOptions={textOption} />
+        <SelectOptionPrimary id={"testing"} label="Assigned to" possibleOptions={textOption} />
+        <SelectOptionPrimary id={"testing"} label="Task" possibleOptions={textOption} />
+        <SelectOptionPrimary id={"testing"} label="Can be notified" possibleOptions={textOption} />
 
         <TextArea
           id={"comment"}
@@ -51,9 +52,9 @@ export default function  GroupForm() {
           rows={3}
         />
 
-        <SelectOption id={"testing"} label="Can be manager" options={textOption} />
-        <SelectOption id={"testing"} label="Items" options={textOption} />
-        <SelectOption id={"testing"} label="Users" options={textOption} />
+        <SelectOptionPrimary id={"testing"} label="Can be manager" possibleOptions={textOption} />
+        <SelectOptionPrimary id={"testing"} label="Items" possibleOptions={textOption} />
+        <SelectOptionPrimary id={"testing"} label="Users" possibleOptions={textOption} />
 
       </Form>
     </div>

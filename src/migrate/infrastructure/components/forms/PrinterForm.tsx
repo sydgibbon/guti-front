@@ -1,6 +1,6 @@
-import SelectOption, { OptionValue } from "../SelectOption";
+import SelectOptionPrimary from "../Globals/SelectOption/SelectOption";
 import TextArea from "../TextArea";
-import TextInput from "../TextInput";
+import TextInputPrimary from "../Globals/Inputs/TextInputPrimary";
 import Form from "./Form";
 
 export default function  PrinterForm() {
@@ -21,39 +21,39 @@ export default function  PrinterForm() {
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
+        <TextInputPrimary
           id={"testing"}
           label={"Name"}
           placeholder={"ingrese su nombre"}
         />
 
-        <SelectOption id={"status"} label={"Status"} />
-        <SelectOption id={"location"} label={"Location"} />
-        <SelectOption id="type" label="Type" />
-        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"} />
-        <SelectOption id="manufacturer" label="Manufactuter" />
-        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} />
-        <SelectOption id="model" label="Model" />
+        <SelectOptionPrimary id={"status"} label={"Status"} />
+        <SelectOptionPrimary id={"location"} label={"Location"} />
+        <SelectOptionPrimary id="type" label="Type" />
+        <SelectOptionPrimary id={"hardware"} label={"Technician in charge of the hardware"} />
+        <SelectOptionPrimary id="manufacturer" label="Manufactuter" />
+        <SelectOptionPrimary id={"group-hardware"} label={"Group in charge of the hardware"} />
+        <SelectOptionPrimary id="model" label="Model" />
 
-        <TextInput
+        <TextInputPrimary
           id={"alternativeusernamenumber"}
           label="Alternate Username Number"
           placeholder="Enter your Alternate Username number here"
           required
         />
-        <TextInput
+        <TextInputPrimary
           id={"serialnumber"}
           label="Serial Number"
           placeholder="Enter your Serial Number here"
           required
         />
-        <TextInput
+        <TextInputPrimary
           id={"alternativeusername"}
           label="Alternate Username"
           placeholder="Enter your Alternate Username here"
           required
         />
-        <TextInput
+        <TextInputPrimary
           id={"otherserial"}
           label="Inventory Number"
           placeholder="Enter your Inventory Number here"
@@ -64,13 +64,13 @@ export default function  PrinterForm() {
           label="Sysdescr"
           rows={3}
         />
-        <SelectOption id="snmpcredential" label="SNMP credential" />
-        <SelectOption id="user" label="User" />
-        <SelectOption id="managmenttype" label="Managment Type" />
-        <SelectOption id="network" label="Network" />
-        <SelectOption id="group" label="Group" />
+        <SelectOptionPrimary id="snmpcredential" label="SNMP credential" />
+        <SelectOptionPrimary id="user" label="User" />
+        <SelectOptionPrimary id="managmenttype" label="Managment Type" />
+        <SelectOptionPrimary id="network" label="Network" />
+        <SelectOptionPrimary id="group" label="Group" />
 
-        <TextInput
+        <TextInputPrimary
           id="uuid"
           label="UUID"
           placeholder="Enter your UUID here"
@@ -82,17 +82,17 @@ export default function  PrinterForm() {
           rows={3}
         />
 
-        <SelectOption id="updatesource" label="Update Source" />
+        <SelectOptionPrimary id="updatesource" label="Update Source" />
 
-        <TextInput
+        <TextInputPrimary
           id={"memory"}
           label="Memory"
         />
-        <TextInput
+        <TextInputPrimary
           id={"initialpagecounter"}
           label="Initial page counter"
         />
-        <TextInput
+        <TextInputPrimary
           id={"currentcounterofpages"}
           label="Current counter of pages"
         />

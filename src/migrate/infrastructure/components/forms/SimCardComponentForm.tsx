@@ -1,7 +1,8 @@
-import SelectOption, { OptionValue } from "../SelectOption";
+import SelectOptionPrimary from "../Globals/SelectOption/SelectOption";
 import TextArea from "../TextArea";
-import TextInput from "../TextInput";
+import TextInputPrimary from "../Globals/Inputs/TextInputPrimary";
 import Form from "./Form";
+import { OptionValue } from "../Globals/types";
 
 const textOption: OptionValue[] = [
   {
@@ -32,7 +33,7 @@ export default function  SimCardComponentForm() {
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
+        <TextInputPrimary
           id={"testing"}
           label={"Name"}
           placeholder={"ingrese su nombre"}
@@ -44,15 +45,15 @@ export default function  SimCardComponentForm() {
           rows={3}
         />
 
-        <SelectOption id="manufacturer" label="Manufactuter" />
-        <SelectOption id="type" label="Type" />
+        <SelectOptionPrimary id="manufacturer" label="Manufactuter" />
+        <SelectOptionPrimary id="type" label="Type" />
 
-        <TextInput
+        <TextInputPrimary
           id={"voltage"}
           label="Voltage"
         />
 
-        <SelectOption id={"testing"} label={"Allow VOIP"} options={textOption} />
+        <SelectOptionPrimary id={"testing"} label={"Allow VOIP"} possibleOptions={textOption} />
 
       </Form>
     </div>

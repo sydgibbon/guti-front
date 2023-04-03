@@ -1,6 +1,6 @@
-import SelectOption, { OptionValue } from "../SelectOption";
+import SelectOptionPrimary from "../Globals/SelectOption/SelectOption";
 import TextArea from "../TextArea";
-import TextInput from "../TextInput";
+import TextInputPrimary from "../Globals/Inputs/TextInputPrimary";
 import Form from "./Form";
 
 // const textOption: OptionValue[] = [{
@@ -17,7 +17,7 @@ export default function SoftwareForm() {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    console.log('Enviando Formulario')
+    console.log("Enviando Formulario");
   };
 
   // useEffect(() => {
@@ -26,21 +26,26 @@ export default function SoftwareForm() {
   //   }
   // }, [computer.error]);
 
-
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
+        <TextInputPrimary
           id={"testing"}
           label={"Name"}
           placeholder={"ingrese su nombre"}
         />
-        <SelectOption id={"childof"} label={"As child of"} />
-        <SelectOption id={"location"} label={"Location"} />
-        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"} />
-        <SelectOption id={"publisher"} label={"Publisher"} />
-        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} />
-        <SelectOption id={"user"} label={"User"} />
+        <SelectOptionPrimary id={"childof"} label={"As child of"} />
+        <SelectOptionPrimary id={"location"} label={"Location"} />
+        <SelectOptionPrimary
+          id={"hardware"}
+          label={"Technician in charge of the hardware"}
+        />
+        <SelectOptionPrimary id={"publisher"} label={"Publisher"} />
+        <SelectOptionPrimary
+          id={"group-hardware"}
+          label={"Group in charge of the hardware"}
+        />
+        <SelectOptionPrimary id={"user"} label={"User"} />
 
         <TextArea
           id={"comment"}
@@ -54,7 +59,10 @@ export default function SoftwareForm() {
           placeholder={"Aca va un checkbox"}
           rows={2}
         />
-        <SelectOption id={"softwarecategories"} label={"Software Category"} />
+        <SelectOptionPrimary
+          id={"softwarecategories"}
+          label={"Software Category"}
+        />
       </Form>
     </div>
   );

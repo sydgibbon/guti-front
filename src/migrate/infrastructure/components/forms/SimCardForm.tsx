@@ -1,5 +1,5 @@
-import SelectOption from "../SelectOption";
-import TextInput from "../TextInput";
+import SelectOptionPrimary from "../Globals/SelectOption/SelectOption";
+import TextInputPrimary from "../Globals/Inputs/TextInputPrimary";
 import Form from "./Form";
 
 export default function  SimCardForm() {
@@ -14,51 +14,51 @@ export default function  SimCardForm() {
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
 
-        <SelectOption id={"component"} label={"Component"} />
+        <SelectOptionPrimary id={"component"} label={"Component"} />
 
-        <TextInput
+        <TextInputPrimary
           id={"pin"}
           label="PIN Code"
           required
         />
-        <TextInput
+        <TextInputPrimary
           id={"pin2"}
           label="PIN2 Code"
           required
         />
-        <TextInput
+        <TextInputPrimary
           id={"puk"}
           label="PUK Code"
           required
         />
-        <TextInput
+        <TextInputPrimary
           id={"puk2"}
           label="PUK2 Code"
           required
         />
 
-        <SelectOption id={"line"} label={"Line"} />
+        <SelectOptionPrimary id={"line"} label={"Line"} />
 
-        <TextInput
+        <TextInputPrimary
           id={"mobilesuscriber"}
           label="Mobile Subscriber Identification Number"
         />
 
-        <TextInput
+        <TextInputPrimary
           id={"serialnumber"}
           label="Serial Number"
           placeholder="Enter your Serial Number here"
         />
-        <TextInput
+        <TextInputPrimary
           id={"inventoryassetnumber"}
           label="Inventory Number"
           placeholder="Enter your Inventory Number here"
         />
 
-        <SelectOption id="locations" label="Location" />
-        <SelectOption id="status" label="Status" />
-        <SelectOption id="user" label="User" />
-        <SelectOption id="group" label="Group" />
+        <SelectOptionPrimary id="locations" label="Location" />
+        <SelectOptionPrimary id="status" label="Status" />
+        <SelectOptionPrimary id="user" label="User" />
+        <SelectOptionPrimary id="group" label="Group" />
 
       </Form>
     </div>
