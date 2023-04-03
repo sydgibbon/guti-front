@@ -1,26 +1,18 @@
+import { Entities } from "../models/Entities";
+import { OperatingSystems } from "../models/OperatingSystems";
+import { Softwares } from "../models/Softwares";
+import { States } from "../models/States";
 export interface SoftwareDTO {
       id: number;
-      entities: number;
-      locations: number;
-      users_tech: number;
-      groups_tech: number;
-      manufacturers: number;
-      users: number;
-      groups: number;
-      softwarecategories: boolean;
-      is_recursive: boolean;
+      entities: Entities;
+      softwares: Softwares;
+      states: States;
+      operatingsystems: OperatingSystems;
+      is_recursive: number;
       name: string;
+      arch: string;
       comment: string;
-      is_update: boolean;
-      is_deleted: boolean;
-      is_template: boolean;
-      template_name: boolean;
       date_mod: string;
-      ticket_tco: number;
-      is_helpdesk_visible: boolean;
-      is_valid: boolean;
       date_creation: string;
-      pictures: string;
-      softwares: number;
 }
 
