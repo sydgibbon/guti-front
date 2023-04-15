@@ -3,7 +3,7 @@ import http from "../http/http";
 
 export const pdusRepository = {
   getAllPdus: async () => {
-    const response = await http.get<PdusDTO>("pdus/");    
+    const response = await http.get<PdusDTO>("getPdus/");    
 
     return response.data;
   },
