@@ -15,21 +15,21 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "Type",
     sortable: true,
-    selector: (row) => row.consumableitemtypes?.name,
+    selector: (row) => row.manufacturers,
   },
   {
     name: "Manufacturers",
     sortable: true,
-    selector: (row) => row.manufacturers?.name,
+    selector: (row) => row.consumableitemtypes,
   },
   {
     name: "Locations",
     sortable: true,
-    selector: (row) => row.locations?.name,
+    selector: (row) => row.locations,
   },
   {
     name: "Consumables",
     sortable: true,
-    selector: (row) => row.id,
+    // selector: (row) => row.id,
   },
 ];
