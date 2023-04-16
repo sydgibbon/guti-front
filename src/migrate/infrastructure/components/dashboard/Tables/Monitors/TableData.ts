@@ -10,27 +10,27 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "status",
     sortable: true,
-    selector: (row) => row.states?.name,
+    selector: (row) => row.states,
   },
   {
     name: "manufacturers",
     sortable: true,
-    selector: (row) => row.manufacturers.name,
+    selector: (row) => row.manufacturers,
   },
   {
     name: "locations",
     sortable: true,
-    selector: (row) => row.locations?.name,
+    selector: (row) => row.locations,
   },
   {
     name: "types",
     sortable: true,
-    selector: (row) => row.monitortypes?.name,
+    selector: (row) => row.monitortypes,
   },
   {
     name: "model",
     sortable: true,
-    selector: (row) => row.monitortypes?.name,
+    selector: (row) => row.monitortypes,
   },
   {
     name: "lastUpdate",
