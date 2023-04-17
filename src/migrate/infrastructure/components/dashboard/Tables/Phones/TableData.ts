@@ -3,43 +3,43 @@ import { DataRow } from "./types";
 
 export const columns: TableColumn<DataRow>[] = [
   {
-    name: "name",
+    name: "Name",
     sortable: true,
     selector: (row) => row.name,
   },
   {
-    name: "contact",
+    name: "Status",
+    sortable: true,
+    selector: (row) => row.states,
+  },
+  {
+    name: "Manufacturers",
+    sortable: true,
+    selector: (row) => row.manufacturers,
+  },
+  {
+    name: "Location",
+    sortable: true,
+    selector: (row) => row.locations,
+  },
+  {
+    name: "Type",
+    sortable: true,
+    selector: (row) => row.phonetypes,
+  },
+  {
+    name: "Model",
+    sortable: true,
+    selector: (row) => row.phonemodels,
+  },
+  {
+    name: "Last Update",
+    sortable: true,
+    selector: (row) => row.date_mod,
+  },
+  {
+    name: "Alternate Username",
     sortable: true,
     selector: (row) => row.contact,
-  },
-  {
-    name: "contact_num",
-    sortable: true,
-    selector: (row) => row.contact_num,
-  },
-  {
-    name: "comment",
-    sortable: true,
-    selector: (row) => row.comment,
-  },
-  {
-    name: "serial",
-    sortable: true,
-    selector: (row) => row.serial,
-  },
-  {
-    name: "brand",
-    sortable: true,
-    selector: (row) => row.brand,
-  },
-  {
-    name: "number_line",
-    sortable: true,
-    selector: (row) => row.number_line,
-  },
-  {
-    name: "last_inventory_update",
-    sortable: true,
-    selector: (row) => row.last_inventory_update,
   },
 ];
