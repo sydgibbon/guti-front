@@ -9,8 +9,7 @@ export const useGetAllConsumables = () => {
   const get = useCallback(async () => {
     setIsLoading(true);
     try {
-      const newConsumables =
-        await consumablesService.getAllConsumables();
+      const newConsumables = await consumablesService.getAllConsumables();
 
       setData(newConsumables);
     } catch (e: any) {
