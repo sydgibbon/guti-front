@@ -10,12 +10,12 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "TYPES",
     sortable: true,
-    selector: (row) => row.cabletypes?.name
+    selector: (row) => row.cabletypes
   },
   {
     name: "STATUS",
     sortable: true,
-    selector: (row) => row.states?.name,
+    selector: (row) => row.states
   },
   {
     name: "INVENTORY NUMBER",
@@ -30,7 +30,7 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "TECHNICIAN IN CHARGE OF THE HARDWARE",
     sortable: true,
-    selector: (row) => row.users_tech?.name,
+    selector: (row) => row.users_tech
   },
   {
     name: "ASSOCIATED ITEM (ENDPOINT B)",
