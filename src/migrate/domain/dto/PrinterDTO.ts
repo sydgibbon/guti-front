@@ -1,4 +1,4 @@
-import { AutoUpdateSystems } from "../models/AutoUpdateSystems";
+import { AutoUpdateSystems } from "../models/Autoupdatesystems";
 import { Entities } from "../models/Entities";
 import { Groups } from "../models/Groups";
 import { GroupsTech } from "../models/GroupsTech";
@@ -7,7 +7,7 @@ import { Manufacturers } from "../models/Manufacturers";
 import { Networks } from "../models/Networks";
 import { PrinterModels } from "../models/PrinterModels";
 import { PrintersTypes } from "../models/PrintersTypes";
-import { SnmpCredentials } from "../models/SnmpCredentials";
+import { SnmpCredentials } from "../models/Snmpcredentials";
 import { States } from "../models/States";
 import { Users } from "../models/Users";
 import { UsersTech } from "../models/UsersTech";
