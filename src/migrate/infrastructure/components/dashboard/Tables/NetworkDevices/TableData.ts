@@ -10,32 +10,32 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "STATUS",
     sortable: true,
-    selector: (row) => row.states?.name,
+    selector: (row) => row.states,
   },
   {
     name: "MANUFACTURERS",
     sortable: true,
-    selector: (row) => row.manufacturers?.name,
+    selector: (row) => row.manufacturers,
   },
   {
     name: "LOCATIONS",
     sortable: true,
-    selector: (row) => row.locations?.name,
+    selector: (row) => row.locations,
   },
   {
     name: "TYPE",
     sortable: true,
-    selector: (row) => row.networkequipmenttypes?.name,
+    selector: (row) => row.networkequipmenttypes,
   },
   {
     name: "MODEL",
     sortable: true,
-    selector: (row) => row.networkequipmentmodels?.name,
+    selector: (row) => row.networkequipmentmodels,
   },
   {
     name: "FIRMWARE",
     sortable: true,
-    selector: (row) => row.date_mod, // Corresponde a una tabla que no esta vinculada a networkequipments de ninguna manera
+    selector: (row) => row.devicefirmwares, // Corresponde a una tabla que no esta vinculada a networkequipments de ninguna manera
   },
   {
     name: "LAST UPDATE",

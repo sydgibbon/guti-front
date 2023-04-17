@@ -1,4 +1,4 @@
-import { AutoUpdateSystems } from "../models/AutoUpdateSystems";
+import { AutoUpdateSystems } from "../models/Autoupdatesystems";
 import { Computermodels } from "../models/ComputerModel";
 import { Computertypes } from "../models/ComputerTypes";
 import { Entities } from "../models/Entities";
