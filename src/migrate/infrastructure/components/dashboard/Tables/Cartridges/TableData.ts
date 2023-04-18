@@ -3,32 +3,32 @@ import { DataRow } from "./types";
 
 export const columns: TableColumn<DataRow>[] = [
   {
-    name: "name",
+    name: "Name",
     sortable: true,
     selector: (row) => row.name
   },
   {
-    name: "reference",
+    name: "Reference",
     sortable: true,
     selector: (row) => row.ref
   },
   {
-    name: "type",
+    name: "Type",
     sortable: true,
-    selector: (row) => row.cartridgeitemtypes?.name,
+    selector: (row) => row.cartridgeitemtypes,
   },
   {
-    name: "manufacturers",
+    name: "Manufacturers",
     sortable: true,
-    selector: (row) => row.manufacturers?.name
+    selector: (row) => row.manufacturers
   },
   {
-    name: "locations",
+    name: "Locations",
     sortable: true,
-    selector: (row) => row.locations?.name
+    selector: (row) => row.locations
   },
   {
-    name: "cartridges",
+    name: "Cartridges",
     sortable: true,
     selector: (row) => row.cartridges
   }
