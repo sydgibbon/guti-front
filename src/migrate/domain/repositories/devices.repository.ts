@@ -5,7 +5,7 @@ import http from "../http/http";
 export const devicesRepository = {
 
   getAllDevices: async () => {
-    const response = await http.get<DevicesDTO>("peripherals/");    
+    const response = await http.get<DevicesDTO>("getPeripherals/");    
 
     return response.data;
   },
