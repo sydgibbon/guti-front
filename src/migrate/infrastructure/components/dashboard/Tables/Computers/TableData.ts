@@ -10,12 +10,12 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "Status",
     sortable: true,
-    selector: (row) => row.states?.name, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
+    selector: (row) => row.states, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
     name: "Manufacturers",
     sortable: true,
-    selector: (row) => row.manufacturers?.name,
+    selector: (row) => row.manufacturers,
   },
   {
     name: "Serial Number",
@@ -25,22 +25,22 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "Type",
     sortable: true,
-    selector: (row) => row.computertypes?.name, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
+    selector: (row) => row.computertypes, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
     name: "Model",
     sortable: true,
-    selector: (row) => row.computermodels?.name, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
+    selector: (row) => row.computermodels, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
     name: "Operating System-Name",
     sortable: true,
-    selector: (row) => row.computertypes?.name, // codigo de momento hasta que se puedan relacionar sistemas operativos con computers
+    selector: (row) => row.computertypes, // codigo de momento hasta que se puedan relacionar sistemas operativos con computers
   },
   {
     name: "Locations",
     sortable: true,
-    selector: (row) => row.locations?.name, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
+    selector: (row) => row.locations, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
     name: "LastUpdate",
@@ -50,6 +50,6 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "ComponentsProcessors",
     sortable: true,
-    selector: (row) => row.computertypes?.name, // No anda en el GLPI, se verá como arreglar mas tarde
+    selector: (row) => row.computertypes, // No anda en el GLPI, se verá como arreglar mas tarde
   },
 ];

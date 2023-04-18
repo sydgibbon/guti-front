@@ -8,7 +8,7 @@ export const computersRepository = {
     return response;
   },
   getAllComputers: async () => {
-    const response = await http.get<ComputerDTO>("computers/");    
+    const response = await http.get<ComputerDTO>("getComputers/");    
 
     return response.data;
   },
