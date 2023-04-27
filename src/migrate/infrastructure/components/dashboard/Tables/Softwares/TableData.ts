@@ -5,31 +5,31 @@ export const columns: TableColumn<DataRow>[] = [
   {
     name: "NAME",
     sortable: true,
-    selector: (row) => row.softwares.name,
+    selector: (row) => row.name,
   },
   {
     name: "PUBLISHER",
     sortable: true,
-    selector: (row) => row.softwares.manufacturers?.name,
+    selector: (row) => row.manufacturers,
   },
   {
     name: "VERSIONS - NAME",
     sortable: true,
-    selector: (row) => row.name, //hay que trabajar la logica de versions
+    selector: (row) => row.softwareversions,
   },
   {
     name: "VERSION - OPERATING SYSTEMS",
     sortable: true,
-    selector: (row) => row.operatingsystems?.name, //hay que trabajar la logica de versions
+    selector: (row) => row.operatingsystems,
   },
   {
     name: "NUMBER OF INSTALLATIONS",
     sortable: true,
-    selector: (row) => row.softwares.manufacturers?.name, //hay que trabajar la logica de versions
+    selector: (row) => row.installations,
   },
   {
     name: "LICENSES - NUMBER OF LICESNSES",
     sortable: true,
-    selector: (row) => row.softwares.licenses?.name, //hay que trabajar la logica de licenses
+    selector: (row) => row.softwarelicenses,
   },
 ];

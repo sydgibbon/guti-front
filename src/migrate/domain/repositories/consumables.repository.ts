@@ -3,7 +3,7 @@ import http from "../http/http";
 
 export const consumablesRepository = {
   getAllConsumables: async () => {
-    const response = await http.get<ConsumablesDTO>("consumableitems/");
+    const response = await http.get<ConsumablesDTO>("getConsumableitems/");
 
     return response.data;
   },

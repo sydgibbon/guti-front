@@ -1,11 +1,8 @@
 export interface DataRow {
-  name: string,
-  manufacturers: { name: string };
-  operatingsystems: { name: string }
-  softwares: {
-    name: string,
-    manufacturers: { name: string },
-    versions: { name: string },
-    licenses: { name: string }
-  }
+  name: string;
+  manufacturers: string;
+  softwareversions: string;
+  operatingsystems: string;
+  installations: string;
+  softwarelicenses: string;
 }

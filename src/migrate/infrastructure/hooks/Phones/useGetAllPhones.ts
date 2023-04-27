@@ -10,6 +10,7 @@ export const useGetAllPhones = () => {
     setIsLoading(true);
     try {
       const phones = await phonesService.getAllphones();
+      console.log("🚀 ~ file: useGetAllPhones.ts:13 ~ get ~ phones:", phones)
 
       setData(phones);
     } catch (e: any) {

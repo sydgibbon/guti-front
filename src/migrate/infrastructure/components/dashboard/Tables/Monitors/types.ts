@@ -1,10 +1,10 @@
 export interface DataRow {
   name: string;
-  states: { name: string };
-  manufacturers: { name: string };
-  locations: { name: string };
-  monitortypes: { name: string };
-  model: { name: string };
+  states: string;
+  manufacturers: string;
+  locations: string;
+  monitortypes: string;
+  model: string;
   date_mod: string;
   contact: string;
 }

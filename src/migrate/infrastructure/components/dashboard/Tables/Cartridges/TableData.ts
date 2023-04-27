@@ -3,33 +3,33 @@ import { DataRow } from "./types";
 
 export const columns: TableColumn<DataRow>[] = [
   {
-    name: "name",
+    name: "Name",
     sortable: true,
     selector: (row) => row.name
   },
   {
-    name: "reference",
+    name: "Reference",
     sortable: true,
-    selector: (row) => row.reference
+    selector: (row) => row.ref
   },
   {
-    name: "manufacturers",
+    name: "Type",
+    sortable: true,
+    selector: (row) => row.cartridgeitemtypes,
+  },
+  {
+    name: "Manufacturers",
     sortable: true,
     selector: (row) => row.manufacturers
   },
   {
-    name: "type",
-    sortable: true,
-    selector: (row) => row.type,
-  },
-  {
-    name: "cartridges",
-    sortable: true,
-    selector: (row) => row.cartridges // codigo de momento hasta que se puedan relacionar sistemas operativos con computers
-  },
-  {
-    name: "locations",
+    name: "Locations",
     sortable: true,
     selector: (row) => row.locations
   },
+  {
+    name: "Cartridges",
+    sortable: true,
+    selector: (row) => row.cartridges
+  }
 ];

@@ -1,7 +1,8 @@
 export interface DataRow {
+  id: number;
   name: string;
-  reference: string;
-  type: string;
+  ref: string;
+  cartridgeitemtypes: string; 
   manufacturers: string;
   locations: string;
   cartridges: string;

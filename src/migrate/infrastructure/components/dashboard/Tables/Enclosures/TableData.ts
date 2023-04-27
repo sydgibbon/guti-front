@@ -3,7 +3,7 @@ import { DataRow } from "./types";
 
 export const columns: TableColumn<DataRow>[] = [
   {
-    name: "name",
+    name: "Name",
     sortable: true,
     selector: (row) => row.name,
   },

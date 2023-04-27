@@ -1,40 +1,45 @@
 import { TableColumn } from "react-data-table-component";
-import { PhoneAdapter } from "../../../../../domain/adapter/PhoneAdapter";
+import { DataRow } from "./types";
 
-export const columns: TableColumn<PhoneAdapter>[] = [
+export const columns: TableColumn<DataRow>[] = [
   {
-    name: "NAME",
+    name: "Name",
     sortable: true,
     selector: (row) => row.name,
   },
   {
-    name: "STATUS",
+    name: "Status",
     sortable: true,
     selector: (row) => row.states,
   },
   {
-    name: "MANUFACTURERS",
+    name: "Manufacturers",
     sortable: true,
     selector: (row) => row.manufacturers,
   },
   {
-    name: "LOCATIONS",
+    name: "Location",
     sortable: true,
     selector: (row) => row.locations,
   },
   {
-    name: "PHONE TYPES",
+    name: "Type",
     sortable: true,
     selector: (row) => row.phonetypes,
   },
   {
-    name: "PHONE MODELS",
+    name: "Model",
     sortable: true,
     selector: (row) => row.phonemodels,
   },
   {
-    name: "LAST INVENTORY UPDATE",
+    name: "Last Update",
     sortable: true,
     selector: (row) => row.date_mod,
+  },
+  {
+    name: "Alternate Username",
+    sortable: true,
+    selector: (row) => row.contact,
   },
 ];
