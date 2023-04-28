@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { UserContextProvider } from "./migrate/infrastructure/contexts/userContext";
 import App from "./App";
+import { UserContextProvider } from "./infrastructure/contexts/userContext";
 
 
 const root = ReactDOM.createRoot(

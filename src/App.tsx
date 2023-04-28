@@ -1,8 +1,9 @@
 import { RouterProvider } from "react-router-dom";
-import router from "./migrate/infrastructure/routes";
 import { Provider } from "react-redux";
-import { store } from "./migrate/infrastructure/redux/store";
-import Notification from "./migrate/infrastructure/components/Notification/Notification";
+import router from "./infrastructure/routes";
+import { store } from "./infrastructure/redux/store";
+import Notification from "./infrastructure/components/Notification/Notification";
+
 const App = () => {
   return (
     <Provider store={store}>
