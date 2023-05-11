@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { cartridgesService } from "../../../domain/services/Cartridges.service";
+import { cartridgesService } from "../../../domain/services/api/Cartridges.service";
 
 export const useGetAllCartridges = () => {
   const [data, setData] = useState<any>(undefined);

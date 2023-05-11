@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { softwaresService } from "../../../domain/services/Softwares.service";
+import { softwaresService } from "../../../domain/services/api/Softwares.service";
 
 
 export const useGetAllSoftwares = () => {

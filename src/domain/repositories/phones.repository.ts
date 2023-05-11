@@ -1,5 +1,5 @@
 import { PhoneDTO } from "../dto/PhoneDTO";
-import http from "../http/http";
+import http from "../services/api/http";
 
 export const phonesRepository = {
   getAllPhones: async () => {

@@ -1,4 +1,4 @@
-import { enclosuresRepository } from "../repositories/enclosures.repository";
+import { enclosuresRepository } from "../../repositories/enclosures.repository";
 
 export const enclosuresService = {
   getAllEnclosures: () => {

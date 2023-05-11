@@ -1,5 +1,5 @@
 import { PrinterDTO } from "../dto/PrinterDTO";
-import http from "../http/http";
+import http from "../services/api/http";
 
 export const printersRepository = {
   getAllPrinters: async () => {

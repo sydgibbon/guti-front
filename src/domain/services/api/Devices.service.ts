@@ -1,4 +1,4 @@
-import { devicesRepository } from "../repositories/devices.repository";
+import { devicesRepository } from "../../repositories/devices.repository";
 
 export const devicesService = {
   getAllDevices: () => {

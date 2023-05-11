@@ -1,4 +1,4 @@
-import { softwaresRepository } from "../repositories/softwares.repository"
+import { softwaresRepository } from "../../repositories/softwares.repository"
 
 export const softwaresService = {
   getAllSoftwares: () => {

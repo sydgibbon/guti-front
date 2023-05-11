@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { enclosuresService } from "../../../domain/services/Enclosures.service";
+import { enclosuresService } from "../../../domain/services/api/Enclosures.service";
 
 export const useGetAllEnclosures = () => {
   const [data, setData] = useState<any>(undefined);

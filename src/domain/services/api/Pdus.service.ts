@@ -1,4 +1,4 @@
-import { pdusRepository } from "../repositories/pdus.repository";
+import { pdusRepository } from "../../repositories/pdus.repository";
 
 export const pdusService = {
   getAllPdus: () => {

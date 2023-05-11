@@ -1,4 +1,4 @@
-import { unmanagedsRepository } from "../repositories/unmanageds.repository";
+import { unmanagedsRepository } from "../../repositories/unmanageds.repository";
 
 export const unmanagedsService = {
   getAllUnmanageds: () => {

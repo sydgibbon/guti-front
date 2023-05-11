@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { unmanagedsService } from "../../../domain/services/Unmanageds.service";
+import { unmanagedsService } from "../../../domain/services/api/Unmanageds.service";
 
 export const useGetAllUnmanageds = () => {
   const [data, setData] = useState<any>(undefined);

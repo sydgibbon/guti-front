@@ -1,5 +1,5 @@
 import { RackDTO } from "../dto/RackDTO";
-import http from "../http/http";
+import http from "../services/api/http";
 
 export const racksRepository = {
   getAllRacks: async () => {

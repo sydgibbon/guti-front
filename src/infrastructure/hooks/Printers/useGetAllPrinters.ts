@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { printersService } from "../../../domain/services/Printers.service";
+import { printersService } from "../../../domain/services/api/Printers.service";
 
 export const useGetAllPrinters = () => {
   const [data, setData] = useState<any>(undefined);

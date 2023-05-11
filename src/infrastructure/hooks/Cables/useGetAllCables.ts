@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { cablesService } from "../../../domain/services/Cable.service";
+import { cablesService } from "../../../domain/services/api/Cable.service";
 
 export const useGetAllCables = () => {
   const [data, setData] = useState<any>(undefined);

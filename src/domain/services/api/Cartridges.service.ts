@@ -1,4 +1,4 @@
-import { cartridgesRepository } from "../repositories/cartridges.repository";
+import { cartridgesRepository } from "../../repositories/cartridges.repository";
 
 export const cartridgesService = {
 

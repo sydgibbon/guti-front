@@ -1,4 +1,4 @@
-import { racksRepository } from "../repositories/racks.repository";
+import { racksRepository } from "../../repositories/racks.repository";
 
 export const racksService = {
   getAllRacks: () => {

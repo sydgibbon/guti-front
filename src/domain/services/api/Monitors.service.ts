@@ -1,4 +1,4 @@
-import { monitorsRepository } from "../repositories/monitors.repository";
+import { monitorsRepository } from "../../repositories/monitors.repository";
 
 export const monitorsService = {
   createMonitors: (body: object) => {

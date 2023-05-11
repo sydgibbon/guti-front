@@ -1,4 +1,4 @@
-import { cablesRepository } from "../repositories/cables.repository";
+import { cablesRepository } from "../../repositories/cables.repository";
 
 export const cablesService = {
   getAllCables: () => {

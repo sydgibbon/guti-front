@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { pdusService } from "../../../domain/services/Pdus.service";
+import { pdusService } from "../../../domain/services/api/Pdus.service";
 
 export const useGetAllPdus = () => {
   const [data, setData] = useState<any>(undefined);

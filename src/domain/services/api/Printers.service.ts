@@ -1,4 +1,4 @@
-import { printersRepository } from "../repositories/printers.repository";
+import { printersRepository } from "../../repositories/printers.repository";
 
 export const printersService = {
   getAllPrinters: () => {

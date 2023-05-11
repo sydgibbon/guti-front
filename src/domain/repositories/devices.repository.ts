@@ -1,6 +1,6 @@
 
 import { DevicesDTO } from "../dto/DevicesDTO";
-import http from "../http/http";
+import http from "../services/api/http";
 
 export const devicesRepository = {
 

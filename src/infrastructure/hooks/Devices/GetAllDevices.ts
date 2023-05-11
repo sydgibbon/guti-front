@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { devicesService } from "../../../domain/services/Devices.service";
+import { devicesService } from "../../../domain/services/api/Devices.service";
 
 export const useGetAllDevices = () => {
   const [data, setData] = useState<any>(undefined);

@@ -1,5 +1,5 @@
 import { SoftwareDTO } from "../dto/SoftwareDTO";
-import http from "../http/http";
+import http from "../services/api/http";
 
 export const softwaresRepository = {
   getAllSoftwares: async () => {

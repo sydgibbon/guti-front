@@ -1,4 +1,4 @@
-import { networkDevicesRepository } from "../repositories/newtorkDevices.repository";
+import { networkDevicesRepository } from "../../repositories/newtorkDevices.repository";
 
 
 export const networkDevicesService = {

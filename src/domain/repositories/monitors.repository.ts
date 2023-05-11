@@ -1,5 +1,5 @@
 import { MonitorDTO } from "../dto/MonitorDTO";
-import http from "../http/http";
+import http from "../services/api/http";
 
 export const monitorsRepository = {
   createMonitors: async ( body: object ) => {

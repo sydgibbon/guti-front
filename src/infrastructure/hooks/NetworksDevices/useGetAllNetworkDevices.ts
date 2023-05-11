@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { networkDevicesService } from "../../../domain/services/NetworkDevices.service";
+import { networkDevicesService } from "../../../domain/services/api/NetworkDevices.service";
 
 export const useGetAllNetworkDevices = () => {
   const [data, setData] = useState<any>(undefined);

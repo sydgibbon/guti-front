@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { simcardsService } from "../../../domain/services/Simcards.service";
+import { simcardsService } from "../../../domain/services/api/Simcards.service";
 
 export const useGetAllSimcards = () => {
   const [data, setData] = useState<any>(undefined);

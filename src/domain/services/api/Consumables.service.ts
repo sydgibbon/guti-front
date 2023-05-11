@@ -1,4 +1,4 @@
-import { consumablesRepository } from "../repositories/consumables.repository";
+import { consumablesRepository } from "../../repositories/consumables.repository";
 
 export const consumablesService = {
   getAllConsumables: () => {

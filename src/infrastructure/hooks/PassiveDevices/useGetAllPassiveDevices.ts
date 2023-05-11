@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { PassiveDevicesService } from "../../../domain/services/PassiveDevices.service";
+import { PassiveDevicesService } from "../../../domain/services/api/PassiveDevices.service";
 
 export const useGetAllPassiveDevices = () => {
   const [data, setData] = useState<any>(undefined);

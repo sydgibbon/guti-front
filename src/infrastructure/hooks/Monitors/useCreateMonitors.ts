@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { monitorsService } from "../../../domain/services/Monitors.service";
+import { monitorsService } from "../../../domain/services/api/Monitors.service";
 
 export const useCreateMonitors = () => {
   const [data, setData] = useState<any>(undefined);

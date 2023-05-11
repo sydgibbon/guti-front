@@ -1,5 +1,5 @@
 import { UnmanagedsDTO } from "../dto/UnmanagedsDTO";
-import http from "../http/http";
+import http from "../services/api/http";
 
 export const unmanagedsRepository = {
   getAllUnmanageds: async () => {

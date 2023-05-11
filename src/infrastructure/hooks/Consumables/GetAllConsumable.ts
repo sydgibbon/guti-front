@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { consumablesService } from "../../../domain/services/Consumables.service";
+import { consumablesService } from "../../../domain/services/api/Consumables.service";
 
 export const useGetAllConsumables = () => {
   const [data, setData] = useState<any>(undefined);

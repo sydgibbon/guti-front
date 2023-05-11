@@ -1,5 +1,5 @@
 import { ComputerDTO } from "../dto/ComputerDTO";
-import http from "../http/http";
+import http from "../services/api/http";
 
 export const computersRepository = {
   createComputer: async (body: ComputerDTO) => {

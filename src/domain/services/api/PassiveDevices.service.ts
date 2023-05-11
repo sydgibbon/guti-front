@@ -1,4 +1,4 @@
-import { passiveDevicesRepository } from "../repositories/passiveDevices.repository";
+import { passiveDevicesRepository } from "../../repositories/passiveDevices.repository";
 
 export const PassiveDevicesService = {
   getAllPassiveDevices: () => {

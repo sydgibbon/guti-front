@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { racksService } from "../../../domain/services/Racks.service";
+import { racksService } from "../../../domain/services/api/Racks.service";
 
 export const useGetAllRacks = () => {
   const [data, setData] = useState<any>(undefined);

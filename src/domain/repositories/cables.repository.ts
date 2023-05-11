@@ -1,6 +1,6 @@
 
 import { CableDTO } from "../dto/CableDTO";
-import http from "../http/http";
+import http from "../services/api/http";
 
 export const cablesRepository = {
   getAllCables: async () => {

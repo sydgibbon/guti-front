@@ -1,5 +1,5 @@
 import { EnclosureDTO } from "../dto/EnclosureDTO";
-import http from "../http/http";
+import http from "../services/api/http";
 
 export const enclosuresRepository = {
   getAllEnclosures: async () => {

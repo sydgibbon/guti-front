@@ -1,5 +1,5 @@
 import { PdusDTO } from "../dto/PdusDTO";
-import http from "../http/http";
+import http from "../services/api/http";
 
 export const pdusRepository = {
   getAllPdus: async () => {
