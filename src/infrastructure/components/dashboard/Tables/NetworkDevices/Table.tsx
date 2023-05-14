@@ -9,7 +9,7 @@ import {
 import { BsChevronCompactDown, BsArrow90DegDown } from "react-icons/bs";
 import Switch from "react-switch";
 import useShowError from "../../../../hooks/useShowError";
-import { MessageError } from "../../../../utilis/MessagesErrors";
+import { MessageError } from "../../../../utils/MessagesErrors";
 import TableComponent from "../../../Table/Table";
 import { columns } from "./TableData";
 import { useGetAllNetworkDevices } from "../../../../hooks/NetworksDevices/useGetAllNetworkDevices";

@@ -5,20 +5,20 @@ import Form from "./Form";
 
 const textOption: OptionValue[] = [
   {
-    text: "North",
-    value: "1"
+    name: "North",
+    id: "1"
   },
   {
-    text: "South",
-    value: "2"
+    name: "South",
+    id: "2"
   },
   {
-    text: "East",
-    value: "3"
+    name: "East",
+    id: "3"
   },
   {
-    text: "West",
-    value: "4"
+    name: "West",
+    id: "4"
   }]
 
 export default function  RackForm() {

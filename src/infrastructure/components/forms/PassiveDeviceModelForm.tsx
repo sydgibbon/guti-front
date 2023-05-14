@@ -5,30 +5,30 @@ import Form from "./Form";
 
 const textOption: OptionValue[] = [
   {
-    text: "Yes",
-    value: "1"
+    name: "Yes",
+    id: "1"
   },
   {
-    text: "No",
-    value: "2"
+    name: "No",
+    id: "2"
   }]
 
 const numberOption: OptionValue[] = [
   {
-    text: "1",
-    value: "1"
+    name: "1",
+    id: "1"
   },
   {
-    text: "1/2",
-    value: "1"
+    name: "1/2",
+    id: "1"
   },
   {
-    text: "1/3",
-    value: "1"
+    name: "1/3",
+    id: "1"
   },
   {
-    text: "1/4",
-    value: "1"
+    name: "1/4",
+    id: "1"
   }]
 
 export default function  PassiveDeviceModelForm() {

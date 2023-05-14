@@ -5,12 +5,12 @@ import Form from "./Form";
 
 const textOption: OptionValue[] = [
   {
-    text: "Yes",
-    value: "1"
+    name: "Yes",
+    id: "1"
   },
   {
-    text: "No",
-    value: "2"
+    name: "No",
+    id: "2"
   }]
 
 export default function  GroupInChargeForm() {

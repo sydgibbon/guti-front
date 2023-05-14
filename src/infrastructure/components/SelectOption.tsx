@@ -4,9 +4,9 @@ interface SelectOptionProps {
   options?: OptionValue[];
 }
 export interface OptionValue {
-  text: string;
-  value: string;
-}
+  id: string;
+  name: string;
+} 
 
 export default function SelectOption(selectOptionProps: SelectOptionProps) {
   const { id, label, options } = selectOptionProps;
@@ -23,13 +23,13 @@ export default function SelectOption(selectOptionProps: SelectOptionProps) {
         className="px-4 bg-gray-100 border rounded-md h-11"
         id={id}
       >
-        <option value={undefined} selected>
+        {options === undefined && <option value={undefined} selected>
           Unassigned
-        </option>
+        </option>}
         {options &&
           options.map((option: OptionValue, index: number) => (
-            <option key={index} value={option.value}>
-              {option.text}
+            <option key={index} value={option.id}>
+              {option.name}
             </option>
           ))}
       </select>

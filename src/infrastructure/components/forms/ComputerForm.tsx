@@ -2,6 +2,9 @@ import Form from "./Form";
 import SelectOption from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
+import { useEffect } from "react";
+import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
+
 
 export default function  ComputersForm() {
   // const computer = useCreateComputer();
@@ -52,11 +55,12 @@ export default function  ComputersForm() {
     // computer.post(data);
   };
   
-  // useEffect(() => {
-  //   if (computer.error) {
-  //     alert(computer.error);
-  //   }
-  // }, [computer.error]);
+  const locationOptions = useGetLocationsSelect();
+
+  useEffect(() => {
+    locationOptions.get();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -68,7 +72,7 @@ export default function  ComputersForm() {
           required
         />
 
-        <SelectOption id="locations" label="Location" />
+        <SelectOption id="locations" label="Location" options={locationOptions.data?.data} />
 
         <SelectOption
           id="hardware"

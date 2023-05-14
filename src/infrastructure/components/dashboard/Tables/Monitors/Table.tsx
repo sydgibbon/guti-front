@@ -10,7 +10,7 @@ import { BsChevronCompactDown, BsArrow90DegDown } from "react-icons/bs";
 import Switch from "react-switch";
 import { useGetAllMonitors } from "../../../../hooks/Monitors/useGetAllMonitors";
 import useShowError from "../../../../hooks/useShowError";
-import { MessageError } from "../../../../utilis/MessagesErrors";
+import { MessageError } from "../../../../utils/MessagesErrors";
 import TableComponent from "../../../Table/Table";
 import { columns } from "./TableData";
 
