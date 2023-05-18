@@ -8,4 +8,10 @@ export const computersService = {
   getAllComputers: () => {
     return computersRepository.getAllComputers();
   },
+  getComputertypesSelect: () => {
+    return computersRepository.getComputertypesSelect();
+  },
+  getComputermodelsSelect: () => {
+    return computersRepository.getComputermodelsSelect();
+  },
 };

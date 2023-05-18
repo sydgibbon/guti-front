@@ -12,4 +12,15 @@ export const computersRepository = {
 
     return response.data;
   },
+  getComputertypesSelect: async () => {
+    const response = await http.get<ComputerDTO>("getComputertypesSelect/");    
+
+    return response.data;
+  },
+  getComputermodelsSelect: async () => {
+    const response = await http.get<ComputerDTO>("getComputermodelsSelect/");    
+
+    return response.data;
+  },
+  
 };
