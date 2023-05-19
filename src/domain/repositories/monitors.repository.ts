@@ -12,4 +12,10 @@ export const monitorsRepository = {
 
     return response.data;
   },
+
+  getMonitorsCount: async () => {
+    const response = await http.get("getMonitorsCount/");
+
+    return response.data;
+  },
 };

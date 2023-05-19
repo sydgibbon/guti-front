@@ -4,4 +4,8 @@ export const pdusService = {
   getAllPdus: () => {
     return pdusRepository.getAllPdus();
   },
+
+  getPdusCount: () => {
+    return pdusRepository.getPdusCount();
+  },
 };

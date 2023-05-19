@@ -5,4 +5,8 @@ export const networkDevicesService = {
   getAllNetworkDevices: () => {
     return networkDevicesRepository.getAllNewtorkDevices();
   },
+
+  getNetworkequipmentsCount: () => {
+    return networkDevicesRepository.getNetworkequipmentsCount();
+  },
 };

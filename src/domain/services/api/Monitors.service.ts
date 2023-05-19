@@ -7,4 +7,8 @@ export const monitorsService = {
   getAllMonitors: () => {
     return monitorsRepository.getAllMonitors();
   },
+
+  getMonitorsCount: () => {
+    return monitorsRepository.getMonitorsCount();
+  },
 };

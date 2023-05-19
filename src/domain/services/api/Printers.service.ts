@@ -4,4 +4,8 @@ export const printersService = {
   getAllPrinters: () => {
     return printersRepository.getAllPrinters();
   },
+
+  getPrintersCount: () => {
+    return printersRepository.getPrintersCount();
+  },
 };

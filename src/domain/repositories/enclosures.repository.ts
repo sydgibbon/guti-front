@@ -7,4 +7,10 @@ export const enclosuresRepository = {
 
     return response.data;
   },
+
+  getEnclosuresCount: async () => {
+    const response = await http.get("getEnclosuresCount/");
+
+    return response.data;
+  },
 };

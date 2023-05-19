@@ -7,4 +7,10 @@ export const phonesRepository = {
 
     return response.data;
   },
+
+  getPhonesCount: async () => {
+    const response = await http.get("getPhonesCount/");
+
+    return response.data;
+  },
 };

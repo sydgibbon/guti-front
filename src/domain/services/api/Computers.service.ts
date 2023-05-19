@@ -8,4 +8,7 @@ export const computersService = {
   getAllComputers: () => {
     return computersRepository.getAllComputers();
   },
+  getComputersCount: () => {
+    return computersRepository.getComputersCount();
+  },
 };

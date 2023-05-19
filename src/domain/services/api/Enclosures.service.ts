@@ -4,4 +4,8 @@ export const enclosuresService = {
   getAllEnclosures: () => {
     return enclosuresRepository.getAllEnclosures();
   },
+
+  getEnclosuresCount: () => {
+    return enclosuresRepository.getEnclosuresCount();
+  },
 };

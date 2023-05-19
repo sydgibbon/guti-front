@@ -7,4 +7,10 @@ export const racksRepository = {
 
     return response.data;
   },
+
+  getRacksCount: async () => {
+    const response = await http.get("getRacksCount/");
+
+    return response.data;
+  },
 };

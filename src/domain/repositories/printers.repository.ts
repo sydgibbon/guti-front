@@ -7,4 +7,10 @@ export const printersRepository = {
 
     return response.data;
   },
+
+  getPrintersCount: async () => {
+    const response = await http.get("getPrintersCount/");
+
+    return response.data;
+  },
 };

@@ -4,4 +4,8 @@ export const racksService = {
   getAllRacks: () => {
     return racksRepository.getAllRacks();
   },
+
+  getRacksCount: () => {
+    return racksRepository.getRacksCount();
+  },
 };

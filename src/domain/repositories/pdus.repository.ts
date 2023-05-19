@@ -7,4 +7,10 @@ export const pdusRepository = {
 
     return response.data;
   },
+
+  getPdusCount: async () => {
+    const response = await http.get("getPdusCount/");
+
+    return response.data;
+  },
 };

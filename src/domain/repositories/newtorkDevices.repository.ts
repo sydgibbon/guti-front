@@ -6,4 +6,10 @@ export const networkDevicesRepository = {
     const response = await http.get<NetworkDevicesDTO[]>("getNetworkequipments/");
     return response.data;
   },
+
+  getNetworkequipmentsCount: async () => {
+    const response = await http.get("getNetworkequipmentsCount/");
+
+    return response.data;
+  },
 };
