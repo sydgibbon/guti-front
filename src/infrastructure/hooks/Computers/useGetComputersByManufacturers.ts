@@ -1,7 +1,7 @@
 import { useCallback, useState } from "react";
 import { computersService } from "../../../domain/services/api/Computers.service";
 
-export const useGetComputersCount = () => {
+export const useGetComputersByManufacturers = () => {
   const [data, setData] = useState<any>(undefined);
   const [error, setError] = useState<undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
@@ -9,9 +9,9 @@ export const useGetComputersCount = () => {
   const get = useCallback(async () => {
     setIsLoading(true);
     try {
-      const ComputersCount = await computersService.getComputersCount();
+      const ComputersByManufacturers = await computersService.getComputersByManufacturers();
 
-      setData(ComputersCount);
+      setData(ComputersByManufacturers);
     } catch (e: any) {
       setError(e);
       console.error(e);

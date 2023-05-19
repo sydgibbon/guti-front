@@ -9,9 +9,9 @@ export const useGetMonitorsCount = () => {
   const get = useCallback(async () => {
     setIsLoading(true);
     try {
-      const monitors = await monitorsService.getMonitorsCount();
+      const MonitorsCount = await monitorsService.getMonitorsCount();
 
-      setData(monitors);
+      setData(MonitorsCount);
     } catch (e: any) {
       setError(e);
       console.error(e);

@@ -18,4 +18,22 @@ export const computersRepository = {
 
     return response.data;
   },
+
+  getComputersByStates: async () => {
+    const response = await http.get("getComputersByStates/");
+
+    return response.data;
+  },
+
+  getComputersByComputertypes: async () => {
+    const response = await http.get("getComputersByComputertypes/");
+
+    return response.data;
+  },
+
+  getComputersByManufacturers: async () => {
+    const response = await http.get("getComputersByManufacturers/");
+
+    return response.data;
+  },
 };

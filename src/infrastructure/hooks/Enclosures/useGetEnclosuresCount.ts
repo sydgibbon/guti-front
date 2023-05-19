@@ -9,9 +9,9 @@ export const useGetEnclosuresCount = () => {
   const get = useCallback(async () => {
     setIsLoading(true);
     try {
-      const enclosures = await enclosuresService.getEnclosuresCount();
+      const EnclosuresCount = await enclosuresService.getEnclosuresCount();
 
-      setData(enclosures);
+      setData(EnclosuresCount);
     } catch (e: any) {
       setError(e);
       console.error(e);

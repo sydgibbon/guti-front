@@ -11,4 +11,8 @@ export const monitorsService = {
   getMonitorsCount: () => {
     return monitorsRepository.getMonitorsCount();
   },
+
+  getMonitorsByManufacturers: () => {
+    return monitorsRepository.getMonitorsByManufacturers();
+  },
 };

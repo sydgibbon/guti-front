@@ -9,4 +9,8 @@ export const networkDevicesService = {
   getNetworkequipmentsCount: () => {
     return networkDevicesRepository.getNetworkequipmentsCount();
   },
+
+  getNetworkequipmentsByManufacturers: () => {
+    return networkDevicesRepository.getNetworkequipmentsByManufacturers();
+  },
 };

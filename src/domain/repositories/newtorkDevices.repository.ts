@@ -12,4 +12,10 @@ export const networkDevicesRepository = {
 
     return response.data;
   },
+
+  getNetworkequipmentsByManufacturers: async () => {
+    const response = await http.get("getNetworkequipmentsByManufacturers/");
+
+    return response.data;
+  },
 };

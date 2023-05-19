@@ -11,4 +11,14 @@ export const computersService = {
   getComputersCount: () => {
     return computersRepository.getComputersCount();
   },
+  getComputersByStates: () => {
+    return computersRepository.getComputersByStates();
+  },
+
+  getComputersByComputertypes: () => {
+    return computersRepository.getComputersByComputertypes();
+  },
+  getComputersByManufacturers: () => {
+    return computersRepository.getComputersByManufacturers();
+  },
 };

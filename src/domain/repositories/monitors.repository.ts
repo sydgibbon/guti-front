@@ -18,4 +18,9 @@ export const monitorsRepository = {
 
     return response.data;
   },
+  getMonitorsByManufacturers: async () => {
+    const response = await http.get("getMonitorsByManufacturers/");
+
+    return response.data;
+  },
 };
