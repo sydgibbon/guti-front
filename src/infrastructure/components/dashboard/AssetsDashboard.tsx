@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   TbRefreshDot,
   TbCopy,
@@ -16,8 +16,16 @@ import Donut from "../graph/Donut";
 import BarChart from "../graph/BarChart";
 import { assetsGridItems } from "../../contexts/AppItems";
 import { GridItemType } from "../../../domain/models/Others";
+import { useGetComputersByStates } from "../../hooks/Computers/useGetComputersByStates";
+
+
 
 const AssetsDashboard = () => {
+  const computersByState = useGetComputersByStates()
+  useEffect(() => {
+    computersByState.get()
+  }, [])
+  
   return (
     <div className="flex flex-col items-start mx-6 my-5 bg-white border rounded-md assets-dashboard border-secondary-dark">
       <div className="flex items-center justify-between w-full h-16 px-5 py-4 dashboard-header">
@@ -75,7 +83,7 @@ const AssetsDashboard = () => {
       <div className="grid w-full grid-flow-row grid-cols-1 gap-5 px-5 py-5 graphs-grid md:grid-cols-3 lg:grid-cols-5">
         <GraphGrid
           icon={<TbSubtask className="w-6 h-6 stroke-2" />}
-          graph={<Donut asset="computers" itemProp="states" />}
+          graph={<Donut data={computersByState?.data} criteria="states" />}
           text="Computers by Status"
           bgColor="bg-[#fbf7f7]"
           textColor="text-[#b76f6f]"
@@ -84,8 +92,8 @@ const AssetsDashboard = () => {
           icon={<TbEdit className="w-6 h-6 stroke-2" />}
           graph={
             <BarChart
-              asset="computers"
-              itemProp="manufacturers"
+              data="computers"
+              criteria="manufacturers"
               color="rgb(255, 99, 132)"
               title={undefined}
             />
@@ -96,7 +104,7 @@ const AssetsDashboard = () => {
         />
         <GraphGrid
           icon={<TbDeviceLaptop className="w-6 h-6 stroke-2" />}
-          graph={<Donut asset="computers" itemProp="computertypes" />}
+          graph={<Donut data="computers" criteria="computertypes" />}
           text="Computers by Types"
           bgColor="bg-[#f5f9fa]"
           textColor="text-[#6da7b6]"
@@ -105,8 +113,8 @@ const AssetsDashboard = () => {
           icon={<TbEdit className="w-6 h-6 stroke-2" />}
           graph={
             <BarChart
-              asset="networkequipments"
-              itemProp="manufacturers"
+              data = "computers"
+              criteria="manufacturers"
               color="rgb(54, 162, 235)"
               title={undefined}
             />
@@ -117,7 +125,7 @@ const AssetsDashboard = () => {
         />
         <GraphGrid
           icon={<TbEdit className="w-6 h-6 stroke-2" />}
-          graph={<Donut asset="monitors" itemProp="manufacturers" />}
+          graph={<Donut data="monitors" criteria="manufacturers" />}
           text="Monitors by Manufacturers"
           bgColor="bg-[#f9fbfb]"
           textColor="text-[#7fa9a9]"

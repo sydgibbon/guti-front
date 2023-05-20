@@ -1,10 +1,11 @@
 import { Doughnut } from "react-chartjs-2";
 import { Chart, Tooltip, Title, ArcElement, Legend } from "chart.js";
 import { DonutType } from "../../../domain/models/Others";
+import { useEffect } from "react";
 
 Chart.register(Tooltip, Title, ArcElement, Legend);
 
-const Donut = ({ asset, itemProp }: DonutType) => {
+const Donut = ({ data, criteria }: DonutType) => {
   // const [loadingData, setLoadingData] = useState(true);
   // const [data, setData] = useState([]);
 
@@ -39,9 +40,30 @@ const Donut = ({ asset, itemProp }: DonutType) => {
     });
     return objItemPropCounter;
   };
-  let keys = Object.keys(getItemByProp());
 
-  let values = Object.values(getItemByProp());
+
+  let keys: string[] = []
+  let values: number[] = []
+  useEffect(() => {
+    // debugger;
+    // console.log(data)
+    if (data !== undefined) {
+      
+      data.map((obj: any) => {
+        keys.push(obj[criteria])
+      });
+    
+      data.map((obj: any) => {
+        values.push(obj["count"])
+      });
+
+      console.log(keys);
+      console.log(values);
+    }
+
+  }, [data])
+  
+  
 
   const options = {
     plugins: {

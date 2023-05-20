@@ -23,8 +23,8 @@ export type GridItemType = {
 };
 
 export type BarChartType = {
-  asset: string;
-  itemProp: string;
+  data: string;
+  criteria: string;
   title?: string;
   color: string;
 };
@@ -83,8 +83,8 @@ export interface OptionsBarType {
 }
 
 export interface DonutType {
-  asset: string;
-  itemProp: string;
+  data: any;
+  criteria: string;
 }
 
 export interface Row {

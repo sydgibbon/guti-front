@@ -19,7 +19,7 @@ ChartJS.register(
   Legend
 );
 
-const BarChart = ({ asset, itemProp, title, color }: BarChartType) => {
+const BarChart = ({ data, criteria, title, color }: BarChartType) => {
   // const [loadingData, setLoadingData] = useState(true);
   // const [data, setData] = useState([]);
 
