@@ -6,4 +6,12 @@ export const networkDevicesRepository = {
     const response = await http.get<NetworkDevicesDTO[]>("getNetworkequipments/");
     return response.data;
   },
+  getNetworkDevicesTypesSelect: async () => {
+    const response = await http.get<NetworkDevicesDTO[]>("getNetworkequipmenttypesSelect/");
+    return response.data;
+  },
+  getNetworkDevicesModelsSelect: async () => {
+    const response = await http.get<NetworkDevicesDTO[]>("getNetworkequipmentmodelsSelect/");
+    return response.data;
+  },
 };

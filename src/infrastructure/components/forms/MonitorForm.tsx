@@ -11,7 +11,6 @@ import { useGetGroupsSelect } from "../../hooks/Groups/useGetGroupsSelect";
 import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
 import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect";
 import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
-import { useGetNetworksSelect } from "../../hooks/Networks/useGetNetworksSelect";
 import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
 import { useGetMonitormodelsSelect } from "../../hooks/Monitors/useGetMonitormodelsSelect";
 import { useGetMonitortypesSelect } from "../../hooks/Monitors/useGetMonitortypesSelect";
@@ -62,10 +61,9 @@ export default function  MonitorForm() {
   const manufacturerOptions = useGetManufacturersSelect();
   const monitorModelOptions = useGetMonitormodelsSelect();
   const monitorTypeOptions = useGetMonitortypesSelect();
-  const networkOptions = useGetNetworksSelect();
   const autoupdatesystemOptions = useGetAutoupdatesystemsSelect();
 
-  const managementTypeOptions = [{id:"0" ,name:"Unit Management"},{id:"1", name:"Global Management"}]
+  const managementTypeOptions = [{id:"0", name:"Unit Management"},{id:"1", name:"Global Management"}]
   
 
   const handleSubmit = (e: React.SyntheticEvent) => {
@@ -84,7 +82,6 @@ export default function  MonitorForm() {
     manufacturerOptions.get();
     monitorModelOptions.get();
     monitorTypeOptions.get();
-    networkOptions.get();
     autoupdatesystemOptions.get();
   
   }, [])

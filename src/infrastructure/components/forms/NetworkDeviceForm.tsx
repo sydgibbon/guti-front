@@ -1,7 +1,20 @@
-import SelectOption, { OptionValue } from "../SelectOption";
+import { useEffect } from "react";
+import { useGetNetworkDevicesModelsSelect } from "../../hooks/NetworksDevices/useGetNetworkDevicesModelsSelect";
+import { useGetNetworkDevicesTypesSelect } from "../../hooks/NetworksDevices/useGetNetworkDevicesTypesSelect";
+import SelectOption from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import Form from "./Form";
+import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
+import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
+import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
+import { useGetGroupsSelect } from "../../hooks/Groups/useGetGroupsSelect";
+import { useGetNetworksSelect } from "../../hooks/Networks/useGetNetworksSelect";
+import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect";
+import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
+import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect";
+import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
+import { useGetSnmpCredentialsSelect } from "../../hooks/SnmpCredentials/useGetSnmpCredentialsSelect";
 
 export default function  NetDeviceForm() {
   // const computer = useCreateComputer();
@@ -16,6 +29,34 @@ export default function  NetDeviceForm() {
   //   }
   // }, [computer.error]);
 
+  const userInChargeOptions = useGetUserInChargeSelect();
+  const networkDeviceModelOptions = useGetNetworkDevicesModelsSelect();
+  const networkDeviceTypeOptions = useGetNetworkDevicesTypesSelect();
+  const manufacturerOptions = useGetManufacturersSelect();
+  const groupInChargeOptions = useGetGroupInChargeSelect();
+  const groupsOptions = useGetGroupsSelect();
+  const networkOptions = useGetNetworksSelect();
+  const stateOptions = useGetStatesSelect();
+  const locationOptions = useGetLocationsSelect();
+  const usersOptions = useGetUsersSelect();  
+  const autoupdatesystemOptions = useGetAutoupdatesystemsSelect();
+  const snpmCredentialOptions = useGetSnmpCredentialsSelect();
+
+  useEffect(() => {
+    networkDeviceModelOptions.get();
+    networkDeviceTypeOptions.get();
+    userInChargeOptions.get();
+    manufacturerOptions.get();
+    groupInChargeOptions.get();
+    groupsOptions.get();
+    networkOptions.get();
+    stateOptions.get();
+    locationOptions.get();
+    usersOptions.get();
+    autoupdatesystemOptions.get();
+    snpmCredentialOptions.get();
+  }, [])
+  
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -26,13 +67,21 @@ export default function  NetDeviceForm() {
           placeholder={"ingrese su nombre"}
         />
 
-        <SelectOption id={"status"} label={"Status"} />
-        <SelectOption id={"location"} label={"Location"} />
-        <SelectOption id="type" label="Type" />
-        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"} />
-        <SelectOption id="manufacturer" label="Manufactuter" />
-        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} />
-        <SelectOption id="model" label="Model" />
+        <SelectOption id={"states"} label={"Status"} 
+          options={stateOptions.data?.data} />
+        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
+        <SelectOption id="type" label="Type" 
+          options={networkDeviceTypeOptions?.data}/>
+        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}
+          options={userInChargeOptions.data?.data}
+        />
+        <SelectOption id="manufacturer" label="Manufactuter" 
+          options={manufacturerOptions.data?.data}/>
+        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} 
+          options={groupInChargeOptions.data?.data}
+        />
+        <SelectOption id="model" label="Model" 
+          options={networkDeviceModelOptions?.data}/>
 
         <TextInput
           id={"alternativeusernamenumber"}
@@ -63,10 +112,15 @@ export default function  NetDeviceForm() {
           label="Sysdescr"
           rows={3}
         />
-        <SelectOption id="snmpcredential" label="SNMP credential" />
-        <SelectOption id="user" label="User" />
-        <SelectOption id="network" label="Network" />
-        <SelectOption id="group" label="Group" />
+        <SelectOption id="snmpcredential" label="SNMP credential" 
+          options={snpmCredentialOptions.data?.data}/>
+        <SelectOption id="user" label="User" 
+          options={usersOptions.data?.data} />
+        <SelectOption id="network" label="Network" 
+          options={networkOptions.data?.data}/>
+        <SelectOption id="group" label="Group" 
+          options={groupsOptions.data?.data}
+         />
 
         <TextInput
           id="uuid"
@@ -83,7 +137,8 @@ export default function  NetDeviceForm() {
           id={"memory"}
           label="Memory (Mio)"
         />
-        <SelectOption id="updatesource" label="Update Source" />
+        <SelectOption id="updatesource" label="Update Source" 
+          options={autoupdatesystemOptions.data?.data}/>
       </Form>
     </div>
   );
