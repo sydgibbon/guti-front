@@ -17,14 +17,27 @@ import BarChart from "../graph/BarChart";
 import { assetsGridItems } from "../../contexts/AppItems";
 import { GridItemType } from "../../../domain/models/Others";
 import { useGetComputersByStates } from "../../hooks/Computers/useGetComputersByStates";
+import { useGetComputersByManufacturers } from "../../hooks/Computers/useGetComputersByManufacturers";
+import { useGetComputersByComputertypes } from "../../hooks/Computers/useGetComputersByComputertypes";
+import { useGetMonitorsByManufacturers } from "../../hooks/Monitors/useGetMonitorsByManufacturers";
+import { useGetNetworkequipmentsByManufacturers } from "../../hooks/NetworksDevices/useGetNetworkequipmentsByManufacturers";
 
 
 
 const AssetsDashboard = () => {
   const computersByState = useGetComputersByStates()
+  const computersByManufacturers= useGetComputersByManufacturers()
+  const computersByComputertypes= useGetComputersByComputertypes()
+  const monitorsByManufacturers= useGetMonitorsByManufacturers()
+  const networkequipmentsByManufacturers= useGetNetworkequipmentsByManufacturers()
   useEffect(() => {
     computersByState.get()
+    computersByManufacturers.get()
+    computersByComputertypes.get()
+    monitorsByManufacturers.get()
+    networkequipmentsByManufacturers.get()
   }, [])
+
   
   return (
     <div className="flex flex-col items-start mx-6 my-5 bg-white border rounded-md assets-dashboard border-secondary-dark">
@@ -92,7 +105,7 @@ const AssetsDashboard = () => {
           icon={<TbEdit className="w-6 h-6 stroke-2" />}
           graph={
             <BarChart
-              data="computers"
+              data={computersByManufacturers?.data}
               criteria="manufacturers"
               color="rgb(255, 99, 132)"
               title={undefined}
@@ -104,7 +117,7 @@ const AssetsDashboard = () => {
         />
         <GraphGrid
           icon={<TbDeviceLaptop className="w-6 h-6 stroke-2" />}
-          graph={<Donut data="computers" criteria="computertypes" />}
+          graph={<Donut data={computersByComputertypes?.data} criteria="computertypes" />}
           text="Computers by Types"
           bgColor="bg-[#f5f9fa]"
           textColor="text-[#6da7b6]"
@@ -113,7 +126,7 @@ const AssetsDashboard = () => {
           icon={<TbEdit className="w-6 h-6 stroke-2" />}
           graph={
             <BarChart
-              data = "computers"
+              data = {networkequipmentsByManufacturers?.data}
               criteria="manufacturers"
               color="rgb(54, 162, 235)"
               title={undefined}
@@ -125,7 +138,7 @@ const AssetsDashboard = () => {
         />
         <GraphGrid
           icon={<TbEdit className="w-6 h-6 stroke-2" />}
-          graph={<Donut data="monitors" criteria="manufacturers" />}
+          graph={<Donut data={monitorsByManufacturers?.data} criteria="manufacturers" />}
           text="Monitors by Manufacturers"
           bgColor="bg-[#f9fbfb]"
           textColor="text-[#7fa9a9]"

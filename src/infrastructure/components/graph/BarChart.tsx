@@ -9,6 +9,7 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 import { BarChartType, OptionsBarType } from "../../../domain/models/Others";
+import { useEffect, useState } from "react";
 
 ChartJS.register(
   CategoryScale,
@@ -20,44 +21,27 @@ ChartJS.register(
 );
 
 const BarChart = ({ data, criteria, title, color }: BarChartType) => {
-  // const [loadingData, setLoadingData] = useState(true);
-  // const [data, setData] = useState([]);
+  const [chartValues, setChartValues] = useState<number[]>([]);
+  const [chartLabels, setChartLabels] = useState<string[]>([]);
 
-  // useEffect(() => {
-  //   async function getData() {
-  //     await axiosPrivate
-  //       .get("http://127.0.0.1:8000/api/assets/" + asset + "/")
-  //       .then((response) => {
-  //         // check if the data is populated
-  //         setData(response.data);
-  //         // you tell it that you had the result
-  //         setLoadingData(false);
-  //       });
-  //   }
-  //   if (loadingData) {
-  //     // if the result is not ready so you make the axios call
-  //     getData();
-  //   }
-  // }, []);
+  let dataLabels: string[] = [];
+  let dataValues: number[] = [];
 
-  const getItemByProp = () => {
-    let repeatedItemProp: any = [];
+  useEffect(() => {
 
-    // data.map((obj) => {
-    //   repeatedItemProp.push(obj[itemProp]);
-    // });
-    const objItemPropCounter: any = {};
+    if (data !== undefined) {
+      data.forEach((obj: any) => {
+        dataLabels.push(obj[criteria]);
+        dataValues.push(obj["count"]);
+      });
 
-    repeatedItemProp.forEach((element: any) => {
-      objItemPropCounter[element?.name] =
-        (objItemPropCounter[element] || 0) + 1;
-    });
-    return objItemPropCounter;
-  };
 
-  let keys = Object.keys(getItemByProp());
-
-  let values = Object.values(getItemByProp());
+      setChartValues(dataValues)
+      setChartLabels(dataLabels)
+      console.log(chartLabels)
+      console.log(chartValues)
+    }
+  }, [data]);
 
   const options: OptionsBarType = {
     indexAxis: "y",
@@ -84,14 +68,12 @@ const BarChart = ({ data, criteria, title, color }: BarChartType) => {
     },
   };
 
-  const labels = keys;
-
   const dataset = {
-    labels,
+    labels: chartLabels,
     datasets: [
       {
         label: title,
-        data: values,
+        data: chartValues,
         backgroundColor: color,
       },
     ],

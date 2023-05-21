@@ -23,7 +23,7 @@ export type GridItemType = {
 };
 
 export type BarChartType = {
-  data: string;
+  data: any;
   criteria: string;
   title?: string;
   color: string;
