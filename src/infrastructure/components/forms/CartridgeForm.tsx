@@ -1,7 +1,13 @@
-import SelectOption, { OptionValue } from "../SelectOption";
+import { useEffect } from "react";
+import SelectOption from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import Form from "./Form";
+import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
+import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
+import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
+import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
+import { useGetCartridgetypesSelect } from "../../hooks/Cartridges/useGetCartridgetypesSelect";
 
 export default function  CartridgeForm() {
   // const computer = useCreateComputer();
@@ -16,6 +22,21 @@ export default function  CartridgeForm() {
   //   }
   // }, [computer.error]);
 
+  const userInChargeOptions = useGetUserInChargeSelect();
+  const groupInChargeOptions = useGetGroupInChargeSelect();
+  const locationOptions = useGetLocationsSelect();
+  const manufacturerOptions = useGetManufacturersSelect();
+  const cartridgeTypeOptions = useGetCartridgetypesSelect();
+
+  useEffect(() => {
+    
+    userInChargeOptions.get();
+    groupInChargeOptions.get();
+    locationOptions.get();
+    manufacturerOptions.get();
+    cartridgeTypeOptions.get();
+
+  }, [])
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -26,18 +47,23 @@ export default function  CartridgeForm() {
           placeholder={"ingrese su nombre"}
         />
 
-        <SelectOption id={"location"} label={"Location"} />
-        <SelectOption id="type" label="Type" />
-
+        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
+        <SelectOption id="type" label="Type" 
+          options={cartridgeTypeOptions?.data}/>
         <TextInput
           id={"reference"}
           label={"Reference"}
         />
 
 
-        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"} />
-        <SelectOption id="manufacturer" label="Manufactuter" />
-        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} />
+        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"} 
+          options={userInChargeOptions.data?.data}
+        />
+        <SelectOption id="manufacturer" label="Manufacturer"
+          options={manufacturerOptions.data?.data}/>
+        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"}
+          options={groupInChargeOptions.data?.data}
+        />
 
         <TextArea
           id={"comment"}

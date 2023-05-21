@@ -75,7 +75,7 @@ export default function  NetDeviceForm() {
         <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}
           options={userInChargeOptions.data?.data}
         />
-        <SelectOption id="manufacturer" label="Manufactuter" 
+        <SelectOption id="manufacturer" label="Manufacturer" 
           options={manufacturerOptions.data?.data}/>
         <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} 
           options={groupInChargeOptions.data?.data}

@@ -43,7 +43,7 @@ export default function  SimCardComponentForm() {
           rows={3}
         />
 
-        <SelectOption id="manufacturer" label="Manufactuter" />
+        <SelectOption id="manufacturer" label="Manufacturer" />
         <SelectOption id="type" label="Type" />
 
         <TextInput

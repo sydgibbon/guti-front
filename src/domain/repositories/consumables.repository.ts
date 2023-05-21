@@ -7,4 +7,9 @@ export const consumablesRepository = {
 
     return response.data;
   },
+  getConsumabletypesSelect: async () => {
+    const response = await http.get<ConsumablesDTO>("getConsumableitemtypesSelect/");
+
+    return response.data;
+  },
 };

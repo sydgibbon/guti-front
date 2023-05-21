@@ -147,7 +147,7 @@ export default function  ComputersForm() {
           options={stateOptions.data?.data} />
         <SelectOption id="type" label="Type" 
           options={computerTypeOptions?.data}/>
-        <SelectOption id="manufacturer" label="Manufactuter" 
+        <SelectOption id="manufacturer" label="Manufacturer" 
           options={manufacturerOptions.data?.data}/>
         <SelectOption id="model" label="Model" 
           options={computerModelOptions?.data}/>

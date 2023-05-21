@@ -30,7 +30,7 @@ export default function  PassiveDeviceForm() {
         <SelectOption id={"location"} label={"Location"} />
         <SelectOption id={"passivedcequipmenttypes"} label="Type" />
         <SelectOption id={"user_tech"} label={"Technician in charge of the hardware"} />
-        <SelectOption id={"manufacturers"} label="Manufactuter" />
+        <SelectOption id={"manufacturers"} label="Manufacturer" />
         <SelectOption id={"groups_tech"} label={"Group in charge of the hardware"} />
         <SelectOption id={"pdumodels"} label="Model" />
 

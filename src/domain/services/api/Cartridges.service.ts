@@ -5,4 +5,7 @@ export const cartridgesService = {
   getAllCartrdiges: () => {
     return cartridgesRepository.getAllCartridges();
   },
+  getCartridgetypesSelect: () => {
+    return cartridgesRepository.getCartridgetypesSelect();
+  },
 };

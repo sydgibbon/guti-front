@@ -39,7 +39,7 @@ export default function  PhoneForm() {
         <SelectOption id={"location"} label={"Location"} />
         <SelectOption id="type" label="Type" />
         <SelectOption id={"hardware"} label={"Technician in charge of the hardware"} />
-        <SelectOption id="manufacturer" label="Manufactuter" />
+        <SelectOption id="manufacturer" label="Manufacturer" />
         <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} />
         <SelectOption id="model" label="Model" />
 

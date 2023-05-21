@@ -8,4 +8,9 @@ export const cartridgesRepository = {
 
     return response.data;
   },
+  getCartridgetypesSelect: async () => {
+    const response = await http.get<CartridgesItemsDTO>("getCartridgeitemtypesSelect/");    
+
+    return response.data;
+  },
 };
