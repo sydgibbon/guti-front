@@ -1,19 +1,48 @@
+import { useEffect } from "react";
 import SelectOption from "../SelectOption";
 import TextInput from "../TextInput";
 import Form from "./Form";
+import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect";
+import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
+import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect";
+import { useGetGroupsSelect } from "../../hooks/Groups/useGetGroupsSelect";
+import { useGetDevicesimcardsSelect } from "../../hooks/Simcards/useGetDevicesimcardsSelect";
+import { useGetLinesSelect } from "../../hooks/Simcards/useGetLinesSelect";
 
-export default function  SimCardForm() {
+
+export default function SimCardForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
   };
 
+  const usersOptions = useGetUsersSelect();
+  const locationOptions = useGetLocationsSelect();
+  const stateOptions = useGetStatesSelect();
+  const groupsOptions = useGetGroupsSelect();
+  const linesOptions = useGetLinesSelect();
+  const devicesimcardsOptions = useGetDevicesimcardsSelect();
+
+  useEffect(() => {
+    usersOptions.get();
+    groupsOptions.get();
+    locationOptions.get();
+    stateOptions.get();
+    linesOptions.get();
+    devicesimcardsOptions.get()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
 
-        <SelectOption id={"component"} label={"Component"} />
+        <SelectOption
+          id={"component"}
+          label={"Component"}
+          options={devicesimcardsOptions?.data}
+        />
 
         <TextInput
           id={"pin"}
@@ -36,7 +65,11 @@ export default function  SimCardForm() {
           required
         />
 
-        <SelectOption id={"line"} label={"Line"} />
+        <SelectOption
+          id={"line"}
+          label={"Line"}
+          options={linesOptions?.data}
+        />
 
         <TextInput
           id={"mobilesuscriber"}
@@ -54,10 +87,26 @@ export default function  SimCardForm() {
           placeholder="Enter your Inventory Number here"
         />
 
-        <SelectOption id="locations" label="Location" />
-        <SelectOption id="status" label="Status" />
-        <SelectOption id="user" label="User" />
-        <SelectOption id="group" label="Group" />
+        <SelectOption
+          id="locations"
+          label="Location"
+          options={locationOptions.data?.data}
+        />
+        <SelectOption
+          id="status"
+          label="Status"
+          options={stateOptions.data?.data}
+        />
+        <SelectOption
+          id="user"
+          label="User"
+          options={usersOptions.data?.data}
+        />
+        <SelectOption
+          id="group"
+          label="Group"
+          options={groupsOptions.data?.data}
+        />
 
       </Form>
     </div>

@@ -14,6 +14,7 @@ import TableComponent from "../../../Table/Table";
 import { columns } from "./TableData"; 
 import { useGetAllSimcards } from "../../../../hooks/Simcards/useGetAllSimcards";
 
+
 export default function TableSimcards() {
   const [checked, setChecked] = useState(false);
 

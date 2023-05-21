@@ -6,4 +6,14 @@ export const simcardsRepository = {
 
     return response.data;
   },
+  getDevicesimcardsSelect: async () => {
+    const response = await http.get<any>("getDevicesimcardsSelect/");
+
+    return response.data;
+  },
+  getLinesSelect: async () => {
+    const response = await http.get<any>("getLinesSelect/");
+
+    return response.data;
+  },
 };
