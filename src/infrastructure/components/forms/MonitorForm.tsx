@@ -15,14 +15,6 @@ import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/use
 import { useGetMonitormodelsSelect } from "../../hooks/Monitors/useGetMonitormodelsSelect";
 import { useGetMonitortypesSelect } from "../../hooks/Monitors/useGetMonitortypesSelect";
 
-// const textOption: OptionValue[] = [{
-//   text: "Boca",
-//   value: "boca"
-// },
-// {
-//   text: "River",
-//   value: "river"
-// }]
 
 export default function  MonitorForm() {
   const monitors = useCreateMonitors();

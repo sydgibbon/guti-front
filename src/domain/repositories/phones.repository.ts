@@ -7,4 +7,19 @@ export const phonesRepository = {
 
     return response.data;
   },
+  getPhonetypesSelect: async () => {
+    const response = await http.get<PhoneDTO>("getPhonetypesSelect/");
+
+    return response.data;
+  },
+  getPhonemodelsSelect: async () => {
+    const response = await http.get<PhoneDTO>("getPhonemodelsSelect/");
+
+    return response.data;
+  },
+  getPhonepowersuppliesSelect: async () => {
+    const response = await http.get<PhoneDTO>("getPhonepowersuppliesSelect/");
+
+    return response.data;
+  },
 };
