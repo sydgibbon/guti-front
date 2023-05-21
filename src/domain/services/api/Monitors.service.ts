@@ -7,4 +7,10 @@ export const monitorsService = {
   getAllMonitors: () => {
     return monitorsRepository.getAllMonitors();
   },
+  getMonitortypesSelect: () => {
+    return monitorsRepository.getMonitortypesSelect();
+  },
+  getMonitormodelsSelect: () => {
+    return monitorsRepository.getMonitormodelsSelect();
+  },
 };

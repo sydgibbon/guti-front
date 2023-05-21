@@ -7,4 +7,9 @@ export const softwaresRepository = {
 
     return response.data;
   },
+  getSoftwarecategoriesSelect: async () => {
+    const response = await http.get<SoftwareDTO>("getSoftwarecategoriesSelect/");    
+
+    return response.data;
+  },
 };

@@ -12,4 +12,14 @@ export const monitorsRepository = {
 
     return response.data;
   },
+  getMonitortypesSelect: async () => {
+    const response = await http.get<MonitorDTO>("getMonitortypesSelect/");    
+
+    return response.data;
+  },
+  getMonitormodelsSelect: async () => {
+    const response = await http.get<MonitorDTO>("getMonitormodelsSelect/");    
+
+    return response.data;
+  },
 };
