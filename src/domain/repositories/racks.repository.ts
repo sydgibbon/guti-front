@@ -19,6 +19,11 @@ export const racksRepository = {
   },
   getDcroomsSelect: async () => {
     const response = await http.get<RackDTO>("getDcroomsSelect/");
+    return response.data;
+  },
+
+  getRacksCount: async () => {
+    const response = await http.get("getRacksCount/");
 
     return response.data;
   },

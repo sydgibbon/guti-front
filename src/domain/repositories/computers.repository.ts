@@ -8,7 +8,31 @@ export const computersRepository = {
     return response;
   },
   getAllComputers: async () => {
-    const response = await http.get<ComputerDTO>("getComputers/");    
+    const response = await http.get<ComputerDTO>("getComputers/");
+
+    return response.data;
+  },
+
+  getComputersCount: async () => {
+    const response = await http.get("getComputersCount/");
+
+    return response.data;
+  },
+
+  getComputersByStates: async () => {
+    const response = await http.get("getComputersByStates/");
+
+    return response.data;
+  },
+
+  getComputersByComputertypes: async () => {
+    const response = await http.get("getComputersByComputertypes/");
+
+    return response.data;
+  },
+
+  getComputersByManufacturers: async () => {
+    const response = await http.get("getComputersByManufacturers/");
 
     return response.data;
   },

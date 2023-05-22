@@ -14,4 +14,17 @@ export const computersService = {
   getComputermodelsSelect: () => {
     return computersRepository.getComputermodelsSelect();
   },
+  getComputersCount: () => {
+    return computersRepository.getComputersCount();
+  },
+  getComputersByStates: () => {
+    return computersRepository.getComputersByStates();
+  },
+
+  getComputersByComputertypes: () => {
+    return computersRepository.getComputersByComputertypes();
+  },
+  getComputersByManufacturers: () => {
+    return computersRepository.getComputersByManufacturers();
+  },
 };

@@ -8,7 +8,21 @@ export const softwaresRepository = {
     return response.data;
   },
   getSoftwarecategoriesSelect: async () => {
-    const response = await http.get<SoftwareDTO>("getSoftwarecategoriesSelect/");    
+    const response = await http.get<SoftwareDTO>(
+      "getSoftwarecategoriesSelect/"
+    );
+
+    return response.data;
+  },
+
+  getSoftwaresCount: async () => {
+    const response = await http.get("getSoftwaresCount/");
+
+    return response.data;
+  },
+
+  getSoftwarelicensesCount: async () => {
+    const response = await http.get("getSoftwarelicensesCount/");
 
     return response.data;
   },

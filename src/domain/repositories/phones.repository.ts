@@ -19,6 +19,11 @@ export const phonesRepository = {
   },
   getPhonepowersuppliesSelect: async () => {
     const response = await http.get<PhoneDTO>("getPhonepowersuppliesSelect/");
+    return response.data;
+  },
+
+  getPhonesCount: async () => {
+    const response = await http.get("getPhonesCount/");
 
     return response.data;
   },

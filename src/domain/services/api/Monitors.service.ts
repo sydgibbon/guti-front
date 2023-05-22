@@ -2,7 +2,7 @@ import { monitorsRepository } from "../../repositories/monitors.repository";
 
 export const monitorsService = {
   createMonitors: (body: object) => {
-    return monitorsRepository.createMonitors(body)
+    return monitorsRepository.createMonitors(body);
   },
   getAllMonitors: () => {
     return monitorsRepository.getAllMonitors();
@@ -12,5 +12,13 @@ export const monitorsService = {
   },
   getMonitormodelsSelect: () => {
     return monitorsRepository.getMonitormodelsSelect();
+  },
+
+  getMonitorsCount: () => {
+    return monitorsRepository.getMonitorsCount();
+  },
+
+  getMonitorsByManufacturers: () => {
+    return monitorsRepository.getMonitorsByManufacturers();
   },
 };

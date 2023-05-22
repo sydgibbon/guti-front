@@ -3,17 +3,22 @@ import http from "../services/api/http";
 
 export const printersRepository = {
   getAllPrinters: async () => {
-    const response = await http.get<PrinterDTO>("getPrinters/");    
+    const response = await http.get<PrinterDTO>("getPrinters/");
 
     return response.data;
   },
   getPrintermodelsSelect: async () => {
-    const response = await http.get<PrinterDTO>("getPrintermodelsSelect/");    
+    const response = await http.get<PrinterDTO>("getPrintermodelsSelect/");
 
     return response.data;
   },
   getPrintertypesSelect: async () => {
-    const response = await http.get<PrinterDTO>("getPrintertypesSelect/");    
+    const response = await http.get<PrinterDTO>("getPrintertypesSelect/");
+    return response.data;
+  },
+
+  getPrintersCount: async () => {
+    const response = await http.get("getPrintersCount/");
 
     return response.data;
   },

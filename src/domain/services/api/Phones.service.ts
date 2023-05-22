@@ -13,4 +13,8 @@ export const phonesService = {
   getPhonepowersuppliesSelect: () => {
     return phonesRepository.getPhonepowersuppliesSelect();
   },
+
+  getPhonesCount: () => {
+    return phonesRepository.getPhonesCount();
+  },
 };

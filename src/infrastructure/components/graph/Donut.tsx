@@ -1,47 +1,30 @@
 import { Doughnut } from "react-chartjs-2";
 import { Chart, Tooltip, Title, ArcElement, Legend } from "chart.js";
 import { DonutType } from "../../../domain/models/Others";
+import { useEffect, useState } from "react";
 
 Chart.register(Tooltip, Title, ArcElement, Legend);
 
-const Donut = ({ asset, itemProp }: DonutType) => {
-  // const [loadingData, setLoadingData] = useState(true);
-  // const [data, setData] = useState([]);
+const Donut = ({ data, criteria }: DonutType) => {
+  const [donutValues, setDonutValues] = useState<number[]>([]);
+  const [donutLabels, setDonutLabels] = useState<string[]>([]);
 
-  // useEffect(() => {
-  //   async function getData() {
-  //     await axiosPrivate
-  //       .get("http://127.0.0.1:8000/api/assets/" + asset + "/")
-  //       .then((response) => {
-  //         // check if the data is populated
-  //         setData(response.data);
-  //         // you tell it that you had the result
-  //         setLoadingData(false);
-  //       });
-  //   }
-  //   if (loadingData) {
-  //     // if the result is not ready so you make the axios call
-  //     getData();
-  //   }
-  // }, []);
+  let dataLabels: string[] = [];
+  let dataValues: number[] = [];
 
-  const getItemByProp = () => {
-    let repeatedItemProp: any = [];
+  useEffect(() => {
 
-    // data.map((obj) => {
-    //   repeatedItemProp.push(obj[itemProp]);
-    // });
-    const objItemPropCounter: any = {};
+    if (data !== undefined) {
+      data.forEach((obj: any) => {
+        dataLabels.push(obj[criteria]);
+        dataValues.push(obj["count"]);
+      });
 
-    repeatedItemProp.forEach((element: any) => {
-      objItemPropCounter[element?.name] =
-        (objItemPropCounter[element] || 0) + 1;
-    });
-    return objItemPropCounter;
-  };
-  let keys = Object.keys(getItemByProp());
 
-  let values = Object.values(getItemByProp());
+      setDonutValues(dataValues)
+      setDonutLabels(dataLabels)
+    }
+  }, [data]);
 
   const options = {
     plugins: {
@@ -53,10 +36,10 @@ const Donut = ({ asset, itemProp }: DonutType) => {
   };
 
   const dataSet = {
-    labels: keys,
+    labels: donutLabels,
     datasets: [
       {
-        data: values,
+        data: donutValues,
         backgroundColor: [
           "rgb(255, 99, 132)",
           "rgb(54, 162, 235)",

@@ -10,4 +10,8 @@ export const printersService = {
   getPrintertypesSelect: () => {
     return printersRepository.getPrintertypesSelect();
   },
+
+  getPrintersCount: () => {
+    return printersRepository.getPrintersCount();
+  },
 };

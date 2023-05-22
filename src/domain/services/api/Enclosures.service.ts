@@ -7,4 +7,8 @@ export const enclosuresService = {
   getEnclosuremodelsSelect: () => {
     return enclosuresRepository.getEnclosuremodelsSelect();
   },
+
+  getEnclosuresCount: () => {
+    return enclosuresRepository.getEnclosuresCount();
+  },
 };

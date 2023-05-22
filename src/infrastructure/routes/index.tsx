@@ -94,6 +94,14 @@ const router = createBrowserRouter([
   { path: "login", element: <LoginView /> },
 
   {
+    path: "/",
+    element: (
+      <Main>
+        <AssetsDashboard />
+      </Main>
+    ),
+  },
+  {
     path: "assets/dashboard",
     element: (
       <Main>

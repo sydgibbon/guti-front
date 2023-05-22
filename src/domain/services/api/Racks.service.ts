@@ -13,4 +13,8 @@ export const racksService = {
   getDcroomsSelect: () => {
     return racksRepository.getDcroomsSelect();
   },
+
+  getRacksCount: () => {
+    return racksRepository.getRacksCount();
+  },
 };

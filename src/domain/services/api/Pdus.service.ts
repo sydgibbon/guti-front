@@ -10,4 +10,8 @@ export const pdusService = {
   getPdutypesSelect: () => {
     return pdusRepository.getPdutypesSelect();
   },
+
+  getPdusCount: () => {
+    return pdusRepository.getPdusCount();
+  },
 };
