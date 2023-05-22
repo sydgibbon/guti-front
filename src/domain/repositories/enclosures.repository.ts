@@ -7,4 +7,9 @@ export const enclosuresRepository = {
 
     return response.data;
   },
+  getEnclosuremodelsSelect: async () => {
+    const response = await http.get<EnclosureDTO>("getEnclosuremodelsSelect/");
+
+    return response.data;
+  },
 };

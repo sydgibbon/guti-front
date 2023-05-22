@@ -1,7 +1,15 @@
+import { useEffect } from "react";
+import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
+import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
+import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
+import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect";
+import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
 import SelectOption, { OptionValue } from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import Form from "./Form";
+import { useGetPassivedcmodelsSelect } from "../../hooks/PassiveDevices/useGetPassivedcmodelsSelect";
+import { useGetPassivedctypesSelect } from "../../hooks/PassiveDevices/useGetPassivedctypesSelect";
 
 export default function  PassiveDeviceForm() {
   // const computer = useCreateComputer();
@@ -16,6 +24,23 @@ export default function  PassiveDeviceForm() {
   //   }
   // }, [computer.error]);
 
+  const userInChargeOptions = useGetUserInChargeSelect();
+  const groupInChargeOptions = useGetGroupInChargeSelect();
+  const locationOptions = useGetLocationsSelect();
+  const stateOptions = useGetStatesSelect();
+  const manufacturerOptions = useGetManufacturersSelect();
+  const passiveDeviceModelOptions = useGetPassivedcmodelsSelect();
+  const passiveDeviceTypeOptions = useGetPassivedctypesSelect();
+
+    useEffect(() => {
+      userInChargeOptions.get();
+      groupInChargeOptions.get();
+      locationOptions.get();
+      stateOptions.get();
+      manufacturerOptions.get();
+      passiveDeviceModelOptions.get();
+      passiveDeviceTypeOptions.get();
+    }, [])
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -26,13 +51,21 @@ export default function  PassiveDeviceForm() {
           placeholder={"ingrese su nombre"}
         />
 
-        <SelectOption id={"status"} label={"Status"} />
-        <SelectOption id={"location"} label={"Location"} />
-        <SelectOption id={"passivedcequipmenttypes"} label="Type" />
-        <SelectOption id={"user_tech"} label={"Technician in charge of the hardware"} />
-        <SelectOption id={"manufacturers"} label="Manufacturer" />
-        <SelectOption id={"groups_tech"} label={"Group in charge of the hardware"} />
-        <SelectOption id={"pdumodels"} label="Model" />
+        <SelectOption id={"status"} label={"Status"} 
+          options={stateOptions.data?.data} />
+        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
+        <SelectOption id={"passivedcequipmenttypes"} label="Type"
+          options={passiveDeviceTypeOptions?.data}/>
+        <SelectOption id={"user_tech"} label={"Technician in charge of the hardware"} 
+          options={userInChargeOptions.data?.data}
+        />     
+        <SelectOption id={"manufacturers"} label="Manufacturer" 
+          options={manufacturerOptions.data?.data}/>
+        <SelectOption id={"groups_tech"} label={"Group in charge of the hardware"} 
+          options={groupInChargeOptions.data?.data}
+        />
+        <SelectOption id={"pdumodels"} label="Model" 
+          options={passiveDeviceModelOptions?.data}/>
 
         <TextInput
           id={"serialnumber"}

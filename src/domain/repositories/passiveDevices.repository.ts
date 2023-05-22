@@ -8,4 +8,14 @@ export const passiveDevicesRepository = {
 
     return response.data;
   },
+  getPassivedctypesSelect: async () => {
+    const response = await http.get<PassiveDevicesDTO>("getPassivedcequipmenttypesSelect/");    
+
+    return response.data;
+  },
+  getPassivedcmodelsSelect: async () => {
+    const response = await http.get<PassiveDevicesDTO>("getPassivedcequipmentmodelsSelect/");    
+
+    return response.data;
+  },
 };

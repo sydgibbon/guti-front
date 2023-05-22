@@ -1,14 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import SelectOption, { OptionValue } from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import Form from "./Form";
 import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect";
 import { useGetCabletypesSelect } from "../../hooks/Cables/useGetCabletypesSelect";
-import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
 import { useGetCablestrandsSelect } from "../../hooks/Cables/useGetCablestrandsSelect";
 import { useGetSocketmodelsSelect } from "../../hooks/Cables/useGetSocketmodelsSelect";
 import { useGetSocketsSelect } from "../../hooks/Cables/useGetSocketsSelect";
+import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
 
 export default function CableForm() {
   // const computer = useCreateComputer();
@@ -25,18 +25,21 @@ export default function CableForm() {
 
   const stateOptions = useGetStatesSelect();
   const cabletypesOption = useGetCabletypesSelect();
-  const groupInChargeOptions = useGetGroupInChargeSelect();
+  const userInChargeOptions = useGetUserInChargeSelect();
   const cablestrandsOption = useGetCablestrandsSelect();
   const socketmodelsOption = useGetSocketmodelsSelect();
   const socketOption = useGetSocketsSelect();
 
   const assetOption = [{id:"0", name:"Computers"},{id:"1", name:"Network Devices"},{id:"3", name:"Devices"},{id:"4", name:"Phones"},{id:"5", name:"Printers"},{id:"6", name:"Passive Devices"}]
 
+  const [assetSelectA, setAssetSelectA] = useState<any>([]);
+  const [assetSelectB, setAssetSelectB] = useState<any>([]);
+
   useEffect(() => {
 
     stateOptions.get();
     cabletypesOption.get();
-    groupInChargeOptions.get();
+    userInChargeOptions.get();
     cablestrandsOption.get();
     socketmodelsOption.get();
     socketOption.get();
@@ -66,7 +69,7 @@ export default function CableForm() {
         <SelectOption
           id={"user_tech"}
           label={"Technician in charge of the hardware"}
-          options={groupInChargeOptions.data?.data}
+          options={userInChargeOptions.data?.data}
         />
 
         <TextInput
@@ -95,6 +98,8 @@ export default function CableForm() {
 
         <SelectOption id={"items_endpoint_a"} label="Asset" options={assetOption}/>
         <SelectOption id={"items_endpoint_b"} label="Asset" options={assetOption}/>
+        <SelectOption id={"items_endpoint_a"} label="" options={assetSelectA}/>
+        <SelectOption id={"items_endpoint_b"} label="" options={assetSelectB}/>
 
         <SelectOption id={"socketmodels_endpoint_a"} label="Socket Model" options={socketmodelsOption?.data}/>
         <SelectOption id={"socketmodels_endpoint_b"} label="Socket Model" options={socketmodelsOption?.data}/>
