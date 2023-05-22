@@ -13,7 +13,7 @@ export type Item = {
 
 export type GridItemType = {
   name: string;
-  count?: any;
+  count?: number;
   bgColor: string;
   textColor: string;
   hoverBgColor: string;
