@@ -21,24 +21,70 @@ import { useGetComputersByManufacturers } from "../../hooks/Computers/useGetComp
 import { useGetComputersByComputertypes } from "../../hooks/Computers/useGetComputersByComputertypes";
 import { useGetMonitorsByManufacturers } from "../../hooks/Monitors/useGetMonitorsByManufacturers";
 import { useGetNetworkequipmentsByManufacturers } from "../../hooks/NetworksDevices/useGetNetworkequipmentsByManufacturers";
-
-
+import { useGetComputersCount } from "../../hooks/Computers/useGetComputersCount";
+import { useGetSoftwaresCount } from "../../hooks/Softwares/useGetSoftwaresCount";
+import { useGetNetworkequipmentsCount } from "../../hooks/NetworksDevices/useGetNetworkequipmentsCount";
+import { useGetRacksCount } from "../../hooks/Racks/useGetRacksCount";
+import { useGetEnclosuresCount } from "../../hooks/Enclosures/useGetEnclosuresCount";
+import { useGetMonitorsCount } from "../../hooks/Monitors/useGetMonitorsCount";
+import { useGetSoftwarelicensesCount } from "../../hooks/Softwares/useGetSoftwarelicensesCount";
+import { useGetPrintersCount } from "../../hooks/Printers/useGetPrintersCount";
+import { useGetPdusCount } from "../../hooks/Pdus/useGetPdusCount";
+import { useGetPhonesCount } from "../../hooks/Phones/useGetPhonesCount";
 
 const AssetsDashboard = () => {
-  const computersByState = useGetComputersByStates()
-  const computersByManufacturers= useGetComputersByManufacturers()
-  const computersByComputertypes= useGetComputersByComputertypes()
-  const monitorsByManufacturers= useGetMonitorsByManufacturers()
-  const networkequipmentsByManufacturers= useGetNetworkequipmentsByManufacturers()
-  useEffect(() => {
-    computersByState.get()
-    computersByManufacturers.get()
-    computersByComputertypes.get()
-    monitorsByManufacturers.get()
-    networkequipmentsByManufacturers.get()
-  }, [])
+  const computersByState = useGetComputersByStates();
+  const computersByManufacturers = useGetComputersByManufacturers();
+  const computersByComputertypes = useGetComputersByComputertypes();
+  const monitorsByManufacturers = useGetMonitorsByManufacturers();
+  const networkequipmentsByManufacturers =
+    useGetNetworkequipmentsByManufacturers();
 
-  
+  const computersCount = useGetComputersCount();
+  const softwaresCount = useGetSoftwaresCount();
+  const networkequipmentsCount = useGetNetworkequipmentsCount();
+  const racksCount = useGetRacksCount();
+  const enclosuresCount = useGetEnclosuresCount();
+  const monitorsCount = useGetMonitorsCount();
+  const softwarelicensesCount = useGetSoftwarelicensesCount();
+  const printersCount = useGetPrintersCount();
+  const pdusCount = useGetPdusCount();
+  const phonesCount = useGetPhonesCount();
+
+  useEffect(() => {
+    // assets by atributes
+    computersByState.get();
+    computersByManufacturers.get();
+    computersByComputertypes.get();
+    monitorsByManufacturers.get();
+    networkequipmentsByManufacturers.get();
+
+    // assets count
+    computersCount.get();
+    softwaresCount.get();
+    networkequipmentsCount.get();
+    racksCount.get();
+    enclosuresCount.get();
+    monitorsCount.get();
+    softwarelicensesCount.get();
+    printersCount.get();
+    pdusCount.get();
+    phonesCount.get();
+  }, []);
+
+  const assetCounters: Record<string, any> = {
+    "computers": computersCount.data?.computersCount,
+    "softwares": softwaresCount.data?.softwaresCount,
+    "networkequipments": networkequipmentsCount.data?.networkequipmentsCount,
+    "racks": racksCount.data?.racksCount,
+    "enclosures": enclosuresCount.data?.enclosuresCount,
+    "monitors": monitorsCount.data?.monitorsCount,
+    "softwarelicenses": softwarelicensesCount.data?.softwarelicensesCount,
+    "printers": printersCount.data?.printersCount,
+    "pdus": pdusCount.data?.pdusCount,
+    "phones": phonesCount.data?.phonesCount,}
+  ;
+
   return (
     <div className="flex flex-col items-start mx-6 my-5 bg-white border rounded-md assets-dashboard border-secondary-dark">
       <div className="flex items-center justify-between w-full h-16 px-5 py-4 dashboard-header">
@@ -76,11 +122,12 @@ const AssetsDashboard = () => {
       </div>
 
       <div className="grid w-full grid-cols-1 gap-5 px-5 py-5 items-grid md:grid-cols-3 lg:grid-cols-5 ">
-        {assetsGridItems.map((gridItem: GridItemType,index:number) => {
+        {assetsGridItems.map((gridItem: GridItemType, index: number) => {
           return (
             <GridItem
               key={index}
               name={gridItem.name}
+              count={assetCounters[gridItem.asset]}
               bgColor={`bg-[${gridItem.bgColor}]`}
               textColor={`text-[${gridItem.textColor}]`}
               hoverBgColor={`hover:bg-[${gridItem.hoverBgColor}]`}
@@ -117,7 +164,12 @@ const AssetsDashboard = () => {
         />
         <GraphGrid
           icon={<TbDeviceLaptop className="w-6 h-6 stroke-2" />}
-          graph={<Donut data={computersByComputertypes?.data} criteria="computertypes" />}
+          graph={
+            <Donut
+              data={computersByComputertypes?.data}
+              criteria="computertypes"
+            />
+          }
           text="Computers by Types"
           bgColor="bg-[#f5f9fa]"
           textColor="text-[#6da7b6]"
@@ -126,7 +178,7 @@ const AssetsDashboard = () => {
           icon={<TbEdit className="w-6 h-6 stroke-2" />}
           graph={
             <BarChart
-              data = {networkequipmentsByManufacturers?.data}
+              data={networkequipmentsByManufacturers?.data}
               criteria="manufacturers"
               color="rgb(54, 162, 235)"
               title={undefined}
@@ -138,7 +190,12 @@ const AssetsDashboard = () => {
         />
         <GraphGrid
           icon={<TbEdit className="w-6 h-6 stroke-2" />}
-          graph={<Donut data={monitorsByManufacturers?.data} criteria="manufacturers" />}
+          graph={
+            <Donut
+              data={monitorsByManufacturers?.data}
+              criteria="manufacturers"
+            />
+          }
           text="Monitors by Manufacturers"
           bgColor="bg-[#f9fbfb]"
           textColor="text-[#7fa9a9]"
