@@ -37,14 +37,7 @@ export default function ImageInput(imageInputProps: ImageInputProps) {
 
       <div className="py-2 bg-gray-100 border rounded-md flex flex-col gap-y-2 items-center appearance-none container__image-input">
         <span className="text-sm font-semibold">
-          File(s) (40 Mio max){" "}
-          <a
-            href={infoRef}
-            title="Help"
-            className="text-blue-800 font-mono text-lg"
-          >
-            i
-          </a>
+          File(s) (40 MB max)
         </span>
         <span className="text-sm font-semibold">
           Drag and drop your file here, or
