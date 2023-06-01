@@ -50,8 +50,8 @@ export default function ImageInput(imageInputProps: ImageInputProps) {
           Drag and drop your file here, or
         </span>
         <input
-          // className="appearance-none p-2 border rounded-md bg-white hover:mouse container__input"
-          className="opacity-0 absolute -z-10 overflow-hidden"
+          className="appearance-none p-2 border rounded-md bg-white hover:border-red-400 container__input"
+          // className="opacity-0 absolute -z-10 overflow-hidden"
           type={type ?? "file"}
           accept={fileType}
           multiple={multiple}
@@ -61,15 +61,15 @@ export default function ImageInput(imageInputProps: ImageInputProps) {
           maxLength={maxSize ?? 50}
           ref={inputRef}
         />
-        <div className="py-2 divide-x divide-x-reverse">
+        {/* <div className="py-2">
           <label
-            className="p-2 border rounded-l-md bg-white hover:bg-primary-light block"
+            className="p-2 border rounded-md bg-white hover:bg-primary-light block"
             htmlFor={id}
           >
             {btnText}
-          <span className="p-2 border rounded-r-md bg-white">algo</span>
+            <span className="p-2">algo</span>
           </label>
-        </div>
+        </div> */}
       </div>
     </div>
   );

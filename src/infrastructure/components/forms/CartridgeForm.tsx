@@ -77,7 +77,7 @@ export default function  CartridgeForm() {
           label={"Alert Threshold"}
         />
 
-        <ImageInput id={"pictures"} label={"Pictures"} fileType={".jpg, .jpeg, .png"} btnText={"Hagase la luz"}/>
+        <ImageInput id={"pictures"} label={"Pictures"} fileType={".jpg, .jpeg, .png"}/>
 
         <TextInput
           id={"stocktarget"}
