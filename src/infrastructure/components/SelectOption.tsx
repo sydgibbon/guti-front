@@ -2,6 +2,7 @@ interface SelectOptionProps {
   id: string;
   label?: string;
   options?: OptionValue[];
+  onSelect?: (selectedOption: OptionValue) => void;
 }
 export interface OptionValue {
   id: string;
@@ -9,7 +10,7 @@ export interface OptionValue {
 } 
 
 export default function SelectOption(selectOptionProps: SelectOptionProps) {
-  const { id, label, options } = selectOptionProps;
+  const { id, label, options, onSelect } = selectOptionProps;
 
   return (
     <div className="container flex flex-col gap-y-2">
@@ -22,6 +23,13 @@ export default function SelectOption(selectOptionProps: SelectOptionProps) {
         name={id.toLocaleLowerCase()}
         className="px-4 bg-gray-100 border rounded-md h-11"
         id={id}
+        onChange={(event) => {
+          const selectedOptionId = event.target.value;
+          const selectedOption = options && options.find(option => option.id === selectedOptionId);
+          if (selectedOption && onSelect) {
+            onSelect(selectedOption);
+          }
+        }}
       >
         {options === undefined && <option value={undefined} selected>
           Unassigned

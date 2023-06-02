@@ -9,19 +9,19 @@ import { useGetCablestrandsSelect } from "../../hooks/Cables/useGetCablestrandsS
 import { useGetSocketmodelsSelect } from "../../hooks/Cables/useGetSocketmodelsSelect";
 import { useGetSocketsSelect } from "../../hooks/Cables/useGetSocketsSelect";
 import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
+import { useGetAllComputers } from "../../hooks/Computers/useGetAllComputers";
+import { useGetAllNetworkDevices } from "../../hooks/NetworksDevices/useGetAllNetworkDevices";
+import { useGetAllDevices } from "../../hooks/Devices/GetAllDevices";
+import { useGetAllPhones } from "../../hooks/Phones/useGetAllPhones";
+import { useGetAllPrinters } from "../../hooks/Printers/useGetAllPrinters";
+import { useGetAllPassiveDevices } from "../../hooks/PassiveDevices/useGetAllPassiveDevices";
 
 export default function CableForm() {
-  // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
   };
 
-  // useEffect(() => {
-  //   if (computer.error) {
-  //     alert(computer.error);
-  //   }
-  // }, [computer.error]);
 
   const stateOptions = useGetStatesSelect();
   const cabletypesOption = useGetCabletypesSelect();
@@ -29,11 +29,20 @@ export default function CableForm() {
   const cablestrandsOption = useGetCablestrandsSelect();
   const socketmodelsOption = useGetSocketmodelsSelect();
   const socketOption = useGetSocketsSelect();
+  const allComputers = useGetAllComputers();
+  const allNetworkDevices = useGetAllNetworkDevices();
+  const allDevices = useGetAllDevices();
+  const allPhones = useGetAllPhones();
+  const allPrinters = useGetAllPrinters();
+  const allPassiveDevices = useGetAllPassiveDevices();
 
-  const assetOption = [{id:"0", name:"Computers"},{id:"1", name:"Network Devices"},{id:"3", name:"Devices"},{id:"4", name:"Phones"},{id:"5", name:"Printers"},{id:"6", name:"Passive Devices"}]
+  const assetOption = [{ id: "0", name: "Computers" }, { id: "1", name: "Network Devices" }, { id: "2", name: "Devices" }, { id: "3", name: "Phones" }, { id: "4", name: "Printers" }, { id: "5", name: "Passive Devices" }]
 
-  const [assetSelectA, setAssetSelectA] = useState<any>([]);
-  const [assetSelectB, setAssetSelectB] = useState<any>([]);
+  const [selectedAssetA, setSelectedAssetA] = useState<OptionValue>();
+  const [selectedAssetB, setSelectedAssetB] = useState<OptionValue>();
+  const [dataOptionsA, setDataOptionsA] = useState<OptionValue[]>([]);
+  const [dataOptionsB, setDataOptionsB] = useState<OptionValue[]>([]);
+
 
   useEffect(() => {
 
@@ -43,8 +52,56 @@ export default function CableForm() {
     cablestrandsOption.get();
     socketmodelsOption.get();
     socketOption.get();
+    allComputers.get();
+    allNetworkDevices.get();
+    allDevices.get();
+    allPhones.get();
+    allPrinters.get();
+    allPassiveDevices.get()
 
   }, [])
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (selectedAssetA) {
+        if (selectedAssetA.name === "Computers") {
+          setDataOptionsA(allComputers?.data);
+        } else if (selectedAssetA.name === "Network Devices") {
+          setDataOptionsA(allNetworkDevices?.data);
+        } else if (selectedAssetA?.name === "Devices") {
+          setDataOptionsA(allDevices?.data);
+        } else if (selectedAssetA.name === "Phones") {
+          setDataOptionsA(allPhones?.data);
+        } else if (selectedAssetA.name === "Printers") {
+          setDataOptionsA(allPrinters?.data);
+        } else if (selectedAssetA.name === "Passive Devices") {
+          setDataOptionsA(allPassiveDevices?.data);
+        }
+      }
+    };
+    fetchData();
+  }, [selectedAssetA, allComputers, allNetworkDevices, allDevices, allPhones, allPrinters, allPassiveDevices]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      if (selectedAssetB) {
+        if (selectedAssetB.name === "Computers") {
+          setDataOptionsB(allComputers?.data);
+        } else if (selectedAssetB.name === "Network Devices") {
+          setDataOptionsB(allNetworkDevices?.data);
+        } else if (selectedAssetA?.name === "Devices") {
+          setDataOptionsB(allDevices?.data);
+        } else if (selectedAssetB.name === "Phones") {
+          setDataOptionsB(allPhones?.data);
+        } else if (selectedAssetB.name === "Printers") {
+          setDataOptionsB(allPrinters?.data);
+        } else if (selectedAssetB.name === "Passive Devices") {
+          setDataOptionsB(allPassiveDevices?.data);
+        }
+      }
+    };
+    fetchData();
+  }, [selectedAssetB, allComputers, allNetworkDevices, allDevices, allPhones, allPrinters, allPassiveDevices]);
 
 
   return (
@@ -88,7 +145,7 @@ export default function CableForm() {
           id={"cablestrands"}
           label="Cable strand"
           options={cablestrandsOption?.data}
-          />
+        />
 
         <TextInput
           id={"color"}
@@ -96,16 +153,17 @@ export default function CableForm() {
           placeholder={"Aca se eligen los colores"}
         />
 
-        <SelectOption id={"items_endpoint_a"} label="Asset" options={assetOption}/>
-        <SelectOption id={"items_endpoint_b"} label="Asset" options={assetOption}/>
-        <SelectOption id={"items_endpoint_a"} label="" options={assetSelectA}/>
-        <SelectOption id={"items_endpoint_b"} label="" options={assetSelectB}/>
+        <SelectOption id={"items_endpoint_a"} label="Asset" options={assetOption} onSelect={setSelectedAssetA}/>
+        <SelectOption id={"items_endpoint_a"} label="Asset" options={assetOption} onSelect={setSelectedAssetB}/>
 
-        <SelectOption id={"socketmodels_endpoint_a"} label="Socket Model" options={socketmodelsOption?.data}/>
-        <SelectOption id={"socketmodels_endpoint_b"} label="Socket Model" options={socketmodelsOption?.data}/>
+        <SelectOption id={"items_endpoint_a"} label="" options={dataOptionsA} />
+        <SelectOption id={"items_endpoint_b"} label="" options={dataOptionsB} />
 
-        <SelectOption id={"sockets_endpoint_a"} label="Socket" options={socketOption?.data}/>
-        <SelectOption id={"sockets_endpoint_b"} label="Socket" options={socketOption?.data}/>
+        <SelectOption id={"socketmodels_endpoint_a"} label="Socket Model" options={socketmodelsOption?.data} />
+        <SelectOption id={"socketmodels_endpoint_b"} label="Socket Model" options={socketmodelsOption?.data} />
+
+        <SelectOption id={"sockets_endpoint_a"} label="Socket" options={socketOption?.data} />
+        <SelectOption id={"sockets_endpoint_b"} label="Socket" options={socketOption?.data} />
 
       </Form>
     </div>
