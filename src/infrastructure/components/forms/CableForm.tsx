@@ -38,10 +38,12 @@ export default function CableForm() {
 
   const assetOption = [{ id: "0", name: "Computers" }, { id: "1", name: "Network Devices" }, { id: "2", name: "Devices" }, { id: "3", name: "Phones" }, { id: "4", name: "Printers" }, { id: "5", name: "Passive Devices" }]
 
-  const [selectedAssetA, setSelectedAssetA] = useState<OptionValue>();
-  const [selectedAssetB, setSelectedAssetB] = useState<OptionValue>();
+  const [selectedAssetA, setSelectedAssetA] = useState<OptionValue>({ id: "0", name: "Computers" });
+  const [selectedAssetB, setSelectedAssetB] = useState<OptionValue>({ id: "0", name: "Computers" });
   const [dataOptionsA, setDataOptionsA] = useState<OptionValue[]>([]);
   const [dataOptionsB, setDataOptionsB] = useState<OptionValue[]>([]);
+
+  const [isDataVisible, setIsDataVisible] = useState(true);
 
 
   useEffect(() => {
@@ -103,6 +105,19 @@ export default function CableForm() {
     fetchData();
   }, [selectedAssetB, allComputers, allNetworkDevices, allDevices, allPhones, allPrinters, allPassiveDevices]);
 
+  useEffect(() => {
+    if (
+      selectedAssetA?.name === "Phones" ||
+      selectedAssetA?.name === "Printers" ||
+      selectedAssetB?.name === "Phones" ||
+      selectedAssetB?.name === "Printers"
+    ) {
+      setIsDataVisible(false);
+    } else {
+      setIsDataVisible(true);
+    }
+  }, [selectedAssetA, selectedAssetB]);
+
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -153,11 +168,15 @@ export default function CableForm() {
           placeholder={"Aca se eligen los colores"}
         />
 
-        <SelectOption id={"items_endpoint_a"} label="Asset" options={assetOption} onSelect={setSelectedAssetA}/>
-        <SelectOption id={"items_endpoint_a"} label="Asset" options={assetOption} onSelect={setSelectedAssetB}/>
+        <SelectOption id={"items_endpoint_a"} label="Asset" options={assetOption} onSelect={setSelectedAssetA} />
+        <SelectOption id={"items_endpoint_a"} label="Asset" options={assetOption} onSelect={setSelectedAssetB} />
 
-        <SelectOption id={"items_endpoint_a"} label="" options={dataOptionsA} />
-        <SelectOption id={"items_endpoint_b"} label="" options={dataOptionsB} />
+        {isDataVisible && (
+          <>
+            <SelectOption id={"items_endpoint_a"} label="Data" options={dataOptionsA} />
+            <SelectOption id={"items_endpoint_b"} label="Data" options={dataOptionsB} />
+          </>
+        )}
 
         <SelectOption id={"socketmodels_endpoint_a"} label="Socket Model" options={socketmodelsOption?.data} />
         <SelectOption id={"socketmodels_endpoint_b"} label="Socket Model" options={socketmodelsOption?.data} />
