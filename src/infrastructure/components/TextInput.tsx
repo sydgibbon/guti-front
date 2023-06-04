@@ -5,11 +5,15 @@ interface TextInputProps {
   placeholder?: string;
   required?: boolean;
   maxCharacters?: number;
-  inputRef?: any
+  inputRef?: any;
+
+  value?: string | number | readonly string[] | undefined;
+
+  onChange?: React.ChangeEventHandler<HTMLInputElement> | undefined;
 }
 
 export default function TextInput(textInputProps: TextInputProps) {
-  const { id, label, type, required, maxCharacters, placeholder, inputRef } = textInputProps;
+  const { id, label, type, required, maxCharacters, placeholder, inputRef, value, onChange } = textInputProps;
 
   return (
     <div className="container flex flex-col gap-y-2">
@@ -28,6 +32,8 @@ export default function TextInput(textInputProps: TextInputProps) {
         name={id.toLocaleLowerCase()}
         maxLength={maxCharacters ?? 50}
         ref={inputRef}
+        value={value}
+        onChange={onChange}
       />
     </div>
   );

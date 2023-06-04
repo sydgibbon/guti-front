@@ -2,7 +2,7 @@ import { useCallback, useState } from "react";
 import { ComputerDTO } from "../../../domain/dto/ComputerDTO";
 import { computersService } from "../../../domain/services/api/Computers.service"; 
 
-const useCreateComputer = () => {
+export const useCreateComputer = () => {
   const [data, setData] = useState<any>(undefined);
   const [error, setError] = useState<undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
@@ -26,4 +26,3 @@ const useCreateComputer = () => {
   return { data, error, isLoading, post };
 };
 
-export default useCreateComputer;

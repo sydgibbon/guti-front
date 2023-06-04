@@ -2,7 +2,7 @@ import Form from "./Form";
 import SelectOption from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
 import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect";
 import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
@@ -14,55 +14,45 @@ import { useGetComputermodelsSelect } from "../../hooks/Computers/useGetComputer
 import { useGetComputertypesSelect } from "../../hooks/Computers/useGetComputertypesSelect";
 import { useGetNetworksSelect } from "../../hooks/Networks/useGetNetworksSelect";
 import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
+import { useCreateComputer} from "../../hooks/Computers/useCreateComputer";
+
+import { ComputerDTO } from "../../../domain/dto/ComputerDTO";
 
 
 export default function  ComputersForm() {
-  // const computer = useCreateComputer();
+  const computer = useCreateComputer();
+  const [data, setData] = useState<ComputerDTO>(
+    {
+      name: "",
+      locations: 0,
+      otherserial: "",
+      contact: "",
+      uuid: "",
+      contact_num: "",
+      comment: "",
+      computermodels: 0,
+      computertypes: 0,
+      date_creation: Date.now().toString(),
+      groups: 0,
+      groups_tech: "FIX THIS",
+      manufacturers: 0,
+      networks: 0,
+      serial: "",
+      states: 0,
+      users: 0,
+      users_tech: 0,
+      autoupdatesystems: 0
+    }
+  );
+  const handleChange = (event: any) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setData(values => ({...values, [name]: value}))
+  }
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-
-    // const target = e.target as typeof e.target & {
-    //   name: { value: string };
-    //   locations: { value: string };
-    //   uuid: { value: string };
-    //   inventoryassetnumber: { value: string };
-    //   alternativeusername: { value: string };
-    //   alternativeusernamenumber: { value: string };
-    // };
-
-    // const data: ComputerDTO = {
-    //   id: 1,
-    //   name: target.name.value,
-    //   locations: target.locations.value,
-    //   otherserial: target.inventoryassetnumber.value,
-    //   contact: target.alternativeusername.value,
-    //   uuid: target.uuid.value,
-    //   contact_num: target.alternativeusernamenumber.value,
-    //   is_template: 0,
-    //   is_deleted: 0,
-    //   is_dynamic: 0,
-    //   is_recursive: 0,
-    //   comment: null,
-    //   computermodels: null,
-    //   computertypes: null,
-    //   date_creation: null,
-    //   date_mod: null,
-    //   entities: null,
-    //   groups: null,
-    //   groups_tech: null,
-    //   last_inventory_update: null,
-    //   manufacturers: null,
-    //   networks: null,
-    //   serial: null,
-    //   states: null,
-    //   template_name: null,
-    //   ticket_tco: null,
-    //   users: null,
-    //   users_tech: null,
-    // };
-
-    // computer.post(data);
+    computer.post(data);
   };
   
   const userInChargeOptions = useGetUserInChargeSelect();
@@ -100,80 +90,129 @@ export default function  ComputersForm() {
           label="Name"
           placeholder="Enter your name here"
           required
+          value={data.name || ""}
+          onChange={handleChange}
         />
 
-        <SelectOption id="locations" label="Location" options={locationOptions.data?.data} />
+        <SelectOption id="locations" label="Location" options={locationOptions.data?.data}
+          setValue={setData}
+          value={data.locations || ""}
+          onChange={handleChange} />
 
         <SelectOption
-          id="hardware"
+          id="users_tech"
           label="Technician in Charge of the Hardware"
           options={userInChargeOptions.data?.data}
+          setValue={setData}
+          value={data.users_tech || ""}
+          onChange={handleChange}
         />
 
         <SelectOption
-          id="group-hardware"
+          id="groups_tech"
           label="Group in Charge of the Hardware"
-          options={groupInChargeOptions.data?.data}
+          options={groupInChargeOptions.data?.data} //NEED TO FIX IN BACKEND
         />
 
         <TextInput
-          id={"alternativeusernamenumber"}
+          id={"contact_num"}
           label="Alternate username number"
           placeholder="Enter your alternate username number here"
           required
+          value={data.contact_num || ""}
+          onChange={handleChange}
         />
 
         <TextInput
-          id={"alternativeusername"}
+          id={"contact"}
           label="Alternate Username"
           placeholder="Enter your Alternate Username here"
           required
+          value={data.contact || ""}
+          onChange={handleChange}
         />
 
-        <SelectOption id="user" label="User"
-          options={usersOptions.data?.data} />
+        <SelectOption id="users" label="User"
+          options={usersOptions.data?.data}
+          setValue={setData}
+          value={data.users || ""} 
+          onChange={handleChange}/>
 
-        <SelectOption id="group" label="Group"
+        <SelectOption id="groups" label="Group"
           options={groupsOptions.data?.data}
+          setValue={setData}
+          value={data.groups || ""}
+          onChange={handleChange}
          />
 
         <TextArea
           id="comment"
           label="Comment"
           placeholder="Enter your comment here"
+          value={data.comment || ""}
+          onChange={handleChange}
         />
 
         <SelectOption id="states" label="Status" 
-          options={stateOptions.data?.data} />
-        <SelectOption id="type" label="Type" 
-          options={computerTypeOptions?.data}/>
-        <SelectOption id="manufacturer" label="Manufacturer" 
-          options={manufacturerOptions.data?.data}/>
-        <SelectOption id="model" label="Model" 
-          options={computerModelOptions?.data}/>
+          options={stateOptions.data?.data} 
+          setValue={setData}
+          value={data.states || ""}
+          onChange={handleChange}/>
+        <SelectOption id="computertypes" label="Type" 
+          options={computerTypeOptions?.data}
+          setValue={setData}
+          value={data.computertypes || ""}
+          onChange={handleChange}
+          />
+        <SelectOption id="manufacturers" label="Manufacturer" 
+          options={manufacturerOptions.data?.data}
+          setValue={setData}
+          value={data.manufacturers || ""}
+          onChange={handleChange}
+          />
+        <SelectOption id="computermodels" label="Model" 
+          options={computerModelOptions?.data}
+          setValue={setData}
+          value={data.computermodels || ""}
+          onChange={handleChange}
+          />
 
         <TextInput
-          id={"serialnumber"}
+          id={"serial"}
           label="Serial Number"
           placeholder="Enter your Serial Number here"
           required
+          value={data.serial || ""}
+          onChange={handleChange}
         />
         <TextInput
-          id={"inventoryassetnumber"}
+          id={"otherserial"}
           label="Inventory/Asset Number"
           placeholder="Enter your Inventory/Asset Number here"
           required
+          value={data.otherserial || ""}
+          onChange={handleChange}
         />
-        <SelectOption id="network" label="Network" 
-          options={networkOptions.data?.data}/>
+        <SelectOption id="networks" label="Network" 
+          options={networkOptions.data?.data}
+          setValue={setData}
+          value={data.networks || ""}
+          onChange={handleChange}
+          />
         <TextInput
           id="uuid"
           label="UUID"
           placeholder="Enter your UUID here"
           required
+          value={data.uuid || ""}
+          onChange={handleChange}
         />
-        <SelectOption id="updatesource" label="Update Source" 
-          options={autoupdatesystemOptions.data?.data}/>
+        <SelectOption id="autoupdatesystems" label="Update Source" 
+          options={autoupdatesystemOptions.data?.data}
+          setValue={setData}
+          value={data.autoupdatesystems || ""}
+          onChange={handleChange}
+          />
       </Form>
     </div>
   );

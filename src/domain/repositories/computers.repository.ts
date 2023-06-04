@@ -3,7 +3,7 @@ import http from "../services/api/http";
 
 export const computersRepository = {
   createComputer: async (body: ComputerDTO) => {
-    const response = await http.post<ComputerDTO>("computers", body);
+    const response = await http.post<ComputerDTO>("computers/", body);
 
     return response;
   },
