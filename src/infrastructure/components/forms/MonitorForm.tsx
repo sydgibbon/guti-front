@@ -1,22 +1,15 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import SelectOption from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import Form from "./Form";
+import Checkbox from "../CheckBox";
 import { useCreateMonitors } from "../../hooks/Monitors/useCreateMonitors";
 
-// const textOption: OptionValue[] = [{
-//   text: "Boca",
-//   value: "boca"
-// },
-// {
-//   text: "River",
-//   value: "river"
-// }]
 
-export default function  MonitorForm() {
+export default function MonitorForm() {
   const monitors = useCreateMonitors();
-  
+
   // Forms Referencias 
   const monitorName = useRef("")
   const AlternateUsername = useRef("")
@@ -41,7 +34,35 @@ export default function  MonitorForm() {
     comment: Comment.current,
     upgrade: Upgrade.current,
   }
-  
+
+  interface CheckboxState {
+    microphone: boolean;
+    speakers: boolean;
+    subD: boolean;
+    bnc: boolean;
+    dvi: boolean;
+    pivot: boolean;
+    hdmi: boolean;
+    displayPort: boolean;
+  }
+
+  const [checkboxes, setCheckboxes] = useState({
+    microphone: false,
+    speakers: false,
+    subD: false,
+    bnc: false,
+    dvi: false,
+    pivot: false,
+    hdmi: false,
+    displayPort: false,
+  });
+
+  const handleCheckboxChange = (checkboxName: keyof CheckboxState) => {
+    setCheckboxes((prevCheckboxes) => ({
+      ...prevCheckboxes,
+      [checkboxName]: !prevCheckboxes[checkboxName],
+    }));
+  };
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -126,11 +147,61 @@ export default function  MonitorForm() {
           rows={3}
         />
         <SelectOption id="updatesource" label="Update Source" />
-        
-        <TextArea id={"group"}
-          label={"Upgrade"}
-          placeholder={"Aca va un checkbox"}
-          rows={2} />
+
+        <div className="  rounded-lg">
+          <div className="mb-2 font-semibold">Ports</div>
+          <div className="grid grid-cols-4 gap-2">
+            <Checkbox
+              id="have_micro"
+              label="Microphone"
+              checked={checkboxes.microphone}
+              onChange={() => handleCheckboxChange("microphone")}
+            />
+            <Checkbox
+              id="have_speaker"
+              label="Speakers"
+              checked={checkboxes.speakers}
+              onChange={() => handleCheckboxChange("speakers")}
+            />
+            <Checkbox
+              id="have_subd"
+              label="Sub-D (VGA)"
+              checked={checkboxes.subD}
+              onChange={() => handleCheckboxChange("subD")}
+            />
+            <Checkbox
+              id="have_bnc"
+              label="BNC"
+              checked={checkboxes.bnc}
+              onChange={() => handleCheckboxChange("bnc")}
+            />
+            <Checkbox
+              id="have_dvi"
+              label="DVI"
+              checked={checkboxes.dvi}
+              onChange={() => handleCheckboxChange("dvi")}
+            />
+            <Checkbox
+              id="have_pivot"
+              label="Pivot"
+              checked={checkboxes.pivot}
+              onChange={() => handleCheckboxChange("pivot")}
+            />
+            <Checkbox
+              id="have_hdmi"
+              label="HDMI"
+              checked={checkboxes.hdmi}
+              onChange={() => handleCheckboxChange("hdmi")}
+            />
+            <Checkbox
+              id="have_displayport"
+              label="DisplayPort"
+              checked={checkboxes.displayPort}
+              onChange={() => handleCheckboxChange("displayPort")}
+            />
+          </div>
+        </div>
+
       </Form>
     </div>
   );
