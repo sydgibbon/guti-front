@@ -5,14 +5,10 @@ interface TextAreaProps {
   rows?: number;
   placeholder?: string;
   required?: boolean;
-
-  value?: string | number | readonly string[] | undefined;
-
-  onChange?: React.ChangeEventHandler<HTMLTextAreaElement> | undefined;
 }
 
 export default function TextArea(textAreaProps: TextAreaProps) {
-  const { id, label, cols, rows, placeholder, required, value, onChange } = textAreaProps;
+  const { id, label, cols, rows, placeholder, required } = textAreaProps;
 
   return (
     <div className="container flex flex-col gap-y-2">
@@ -30,8 +26,6 @@ export default function TextArea(textAreaProps: TextAreaProps) {
         cols={cols ?? 10}
         rows={rows ?? 10}
         required={required}
-        value={value}
-        onChange={onChange}
       />
     </div>
   );
