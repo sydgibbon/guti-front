@@ -43,7 +43,8 @@ export default function CableForm() {
   const [dataOptionsA, setDataOptionsA] = useState<OptionValue[]>([]);
   const [dataOptionsB, setDataOptionsB] = useState<OptionValue[]>([]);
 
-  const [isDataVisible, setIsDataVisible] = useState(true);
+  const [isDataVisibleA, setIsDataVisibleA] = useState(true);
+  const [isDataVisibleB, setIsDataVisibleB] = useState(true);
 
 
   useEffect(() => {
@@ -108,15 +109,24 @@ export default function CableForm() {
   useEffect(() => {
     if (
       selectedAssetA?.name === "Phones" ||
-      selectedAssetA?.name === "Printers" ||
+      selectedAssetA?.name === "Printers"
+    ) {
+      setIsDataVisibleA(false);
+    } else {
+      setIsDataVisibleA(true);
+    }
+  }, [selectedAssetA]);
+
+  useEffect(() => {
+    if (
       selectedAssetB?.name === "Phones" ||
       selectedAssetB?.name === "Printers"
     ) {
-      setIsDataVisible(false);
+      setIsDataVisibleB(false);
     } else {
-      setIsDataVisible(true);
+      setIsDataVisibleB(true);
     }
-  }, [selectedAssetA, selectedAssetB]);
+  }, [selectedAssetB]);
 
 
   return (
@@ -167,14 +177,18 @@ export default function CableForm() {
           label={"Color"}
           placeholder={"Aca se eligen los colores"}
         />
-
         <SelectOption id={"items_endpoint_a"} label="Asset" options={assetOption} onSelect={setSelectedAssetA} />
         <SelectOption id={"items_endpoint_a"} label="Asset" options={assetOption} onSelect={setSelectedAssetB} />
 
-        {isDataVisible && (
+        {isDataVisibleA && (
           <>
-            <SelectOption id={"items_endpoint_a"} label="Data" options={dataOptionsA} />
-            <SelectOption id={"items_endpoint_b"} label="Data" options={dataOptionsB} />
+            <SelectOption id={"items_endpoint_a"} label="DataA" options={dataOptionsA} style="invisible" />
+          </>
+        )}
+
+        {isDataVisibleB && (
+          <>
+            <SelectOption id={"items_endpoint_b"} label="DataB" options={dataOptionsB} style="invisible" />
           </>
         )}
 
@@ -183,8 +197,8 @@ export default function CableForm() {
 
         <SelectOption id={"sockets_endpoint_a"} label="Socket" options={socketOption?.data} />
         <SelectOption id={"sockets_endpoint_b"} label="Socket" options={socketOption?.data} />
-
       </Form>
+
     </div>
   );
 }

@@ -3,6 +3,7 @@ interface SelectOptionProps {
   label?: string;
   options?: OptionValue[];
   onSelect?: (selectedOption: OptionValue) => void;
+  style?: string;
 }
 export interface OptionValue {
   id: string;
@@ -10,7 +11,7 @@ export interface OptionValue {
 } 
 
 export default function SelectOption(selectOptionProps: SelectOptionProps) {
-  const { id, label, options, onSelect } = selectOptionProps;
+  const { id, label, options, onSelect, style } = selectOptionProps;
 
   return (
     <div className="container flex flex-col gap-y-2">
