@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import SelectOption from "../SelectOption";
+import ImageInput from "../ImageInput";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import Form from "./Form";
@@ -76,7 +77,12 @@ export default function  CartridgeForm() {
           label={"Alert Threshold"}
         />
 
-        <SelectOption id={"pictures"} label={"Pictures"} />
+        <ImageInput
+        id={"pictures"}
+        label={"Pictures"}
+        fileType={".jpg, .jpeg, .png"}
+        maxSize={3}
+        />
 
         <TextInput
           id={"stocktarget"}
