@@ -30,13 +30,8 @@ export default function ImageInput(imageInputProps: ImageInputProps) {
         const file = selectedFiles[i];
         formData.append("files", file);
       }
-
-      // Axios post method here
-
     }
   }, [selectedFiles]);
-
-  // console.log(selectedFiles)
 
   // File checking method
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
