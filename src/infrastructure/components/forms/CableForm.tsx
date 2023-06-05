@@ -15,6 +15,7 @@ import { useGetAllDevices } from "../../hooks/Devices/GetAllDevices";
 import { useGetAllPhones } from "../../hooks/Phones/useGetAllPhones";
 import { useGetAllPrinters } from "../../hooks/Printers/useGetAllPrinters";
 import { useGetAllPassiveDevices } from "../../hooks/PassiveDevices/useGetAllPassiveDevices";
+import { isVisible } from "@testing-library/user-event/dist/utils";
 
 export default function CableForm() {
 
@@ -180,17 +181,10 @@ export default function CableForm() {
         <SelectOption id={"items_endpoint_a"} label="Asset" options={assetOption} onSelect={setSelectedAssetA} />
         <SelectOption id={"items_endpoint_a"} label="Asset" options={assetOption} onSelect={setSelectedAssetB} />
 
-        {isDataVisibleA && (
-          <>
-            <SelectOption id={"items_endpoint_a"} label="DataA" options={dataOptionsA} style="invisible" />
-          </>
-        )}
 
-        {isDataVisibleB && (
-          <>
-            <SelectOption id={"items_endpoint_b"} label="DataB" options={dataOptionsB} style="invisible" />
-          </>
-        )}
+        <SelectOption id={"items_endpoint_a"} label="" options={dataOptionsA} style={isDataVisibleA ? {} : {visibility: "hidden"}} />
+        <SelectOption id={"items_endpoint_b"} label="" options={dataOptionsB} style={isDataVisibleB ? {} : {visibility: "hidden"}} />
+
 
         <SelectOption id={"socketmodels_endpoint_a"} label="Socket Model" options={socketmodelsOption?.data} />
         <SelectOption id={"socketmodels_endpoint_b"} label="Socket Model" options={socketmodelsOption?.data} />

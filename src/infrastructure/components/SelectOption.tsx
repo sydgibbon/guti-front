@@ -3,7 +3,7 @@ interface SelectOptionProps {
   label?: string;
   options?: OptionValue[];
   onSelect?: (selectedOption: OptionValue) => void;
-  style?: string;
+  style?: React.CSSProperties | undefined;
 }
 export interface OptionValue {
   id: string;
@@ -14,7 +14,7 @@ export default function SelectOption(selectOptionProps: SelectOptionProps) {
   const { id, label, options, onSelect, style } = selectOptionProps;
 
   return (
-    <div className="container flex flex-col gap-y-2">
+    <div className="container flex flex-col gap-y-2" style={style}>
       {label && (
         <label className="text-sm font-semibold container__label" htmlFor={id}>
           {label}
