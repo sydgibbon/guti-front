@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import SelectOption from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
@@ -11,6 +11,8 @@ import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSele
 import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
 import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
 import { useGetSoftwareCategoriesSelect } from "../../hooks/Softwares/useGetSoftwareCategoriesSelect";
+import Checkbox from "../CheckBox";
+import ImageInput from "../ImageInput";
 
 
 export default function SoftwareForm() {
@@ -19,9 +21,8 @@ export default function SoftwareForm() {
     e.preventDefault();
   };
 
-
   const userInChargeOptions = useGetUserInChargeSelect();
-  const usersOptions = useGetUsersSelect();  
+  const usersOptions = useGetUsersSelect();
   const groupInChargeOptions = useGetGroupInChargeSelect();
   const groupsOptions = useGetGroupsSelect();
   const locationOptions = useGetLocationsSelect();
@@ -29,8 +30,13 @@ export default function SoftwareForm() {
   const softwarecategoryOptions = useGetSoftwareCategoriesSelect();
   const autoupdatesystemOptions = useGetAutoupdatesystemsSelect();
 
+  interface CheckboxState {
+    associable: boolean;
+    upgrade: boolean
+  }
+
   useEffect(() => {
-    
+
     usersOptions.get();
     userInChargeOptions.get();
     groupsOptions.get();
@@ -39,9 +45,20 @@ export default function SoftwareForm() {
     manufacturerOptions.get();
     softwarecategoryOptions.get();
     autoupdatesystemOptions.get();
-  
+
   }, [])
-  
+
+  const [checkboxes, setCheckboxes] = useState({
+    associable: false,
+    upgrade: false
+  });
+
+  const handleCheckboxChange = (checkboxName: keyof CheckboxState) => {
+    setCheckboxes((prevCheckboxes) => ({
+      ...prevCheckboxes,
+      [checkboxName]: !prevCheckboxes[checkboxName],
+    }));
+  };
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -51,21 +68,33 @@ export default function SoftwareForm() {
           label={"Name"}
           placeholder={"ingrese su nombre"}
         />
-        <SelectOption id={"childof"} label={"Here comes a checkbox"} />
-        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
-        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"} 
+
+        <div className="  rounded-lg">
+          <div className="mb-2 font-semibold">Associable to a Ticket</div>
+          <div className="grid grid-cols-4 gap-2">
+            <Checkbox
+              id="childof"
+              label=""
+              checked={checkboxes.associable}
+              onChange={() => handleCheckboxChange("associable")}
+            />
+          </div>
+        </div>
+
+        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
+        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}
           options={userInChargeOptions.data?.data}
         />
-        <SelectOption id={"publisher"} label={"Publisher"} 
-          options={manufacturerOptions.data?.data}/>
+        <SelectOption id={"publisher"} label={"Publisher"}
+          options={manufacturerOptions.data?.data} />
         <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"}
           options={groupInChargeOptions.data?.data}
         />
-        <SelectOption id={"user"} label={"User"} 
+        <SelectOption id={"user"} label={"User"}
           options={usersOptions.data?.data} />
-        <SelectOption id={"groups"} label={"Group"} 
+        <SelectOption id={"groups"} label={"Groups"}
           options={groupsOptions.data?.data}
-         />
+        />
 
         <TextArea
           id={"comment"}
@@ -73,13 +102,27 @@ export default function SoftwareForm() {
           placeholder="Enter your comment here"
           rows={3}
         />
-        <TextArea
-          id={"group"}
-          label={"Upgrade"}
-          placeholder={"Aca va un checkbox"}
-          rows={2}
+
+        <ImageInput
+          id={"pictures"}
+          label={"Pictures"}
+          fileType={".jpg, .jpeg, .png"}
+          maxSize={3}
         />
-        <SelectOption id={"softwarecategories"} label={"Software Category"}  options={softwarecategoryOptions?.data} />
+
+        <div className="  rounded-lg">
+          <div className="mb-2 font-semibold">Upgrade</div>
+          <div className="grid grid-cols-4 gap-2">
+            <Checkbox
+              id="upgrade"
+              label="From"
+              checked={checkboxes.upgrade}
+              onChange={() => handleCheckboxChange("upgrade")}
+            />
+            <SelectOption id={"from"} label={""}/>
+          </div>
+        </div>
+        <SelectOption id={"softwarecategories"} label={"Software Category"} options={softwarecategoryOptions?.data} />
       </Form>
     </div>
   );

@@ -128,7 +128,7 @@ export default function MonitorForm() {
         <SelectOption id={"status"} label={"Status"}
           options={stateOptions.data?.data} />
         <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
-        <SelectOption id="type" label="Type" 
+        <SelectOption id="type" label="Monitor Type" 
           options={monitorTypeOptions?.data}/>
         <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}
           options={userInChargeOptions.data?.data}
