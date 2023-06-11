@@ -11,6 +11,7 @@ import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSele
 import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
 import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
 import { useGetSoftwareCategoriesSelect } from "../../hooks/Softwares/useGetSoftwareCategoriesSelect";
+import { useGetAllSoftwares } from "../../hooks/Softwares/useGetAllSoftwares";
 import Checkbox from "../CheckBox";
 import ImageInput from "../ImageInput";
 
@@ -29,6 +30,7 @@ export default function SoftwareForm() {
   const manufacturerOptions = useGetManufacturersSelect();
   const softwarecategoryOptions = useGetSoftwareCategoriesSelect();
   const autoupdatesystemOptions = useGetAutoupdatesystemsSelect();
+  const upgradeOptions = useGetAllSoftwares();
 
   interface CheckboxState {
     associable: boolean;
@@ -45,7 +47,7 @@ export default function SoftwareForm() {
     manufacturerOptions.get();
     softwarecategoryOptions.get();
     autoupdatesystemOptions.get();
-
+    upgradeOptions.get();
   }, [])
 
   const [checkboxes, setCheckboxes] = useState({
@@ -119,7 +121,7 @@ export default function SoftwareForm() {
               checked={checkboxes.upgrade}
               onChange={() => handleCheckboxChange("upgrade")}
             />
-            <SelectOption id={"from"} label={""}/>
+            <SelectOption id={"from"} label={""} options={upgradeOptions?.data}/>
           </div>
         </div>
         <SelectOption id={"softwarecategories"} label={"Software Category"} options={softwarecategoryOptions?.data} />
