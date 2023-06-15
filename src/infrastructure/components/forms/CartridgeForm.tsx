@@ -10,7 +10,7 @@ import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSele
 import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
 import { useGetCartridgetypesSelect } from "../../hooks/Cartridges/useGetCartridgetypesSelect";
 
-export default function  CartridgeForm() {
+export default function CartridgeForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {
@@ -30,7 +30,7 @@ export default function  CartridgeForm() {
   const cartridgeTypeOptions = useGetCartridgetypesSelect();
 
   useEffect(() => {
-    
+
     userInChargeOptions.get();
     groupInChargeOptions.get();
     locationOptions.get();
@@ -48,27 +48,27 @@ export default function  CartridgeForm() {
           placeholder={"ingrese su nombre"}
         />
 
-        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
-        <SelectOption id="type" label="Type" 
-          options={cartridgeTypeOptions?.data}/>
+        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
+        <SelectOption id="type" label="Cartridge Types"
+          options={cartridgeTypeOptions?.data} />
         <TextInput
           id={"reference"}
           label={"Reference"}
         />
 
 
-        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"} 
+        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}
           options={userInChargeOptions.data?.data}
         />
-        <SelectOption id="manufacturer" label="Manufacturer"
-          options={manufacturerOptions.data?.data}/>
+        <SelectOption id="manufacturer" label="Manufacturers"
+          options={manufacturerOptions.data?.data} />
         <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"}
           options={groupInChargeOptions.data?.data}
         />
 
         <TextArea
           id={"comment"}
-          label="Comment"
+          label="Comments"
           rows={3}
         />
 
@@ -78,17 +78,17 @@ export default function  CartridgeForm() {
         />
 
         <ImageInput
-        id={"pictures"}
-        label={"Pictures"}
-        fileType={".jpg, .jpeg, .png"}
-        maxSize={3}
+          id={"pictures"}
+          label={"Pictures"}
+          fileType={".jpg, .jpeg, .png"}
+          maxSize={3}
         />
 
         <TextInput
-          id={"stocktarget"}
+          id={"stock_target"}
           label="Stock Target"
+          type={"number"}
         />
-
       </Form>
     </div>
   );

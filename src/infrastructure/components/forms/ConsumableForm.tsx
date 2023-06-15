@@ -8,9 +8,10 @@ import SelectOption from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import Form from "./Form";
+import ImageInput from "../ImageInput";
 
-export default function  ConsumableForm() {
-  // const computer = useCreateComputer();
+export default function ConsumableForm() {
+
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -23,7 +24,7 @@ export default function  ConsumableForm() {
   const consumableTypeOptions = useGetConsumabletypesSelect();
 
   useEffect(() => {
-    
+
     userInChargeOptions.get();
     groupInChargeOptions.get();
     locationOptions.get();
@@ -42,9 +43,9 @@ export default function  ConsumableForm() {
           placeholder={"ingrese su nombre"}
         />
 
-        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
-        <SelectOption id="type" label="Type" 
-          options={consumableTypeOptions?.data}/>
+        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
+        <SelectOption id="type" label="Consumable Types"
+          options={consumableTypeOptions?.data} />
 
         <TextInput
           id={"reference"}
@@ -52,12 +53,12 @@ export default function  ConsumableForm() {
         />
 
 
-        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"} 
+        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}
           options={userInChargeOptions.data?.data}
         />
-        <SelectOption id="manufacturer" label="Manufacturer" 
-          options={manufacturerOptions.data?.data}/>
-        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} 
+        <SelectOption id="manufacturer" label="Manufacturers"
+          options={manufacturerOptions.data?.data} />
+        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"}
           options={groupInChargeOptions.data?.data}
         />
 
@@ -79,13 +80,18 @@ export default function  ConsumableForm() {
           label={"Alert Threshold"}
         />
 
-        <SelectOption id={"pictures"} label={"Pictures"} />
-
-        <TextInput
-          id={"stocktarget"}
-          label="Stock Target"
+        <ImageInput
+          id={"pictures"}
+          label={"Pictures"}
+          fileType={".jpg, .jpeg, .png"}
+          maxSize={3}
         />
 
+        <TextInput
+          id={"stock_target"}
+          label="Stock Target"
+          type={"number"}
+        />
       </Form>
     </div>
   );
