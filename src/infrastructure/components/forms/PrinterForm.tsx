@@ -74,13 +74,13 @@ export default function  PrinterForm() {
 
         <SelectOption id={"status"} label={"Status"} 
           options={stateOptions.data?.data} />
-        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
-        <SelectOption id="type" label="Type"
+        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
+        <SelectOption id="type" label="Printer Types"
           options={printerTypeOptions?.data}/>
         <SelectOption id={"hardware"} label={"Technician in charge of the hardware"} 
           options={userInChargeOptions.data?.data}
         />
-        <SelectOption id="manufacturer" label="Manufacturer" 
+        <SelectOption id="manufacturer" label="Manufacturers" 
           options={manufacturerOptions.data?.data}/>
         <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} 
           options={groupInChargeOptions.data?.data}
@@ -114,7 +114,7 @@ export default function  PrinterForm() {
         />
         <TextArea
           id={"sysdescr"}
-          label="Sysdescr"
+          label="System description"
           rows={3}
         />
         <SelectOption id="snmpcredential" label="SNMP credential" 
@@ -125,7 +125,7 @@ export default function  PrinterForm() {
           options={managementTypeOptions} />
         <SelectOption id="network" label="Network" 
           options={networkOptions.data?.data}/>
-        <SelectOption id="group" label="Group" 
+        <SelectOption id="group" label="Groups" 
           options={groupsOptions.data?.data}
          />
 
@@ -147,6 +147,7 @@ export default function  PrinterForm() {
         <TextInput
           id={"memory"}
           label="Memory"
+          type={"number"}
         />
         <TextInput
           id={"initialpagecounter"}
