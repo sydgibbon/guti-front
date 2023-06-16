@@ -53,13 +53,13 @@ export default function  PassiveDeviceForm() {
 
         <SelectOption id={"status"} label={"Status"} 
           options={stateOptions.data?.data} />
-        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
-        <SelectOption id={"passivedcequipmenttypes"} label="Type"
+        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
+        <SelectOption id={"passivedcequipmenttypes"} label="Passive device types"
           options={passiveDeviceTypeOptions?.data}/>
         <SelectOption id={"user_tech"} label={"Technician in charge of the hardware"} 
           options={userInChargeOptions.data?.data}
         />     
-        <SelectOption id={"manufacturers"} label="Manufacturer" 
+        <SelectOption id={"manufacturers"} label="Manufacturers" 
           options={manufacturerOptions.data?.data}/>
         <SelectOption id={"groups_tech"} label={"Group in charge of the hardware"} 
           options={groupInChargeOptions.data?.data}
@@ -81,7 +81,7 @@ export default function  PassiveDeviceForm() {
         />
         <TextArea
           id={"comment"}
-          label="Comment"
+          label="Comments"
           rows={3}
         />
       </Form>
