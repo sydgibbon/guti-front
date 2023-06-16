@@ -183,7 +183,7 @@ export default function PrinterForm() {
           label="Current counter of pages"
           type={"number"}
         />
-        <div className="  rounded-lg">
+        <div className="rounded-lg">
           <div className="mb-2 font-semibold">Ports</div>
           <div className="grid grid-cols-5 gap-2">
             <Checkbox
