@@ -51,11 +51,11 @@ export default function  EnclosuresForm() {
 
         <SelectOption id={"status"} label={"Status"}
           options={stateOptions.data?.data} />
-        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
+        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
         <SelectOption id={"hardware"} label={"Technician in charge of the hardware"} 
           options={userInChargeOptions.data?.data}
         />     
-        <SelectOption id="manufacturer" label="Manufacturer" 
+        <SelectOption id="manufacturer" label="Manufacturers" 
           options={manufacturerOptions.data?.data}/>
         <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} 
           options={groupInChargeOptions.data?.data}
@@ -83,6 +83,7 @@ export default function  EnclosuresForm() {
         <TextInput
           id={"power_supplies"}
           label="Power supplies"
+          type={"number"}
         />
 
       </Form>
