@@ -105,7 +105,7 @@ export default function ComputersForm() {
         <SelectOption id="states" label="Status"
           options={stateOptions.data?.data} />
 
-        <SelectOption id="locations" label="Location" options={locationOptions.data?.data} />
+        <SelectOption id="locations" label="Locations" options={locationOptions.data?.data} />
 
         <SelectOption id="type" label="Computer Types"
           options={computerTypeOptions?.data} />
@@ -116,7 +116,7 @@ export default function ComputersForm() {
           options={userInChargeOptions.data?.data}
         />
 
-        <SelectOption id="manufacturer" label="Manufacturer"
+        <SelectOption id="manufacturer" label="Manufacturers"
           options={manufacturerOptions.data?.data} />
 
         <SelectOption

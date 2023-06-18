@@ -77,7 +77,7 @@ export default function  EnclosuresForm() {
         />
         <TextArea
           id={"comment"}
-          label="Comment" 
+          label="Comments" 
           rows={3}
         />
         <TextInput

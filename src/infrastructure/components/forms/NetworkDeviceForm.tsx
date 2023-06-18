@@ -15,6 +15,7 @@ import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSele
 import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect";
 import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
 import { useGetSnmpCredentialsSelect } from "../../hooks/SnmpCredentials/useGetSnmpCredentialsSelect";
+import { number } from "yargs";
 
 export default function  NetDeviceForm() {
   // const computer = useCreateComputer();
@@ -136,6 +137,7 @@ export default function  NetDeviceForm() {
         <TextInput
           id={"memory"}
           label="Memory (MB)"
+          type={"number"}
         />
         <SelectOption id="updatesource" label="Update Source" 
           options={autoupdatesystemOptions.data?.data}/>

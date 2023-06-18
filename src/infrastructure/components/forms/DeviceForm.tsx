@@ -126,7 +126,7 @@ export default function  DeviceForm() {
         />
         <TextArea
           id={"comment"}
-          label="Comment"
+          label="Comments"
           rows={3}
         />
         <TextInput

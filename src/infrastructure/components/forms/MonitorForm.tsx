@@ -127,13 +127,13 @@ export default function MonitorForm() {
 
         <SelectOption id={"status"} label={"Status"}
           options={stateOptions.data?.data} />
-        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
+        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
         <SelectOption id="type" label="Monitor Type" 
           options={monitorTypeOptions?.data}/>
         <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}
           options={userInChargeOptions.data?.data}
         />
-        <SelectOption id="manufacturer" label="Manufacturer"
+        <SelectOption id="manufacturer" label="Manufacturers"
           options={manufacturerOptions.data?.data}/>
         <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} 
           options={groupInChargeOptions.data?.data}
@@ -181,7 +181,7 @@ export default function MonitorForm() {
           inputRef={Size}
         />
 
-        <SelectOption id="group" label="Group" 
+        <SelectOption id="group" label="Groups" 
           options={groupsOptions.data?.data}
          />
 
