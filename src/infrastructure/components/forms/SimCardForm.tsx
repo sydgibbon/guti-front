@@ -8,6 +8,7 @@ import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect";
 import { useGetGroupsSelect } from "../../hooks/Groups/useGetGroupsSelect";
 import { useGetDevicesimcardsSelect } from "../../hooks/Simcards/useGetDevicesimcardsSelect";
 import { useGetLinesSelect } from "../../hooks/Simcards/useGetLinesSelect";
+import TextArea from "../TextArea";
 
 
 export default function SimCardForm() {
@@ -67,7 +68,7 @@ export default function SimCardForm() {
 
         <SelectOption
           id={"line"}
-          label={"Line"}
+          label={"Lines"}
           options={linesOptions?.data}
         />
 
@@ -89,7 +90,7 @@ export default function SimCardForm() {
 
         <SelectOption
           id="locations"
-          label="Location"
+          label="Locations"
           options={locationOptions.data?.data}
         />
         <SelectOption
@@ -104,8 +105,13 @@ export default function SimCardForm() {
         />
         <SelectOption
           id="group"
-          label="Group"
+          label="Groups"
           options={groupsOptions.data?.data}
+        />
+        <TextArea
+          id={"comment"}
+          label="Comments"
+          rows={3}
         />
 
       </Form>
