@@ -148,8 +148,8 @@ export default function  RackForm() {
         />
         <TextInput
           id={"color"}
+          type="color"
           label={"Color"}
-          placeholder={"Aca se eligen los colores"}
         />
 
       </Form>
