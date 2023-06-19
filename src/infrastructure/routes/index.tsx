@@ -71,6 +71,7 @@ import CableTypeForm from "../components/forms/CableTypeForm";
 import CableStrandForm from "../components/forms/CableStrandForm";
 import SocketModelForm from "../components/forms/SocketModelForm";
 import SimCardComponentForm from "../components/forms/SimCardComponentForm";
+import EditAsset from "../view/Assets/EditAsset";
 
 
 // import EnclosuresForm from "../component/forms/assets/EnclosuresForm";
@@ -639,6 +640,18 @@ const router = createBrowserRouter([
       </Main>
     ),
   },
+ 
+  // pruebas edit assset
+  {
+    path: "/assets/edit/computers",
+    element: (
+      <Main>
+        <EditAsset />
+      </Main>
+    ),
+  },
+  // pruebas edit assset
+
   {
     path: "*",
     element: (
