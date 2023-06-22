@@ -4,7 +4,7 @@ import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInCharg
 import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
 import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
 import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
-import SelectOption from "../SelectOption";
+import SelectOption, { OptionValue } from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import Form from "./Form";
@@ -16,6 +16,21 @@ export default function ConsumableForm() {
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
   };
+
+  const numbers = (): OptionValue[] => {
+    const options: OptionValue[] = [];
+    for (let i = 1; i <= 100; i++) {
+      const option: OptionValue = {
+        id: i.toString(),
+        name: i.toString()
+      };
+      options.push(option);
+    }
+
+    return options;
+  };
+
+  const threshold = numbers();
 
   const userInChargeOptions = useGetUserInChargeSelect();
   const groupInChargeOptions = useGetGroupInChargeSelect();
@@ -75,9 +90,10 @@ export default function ConsumableForm() {
           rows={3}
         />
 
-        <TextInput
+        <SelectOption
           id={"alertthreshold"}
           label={"Alert Threshold"}
+          options={threshold}
         />
 
         <ImageInput

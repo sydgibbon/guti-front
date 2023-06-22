@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import SelectOption from "../SelectOption";
+import SelectOption, { OptionValue } from "../SelectOption";
 import ImageInput from "../ImageInput";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
@@ -11,23 +11,31 @@ import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManuf
 import { useGetCartridgetypesSelect } from "../../hooks/Cartridges/useGetCartridgetypesSelect";
 
 export default function CartridgeForm() {
-  // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
   };
 
-  // useEffect(() => {
-  //   if (computer.error) {
-  //     alert(computer.error);
-  //   }
-  // }, [computer.error]);
+  const numbers = (): OptionValue[] => {
+    const options: OptionValue[] = [];
+    for (let i = 1; i <= 100; i++) {
+      const option: OptionValue = {
+        id: i.toString(),
+        name: i.toString()
+      };
+      options.push(option);
+    }
 
+    return options;
+  };
+
+  const threshold = numbers();
   const userInChargeOptions = useGetUserInChargeSelect();
   const groupInChargeOptions = useGetGroupInChargeSelect();
   const locationOptions = useGetLocationsSelect();
   const manufacturerOptions = useGetManufacturersSelect();
   const cartridgeTypeOptions = useGetCartridgetypesSelect();
+
 
   useEffect(() => {
 
@@ -72,9 +80,10 @@ export default function CartridgeForm() {
           rows={3}
         />
 
-        <TextInput
+        <SelectOption
           id={"alertthreshold"}
           label={"Alert Threshold"}
+          options={threshold}
         />
 
         <ImageInput
