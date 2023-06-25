@@ -17,7 +17,6 @@ import SelectOption, { OptionValue } from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import Form from "./Form";
-import { number } from "yargs";
 
 export default function  PrinterForm() {
   // const computer = useCreateComputer();
