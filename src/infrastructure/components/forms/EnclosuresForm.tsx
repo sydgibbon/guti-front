@@ -83,6 +83,7 @@ export default function  EnclosuresForm() {
         <TextInput
           id={"power_supplies"}
           label="Power supplies"
+          type={"number"}
         />
 
       </Form>

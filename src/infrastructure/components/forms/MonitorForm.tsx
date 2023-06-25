@@ -179,6 +179,7 @@ export default function MonitorForm() {
           id={"size"}
           label="Size"
           inputRef={Size}
+          type={"number"}
         />
 
         <SelectOption id="group" label="Group" 

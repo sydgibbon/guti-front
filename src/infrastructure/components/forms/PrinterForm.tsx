@@ -17,6 +17,7 @@ import SelectOption, { OptionValue } from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import Form from "./Form";
+import { number } from "yargs";
 
 export default function  PrinterForm() {
   // const computer = useCreateComputer();
@@ -151,6 +152,7 @@ export default function  PrinterForm() {
         <TextInput
           id={"initialpagecounter"}
           label="Initial page counter"
+          type={"number"}
         />
         <TextInput
           id={"currentcounterofpages"}
