@@ -154,8 +154,8 @@ export default function  RackForm() {
           type={"number"}
         />
         <TextInput
-          id={"color"}
-          type="color"
+          id={"bgcolor"}
+          type="text"
           label={"Color"}
         />
 

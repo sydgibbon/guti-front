@@ -3,7 +3,7 @@ import { useState } from "react";
 interface TextInputProps {
   id: string;
   label?: string;
-  type?: string | number;
+  type?: "text" | "number";
   placeholder?: string;
   required?: boolean;
   maxCharacters?: number;
@@ -29,8 +29,7 @@ export default function TextInput(textInputProps: TextInputProps) {
 
       <input
         className="px-2 bg-gray-100 border rounded-md h-11 container__input"
-        type={type === "number" ? "number" : "text"}
-        inputMode={type === "number" ? "numeric" : "text"}
+        type={type}
         required={required}
         placeholder={placeholder}
         id={id}
