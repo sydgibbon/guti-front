@@ -84,6 +84,7 @@ export default function  ConsumableForm() {
         <TextInput
           id={"stocktarget"}
           label="Stock Target"
+          type={"number"}
         />
 
       </Form>

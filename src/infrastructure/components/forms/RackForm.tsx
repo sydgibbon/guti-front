@@ -121,35 +121,42 @@ export default function  RackForm() {
         <TextInput
           id={"numberofunits"}
           label="Number of units"
+          type={"number"}
         />
         <TextInput
           id={"width"}
           label="Width"
+          type={"number"}
         />
         <TextInput
           id={"height"}
           label="Height"
+          type={"number"}
         />
         <TextInput
           id={"depth"}
           label="Depth"
+          type={"number"}
         />
         <TextInput
           id={"maxpower"}
           label="Max. power (in watts)"
+          type={"number"}
         />
         <TextInput
           id={"measuredpower"}
           label="Measured power (in watts)"
+          type={"number"}
         />
         <TextInput
           id={"maxweight"}
           label="Max. weight"
+          type={"number"}
         />
         <TextInput
-          id={"color"}
+          id={"bgcolor"}
+          type="text"
           label={"Color"}
-          placeholder={"Aca se eligen los colores"}
         />
 
       </Form>

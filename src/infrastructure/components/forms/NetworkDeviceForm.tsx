@@ -136,6 +136,7 @@ export default function  NetDeviceForm() {
         <TextInput
           id={"memory"}
           label="Memory (Mio)"
+          type={"number"}
         />
         <SelectOption id="updatesource" label="Update Source" 
           options={autoupdatesystemOptions.data?.data}/>
