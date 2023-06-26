@@ -175,7 +175,7 @@ export default function CableForm() {
 
         <TextInput
           id={"color"}
-          type="color"
+          type="text"
           label={"Color"}
         />
         <SelectOption id={"items_endpoint_a"} label="Asset" options={assetOption} onSelect={setSelectedAssetA} />
