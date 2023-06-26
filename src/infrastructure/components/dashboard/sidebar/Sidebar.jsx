@@ -29,6 +29,7 @@ function SideBar() {
               key={app.name}
               text={app.name}
               icon={app.icon(iconStyles.style)}
+              arrow={true}
               subMenu={
                 app.itemContent
                   ? app.itemContent.map((submenu) => (

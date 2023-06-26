@@ -641,7 +641,7 @@ const router = createBrowserRouter([
     ),
   },
  
-  // pruebas edit assset
+  // "/assets/edit/computers" route is used as an example
   {
     path: "/assets/edit/computers",
     element: (
@@ -650,7 +650,7 @@ const router = createBrowserRouter([
       </Main>
     ),
   },
-  // pruebas edit assset
+
 
   {
     path: "*",

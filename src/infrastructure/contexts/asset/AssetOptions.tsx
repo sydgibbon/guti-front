@@ -9,34 +9,11 @@ export interface EditAssetOption {
 
 export const AssetOptions: EditAssetOption[] = [
   {
-    name: "computers",
-    options: [
-      { name: "EditUno", content: <ComputerForm /> },
-      { name: "EditDos", content: <CartridgeForm /> },
-    ],
-  },
-  {
-    name: "/assets/edit/compute",
-    options: [{ name: "EditUno", content: <MonitorForm /> }],
-  },
-  {
-    name: "Consumables",
-    options: [
-      { name: "EditUno", content: <ComputerForm /> },
-      { name: "EditDos", content: <CartridgeForm /> },
-      { name: "EditTres", content: <CartridgeForm /> },
-      { name: "EditCuatro", content: <CartridgeForm /> },
-    ],
-  },
-  {
-    name: "/assets/edit/computers",
+    name: "Computers",
     options: [
       { name: "EditUno", content: <ComputerForm /> },
       { name: "EditDos", content: <CartridgeForm /> },
       { name: "EditTres", content: <MonitorForm /> },
-      { name: "EditCuatro", content: <CartridgeForm /> },
-      { name: "EditCinco", content: <CartridgeForm /> },
-      { name: "EditSeis", content: <CartridgeForm /> },
     ],
-  },
+  }
 ];
