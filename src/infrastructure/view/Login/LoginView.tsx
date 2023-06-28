@@ -3,7 +3,10 @@ import "./LoginView.css";
 // import { userLogin } from "../../../../api/axios"; 
 import { useServiceUser } from "../../hooks/UseServiceUser";
 
+import Logo from "../../assets/guti-logo.png"
+
 const LoginView = () => {
+
   const { login } = useServiceUser();
 
   useEffect(() => {
@@ -47,7 +50,7 @@ const LoginView = () => {
   return (
     <div className="flex flex-col items-center w-full h-screen login-container">
       <div className="mt-16 logo-section">
-        <img className="mx-auto" src="../../" alt="guti-logo" width="200px" />
+        <img className="mx-auto" src={Logo} alt="guti-logo" width="200px" />
       </div>
       <div className="flex flex-col items-center w-3/5 my-8 bg-white border rounded-md form-section border-secondary-light">
         <div className="w-1/3 pb-4 mt-20 text-2xl font-semibold text-center border-b account-login border-secondary-dark">
