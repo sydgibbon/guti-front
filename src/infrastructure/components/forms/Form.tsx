@@ -7,7 +7,7 @@ export default function Form(formProps: formProps) {
   const { children, handleSubmit } = formProps;
 
   return (
-    <div className="container bg-white rounded-lg">
+    <div className="mx-6 container bg-white rounded-lg">
       <form onSubmit={(handleSubmit)}>
         <div className="grid grid-cols-2 gap-10 p-6 container__content">
           {children}

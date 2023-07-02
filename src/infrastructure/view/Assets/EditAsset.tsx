@@ -51,7 +51,7 @@ export default function EditAsset() {
         </div>
         <div className="flex flex-col w-full sidebar-form-box">
           {selectedOption && (
-            <div className="h-auto box-border block title">
+            <div className="box-border block title">
               <span className="p-2 text-lg font-semibold bg-white rounded-md form-title">
                 {selectedOption}
               </span>
