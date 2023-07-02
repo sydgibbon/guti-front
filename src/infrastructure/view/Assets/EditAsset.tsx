@@ -58,7 +58,7 @@ export default function EditAsset() {
             </div>
           )}
 
-          <div className="mt-5 form">
+          <div className="mt-5 mr-6 form">
             {selectedOption &&
               selectedOptions.options.find(
                 (option) => option.name === selectedOption
