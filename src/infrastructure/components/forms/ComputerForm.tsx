@@ -2,7 +2,7 @@ import Form from "./Form";
 import SelectOption from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
 import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect";
 import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
@@ -14,59 +14,51 @@ import { useGetComputermodelsSelect } from "../../hooks/Computers/useGetComputer
 import { useGetComputertypesSelect } from "../../hooks/Computers/useGetComputertypesSelect";
 import { useGetNetworksSelect } from "../../hooks/Networks/useGetNetworksSelect";
 import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
+import { ComputerData } from "../../../domain/models/forms/ComputerData";
 
 
-export default function  ComputersForm() {
-  // const computer = useCreateComputer();
+export default function ComputersForm() {
+  const [formData, setFormData] = useState<ComputerData>({
+    name: null,
+    serial: null,
+    otherserial: null,
+    contact: null,
+    contact_num: null,
+    comment: null,
+    date_mod: null,
+    is_template: null,
+    template_name: null,
+    is_deleted: null,
+    is_dynamic: null,
+    ticket_tco: null,
+    uuid: null,
+    date_creation: null,
+    is_recursive: null,
+    last_inventory_update: null,
+    entities: null,
+    users_tech: null,
+    groups_tech: null,
+    autoupdatesystems: null,
+    locations: null,
+    networks: null,
+    computermodels: null,
+    computertypes: null,
+    manufacturers: null,
+    users: null,
+    groups: null,
+    states: null
+  });
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-
-    // const target = e.target as typeof e.target & {
-    //   name: { value: string };
-    //   locations: { value: string };
-    //   uuid: { value: string };
-    //   inventoryassetnumber: { value: string };
-    //   alternativeusername: { value: string };
-    //   alternativeusernamenumber: { value: string };
-    // };
-
-    // const data: ComputerDTO = {
-    //   id: 1,
-    //   name: target.name.value,
-    //   locations: target.locations.value,
-    //   otherserial: target.inventoryassetnumber.value,
-    //   contact: target.alternativeusername.value,
-    //   uuid: target.uuid.value,
-    //   contact_num: target.alternativeusernamenumber.value,
-    //   is_template: 0,
-    //   is_deleted: 0,
-    //   is_dynamic: 0,
-    //   is_recursive: 0,
-    //   comment: null,
-    //   computermodels: null,
-    //   computertypes: null,
-    //   date_creation: null,
-    //   date_mod: null,
-    //   entities: null,
-    //   groups: null,
-    //   groups_tech: null,
-    //   last_inventory_update: null,
-    //   manufacturers: null,
-    //   networks: null,
-    //   serial: null,
-    //   states: null,
-    //   template_name: null,
-    //   ticket_tco: null,
-    //   users: null,
-    //   users_tech: null,
-    // };
-
-    // computer.post(data);
   };
-  
+
+  const handleChange = (e: any) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+    console.log(formData);
+  };
   const userInChargeOptions = useGetUserInChargeSelect();
-  const usersOptions = useGetUsersSelect();  
+  const usersOptions = useGetUsersSelect();
   const groupInChargeOptions = useGetGroupInChargeSelect();
   const groupsOptions = useGetGroupsSelect();
   const locationOptions = useGetLocationsSelect();
@@ -89,7 +81,6 @@ export default function  ComputersForm() {
     computerTypeOptions.get();
     networkOptions.get();
     autoupdatesystemOptions.get();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -100,80 +91,98 @@ export default function  ComputersForm() {
           label="Name"
           placeholder="Enter your name here"
           required
+          onChange={handleChange}
         />
 
-        <SelectOption id="locations" label="Location" options={locationOptions.data?.data} />
+        <SelectOption id="locations" label="Location" options={locationOptions.data?.data}
+        onChange={handleChange} />
 
         <SelectOption
-          id="hardware"
+          id="users_tech"
           label="Technician in Charge of the Hardware"
           options={userInChargeOptions.data?.data}
+          onChange={handleChange}
         />
 
         <SelectOption
-          id="group-hardware"
+          id="groups_tech"
           label="Group in Charge of the Hardware"
           options={groupInChargeOptions.data?.data}
+          onChange={handleChange}
         />
 
         <TextInput
-          id={"alternativeusernamenumber"}
+          id="contact_num"
           label="Alternate username number"
           placeholder="Enter your alternate username number here"
           required
+          onChange={handleChange}
         />
 
         <TextInput
-          id={"alternativeusername"}
+          id="contact"
           label="Alternate Username"
           placeholder="Enter your Alternate Username here"
           required
+          onChange={handleChange}
         />
 
-        <SelectOption id="user" label="User"
-          options={usersOptions.data?.data} />
+        <SelectOption id="users" label="User"
+          options={usersOptions.data?.data} 
+          onChange={handleChange}/>
 
-        <SelectOption id="group" label="Group"
+        <SelectOption id="groups" label="Group"
           options={groupsOptions.data?.data}
-         />
+          onChange={handleChange}
+        />
 
         <TextArea
           id="comment"
           label="Comment"
           placeholder="Enter your comment here"
+          onChange={handleChange}
         />
 
-        <SelectOption id="states" label="Status" 
-          options={stateOptions.data?.data} />
-        <SelectOption id="type" label="Type" 
-          options={computerTypeOptions?.data}/>
-        <SelectOption id="manufacturer" label="Manufacturer" 
-          options={manufacturerOptions.data?.data}/>
-        <SelectOption id="model" label="Model" 
-          options={computerModelOptions?.data}/>
+        <SelectOption id="states" label="Status"
+          options={stateOptions.data?.data} 
+          onChange={handleChange} />
+        <SelectOption id="computertypes" label="Type"
+          options={computerTypeOptions?.data} 
+          onChange={handleChange} />
+        <SelectOption id="manufacturers" label="Manufacturer"
+          options={manufacturerOptions.data?.data}
+          onChange={handleChange} />
+        <SelectOption id="computermodels" label="Model"
+          options={computerModelOptions?.data}
+          onChange={handleChange} />
 
         <TextInput
-          id={"serialnumber"}
+          id={"serial"}
           label="Serial Number"
           placeholder="Enter your Serial Number here"
           required
+          onChange={handleChange}
         />
         <TextInput
-          id={"inventoryassetnumber"}
+          id={"otherserial"}
           label="Inventory/Asset Number"
           placeholder="Enter your Inventory/Asset Number here"
           required
+          onChange={handleChange}
         />
-        <SelectOption id="network" label="Network" 
-          options={networkOptions.data?.data}/>
+        <SelectOption id="networks" label="Network"
+          options={networkOptions.data?.data}
+          onChange={handleChange} />
         <TextInput
           id="uuid"
           label="UUID"
           placeholder="Enter your UUID here"
           required
+          onChange={handleChange}
         />
-        <SelectOption id="updatesource" label="Update Source" 
-          options={autoupdatesystemOptions.data?.data}/>
+        <SelectOption id="autoupdatesystems" label="Update Source"
+          options={autoupdatesystemOptions.data?.data}
+          onChange={handleChange} />
       </Form>
     </div>
   );

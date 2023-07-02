@@ -8,16 +8,13 @@ interface TextInputProps {
   required?: boolean;
   maxCharacters?: number;
   inputRef?: any
+  onChange?: (e: any) => void
 }
 
 
 export default function TextInput(textInputProps: TextInputProps) {
-  const { id, label, type, required, maxCharacters, placeholder, inputRef } = textInputProps;
+  const { id, label, type, required, maxCharacters, placeholder, inputRef, onChange } = textInputProps;
 
-  const [value, setValue] = useState<number | string>(type === "number" ? 0 : "");
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue(event.target.value);
-  };
 
   return (
     <div className="w-full flex flex-col gap-y-2">
@@ -36,8 +33,7 @@ export default function TextInput(textInputProps: TextInputProps) {
         name={id.toLocaleLowerCase()}
         maxLength={maxCharacters ?? 50}
         ref={inputRef}
-        value={value}
-        onChange={handleChange}
+        onChange={onChange}
       />
     </div>
   );
