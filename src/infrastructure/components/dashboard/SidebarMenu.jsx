@@ -10,7 +10,7 @@ const SidebarMenu = ({ text, icon, subMenu, selected, setSelected, arrow, contex
         ${context === "edditAsset" ? 
           selected === text && "shadow-md border-l-2"
           :
-          selected === text && "border-l-2 bg-white"
+          selected === text && "border-l-2 bg-white font-bold"
 
         } 
         `}
