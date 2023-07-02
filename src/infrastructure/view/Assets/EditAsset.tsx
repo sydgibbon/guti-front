@@ -1,18 +1,21 @@
-import { AssetOptions } from "../../contexts/asset/AssetOptions";
+import {
+  AssetOptions,
+  EditAssetOption,
+} from "../../contexts/asset/AssetOptions";
 import { useLocation } from "react-router-dom";
 import React, { useState } from "react";
 import SidebarMenu from "../../components/dashboard/SidebarMenu";
 import { capitalize } from "@mui/material";
 
 export default function EditAsset() {
-  const [selectedOption, setSelectedOption] = useState(0);
-  const [sidebarSelected, setSidebarSelected] = useState("")
+  const [selectedOption, setSelectedOption] = useState<string>("");
+  // const [sidebarSelected, setSidebarSelected] = useState("")
 
   const localPath = useLocation().pathname;
   const location = localPath.substring(localPath.lastIndexOf("/") + 1);
-  console.log(location)
+  console.log(location);
 
-  const selectedOptions = AssetOptions.find(
+  const selectedOptions: EditAssetOption | undefined = AssetOptions.find(
     (locName) => locName.name === capitalize(location)
   );
 
@@ -20,38 +23,48 @@ export default function EditAsset() {
     return null; // Handle the case when no matching options are found
   }
 
-  const handleOptionClick = (index: number) => {
-    setSelectedOption(index);
+  const handleOptionClick = (optionName: string) => {
+    setSelectedOption(optionName);
   };
 
-  return (
-    <div className="flex p-6 edit-asset-container">
-      <div className="sidebar">
-        {selectedOptions.options.map((option, index) => (
-          <SidebarMenu
-            key={index}
-            text={option.name}
-            selected={sidebarSelected}
-            setSelected={setSidebarSelected}
-            icon={<></>}
-            arrow={false}
-            subMenu={<></>}
-          />
-        ))}
-      </div>
+  // Set the initial selected option to the first item in the options list
+  if (selectedOption === "" && selectedOptions.options.length > 0) {
+    setSelectedOption(selectedOptions.options[0].name);
+  }
 
-      <div className="w-full form-section">
-        <div className="w-full pl-6 flex title">
-          <span className="p-2 text-lg font-semibold bg-white border rounded-md form-title">
-            {selectedOptions.options?.find(obj => {
-          return obj.name === sidebarSelected
-        })?.name}
-          </span>
+  return (
+    <div className="flex flex-col edit-asset-container">
+      <div className="flex form-section">
+        <div className="mt-12 w-56 sidebar">
+          {selectedOptions.options.map((option) => (
+            <SidebarMenu
+              key={option.name}
+              text={option.name}
+              selected={selectedOption}
+              setSelected={handleOptionClick}
+              icon={<></>}
+              arrow={false}
+              subMenu={<></>}
+              context={"editAsset"}
+            />
+          ))}
         </div>
-        {sidebarSelected !== "" ? selectedOptions.options?.find(obj => {
-          return obj.name === sidebarSelected
-        })?.content : selectedOptions.options[selectedOption].content}
-        
+        <div className="flex flex-col w-full sidebar-form-box">
+          {selectedOption && (
+            <div className="h-auto box-border block title">
+              <span className="p-2 text-lg font-semibold bg-white rounded-md form-title">
+                {selectedOption}
+              </span>
+            </div>
+          )}
+
+          <div className="mt-5 form">
+            {selectedOption &&
+              selectedOptions.options.find(
+                (option) => option.name === selectedOption
+              )?.content}
+          </div>
+        </div>
       </div>
     </div>
   );

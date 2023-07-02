@@ -12,7 +12,7 @@ const Main = ({ children }: PropsMain) => {
       <SideBar />
       <div className="flex flex-col w-full h-screen overflow-y-auto">
         <Navbar />
-        <div className="">{children}</div>
+        <div className="p-6">{children}</div>
       </div>
     </div>
   );
