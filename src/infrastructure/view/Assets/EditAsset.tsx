@@ -53,7 +53,7 @@ export default function EditAsset() {
           {selectedOption && (
             <div className="box-border block title">
               <span className="p-2 text-lg font-semibold bg-white rounded-md form-title">
-                {selectedOption}
+                {`${selectedOptions.name} - ExampleComputer`}
               </span>
             </div>
           )}
