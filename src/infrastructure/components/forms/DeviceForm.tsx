@@ -72,13 +72,13 @@ export default function  DeviceForm() {
 
         <SelectOption id={"status"} label={"Status"} 
           options={stateOptions.data?.data} />
-        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
-        <SelectOption id="type" label="Type" 
+        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
+        <SelectOption id="type" label="Devices Types" 
           options={deviceTypeOptions?.data}/>
         <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}        
           options={userInChargeOptions.data?.data}
         />
-        <SelectOption id="manufacturer" label="Manufacturer" 
+        <SelectOption id="manufacturer" label="Manufacturers" 
           options={manufacturerOptions.data?.data}/>
         <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} 
           options={groupInChargeOptions.data?.data}
@@ -114,7 +114,7 @@ export default function  DeviceForm() {
           options={usersOptions.data?.data} />
         <SelectOption id="managmenttype" label="Managment Type" 
           options={managementTypeOptions} />
-        <SelectOption id="group" label="Group" 
+        <SelectOption id="group" label="Groups" 
           options={groupsOptions.data?.data}
          />
 
@@ -126,7 +126,7 @@ export default function  DeviceForm() {
         />
         <TextArea
           id={"comment"}
-          label="Comment"
+          label="Comments"
           rows={3}
         />
         <TextInput

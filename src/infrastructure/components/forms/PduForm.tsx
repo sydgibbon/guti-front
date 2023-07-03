@@ -55,13 +55,13 @@ export default function  PduForm() {
 
         <SelectOption id={"status"} label={"Status"} 
           options={stateOptions.data?.data} />
-        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
-        <SelectOption id={"pdutypes"} label="Type" 
+        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
+        <SelectOption id={"pdutypes"} label="PDU types" 
           options={pduTypeOptions?.data}/>
         <SelectOption id={"user_tech"} label={"Technician in charge of the hardware"} 
           options={userInChargeOptions.data?.data}
         />     
-        <SelectOption id={"manufacturers"} label="Manufacturer" 
+        <SelectOption id={"manufacturers"} label="Manufacturers" 
           options={manufacturerOptions.data?.data}/>
         <SelectOption id={"groups_tech"} label={"Group in charge of the hardware"} 
           options={groupInChargeOptions.data?.data}

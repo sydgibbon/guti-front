@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import SelectOption from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
@@ -14,17 +14,10 @@ import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/use
 import { useGetPhonetypesSelect } from "../../hooks/Phones/useGetPhonetypesSelect";
 import { useGetPhonemodelsSelect } from "../../hooks/Phones/useGetPhonemodelsSelect";
 import { useGetPhonePowerSuppliesSelect } from "../../hooks/Phones/useGetPhonePowerSuppliesSelect";
+import Checkbox from "../CheckBox";
 
-// const textOption: OptionValue[] = [{
-//   text: "Boca",
-//   value: "boca"
-// },
-// {
-//   text: "River",
-//   value: "river"
-// }]
 
-export default function  PhoneForm() {
+export default function PhoneForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {
@@ -37,9 +30,26 @@ export default function  PhoneForm() {
   //   }
   // }, [computer.error]);
 
+  interface CheckboxState {
+    headset: boolean;
+    speaker: boolean;
+
+  }
+
+  const [checkboxes, setCheckboxes] = useState({
+    headset: false,
+    speaker: false,
+  });
+
+  const handleCheckboxChange = (checkboxName: keyof CheckboxState) => {
+    setCheckboxes((prevCheckboxes) => ({
+      ...prevCheckboxes,
+      [checkboxName]: !prevCheckboxes[checkboxName],
+    }));
+  };
 
   const userInChargeOptions = useGetUserInChargeSelect();
-  const usersOptions = useGetUsersSelect();  
+  const usersOptions = useGetUsersSelect();
   const groupInChargeOptions = useGetGroupInChargeSelect();
   const groupsOptions = useGetGroupsSelect();
   const locationOptions = useGetLocationsSelect();
@@ -50,10 +60,10 @@ export default function  PhoneForm() {
   const phonePowerSupplyTypeOptions = useGetPhonePowerSuppliesSelect();
   const autoupdatesystemOptions = useGetAutoupdatesystemsSelect();
 
-  const managementTypeOptions = [{id:"0", name:"Unit Management"},{id:"1", name:"Global Management"}]
-  
+  const managementTypeOptions = [{ id: "0", name: "Unit Management" }, { id: "1", name: "Global Management" }]
+
   useEffect(() => {
-    
+
     usersOptions.get();
     userInChargeOptions.get();
     groupsOptions.get();
@@ -65,7 +75,7 @@ export default function  PhoneForm() {
     phoneTypeOptions.get();
     phonePowerSupplyTypeOptions.get();
     autoupdatesystemOptions.get();
-  
+
   }, [])
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -76,21 +86,21 @@ export default function  PhoneForm() {
           placeholder={"ingrese su nombre"}
         />
 
-        <SelectOption id={"status"} label={"Status"} 
+        <SelectOption id={"status"} label={"Status"}
           options={stateOptions.data?.data} />
-        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
-        <SelectOption id="type" label="Type" 
-          options={phoneTypeOptions?.data}/>
-        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"} 
+        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
+        <SelectOption id="type" label="Phone types"
+          options={phoneTypeOptions?.data} />
+        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}
           options={userInChargeOptions.data?.data}
         />
-        <SelectOption id="manufacturer" label="Manufacturer"
-          options={manufacturerOptions.data?.data}/>
+        <SelectOption id="manufacturer" label="Manufacturers"
+          options={manufacturerOptions.data?.data} />
         <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"}
           options={groupInChargeOptions.data?.data}
         />
-        <SelectOption id="model" label="Model" 
-          options={phoneModelOptions?.data}/>
+        <SelectOption id="model" label="Model"
+          options={phoneModelOptions?.data} />
 
         <TextInput
           id={"alternativeusernamenumber"}
@@ -117,13 +127,13 @@ export default function  PhoneForm() {
           required
         />
 
-        <SelectOption id="user" label="User" 
+        <SelectOption id="user" label="User"
           options={usersOptions.data?.data} />
-        <SelectOption id="managmenttype" label="Managment Type" 
+        <SelectOption id="managmenttype" label="Managment Type"
           options={managementTypeOptions} />
-        <SelectOption id="group" label="Group" 
+        <SelectOption id="group" label="Groups"
           options={groupsOptions.data?.data}
-         />
+        />
 
         <TextInput
           id="uuid"
@@ -134,7 +144,7 @@ export default function  PhoneForm() {
 
         <TextArea
           id={"comment"}
-          label="Comment"
+          label="Comments"
           rows={3}
         />
 
@@ -143,24 +153,35 @@ export default function  PhoneForm() {
           label={"Brand"}
         />
 
-        <SelectOption id="updatesource" label="Update Source" 
-          options={autoupdatesystemOptions.data?.data}/>
+        <SelectOption id="updatesource" label="Update Source"
+          options={autoupdatesystemOptions.data?.data} />
 
         <TextInput
-          id={"numberoflines"}
-          label="Number Of Lines"
+          id={"number_line"}
+          label="Number of Lines"
           type={"number"}
         />
 
-        <SelectOption id="phonepowersupplytype" label="Phone Power Supply Type" 
-          options={phonePowerSupplyTypeOptions?.data}/>
-        
-        <TextArea
-          id={"ports"}
-          label={"Ports"}
-          placeholder={"Aca van los checkbox"}
-          rows={2}
-        />
+        <SelectOption id="phonepowersupplytype" label="Phone Power Supply Types"
+          options={phonePowerSupplyTypeOptions?.data} />
+
+        <div className="  rounded-lg">
+          <div className="mb-2 font-semibold">Ports</div>
+          <div className="grid grid-cols-5 gap-2">
+            <Checkbox
+              id="have_headset"
+              label="Headset"
+              checked={checkboxes.headset}
+              onChange={() => handleCheckboxChange("headset")}
+            />
+            <Checkbox
+              id="have_hp"
+              label="Speaker"
+              checked={checkboxes.speaker}
+              onChange={() => handleCheckboxChange("speaker")}
+            />
+          </div>
+        </div>
       </Form>
     </div>
   );

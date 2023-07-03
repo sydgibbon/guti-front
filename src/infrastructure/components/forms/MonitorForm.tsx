@@ -46,7 +46,7 @@ export default function MonitorForm() {
   }
 
   const userInChargeOptions = useGetUserInChargeSelect();
-  const usersOptions = useGetUsersSelect();  
+  const usersOptions = useGetUsersSelect();
   const groupInChargeOptions = useGetGroupInChargeSelect();
   const groupsOptions = useGetGroupsSelect();
   const locationOptions = useGetLocationsSelect();
@@ -56,8 +56,8 @@ export default function MonitorForm() {
   const monitorTypeOptions = useGetMonitortypesSelect();
   const autoupdatesystemOptions = useGetAutoupdatesystemsSelect();
 
-  const managementTypeOptions = [{id:"0", name:"Unit Management"},{id:"1", name:"Global Management"}]
-  
+  const managementTypeOptions = [{ id: "0", name: "Unit Management" }, { id: "1", name: "Global Management" }]
+
   interface CheckboxState {
     microphone: boolean;
     speakers: boolean;
@@ -93,7 +93,7 @@ export default function MonitorForm() {
   };
 
   useEffect(() => {
-    
+
     usersOptions.get();
     userInChargeOptions.get();
     groupsOptions.get();
@@ -104,9 +104,9 @@ export default function MonitorForm() {
     monitorModelOptions.get();
     monitorTypeOptions.get();
     autoupdatesystemOptions.get();
-  
+
   }, [])
-  
+
 
   useEffect(() => {
     if (monitors.error) {
@@ -127,19 +127,19 @@ export default function MonitorForm() {
 
         <SelectOption id={"status"} label={"Status"}
           options={stateOptions.data?.data} />
-        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
-        <SelectOption id="type" label="Type" 
-          options={monitorTypeOptions?.data}/>
+        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
+        <SelectOption id="type" label="Monitor Type"
+          options={monitorTypeOptions?.data} />
         <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}
           options={userInChargeOptions.data?.data}
         />
-        <SelectOption id="manufacturer" label="Manufacturer"
-          options={manufacturerOptions.data?.data}/>
-        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} 
+        <SelectOption id="manufacturer" label="Manufacturers"
+          options={manufacturerOptions.data?.data} />
+        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"}
           options={groupInChargeOptions.data?.data}
         />
-        <SelectOption id="model" label="Model" 
-          options={monitorModelOptions?.data}/>
+        <SelectOption id="model" label="Model"
+          options={monitorModelOptions?.data} />
 
         <TextInput
           id={"alternativeusernamenumber"}
@@ -170,7 +170,7 @@ export default function MonitorForm() {
           inputRef={InventoryNumber}
         />
 
-        <SelectOption id="user" label="User" 
+        <SelectOption id="user" label="User"
           options={usersOptions.data?.data} />
         <SelectOption id="is_global" label="Management Type"
           options={managementTypeOptions} />
@@ -178,13 +178,12 @@ export default function MonitorForm() {
         <TextInput
           id={"size"}
           label="Size"
-          inputRef={Size}
           type={"number"}
         />
 
-        <SelectOption id="group" label="Group" 
+        <SelectOption id="group" label="Groups"
           options={groupsOptions.data?.data}
-         />
+        />
 
         <TextInput
           id="uuid"

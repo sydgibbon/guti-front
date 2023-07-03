@@ -15,7 +15,7 @@ import { useGetDcroomsSelect } from "../../hooks/Racks/useGetDcroomsSelect";
 
 
 
-export default function  RackForm() {
+export default function RackForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {
@@ -56,20 +56,20 @@ export default function  RackForm() {
       id: "4"
     }]
 
-    useEffect(() => {
-    
-      userInChargeOptions.get();
-      groupInChargeOptions.get();
-      locationOptions.get();
-      stateOptions.get();
-      manufacturerOptions.get();
-      rackModelOptions.get();
-      rackTypeOptions.get();
-      dcRoomOptions.get();
-      autoupdatesystemOptions.get();
-    
-    }, [])
-    
+  useEffect(() => {
+
+    userInChargeOptions.get();
+    groupInChargeOptions.get();
+    locationOptions.get();
+    stateOptions.get();
+    manufacturerOptions.get();
+    rackModelOptions.get();
+    rackTypeOptions.get();
+    dcRoomOptions.get();
+    autoupdatesystemOptions.get();
+
+  }, [])
+
 
 
   return (
@@ -81,21 +81,21 @@ export default function  RackForm() {
           placeholder={"ingrese su nombre"}
         />
 
-        <SelectOption id={"status"} label={"Status"} 
+        <SelectOption id={"status"} label={"Status"}
           options={stateOptions.data?.data} />
-        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
-        <SelectOption id="type" label="Type" 
-          options={rackTypeOptions?.data}/>
-        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"} 
+        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
+        <SelectOption id="type" label="Rack types"
+          options={rackTypeOptions?.data} />
+        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}
           options={userInChargeOptions.data?.data}
         />
-        <SelectOption id="manufacturer" label="Manufacturer" 
-          options={manufacturerOptions.data?.data}/>
+        <SelectOption id="manufacturer" label="Manufacturers"
+          options={manufacturerOptions.data?.data} />
         <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"}
           options={groupInChargeOptions.data?.data}
         />
-        <SelectOption id="model" label="Model" 
-          options={rackModelOptions?.data}/>
+        <SelectOption id="model" label="Model"
+          options={rackModelOptions?.data} />
 
         <TextInput
           id={"serialnumber"}
@@ -114,12 +114,13 @@ export default function  RackForm() {
           label="Comment"
           rows={3}
         />
-        <SelectOption id="serverroom" label="Server Room" 
-          options={dcRoomOptions?.data}/>
+        <SelectOption id="serverroom" label="Server Rooms"
+          options={dcRoomOptions?.data} />
+  
         <SelectOption id={"room_orientation"} label="Door orientation in room" options={orientationOptions} />
 
         <TextInput
-          id={"numberofunits"}
+          id={"number_units"}
           label="Number of units"
           type={"number"}
         />
@@ -139,20 +140,21 @@ export default function  RackForm() {
           type={"number"}
         />
         <TextInput
-          id={"maxpower"}
+          id={"max_power"}
           label="Max. power (in watts)"
           type={"number"}
         />
         <TextInput
-          id={"measuredpower"}
-          label="Measured power (in watts)"
+          id={"mesured_power"}
+          label="Measured Power (in watts)"
           type={"number"}
         />
         <TextInput
-          id={"maxweight"}
+          id={"max_weight"}
           label="Max. weight"
           type={"number"}
         />
+
         <TextInput
           id={"bgcolor"}
           type="text"

@@ -16,7 +16,7 @@ import { useGetNetworksSelect } from "../../hooks/Networks/useGetNetworksSelect"
 import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
 
 
-export default function  ComputersForm() {
+export default function ComputersForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {
@@ -64,9 +64,9 @@ export default function  ComputersForm() {
 
     // computer.post(data);
   };
-  
+
   const userInChargeOptions = useGetUserInChargeSelect();
-  const usersOptions = useGetUsersSelect();  
+  const usersOptions = useGetUsersSelect();
   const groupInChargeOptions = useGetGroupInChargeSelect();
   const groupsOptions = useGetGroupsSelect();
   const locationOptions = useGetLocationsSelect();
@@ -102,7 +102,13 @@ export default function  ComputersForm() {
           required
         />
 
-        <SelectOption id="locations" label="Location" options={locationOptions.data?.data} />
+        <SelectOption id="states" label="Status"
+          options={stateOptions.data?.data} />
+
+        <SelectOption id="locations" label="Locations" options={locationOptions.data?.data} />
+
+        <SelectOption id="type" label="Computer Types"
+          options={computerTypeOptions?.data} />
 
         <SelectOption
           id="hardware"
@@ -110,16 +116,29 @@ export default function  ComputersForm() {
           options={userInChargeOptions.data?.data}
         />
 
+        <SelectOption id="manufacturer" label="Manufacturers"
+          options={manufacturerOptions.data?.data} />
+
         <SelectOption
           id="group-hardware"
           label="Group in Charge of the Hardware"
           options={groupInChargeOptions.data?.data}
         />
 
+        <SelectOption id="model" label="Model"
+          options={computerModelOptions?.data} />
+
         <TextInput
           id={"alternativeusernamenumber"}
           label="Alternate username number"
           placeholder="Enter your alternate username number here"
+          required
+        />
+
+        <TextInput
+          id={"serialnumber"}
+          label="Serial Number"
+          placeholder="Enter your Serial Number here"
           required
         />
 
@@ -130,50 +149,39 @@ export default function  ComputersForm() {
           required
         />
 
-        <SelectOption id="user" label="User"
-          options={usersOptions.data?.data} />
-
-        <SelectOption id="group" label="Group"
-          options={groupsOptions.data?.data}
-         />
-
-        <TextArea
-          id="comment"
-          label="Comment"
-          placeholder="Enter your comment here"
-        />
-
-        <SelectOption id="states" label="Status" 
-          options={stateOptions.data?.data} />
-        <SelectOption id="type" label="Type" 
-          options={computerTypeOptions?.data}/>
-        <SelectOption id="manufacturer" label="Manufacturer" 
-          options={manufacturerOptions.data?.data}/>
-        <SelectOption id="model" label="Model" 
-          options={computerModelOptions?.data}/>
-
-        <TextInput
-          id={"serialnumber"}
-          label="Serial Number"
-          placeholder="Enter your Serial Number here"
-          required
-        />
         <TextInput
           id={"inventoryassetnumber"}
           label="Inventory/Asset Number"
           placeholder="Enter your Inventory/Asset Number here"
           required
         />
-        <SelectOption id="network" label="Network" 
-          options={networkOptions.data?.data}/>
+
+        <SelectOption id="user" label="User"
+          options={usersOptions.data?.data} />
+
+        <SelectOption id="network" label="Network"
+          options={networkOptions.data?.data} />
+
+        <SelectOption id="group" label="Groups"
+          options={groupsOptions.data?.data}
+        />
+
         <TextInput
           id="uuid"
           label="UUID"
           placeholder="Enter your UUID here"
           required
         />
-        <SelectOption id="updatesource" label="Update Source" 
-          options={autoupdatesystemOptions.data?.data}/>
+
+        <TextArea
+          id="comment"
+          label="Comment"
+          placeholder="Enter your comment here"
+          rows={3}
+        />
+
+        <SelectOption id="updatesource" label="Update Source"
+          options={autoupdatesystemOptions.data?.data} />
       </Form>
     </div>
   );
