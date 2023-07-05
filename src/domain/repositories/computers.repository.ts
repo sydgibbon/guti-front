@@ -1,9 +1,10 @@
 import { ComputerDTO } from "../dto/ComputerDTO";
+import { ComputerData } from "../models/forms/ComputerData";
 import http from "../services/api/http";
 
 export const computersRepository = {
-  createComputer: async (body: ComputerDTO) => {
-    const response = await http.post<ComputerDTO>("computers", body);
+  createComputer: async (body: ComputerData) => {
+    const response = await http.post<ComputerDTO>("createComputer/", body);
 
     return response;
   },

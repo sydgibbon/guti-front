@@ -1,8 +1,8 @@
-import { ComputerDTO } from "../../dto/ComputerDTO";
+import { ComputerData } from "../../models/forms/ComputerData";
 import { computersRepository } from "../../repositories/computers.repository";
 
 export const computersService = {
-  createComputer: (body: ComputerDTO) => {
+  createComputer: (body: ComputerData) => {
     return computersRepository.createComputer(body);
   },
   getAllComputers: () => {
