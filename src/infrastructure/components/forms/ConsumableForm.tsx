@@ -4,17 +4,33 @@ import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInCharg
 import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
 import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
 import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
-import SelectOption from "../SelectOption";
+import SelectOption, { OptionValue } from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import Form from "./Form";
+import ImageInput from "../ImageInput";
 
-export default function  ConsumableForm() {
-  // const computer = useCreateComputer();
+export default function ConsumableForm() {
+
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
   };
+
+  const numbers = (): OptionValue[] => {
+    const options: OptionValue[] = [];
+    for (let i = 1; i <= 100; i++) {
+      const option: OptionValue = {
+        id: i.toString(),
+        name: i.toString()
+      };
+      options.push(option);
+    }
+
+    return options;
+  };
+
+  const threshold = numbers();
 
   const userInChargeOptions = useGetUserInChargeSelect();
   const groupInChargeOptions = useGetGroupInChargeSelect();
@@ -23,7 +39,7 @@ export default function  ConsumableForm() {
   const consumableTypeOptions = useGetConsumabletypesSelect();
 
   useEffect(() => {
-    
+
     userInChargeOptions.get();
     groupInChargeOptions.get();
     locationOptions.get();
@@ -42,9 +58,9 @@ export default function  ConsumableForm() {
           placeholder={"ingrese su nombre"}
         />
 
-        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
-        <SelectOption id="type" label="Type" 
-          options={consumableTypeOptions?.data}/>
+        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
+        <SelectOption id="type" label="Consumable Types"
+          options={consumableTypeOptions?.data} />
 
         <TextInput
           id={"reference"}
@@ -52,12 +68,12 @@ export default function  ConsumableForm() {
         />
 
 
-        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"} 
+        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}
           options={userInChargeOptions.data?.data}
         />
-        <SelectOption id="manufacturer" label="Manufacturer" 
-          options={manufacturerOptions.data?.data}/>
-        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} 
+        <SelectOption id="manufacturer" label="Manufacturers"
+          options={manufacturerOptions.data?.data} />
+        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"}
           options={groupInChargeOptions.data?.data}
         />
 
@@ -74,19 +90,24 @@ export default function  ConsumableForm() {
           rows={3}
         />
 
-        <TextInput
+        <SelectOption
           id={"alertthreshold"}
           label={"Alert Threshold"}
+          options={threshold}
         />
 
-        <SelectOption id={"pictures"} label={"Pictures"} />
+        <ImageInput
+          id={"pictures"}
+          label={"Pictures"}
+          fileType={".jpg, .jpeg, .png"}
+          maxSize={3}
+        />
 
         <TextInput
-          id={"stocktarget"}
+          id={"stock_target"}
           label="Stock Target"
           type={"number"}
         />
-
       </Form>
     </div>
   );

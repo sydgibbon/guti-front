@@ -15,6 +15,7 @@ import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSele
 import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect";
 import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
 import { useGetSnmpCredentialsSelect } from "../../hooks/SnmpCredentials/useGetSnmpCredentialsSelect";
+import { number } from "yargs";
 
 export default function  NetDeviceForm() {
   // const computer = useCreateComputer();
@@ -69,13 +70,13 @@ export default function  NetDeviceForm() {
 
         <SelectOption id={"states"} label={"Status"} 
           options={stateOptions.data?.data} />
-        <SelectOption id={"location"} label={"Location"} options={locationOptions.data?.data} />
-        <SelectOption id="type" label="Type" 
+        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
+        <SelectOption id="type" label="Networking Equipment Types" 
           options={networkDeviceTypeOptions?.data}/>
         <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}
           options={userInChargeOptions.data?.data}
         />
-        <SelectOption id="manufacturer" label="Manufacturer" 
+        <SelectOption id="manufacturer" label="Manufacturers" 
           options={manufacturerOptions.data?.data}/>
         <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"} 
           options={groupInChargeOptions.data?.data}
@@ -109,7 +110,7 @@ export default function  NetDeviceForm() {
         />
         <TextArea
           id={"sysdescr"}
-          label="Sysdescr"
+          label="System description"
           rows={3}
         />
         <SelectOption id="snmpcredential" label="SNMP credential" 
@@ -118,7 +119,7 @@ export default function  NetDeviceForm() {
           options={usersOptions.data?.data} />
         <SelectOption id="network" label="Network" 
           options={networkOptions.data?.data}/>
-        <SelectOption id="group" label="Group" 
+        <SelectOption id="group" label="Groups" 
           options={groupsOptions.data?.data}
          />
 
@@ -130,12 +131,12 @@ export default function  NetDeviceForm() {
         />
         <TextArea
           id={"comment"}
-          label="Comment" 
+          label="Comments" 
           rows={3}
         />
         <TextInput
           id={"memory"}
-          label="Memory (Mio)"
+          label="Memory (MB)"
           type={"number"}
         />
         <SelectOption id="updatesource" label="Update Source" 
