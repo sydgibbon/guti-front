@@ -17,6 +17,8 @@ import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/use
 import AddButton from "../AddButton";
 import ModalCustom from "../../components/modals/ModalCustom";
 import LocationForm from "./LocationForm";
+import { getModalIsOpen, setModalIsOpen } from "../../redux/Computers";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
 
 
@@ -51,48 +53,30 @@ export default function ComputersForm() {
     computerTypeOptions.get();
     networkOptions.get();
     autoupdatesystemOptions.get();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const [isOpen, setIsOpen] = useState<boolean>(false);
   const [showLocationForm, setShowLocationForm] = useState(false);
 
   const openLocationForm = () => {
     setShowLocationForm(true);
   };
 
-  const toggleForm = () => {
-    setIsOpen(!isOpen);
-  };
+  // const modalIsOpen = useAppSelector(getModalIsOpen);
 
+  // const dispatch = useAppDispatch();
 
-  {showLocationForm && (
-    <ModalCustom
-      state={showLocationForm}
-      handleClose={() => setShowLocationForm(false)}
-      title="Location Form"
-    >
-      <LocationForm />
-    </ModalCustom>
-  )}
+  // const handleClose = () => {
+  //   dispatch(setModalIsOpen(false));
+  // };
+
+  // useEffect(() => {
+  //   dispatch(setModalIsOpen(true));
+  // }, []);
 
   return (
     <div>
-      {isOpen && (
-        <ModalCustom
-          state={isOpen}
-          handleClose={toggleForm}
-          title="Formulario"
-          content="Proximamente, el formulario kease locations"
-          primaryButtonText="+ Add"
-          primaryButtonHandle={() => {
-          }}
-          secondaryButtonHandle={() => {
-          }}
-        />
-      )}
       <div className="m-6 bg-white rounded container_form_computer">
-        {showLocationForm && <LocationForm />}
+
         <Form handleSubmit={handleSubmit}>
           <TextInput
             id={"name"}
@@ -102,6 +86,13 @@ export default function ComputersForm() {
           />
 
           <div className="">
+            <ModalCustom
+              title="Location Form"
+              state={showLocationForm}
+              handleClose={() => setShowLocationForm(false)}
+            >
+              <LocationForm/>
+            </ModalCustom>
             <SelectOption
               id="locations"
               label="Location"
@@ -185,6 +176,6 @@ export default function ComputersForm() {
             options={autoupdatesystemOptions.data?.data} />
         </Form>
       </div>
-    </div>
+    </div >
   );
 }
