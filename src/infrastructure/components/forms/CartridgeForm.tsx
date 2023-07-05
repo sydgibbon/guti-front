@@ -87,6 +87,7 @@ export default function  CartridgeForm() {
         <TextInput
           id={"stocktarget"}
           label="Stock Target"
+          type={"number"}
         />
 
       </Form>

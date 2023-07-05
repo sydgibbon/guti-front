@@ -151,6 +151,7 @@ export default function  PrinterForm() {
         <TextInput
           id={"initialpagecounter"}
           label="Initial page counter"
+          type={"number"}
         />
         <TextInput
           id={"currentcounterofpages"}

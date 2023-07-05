@@ -149,6 +149,7 @@ export default function  PhoneForm() {
         <TextInput
           id={"numberoflines"}
           label="Number Of Lines"
+          type={"number"}
         />
 
         <SelectOption id="phonepowersupplytype" label="Phone Power Supply Type" 
