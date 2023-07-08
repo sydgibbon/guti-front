@@ -1,7 +1,7 @@
 import { BsChevronCompactDown } from "react-icons/bs";
 import Item from "../atomic/Item";
 
-const SidebarMenu = ({ text, icon, subMenu, selected, setSelected, arrow, context }) => {
+const SidebarMenu = ({ text, icon, subMenu, selected, setSelected, hasOptions, context }) => {
   const toggle = () => {selected !== text ? setSelected(text) : setSelected(false)}
   return (
     <>
@@ -10,14 +10,14 @@ const SidebarMenu = ({ text, icon, subMenu, selected, setSelected, arrow, contex
         ${context === "edditAsset" ? 
           selected === text && "shadow-md border-l-2"
           :
-          selected === text && "border-l-2 bg-white font-bold"
+          selected === text && !hasOptions && "border-l-2 bg-white font-bold"
 
         } 
         `}
         onClick={toggle}
       >
         <Item icon={icon} text={text} />
-        {arrow && <BsChevronCompactDown className="block my-auto" />}
+        {hasOptions && <BsChevronCompactDown className="block my-auto" />}
       </div>
       {selected === text && subMenu}
     </>
