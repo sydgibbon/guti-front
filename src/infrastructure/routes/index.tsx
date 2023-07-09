@@ -651,6 +651,131 @@ const router = createBrowserRouter([
     ),
   },
 
+  {
+    path: "/assets/edit/monitors",
+    element: (
+      <Main>
+        <EditAsset />
+      </Main>
+    ),
+  },
+
+  {
+    path: "/assets/edit/software",
+    element: (
+      <Main>
+        <EditAsset />
+      </Main>
+    ),
+  },
+
+  {
+    path: "/assets/edit/networkequipments",
+    element: (
+      <Main>
+        <EditAsset />
+      </Main>
+    ),
+  },
+
+  {
+    path: "/assets/edit/devices",
+    element: (
+      <Main>
+        <EditAsset />
+      </Main>
+    ),
+  },
+
+  {
+    path: "/assets/edit/printers",
+    element: (
+      <Main>
+        <EditAsset />
+      </Main>
+    ),
+  },
+
+  {
+    path: "/assets/edit/cartridges",
+    element: (
+      <Main>
+        <EditAsset />
+      </Main>
+    ),
+  },
+
+  {
+    path: "/assets/edit/consumables",
+    element: (
+      <Main>
+        <EditAsset />
+      </Main>
+    ),
+  },
+
+  {
+    path: "/assets/edit/phones",
+    element: (
+      <Main>
+        <EditAsset />
+      </Main>
+    ),
+  },
+
+  {
+    path: "/assets/edit/racks",
+    element: (
+      <Main>
+        <EditAsset />
+      </Main>
+    ),
+  },
+
+  {
+    path: "/assets/edit/enclosures",
+    element: (
+      <Main>
+        <EditAsset />
+      </Main>
+    ),
+  },
+
+  {
+    path: "/assets/edit/pdu",
+    element: (
+      <Main>
+        <EditAsset />
+      </Main>
+    ),
+  },
+
+  {
+    path: "/assets/edit/passivedevices",
+    element: (
+      <Main>
+        <EditAsset />
+      </Main>
+    ),
+  },
+
+  {
+    path: "/assets/edit/cables",
+    element: (
+      <Main>
+        <EditAsset />
+      </Main>
+    ),
+  },
+
+  {
+    path: "/assets/edit/simcards",
+    element: (
+      <Main>
+        <EditAsset />
+      </Main>
+    ),
+  },
 
   {
     path: "*",
