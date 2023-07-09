@@ -641,7 +641,7 @@ const router = createBrowserRouter([
     ),
   },
  
-  // "/assets/edit/computers" route is used as an example
+  // "/assets/edit/ASSET" route is used as an example
   {
     path: "/assets/edit/computers",
     element: (
