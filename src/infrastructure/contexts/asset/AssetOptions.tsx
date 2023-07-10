@@ -281,7 +281,7 @@ export const AssetOptions: EditAssetOption[] = [
     ],
   },
   {
-    name: "PDU",
+    name: "Pdu",
     options: [
       { name: "PDUs", content: <PduForm /> },
       { name: "Impact Analysis", content: "" },
