@@ -95,93 +95,155 @@ export default function ComputersForm() {
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
-          id={"name"}
-          label="Name"
-          placeholder="Enter your name here"
-          required
-        />
+        <div className="Name">
+          <label className="text-sm mb-2 font-semibold block">Name</label>
+          <TextInput
+            id={"name"}
+            placeholder="Enter your name here"
+            required
+          />
+        </div>
 
-        <SelectOption id="states" label="Status"
-          options={stateOptions.data?.data} />
+        <div className="Status">
+          <label className="text-sm mb-2 font-semibold block">Status</label>
+          <SelectOption
+            id="states"
+            options={stateOptions.data?.data}
+          />
+        </div>
 
-        <SelectOption id="locations" label="Locations" options={locationOptions.data?.data} />
+        <div className="Locations">
+          <label className="text-sm mb-2 font-semibold block">Locations</label>
+          <SelectOption
+            id="locations"
+            options={locationOptions.data?.data}
+          />
+        </div>
 
-        <SelectOption id="type" label="Computer Types"
-          options={computerTypeOptions?.data} />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Computer Types</label>
+          <SelectOption
+            id="type"
+            options={computerTypeOptions?.data}
+          />
+        </div>
 
-        <SelectOption
-          id="hardware"
-          label="Technician in Charge of the Hardware"
-          options={userInChargeOptions.data?.data}
-        />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Technician in Charge of the Hardware</label>
+          <SelectOption
+            id="hardware"
+            options={userInChargeOptions.data?.data}
+          />
+        </div>
 
-        <SelectOption id="manufacturer" label="Manufacturers"
-          options={manufacturerOptions.data?.data} />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Manufacturers</label>
+          <SelectOption
+            id="manufacturer"
+            options={manufacturerOptions.data?.data}
+          />
+        </div>
 
-        <SelectOption
-          id="group-hardware"
-          label="Group in Charge of the Hardware"
-          options={groupInChargeOptions.data?.data}
-        />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Group in Charge of the Hardware</label>
+          <SelectOption
+            id="group-hardware"
+            options={groupInChargeOptions.data?.data}
+          />
+        </div>
 
-        <SelectOption id="model" label="Model"
-          options={computerModelOptions?.data} />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Model</label>
+          <SelectOption
+            id="model"
+            options={computerModelOptions?.data}
+          />
+        </div>
 
-        <TextInput
-          id={"alternativeusernamenumber"}
-          label="Alternate username number"
-          placeholder="Enter your alternate username number here"
-          required
-        />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Alternate username number</label>
+          <TextInput
+            id={"alternativeusernamenumber"}
+            placeholder="Enter your alternate username number here"
+            required
+          />
+        </div>
 
-        <TextInput
-          id={"serialnumber"}
-          label="Serial Number"
-          placeholder="Enter your Serial Number here"
-          required
-        />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Serial Number</label>
+          <TextInput
+            id={"serialnumber"}
+            placeholder="Enter your Serial Number here"
+            required
+          />
+        </div>
 
-        <TextInput
-          id={"alternativeusername"}
-          label="Alternate Username"
-          placeholder="Enter your Alternate Username here"
-          required
-        />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Alternate Username</label>
+          <TextInput
+            id={"alternativeusername"}
+            placeholder="Enter your Alternate Username here"
+            required
+          />
+        </div>
 
-        <TextInput
-          id={"inventoryassetnumber"}
-          label="Inventory/Asset Number"
-          placeholder="Enter your Inventory/Asset Number here"
-          required
-        />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Inventory/Asset Number</label>
+          <TextInput
+            id={"inventoryassetnumber"}
+            placeholder="Enter your Inventory/Asset Number here"
+            required
+          />
+        </div>
 
-        <SelectOption id="user" label="User"
-          options={usersOptions.data?.data} />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">User</label>
+          <SelectOption
+            id="user"
+            options={usersOptions.data?.data}
+          />
+        </div>
 
-        <SelectOption id="network" label="Network"
-          options={networkOptions.data?.data} />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Network</label>
+          <SelectOption
+            id="network"
+            options={networkOptions.data?.data}
+          />
+        </div>
 
-        <SelectOption id="group" label="Groups"
-          options={groupsOptions.data?.data}
-        />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Groups</label>
+          <SelectOption
+            id="group"
+            options={groupsOptions.data?.data}
+          />
+        </div>
 
-        <TextInput
-          id="uuid"
-          label="UUID"
-          placeholder="Enter your UUID here"
-          required
-        />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">UUID</label>
+          <TextInput
+            id="uuid"
+            placeholder="Enter your UUID here"
+            required
+          />
+        </div>
 
-        <TextArea
-          id="comment"
-          label="Comment"
-          placeholder="Enter your comment here"
-          rows={3}
-        />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Comment</label>
+          <TextArea
+            id="comment"
+            placeholder="Enter your comment here"
+            rows={3}
+          />
+        </div>
 
-        <SelectOption id="updatesource" label="Update Source"
-          options={autoupdatesystemOptions.data?.data} />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Update Source</label>
+          <SelectOption
+            id="updatesource"
+            options={autoupdatesystemOptions.data?.data} />
+        </div>
       </Form>
     </div>
   );
