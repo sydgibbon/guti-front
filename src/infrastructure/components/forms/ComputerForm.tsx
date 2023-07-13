@@ -17,9 +17,6 @@ import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/use
 import AddButton from "../AddButton";
 import ModalCustom from "../../components/modals/ModalCustom";
 import LocationForm from "./LocationForm";
-import { getModalIsOpen, setModalIsOpen } from "../../redux/Computers";
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
-
 
 
 export default function ComputersForm() {
@@ -100,7 +97,6 @@ export default function ComputersForm() {
             />
             <AddButton
               onClick={openLocationForm}
-              buttonname="Add"
             />
           </div>
 
