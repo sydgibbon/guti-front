@@ -16,7 +16,9 @@ import { useGetNetworksSelect } from "../../hooks/Networks/useGetNetworksSelect"
 import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
 import { ComputerData } from "../../../domain/models/forms/ComputerData";
 import { computersService } from "../../../domain/services/api/Computers.service";
-
+import AddButton from "../AddButton";
+import ModalCustom from "../../components/modals/ModalCustom";
+import LocationForm from "./LocationForm";
 
 export default function ComputersForm() {
 
@@ -54,113 +56,124 @@ export default function ComputersForm() {
     autoupdatesystemOptions.get();
   }, []);
 
+  const [showLocationForm, setShowLocationForm] = useState(false);
+
+  const openLocationForm = () => {
+    setShowLocationForm(true);
+  };
+
+  // const modalIsOpen = useAppSelector(getModalIsOpen);
+
+  // const dispatch = useAppDispatch();
+
+  // const handleClose = () => {
+  //   dispatch(setModalIsOpen(false));
+  // };
+
+  // useEffect(() => {
+  //   dispatch(setModalIsOpen(true));
+  // }, []);
+
   return (
-    <div className="bg-white container_form_computer">
-      <Form handleSubmit={handleSubmit}>
-        <TextInput
-          id={"name"}
-          label="Name"
-          placeholder="Enter your name here"
-          required
-          
-        />
+    <div>
+      <div className="m-6 bg-white rounded container_form_computer">
+            <ModalCustom
+              title="Location Form"
+              state={showLocationForm}
+              handleClose={() => setShowLocationForm(false)}
+            >
+              <LocationForm/>
+            </ModalCustom>
 
-        <SelectOption id="locations" label="Location" options={locationOptions.data?.data}
-         />
-
-        <SelectOption
-          id="users_tech"
-          label="Technician in Charge of the Hardware"
-          options={userInChargeOptions.data?.data}
-          
-        />
-
-        <SelectOption id="manufacturer" label="Manufacturers"
-          options={manufacturerOptions.data?.data} />
-
-        <SelectOption
-          id="groups_tech"
-          label="Group in Charge of the Hardware"
-          options={groupInChargeOptions.data?.data}
-          
-        />
-
-        <SelectOption id="model" label="Model"
-          options={computerModelOptions?.data} />
-
-        <TextInput
-          id="contact_num"
-          label="Alternate username number"
-          placeholder="Enter your alternate username number here"
-          required
-          
-        />
-
-        <TextInput
-          id="contact"
-          label="Alternate Username"
-          placeholder="Enter your Alternate Username here"
-          required
-          
-        />
-
-        <SelectOption id="users" label="User"
-          options={usersOptions.data?.data} 
+        <Form handleSubmit={handleSubmit}>
+          <TextInput
+            id={"name"}
+            label="Name"
+            placeholder="Enter your name here"
+            required
           />
 
-        <SelectOption id="groups" label="Group"
-          options={groupsOptions.data?.data}
-          
-        />
+            <SelectOption
+              id="locations"
+              label="Location"
+              options={locationOptions.data?.data}
+            />
+            <AddButton
+              onClick={openLocationForm}
+            />
 
-        <TextArea
-          id="comment"
-          label="Comment"
-          placeholder="Enter your comment here"
-          
-        />
+          <SelectOption
+            id="hardware"
+            label="Technician in Charge of the Hardware"
+            options={userInChargeOptions.data?.data}
+          />
 
-        <SelectOption id="states" label="Status"
-          options={stateOptions.data?.data} 
-           />
-        <SelectOption id="computertypes" label="Type"
-          options={computerTypeOptions?.data} 
-           />
-        <SelectOption id="manufacturers" label="Manufacturer"
-          options={manufacturerOptions.data?.data}
-           />
-        <SelectOption id="computermodels" label="Model"
-          options={computerModelOptions?.data}
-           />
+          <SelectOption
+            id="group-hardware"
+            label="Group in Charge of the Hardware"
+            options={groupInChargeOptions.data?.data}
+          />
 
-        <TextInput
-          id={"serial"}
-          label="Serial Number"
-          placeholder="Enter your Serial Number here"
-          required
-          
-        />
-        <TextInput
-          id={"otherserial"}
-          label="Inventory/Asset Number"
-          placeholder="Enter your Inventory/Asset Number here"
-          required
-          
-        />
-        <SelectOption id="networks" label="Network"
-          options={networkOptions.data?.data}
-           />
-        <TextInput
-          id="uuid"
-          label="UUID"
-          placeholder="Enter your UUID here"
-          required
-          
-        />
-        <SelectOption id="autoupdatesystems" label="Update Source"
-          options={autoupdatesystemOptions.data?.data}
-           />
-      </Form>
-    </div>
+          <TextInput
+            id={"alternativeusernamenumber"}
+            label="Alternate username number"
+            placeholder="Enter your alternate username number here"
+            required
+          />
+
+          <TextInput
+            id={"alternativeusername"}
+            label="Alternate Username"
+            placeholder="Enter your Alternate Username here"
+            required
+          />
+
+          <SelectOption id="user" label="User"
+            options={usersOptions.data?.data} />
+
+          <SelectOption id="group" label="Group"
+            options={groupsOptions.data?.data}
+          />
+
+          <TextArea
+            id="comment"
+            label="Comment"
+            placeholder="Enter your comment here"
+          />
+
+          <SelectOption id="states" label="Status"
+            options={stateOptions.data?.data} />
+          <SelectOption id="type" label="Type"
+            options={computerTypeOptions?.data} />
+          <SelectOption id="manufacturer" label="Manufacturer"
+            options={manufacturerOptions.data?.data} />
+          <SelectOption id="model" label="Model"
+            options={computerModelOptions?.data} />
+
+          <TextInput
+            id={"serialnumber"}
+            label="Serial Number"
+            placeholder="Enter your Serial Number here"
+            required
+          />
+          <TextInput
+            id={"inventoryassetnumber"}
+            label="Inventory/Asset Number"
+            placeholder="Enter your Inventory/Asset Number here"
+            required
+          />
+          <SelectOption id="network" label="Network"
+            options={networkOptions.data?.data} />
+          <TextInput
+            id="uuid"
+            label="UUID"
+            placeholder="Enter your UUID here"
+            required
+          />
+          <SelectOption id="updatesource" label="Update Source"
+            options={autoupdatesystemOptions.data?.data} />
+        </Form>
+      </div>
+    </div >
   );
 }

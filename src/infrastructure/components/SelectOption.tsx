@@ -11,7 +11,7 @@ interface SelectOptionProps {
 export interface OptionValue {
   id: string;
   name: string;
-} 
+}
 
 export default function SelectOption(selectOptionProps: SelectOptionProps) {
   const { id, label, options, onSelect, style, onChange } = selectOptionProps;
@@ -29,6 +29,7 @@ export default function SelectOption(selectOptionProps: SelectOptionProps) {
           {label}
         </label>
       )}
+
       <select
         name={id.toLocaleLowerCase()}
         className="px-4 bg-gray-100 border rounded-md h-11"
