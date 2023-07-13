@@ -65,55 +65,93 @@ export default function SoftwareForm() {
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
-          id={"testing"}
-          label={"Name"}
-          placeholder={"ingrese su nombre"}
-        />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Name</label>
+          <TextInput
+            id={"testing"}
+            placeholder={"ingrese su nombre"}
+          />
+        </div>
 
         <div className="  rounded-lg">
-          <div className="mb-2 font-semibold">Associable to a Ticket</div>
+          <label className="text-sm mb-2 font-semibold block">Associable to a Ticket</label>
           <div className="grid grid-cols-4 gap-2">
             <Checkbox
               id="childof"
-              label=""
               checked={checkboxes.associable}
               onChange={() => handleCheckboxChange("associable")}
             />
           </div>
         </div>
 
-        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
-        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}
-          options={userInChargeOptions.data?.data}
-        />
-        <SelectOption id={"publisher"} label={"Publisher"}
-          options={manufacturerOptions.data?.data} />
-        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"}
-          options={groupInChargeOptions.data?.data}
-        />
-        <SelectOption id={"user"} label={"User"}
-          options={usersOptions.data?.data} />
-        <SelectOption id={"groups"} label={"Groups"}
-          options={groupsOptions.data?.data}
-        />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Locations</label>
+          <SelectOption
+            id={"location"}
+            options={locationOptions.data?.data}
+          />
+        </div>
 
-        <TextArea
-          id={"comment"}
-          label={"Comment"}
-          placeholder="Enter your comment here"
-          rows={3}
-        />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Technician in charge of the hardware</label>
+          <SelectOption
+            id={"hardware"}
+            options={userInChargeOptions.data?.data}
+          />
+        </div>
 
-        <ImageInput
-          id={"pictures"}
-          label={"Pictures"}
-          fileType={".jpg, .jpeg, .png"}
-          maxSize={3}
-        />
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Publisher</label>
+          <SelectOption
+            id={"publisher"}
+            options={manufacturerOptions.data?.data}
+          />
+        </div>
 
-        <div className="  rounded-lg">
-          <div className="mb-2 font-semibold">Upgrade</div>
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Group in charge of the hardware</label>
+          <SelectOption
+            id={"group-hardware"}
+            options={groupInChargeOptions.data?.data}
+          />
+        </div>
+
+        <div>
+          <label className="text-sm mb-2 font-semibold block">User</label>
+          <SelectOption
+            id={"user"}
+            options={usersOptions.data?.data}
+          />
+        </div>
+
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Groups</label>
+          <SelectOption
+            id={"groups"}
+            options={groupsOptions.data?.data}
+          />
+        </div>
+
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Comment</label>
+          <TextArea
+            id={"comment"}
+            placeholder="Enter your comment here"
+            rows={3}
+          />
+        </div>
+
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Pictures</label>
+          <ImageInput
+            id={"pictures"}
+            fileType={".jpg, .jpeg, .png"}
+            maxSize={3}
+          />
+        </div>
+
+        <div className="">
+          <label className="text-sm mb-2 font-semibold block">Upgrade</label>
           <div className="grid grid-cols-4 gap-2">
             <Checkbox
               id="upgrade"
@@ -121,10 +159,21 @@ export default function SoftwareForm() {
               checked={checkboxes.upgrade}
               onChange={() => handleCheckboxChange("upgrade")}
             />
-            <SelectOption id={"from"} label={""} options={upgradeOptions?.data}/>
+            <SelectOption
+              id={"from"}
+              label={""}
+              options={upgradeOptions?.data}
+            />
           </div>
         </div>
-        <SelectOption id={"softwarecategories"} label={"Software Category"} options={softwarecategoryOptions?.data} />
+
+        <div>
+          <label className="text-sm mb-2 font-semibold block">Software Category</label>
+          <SelectOption
+            id={"softwarecategories"}
+            options={softwarecategoryOptions?.data}
+          />
+        </div>
       </Form>
     </div>
   );
