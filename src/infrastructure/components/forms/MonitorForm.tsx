@@ -118,88 +118,170 @@ export default function MonitorForm() {
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
-          id={"testing"}
-          label={"Name"}
-          placeholder={"ingrese su nombre"}
-          inputRef={monitorName}
-        />
+        <div className="Name">
+          <label className="text-sm mb-2 font-semibold block">Name</label>
+          <TextInput
+            id={"testing"}
+            placeholder={"ingrese su nombre"}
+            inputRef={monitorName}
+          />
+        </div>
 
-        <SelectOption id={"status"} label={"Status"}
-          options={stateOptions.data?.data} />
-        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
-        <SelectOption id="type" label="Monitor Type"
-          options={monitorTypeOptions?.data} />
-        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}
-          options={userInChargeOptions.data?.data}
-        />
-        <SelectOption id="manufacturer" label="Manufacturers"
-          options={manufacturerOptions.data?.data} />
-        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"}
-          options={groupInChargeOptions.data?.data}
-        />
-        <SelectOption id="model" label="Model"
-          options={monitorModelOptions?.data} />
+        <div className="Status">
+          <label className="text-sm mb-2 font-semibold block">Status</label>
+          <SelectOption
+            id={"status"}
+            options={stateOptions.data?.data}
+          />
+        </div>
 
-        <TextInput
-          id={"alternativeusernamenumber"}
-          label="Alternate Username Number"
-          placeholder="Enter your Alternate Username number here"
-          required
-          inputRef={AlternateUsernameNumber}
-        />
-        <TextInput
-          id={"serialnumber"}
-          label="Serial Number"
-          placeholder="Enter your Serial Number here"
-          required
-          inputRef={SerialNumber}
-        />
-        <TextInput
-          id={"alternativeusername"}
-          label="Alternate Username"
-          placeholder="Enter your Alternate Username here"
-          required
-          inputRef={AlternateUsername}
-        />
-        <TextInput
-          id={"otherserial"}
-          label="Inventory Number"
-          placeholder="Enter your Inventory Number here"
-          required
-          inputRef={InventoryNumber}
-        />
+        <div className="Locations">
+          <label className="text-sm mb-2 font-semibold block">Locations</label>
+          <SelectOption
+            id={"location"}
+            options={locationOptions.data?.data}
+          />
+        </div>
 
-        <SelectOption id="user" label="User"
-          options={usersOptions.data?.data} />
-        <SelectOption id="is_global" label="Management Type"
-          options={managementTypeOptions} />
+        <div className="Monitor Type">
+          <label className="text-sm mb-2 font-semibold block">Monitor Type</label>
+          <SelectOption
+            id="type"
+            options={monitorTypeOptions?.data}
+          />
+        </div>
 
-        <TextInput
-          id={"size"}
-          label="Size"
-          type={"number"}
-        />
+        <div className="Technician in charge of the hardware">
+          <label className="text-sm mb-2 font-semibold block">Technician in charge of the hardware</label>
+          <SelectOption
+            id={"hardware"}
+            options={userInChargeOptions.data?.data}
+          />
+        </div>
 
-        <SelectOption id="group" label="Groups"
-          options={groupsOptions.data?.data}
-        />
+        <div className="Manufacturers">
+          <label className="text-sm mb-2 font-semibold block">Manufacturers</label>
+          <SelectOption
+            id="manufacturer"
+            options={manufacturerOptions.data?.data}
+          />
+        </div>
 
-        <TextInput
-          id="uuid"
-          label="UUID"
-          placeholder="Enter your UUID here"
-          required
-          inputRef={UUID}
-        />
-        <TextArea id={"comment"}
-          label={"Comment"}
-          placeholder="Enter your comment here"
-          rows={3}
-        />
-        <SelectOption id="updatesource" label="Update Source" />
+        <div className="Group in charge of the hardware">
+          <label className="text-sm mb-2 font-semibold block">Group in charge of the hardware</label>
+          <SelectOption
+            id={"group-hardware"}
+            options={groupInChargeOptions.data?.data}
+          />
+        </div>
 
-        <div className="  rounded-lg">
+        <div className="Model">
+          <label className="text-sm mb-2 font-semibold block">Model</label>
+          <SelectOption
+            id="model"
+            options={monitorModelOptions?.data}
+          />
+        </div>
+
+        <div className="Alternate Username Number">
+          <label className="text-sm mb-2 font-semibold block">Alternate Username Number</label>
+          <TextInput
+            id={"alternativeusernamenumber"}
+            placeholder="Enter your Alternate Username number here"
+            required
+            inputRef={AlternateUsernameNumber}
+          />
+        </div>
+
+        <div className="Serial Number">
+          <label className="text-sm mb-2 font-semibold block">Serial Number</label>
+          <TextInput
+            id={"serialnumber"}
+
+            placeholder="Enter your Serial Number here"
+            required
+            inputRef={SerialNumber}
+          />
+        </div>
+
+        <div className="Alternate Username">
+          <label className="text-sm mb-2 font-semibold block">Alternate Username</label>
+          <TextInput
+            id={"alternativeusername"}
+            placeholder="Enter your Alternate Username here"
+            required
+            inputRef={AlternateUsername}
+          />
+        </div>
+
+        <div className="Inventory Number">
+          <label className="text-sm mb-2 font-semibold block">Inventory Number</label>
+          <TextInput
+            id={"otherserial"}
+            placeholder="Enter your Inventory Number here"
+            required
+            inputRef={InventoryNumber}
+          />
+        </div>
+
+        <div className="User">
+          <label className="text-sm mb-2 font-semibold block">User</label>
+          <SelectOption
+            id="user"
+            options={usersOptions.data?.data}
+          />
+        </div>
+
+        <div className="Management Type">
+          <label className="text-sm mb-2 font-semibold block">Management Type</label>
+          <SelectOption
+            id="is_global"
+            options={managementTypeOptions}
+          />
+        </div>
+
+        <div className="Size">
+          <label className="text-sm mb-2 font-semibold block">Size</label>
+          <TextInput
+            id={"size"}
+            type={"number"}
+          />
+        </div>
+
+        <div className="Groups">
+          <label className="text-sm mb-2 font-semibold block">Groups</label>
+          <SelectOption
+            id="group"
+            options={groupsOptions.data?.data}
+          />
+        </div>
+
+        <div className="UUID">
+          <label className="text-sm mb-2 font-semibold block">UUID</label>
+          <TextInput
+            id="uuid"
+            placeholder="Enter your UUID here"
+            required
+            inputRef={UUID}
+          />
+        </div>
+
+        <div className="Comment">
+          <label className="text-sm mb-2 font-semibold block">Comment</label>
+          <TextArea
+            id={"comment"}
+            placeholder="Enter your comment here"
+            rows={3}
+          />
+        </div>
+
+        <div className="Update Source">
+          <label className="text-sm mb-2 font-semibold block">Update Source</label>
+          <SelectOption
+            id="updatesource" />
+        </div>
+
+        <div className= "Ports">
           <div className="mb-2 font-semibold">Ports</div>
           <div className="grid grid-cols-4 gap-2">
             <Checkbox
@@ -252,7 +334,6 @@ export default function MonitorForm() {
             />
           </div>
         </div>
-
       </Form>
     </div>
   );
