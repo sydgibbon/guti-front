@@ -90,100 +90,181 @@ export default function PrinterForm() {
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
-          id={"testing"}
-          label={"Name"}
-          placeholder={"ingrese su nombre"}
-        />
+        <div className= "Name">
+          <label className="text-sm mb-2 font-semibold block">Name</label>
+          <TextInput
+            id={"testing"}
+            placeholder={"ingrese su nombre"}
+          />
+        </div>
+        <div className="Status">
+          <label className="text-sm mb-2 font-semibold block">Status</label>
+          <SelectOption
+            id={"status"}
+            options={stateOptions.data?.data}
+          />
+        </div>
+        <div className="Locations">
+          <label className="text-sm mb-2 font-semibold block">Locations</label>
+          <SelectOption
+            id={"location"}
+            options={locationOptions.data?.data}
+          />
+        </div>
+        <div className="Printer Types">
+          <label className="text-sm mb-2 font-semibold block">Printer Types</label>
+          <SelectOption
+            id="type"
+            options={printerTypeOptions?.data}
+          />
+        </div>
+        <div className="Technician in charge of the hardware">
+          <label className="text-sm mb-2 font-semibold block">Technician in charge of the hardware</label>
+          <SelectOption
+            id={"hardware"}
+            options={userInChargeOptions.data?.data}
+          />
+        </div>
+        <div className="Manufacturers">
+          <label className="text-sm mb-2 font-semibold block">Manufacturers</label>
+          <SelectOption
+            id="manufacturer"
+            options={manufacturerOptions.data?.data}
+          />
+        </div>
+        <div className="Group in charge of the hardware">
+          <label className="text-sm mb-2 font-semibold block">Group in charge of the hardware</label>
+          <SelectOption
+            id={"group-hardware"}
+            options={groupInChargeOptions.data?.data}
+          />
+        </div>
+        <div className="Model">
+          <label className="text-sm mb-2 font-semibold block">Model</label>
+          <SelectOption
+            id="model"
+            options={printerModelOptions?.data}
+          />
+        </div>
+        <div className="Alternate Username Number">
+          <label className="text-sm mb-2 font-semibold block">Alternate Username Number</label>
+          <TextInput
+            id={"alternativeusernamenumber"}
+            placeholder="Enter your Alternate Username number here"
+            required
+          />
+        </div>
+        <div className="Serial Number">
+          <label className="text-sm mb-2 font-semibold block">Serial Number</label>
+          <TextInput
+            id={"serialnumber"}
+            placeholder="Enter your Serial Number here"
+            required
+          />
+        </div>
+        <div className="Alternate Username">
+          <label className="text-sm mb-2 font-semibold block">Alternate Username</label>
+          <TextInput
+            id={"alternativeusername"}
+            placeholder="Enter your Alternate Username here"
+            required
+          />
+        </div>
+        <div className="Inventory Number">
+          <label className="text-sm mb-2 font-semibold block">Inventory Number</label>
+          <TextInput
+            id={"otherserial"}
+            placeholder="Enter your Inventory Number here"
+            required
+          />
+        </div>
+        <div className="System description">
+          <label className="text-sm mb-2 font-semibold block">System description</label>
+          <TextArea
+            id={"sysdescr"}
+            rows={3}
+          />
+        </div>
+        <div className="SNMP credential">
+          <label className="text-sm mb-2 font-semibold block">SNMP credential</label>
+          <SelectOption
+            id="snmpcredential"
+            options={snpmCredentialOptions.data?.data}
+          />
+        </div>
+        <div className="User">
+          <label className="text-sm mb-2 font-semibold block">User</label>
+          <SelectOption
+            id="user"
+            options={usersOptions.data?.data}
+          />
+        </div>
+        <div className="Managment Type">
+          <label className="text-sm mb-2 font-semibold block">Managment Type</label>
+          <SelectOption
+            id="managmenttype"
+            options={managementTypeOptions}
+          />
+        </div>
+        <div className="Network">
+          <label className="text-sm mb-2 font-semibold block">Network</label>
+          <SelectOption
+            id="network"
+            options={networkOptions.data?.data}
+          />
+        </div>
+        <div className="Groups">
+          <label className="text-sm mb-2 font-semibold block">Groups</label>
+          <SelectOption
+            id="group"
+            options={groupsOptions.data?.data}
+          />
+        </div>
+        <div className="UUID">
+          <label className="text-sm mb-2 font-semibold block">UUID</label>
+          <TextInput
+            id="uuid"
+            placeholder="Enter your UUID here"
+            required
+          />
+        </div>
+        <div className="Comment">
+          <label className="text-sm mb-2 font-semibold block">Comment</label>
+          <TextArea
+            id={"comment"}
+            rows={3}
+          />
+        </div>
+        <div className="Update Source">
+          <label className="text-sm mb-2 font-semibold block">Update Source</label>
+          <SelectOption
+            id="updatesource"
+            options={autoupdatesystemOptions.data?.data}
+          />
+        </div>
+        <div className="Memory">
+          <label className="text-sm mb-2 font-semibold block">Memory</label>
+          <TextInput
+            id={"memory"}
+            type={"number"}
+          />
+        </div>
+        <div className="Initial page counter">
+          <label className="text-sm mb-2 font-semibold block">Initial page counter</label>
+          <TextInput
+            id={"initialpagecounter"}
+            type={"number"}
+          />
+        </div>
+        <div className="Current counter of pages">
+          <label className="text-sm mb-2 font-semibold block">Current counter of pages</label>
+          <TextInput
+            id={"currentcounterofpages"}
+            type={"number"}
+          />
+        </div>
 
-        <SelectOption id={"status"} label={"Status"}
-          options={stateOptions.data?.data} />
-        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
-        <SelectOption id="type" label="Printer Types"
-          options={printerTypeOptions?.data} />
-        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}
-          options={userInChargeOptions.data?.data}
-        />
-        <SelectOption id="manufacturer" label="Manufacturers"
-          options={manufacturerOptions.data?.data} />
-        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"}
-          options={groupInChargeOptions.data?.data}
-        />
-        <SelectOption id="model" label="Model"
-          options={printerModelOptions?.data} />
-
-        <TextInput
-          id={"alternativeusernamenumber"}
-          label="Alternate Username Number"
-          placeholder="Enter your Alternate Username number here"
-          required
-        />
-        <TextInput
-          id={"serialnumber"}
-          label="Serial Number"
-          placeholder="Enter your Serial Number here"
-          required
-        />
-        <TextInput
-          id={"alternativeusername"}
-          label="Alternate Username"
-          placeholder="Enter your Alternate Username here"
-          required
-        />
-        <TextInput
-          id={"otherserial"}
-          label="Inventory Number"
-          placeholder="Enter your Inventory Number here"
-          required
-        />
-        <TextArea
-          id={"sysdescr"}
-          label="System description"
-          rows={3}
-        />
-        <SelectOption id="snmpcredential" label="SNMP credential"
-          options={snpmCredentialOptions.data?.data} />
-        <SelectOption id="user" label="User"
-          options={usersOptions.data?.data} />
-        <SelectOption id="managmenttype" label="Managment Type"
-          options={managementTypeOptions} />
-        <SelectOption id="network" label="Network"
-          options={networkOptions.data?.data} />
-        <SelectOption id="group" label="Groups"
-          options={groupsOptions.data?.data}
-        />
-
-        <TextInput
-          id="uuid"
-          label="UUID"
-          placeholder="Enter your UUID here"
-          required
-        />
-        <TextArea
-          id={"comment"}
-          label="Comment"
-          rows={3}
-        />
-
-        <SelectOption id="updatesource" label="Update Source"
-          options={autoupdatesystemOptions.data?.data} />
-
-        <TextInput
-          id={"memory"}
-          label="Memory"
-          type={"number"}
-        />
-        <TextInput
-          id={"initialpagecounter"}
-          label="Initial page counter"
-          type={"number"}
-        />
-        <TextInput
-          id={"currentcounterofpages"}
-          label="Current counter of pages"
-          type={"number"}
-        />
-        <div className="rounded-lg">
+        <div className="Ports">
           <div className="mb-2 font-semibold">Ports</div>
           <div className="grid grid-cols-5 gap-2">
             <Checkbox
