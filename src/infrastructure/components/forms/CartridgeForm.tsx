@@ -50,54 +50,83 @@ export default function CartridgeForm() {
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
-        <TextInput
-          id={"testing"}
-          label={"Name"}
-          placeholder={"ingrese su nombre"}
-        />
-
-        <SelectOption id={"location"} label={"Locations"} options={locationOptions.data?.data} />
-        <SelectOption id="type" label="Cartridge Types"
-          options={cartridgeTypeOptions?.data} />
-        <TextInput
-          id={"reference"}
-          label={"Reference"}
-        />
-
-
-        <SelectOption id={"hardware"} label={"Technician in charge of the hardware"}
-          options={userInChargeOptions.data?.data}
-        />
-        <SelectOption id="manufacturer" label="Manufacturers"
-          options={manufacturerOptions.data?.data} />
-        <SelectOption id={"group-hardware"} label={"Group in charge of the hardware"}
-          options={groupInChargeOptions.data?.data}
-        />
-
-        <TextArea
-          id={"comment"}
-          label="Comments"
-          rows={3}
-        />
-
-        <SelectOption
-          id={"alertthreshold"}
-          label={"Alert Threshold"}
-          options={threshold}
-        />
-
-        <ImageInput
-          id={"pictures"}
-          label={"Pictures"}
-          fileType={".jpg, .jpeg, .png"}
-          maxSize={3}
-        />
-
-        <TextInput
-          id={"stock_target"}
-          label="Stock Target"
-          type={"number"}
-        />
+        <div className="Name">
+          <label className="text-sm mb-2 font-semibold block">Name</label>
+          <TextInput
+            id={"testing"}
+            placeholder={"ingrese su nombre"}
+          />
+        </div>
+        <div className="Locations">
+          <label className="text-sm mb-2 font-semibold block">Locations</label>
+          <SelectOption
+            id={"location"}
+            options={locationOptions.data?.data}
+          />
+        </div>
+        <div className="Cartridge Types">
+          <label className="text-sm mb-2 font-semibold block">Cartridge Types</label>
+          <SelectOption
+            id="type"
+            options={cartridgeTypeOptions?.data}
+          />
+        </div>
+        <div className="Reference">
+          <label className="text-sm mb-2 font-semibold block">Reference</label>
+          <TextInput
+            id={"reference"}
+          />
+        </div>
+        <div className="Technician in charge of the hardware">
+          <label className="text-sm mb-2 font-semibold block">Technician in charge of the hardware</label>
+          <SelectOption
+            id={"hardware"}
+            options={userInChargeOptions.data?.data}
+          />
+        </div>
+        <div className="Manufacturers">
+          <label className="text-sm mb-2 font-semibold block">Manufacturers</label>
+          <SelectOption
+            id="manufacturer"
+            options={manufacturerOptions.data?.data}
+          />
+        </div>
+        <div className="Group in charge of the hardware">
+          <label className="text-sm mb-2 font-semibold block">Group in charge of the hardware</label>
+          <SelectOption
+            id={"group-hardware"}
+            options={groupInChargeOptions.data?.data}
+          />
+        </div>
+        <div className="Comments">
+          <label className="text-sm mb-2 font-semibold block">Comments</label>
+          <TextArea
+            id={"comment"}
+            rows={3}
+          />
+        </div>
+        <div className="Alert Threshold">
+          <label className="text-sm mb-2 font-semibold block">Alert Threshold</label>
+          <SelectOption
+            id={"alertthreshold"}
+            options={threshold}
+          />
+        </div>
+        <div className="Pictures">
+          <label className="text-sm mb-2 font-semibold block">Pictures</label>
+          <ImageInput
+            id={"pictures"}
+            fileType={".jpg, .jpeg, .png"}
+            maxSize={3}
+          />
+        </div>
+        <div className="Stock Target">
+          <label className="text-sm mb-2 font-semibold block">Stock Target</label>
+          <TextInput
+            id={"stock_target"}
+            type={"number"}
+          />
+        </div>
       </Form>
     </div>
   );
