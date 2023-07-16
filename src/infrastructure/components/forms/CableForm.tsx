@@ -15,7 +15,6 @@ import { useGetAllDevices } from '../../hooks/Devices/GetAllDevices'
 import { useGetAllPhones } from '../../hooks/Phones/useGetAllPhones'
 import { useGetAllPrinters } from '../../hooks/Printers/useGetAllPrinters'
 import { useGetAllPassiveDevices } from '../../hooks/PassiveDevices/useGetAllPassiveDevices'
-import { isVisible } from '@testing-library/user-event/dist/utils'
 
 export default function CableForm() {
     const handleSubmit = (e: React.SyntheticEvent) => {

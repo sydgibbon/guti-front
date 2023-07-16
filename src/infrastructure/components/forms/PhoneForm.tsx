@@ -88,7 +88,6 @@ export default function PhoneForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Name'}
                         placeholder={'ingrese su nombre'}
                     />
                 </div>
@@ -102,7 +101,6 @@ export default function PhoneForm() {
                     </label>
                     <SelectOption
                         id={'status'}
-                        label={'Status'}
                         options={stateOptions.data?.data}
                     />
                 </div>
@@ -116,7 +114,6 @@ export default function PhoneForm() {
                     </label>
                     <SelectOption
                         id={'location'}
-                        label={'Locations'}
                         options={locationOptions.data?.data}
                     />
                 </div>
@@ -130,7 +127,6 @@ export default function PhoneForm() {
                     </label>
                     <SelectOption
                         id='type'
-                        label='Phone types'
                         options={phoneTypeOptions?.data}
                     />
                 </div>
@@ -144,7 +140,6 @@ export default function PhoneForm() {
                     </label>
                     <SelectOption
                         id={'hardware'}
-                        label={'Technician in charge of the hardware'}
                         options={userInChargeOptions.data?.data}
                     />
                 </div>
@@ -158,7 +153,6 @@ export default function PhoneForm() {
                     </label>
                     <SelectOption
                         id='manufacturer'
-                        label='Manufacturers'
                         options={manufacturerOptions.data?.data}
                     />
                 </div>
@@ -172,7 +166,6 @@ export default function PhoneForm() {
                     </label>
                     <SelectOption
                         id={'group-hardware'}
-                        label={'Group in charge of the hardware'}
                         options={groupInChargeOptions.data?.data}
                     />
                 </div>
@@ -186,7 +179,6 @@ export default function PhoneForm() {
                     </label>
                     <SelectOption
                         id='model'
-                        label='Model'
                         options={phoneModelOptions?.data}
                     />
                 </div>
@@ -200,7 +192,6 @@ export default function PhoneForm() {
                     </label>
                     <TextInput
                         id={'alternativeusernamenumber'}
-                        label='Alternate Username Number'
                         placeholder='Enter your Alternate Username number here'
                         required
                     />
@@ -215,7 +206,6 @@ export default function PhoneForm() {
                     </label>
                     <TextInput
                         id={'serialnumber'}
-                        label='Serial Number'
                         placeholder='Enter your Serial Number here'
                         required
                     />
@@ -230,7 +220,6 @@ export default function PhoneForm() {
                     </label>
                     <TextInput
                         id={'alternativeusername'}
-                        label='Alternate Username'
                         placeholder='Enter your Alternate Username here'
                         required
                     />
@@ -245,7 +234,6 @@ export default function PhoneForm() {
                     </label>
                     <TextInput
                         id={'otherserial'}
-                        label='Inventory Number'
                         placeholder='Enter your Inventory Number here'
                         required
                     />
@@ -260,7 +248,6 @@ export default function PhoneForm() {
                     </label>
                     <SelectOption
                         id='user'
-                        label='User'
                         options={usersOptions.data?.data}
                     />
                 </div>
@@ -274,7 +261,6 @@ export default function PhoneForm() {
                     </label>
                     <SelectOption
                         id='managmenttype'
-                        label='Managment Type'
                         options={managementTypeOptions}
                     />
                 </div>
@@ -288,7 +274,6 @@ export default function PhoneForm() {
                     </label>
                     <SelectOption
                         id='group'
-                        label='Groups'
                         options={groupsOptions.data?.data}
                     />
                 </div>
@@ -302,7 +287,6 @@ export default function PhoneForm() {
                     </label>
                     <TextInput
                         id='uuid'
-                        label='UUID'
                         placeholder='Enter your UUID here'
                         required
                     />
@@ -317,7 +301,6 @@ export default function PhoneForm() {
                     </label>
                     <TextArea
                         id={'comment'}
-                        label='Comments'
                         rows={3}
                     />
                 </div>
@@ -331,7 +314,6 @@ export default function PhoneForm() {
                     </label>
                     <TextInput
                         id={'brand'}
-                        label={'Brand'}
                     />
                 </div>
 
@@ -344,7 +326,6 @@ export default function PhoneForm() {
                     </label>
                     <SelectOption
                         id='updatesource'
-                        label='Update Source'
                         options={autoupdatesystemOptions.data?.data}
                     />
                 </div>
@@ -358,7 +339,6 @@ export default function PhoneForm() {
                     </label>
                     <TextInput
                         id={'number_line'}
-                        label='Number of Lines'
                         type={'number'}
                     />
                 </div>

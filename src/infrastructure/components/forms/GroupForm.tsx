@@ -39,7 +39,6 @@ export default function GroupForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Name'}
                         placeholder={'ingrese su nombre'}
                     />
                 </div>
@@ -53,7 +52,6 @@ export default function GroupForm() {
                     </label>
                     <SelectOption
                         id={'testing'}
-                        label={'As Child of'}
                     />
                 </div>
 
@@ -66,7 +64,6 @@ export default function GroupForm() {
                     </label>
                     <SelectOption
                         id={'testing'}
-                        label='Requester'
                         options={textOption}
                     />
                 </div>
@@ -80,7 +77,6 @@ export default function GroupForm() {
                     </label>
                     <SelectOption
                         id={'testing'}
-                        label='Watcher'
                         options={textOption}
                     />
                 </div>
@@ -94,7 +90,6 @@ export default function GroupForm() {
                     </label>
                     <SelectOption
                         id={'testing'}
-                        label='Assigned to'
                         options={textOption}
                     />
                 </div>
@@ -108,7 +103,6 @@ export default function GroupForm() {
                     </label>
                     <SelectOption
                         id={'testing'}
-                        label='Task'
                         options={textOption}
                     />
                 </div>
@@ -122,7 +116,6 @@ export default function GroupForm() {
                     </label>
                     <SelectOption
                         id={'testing'}
-                        label='Can be notified'
                         options={textOption}
                     />
                 </div>
@@ -136,7 +129,6 @@ export default function GroupForm() {
                     </label>
                     <TextArea
                         id={'comment'}
-                        label='Comment'
                         rows={3}
                     />
                 </div>
@@ -150,7 +142,6 @@ export default function GroupForm() {
                     </label>
                     <SelectOption
                         id={'testing'}
-                        label='Can be manager'
                         options={textOption}
                     />
                 </div>
@@ -164,7 +155,6 @@ export default function GroupForm() {
                     </label>
                     <SelectOption
                         id={'testing'}
-                        label='Items'
                         options={textOption}
                     />
                 </div>
@@ -178,7 +168,6 @@ export default function GroupForm() {
                     </label>
                     <SelectOption
                         id={'testing'}
-                        label='Users'
                         options={textOption}
                     />
                 </div>

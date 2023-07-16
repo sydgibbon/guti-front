@@ -1,4 +1,3 @@
-import SelectOption from '../SelectOption'
 import TextArea from '../TextArea'
 import TextInput from '../TextInput'
 import Form from './Form'
@@ -28,7 +27,6 @@ export default function NetworkForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Name'}
                         placeholder={'ingrese su nombre'}
                     />
                 </div>
@@ -42,7 +40,6 @@ export default function NetworkForm() {
                     </label>
                     <TextArea
                         id={'comment'}
-                        label='Comment'
                         rows={3}
                     />
                 </div>

@@ -28,7 +28,6 @@ export default function LocationForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Name'}
                         placeholder={'ingrese su nombre'}
                     />
                 </div>
@@ -42,7 +41,6 @@ export default function LocationForm() {
                     </label>
                     <TextArea
                         id={'comment'}
-                        label='Comment'
                         rows={3}
                     />
                 </div>
@@ -56,7 +54,6 @@ export default function LocationForm() {
                     </label>
                     <SelectOption
                         id={'testing'}
-                        label={'As Child of'}
                     />
                 </div>
 
@@ -69,7 +66,6 @@ export default function LocationForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Address'}
                     />
                 </div>
 
@@ -82,7 +78,6 @@ export default function LocationForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Postal code'}
                     />
                 </div>
 
@@ -95,7 +90,6 @@ export default function LocationForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Town'}
                     />
                 </div>
 
@@ -108,7 +102,6 @@ export default function LocationForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'State'}
                     />
                 </div>
 
@@ -121,7 +114,6 @@ export default function LocationForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Country'}
                     />
                 </div>
 
@@ -134,7 +126,6 @@ export default function LocationForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Building number'}
                     />
                 </div>
 
@@ -147,7 +138,6 @@ export default function LocationForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Room number'}
                     />
                 </div>
 
@@ -160,7 +150,6 @@ export default function LocationForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Latitude'}
                     />
                 </div>
 
@@ -173,7 +162,6 @@ export default function LocationForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Longitude'}
                     />
                 </div>
 
@@ -186,7 +174,6 @@ export default function LocationForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Altitude'}
                     />
                 </div>
             </Form>

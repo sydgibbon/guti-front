@@ -39,7 +39,6 @@ export default function StatusForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Name'}
                         placeholder={'ingrese su nombre'}
                     />
                 </div>
@@ -53,7 +52,6 @@ export default function StatusForm() {
                     </label>
                     <SelectOption
                         id={'status'}
-                        label={'Status'}
                         options={textOption}
                     />
                 </div>
@@ -67,7 +65,6 @@ export default function StatusForm() {
                     </label>
                     <SelectOption
                         id={'location'}
-                        label={'Locations'}
                         options={textOption}
                     />
                 </div>
@@ -81,7 +78,6 @@ export default function StatusForm() {
                     </label>
                     <SelectOption
                         id='type'
-                        label='Devices Types'
                         options={textOption}
                     />
                 </div>
@@ -95,7 +91,6 @@ export default function StatusForm() {
                     </label>
                     <SelectOption
                         id={'hardware'}
-                        label={'Technician in charge of the hardware'}
                         options={textOption}
                     />
                 </div>
@@ -109,7 +104,6 @@ export default function StatusForm() {
                     </label>
                     <SelectOption
                         id='manufacturer'
-                        label='Manufacturers'
                         options={textOption}
                     />
                 </div>
@@ -123,7 +117,6 @@ export default function StatusForm() {
                     </label>
                     <SelectOption
                         id={'group-hardware'}
-                        label={'Group in charge of the hardware'}
                         options={textOption}
                     />
                 </div>
@@ -137,7 +130,6 @@ export default function StatusForm() {
                     </label>
                     <SelectOption
                         id='model'
-                        label='Model'
                         options={textOption}
                     />
                 </div>
@@ -151,7 +143,6 @@ export default function StatusForm() {
                     </label>
                     <TextInput
                         id={'alternativeusernamenumber'}
-                        label='Alternate Username Number'
                         placeholder='Enter your Alternate Username number here'
                         required
                     />
@@ -166,7 +157,6 @@ export default function StatusForm() {
                     </label>
                     <TextInput
                         id={'serialnumber'}
-                        label='Serial Number'
                         placeholder='Enter your Serial Number here'
                         required
                     />
@@ -181,7 +171,6 @@ export default function StatusForm() {
                     </label>
                     <TextInput
                         id={'alternativeusername'}
-                        label='Alternate Username'
                         placeholder='Enter your Alternate Username here'
                         required
                     />
@@ -196,7 +185,6 @@ export default function StatusForm() {
                     </label>
                     <TextInput
                         id={'otherserial'}
-                        label='Inventory Number'
                         placeholder='Enter your Inventory Number here'
                         required
                     />
@@ -211,7 +199,6 @@ export default function StatusForm() {
                     </label>
                     <SelectOption
                         id='user'
-                        label='User'
                         options={textOption}
                     />
                 </div>
@@ -225,7 +212,6 @@ export default function StatusForm() {
                     </label>
                     <SelectOption
                         id='managmenttype'
-                        label='Managment Type'
                         options={textOption}
                     />
                 </div>
@@ -239,7 +225,6 @@ export default function StatusForm() {
                     </label>
                     <SelectOption
                         id='group'
-                        label='Groups'
                         options={textOption}
                     />
                 </div>
@@ -253,7 +238,6 @@ export default function StatusForm() {
                     </label>
                     <TextInput
                         id='uuid'
-                        label='UUID'
                         placeholder='Enter your UUID here'
                         required
                     />
@@ -268,7 +252,6 @@ export default function StatusForm() {
                     </label>
                     <TextArea
                         id={'comment'}
-                        label='Comments'
                         rows={3}
                     />
                 </div>
@@ -282,7 +265,6 @@ export default function StatusForm() {
                     </label>
                     <TextInput
                         id={'brand'}
-                        label={'Brand'}
                     />
                 </div>
 
@@ -295,7 +277,6 @@ export default function StatusForm() {
                     </label>
                     <SelectOption
                         id='updatesource'
-                        label='Update Source'
                         options={textOption}
                     />
                 </div>

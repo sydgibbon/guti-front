@@ -66,7 +66,7 @@ export default function SoftwareForm() {
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
         <div>
-          <label className="text-sm mb-2 font-semibold block">Name</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="testing">Name</label>
           <TextInput
             id={"testing"}
             placeholder={"ingrese su nombre"}
@@ -74,7 +74,7 @@ export default function SoftwareForm() {
         </div>
 
         <div className="  rounded-lg">
-          <label className="text-sm mb-2 font-semibold block">Associable to a Ticket</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="childof">Associable to a Ticket</label>
           <div className="grid grid-cols-4 gap-2">
             <Checkbox
               id="childof"
@@ -85,7 +85,7 @@ export default function SoftwareForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Locations</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="location">Locations</label>
           <SelectOption
             id={"location"}
             options={locationOptions.data?.data}
@@ -93,7 +93,7 @@ export default function SoftwareForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Technician in charge of the hardware</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="hardware">Technician in charge of the hardware</label>
           <SelectOption
             id={"hardware"}
             options={userInChargeOptions.data?.data}
@@ -101,7 +101,7 @@ export default function SoftwareForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Publisher</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="publisher">Publisher</label>
           <SelectOption
             id={"publisher"}
             options={manufacturerOptions.data?.data}
@@ -109,7 +109,7 @@ export default function SoftwareForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Group in charge of the hardware</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="group-hardware">Group in charge of the hardware</label>
           <SelectOption
             id={"group-hardware"}
             options={groupInChargeOptions.data?.data}
@@ -117,7 +117,7 @@ export default function SoftwareForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">User</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="user">User</label>
           <SelectOption
             id={"user"}
             options={usersOptions.data?.data}
@@ -125,7 +125,7 @@ export default function SoftwareForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Groups</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="groups">Groups</label>
           <SelectOption
             id={"groups"}
             options={groupsOptions.data?.data}
@@ -133,7 +133,7 @@ export default function SoftwareForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Comment</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="comment">Comment</label>
           <TextArea
             id={"comment"}
             placeholder="Enter your comment here"
@@ -142,7 +142,7 @@ export default function SoftwareForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Pictures</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="pictures">Pictures</label>
           <ImageInput
             id={"pictures"}
             fileType={".jpg, .jpeg, .png"}
@@ -168,7 +168,7 @@ export default function SoftwareForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Software Category</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="softwarecategories">Software Category</label>
           <SelectOption
             id={"softwarecategories"}
             options={softwarecategoryOptions?.data}

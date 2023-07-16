@@ -58,7 +58,6 @@ export default function PassiveDeviceModelForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Name'}
                         placeholder={'ingrese su nombre'}
                     />
                 </div>
@@ -72,7 +71,6 @@ export default function PassiveDeviceModelForm() {
                     </label>
                     <TextArea
                         id={'comment'}
-                        label='Comment'
                         rows={3}
                     />
                 </div>
@@ -86,7 +84,6 @@ export default function PassiveDeviceModelForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Product Number'}
                     />
                 </div>
 
@@ -99,7 +96,6 @@ export default function PassiveDeviceModelForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Weight'}
                     />
                 </div>
 
@@ -112,7 +108,6 @@ export default function PassiveDeviceModelForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Required units'}
                     />
                 </div>
 
@@ -125,7 +120,6 @@ export default function PassiveDeviceModelForm() {
                     </label>
                     <SelectOption
                         id={'testing'}
-                        label={'Depth'}
                         options={numberOption}
                     />
                 </div>
@@ -139,7 +133,6 @@ export default function PassiveDeviceModelForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Power connections'}
                     />
                 </div>
 
@@ -152,7 +145,6 @@ export default function PassiveDeviceModelForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Power consumption'}
                     />
                 </div>
 
@@ -165,7 +157,6 @@ export default function PassiveDeviceModelForm() {
                     </label>
                     <SelectOption
                         id={'testing'}
-                        label={'Is half rack'}
                         options={textOption}
                     />
                 </div>

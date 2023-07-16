@@ -27,7 +27,6 @@ export default function MonitorTypeForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Name'}
                         placeholder={'ingrese su nombre'}
                     />
                 </div>
@@ -41,7 +40,6 @@ export default function MonitorTypeForm() {
                     </label>
                     <TextArea
                         id={'comment'}
-                        label='Comment'
                         rows={3}
                     />
                 </div>

@@ -54,7 +54,6 @@ export default function PduForm() {
                     </label>
                     <TextInput
                         id={'name'}
-                        label={'Name'}
                         placeholder={'ingrese su nombre'}
                     />
                 </div>
@@ -68,7 +67,6 @@ export default function PduForm() {
                     </label>
                     <SelectOption
                         id={'status'}
-                        label={'Status'}
                         options={stateOptions.data?.data}
                     />
                 </div>
@@ -82,7 +80,6 @@ export default function PduForm() {
                     </label>
                     <SelectOption
                         id={'location'}
-                        label={'Locations'}
                         options={locationOptions.data?.data}
                     />
                 </div>
@@ -96,7 +93,6 @@ export default function PduForm() {
                     </label>
                     <SelectOption
                         id={'pdutypes'}
-                        label='PDU types'
                         options={pduTypeOptions?.data}
                     />
                 </div>
@@ -110,7 +106,6 @@ export default function PduForm() {
                     </label>
                     <SelectOption
                         id={'user_tech'}
-                        label={'Technician in charge of the hardware'}
                         options={userInChargeOptions.data?.data}
                     />
                 </div>
@@ -124,7 +119,6 @@ export default function PduForm() {
                     </label>
                     <SelectOption
                         id={'manufacturers'}
-                        label='Manufacturers'
                         options={manufacturerOptions.data?.data}
                     />
                 </div>
@@ -138,7 +132,6 @@ export default function PduForm() {
                     </label>
                     <SelectOption
                         id={'groups_tech'}
-                        label={'Group in charge of the hardware'}
                         options={groupInChargeOptions.data?.data}
                     />
                 </div>
@@ -152,7 +145,6 @@ export default function PduForm() {
                     </label>
                     <SelectOption
                         id={'pdumodels'}
-                        label='Model'
                         options={pduModelOptions?.data}
                     />
                 </div>
@@ -166,7 +158,6 @@ export default function PduForm() {
                     </label>
                     <TextInput
                         id={'serialnumber'}
-                        label='Serial Number'
                         placeholder='Enter your Serial Number here'
                         required
                     />
@@ -181,7 +172,6 @@ export default function PduForm() {
                     </label>
                     <TextInput
                         id={'serial'}
-                        label='Inventory Number'
                         placeholder='Enter your Inventory Number here'
                         required
                     />
@@ -196,7 +186,6 @@ export default function PduForm() {
                     </label>
                     <TextArea
                         id={'comment'}
-                        label='Comment'
                         rows={3}
                     />
                 </div>

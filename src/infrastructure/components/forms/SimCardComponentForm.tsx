@@ -39,7 +39,6 @@ export default function SimCardComponentForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Name'}
                         placeholder={'ingrese su nombre'}
                     />
                 </div>
@@ -53,7 +52,6 @@ export default function SimCardComponentForm() {
                     </label>
                     <TextArea
                         id={'comment'}
-                        label='Comment'
                         rows={3}
                     />
                 </div>
@@ -67,7 +65,6 @@ export default function SimCardComponentForm() {
                     </label>
                     <SelectOption
                         id='manufacturer'
-                        label='Manufacturer'
                     />
                 </div>
 
@@ -80,7 +77,6 @@ export default function SimCardComponentForm() {
                     </label>
                     <SelectOption
                         id='type'
-                        label='Type'
                     />
                 </div>
 
@@ -93,7 +89,6 @@ export default function SimCardComponentForm() {
                     </label>
                     <TextInput
                         id={'voltage'}
-                        label='Voltage'
                     />
                 </div>
 
@@ -106,7 +101,6 @@ export default function SimCardComponentForm() {
                     </label>
                     <SelectOption
                         id={'testing'}
-                        label={'Allow VOIP'}
                         options={textOption}
                     />
                 </div>

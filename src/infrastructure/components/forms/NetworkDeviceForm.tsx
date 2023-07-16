@@ -62,7 +62,7 @@ export default function NetDeviceForm() {
     <div className="m-6 bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
         <div>
-          <label className="text-sm mb-2 font-semibold block">Name</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="testing">Name</label>
           <TextInput
             id={"testing"}
             placeholder={"ingrese su nombre"}
@@ -70,7 +70,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Status</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="states">Status</label>
           <SelectOption
             id={"states"}
             options={stateOptions.data?.data}
@@ -78,7 +78,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Locations</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="location">Locations</label>
           <SelectOption
             id={"location"}
             options={locationOptions.data?.data}
@@ -86,7 +86,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Networking Equipment Types</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="type">Networking Equipment Types</label>
           <SelectOption
             id="type"
             options={networkDeviceTypeOptions?.data}
@@ -94,7 +94,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Technician in charge of the hardware</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="hardware">Technician in charge of the hardware</label>
           <SelectOption
             id={"hardware"}
             options={userInChargeOptions.data?.data}
@@ -102,7 +102,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Manufacturers</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="manufacturer">Manufacturers</label>
           <SelectOption
             id="manufacturer"
             options={manufacturerOptions.data?.data}
@@ -110,7 +110,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Group in charge of the hardware</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="group-hardware">Group in charge of the hardware</label>
           <SelectOption
             id={"group-hardware"}
             options={groupInChargeOptions.data?.data}
@@ -118,7 +118,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Model</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="model">Model</label>
           <SelectOption
             id="model"
             options={networkDeviceModelOptions?.data}
@@ -126,7 +126,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Alternate Username Number</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="alternativeusernamenumber">Alternate Username Number</label>
           <TextInput
             id={"alternativeusernamenumber"}
             placeholder="Enter your Alternate Username number here"
@@ -135,7 +135,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Serial Number</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="serialnumber">Serial Number</label>
           <TextInput
             id={"serialnumber"}
             placeholder="Enter your Serial Number here"
@@ -144,7 +144,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Alternate Username</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="alternativeusername">Alternate Username</label>
           <TextInput
             id={"alternativeusername"}
             placeholder="Enter your Alternate Username here"
@@ -153,7 +153,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Inventory Number</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="otherserial">Inventory Number</label>
           <TextInput
             id={"otherserial"}
             placeholder="Enter your Inventory Number here"
@@ -162,7 +162,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">System description</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="sysdescr">System description</label>
           <TextArea
             id={"sysdescr"}
             rows={3}
@@ -170,7 +170,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">SNMP credential</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="snmpcredential">SNMP credential</label>
           <SelectOption
             id="snmpcredential"
             options={snpmCredentialOptions.data?.data}
@@ -178,7 +178,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">User</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="user">User</label>
           <SelectOption
             id="user"
             options={usersOptions.data?.data}
@@ -186,7 +186,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Network</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="network">Network</label>
           <SelectOption
             id="network"
             options={networkOptions.data?.data}
@@ -194,7 +194,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Groups</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="group">Groups</label>
           <SelectOption
             id="group"
             options={groupsOptions.data?.data}
@@ -202,7 +202,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">UUID</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="uuid">UUID</label>
           <TextInput
             id="uuid"
             placeholder="Enter your UUID here"
@@ -211,7 +211,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Comments</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="comment">Comments</label>
           <TextArea
             id={"comment"}
             rows={3}
@@ -219,7 +219,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Memory (MB)</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="memory">Memory (MB)</label>
           <TextInput
             id={"memory"}
             type={"number"}
@@ -227,7 +227,7 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block">Update Source</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="updatesource">Update Source</label>
           <SelectOption
             id="updatesource"
             options={autoupdatesystemOptions.data?.data}

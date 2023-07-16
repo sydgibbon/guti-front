@@ -46,7 +46,6 @@ export default function SimCardForm() {
                     </label>
                     <SelectOption
                         id={'component'}
-                        label={'Component'}
                         options={devicesimcardsOptions?.data}
                     />
                 </div>
@@ -60,7 +59,6 @@ export default function SimCardForm() {
                     </label>
                     <TextInput
                         id={'pin'}
-                        label='PIN Code'
                         required
                     />
                 </div>
@@ -74,7 +72,6 @@ export default function SimCardForm() {
                     </label>
                     <TextInput
                         id={'pin2'}
-                        label='PIN2 Code'
                         required
                     />
                 </div>
@@ -88,7 +85,6 @@ export default function SimCardForm() {
                     </label>
                     <TextInput
                         id={'puk'}
-                        label='PUK Code'
                         required
                     />
                 </div>
@@ -102,7 +98,6 @@ export default function SimCardForm() {
                     </label>
                     <TextInput
                         id={'puk2'}
-                        label='PUK2 Code'
                         required
                     />
                 </div>
@@ -116,7 +111,6 @@ export default function SimCardForm() {
                     </label>
                     <SelectOption
                         id={'line'}
-                        label={'Lines'}
                         options={linesOptions?.data}
                     />
                 </div>
@@ -130,7 +124,6 @@ export default function SimCardForm() {
                     </label>
                     <TextInput
                         id={'mobilesuscriber'}
-                        label='Mobile Subscriber Identification Number'
                     />
                 </div>
 
@@ -143,7 +136,6 @@ export default function SimCardForm() {
                     </label>
                     <TextInput
                         id={'serialnumber'}
-                        label='Serial Number'
                         placeholder='Enter your Serial Number here'
                     />
                 </div>
@@ -157,7 +149,6 @@ export default function SimCardForm() {
                     </label>
                     <TextInput
                         id={'inventoryassetnumber'}
-                        label='Inventory Number'
                         placeholder='Enter your Inventory Number here'
                     />
                 </div>
@@ -171,7 +162,6 @@ export default function SimCardForm() {
                     </label>
                     <SelectOption
                         id='locations'
-                        label='Locations'
                         options={locationOptions.data?.data}
                     />
                 </div>
@@ -185,7 +175,6 @@ export default function SimCardForm() {
                     </label>
                     <SelectOption
                         id='status'
-                        label='Status'
                         options={stateOptions.data?.data}
                     />
                 </div>
@@ -199,7 +188,6 @@ export default function SimCardForm() {
                     </label>
                     <SelectOption
                         id='user'
-                        label='User'
                         options={usersOptions.data?.data}
                     />
                 </div>
@@ -213,7 +201,6 @@ export default function SimCardForm() {
                     </label>
                     <SelectOption
                         id='group'
-                        label='Groups'
                         options={groupsOptions.data?.data}
                     />
                 </div>
@@ -227,7 +214,6 @@ export default function SimCardForm() {
                     </label>
                     <TextArea
                         id={'comment'}
-                        label='Comments'
                         rows={3}
                     />
                 </div>

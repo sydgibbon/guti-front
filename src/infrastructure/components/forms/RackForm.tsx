@@ -79,7 +79,6 @@ export default function RackForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Name'}
                         placeholder={'ingrese su nombre'}
                     />
                 </div>
@@ -93,7 +92,6 @@ export default function RackForm() {
                     </label>
                     <SelectOption
                         id={'status'}
-                        label={'Status'}
                         options={stateOptions.data?.data}
                     />
                 </div>
@@ -107,7 +105,6 @@ export default function RackForm() {
                     </label>
                     <SelectOption
                         id={'location'}
-                        label={'Locations'}
                         options={locationOptions.data?.data}
                     />
                 </div>
@@ -121,7 +118,6 @@ export default function RackForm() {
                     </label>
                     <SelectOption
                         id='type'
-                        label='Rack types'
                         options={rackTypeOptions?.data}
                     />
                 </div>
@@ -135,7 +131,6 @@ export default function RackForm() {
                     </label>
                     <SelectOption
                         id={'hardware'}
-                        label={'Technician in charge of the hardware'}
                         options={userInChargeOptions.data?.data}
                     />
                 </div>
@@ -149,7 +144,6 @@ export default function RackForm() {
                     </label>
                     <SelectOption
                         id='manufacturer'
-                        label='Manufacturers'
                         options={manufacturerOptions.data?.data}
                     />
                 </div>
@@ -163,7 +157,6 @@ export default function RackForm() {
                     </label>
                     <SelectOption
                         id={'group-hardware'}
-                        label={'Group in charge of the hardware'}
                         options={groupInChargeOptions.data?.data}
                     />
                 </div>
@@ -177,7 +170,6 @@ export default function RackForm() {
                     </label>
                     <SelectOption
                         id='model'
-                        label='Model'
                         options={rackModelOptions?.data}
                     />
                 </div>
@@ -191,7 +183,6 @@ export default function RackForm() {
                     </label>
                     <TextInput
                         id={'serialnumber'}
-                        label='Serial Number'
                         placeholder='Enter your Serial Number here'
                         required
                     />
@@ -206,7 +197,6 @@ export default function RackForm() {
                     </label>
                     <TextInput
                         id={'otherserial'}
-                        label='Inventory Number'
                         placeholder='Enter your Inventory Number here'
                         required
                     />
@@ -221,7 +211,6 @@ export default function RackForm() {
                     </label>
                     <TextArea
                         id={'comment'}
-                        label='Comment'
                         rows={3}
                     />
                 </div>
@@ -235,7 +224,6 @@ export default function RackForm() {
                     </label>
                     <SelectOption
                         id='serverroom'
-                        label='Server Rooms'
                         options={dcRoomOptions?.data}
                     />
                 </div>
@@ -249,7 +237,6 @@ export default function RackForm() {
                     </label>
                     <SelectOption
                         id={'room_orientation'}
-                        label='Door orientation in room'
                         options={orientationOptions}
                     />
                 </div>
@@ -263,7 +250,6 @@ export default function RackForm() {
                     </label>
                     <TextInput
                         id={'number_units'}
-                        label='Number of units'
                         type={'number'}
                     />
                 </div>
@@ -277,7 +263,6 @@ export default function RackForm() {
                     </label>
                     <TextInput
                         id={'width'}
-                        label='Width'
                         type={'number'}
                     />
                 </div>
@@ -291,7 +276,6 @@ export default function RackForm() {
                     </label>
                     <TextInput
                         id={'height'}
-                        label='Height'
                         type={'number'}
                     />
                 </div>
@@ -305,7 +289,6 @@ export default function RackForm() {
                     </label>
                     <TextInput
                         id={'depth'}
-                        label='Depth'
                         type={'number'}
                     />
                 </div>
@@ -319,7 +302,6 @@ export default function RackForm() {
                     </label>
                     <TextInput
                         id={'max_power'}
-                        label='Max. power (in watts)'
                         type={'number'}
                     />
                 </div>
@@ -333,7 +315,6 @@ export default function RackForm() {
                     </label>
                     <TextInput
                         id={'mesured_power'}
-                        label='Measured Power (in watts)'
                         type={'number'}
                     />
                 </div>
@@ -347,7 +328,6 @@ export default function RackForm() {
                     </label>
                     <TextInput
                         id={'max_weight'}
-                        label='Max. weight'
                         type={'number'}
                     />
                 </div>
@@ -361,7 +341,6 @@ export default function RackForm() {
                     </label>
                     <TextInput
                         id={'bgcolor'}
-                        label={'Color'}
                         type='text'
                     />
                 </div>

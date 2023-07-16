@@ -28,7 +28,6 @@ export default function SoftwareCategoryForm() {
                     </label>
                     <TextInput
                         id={'testing'}
-                        label={'Name'}
                         placeholder={'ingrese su nombre'}
                     />
                 </div>
@@ -42,7 +41,6 @@ export default function SoftwareCategoryForm() {
                     </label>
                     <TextArea
                         id={'comment'}
-                        label='Comment'
                         rows={3}
                     />
                 </div>
@@ -56,7 +54,6 @@ export default function SoftwareCategoryForm() {
                     </label>
                     <SelectOption
                         id={'testing'}
-                        label={'As Child of'}
                     />
                 </div>
             </Form>
