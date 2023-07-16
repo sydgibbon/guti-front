@@ -157,7 +157,10 @@ export default function CableForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form handleSubmit={handleSubmit}>
                 <div>
-                    <label className='text-sm mb-2 font-semibold block'>
+                    <label
+                        htmlFor='name'
+                        className='text-sm mb-2 font-semibold block'
+                    >
                         Name
                     </label>
                     <TextInput
@@ -166,7 +169,10 @@ export default function CableForm() {
                     />
                 </div>
                 <div>
-                    <label className='text-sm mb-2 font-semibold block'>
+                    <label
+                        htmlFor='status'
+                        className='text-sm mb-2 font-semibold block'
+                    >
                         Status
                     </label>
                     <SelectOption
@@ -175,7 +181,10 @@ export default function CableForm() {
                     />
                 </div>
                 <div>
-                    <label className='text-sm mb-2 font-semibold block'></label>
+                    <label
+                        htmlFor='cabletypes'
+                        className='text-sm mb-2 font-semibold block'
+                    ></label>
                     <SelectOption
                         id={'cabletypes'}
                         label='Type'
@@ -184,7 +193,10 @@ export default function CableForm() {
                 </div>
 
                 <div>
-                    <label className='text-sm mb-2 font-semibold block'>
+                    <label
+                        htmlFor='user_tech'
+                        className='text-sm mb-2 font-semibold block'
+                    >
                         Technician in charge of the hardware
                     </label>
                     <SelectOption
@@ -194,7 +206,10 @@ export default function CableForm() {
                 </div>
 
                 <div>
-                    <label className='text-sm mb-2 font-semibold block'>
+                    <label
+                        htmlFor='serial'
+                        className='text-sm mb-2 font-semibold block'
+                    >
                         Inventory Number
                     </label>
                     <TextInput
@@ -205,7 +220,10 @@ export default function CableForm() {
                 </div>
 
                 <div>
-                    <label className='text-sm mb-2 font-semibold block'>
+                    <label
+                        htmlFor='comment'
+                        className='text-sm mb-2 font-semibold block'
+                    >
                         Comment
                     </label>
                     <TextArea
@@ -215,7 +233,10 @@ export default function CableForm() {
                 </div>
 
                 <div>
-                    <label className='text-sm mb-2 font-semibold block'>
+                    <label
+                        htmlFor='cablestrands'
+                        className='text-sm mb-2 font-semibold block'
+                    >
                         Cable strand
                     </label>
                     <SelectOption
@@ -225,7 +246,10 @@ export default function CableForm() {
                 </div>
 
                 <div>
-                    <label className='text-sm mb-2 font-semibold block'>
+                    <label
+                        htmlFor='color'
+                        className='text-sm mb-2 font-semibold block'
+                    >
                         Color
                     </label>
                     <TextInput
@@ -235,7 +259,10 @@ export default function CableForm() {
                 </div>
 
                 <div>
-                    <label className='text-sm mb-2 font-semibold block'>
+                    <label
+                        htmlFor='items_endpoint_a'
+                        className='text-sm mb-2 font-semibold block'
+                    >
                         Asset
                     </label>
                     <SelectOption
@@ -246,7 +273,10 @@ export default function CableForm() {
                 </div>
 
                 <div>
-                    <label className='text-sm mb-2 font-semibold block'>
+                    <label
+                        htmlFor='items_endpoint_a'
+                        className='text-sm mb-2 font-semibold block'
+                    >
                         Asset
                     </label>
                     <SelectOption
@@ -257,7 +287,10 @@ export default function CableForm() {
                 </div>
 
                 <div>
-                    <label className='text-sm mb-2 font-semibold block'></label>
+                    <label
+                        htmlFor='items_endpoint_a'
+                        className='text-sm mb-2 font-semibold block'
+                    ></label>
                     <SelectOption
                         id={'items_endpoint_a'}
                         options={dataOptionsA}
@@ -266,7 +299,10 @@ export default function CableForm() {
                 </div>
 
                 <div>
-                    <label className='text-sm mb-2 font-semibold block'></label>
+                    <label
+                        htmlFor='items_endpoint_b'
+                        className='text-sm mb-2 font-semibold block'
+                    ></label>
                     <SelectOption
                         id={'items_endpoint_b'}
                         options={dataOptionsB}
@@ -275,7 +311,10 @@ export default function CableForm() {
                 </div>
 
                 <div>
-                    <label className='text-sm mb-2 font-semibold block'>
+                    <label
+                        htmlFor='socketmodels_endpoint_a'
+                        className='text-sm mb-2 font-semibold block'
+                    >
                         Socket Model
                     </label>
                     <SelectOption
@@ -285,7 +324,10 @@ export default function CableForm() {
                 </div>
 
                 <div>
-                    <label className='text-sm mb-2 font-semibold block'>
+                    <label
+                        htmlFor='socketmodels_endpoint_b'
+                        className='text-sm mb-2 font-semibold block'
+                    >
                         Socket Model
                     </label>{' '}
                     <SelectOption
@@ -295,7 +337,10 @@ export default function CableForm() {
                 </div>
 
                 <div>
-                    <label className='text-sm mb-2 font-semibold block'>
+                    <label
+                        htmlFor='sockets_endpoint_a'
+                        className='text-sm mb-2 font-semibold block'
+                    >
                         Socket
                     </label>
                     <SelectOption
@@ -305,7 +350,10 @@ export default function CableForm() {
                 </div>
 
                 <div>
-                    <label className='text-sm mb-2 font-semibold block'>
+                    <label
+                        htmlFor='sockets_endpoint_b'
+                        className='text-sm mb-2 font-semibold block'
+                    >
                         Socket
                     </label>
                     <SelectOption
