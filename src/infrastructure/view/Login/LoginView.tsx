@@ -1,51 +1,25 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./LoginView.css";
-// import { userLogin } from "../../../../api/axios"; 
-import { useServiceUser } from "../../hooks/UseServiceUser";
+import { useNavigate } from "react-router-dom"
+import { authService } from "../../../domain/services/api/Auth.service";
 
 import Logo from "../../assets/guti-logo.png"
 
 const LoginView = () => {
-
-  const { login } = useServiceUser();
-
+  const [isLogged, setIsLogged] = useState(false)
+  const navigate = useNavigate();
   useEffect(() => {
-    const loggedUserJSON = window.localStorage.getItem("logguedUser");
-    if (loggedUserJSON) {
-      const user = JSON.parse(loggedUserJSON);
-      login(user);
+    if (localStorage.getItem("user") !== null) {
+      navigate("/")
     }
-  }, []);
+  }, [isLogged])
 
-  const handleLogin = async (event: React.SyntheticEvent) => {
-    event.preventDefault();
+  const handleLogin = (e: any) => {
+    e.preventDefault();
+    authService.login(e.target.username.value, e.target.password.value).then(response =>
+      setIsLogged(response));
+  }
 
-  //   const target = event.target as typeof event.target & {
-  //     username: { value: string };
-  //     password: { value: string };
-  //   };
-
-  //   const user = {
-  //     username: target.username.value,
-  //     password: target.password.value,
-  //   };
-
-  //   try {
-  //     if (!user) throw new Error("Username empty");
-
-  //     const response = await userLogin(user);
-
-  //     if (response.status === 202) {
-  //       alert("Login exitoso");
-  //       login(user);
-  //       window.localStorage.setItem("logguedUser", JSON.stringify(user));
-  //     } else {
-  //       alert("Login Fallido");
-  //     }
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  };
 
   return (
     <div className="flex flex-col items-center w-full h-screen login-container">

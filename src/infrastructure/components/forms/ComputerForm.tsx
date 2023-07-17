@@ -28,7 +28,7 @@ export default function ComputersForm() {
     const formData = new FormData(form);
     const formJson = Object.fromEntries(formData.entries()) as unknown as ComputerData;
     computersService.createComputer(formJson)
-    debugger
+    
   };
   const userInChargeOptions = useGetUserInChargeSelect();
   const usersOptions = useGetUsersSelect();

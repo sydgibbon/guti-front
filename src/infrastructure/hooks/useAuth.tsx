@@ -2,6 +2,7 @@ import { createContext, ReactNode, useContext, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { User } from "../types";
 import { useLocalStorage } from "./useLocalStorage";
+import { authService } from "../../domain/services/api/Auth.service";
 
 interface PropsAuthProvider {
   children: ReactNode;
@@ -41,5 +42,5 @@ export const AuthProvider = ({ children }: PropsAuthProvider) => {
 };
 
 export const useAuth = () => {
-  return useContext(AuthContext);
+  return authService.isAuthorized();
 };
