@@ -131,7 +131,7 @@ export default function CableForm() {
 
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <div className="bg-white rounded container_form_computer">
       <Form handleSubmit={handleSubmit}>
         <TextInput
           id={"name"}
