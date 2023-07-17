@@ -11,15 +11,10 @@ export interface OptionValue {
 } 
 
 export default function SelectOption(selectOptionProps: SelectOptionProps) {
-  const { id, label, options, onSelect, style } = selectOptionProps;
+  const { id, options, onSelect, style } = selectOptionProps;
 
   return (
     <div className="container flex flex-col gap-y-2" style={style}>
-      {label && (
-        <label className="text-sm font-semibold container__label" htmlFor={id}>
-          {label}
-        </label>
-      )}
       <select
         name={id.toLocaleLowerCase()}
         className="px-4 bg-gray-100 border rounded-md h-11"
