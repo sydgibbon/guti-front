@@ -21,6 +21,7 @@ export default function SoftwareCategoryForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Testing'}
+                iconName={''}
             >
                 <TextInput
                     id={'testing'}

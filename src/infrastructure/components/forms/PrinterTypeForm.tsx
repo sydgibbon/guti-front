@@ -21,6 +21,7 @@ export default function PrinterTypeForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Testing'}
+                iconName={''}
             >
                 <TextInput
                     id={'testing'}

@@ -21,6 +21,7 @@ export default function RackModelForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Rack'}
+                iconName={''}
             >
                 <TextInput
                     id={'testing'}

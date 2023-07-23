@@ -51,6 +51,7 @@ export default function PduModelForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Pdu'}
+                iconName={''}
             >
                 <TextInput
                     id={'testing'}

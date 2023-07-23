@@ -81,6 +81,7 @@ export default function PhoneForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Phones'}
+                iconName={''}
             >
                 <TextInput
                     id={'testing'}

@@ -21,6 +21,7 @@ export default function SocketModelForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Sockets'}
+                iconName={''}
             >
                 <TextInput
                     id={'testing'}

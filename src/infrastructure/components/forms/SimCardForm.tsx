@@ -39,6 +39,7 @@ export default function SimCardForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'SimCard'}
+                iconName={''}
             >
                 <SelectOption
                     id={'component'}

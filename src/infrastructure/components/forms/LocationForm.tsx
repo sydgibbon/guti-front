@@ -4,7 +4,7 @@ import TextInput from '../TextInput'
 import Form from './Form'
 
 interface formProps {
-    formHeader: String
+    formHeader: string
 }
 
 export default function LocationForm(formProps: formProps) {
@@ -26,6 +26,7 @@ export default function LocationForm(formProps: formProps) {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={formHeader}
+                iconName={''}
             >
                 <TextInput
                     id={'testing'}

@@ -49,6 +49,7 @@ export default function ConsumableForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Consumables'}
+                iconName={''}
             >
                 <TextInput
                     id={'testing'}

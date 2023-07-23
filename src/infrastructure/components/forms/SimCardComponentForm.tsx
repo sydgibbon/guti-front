@@ -32,6 +32,7 @@ export default function SimCardComponentForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'SimCards'}
+                iconName={''}
             >
                 <TextInput
                     id={'testing'}

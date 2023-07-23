@@ -51,6 +51,7 @@ export default function NetworkDeviceModelForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Testing'}
+                iconName={''}
             >
                 <TextInput
                     id={'testing'}

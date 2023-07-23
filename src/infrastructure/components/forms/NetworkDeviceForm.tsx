@@ -62,7 +62,8 @@ export default function NetDeviceForm() {
         <div className='bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Networks'}
+                formHeader={'Network Devices'}
+                iconName={'NetworkDevice'}
             >
                 <TextInput
                     id={'testing'}

@@ -44,6 +44,7 @@ export default function EnclosuresForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Enclosures'}
+                iconName={''}
             >
                 <TextInput
                     id={'testing'}

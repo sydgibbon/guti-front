@@ -81,6 +81,7 @@ export default function ComputersForm() {
                 <Form
                     handleSubmit={handleSubmit}
                     formHeader={'Computers'}
+                    iconName={'Computer'}
                 >
                     <TextInput
                         id={'name'}

@@ -47,6 +47,7 @@ export default function PassiveDeviceForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Passives'}
+                iconName={''}
             >
                 <TextInput
                     id={'name'}

@@ -21,6 +21,7 @@ export default function PhoneModelForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Phone'}
+                iconName={''}
             >
                 <TextInput
                     id={'testing'}

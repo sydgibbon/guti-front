@@ -63,7 +63,8 @@ export default function SoftwareForm() {
         <div className='bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Softwares'}
+                formHeader={'Software'}
+                iconName={''}
             >
                 <TextInput
                     id={'testing'}

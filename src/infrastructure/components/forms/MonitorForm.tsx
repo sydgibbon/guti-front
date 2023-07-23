@@ -118,6 +118,7 @@ export default function MonitorForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Monitors'}
+                iconName={'Monitor'}
             >
                 <TextInput
                     id={'testing'}

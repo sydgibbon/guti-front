@@ -21,6 +21,7 @@ export default function CartridgeTypeForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Cartridge'}
+                iconName={''}
             >
                 <TextInput
                     id={'testing'}

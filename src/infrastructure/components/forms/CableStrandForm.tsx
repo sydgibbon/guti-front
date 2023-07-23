@@ -21,6 +21,7 @@ export default function CableStrandForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Cable'}
+                iconName={''}
             >
                 <TextInput
                     id={'testing'}
