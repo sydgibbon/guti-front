@@ -38,8 +38,8 @@ export default function SimCardForm() {
         <div className='bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'SimCard'}
-                iconName={''}
+                formHeader={'Simcards'}
+                iconName={'Simcards'}
             >
                 <SelectOption
                     id={'component'}

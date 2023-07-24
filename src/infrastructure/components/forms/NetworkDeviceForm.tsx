@@ -63,7 +63,7 @@ export default function NetDeviceForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Network Devices'}
-                iconName={'NetworkDevice'}
+                iconName={'NetworkDevices'}
             >
                 <TextInput
                     id={'testing'}

@@ -50,8 +50,8 @@ export default function DeviceModelForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Device'}
-                iconName={''}
+                formHeader={'Peripheral Models'}
+                iconName={'Devices'}
             >
                 <TextInput
                     id={'testing'}

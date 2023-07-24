@@ -20,8 +20,8 @@ export default function PrinterTypeForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Testing'}
-                iconName={''}
+                formHeader={'Printer Types'}
+                iconName={'Printers'}
             >
                 <TextInput
                     id={'testing'}

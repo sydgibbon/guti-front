@@ -50,8 +50,8 @@ export default function MonitorModelForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Testing'}
-                iconName={''}
+                formHeader={'Monitor Models'}
+                iconName={'Monitors'}
             >
                 <TextInput
                     id={'testing'}

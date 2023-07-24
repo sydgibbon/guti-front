@@ -156,8 +156,8 @@ export default function CableForm() {
         <div className='bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Cables'}
-                iconName={''}
+                formHeader={'Cable'}
+                iconName={'Cables'}
             >
                 <TextInput
                     id={'name'}

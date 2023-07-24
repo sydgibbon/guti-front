@@ -72,7 +72,7 @@ export default function RackForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Racks'}
-                iconName={''}
+                iconName={'Racks'}
             >
                 <TextInput
                     id={'testing'}

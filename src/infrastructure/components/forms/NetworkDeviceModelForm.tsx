@@ -50,8 +50,8 @@ export default function NetworkDeviceModelForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Testing'}
-                iconName={''}
+                formHeader={'Networking Equipment Models'}
+                iconName={'NetworkDevices'}
             >
                 <TextInput
                     id={'testing'}

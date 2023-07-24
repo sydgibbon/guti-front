@@ -20,8 +20,8 @@ export default function SoftwareCategoryForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Testing'}
-                iconName={''}
+                formHeader={'Software Categories'}
+                iconName={'Software'}
             >
                 <TextInput
                     id={'testing'}

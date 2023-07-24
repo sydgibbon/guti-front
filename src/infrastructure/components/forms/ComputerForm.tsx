@@ -81,7 +81,7 @@ export default function ComputersForm() {
                 <Form
                     handleSubmit={handleSubmit}
                     formHeader={'Computers'}
-                    iconName={'Computer'}
+                    iconName={'Computers'}
                 >
                     <TextInput
                         id={'name'}
@@ -194,7 +194,7 @@ export default function ComputersForm() {
                         state={showLocationForm}
                         handleClose={() => setShowLocationForm(false)}
                     >
-                        <LocationForm formHeader={'Locations'} />
+                        <LocationForm />
                     </ModalCustom>
                 </Form>
             </div>

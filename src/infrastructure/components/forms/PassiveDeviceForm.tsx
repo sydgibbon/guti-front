@@ -46,8 +46,8 @@ export default function PassiveDeviceForm() {
         <div className='bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Passives'}
-                iconName={''}
+                formHeader={'Passive Devices'}
+                iconName={'PassiveDevices'}
             >
                 <TextInput
                     id={'name'}

@@ -50,8 +50,8 @@ export default function PduModelForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Pdu'}
-                iconName={''}
+                formHeader={'PDU models'}
+                iconName={'PDUs'}
             >
                 <TextInput
                     id={'testing'}

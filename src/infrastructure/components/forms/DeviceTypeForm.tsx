@@ -20,8 +20,8 @@ export default function ConsumableTypeForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Testing'}
-                iconName={''}
+                formHeader={'Devices Types'}
+                iconName={'Devices'}
             >
                 <TextInput
                     id={'testing'}

@@ -31,8 +31,8 @@ export default function StatusForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Testing'}
-                iconName={''}
+                formHeader={'Statuses of items'}
+                iconName={'Status'}
             >
                 <TextInput
                     id={'testing'}

@@ -64,7 +64,7 @@ export default function SoftwareForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Software'}
-                iconName={''}
+                iconName={'Software'}
             >
                 <TextInput
                     id={'testing'}

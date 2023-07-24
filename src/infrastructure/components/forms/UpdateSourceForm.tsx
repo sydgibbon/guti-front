@@ -20,8 +20,8 @@ export default function UpdateSourceForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Testing'}
-                iconName={''}
+                formHeader={'Update Sources'}
+                iconName={'Manufacturer'}
             >
                 <TextInput
                     id={'testing'}

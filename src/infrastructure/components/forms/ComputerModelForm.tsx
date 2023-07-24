@@ -50,8 +50,8 @@ export default function ComputerModelForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'ComputerModel'}
-                iconName={''}
+                formHeader={'Computer Models'}
+                iconName={'Computers'}
             >
                 <TextInput
                     id={'testing'}

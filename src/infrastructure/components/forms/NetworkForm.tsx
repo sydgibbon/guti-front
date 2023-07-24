@@ -20,8 +20,8 @@ export default function NetworkForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Testing'}
-                iconName={''}
+                formHeader={'Network'}
+                iconName={'NetworkDevices'}
             >
                 <TextInput
                     id={'testing'}

@@ -31,8 +31,8 @@ export default function SimCardComponentForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'SimCards'}
-                iconName={''}
+                formHeader={'Simcards'}
+                iconName={'Simcards'}
             >
                 <TextInput
                     id={'testing'}

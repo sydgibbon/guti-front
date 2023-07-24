@@ -46,8 +46,8 @@ export default function PduForm() {
         <div className='bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Pdu'}
-                iconName={''}
+                formHeader={'PDUs'}
+                iconName={'PDUs'}
             >
                 <TextInput
                     id={'name'}

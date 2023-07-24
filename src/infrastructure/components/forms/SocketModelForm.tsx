@@ -20,8 +20,8 @@ export default function SocketModelForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Sockets'}
-                iconName={''}
+                formHeader={'Socket Model'}
+                iconName={'Manufacturer'}
             >
                 <TextInput
                     id={'testing'}

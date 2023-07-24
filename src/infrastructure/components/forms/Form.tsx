@@ -12,6 +12,10 @@ import {
     TbUsb,
     TbPrinter,
     TbDropletFilled2,
+    TbUsers,
+    TbMapPin,
+    TbEdit,
+    TbListDetails,
 } from 'react-icons/tb'
 
 interface formProps {
@@ -22,21 +26,25 @@ interface formProps {
 }
 
 const formIcons: { [key: string]: React.ReactNode } = {
-    Computer: <BsLaptop size='24' />,
-    Monitor: <BsDisplay size='24' />,
+    Computers: <BsLaptop size='24' />,
+    Monitors: <BsDisplay size='24' />,
     Software: <TbApps size='24' />,
-    NetworkDevice: <TbSitemap size='24' />,
-    Device: <TbUsb size='24' />,
-    Printer: <TbPrinter size='24' />,
-    Cartridge: <TbDropletFilled2 size='24' />,
-    Consumable: <BsBoxSeam size='24' />,
-    Phone: <TbPhone size='24' />,
-    Rack: <TbServer size='24' />,
+    NetworkDevices: <TbSitemap size='24' />,
+    Devices: <TbUsb size='24' />,
+    Printers: <TbPrinter size='24' />,
+    Cartridges: <TbDropletFilled2 size='24' />,
+    Consumables: <BsBoxSeam size='24' />,
+    Phones: <TbPhone size='24' />,
+    Racks: <TbServer size='24' />,
     Enclosures: <TbColumns size='24' />,
-    Pdu: <TbPlug size='24' />,
-    PassiveDevice: <TbBrowser size='24' />,
-    Cable: <TbLine size='24' />,
-    SimCard: <TbFileBarcode size='24' />,
+    PDUs: <TbPlug size='24' />,
+    PassiveDevices: <TbBrowser size='24' />,
+    Cables: <TbLine size='24' />,
+    Simcards: <TbFileBarcode size='24' />,
+    Groups: <TbUsers size='24' />,
+    Locations: <TbMapPin size='24' />,
+    Manufacturer: <TbEdit size='24' />,
+    Status: <TbListDetails size='24' />,
 }
 
 export default function Form(formProps: formProps) {

@@ -19,8 +19,8 @@ export default function MonitorTypeForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Testing'}
-                iconName={''}
+                formHeader={'Monitor type'}
+                iconName={'Monitors'}
             >
                 <TextInput
                     id={'testing'}

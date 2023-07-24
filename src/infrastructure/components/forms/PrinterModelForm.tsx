@@ -20,8 +20,8 @@ export default function PrinterModelForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Printer'}
-                iconName={''}
+                formHeader={'Printer Models'}
+                iconName={'Printers'}
             >
                 <TextInput
                     id={'testing'}

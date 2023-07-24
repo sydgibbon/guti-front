@@ -378,7 +378,7 @@ const router = createBrowserRouter([
         path: '/assets/forms/locations',
         element: (
             <Main>
-                <LocationForm formHeader={'Location'} />
+                <LocationForm />
             </Main>
         ),
     },

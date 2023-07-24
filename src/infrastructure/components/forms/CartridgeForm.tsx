@@ -47,8 +47,8 @@ export default function CartridgeForm() {
         <div className='bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Cartridges'}
-                iconName={''}
+                formHeader={'Cartridge Models'}
+                iconName={'Cartridges'}
             >
                 <TextInput
                     id={'testing'}

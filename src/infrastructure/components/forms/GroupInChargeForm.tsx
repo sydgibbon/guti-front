@@ -31,8 +31,8 @@ export default function GroupInChargeForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Testing'}
-                iconName={''}
+                formHeader={'Groups'}
+                iconName={'Groups'}
             >
                 <TextInput
                     id={'testing'}

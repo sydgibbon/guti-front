@@ -48,8 +48,8 @@ export default function ConsumableForm() {
         <div className='bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Consumables'}
-                iconName={''}
+                formHeader={'Consumable Models'}
+                iconName={'Consumables'}
             >
                 <TextInput
                     id={'testing'}

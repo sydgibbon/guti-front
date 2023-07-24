@@ -3,12 +3,9 @@ import TextArea from '../TextArea'
 import TextInput from '../TextInput'
 import Form from './Form'
 
-interface formProps {
-    formHeader: string
-}
 
-export default function LocationForm(formProps: formProps) {
-    const { formHeader } = formProps
+export default function LocationForm() {
+
     // const computer = useCreateComputer();
 
     const handleSubmit = (e: React.SyntheticEvent) => {
@@ -25,8 +22,8 @@ export default function LocationForm(formProps: formProps) {
         <div className='bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={formHeader}
-                iconName={''}
+                formHeader={'Locations'}
+                iconName={'Locations'}
             >
                 <TextInput
                     id={'testing'}

@@ -50,8 +50,8 @@ export default function EnclosuresModelForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Testing'}
-                iconName={''}
+                formHeader={'Enclosure models'}
+                iconName={'Enclosures'}
             >
                 <TextInput
                     id={'testing'}

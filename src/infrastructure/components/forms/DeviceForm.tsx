@@ -67,7 +67,7 @@ export default function DeviceForm() {
             <Form
                 handleSubmit={handleSubmit}
                 formHeader={'Devices'}
-                iconName={''}
+                iconName={'Devices'}
             >
                 <TextInput
                     id={'testing'}

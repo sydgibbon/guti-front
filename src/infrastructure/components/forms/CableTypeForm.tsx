@@ -20,8 +20,8 @@ export default function CableTypeForm() {
         <div className='m-6 bg-white rounded container_form_computer'>
             <Form
                 handleSubmit={handleSubmit}
-                formHeader={'Testing'}
-                iconName={''}
+                formHeader={'Cable Type'}
+                iconName={'Cables'}
             >
                 <TextInput
                     id={'testing'}
