@@ -75,7 +75,6 @@ import EditAsset from "../view/Assets/EditAsset";
 import { AuthLayout } from "../view/AuthProvider";
 import { ProtectedLayout } from "../layouts/ProtectedLayout";
 
-
 // import EnclosuresForm from "../component/forms/assets/EnclosuresForm";
 // import CableForm from "../component/forms/assets/CableForm";
 // import MonitorForm from "../component/forms/assets/MonitorForm";
@@ -96,7 +95,9 @@ import { ProtectedLayout } from "../layouts/ProtectedLayout";
 const router = createBrowserRouter([
   { path: "login", element: <LoginView /> },
   {
-    path: "", element: <ProtectedLayout />, children: [
+    path: "",
+    element: <ProtectedLayout />,
+    children: [
       {
         path: "/",
         element: (
@@ -249,8 +250,6 @@ const router = createBrowserRouter([
           </Main>
         ),
       },
-
-
       {
         path: "/assets/forms/computers",
         element: (
@@ -653,8 +652,131 @@ const router = createBrowserRouter([
           </Main>
         ),
       },
+      {
+        path: "/assets/edit/monitors",
+        element: (
+          <Main>
+            <EditAsset />
+          </Main>
+        ),
+      },
 
+      {
+        path: "/assets/edit/software",
+        element: (
+          <Main>
+            <EditAsset />
+          </Main>
+        ),
+      },
 
+      {
+        path: "/assets/edit/networkequipments",
+        element: (
+          <Main>
+            <EditAsset />
+          </Main>
+        ),
+      },
+
+      {
+        path: "/assets/edit/devices",
+        element: (
+          <Main>
+            <EditAsset />
+          </Main>
+        ),
+      },
+
+      {
+        path: "/assets/edit/printers",
+        element: (
+          <Main>
+            <EditAsset />
+          </Main>
+        ),
+      },
+
+      {
+        path: "/assets/edit/cartridges",
+        element: (
+          <Main>
+            <EditAsset />
+          </Main>
+        ),
+      },
+
+      {
+        path: "/assets/edit/consumables",
+        element: (
+          <Main>
+            <EditAsset />
+          </Main>
+        ),
+      },
+
+      {
+        path: "/assets/edit/phones",
+        element: (
+          <Main>
+            <EditAsset />
+          </Main>
+        ),
+      },
+
+      {
+        path: "/assets/edit/racks",
+        element: (
+          <Main>
+            <EditAsset />
+          </Main>
+        ),
+      },
+
+      {
+        path: "/assets/edit/enclosures",
+        element: (
+          <Main>
+            <EditAsset />
+          </Main>
+        ),
+      },
+
+      {
+        path: "/assets/edit/pdu",
+        element: (
+          <Main>
+            <EditAsset />
+          </Main>
+        ),
+      },
+
+      {
+        path: "/assets/edit/passivedevices",
+        element: (
+          <Main>
+            <EditAsset />
+          </Main>
+        ),
+      },
+
+      {
+        path: "/assets/edit/cables",
+        element: (
+          <Main>
+            <EditAsset />
+          </Main>
+        ),
+      },
+
+      {
+        path: "/assets/edit/simcards",
+        element: (
+          <Main>
+            <EditAsset />
+          </Main>
+        ),
+      },
       {
         path: "*",
         element: (
@@ -663,8 +785,8 @@ const router = createBrowserRouter([
           </Main>
         ),
       },
-    ]
-  }
+    ],
+  },
 ]);
 
 //             <Route
