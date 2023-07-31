@@ -2,27 +2,38 @@ import axios from "axios";
 import authHeader from "./Authheader";
 
 export const BASE_URL = "http://127.0.0.1:8000/api/assets";
-const TOKEN = "fe2cd32a6c7b8f8d28a505ef574c971ae8045a7f";
 
-export default axios.create({
+const axiosPrivate = axios.create({
   baseURL: BASE_URL,
   headers: authHeader(),
 });
 
-export const axiosPrivate = axios.create({
-  baseURL: BASE_URL,
-  headers: {
-    Authorization: `Token ${TOKEN}`,
-    "Content-Type": "multipart/form-data",
-  },
+axiosPrivate.interceptors.request.use(function (config) {
+  const token = JSON.parse(localStorage.getItem('user') as string);
+  if (config.headers != undefined) {
+    config.headers.Authorization =  token ? `Bearer ${token.access}` : '';
+  }
+  return config;
 });
+
+axiosPrivate.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    debugger
+    if (error.response && error.response.status === 403) {
+      localStorage.removeItem('user');
+      window.location.href = '/login';
+    }
+    return Promise.reject(error);
+  }
+);
 
 const headers = {
   "Content-Type": "application/json",
 };
 
 const get = async <T>(url: string) => {
-  const response = await axios.get(`${BASE_URL}/${url}`, {
+  const response = await axiosPrivate.get(`${BASE_URL}/${url}`, {
     method: "GET",
     headers,
   });
@@ -30,7 +41,7 @@ const get = async <T>(url: string) => {
 };
 
 const post = async <T>(url: string, body: any) => {
-  const response = await axios.post(`${BASE_URL}/${url}`, {
+  const response = await axiosPrivate.post(`${BASE_URL}/${url}`, {
     method: "POST",
     body,
     headers,
@@ -39,7 +50,7 @@ const post = async <T>(url: string, body: any) => {
 };
 
 const put = async <T>(url: string, body: any) => {
-  const response = await axios.put(`${BASE_URL}/${url}`, {
+  const response = await axiosPrivate.put(`${BASE_URL}/${url}`, {
     method: "PUT",
     headers,
     body,
@@ -61,3 +72,5 @@ export const http = {
   put,
   delete: _delete,
 };
+
+export default axiosPrivate;
