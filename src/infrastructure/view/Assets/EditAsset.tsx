@@ -18,7 +18,6 @@ export default function EditAsset() {
     )
 
     const handleOptionClick = (optionName: string) => {
-        console.log('aca: ' + optionName)
         setSelectedOption(optionName)
     }
 
