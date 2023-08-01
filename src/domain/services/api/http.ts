@@ -19,7 +19,6 @@ axiosPrivate.interceptors.request.use(function (config) {
 axiosPrivate.interceptors.response.use(
   (response) => response,
   (error) => {
-    debugger
     if (error.response && error.response.status === 403) {
       localStorage.removeItem('user');
       window.location.href = '/login';
