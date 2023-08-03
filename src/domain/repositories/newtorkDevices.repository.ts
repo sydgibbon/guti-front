@@ -1,35 +1,44 @@
-import { NetworkDevicesDTO } from "../dto/NetworkDevicesDTO";
-import http from "../services/api/http";
+import { NetworkDevicesDTO } from '../dto/NetworkDevicesDTO'
+import { NetworkDevicesData } from '../models/forms/NetworkDevicesData'
+import http from '../services/api/http'
 
 export const networkDevicesRepository = {
-  getAllNewtorkDevices: async () => {
-    const response = await http.get<NetworkDevicesDTO[]>(
-      "getNetworkequipments/"
-    );
-    return response.data;
-  },
-  getNetworkDevicesTypesSelect: async () => {
-    const response = await http.get<NetworkDevicesDTO[]>(
-      "getNetworkequipmenttypesSelect/"
-    );
-    return response.data;
-  },
-  getNetworkDevicesModelsSelect: async () => {
-    const response = await http.get<NetworkDevicesDTO[]>(
-      "getNetworkequipmentmodelsSelect/"
-    );
-    return response.data;
-  },
+    createNetworkDevice: async (body: NetworkDevicesData) => {
+        const response = await http.post<NetworkDevicesDTO>(
+            'createNetworkequipment/',
+            body
+        )
 
-  getNetworkequipmentsCount: async () => {
-    const response = await http.get("getNetworkequipmentsCount/");
+        return response
+    },
+    getAllNewtorkDevices: async () => {
+        const response = await http.get<NetworkDevicesDTO[]>(
+            'getNetworkequipments/'
+        )
+        return response.data
+    },
+    getNetworkDevicesTypesSelect: async () => {
+        const response = await http.get<NetworkDevicesDTO[]>(
+            'getNetworkequipmenttypesSelect/'
+        )
+        return response.data
+    },
+    getNetworkDevicesModelsSelect: async () => {
+        const response = await http.get<NetworkDevicesDTO[]>(
+            'getNetworkequipmentmodelsSelect/'
+        )
+        return response.data
+    },
 
-    return response.data;
-  },
+    getNetworkequipmentsCount: async () => {
+        const response = await http.get('getNetworkequipmentsCount/')
 
-  getNetworkequipmentsByManufacturers: async () => {
-    const response = await http.get("getNetworkequipmentsByManufacturers/");
+        return response.data
+    },
 
-    return response.data;
-  },
-};
+    getNetworkequipmentsByManufacturers: async () => {
+        const response = await http.get('getNetworkequipmentsByManufacturers/')
+
+        return response.data
+    },
+}

@@ -1,13 +1,13 @@
-export interface ComputerDTO  {
-    id:               number;
-    name?:             string;
-    states?:           string;
-    manufacturers?:    string;
-    serial?:           string;
-    computertypes?:    string;
-    computermodels?:   string;
-    operatingsystems?: string;
-    locations?:        string;
-    date_mod?:         string;
-    processors?:       string;
+export interface ComputerDTO {
+    computermodels?: string
+    computertypes?: string
+    date_mod?: string
+    id: number
+    locations?: string
+    manufacturers?: string
+    name?: string
+    operatingsystems?: string
+    processors?: string
+    serial?: string
+    states?: string
 }

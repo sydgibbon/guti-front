@@ -1,12 +1,11 @@
 export interface NetworkDevicesDTO {
-  id: number;
-  name?: string;
-  locations?: string;
-  networkequipmenttypes?: string;
-  networkequipmentmodels?: string;
-  manufacturers?: string;
-  states?: string;
-  devicefirmwares?: string;
-  date_mod?: string;
+    date_mod?: string
+    devicefirmwares?: string
+    id: number
+    locations?: string
+    manufacturers?: string
+    name?: string
+    networkequipmentmodels?: string
+    networkequipmenttypes?: string
+    states?: string
 }
-

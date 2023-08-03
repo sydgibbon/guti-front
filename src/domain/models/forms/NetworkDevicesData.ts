@@ -1,15 +1,14 @@
-export interface ComputerData {
+export interface NetworkDevicesData {
     autoupdatesystems: number | null
     comment: string | null
-    computermodels: number | null
-    computertypes: number | null
-    contact_num: string | null
     contact: string | null
+    contact_num: string | null
+    cpu: number | null
     date_creation: string | null
     date_mod: string | null
     entities: number | null
-    groups_tech: number | null
     groups: number | null
+    groups_tech: number | null
     is_deleted: number | null
     is_dynamic: number | null
     is_recursive: number | null
@@ -18,13 +17,19 @@ export interface ComputerData {
     locations: number | null
     manufacturers: number | null
     name: string | null
+    networkequipmentmodels: number | null
+    networkequipmenttypes: number | null
     networks: number | null
     otherserial: string | null
+    ram: string | null
     serial: string | null
+    snmpcredentials: number | null
     states: number | null
+    sysdescr: string | null
     template_name: null | null
     ticket_tco: null | null
-    users_tech: number | null
+    uptime: string | null
     users: number | null
+    users_tech: number | null
     uuid: string | null
 }
