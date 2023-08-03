@@ -3,7 +3,6 @@ import { useAuth } from "../hooks/useAuth";
 // ...
 
 export const ProtectedLayout = () => {
-  debugger
   const user = useAuth();
   const outlet = useOutlet();
 
