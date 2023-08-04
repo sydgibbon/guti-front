@@ -8,7 +8,7 @@ export default function Form(formProps: formProps) {
 
   return (
     <div className="mx-6 container bg-white rounded-lg">
-      <form onSubmit={(handleSubmit)}>
+      <form onSubmit={handleSubmit}>
         <div className="grid grid-cols-2 gap-10 p-6 container__content">
           {children}
         </div>

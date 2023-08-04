@@ -77,7 +77,11 @@ export default function FormsTemplate({
         return props.subCheckBox.map((checkBox: any) => {
           return (
             <div className="px-4">
-              <input id={props.key} type="checkbox" className="mr-2"></input>
+              <input
+                id={props.key}
+                type="checkbox"
+                className="mr-2"
+              ></input>
               {/* falta idkey */}
               <span>{checkBox.subTitle}</span>
             </div>
