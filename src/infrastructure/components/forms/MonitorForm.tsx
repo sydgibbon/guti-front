@@ -129,7 +129,7 @@ export default function MonitorForm() {
         <div className="Name">
           <label className="text-sm mb-2 font-semibold block" htmlFor="testing">Name</label>
           <TextInput
-            id={"testing"}
+            id={"name"}
             placeholder={"ingrese su nombre"}
           />
         </div>
@@ -137,7 +137,7 @@ export default function MonitorForm() {
         <div className="Status">
           <label className="text-sm mb-2 font-semibold block" htmlFor="status">Status</label>
           <SelectOption
-            id={"status"}
+            id={"states"}
             options={stateOptions.data?.data}
           />
         </div>
@@ -145,7 +145,7 @@ export default function MonitorForm() {
         <div className="Locations">
           <label className="text-sm mb-2 font-semibold block" htmlFor="location">Locations</label>
           <SelectOption
-            id={"location"}
+            id={"locations"}
             options={locationOptions.data?.data}
           />
         </div>
@@ -153,7 +153,7 @@ export default function MonitorForm() {
         <div className="Monitor Type">
           <label className="text-sm mb-2 font-semibold block" htmlFor="type">Monitor Type</label>
           <SelectOption
-            id="type"
+            id="monitortypes"
             options={monitorTypeOptions?.data}
           />
         </div>
@@ -161,7 +161,7 @@ export default function MonitorForm() {
         <div className="Technician in charge of the hardware">
           <label className="text-sm mb-2 font-semibold block" htmlFor="hardware">Technician in charge of the hardware</label>
           <SelectOption
-            id={"hardware"}
+            id={"users_tech"}
             options={userInChargeOptions.data?.data}
           />
         </div>
@@ -169,7 +169,7 @@ export default function MonitorForm() {
         <div className="Manufacturers">
           <label className="text-sm mb-2 font-semibold block" htmlFor="manufacturer">Manufacturers</label>
           <SelectOption
-            id="manufacturer"
+            id="manufacturers"
             options={manufacturerOptions.data?.data}
           />
         </div>
@@ -177,7 +177,7 @@ export default function MonitorForm() {
         <div className="Group in charge of the hardware">
           <label className="text-sm mb-2 font-semibold block" htmlFor="group-hardware">Group in charge of the hardware</label>
           <SelectOption
-            id={"group-hardware"}
+            id={"groups_tech"}
             options={groupInChargeOptions.data?.data}
           />
         </div>
@@ -185,7 +185,7 @@ export default function MonitorForm() {
         <div className="Model">
           <label className="text-sm mb-2 font-semibold block" htmlFor="model">Model</label>
           <SelectOption
-            id="model"
+            id="monitormodels"
             options={monitorModelOptions?.data}
           />
         </div>
@@ -193,7 +193,7 @@ export default function MonitorForm() {
         <div className="Alternate Username Number">
           <label className="text-sm mb-2 font-semibold block" htmlFor="alternativeusernamenumber">Alternate Username Number</label>
           <TextInput
-            id={"alternativeusernamenumber"}
+            id={"contact"}
             placeholder="Enter your Alternate Username number here"
             required
           />
@@ -202,7 +202,7 @@ export default function MonitorForm() {
         <div className="Serial Number">
           <label className="text-sm mb-2 font-semibold block" htmlFor="serialnumber">Serial Number</label>
           <TextInput
-            id={"serialnumber"}
+            id={"serial"}
             placeholder="Enter your Serial Number here"
             required
           />
@@ -211,7 +211,7 @@ export default function MonitorForm() {
         <div className="Alternate Username">
           <label className="text-sm mb-2 font-semibold block" htmlFor="alternativeusername">Alternate Username</label>
           <TextInput
-            id={"alternativeusername"}
+            id={"contact_num"}
             placeholder="Enter your Alternate Username here"
             required
           />
@@ -229,7 +229,7 @@ export default function MonitorForm() {
         <div className="User">
           <label className="text-sm mb-2 font-semibold block" htmlFor="user">User</label>
           <SelectOption
-            id="user"
+            id="users"
             options={usersOptions.data?.data}
           />
         </div>
@@ -253,7 +253,7 @@ export default function MonitorForm() {
         <div className="Groups">
           <label className="text-sm mb-2 font-semibold block" htmlFor="group">Groups</label>
           <SelectOption
-            id="group"
+            id="groups"
             options={groupsOptions.data?.data}
           />
         </div>
