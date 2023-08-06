@@ -28,12 +28,6 @@ export default function NetDeviceForm() {
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as NetworkDevicesData;
-    console.log(form);
-    console.log("formData: " + formData.entries());
-    console.log(
-      "formJson (pretty printed):",
-      JSON.stringify(formJson, null, 2)
-    );
 
     networkDevicesService.createNetworkDevice(formJson);
   };
@@ -78,12 +72,12 @@ export default function NetDeviceForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="testing"
+            htmlFor="name"
           >
             Name
           </label>
           <TextInput
-            id={"testing"}
+            id={"name"}
             placeholder={"ingrese su nombre"}
           />
         </div>
@@ -343,12 +337,12 @@ export default function NetDeviceForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="updatesource"
+            htmlFor="uptime"
           >
             Update Source
           </label>
           <SelectOption
-            id="updatesource"
+            id="uptime"
             options={autoupdatesystemOptions.data?.data}
           />
         </div>

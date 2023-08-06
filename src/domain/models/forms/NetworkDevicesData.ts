@@ -6,9 +6,9 @@ export interface NetworkDevicesData {
   cpu: number | null;
   date_creation: string | null;
   date_mod: string | null;
-  entities: number | null;
-  groups: number | null;
-  groups_tech: number | null;
+  entities: string | null;
+  groups: string | null;
+  groups_tech: string | null;
   is_deleted: number | null;
   is_dynamic: number | null;
   is_recursive: number | null;
