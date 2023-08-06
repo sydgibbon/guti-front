@@ -14,12 +14,22 @@ import { useGetComputermodelsSelect } from '../../hooks/Computers/useGetComputer
 import { useGetComputertypesSelect } from '../../hooks/Computers/useGetComputertypesSelect'
 import { useGetNetworksSelect } from '../../hooks/Networks/useGetNetworksSelect'
 import { useGetAutoupdatesystemsSelect } from '../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect'
+import { ComputerData } from '../../../domain/models/forms/ComputerData'
+import { computersService } from '../../../domain/services/api/Computers.service'
 
 export default function ComputersForm() {
     // const computer = useCreateComputer();
 
     const handleSubmit = (e: React.SyntheticEvent) => {
         e.preventDefault()
+
+        const form = e.target as HTMLFormElement;
+        const formData = new FormData(form);
+        const formJson = Object.fromEntries(
+            formData.entries()
+        ) as unknown as ComputerData;
+
+        computersService.createComputer(formJson);
 
         // const target = e.target as typeof e.target & {
         //   name: { value: string };

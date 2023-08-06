@@ -1,10 +1,9 @@
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SelectOption from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import Form from "./Form";
 import Checkbox from "../CheckBox";
-import { useCreateMonitors } from "../../hooks/Monitors/useCreateMonitors";
 import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
 import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect";
 import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
@@ -15,35 +14,49 @@ import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManuf
 import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
 import { useGetMonitormodelsSelect } from "../../hooks/Monitors/useGetMonitormodelsSelect";
 import { useGetMonitortypesSelect } from "../../hooks/Monitors/useGetMonitortypesSelect";
+import { MonitorData } from "../../../domain/models/forms/MonitorData";
+import { monitorsService } from "../../../domain/services/api/Monitors.service";
 
 
 export default function MonitorForm() {
-  const monitors = useCreateMonitors();
+  // const monitors = useCreateMonitors();
+
+
+  const handleSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(
+      formData.entries()
+    ) as unknown as MonitorData;
+
+    monitorsService.createMonitors(formJson);
+  };
 
   // Forms Referencias 
-  const monitorName = useRef("")
-  const AlternateUsername = useRef("")
-  const AlternateUsernameNumber = useRef("")
-  const SerialNumber = useRef("")
-  const InventoryNumber = useRef("")
-  const User = useRef("")
-  const Size = useRef("")
-  const UUID = useRef("")
-  const Comment = useRef("")
-  const Upgrade = useRef()
+  // const monitorName = useRef("")
+  // const AlternateUsername = useRef("")
+  // const AlternateUsernameNumber = useRef("")
+  // const SerialNumber = useRef("")
+  // const InventoryNumber = useRef("")
+  // const User = useRef("")
+  // const Size = useRef("")
+  // const UUID = useRef("")
+  // const Comment = useRef("")
+  // const Upgrade = useRef()
 
-  const formsMonitors = {
-    name: monitorName.current,
-    alternateUsername: AlternateUsername.current,
-    serialNumber: SerialNumber.current,
-    alternateUsernameNumber: AlternateUsernameNumber.current,
-    inventoryNumber: InventoryNumber.current,
-    user: User.current,
-    size: Size.current,
-    uuid: UUID.current,
-    comment: Comment.current,
-    upgrade: Upgrade.current,
-  }
+  // const formsMonitors = {
+  //   name: monitorName.current,
+  //   alternateUsername: AlternateUsername.current,
+  //   serialNumber: SerialNumber.current,
+  //   alternateUsernameNumber: AlternateUsernameNumber.current,
+  //   inventoryNumber: InventoryNumber.current,
+  //   user: User.current,
+  //   size: Size.current,
+  //   uuid: UUID.current,
+  //   comment: Comment.current,
+  //   upgrade: Upgrade.current,
+  // }
 
   const userInChargeOptions = useGetUserInChargeSelect();
   const usersOptions = useGetUsersSelect();
@@ -87,11 +100,6 @@ export default function MonitorForm() {
     }));
   };
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault();
-    monitors.post(formsMonitors)
-  };
-
   useEffect(() => {
 
     usersOptions.get();
@@ -108,11 +116,11 @@ export default function MonitorForm() {
   }, [])
 
 
-  useEffect(() => {
-    if (monitors.error) {
-      alert(monitors.error);
-    }
-  }, [monitors.error]);
+  // useEffect(() => {
+  //   if (monitors.error) {
+  //     alert(monitors.error);
+  //   }
+  // }, [monitors.error]);
 
 
   return (
@@ -123,7 +131,6 @@ export default function MonitorForm() {
           <TextInput
             id={"testing"}
             placeholder={"ingrese su nombre"}
-            inputRef={monitorName}
           />
         </div>
 
@@ -189,7 +196,6 @@ export default function MonitorForm() {
             id={"alternativeusernamenumber"}
             placeholder="Enter your Alternate Username number here"
             required
-            inputRef={AlternateUsernameNumber}
           />
         </div>
 
@@ -199,7 +205,6 @@ export default function MonitorForm() {
             id={"serialnumber"}
             placeholder="Enter your Serial Number here"
             required
-            inputRef={SerialNumber}
           />
         </div>
 
@@ -209,7 +214,6 @@ export default function MonitorForm() {
             id={"alternativeusername"}
             placeholder="Enter your Alternate Username here"
             required
-            inputRef={AlternateUsername}
           />
         </div>
 
@@ -219,7 +223,6 @@ export default function MonitorForm() {
             id={"otherserial"}
             placeholder="Enter your Inventory Number here"
             required
-            inputRef={InventoryNumber}
           />
         </div>
 
@@ -261,7 +264,6 @@ export default function MonitorForm() {
             id="uuid"
             placeholder="Enter your UUID here"
             required
-            inputRef={UUID}
           />
         </div>
 
@@ -280,7 +282,7 @@ export default function MonitorForm() {
             id="updatesource" />
         </div>
 
-        <div className= "Ports" >
+        <div className="Ports" >
           <div className="mb-2 font-semibold">Ports</div>
           <div className="grid grid-cols-4 gap-2" >
             <Checkbox
