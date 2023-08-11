@@ -678,6 +678,408 @@ const router = createBrowserRouter([
           </Main>
         ),
       },
+  {
+    path: "/assets/forms/computers",
+    element: (
+      <Main>
+        <ComputersForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/software",
+    element: (
+      <Main>
+        <SoftwareForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/monitors",
+    element: (
+      <Main>
+        <MonitorForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/network-devices",
+    element: (
+      <Main>
+        <NetDeviceForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/devices",
+    element: (
+      <Main>
+        <DeviceForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/printers",
+    element: (
+      <Main>
+        <PrinterForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/cartridges",
+    element: (
+      <Main>
+        <CartridgeForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/consumables",
+    element: (
+      <Main>
+        <ConsumableForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/phones",
+    element: (
+      <Main>
+        <PhoneForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/racks",
+    element: (
+      <Main>
+        <RackForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/enclosures",
+    element: (
+      <Main>
+        <EnclosuresForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/pdus",
+    element: (
+      <Main>
+        <PduForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/passive-devices",
+    element: (
+      <Main>
+        <PassiveDeviceForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/cables",
+    element: (
+      <Main>
+        <CableForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/simcards",
+    element: (
+      <Main>
+        <SimCardForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/status",
+    element: (
+      <Main>
+        <StatusForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/locations",
+    element: (
+      <Main>
+        <LocationForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/computertypes",
+    element: (
+      <Main>
+        <ComputerTypeForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/manufacturers",
+    element: (
+      <Main>
+        <ManufacturerForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/groupincharge",
+    element: (
+      <Main>
+        <GroupInChargeForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/computermodels",
+    element: (
+      <Main>
+        <ComputerModelForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/networks",
+    element: (
+      <Main>
+        <NetworkForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/groups",
+    element: (
+      <Main>
+        <GroupForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/updatesources",
+    element: (
+      <Main>
+        <UpdateSourceForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/monitortypes",
+    element: (
+      <Main>
+        <MonitorTypeForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/monitormodels",
+    element: (
+      <Main>
+        <MonitorModelForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/softwarecategories",
+    element: (
+      <Main>
+        <SoftwareCategoryForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/networkdevicetypes",
+    element: (
+      <Main>
+        <NetworkDeviceTypeForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/networkdevicesmodels",
+    element: (
+      <Main>
+        <NetworkDeviceModelForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/devicetypes",
+    element: (
+      <Main>
+        <DeviceTypeForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/devicemodels",
+    element: (
+      <Main>
+        <DeviceModelForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/printertypes",
+    element: (
+      <Main>
+        <PrinterTypeForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/printermodels",
+    element: (
+      <Main>
+        <PrinterModelForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/cartridgetypes",
+    element: (
+      <Main>
+        <CartridgeTypeForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/consumabletypes",
+    element: (
+      <Main>
+        <ConsumableTypeForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/phonetypes",
+    element: (
+      <Main>
+        <PhoneTypeForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/phonemodels",
+    element: (
+      <Main>
+        <PhoneModelForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/phonepower",
+    element: (
+      <Main>
+        <PhonePowerForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/racktypes",
+    element: (
+      <Main>
+        <RackTypeForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/rackmodels",
+    element: (
+      <Main>
+        <RackModelForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/enclosuresmodels",
+    element: (
+      <Main>
+        <EnclosuresModelForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/pdutypes",
+    element: (
+      <Main>
+        <PduTypeForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/pdumodels",
+    element: (
+      <Main>
+        <PduModelForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/passivedevicetypes",
+    element: (
+      <Main>
+        <PassiveDeviceTypeForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/passivedevicemodels",
+    element: (
+      <Main>
+        <PassiveDeviceModelForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/cabletypes",
+    element: (
+      <Main>
+        <CableTypeForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/cablestrands",
+    element: (
+      <Main>
+        <CableStrandForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/socketmodels",
+    element: (
+      <Main>
+        <SocketModelForm />
+      </Main>
+    ),
+  },
+  {
+    path: "/assets/forms/simcardcomponents",
+    element: (
+      <Main>
+        <SimCardComponentForm />
+      </Main>
+    ),
+  },
+
+  // "/assets/edit/ASSET" route is used as an example
+  {
+    path: "/assets/edit/computers",
+    element: (
+      <Main>
+        <EditAsset />
+      </Main>
+    ),
+  },
 
       {
         path: "/assets/edit/devices",

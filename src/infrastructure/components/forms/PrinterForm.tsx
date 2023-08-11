@@ -20,7 +20,6 @@ import Form from "./Form";
 import Checkbox from "../CheckBox";
 
 export default function PrinterForm() {
-
   interface CheckboxState {
     serial: boolean;
     parallel: boolean;
@@ -35,7 +34,6 @@ export default function PrinterForm() {
     usb: false,
     ethernet: false,
     wifi: false,
-
   });
 
   const handleCheckboxChange = (checkboxName: keyof CheckboxState) => {
@@ -48,12 +46,6 @@ export default function PrinterForm() {
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
   };
-
-  // useEffect(() => {
-  //   if (computer.error) {
-  //     alert(computer.error);
-  //   }
-  // }, [computer.error]);
 
   const userInChargeOptions = useGetUserInChargeSelect();
   const usersOptions = useGetUsersSelect();
@@ -68,10 +60,12 @@ export default function PrinterForm() {
   const networkOptions = useGetNetworksSelect();
   const snpmCredentialOptions = useGetSnmpCredentialsSelect();
 
-  const managementTypeOptions = [{ id: "0", name: "Unit Management" }, { id: "1", name: "Global Management" }]
+  const managementTypeOptions = [
+    { id: "0", name: "Unit Management" },
+    { id: "1", name: "Global Management" },
+  ];
 
   useEffect(() => {
-
     usersOptions.get();
     userInChargeOptions.get();
     groupsOptions.get();
@@ -84,13 +78,16 @@ export default function PrinterForm() {
     autoupdatesystemOptions.get();
     networkOptions.get();
     snpmCredentialOptions.get();
-
-  }, [])
+  }, []);
 
   return (
     <div className="bg-white rounded container_form_computer">
-      <Form handleSubmit={handleSubmit}>
-        <div className= "Name">
+      <Form
+        handleSubmit={handleSubmit}
+        formHeader={"Printers"}
+        iconName={"Printers"}
+      >
+        <div className="Name">
           <label className="text-sm mb-2 font-semibold block" htmlFor="testing">Name</label>
           <TextInput
             id={"testing"}
@@ -302,4 +299,4 @@ export default function PrinterForm() {
       </Form>
     </div>
   );
-}
+};
