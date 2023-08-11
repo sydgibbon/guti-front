@@ -17,10 +17,7 @@ import { useGetMonitortypesSelect } from "../../hooks/Monitors/useGetMonitortype
 import { MonitorData } from "../../../domain/models/forms/MonitorData";
 import { monitorsService } from "../../../domain/services/api/Monitors.service";
 
-
 export default function MonitorForm() {
-  // const monitors = useCreateMonitors();
-
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -33,31 +30,6 @@ export default function MonitorForm() {
     monitorsService.createMonitors(formJson);
   };
 
-  // Forms Referencias 
-  // const monitorName = useRef("")
-  // const AlternateUsername = useRef("")
-  // const AlternateUsernameNumber = useRef("")
-  // const SerialNumber = useRef("")
-  // const InventoryNumber = useRef("")
-  // const User = useRef("")
-  // const Size = useRef("")
-  // const UUID = useRef("")
-  // const Comment = useRef("")
-  // const Upgrade = useRef()
-
-  // const formsMonitors = {
-  //   name: monitorName.current,
-  //   alternateUsername: AlternateUsername.current,
-  //   serialNumber: SerialNumber.current,
-  //   alternateUsernameNumber: AlternateUsernameNumber.current,
-  //   inventoryNumber: InventoryNumber.current,
-  //   user: User.current,
-  //   size: Size.current,
-  //   uuid: UUID.current,
-  //   comment: Comment.current,
-  //   upgrade: Upgrade.current,
-  // }
-
   const userInChargeOptions = useGetUserInChargeSelect();
   const usersOptions = useGetUsersSelect();
   const groupInChargeOptions = useGetGroupInChargeSelect();
@@ -69,7 +41,10 @@ export default function MonitorForm() {
   const monitorTypeOptions = useGetMonitortypesSelect();
   const autoupdatesystemOptions = useGetAutoupdatesystemsSelect();
 
-  const managementTypeOptions = [{ id: "0", name: "Unit Management" }, { id: "1", name: "Global Management" }]
+  const managementTypeOptions = [
+    { id: "0", name: "Unit Management" },
+    { id: "1", name: "Global Management" },
+  ];
 
   interface CheckboxState {
     microphone: boolean;
@@ -101,7 +76,6 @@ export default function MonitorForm() {
   };
 
   useEffect(() => {
-
     usersOptions.get();
     userInChargeOptions.get();
     groupsOptions.get();
@@ -112,20 +86,15 @@ export default function MonitorForm() {
     monitorModelOptions.get();
     monitorTypeOptions.get();
     autoupdatesystemOptions.get();
-
-  }, [])
-
-
-  // useEffect(() => {
-  //   if (monitors.error) {
-  //     alert(monitors.error);
-  //   }
-  // }, [monitors.error]);
-
+  }, []);
 
   return (
     <div className="bg-white rounded container_form_computer">
-      <Form handleSubmit={handleSubmit}>
+      <Form
+        handleSubmit={handleSubmit}
+        formHeader={"Monitors"}
+        iconName={"Monitors"}
+      >
         <div className="Name">
           <label className="text-sm mb-2 font-semibold block" htmlFor="testing">Name</label>
           <TextInput
@@ -335,7 +304,7 @@ export default function MonitorForm() {
             />
           </div>
         </div>
-      </Form>
-    </div>
+      </Form >
+    </div >
   );
-}
+};
