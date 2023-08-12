@@ -125,84 +125,84 @@ export default function PrinterForm() {
         <div className="Locations">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="location"
+            htmlFor="locations"
           >
             Locations
           </label>
           <SelectOption
-            id={"location"}
+            id={"locations"}
             options={locationOptions.data?.data}
           />
         </div>
         <div className="Printer Types">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="type"
+            htmlFor="printertypes"
           >
             Printer Types
           </label>
           <SelectOption
-            id="type"
+            id="printertypes"
             options={printerTypeOptions?.data}
           />
         </div>
         <div className="Technician in charge of the hardware">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="hardware"
+            htmlFor="users_tech"
           >
             Technician in charge of the hardware
           </label>
           <SelectOption
-            id={"hardware"}
+            id={"users_tech"}
             options={userInChargeOptions.data?.data}
           />
         </div>
         <div className="Manufacturers">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="manufacturer"
+            htmlFor="manufacturers"
           >
             Manufacturers
           </label>
           <SelectOption
-            id="manufacturer"
+            id="manufacturers"
             options={manufacturerOptions.data?.data}
           />
         </div>
         <div className="Group in charge of the hardware">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="group-hardware"
+            htmlFor="groups_tech"
           >
             Group in charge of the hardware
           </label>
           <SelectOption
-            id={"group-hardware"}
+            id={"groups_tech"}
             options={groupInChargeOptions.data?.data}
           />
         </div>
         <div className="Model">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="model"
+            htmlFor="printermodels"
           >
             Model
           </label>
           <SelectOption
-            id="model"
+            id="printermodels"
             options={printerModelOptions?.data}
           />
         </div>
         <div className="Alternate Username Number">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="alternativeusernamenumber"
+            htmlFor="contact"
           >
             Alternate Username Number
           </label>
           <TextInput
-            id={"alternativeusernamenumber"}
+            id={"contact"}
             placeholder="Enter your Alternate Username number here"
             required
           />
@@ -210,12 +210,12 @@ export default function PrinterForm() {
         <div className="Serial Number">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="serialnumber"
+            htmlFor="serial"
           >
             Serial Number
           </label>
           <TextInput
-            id={"serialnumber"}
+            id={"serial"}
             placeholder="Enter your Serial Number here"
             required
           />
@@ -223,12 +223,12 @@ export default function PrinterForm() {
         <div className="Alternate Username">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="alternativeusername"
+            htmlFor="contact_num"
           >
             Alternate Username
           </label>
           <TextInput
-            id={"alternativeusername"}
+            id={"contact_num"}
             placeholder="Enter your Alternate Username here"
             required
           />
@@ -273,12 +273,12 @@ export default function PrinterForm() {
         <div className="User">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="user"
+            htmlFor="users"
           >
             User
           </label>
           <SelectOption
-            id="user"
+            id="users"
             options={usersOptions.data?.data}
           />
         </div>
@@ -309,12 +309,12 @@ export default function PrinterForm() {
         <div className="Groups">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="group"
+            htmlFor="groups"
           >
             Groups
           </label>
           <SelectOption
-            id="group"
+            id="groups"
             options={groupsOptions.data?.data}
           />
         </div>
