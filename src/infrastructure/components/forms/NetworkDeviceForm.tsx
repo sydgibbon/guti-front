@@ -98,12 +98,12 @@ export default function NetDeviceForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="location"
+            htmlFor="locations"
           >
             Locations
           </label>
           <SelectOption
-            id={"location"}
+            id={"locations"}
             options={locationOptions.data?.data}
           />
         </div>
@@ -111,12 +111,12 @@ export default function NetDeviceForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="type"
+            htmlFor="networkequipmenttypes"
           >
             Networking Equipment Types
           </label>
           <SelectOption
-            id="type"
+            id="networkequipmenttypes"
             options={networkDeviceTypeOptions?.data}
           />
         </div>
@@ -124,12 +124,12 @@ export default function NetDeviceForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="hardware"
+            htmlFor="users_tech"
           >
             Technician in charge of the hardware
           </label>
           <SelectOption
-            id={"hardware"}
+            id={"users_tech"}
             options={userInChargeOptions.data?.data}
           />
         </div>
@@ -142,7 +142,7 @@ export default function NetDeviceForm() {
             Manufacturers
           </label>
           <SelectOption
-            id="manufacturer"
+            id="manufacturers"
             options={manufacturerOptions.data?.data}
           />
         </div>
@@ -150,12 +150,12 @@ export default function NetDeviceForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="group-hardware"
+            htmlFor="groups_tech"
           >
             Group in charge of the hardware
           </label>
           <SelectOption
-            id={"group-hardware"}
+            id={"groups_tech"}
             options={groupInChargeOptions.data?.data}
           />
         </div>
@@ -163,12 +163,12 @@ export default function NetDeviceForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="model"
+            htmlFor="networkequipmentmodels"
           >
             Model
           </label>
           <SelectOption
-            id="model"
+            id="networkequipmentmodels"
             options={networkDeviceModelOptions?.data}
           />
         </div>
@@ -176,12 +176,12 @@ export default function NetDeviceForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="alternativeusernamenumber"
+            htmlFor="contact"
           >
             Alternate Username Number
           </label>
           <TextInput
-            id={"alternativeusernamenumber"}
+            id={"contact"}
             placeholder="Enter your Alternate Username number here"
             required
           />
@@ -190,12 +190,12 @@ export default function NetDeviceForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="serialnumber"
+            htmlFor="serial"
           >
             Serial Number
           </label>
           <TextInput
-            id={"serialnumber"}
+            id={"serial"}
             placeholder="Enter your Serial Number here"
             required
           />
@@ -204,12 +204,12 @@ export default function NetDeviceForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="alternativeusername"
+            htmlFor="contact_num"
           >
             Alternate Username
           </label>
           <TextInput
-            id={"alternativeusername"}
+            id={"contact_num"}
             placeholder="Enter your Alternate Username here"
             required
           />
@@ -245,12 +245,12 @@ export default function NetDeviceForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="snmpcredential"
+            htmlFor="snmpcredentials"
           >
             SNMP credential
           </label>
           <SelectOption
-            id="snmpcredential"
+            id="snmpcredentials"
             options={snpmCredentialOptions.data?.data}
           />
         </div>
@@ -258,12 +258,12 @@ export default function NetDeviceForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="user"
+            htmlFor="users"
           >
             User
           </label>
           <SelectOption
-            id="user"
+            id="users"
             options={usersOptions.data?.data}
           />
         </div>
@@ -284,12 +284,12 @@ export default function NetDeviceForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="group"
+            htmlFor="groups"
           >
             Groups
           </label>
           <SelectOption
-            id="group"
+            id="groups"
             options={groupsOptions.data?.data}
           />
         </div>
