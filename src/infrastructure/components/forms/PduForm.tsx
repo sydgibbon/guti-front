@@ -1,39 +1,46 @@
-import { useEffect } from "react"
-import SelectOption, { OptionValue } from "../SelectOption"
-import TextArea from "../TextArea"
-import TextInput from "../TextInput"
-import Form from "./Form"
-import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect"
-import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect"
-import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect"
-import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect"
-import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect"
-import { useGetPdumodelsSelect } from "../../hooks/Pdus/useGetPdumodelsSelect"
-import { useGetPdutypesSelect } from "../../hooks/Pdus/useGetPdutypesSelect"
+import { useEffect } from "react";
+import SelectOption, { OptionValue } from "../SelectOption";
+import TextArea from "../TextArea";
+import TextInput from "../TextInput";
+import Form from "./Form";
+import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
+import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
+import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
+import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect";
+import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
+import { useGetPdumodelsSelect } from "../../hooks/Pdus/useGetPdumodelsSelect";
+import { useGetPdutypesSelect } from "../../hooks/Pdus/useGetPdutypesSelect";
+import { pdusService } from "../../../domain/services/api/Pdus.service";
+import { PduData } from "../../../domain/models/forms/PduData";
 
 export default function PduForm() {
-
   const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault()
-  }
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(
+      formData.entries()
+    ) as unknown as PduData;
+    pdusService.createPdu(formJson);
+  };
 
-  const userInChargeOptions = useGetUserInChargeSelect()
-  const groupInChargeOptions = useGetGroupInChargeSelect()
-  const locationOptions = useGetLocationsSelect()
-  const stateOptions = useGetStatesSelect()
-  const manufacturerOptions = useGetManufacturersSelect()
-  const pduModelOptions = useGetPdumodelsSelect()
-  const pduTypeOptions = useGetPdutypesSelect()
+  const userInChargeOptions = useGetUserInChargeSelect();
+  const groupInChargeOptions = useGetGroupInChargeSelect();
+  const locationOptions = useGetLocationsSelect();
+  const stateOptions = useGetStatesSelect();
+  const manufacturerOptions = useGetManufacturersSelect();
+  const pduModelOptions = useGetPdumodelsSelect();
+  const pduTypeOptions = useGetPdutypesSelect();
 
   useEffect(() => {
-    userInChargeOptions.get()
-    groupInChargeOptions.get()
-    locationOptions.get()
-    stateOptions.get()
-    manufacturerOptions.get()
-    pduModelOptions.get()
-    pduTypeOptions.get()
-  }, [])
+    userInChargeOptions.get();
+    groupInChargeOptions.get();
+    locationOptions.get();
+    stateOptions.get();
+    manufacturerOptions.get();
+    pduModelOptions.get();
+    pduTypeOptions.get();
+  }, []);
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -58,12 +65,12 @@ export default function PduForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="status"
+            htmlFor="states"
           >
             Status
           </label>
           <SelectOption
-            id={"status"}
+            id={"states"}
             options={stateOptions.data?.data}
           />
         </div>
@@ -71,12 +78,12 @@ export default function PduForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="location"
+            htmlFor="locations"
           >
             Locations
           </label>
           <SelectOption
-            id={"location"}
+            id={"locations"}
             options={locationOptions.data?.data}
           />
         </div>
@@ -97,12 +104,12 @@ export default function PduForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="user_tech"
+            htmlFor="users_tech"
           >
             Technician in charge of the hardware
           </label>
           <SelectOption
-            id={"user_tech"}
+            id={"users_tech"}
             options={userInChargeOptions.data?.data}
           />
         </div>
@@ -188,5 +195,5 @@ export default function PduForm() {
         </div>
       </Form>
     </div>
-  )
-};
+  );
+}
