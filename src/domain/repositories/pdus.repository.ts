@@ -4,7 +4,7 @@ import http from "../services/api/http";
 
 export const pdusRepository = {
   createPdu: async (body: PduData) => {
-    const response = await http.post<PdusDTO>("createPdu", body);
+    const response = await http.post<PdusDTO>("createPdu/", body);
 
     return response;
   },
