@@ -156,12 +156,12 @@ export default function PduForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="serialnumber"
+            htmlFor="otherserial"
           >
             Serial Number
           </label>
           <TextInput
-            id={"serialnumber"}
+            id={"otherserial"}
             placeholder="Enter your Serial Number here"
             required
           />
