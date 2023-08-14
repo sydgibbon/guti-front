@@ -9,10 +9,18 @@ import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInCharg
 import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect"
 import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect"
 import { useGetCartridgetypesSelect } from "../../hooks/Cartridges/useGetCartridgetypesSelect"
+import { CartridgeData } from "../../../domain/models/forms/CartridgesData"
+import { cartridgesService } from "../../../domain/services/api/Cartridges.service"
 
 export default function CartridgeForm() {
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(
+      formData.entries()
+    ) as unknown as CartridgeData;
+    cartridgesService.createCartridge(formJson);
   }
 
   const numbers = (): OptionValue[] => {
@@ -53,69 +61,69 @@ export default function CartridgeForm() {
         <div className="Name">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="testing"
+            htmlFor="name"
           >
             Name
           </label>
           <TextInput
-            id={"testing"}
+            id={"name"}
             placeholder={"ingrese su nombre"}
           />
         </div>
         <div className="Locations">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="location"
+            htmlFor="locations"
           >
             Locations
           </label>
           <SelectOption
-            id={"location"}
+            id={"locations"}
             options={locationOptions.data?.data}
           />
         </div>
         <div className="Cartridge Types">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="type"
+            htmlFor="cartridgeitemtypes"
           >
             Cartridge Types
           </label>
           <SelectOption
-            id="type"
+            id="cartridgeitemtypes"
             options={cartridgeTypeOptions?.data}
           />
         </div>
         <div className="Reference">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="reference"
+            htmlFor="ref"
           >
             Reference
           </label>
-          <TextInput id={"reference"} />
+          <TextInput id={"ref"} />
         </div>
         <div className="Technician in charge of the hardware">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="hardware"
+            htmlFor="users"
           >
             Technician in charge of the hardware
           </label>
           <SelectOption
-            id={"hardware"}
+            id={"users"}
             options={userInChargeOptions.data?.data}
           />
         </div>
         <div className="Manufacturers">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="manufacturer"
+            htmlFor="manufacturers"
           >
             Manufacturers
           </label>
           <SelectOption
-            id="manufacturer"
+            id="manufacturers"
             options={manufacturerOptions.data?.data}
           />
         </div>
@@ -146,24 +154,24 @@ export default function CartridgeForm() {
         <div className="Alert Threshold">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="alertthreshold"
+            htmlFor="alarm_threshold"
           >
             Alert Threshold
           </label>
           <SelectOption
-            id={"alertthreshold"}
+            id={"alarm_threshold"}
             options={threshold}
           />
         </div>
         <div className="Pictures">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="pictures"
+            htmlFor="pic"
           >
             Pictures
           </label>
           <ImageInput
-            id={"pictures"}
+            id={"pic"}
             fileType={".jpg, .jpeg, .png"}
             maxSize={3}
           />

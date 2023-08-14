@@ -17,7 +17,7 @@ import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/use
 import { ComputerData } from "../../../domain/models/forms/ComputerData"
 import { computersService } from "../../../domain/services/api/Computers.service"
 
-export default function ComputersForm() {
+export default function ComputerForm() {
   // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {
