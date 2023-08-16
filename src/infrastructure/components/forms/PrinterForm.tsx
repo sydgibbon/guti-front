@@ -113,12 +113,12 @@ export default function PrinterForm() {
         <div className="Status">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="status"
+            htmlFor="states"
           >
             Status
           </label>
           <SelectOption
-            id={"status"}
+            id={"states"}
             options={stateOptions.data?.data}
           />
         </div>
@@ -297,12 +297,12 @@ export default function PrinterForm() {
         <div className="Network">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="network"
+            htmlFor="networks"
           >
             Network
           </label>
           <SelectOption
-            id="network"
+            id="networks"
             options={networkOptions.data?.data}
           />
         </div>
@@ -346,48 +346,48 @@ export default function PrinterForm() {
         <div className="Update Source">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="updatesource"
+            htmlFor="autoupdatesystems"
           >
             Update Source
           </label>
           <SelectOption
-            id="updatesource"
+            id="autoupdatesystems"
             options={autoupdatesystemOptions.data?.data}
           />
         </div>
         <div className="Memory">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="memory"
+            htmlFor="memory_size"
           >
             Memory
           </label>
           <TextInput
-            id={"memory"}
+            id={"memory_size"}
             type={"number"}
           />
         </div>
         <div className="Initial page counter">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="initialpagecounter"
+            htmlFor="init_pages_counter"
           >
             Initial page counter
           </label>
           <TextInput
-            id={"initialpagecounter"}
+            id={"init_pages_counter"}
             type={"number"}
           />
         </div>
         <div className="Current counter of pages">
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="currentcounterofpages"
+            htmlFor="last_pages_counter"
           >
             Current counter of pages
           </label>
           <TextInput
-            id={"currentcounterofpages"}
+            id={"last_pages_counter"}
             type={"number"}
           />
         </div>
