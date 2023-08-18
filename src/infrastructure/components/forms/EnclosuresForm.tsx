@@ -9,12 +9,21 @@ import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManuf
 import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect"
 import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect"
 import { useGetEnclosuremodelsSelect } from "../../hooks/Enclosures/useGetEnclosuremodelsSelect"
+import { EnclosureData } from "../../../domain/models/forms/EnclosureData"
+import { enclosuresService } from "../../../domain/services/api/Enclosures.service"
 
 export default function EnclosuresForm() {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault()
-  }
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(
+      formData.entries()
+    ) as unknown as EnclosureData;
+    enclosuresService.createEnclosure(formJson);
+    // debugger;
+  };
 
   const userInChargeOptions = useGetUserInChargeSelect()
   const groupInChargeOptions = useGetGroupInChargeSelect()
@@ -30,6 +39,7 @@ export default function EnclosuresForm() {
     stateOptions.get()
     manufacturerOptions.get()
     enclosureModelOptions.get()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -41,97 +51,98 @@ export default function EnclosuresForm() {
       >
         <div>
           <label
-            htmlFor="testing"
+            htmlFor="name"
             className="text-sm mb-2 font-semibold block"
           >
             Name
           </label>
           <TextInput
-            id={"testing"}
+            id={"name"}
             placeholder={"ingrese su nombre"}
+            required
           />
         </div>
         <div>
           <label
-            htmlFor="status"
+            htmlFor="states"
             className="text-sm mb-2 font-semibold block"
           >
             Status
           </label>
           <SelectOption
-            id={"status"}
+            id={"states"}
             options={stateOptions.data?.data}
           />
         </div>
         <div>
           <label
-            htmlFor="location"
+            htmlFor="locations"
             className="text-sm mb-2 font-semibold block"
           >
             Locations
           </label>
           <SelectOption
-            id={"location"}
+            id={"locations"}
             options={locationOptions.data?.data}
           />
         </div>
         <div>
           <label
-            htmlFor="hardware"
+            htmlFor="users_tech"
             className="text-sm mb-2 font-semibold block"
           >
             Technician in charge of the hardware
           </label>
           <SelectOption
-            id={"hardware"}
+            id={"users_tech"}
             options={userInChargeOptions.data?.data}
           />
         </div>
         <div>
           <label
-            htmlFor="manufacturer"
+            htmlFor="manufacturers"
             className="text-sm mb-2 font-semibold block"
           >
             Manufacturers
           </label>
           <SelectOption
-            id="manufacturer"
+            id="manufacturers"
             options={manufacturerOptions.data?.data}
           />
         </div>
         <div>
           <label
-            htmlFor="group-hardware"
+            htmlFor="groups_tech"
             className="text-sm mb-2 font-semibold block"
           >
             Group in charge of the hardware
           </label>
           <SelectOption
-            id={"group-hardware"}
+            id={"groups_tech"}
             options={groupInChargeOptions.data?.data}
           />
         </div>
         <div>
           <label
-            htmlFor="model"
+            htmlFor="enclosuremodels"
             className="text-sm mb-2 font-semibold block"
           >
             Model
           </label>
           <SelectOption
-            id="model"
+            id="enclosuremodels"
             options={enclosureModelOptions?.data}
           />
         </div>
         <div>
           <label
-            htmlFor="serialnumber"
+            htmlFor="serial"
             className="text-sm mb-2 font-semibold block"
           >
             Serial Number
           </label>
           <TextInput
-            id={"serialnumber"}
+            id={"serial"}
             placeholder="Enter your Serial Number here"
             required
           />
