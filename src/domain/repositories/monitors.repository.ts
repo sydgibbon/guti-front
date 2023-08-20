@@ -33,4 +33,9 @@ export const monitorsRepository = {
 
     return response.data;
   },
+  getMonitorById: async (id: number) => {
+    const response = await http.get("getMonitorsById/" + id + "/");
+
+    return response.data;
+  },
 };

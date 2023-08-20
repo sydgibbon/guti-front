@@ -107,12 +107,12 @@ export default function ComputersForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="type"
+            htmlFor="computertypes"
           >
             Computer Types
           </label>
           <SelectOption
-            id="type"
+            id="computertypes"
             options={computerTypeOptions?.data}
           />
         </div>
@@ -120,12 +120,12 @@ export default function ComputersForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="hardware"
+            htmlFor="users_tech"
           >
             Technician in Charge of the Hardware
           </label>
           <SelectOption
-            id="hardware"
+            id="users_tech"
             options={userInChargeOptions.data?.data}
           />
         </div>
@@ -133,12 +133,12 @@ export default function ComputersForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="manufacturer"
+            htmlFor="manufacturers"
           >
             Manufacturers
           </label>
           <SelectOption
-            id="manufacturer"
+            id="manufacturers"
             options={manufacturerOptions.data?.data}
           />
         </div>
@@ -146,12 +146,12 @@ export default function ComputersForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="group-hardware"
+            htmlFor="groups_tech"
           >
             Group in Charge of the Hardware
           </label>
           <SelectOption
-            id="group-hardware"
+            id="groups_tech"
             options={groupInChargeOptions.data?.data}
           />
         </div>
@@ -159,12 +159,12 @@ export default function ComputersForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="model"
+            htmlFor="computermodels"
           >
             Model
           </label>
           <SelectOption
-            id="model"
+            id="computermodels"
             options={computerModelOptions?.data}
           />
         </div>
@@ -172,12 +172,12 @@ export default function ComputersForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="alternativeusernamenumber"
+            htmlFor="contact_num"
           >
             Alternate username number
           </label>
           <TextInput
-            id={"alternativeusernamenumber"}
+            id={"contact_num"}
             placeholder="Enter your alternate username number here"
             required
           />
@@ -186,12 +186,12 @@ export default function ComputersForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="serialnumber"
+            htmlFor="serial"
           >
             Serial Number
           </label>
           <TextInput
-            id={"serialnumber"}
+            id={"serial"}
             placeholder="Enter your Serial Number here"
             required
           />
@@ -200,12 +200,12 @@ export default function ComputersForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="alternativeusername"
+            htmlFor="contact"
           >
             Alternate Username
           </label>
           <TextInput
-            id={"alternativeusername"}
+            id={"contact"}
             placeholder="Enter your Alternate Username here"
             required
           />
@@ -214,12 +214,12 @@ export default function ComputersForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="inventoryassetnumber"
+            htmlFor="otherserial"
           >
             Inventory/Asset Number
           </label>
           <TextInput
-            id={"inventoryassetnumber"}
+            id={"otherserial"}
             placeholder="Enter your Inventory/Asset Number here"
             required
           />
@@ -228,12 +228,12 @@ export default function ComputersForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="user"
+            htmlFor="users"
           >
             User
           </label>
           <SelectOption
-            id="user"
+            id="users"
             options={usersOptions.data?.data}
           />
         </div>
@@ -241,12 +241,12 @@ export default function ComputersForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="network"
+            htmlFor="networks"
           >
             Network
           </label>
           <SelectOption
-            id="network"
+            id="networks"
             options={networkOptions.data?.data}
           />
         </div>
@@ -254,12 +254,12 @@ export default function ComputersForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="group"
+            htmlFor="groups"
           >
             Groups
           </label>
           <SelectOption
-            id="group"
+            id="groups"
             options={groupsOptions.data?.data}
           />
         </div>
@@ -295,12 +295,12 @@ export default function ComputersForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="updatesource"
+            htmlFor="autoupdatesystems"
           >
             Update Source
           </label>
           <SelectOption
-            id="updatesource"
+            id="autoupdatesystems"
             options={autoupdatesystemOptions.data?.data}
           />
         </div>

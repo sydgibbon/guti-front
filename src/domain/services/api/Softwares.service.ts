@@ -19,4 +19,8 @@ export const softwaresService = {
   getSoftwarelicensesCount: () => {
     return softwaresRepository.getSoftwarelicensesCount();
   },
+
+  getSoftwareById: (id: number) => {
+    return softwaresRepository.getSoftwareById(id);
+  },
 };

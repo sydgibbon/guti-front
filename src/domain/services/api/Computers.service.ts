@@ -27,4 +27,7 @@ export const computersService = {
   getComputersByManufacturers: () => {
     return computersRepository.getComputersByManufacturers();
   },
+  getComputerById: (id: number) => {
+    return computersRepository.getComputerById(id);
+  },
 };
