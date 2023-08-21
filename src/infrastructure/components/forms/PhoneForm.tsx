@@ -79,12 +79,12 @@ export default function PhoneForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="testing"
+            htmlFor="name"
           >
             Name
           </label>
           <TextInput
-            id={"testing"}
+            id={"name"}
             placeholder={"ingrese su nombre"}
           />
         </div>
@@ -92,12 +92,12 @@ export default function PhoneForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="status"
+            htmlFor="states"
           >
             Status
           </label>
           <SelectOption
-            id={"status"}
+            id={"states"}
             options={stateOptions.data?.data}
           />
         </div>
@@ -105,12 +105,12 @@ export default function PhoneForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="location"
+            htmlFor="locations"
           >
             Locations
           </label>
           <SelectOption
-            id={"location"}
+            id={"locations"}
             options={locationOptions.data?.data}
           />
         </div>
@@ -118,12 +118,12 @@ export default function PhoneForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="type"
+            htmlFor="phonetypes"
           >
             Phone types
           </label>
           <SelectOption
-            id="type"
+            id="phonetypes"
             options={phoneTypeOptions?.data}
           />
         </div>
@@ -131,12 +131,12 @@ export default function PhoneForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="hardware"
+            htmlFor="users_tech"
           >
             Technician in charge of the hardware
           </label>
           <SelectOption
-            id={"hardware"}
+            id={"users_tech"}
             options={userInChargeOptions.data?.data}
           />
         </div>
@@ -144,12 +144,12 @@ export default function PhoneForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="manufacturer"
+            htmlFor="manufacturers"
           >
             Manufacturers
           </label>
           <SelectOption
-            id="manufacturer"
+            id="manufacturers"
             options={manufacturerOptions.data?.data}
           />
         </div>
@@ -157,12 +157,12 @@ export default function PhoneForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="group-hardware"
+            htmlFor="grouptech"
           >
             Group in charge of the hardware
           </label>
           <SelectOption
-            id={"group-hardware"}
+            id={"grouptech"}
             options={groupInChargeOptions.data?.data}
           />
         </div>
@@ -170,12 +170,12 @@ export default function PhoneForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="model"
+            htmlFor="phonemodels"
           >
             Model
           </label>
           <SelectOption
-            id="model"
+            id="phonemodels"
             options={phoneModelOptions?.data}
           />
         </div>
@@ -183,12 +183,12 @@ export default function PhoneForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="alternativeusernamenumber"
+            htmlFor="contact_num"
           >
             Alternate Username Number
           </label>
           <TextInput
-            id={"alternativeusernamenumber"}
+            id={"contact_num"}
             placeholder="Enter your Alternate Username number here"
             required
           />
@@ -197,12 +197,12 @@ export default function PhoneForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="serialnumber"
+            htmlFor="serial"
           >
             Serial Number
           </label>
           <TextInput
-            id={"serialnumber"}
+            id={"serial"}
             placeholder="Enter your Serial Number here"
             required
           />
@@ -211,12 +211,12 @@ export default function PhoneForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="alternativeusername"
+            htmlFor="contact"
           >
             Alternate Username
           </label>
           <TextInput
-            id={"alternativeusername"}
+            id={"contact"}
             placeholder="Enter your Alternate Username here"
             required
           />
@@ -239,12 +239,12 @@ export default function PhoneForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="user"
+            htmlFor="users"
           >
             User
           </label>
           <SelectOption
-            id="user"
+            id="users"
             options={usersOptions.data?.data}
           />
         </div>
@@ -265,12 +265,12 @@ export default function PhoneForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="group"
+            htmlFor="groups"
           >
             Groups
           </label>
           <SelectOption
-            id="group"
+            id="groups"
             options={groupsOptions.data?.data}
           />
         </div>
@@ -317,12 +317,12 @@ export default function PhoneForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="updatesource"
+            htmlFor="autoupdatesystems"
           >
             Update Source
           </label>
           <SelectOption
-            id="updatesource"
+            id="autoupdatesystems"
             options={autoupdatesystemOptions.data?.data}
           />
         </div>

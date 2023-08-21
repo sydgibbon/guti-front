@@ -1,7 +1,13 @@
 import { PhoneDTO } from "../dto/PhoneDTO";
+import { PhoneData } from "../models/forms/PhoneData";
 import http from "../services/api/http";
 
 export const phonesRepository = {
+  createPhone: async (body: PhoneData) => {
+    const response = await http.post<PhoneData>("createPhone/", body);
+
+    return response;
+  },
   getAllPhones: async () => {
     const response = await http.get<PhoneDTO>("getPhones/");
 
