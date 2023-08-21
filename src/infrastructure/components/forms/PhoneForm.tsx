@@ -15,11 +15,19 @@ import { useGetPhonetypesSelect } from "../../hooks/Phones/useGetPhonetypesSelec
 import { useGetPhonemodelsSelect } from "../../hooks/Phones/useGetPhonemodelsSelect"
 import { useGetPhonePowerSuppliesSelect } from "../../hooks/Phones/useGetPhonePowerSuppliesSelect"
 import Checkbox from "../CheckBox"
+import { PhoneData } from "../../../domain/models/forms/PhoneData"
+import { phonesService } from "../../../domain/services/api/Phones.service"
 
 export default function PhoneForm() {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(
+      formData.entries()
+    ) as unknown as PhoneData;
+    phonesService.createPhone(formJson);
   }
 
   interface CheckboxState {

@@ -4,7 +4,7 @@ import http from "../services/api/http";
 
 export const phonesRepository = {
   createPhone: async (body: PhoneData) => {
-    const response = await http.post<PhoneData>("createPhone/", body);
+    const response = await http.post<PhoneDTO>("createPhone/", body);
 
     return response;
   },
