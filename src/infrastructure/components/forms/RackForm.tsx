@@ -88,6 +88,7 @@ export default function RackForm() {
           <TextInput
             id={"name"}
             placeholder={"ingrese su nombre"}
+            required
           />
         </div>
 
@@ -271,6 +272,7 @@ export default function RackForm() {
           <TextInput
             id={"number_units"}
             type={"number"}
+            required
           />
         </div>
 
@@ -284,6 +286,7 @@ export default function RackForm() {
           <TextInput
             id={"width"}
             type={"number"}
+            required
           />
         </div>
 
@@ -297,6 +300,7 @@ export default function RackForm() {
           <TextInput
             id={"height"}
             type={"number"}
+            required
           />
         </div>
 
@@ -310,6 +314,7 @@ export default function RackForm() {
           <TextInput
             id={"depth"}
             type={"number"}
+            required
           />
         </div>
 
@@ -323,6 +328,7 @@ export default function RackForm() {
           <TextInput
             id={"max_power"}
             type={"number"}
+            required
           />
         </div>
 
@@ -336,6 +342,7 @@ export default function RackForm() {
           <TextInput
             id={"mesured_power"}
             type={"number"}
+            required
           />
         </div>
 
@@ -349,6 +356,7 @@ export default function RackForm() {
           <TextInput
             id={"max_weight"}
             type={"number"}
+            required
           />
         </div>
 
