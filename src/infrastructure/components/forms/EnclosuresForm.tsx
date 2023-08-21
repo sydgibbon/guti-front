@@ -182,6 +182,7 @@ export default function EnclosuresForm() {
           <TextInput
             id={"power_supplies"}
             type={"number"}
+            required
           />
         </div>
       </Form>
