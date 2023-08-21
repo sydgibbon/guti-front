@@ -1,19 +1,19 @@
 import { useCallback, useState } from "react";
-import { monitorsService } from "../../../domain/services/api/Monitors.service";
-import { MonitorData } from "../../../domain/models/forms/MonitorData";
+import { softwaresService } from "../../../domain/services/api/Softwares.service";
+import { SoftwareData } from "../../../domain/models/forms/SoftwareData";
 
-  const useCreateMonitors = () => {
+export const useCreateSoftware = () => {
   const [data, setData] = useState<any>(undefined);
   const [error, setError] = useState<undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
 
   const post = useCallback(
-    async (monitorData: MonitorData) => {
+    async (softwareData: SoftwareData) => {
       setIsLoading(true);
       try {
-        const newMonitors = await monitorsService.createMonitors(monitorData)
+        const newSoftware = await softwaresService.createSoftware(softwareData)
 
-        setData(newMonitors);
+        setData(newSoftware);
       } catch (e: any) {
         setError(e);
         console.error(e);
@@ -23,5 +23,3 @@ import { MonitorData } from "../../../domain/models/forms/MonitorData";
 
   return { data, error, isLoading, post };
 };
-
-export default useCreateMonitors;
