@@ -14,11 +14,19 @@ import { useGetSoftwareCategoriesSelect } from "../../hooks/Softwares/useGetSoft
 import { useGetAllSoftwares } from "../../hooks/Softwares/useGetAllSoftwares"
 import Checkbox from "../CheckBox"
 import ImageInput from "../ImageInput"
+import { SoftwareData } from "../../../domain/models/forms/SoftwareData"
+import { softwaresService } from "../../../domain/services/api/Softwares.service"
 
 export default function SoftwareForm() {
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
-  }
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(formData.entries()) as unknown as SoftwareData;
+    softwaresService.createSoftware(formJson)
+
+  };
+
 
   const userInChargeOptions = useGetUserInChargeSelect()
   const usersOptions = useGetUsersSelect()
@@ -74,7 +82,7 @@ export default function SoftwareForm() {
             Name
           </label>
           <TextInput
-            id={"testing"}
+            id={"name"}
             placeholder={"ingrese su nombre"}
           />
         </div>
@@ -88,7 +96,7 @@ export default function SoftwareForm() {
           </label>
           <div className="grid grid-cols-4 gap-2 flex-1">
             <Checkbox
-              id="childof"
+              id="is_helpdesk_visible"
               checked={checkboxes.associable}
               onChange={() => handleCheckboxChange("associable")}
             />
@@ -103,7 +111,7 @@ export default function SoftwareForm() {
             Locations
           </label>
           <SelectOption
-            id={"location"}
+            id={"locations"}
             options={locationOptions.data?.data}
           />
         </div>
@@ -116,7 +124,7 @@ export default function SoftwareForm() {
             Technician in charge of the hardware
           </label>
           <SelectOption
-            id={"hardware"}
+            id={"users_tech"}
             options={userInChargeOptions.data?.data}
           />
         </div>
@@ -129,7 +137,7 @@ export default function SoftwareForm() {
             Publisher
           </label>
           <SelectOption
-            id={"publisher"}
+            id={"manufacturers"}
             options={manufacturerOptions.data?.data}
           />
         </div>
@@ -142,7 +150,7 @@ export default function SoftwareForm() {
             Group in charge of the hardware
           </label>
           <SelectOption
-            id={"group-hardware"}
+            id={"groups_tech"}
             options={groupInChargeOptions.data?.data}
           />
         </div>
@@ -155,7 +163,7 @@ export default function SoftwareForm() {
             User
           </label>
           <SelectOption
-            id={"user"}
+            id={"users"}
             options={usersOptions.data?.data}
           />
         </div>
@@ -195,7 +203,7 @@ export default function SoftwareForm() {
             Pictures
           </label>
           <ImageInput
-            id={"pictures"}
+            id={"picture"}
             fileType={".jpg, .jpeg, .png"}
             maxSize={3}
           />
@@ -207,7 +215,7 @@ export default function SoftwareForm() {
           </label>
           <div className="grid grid-cols-4 gap-2">
             <Checkbox
-              id="upgrade"
+              id="is_update"
               label="From"
               checked={checkboxes.upgrade}
               onChange={() => handleCheckboxChange("upgrade")}

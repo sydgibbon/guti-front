@@ -1,11 +1,12 @@
 import { MonitorDTO } from "../dto/MonitorDTO";
 import http from "../services/api/http";
+import { MonitorData } from "../models/forms/MonitorData";
 
 export const monitorsRepository = {
-  createMonitors: async (body: object) => {
-    const response = await http.post("monitors/", body);
+  createMonitor: async (body: MonitorData) => {
+    const response = await http.post<MonitorDTO>("createMonitor/", body);
 
-    return response.data;
+    return response;
   },
   getAllMonitors: async () => {
     const response = await http.get<MonitorDTO>("getMonitors/");
