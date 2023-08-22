@@ -15,7 +15,8 @@ import SimCardForm from "../../components/forms/SimCardForm";
 import SoftwareForm from "../../components/forms/SoftwareForm";
 import { useGetComputerById } from "../../hooks/Computers/useGetComputerById";
 import { useGetMonitorById } from "../../hooks/Monitors/useGetMonitorById";
-import { useGetSoftwareById } from "../../hooks/Softwares/useGetSoftwaresCount copy";
+import { useGetNetworkDeviceById } from "../../hooks/NetworksDevices/useGetNetworkDeviceById";
+import { useGetSoftwareById } from "../../hooks/Softwares/useGetSoftwareById";
 
 export interface EditAssetOption {
   name: string;
@@ -116,7 +117,7 @@ export const AssetOptions: EditAssetOption[] = [
   },
   {
     name: "Networkequipments",
-    useGetAssetData: useGetComputerById,
+    useGetAssetData: useGetNetworkDeviceById,
     options: [
       { name: "Network Devices", content: <NetDeviceForm /> },
       { name: "Impact Analysis", content: "" },

@@ -58,9 +58,9 @@ export default function NetDeviceForm() {
         iconName={"NetworkDevices"}
       >
         <div>
-          <label className="text-sm mb-2 font-semibold block" htmlFor="testing">Name</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="name">Name</label>
           <TextInput
-            id={"testing"}
+            id={"name"}
             placeholder={"ingrese su nombre"}
           />
         </div>
@@ -74,75 +74,75 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block" htmlFor="location">Locations</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="locations">Locations</label>
           <SelectOption
-            id={"location"}
+            id={"locations"}
             options={locationOptions.data?.data}
           />
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block" htmlFor="type">Networking Equipment Types</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="networkequipmenttypes">Networking Equipment Types</label>
           <SelectOption
-            id="type"
+            id="networkequipmenttypes"
             options={networkDeviceTypeOptions?.data}
           />
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block" htmlFor="hardware">Technician in charge of the hardware</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="users_tech">Technician in charge of the hardware</label>
           <SelectOption
-            id={"hardware"}
+            id={"users_tech"}
             options={userInChargeOptions.data?.data}
           />
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block" htmlFor="manufacturer">Manufacturers</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="manufacturers">Manufacturers</label>
           <SelectOption
-            id="manufacturer"
+            id="manufacturers"
             options={manufacturerOptions.data?.data}
           />
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block" htmlFor="group-hardware">Group in charge of the hardware</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="groups_tech">Group in charge of the hardware</label>
           <SelectOption
-            id={"group-hardware"}
+            id={"groups_tech"}
             options={groupInChargeOptions.data?.data}
           />
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block" htmlFor="model">Model</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="networkequipmentmodels">Model</label>
           <SelectOption
-            id="model"
+            id="networkequipmentmodels"
             options={networkDeviceModelOptions?.data}
           />
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block" htmlFor="alternativeusernamenumber">Alternate Username Number</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="contact_num">Alternate Username Number</label>
           <TextInput
-            id={"alternativeusernamenumber"}
+            id={"contact_num"}
             placeholder="Enter your Alternate Username number here"
             required
           />
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block" htmlFor="serialnumber">Serial Number</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="serial">Serial Number</label>
           <TextInput
-            id={"serialnumber"}
+            id={"serial"}
             placeholder="Enter your Serial Number here"
             required
           />
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block" htmlFor="alternativeusername">Alternate Username</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="contact">Alternate Username</label>
           <TextInput
-            id={"alternativeusername"}
+            id={"contact"}
             placeholder="Enter your Alternate Username here"
             required
           />
@@ -166,33 +166,33 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block" htmlFor="snmpcredential">SNMP credential</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="snmpcredentials">SNMP credential</label>
           <SelectOption
-            id="snmpcredential"
+            id="snmpcredentials"
             options={snpmCredentialOptions.data?.data}
           />
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block" htmlFor="user">User</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="users">User</label>
           <SelectOption
-            id="user"
+            id="users"
             options={usersOptions.data?.data}
           />
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block" htmlFor="network">Network</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="networks">Network</label>
           <SelectOption
-            id="network"
+            id="networks"
             options={networkOptions.data?.data}
           />
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block" htmlFor="group">Groups</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="groups">Groups</label>
           <SelectOption
-            id="group"
+            id="groups"
             options={groupsOptions.data?.data}
           />
         </div>
@@ -215,17 +215,17 @@ export default function NetDeviceForm() {
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block" htmlFor="memory">Memory (MB)</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="ram">Memory (MB)</label>
           <TextInput
-            id={"memory"}
+            id={"ram"}
             type={"number"}
           />
         </div>
 
         <div>
-          <label className="text-sm mb-2 font-semibold block" htmlFor="updatesource">Update Source</label>
+          <label className="text-sm mb-2 font-semibold block" htmlFor="autoupdatesystems">Update Source</label>
           <SelectOption
-            id="updatesource"
+            id="autoupdatesystems"
             options={autoupdatesystemOptions.data?.data}
           />
         </div>

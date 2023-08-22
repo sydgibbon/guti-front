@@ -1170,6 +1170,15 @@ const router = createBrowserRouter([
           </Main>
         ),
       },
+      
+      {
+        path: "/assets/edit/networkequipments",
+        element: (
+          <Main>
+            <EditAsset />
+          </Main>
+        ),
+      },
 
       {
         path: "/assets/edit/simcards",

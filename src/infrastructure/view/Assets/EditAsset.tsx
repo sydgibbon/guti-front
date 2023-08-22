@@ -56,7 +56,7 @@ export default function EditAsset() {
       }
     }
 
-  }, [assetData?.data])
+  }, [assetData?.data, selectedOption])
   
 
   return (
