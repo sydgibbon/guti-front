@@ -18,6 +18,8 @@ import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import Form from "./Form";
 import Checkbox from "../CheckBox";
+import { PrinterData } from "../../../domain/models/forms/PrinterData";
+import { printersService } from "../../../domain/services/api/Printers.service";
 
 export default function PrinterForm() {
   interface CheckboxState {
@@ -45,6 +47,13 @@ export default function PrinterForm() {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(
+      formData.entries()
+    ) as unknown as PrinterData;
+
+    printersService.createPrinter(formJson);
   };
 
   const userInChargeOptions = useGetUserInChargeSelect();
@@ -82,93 +91,150 @@ export default function PrinterForm() {
 
   return (
     <div className="bg-white rounded container_form_computer">
-      <Form
-        handleSubmit={handleSubmit}
-        formHeader={"Printers"}
-        iconName={"Printers"}
-      >
+      <Form handleSubmit={handleSubmit}>
         <div className="Name">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="testing">Name</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="name"
+          >
+            Name
+          </label>
+
           <TextInput
-            id={"testing"}
+            id={"name"}
             placeholder={"ingrese su nombre"}
           />
         </div>
         <div className="Status">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="status">Status</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="states"
+          >
+            Status
+          </label>
           <SelectOption
-            id={"status"}
+            id={"states"}
             options={stateOptions.data?.data}
           />
         </div>
         <div className="Locations">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="location">Locations</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="locations"
+          >
+            Locations
+          </label>
           <SelectOption
-            id={"location"}
+            id={"locations"}
             options={locationOptions.data?.data}
           />
         </div>
         <div className="Printer Types">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="type">Printer Types</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="printertypes"
+          >
+            Printer Types
+          </label>
           <SelectOption
-            id="type"
+            id="printertypes"
             options={printerTypeOptions?.data}
           />
         </div>
         <div className="Technician in charge of the hardware">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="hardware">Technician in charge of the hardware</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="users_tech"
+          >
+            Technician in charge of the hardware
+          </label>
           <SelectOption
-            id={"hardware"}
+            id={"users_tech"}
             options={userInChargeOptions.data?.data}
           />
         </div>
         <div className="Manufacturers">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="manufacturer">Manufacturers</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="manufacturers"
+          >
+            Manufacturers
+          </label>
           <SelectOption
-            id="manufacturer"
+            id="manufacturers"
             options={manufacturerOptions.data?.data}
           />
         </div>
         <div className="Group in charge of the hardware">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="group-hardware">Group in charge of the hardware</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="groups_tech"
+          >
+            Group in charge of the hardware
+          </label>
           <SelectOption
-            id={"group-hardware"}
+            id={"groups_tech"}
             options={groupInChargeOptions.data?.data}
           />
         </div>
         <div className="Model">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="model">Model</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="printermodels"
+          >
+            Model
+          </label>
           <SelectOption
-            id="model"
+            id="printermodels"
             options={printerModelOptions?.data}
           />
         </div>
         <div className="Alternate Username Number">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="alternativeusernamenumber">Alternate Username Number</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="contact"
+          >
+            Alternate Username Number
+          </label>
           <TextInput
-            id={"alternativeusernamenumber"}
+            id={"contact"}
             placeholder="Enter your Alternate Username number here"
             required
           />
         </div>
         <div className="Serial Number">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="serialnumber">Serial Number</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="serial"
+          >
+            Serial Number
+          </label>
           <TextInput
-            id={"serialnumber"}
+            id={"serial"}
             placeholder="Enter your Serial Number here"
             required
           />
         </div>
         <div className="Alternate Username">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="alternativeusername">Alternate Username</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="contact_num"
+          >
+            Alternate Username
+          </label>
           <TextInput
-            id={"alternativeusername"}
+            id={"contact_num"}
             placeholder="Enter your Alternate Username here"
             required
           />
         </div>
         <div className="Inventory Number">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="otherserial">Inventory Number</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="otherserial"
+          >
+            Inventory Number
+          </label>
           <TextInput
             id={"otherserial"}
             placeholder="Enter your Inventory Number here"
@@ -176,49 +242,84 @@ export default function PrinterForm() {
           />
         </div>
         <div className="System description">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="sysdescr">System description</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="sysdescr"
+          >
+            System description
+          </label>
           <TextArea
             id={"sysdescr"}
             rows={3}
           />
         </div>
         <div className="SNMP credential">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="snmpcredential">SNMP credential</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="snmpcredential"
+          >
+            SNMP credential
+          </label>
           <SelectOption
             id="snmpcredential"
             options={snpmCredentialOptions.data?.data}
           />
         </div>
         <div className="User">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="user">User</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="users"
+          >
+            User
+          </label>
           <SelectOption
-            id="user"
+            id="users"
             options={usersOptions.data?.data}
           />
         </div>
         <div className="Managment Type">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="managmenttype">Managment Type</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="managmenttype"
+          >
+            Managment Type
+          </label>
           <SelectOption
             id="managmenttype"
             options={managementTypeOptions}
           />
         </div>
         <div className="Network">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="network">Network</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="networks"
+          >
+            Network
+          </label>
           <SelectOption
-            id="network"
+            id="networks"
             options={networkOptions.data?.data}
           />
         </div>
         <div className="Groups">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="group">Groups</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="groups"
+          >
+            Groups
+          </label>
           <SelectOption
-            id="group"
+            id="groups"
             options={groupsOptions.data?.data}
           />
         </div>
         <div className="UUID">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="uuid">UUID</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="uuid"
+          >
+            UUID
+          </label>
           <TextInput
             id="uuid"
             placeholder="Enter your UUID here"
@@ -226,37 +327,62 @@ export default function PrinterForm() {
           />
         </div>
         <div className="Comment">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="comment">Comment</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="comment"
+          >
+            Comment
+          </label>
           <TextArea
             id={"comment"}
             rows={3}
           />
         </div>
         <div className="Update Source">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="updatesource">Update Source</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="autoupdatesystems"
+          >
+            Update Source
+          </label>
           <SelectOption
-            id="updatesource"
+            id="autoupdatesystems"
             options={autoupdatesystemOptions.data?.data}
           />
         </div>
         <div className="Memory">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="memory">Memory</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="memory_size"
+          >
+            Memory
+          </label>
           <TextInput
-            id={"memory"}
+            id={"memory_size"}
             type={"number"}
           />
         </div>
         <div className="Initial page counter">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="initialpagecounter">Initial page counter</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="init_pages_counter"
+          >
+            Initial page counter
+          </label>
           <TextInput
-            id={"initialpagecounter"}
+            id={"init_pages_counter"}
             type={"number"}
           />
         </div>
         <div className="Current counter of pages">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="currentcounterofpages">Current counter of pages</label>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="last_pages_counter"
+          >
+            Current counter of pages
+          </label>
           <TextInput
-            id={"currentcounterofpages"}
+            id={"last_pages_counter"}
             type={"number"}
           />
         </div>
@@ -300,3 +426,4 @@ export default function PrinterForm() {
     </div>
   );
 };
+
