@@ -1,10 +1,9 @@
-import { useRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import SelectOption from "../SelectOption";
 import TextArea from "../TextArea";
 import TextInput from "../TextInput";
 import Form from "./Form";
 import Checkbox from "../CheckBox";
-import { useCreateMonitors } from "../../hooks/Monitors/useCreateMonitors";
 import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
 import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect";
 import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
@@ -15,35 +14,21 @@ import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManuf
 import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
 import { useGetMonitormodelsSelect } from "../../hooks/Monitors/useGetMonitormodelsSelect";
 import { useGetMonitortypesSelect } from "../../hooks/Monitors/useGetMonitortypesSelect";
-
+import { MonitorData } from "../../../domain/models/forms/MonitorData";
+import { monitorsService } from "../../../domain/services/api/Monitors.service";
 
 export default function MonitorForm() {
-  const monitors = useCreateMonitors();
 
-  // Forms Referencias 
-  const monitorName = useRef("")
-  const AlternateUsername = useRef("")
-  const AlternateUsernameNumber = useRef("")
-  const SerialNumber = useRef("")
-  const InventoryNumber = useRef("")
-  const User = useRef("")
-  const Size = useRef("")
-  const UUID = useRef("")
-  const Comment = useRef("")
-  const Upgrade = useRef()
+  const handleSubmit = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(
+      formData.entries()
+    ) as unknown as MonitorData;
 
-  const formsMonitors = {
-    name: monitorName.current,
-    alternateUsername: AlternateUsername.current,
-    serialNumber: SerialNumber.current,
-    alternateUsernameNumber: AlternateUsernameNumber.current,
-    inventoryNumber: InventoryNumber.current,
-    user: User.current,
-    size: Size.current,
-    uuid: UUID.current,
-    comment: Comment.current,
-    upgrade: Upgrade.current,
-  }
+    monitorsService.createMonitors(formJson);
+  };
 
   const userInChargeOptions = useGetUserInChargeSelect();
   const usersOptions = useGetUsersSelect();
@@ -56,7 +41,10 @@ export default function MonitorForm() {
   const monitorTypeOptions = useGetMonitortypesSelect();
   const autoupdatesystemOptions = useGetAutoupdatesystemsSelect();
 
-  const managementTypeOptions = [{ id: "0", name: "Unit Management" }, { id: "1", name: "Global Management" }]
+  const managementTypeOptions = [
+    { id: "0", name: "Unit Management" },
+    { id: "1", name: "Global Management" },
+  ];
 
   interface CheckboxState {
     microphone: boolean;
@@ -87,13 +75,7 @@ export default function MonitorForm() {
     }));
   };
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault();
-    monitors.post(formsMonitors)
-  };
-
   useEffect(() => {
-
     usersOptions.get();
     userInChargeOptions.get();
     groupsOptions.get();
@@ -104,33 +86,27 @@ export default function MonitorForm() {
     monitorModelOptions.get();
     monitorTypeOptions.get();
     autoupdatesystemOptions.get();
-
-  }, [])
-
-
-  useEffect(() => {
-    if (monitors.error) {
-      alert(monitors.error);
-    }
-  }, [monitors.error]);
-
+  }, []);
 
   return (
     <div className="bg-white rounded container_form_computer">
-      <Form handleSubmit={handleSubmit}>
+      <Form
+        handleSubmit={handleSubmit}
+        formHeader={"Monitors"}
+        iconName={"Monitors"}
+      >
         <div className="Name">
           <label className="text-sm mb-2 font-semibold block" htmlFor="testing">Name</label>
           <TextInput
-            id={"testing"}
+            id={"name"}
             placeholder={"ingrese su nombre"}
-            inputRef={monitorName}
           />
         </div>
 
         <div className="Status">
           <label className="text-sm mb-2 font-semibold block" htmlFor="status">Status</label>
           <SelectOption
-            id={"status"}
+            id={"states"}
             options={stateOptions.data?.data}
           />
         </div>
@@ -138,7 +114,7 @@ export default function MonitorForm() {
         <div className="Locations">
           <label className="text-sm mb-2 font-semibold block" htmlFor="location">Locations</label>
           <SelectOption
-            id={"location"}
+            id={"locations"}
             options={locationOptions.data?.data}
           />
         </div>
@@ -146,7 +122,7 @@ export default function MonitorForm() {
         <div className="Monitor Type">
           <label className="text-sm mb-2 font-semibold block" htmlFor="type">Monitor Type</label>
           <SelectOption
-            id="type"
+            id="monitortypes"
             options={monitorTypeOptions?.data}
           />
         </div>
@@ -154,7 +130,7 @@ export default function MonitorForm() {
         <div className="Technician in charge of the hardware">
           <label className="text-sm mb-2 font-semibold block" htmlFor="hardware">Technician in charge of the hardware</label>
           <SelectOption
-            id={"hardware"}
+            id={"users_tech"}
             options={userInChargeOptions.data?.data}
           />
         </div>
@@ -162,7 +138,7 @@ export default function MonitorForm() {
         <div className="Manufacturers">
           <label className="text-sm mb-2 font-semibold block" htmlFor="manufacturer">Manufacturers</label>
           <SelectOption
-            id="manufacturer"
+            id="manufacturers"
             options={manufacturerOptions.data?.data}
           />
         </div>
@@ -170,7 +146,7 @@ export default function MonitorForm() {
         <div className="Group in charge of the hardware">
           <label className="text-sm mb-2 font-semibold block" htmlFor="group-hardware">Group in charge of the hardware</label>
           <SelectOption
-            id={"group-hardware"}
+            id={"groups_tech"}
             options={groupInChargeOptions.data?.data}
           />
         </div>
@@ -178,7 +154,7 @@ export default function MonitorForm() {
         <div className="Model">
           <label className="text-sm mb-2 font-semibold block" htmlFor="model">Model</label>
           <SelectOption
-            id="model"
+            id="monitormodels"
             options={monitorModelOptions?.data}
           />
         </div>
@@ -186,30 +162,27 @@ export default function MonitorForm() {
         <div className="Alternate Username Number">
           <label className="text-sm mb-2 font-semibold block" htmlFor="alternativeusernamenumber">Alternate Username Number</label>
           <TextInput
-            id={"alternativeusernamenumber"}
+            id={"contact"}
             placeholder="Enter your Alternate Username number here"
             required
-            inputRef={AlternateUsernameNumber}
           />
         </div>
 
         <div className="Serial Number">
           <label className="text-sm mb-2 font-semibold block" htmlFor="serialnumber">Serial Number</label>
           <TextInput
-            id={"serialnumber"}
+            id={"serial"}
             placeholder="Enter your Serial Number here"
             required
-            inputRef={SerialNumber}
           />
         </div>
 
         <div className="Alternate Username">
           <label className="text-sm mb-2 font-semibold block" htmlFor="alternativeusername">Alternate Username</label>
           <TextInput
-            id={"alternativeusername"}
+            id={"contact_num"}
             placeholder="Enter your Alternate Username here"
             required
-            inputRef={AlternateUsername}
           />
         </div>
 
@@ -219,14 +192,13 @@ export default function MonitorForm() {
             id={"otherserial"}
             placeholder="Enter your Inventory Number here"
             required
-            inputRef={InventoryNumber}
           />
         </div>
 
         <div className="User">
           <label className="text-sm mb-2 font-semibold block" htmlFor="user">User</label>
           <SelectOption
-            id="user"
+            id="users"
             options={usersOptions.data?.data}
           />
         </div>
@@ -250,7 +222,7 @@ export default function MonitorForm() {
         <div className="Groups">
           <label className="text-sm mb-2 font-semibold block" htmlFor="group">Groups</label>
           <SelectOption
-            id="group"
+            id="groups"
             options={groupsOptions.data?.data}
           />
         </div>
@@ -261,7 +233,6 @@ export default function MonitorForm() {
             id="uuid"
             placeholder="Enter your UUID here"
             required
-            inputRef={UUID}
           />
         </div>
 
@@ -280,7 +251,7 @@ export default function MonitorForm() {
             id="updatesource" />
         </div>
 
-        <div className= "Ports" >
+        <div className="Ports" >
           <div className="mb-2 font-semibold">Ports</div>
           <div className="grid grid-cols-4 gap-2" >
             <Checkbox
@@ -333,7 +304,7 @@ export default function MonitorForm() {
             />
           </div>
         </div>
-      </Form>
-    </div>
+      </Form >
+    </div >
   );
-}
+};

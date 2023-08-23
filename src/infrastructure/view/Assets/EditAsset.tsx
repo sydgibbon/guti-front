@@ -23,35 +23,38 @@ export default function EditAsset() {
 
   // Set the initial selected option to the first item in the options list
   useEffect(() => {
-    if (selectedOption === "" && selectedOptions && selectedOptions.options.length > 0) {
+    if (
+      selectedOption === "" &&
+      selectedOptions &&
+      selectedOptions.options.length > 0
+    ) {
       setSelectedOption(selectedOptions.options[0].name);
     }
-  }, [])
-  
+  }, []);
 
   return (
     <div className="flex flex-col edit-asset-container">
       <div className="flex form-sidebar-section">
         <div className="mt-12 w-56 sidebar">
           {selectedOptions &&
-          selectedOptions.options.map((option) => (
-            <SidebarMenu
-              key={option.name}
-              text={option.name}
-              selected={selectedOption}
-              setSelected={handleOptionClick}
-              icon={<></>}
-              hasOptions={false}
-              subMenu={<></>}
-              context={"editAsset"}
-            />
-          ))}
+            selectedOptions.options.map((option) => (
+              <SidebarMenu
+                key={option.name}
+                text={option.name}
+                selected={selectedOption}
+                setSelected={handleOptionClick}
+                icon={<></>}
+                hasOptions={false}
+                subMenu={<></>}
+                context={"editAsset"}
+              />
+            ))}
         </div>
         <div className="flex flex-col w-full title-form-section">
           {selectedOption && (
             <div className="box-border block title">
               <span className="p-2 text-lg font-semibold bg-white rounded-md form-title">
-                {`${selectedOptions?.name} - ExampleAsset`} 
+                {`${selectedOptions?.name} - ExampleAsset`}
               </span>
             </div>
           )}

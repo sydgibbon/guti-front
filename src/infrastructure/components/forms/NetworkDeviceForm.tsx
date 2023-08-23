@@ -17,17 +17,10 @@ import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/use
 import { useGetSnmpCredentialsSelect } from "../../hooks/SnmpCredentials/useGetSnmpCredentialsSelect";
 
 export default function NetDeviceForm() {
-  // const computer = useCreateComputer();
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
   };
-
-  // useEffect(() => {
-  //   if (computer.error) {
-  //     alert(computer.error);
-  //   }
-  // }, [computer.error]);
 
   const userInChargeOptions = useGetUserInChargeSelect();
   const networkDeviceModelOptions = useGetNetworkDevicesModelsSelect();
@@ -57,10 +50,13 @@ export default function NetDeviceForm() {
     snpmCredentialOptions.get();
   }, [])
 
-
   return (
     <div className="bg-white rounded container_form_computer">
-      <Form handleSubmit={handleSubmit}>
+      <Form
+        handleSubmit={handleSubmit}
+        formHeader={"Network Devices"}
+        iconName={"NetworkDevices"}
+      >
         <div>
           <label className="text-sm mb-2 font-semibold block" htmlFor="testing">Name</label>
           <TextInput
@@ -236,4 +232,4 @@ export default function NetDeviceForm() {
       </Form>
     </div>
   );
-}
+};

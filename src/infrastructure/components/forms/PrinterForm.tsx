@@ -56,12 +56,6 @@ export default function PrinterForm() {
     printersService.createPrinter(formJson);
   };
 
-  // useEffect(() => {
-  //   if (computer.error) {
-  //     alert(computer.error);
-  //   }
-  // }, [computer.error]);
-
   const userInChargeOptions = useGetUserInChargeSelect();
   const usersOptions = useGetUsersSelect();
   const groupInChargeOptions = useGetGroupInChargeSelect();
@@ -105,6 +99,7 @@ export default function PrinterForm() {
           >
             Name
           </label>
+
           <TextInput
             id={"name"}
             placeholder={"ingrese su nombre"}
@@ -430,4 +425,5 @@ export default function PrinterForm() {
       </Form>
     </div>
   );
-}
+};
+

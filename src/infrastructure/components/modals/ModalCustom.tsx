@@ -30,7 +30,7 @@ export default function ModalCustom(modalCustomProps: ModalCustomProps) {
     >
       <div
         ref={ref}
-        className="w-1/2 p-6 bg-white rounded-lg shadow-md mx-auto ContentWrapper"
+        className="w-2/3 m-12 h-[45rem]  overflow-auto bg-white rounded-lg shadow-md mx-auto ContentWrapper"
       >
         {title && (
           <div className="flex justify-between mb-5 Header">
@@ -51,9 +51,7 @@ export default function ModalCustom(modalCustomProps: ModalCustomProps) {
         )}
 
         {content && (
-          <div className={`${contentClassName} w-full Content`}>
-            {content}
-          </div>
+          <div className={`${contentClassName} w-full Content`}>{content}</div>
         )}
 
         {children && children}
