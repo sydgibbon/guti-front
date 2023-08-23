@@ -1,7 +1,14 @@
 import { RackDTO } from "../dto/RackDTO";
+import { RackData } from "../models/forms/RackData";
 import http from "../services/api/http";
 
 export const racksRepository = {
+  createRack: async (body: RackData) => {
+    const response = await http.post<RackDTO>("createRack/", body);
+
+    return response;
+  },
+
   getAllRacks: async () => {
     const response = await http.get<RackDTO>("getRacks/");
 
