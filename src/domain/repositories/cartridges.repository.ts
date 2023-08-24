@@ -1,7 +1,13 @@
 import { CartridgesItemsDTO } from "../dto/CartridgesDTO";
+import { CartridgeData } from "../models/forms/CartridgesData";
 import http from "../services/api/http";
 
 export const cartridgesRepository = {
+  createCartridge: async (body: CartridgeData) => {
+    const response = await http.post<CartridgesItemsDTO>("createCartridgeitem/", body);
+
+    return response;
+  },
 
   getAllCartridges: async () => {
     const response = await http.get<CartridgesItemsDTO>("getCartridgeitems/");    
