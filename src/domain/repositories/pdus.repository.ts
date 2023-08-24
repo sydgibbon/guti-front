@@ -1,7 +1,13 @@
 import { PdusDTO } from "../dto/PdusDTO";
+import { PduData } from "../models/forms/PduData";
 import http from "../services/api/http";
 
 export const pdusRepository = {
+  createPdu: async (body: PduData) => {
+    const response = await http.post<PdusDTO>("createPdu/", body);
+
+    return response;
+  },
   getAllPdus: async () => {
     const response = await http.get<PdusDTO>("getPdus/");
 

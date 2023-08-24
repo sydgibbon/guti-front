@@ -17,8 +17,7 @@ import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/use
 import { ComputerData } from "../../../domain/models/forms/ComputerData"
 import { computersService } from "../../../domain/services/api/Computers.service"
 
-export default function ComputerForm() {
-  // const computer = useCreateComputer();
+export default function ComputersForm() {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
@@ -28,7 +27,7 @@ export default function ComputerForm() {
       formData.entries()
     ) as unknown as ComputerData;
     computersService.createComputer(formJson);
-    debugger;
+    // debugger;
   };
 
   const userInChargeOptions = useGetUserInChargeSelect()

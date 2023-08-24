@@ -1,0 +1,25 @@
+export interface RackData {
+
+  name: string | null,
+  states: number | null,
+  dcrooms: number | null,
+  locations: number | null,
+  racktypes: number | null,
+  users_tech: number | null,
+  manufacturers: number | null,
+  groups_tech: number | null,
+  rackmodels: number | null,
+  serial: string | null,
+  otherserial: string | null,
+  comment: string | null,
+  position: number | null,
+  room_orientation: number | null,
+  number_units: number | null,
+  width: number | null,
+  height: number | null,
+  depth: number | null,
+  max_power: number | null,
+  mesured_power: number | null,
+  max_weight: number | null,
+  bgcolor: string | null
+}

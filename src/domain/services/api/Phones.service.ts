@@ -1,6 +1,10 @@
+import { PhoneData } from "../../models/forms/PhoneData";
 import { phonesRepository } from "../../repositories/phones.repository";
 
 export const phonesService = {
+  createPhone: (body: PhoneData) => {
+    return phonesRepository.createPhone(body);
+  },
   getAllphones: () => {
     return phonesRepository.getAllPhones();
   },

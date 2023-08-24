@@ -12,12 +12,22 @@ import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/use
 import { useGetRackmodelsSelect } from "../../hooks/Racks/useGetRackmodelsSelect"
 import { useGetRacktypesSelect } from "../../hooks/Racks/useGetRacktypesSelect"
 import { useGetDcroomsSelect } from "../../hooks/Racks/useGetDcroomsSelect"
+import { RackData } from "../../../domain/models/forms/RackData"
+import { racksService } from "../../../domain/services/api/Racks.service"
+
 
 export default function RackForm() {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault()
-  }
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(
+      formData.entries()
+    ) as unknown as RackData;
+    racksService.createRack(formJson);
+    // debugger;
+  };
 
   const userInChargeOptions = useGetUserInChargeSelect()
   const groupInChargeOptions = useGetGroupInChargeSelect()
@@ -58,6 +68,7 @@ export default function RackForm() {
     rackTypeOptions.get()
     dcRoomOptions.get()
     autoupdatesystemOptions.get()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -70,25 +81,26 @@ export default function RackForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="testing"
+            htmlFor="name"
           >
             Name
           </label>
           <TextInput
-            id={"testing"}
+            id={"name"}
             placeholder={"ingrese su nombre"}
+            required
           />
         </div>
 
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="status"
+            htmlFor="states"
           >
             Status
           </label>
           <SelectOption
-            id={"status"}
+            id={"states"}
             options={stateOptions.data?.data}
           />
         </div>
@@ -96,12 +108,12 @@ export default function RackForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="location"
+            htmlFor="locations"
           >
             Locations
           </label>
           <SelectOption
-            id={"location"}
+            id={"locations"}
             options={locationOptions.data?.data}
           />
         </div>
@@ -109,12 +121,12 @@ export default function RackForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="type"
+            htmlFor="racktypes"
           >
             Rack types
           </label>
           <SelectOption
-            id="type"
+            id="racktypes"
             options={rackTypeOptions?.data}
           />
         </div>
@@ -122,12 +134,12 @@ export default function RackForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="hardware"
+            htmlFor="users_tech"
           >
             Technician in charge of the hardware
           </label>
           <SelectOption
-            id={"hardware"}
+            id={"users_tech"}
             options={userInChargeOptions.data?.data}
           />
         </div>
@@ -135,12 +147,12 @@ export default function RackForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="manufacturer"
+            htmlFor="manufacturers"
           >
             Manufacturers
           </label>
           <SelectOption
-            id="manufacturer"
+            id="manufacturers"
             options={manufacturerOptions.data?.data}
           />
         </div>
@@ -148,12 +160,12 @@ export default function RackForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="group-hardware"
+            htmlFor="groups_tech"
           >
             Group in charge of the hardware
           </label>
           <SelectOption
-            id={"group-hardware"}
+            id={"groups_tech"}
             options={groupInChargeOptions.data?.data}
           />
         </div>
@@ -161,12 +173,12 @@ export default function RackForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="model"
+            htmlFor="rackmodels"
           >
             Model
           </label>
           <SelectOption
-            id="model"
+            id="rackmodels"
             options={rackModelOptions?.data}
           />
         </div>
@@ -174,12 +186,12 @@ export default function RackForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="serialnumber"
+            htmlFor="serial"
           >
             Serial Number
           </label>
           <TextInput
-            id={"serialnumber"}
+            id={"serial"}
             placeholder="Enter your Serial Number here"
             required
           />
@@ -215,16 +227,28 @@ export default function RackForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="serverroom"
+            htmlFor="dcrooms"
           >
             Server Rooms
           </label>
           <SelectOption
-            id="serverroom"
+            id="dcrooms"
             options={dcRoomOptions?.data}
           />
         </div>
 
+        <div>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="position"
+          >
+            Position in room
+          </label>
+          <SelectOption
+            id={"position"}
+            options={orientationOptions}
+          />
+        </div>
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
@@ -248,6 +272,7 @@ export default function RackForm() {
           <TextInput
             id={"number_units"}
             type={"number"}
+            required
           />
         </div>
 
@@ -261,6 +286,7 @@ export default function RackForm() {
           <TextInput
             id={"width"}
             type={"number"}
+            required
           />
         </div>
 
@@ -274,6 +300,7 @@ export default function RackForm() {
           <TextInput
             id={"height"}
             type={"number"}
+            required
           />
         </div>
 
@@ -287,6 +314,7 @@ export default function RackForm() {
           <TextInput
             id={"depth"}
             type={"number"}
+            required
           />
         </div>
 
@@ -300,6 +328,7 @@ export default function RackForm() {
           <TextInput
             id={"max_power"}
             type={"number"}
+            required
           />
         </div>
 
@@ -313,6 +342,7 @@ export default function RackForm() {
           <TextInput
             id={"mesured_power"}
             type={"number"}
+            required
           />
         </div>
 
@@ -326,6 +356,7 @@ export default function RackForm() {
           <TextInput
             id={"max_weight"}
             type={"number"}
+            required
           />
         </div>
 
