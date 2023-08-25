@@ -15,10 +15,18 @@ import { useGetAllDevices } from "../../hooks/Devices/GetAllDevices"
 import { useGetAllPhones } from "../../hooks/Phones/useGetAllPhones"
 import { useGetAllPrinters } from "../../hooks/Printers/useGetAllPrinters"
 import { useGetAllPassiveDevices } from "../../hooks/PassiveDevices/useGetAllPassiveDevices"
+import { CableData } from "../../../domain/models/forms/CableData"
+import { cablesService } from "../../../domain/services/api/Cable.service"
 
 export default function CableForm() {
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(
+      formData.entries()
+    ) as unknown as CableData;
+    cablesService.createCable(formJson);
   }
 
   const stateOptions = useGetStatesSelect()
@@ -70,7 +78,8 @@ export default function CableForm() {
     allPhones.get()
     allPrinters.get()
     allPassiveDevices.get()
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },    [])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -120,7 +129,9 @@ export default function CableForm() {
       }
     }
     fetchData()
-  }, [
+  },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+   [
     selectedAssetB,
     allComputers,
     allNetworkDevices,
@@ -128,6 +139,7 @@ export default function CableForm() {
     allPhones,
     allPrinters,
     allPassiveDevices,
+    
   ])
 
   useEffect(() => {
@@ -179,7 +191,7 @@ export default function CableForm() {
             Status
           </label>
           <SelectOption
-            id={"status"}
+            id={"states"}
             options={stateOptions.data?.data}
           />
         </div>
@@ -187,7 +199,9 @@ export default function CableForm() {
           <label
             htmlFor="cabletypes"
             className="text-sm mb-2 font-semibold block"
-          ></label>
+          >
+            Cable type
+          </label>
           <SelectOption
             id={"cabletypes"}
             label="Type"
@@ -210,13 +224,13 @@ export default function CableForm() {
 
         <div>
           <label
-            htmlFor="serial"
+            htmlFor="otherserial"
             className="text-sm mb-2 font-semibold block"
           >
             Inventory Number
           </label>
           <TextInput
-            id={"serial"}
+            id={"otherserial"}
             placeholder="Enter your Inventory Number here"
             required
           />
@@ -250,26 +264,26 @@ export default function CableForm() {
 
         <div>
           <label
-            htmlFor="color"
+            htmlFor="colorr"
             className="text-sm mb-2 font-semibold block"
           >
             Color
           </label>
           <TextInput
-            id={"color"}
+            id={"colorr"}
             type="text"
           />
         </div>
 
         <div>
           <label
-            htmlFor="items_endpoint_a"
+            htmlFor="itemtype_endpoint_a"
             className="text-sm mb-2 font-semibold block"
           >
             Asset
           </label>
           <SelectOption
-            id={"items_endpoint_a"}
+            id={"itemtype_endpoint_a"}
             options={assetOption}
             onSelect={setSelectedAssetA}
           />
@@ -277,13 +291,13 @@ export default function CableForm() {
 
         <div>
           <label
-            htmlFor="items_endpoint_a"
+            htmlFor="itemtype_endpoint_b"
             className="text-sm mb-2 font-semibold block"
           >
             Asset
           </label>
           <SelectOption
-            id={"items_endpoint_a"}
+            id={"itemtype_endpoint_b"}
             options={assetOption}
             onSelect={setSelectedAssetB}
           />

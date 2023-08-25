@@ -1,6 +1,10 @@
+import { CableData } from "../../models/forms/CableData";
 import { cablesRepository } from "../../repositories/cables.repository";
 
 export const cablesService = {
+  createCable: (body: CableData) => {
+    return cablesRepository.createCable(body);
+  },
   getAllCables: () => {
     return cablesRepository.getAllCables();
   },
