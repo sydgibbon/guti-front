@@ -1,6 +1,10 @@
+import { NetworkDeviceData } from "../../models/forms/NetworkDeviceData";
 import { networkDevicesRepository } from "../../repositories/newtorkDevices.repository";
 
 export const networkDevicesService = {
+  createNetworkDevice: (body: NetworkDeviceData) => {
+    return networkDevicesRepository.createNetworkDevice(body);
+  },
   getAllNetworkDevices: () => {
     return networkDevicesRepository.getAllNewtorkDevices();
   },
