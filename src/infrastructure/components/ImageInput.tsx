@@ -87,7 +87,7 @@ export default function ImageInput(imageInputProps: ImageInputProps) {
         </span>
         <input
           className="appearance-none p-2 border rounded-md bg-white hover:border-red-400 container__input"
-          type={"file"}
+          type={type ?? "file"}
           accept={fileType}
           multiple={multiple}
           required={required}
