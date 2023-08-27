@@ -184,12 +184,12 @@ export default function ConsumableForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="pictures"
+            htmlFor="comming_soon"
           >
             Pictures
           </label>
           <ImageInput
-            id={"pictures"}
+            id={"comming_soon"}
             fileType={".jpg, .jpeg, .png"}
             maxSize={3}
           />
