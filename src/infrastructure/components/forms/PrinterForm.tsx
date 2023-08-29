@@ -91,7 +91,11 @@ export default function PrinterForm() {
 
   return (
     <div className="bg-white rounded container_form_computer">
-      <Form handleSubmit={handleSubmit}>
+      <Form
+        handleSubmit={handleSubmit}
+        formHeader={"Printers"}
+        iconName={"Printers"}
+      >
         <div className="Name">
           <label
             className="text-sm mb-2 font-semibold block"
