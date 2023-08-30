@@ -8,20 +8,61 @@ const axiosPrivate = axios.create({
   headers: authHeader(),
 });
 
+const refreshAccessToken = async () => {
+  const user = JSON.parse(localStorage.getItem("user") as string);
+  try {
+    const response = await axios.post(
+      "http://127.0.0.1:8000/api/token/refresh/",
+      {
+        refresh: user?.refresh,
+      }
+    );
+    const newAccessToken = response.data.access;
+    user.access = newAccessToken;
+    localStorage.setItem("user", JSON.stringify(user));
+
+    return newAccessToken;
+  } catch (error) {
+    throw error;
+  }
+};
+
 axiosPrivate.interceptors.request.use(function (config) {
-  const token = JSON.parse(localStorage.getItem('user') as string);
-  if (config.headers != undefined) {
-    config.headers.Authorization =  token ? `Bearer ${token.access}` : '';
+  const token = JSON.parse(localStorage.getItem("user") as string);
+  if (config.headers !== undefined) {
+    config.headers.Authorization = token ? `Bearer ${token.access}` : "";
   }
   return config;
 });
 
 axiosPrivate.interceptors.response.use(
   (response) => response,
-  (error) => {
+  async (error) => {
     if (error.response && error.response.status === 403) {
-      localStorage.removeItem('user');
-      window.location.href = '/login';
+      if (!error.config._retry) {
+        error.config._retry = true;
+        try {
+          const prevRequest = error?.config;
+          const newAccessToken = await refreshAccessToken();
+
+          return axiosPrivate({
+            ...prevRequest,
+            headers: {
+              ...prevRequest.headers,
+              Authorization: `Bearer ${newAccessToken}`,
+            },
+            sent: true,
+          });
+        } catch (refreshError) {
+          localStorage.removeItem("user");
+          window.location.href = "/login";
+          return Promise.reject(refreshError);
+        }
+      } else {
+        localStorage.removeItem("user");
+        window.location.href = "/login";
+        return Promise.reject(error);
+      }
     }
     return Promise.reject(error);
   }
@@ -36,7 +77,7 @@ const get = async <T>(url: string) => {
     method: "GET",
     headers,
   });
-  return response as T;
+  return response.data as T;
 };
 
 const post = async <T>(url: string, body: any) => {
@@ -45,7 +86,7 @@ const post = async <T>(url: string, body: any) => {
     body,
     headers,
   });
-  return response as T;
+  return response.data as T;
 };
 
 const put = async <T>(url: string, body: any) => {
@@ -54,7 +95,7 @@ const put = async <T>(url: string, body: any) => {
     headers,
     body,
   });
-  return response as T;
+  return response.data as T;
 };
 
 const _delete = async <T>(url: string) => {
