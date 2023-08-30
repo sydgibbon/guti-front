@@ -1,0 +1,8 @@
+body,
+input {
+  background-color: #f5f7fb;
+}
+
+.checkbox input:checked {
+  background-color: #e8594b !important;
+}
