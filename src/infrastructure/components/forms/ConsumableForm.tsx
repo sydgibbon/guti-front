@@ -9,11 +9,21 @@ import TextArea from "../TextArea"
 import TextInput from "../TextInput"
 import Form from "./Form"
 import ImageInput from "../ImageInput"
+import { ConsumableItemData } from "../../../domain/models/forms/ConsumableItemData"
+import { consumablesService } from "../../../domain/services/api/Consumables.service"
+
 
 export default function ConsumableForm() {
   const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault()
-  }
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(
+      formData.entries()
+    ) as unknown as ConsumableItemData;
+    consumablesService.createConsumableItem(formJson);
+    // debugger;
+  };
 
   const numbers = (): OptionValue[] => {
     const options: OptionValue[] = []
@@ -42,6 +52,7 @@ export default function ConsumableForm() {
     locationOptions.get()
     manufacturerOptions.get()
     consumableTypeOptions.get()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -54,81 +65,82 @@ export default function ConsumableForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="testing"
+            htmlFor="name"
           >
             Name
           </label>
           <TextInput
-            id={"testing"}
+            id={"name"}
             placeholder={"ingrese su nombre"}
+            required
           />
         </div>
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="location"
+            htmlFor="locations"
           >
             Locations
           </label>
           <SelectOption
-            id={"location"}
+            id={"locations"}
             options={locationOptions.data?.data}
           />
         </div>
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="type"
+            htmlFor="consumableitemtypes"
           >
             Consumable Types
           </label>
           <SelectOption
-            id="type"
+            id="consumableitemtypes"
             options={consumableTypeOptions?.data}
           />
         </div>
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="reference"
+            htmlFor="ref"
           >
             Reference
           </label>
-          <TextInput id={"reference"} />
+          <TextInput id={"ref"} />
         </div>
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="hardware"
+            htmlFor="users_tech"
           >
             Technician in charge of the hardware
           </label>
           <SelectOption
-            id={"hardware"}
+            id={"users_tech"}
             options={userInChargeOptions.data?.data}
           />
         </div>
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="manufacturer"
+            htmlFor="manufacturers"
           >
             Manufacturers
           </label>
           <SelectOption
-            id="manufacturer"
+            id="manufacturers"
             options={manufacturerOptions.data?.data}
           />
         </div>
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="group-hardware"
+            htmlFor="groups_tech"
           >
             Group in charge of the hardware
           </label>
           <SelectOption
-            id={"group-hardware"}
+            id={"groups_tech"}
             options={groupInChargeOptions.data?.data}
           />
         </div>
@@ -137,7 +149,7 @@ export default function ConsumableForm() {
             className="text-sm mb-2 font-semibold block"
             htmlFor="otherserial"
           >
-            Inventory Number
+            Inventory/Asset Number
           </label>
           <TextInput
             id={"otherserial"}
@@ -160,24 +172,24 @@ export default function ConsumableForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="alertthreshold"
+            htmlFor="alarm_threshold"
           >
             Alert Threshold
           </label>
           <SelectOption
-            id={"alertthreshold"}
+            id={"alarm_threshold"}
             options={threshold}
           />
         </div>
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="pictures"
+            htmlFor="comming_soon"
           >
             Pictures
           </label>
           <ImageInput
-            id={"pictures"}
+            id={"comming_soon"}
             fileType={".jpg, .jpeg, .png"}
             maxSize={3}
           />
@@ -192,6 +204,7 @@ export default function ConsumableForm() {
           <TextInput
             id={"stock_target"}
             type={"number"}
+            required
           />
         </div>
       </Form>
