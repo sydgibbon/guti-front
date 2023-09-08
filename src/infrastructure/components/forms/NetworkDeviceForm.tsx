@@ -332,12 +332,12 @@ export default function NetDeviceForm() {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="uptime"
+            htmlFor="autoupdatesystems"
           >
             Update Source
           </label>
           <SelectOption
-            id="uptime"
+            id="autoupdatesystems"
             options={autoupdatesystemOptions.data?.data}
           />
         </div>
