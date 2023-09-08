@@ -1,7 +1,16 @@
+import { NetworkDeviceData } from "../models/forms/NetworkDeviceData";
 import { NetworkDevicesDTO } from "../dto/NetworkDevicesDTO";
 import http from "../services/api/http";
 
 export const networkDevicesRepository = {
+  createNetworkDevice: async (body: NetworkDeviceData) => {
+    const response = await http.post<NetworkDevicesDTO>(
+      "createNetworkequipment/",
+      body
+    );
+
+    return response;
+  },
   getAllNewtorkDevices: async () => {
     const response = await http.get<NetworkDevicesDTO[]>(
       "getNetworkequipments/"
