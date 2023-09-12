@@ -13,9 +13,16 @@ export default function EditAsset() {
   const assetPath = useLocation().pathname;
   const asset = assetPath.substring(assetPath.lastIndexOf("/") + 1);
 
-  const selectedOptions: EditAssetOption | undefined = AssetOptions.find(
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const idParam = urlParams.get('id');
+  const id = idParam !== null ? parseInt(idParam) : NaN;
+
+  const assetOptions: EditAssetOption | undefined = AssetOptions.find(
     (locName) => locName.name === capitalize(asset)
   );
+
+  const assetData = (assetOptions && assetOptions.useGetAssetData) ? assetOptions.useGetAssetData() : null
 
   const handleOptionClick = (optionName: string) => {
     setSelectedOption(optionName);
@@ -25,19 +32,39 @@ export default function EditAsset() {
   useEffect(() => {
     if (
       selectedOption === "" &&
-      selectedOptions &&
-      selectedOptions.options.length > 0
+      assetOptions &&
+      assetOptions.options.length > 0
     ) {
-      setSelectedOption(selectedOptions.options[0].name);
+      setSelectedOption(assetOptions.options[0].name);
     }
+
+    //set Data if exists
+
+    if (assetData) {
+      assetData.get(id)
+    }
+
   }, []);
+
+  useEffect(() => {
+    if(assetData?.data != undefined){
+      for (const [key, value] of Object.entries(assetData.data)) {
+        let elementInput = document.getElementById(key) as HTMLInputElement
+        if (elementInput != null) {
+          elementInput.value = value as string
+        }
+      }
+    }
+
+  }, [assetData?.data, selectedOption])
+  
 
   return (
     <div className="flex flex-col edit-asset-container">
       <div className="flex form-sidebar-section">
         <div className="mt-12 w-56 sidebar">
-          {selectedOptions &&
-            selectedOptions.options.map((option) => (
+          {assetOptions &&
+            assetOptions.options.map((option) => (
               <SidebarMenu
                 key={option.name}
                 text={option.name}
@@ -54,14 +81,14 @@ export default function EditAsset() {
           {selectedOption && (
             <div className="box-border block title">
               <span className="p-2 text-lg font-semibold bg-white rounded-md form-title">
-                {`${selectedOptions?.name} - ExampleAsset`}
+                {`${assetOptions?.name} - ExampleAsset`}
               </span>
             </div>
           )}
 
           <div className="mt-5 mr-6 form">
             {selectedOption &&
-              selectedOptions?.options.find(
+              assetOptions?.options.find(
                 (option) => option.name === selectedOption
               )?.content}
           </div>

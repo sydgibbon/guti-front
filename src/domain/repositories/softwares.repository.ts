@@ -33,4 +33,10 @@ export const softwaresRepository = {
 
     return response.data;
   },
+
+  getSoftwareById: async (id: number) => {
+    const response = await http.get("getSoftwaresById/" + id + "/");
+
+    return response.data;
+  },
 };

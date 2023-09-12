@@ -47,5 +47,10 @@ export const computersRepository = {
 
     return response.data;
   },
+  getComputerById: async (id: number) => {
+    const response = await http.get<ComputerDTO>("getComputersById/" + id + "/");    
+
+    return response.data;
+  },
   
 };

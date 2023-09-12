@@ -22,4 +22,7 @@ export const monitorsService = {
   getMonitorsByManufacturers: () => {
     return monitorsRepository.getMonitorsByManufacturers();
   },
+  getMonitorById: (id: number) => {
+    return monitorsRepository.getMonitorById(id);
+  },
 };

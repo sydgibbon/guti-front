@@ -18,4 +18,8 @@ export const networkDevicesService = {
   getNetworkequipmentsByManufacturers: () => {
     return networkDevicesRepository.getNetworkequipmentsByManufacturers();
   },
+
+  getNetworkDeviceById: (id: number) => {
+    return networkDevicesRepository.getNetworkDeviceById(id);
+  },
 };

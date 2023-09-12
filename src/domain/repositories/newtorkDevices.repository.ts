@@ -32,4 +32,10 @@ export const networkDevicesRepository = {
 
     return response.data;
   },
+
+  getNetworkDeviceById: async (id: number) => {
+    const response = await http.get("getNetworkequipmentsById/" + id +"/");
+
+    return response.data;
+  },
 };
