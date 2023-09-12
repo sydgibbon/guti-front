@@ -9,12 +9,21 @@ import { useGetGroupsSelect } from "../../hooks/Groups/useGetGroupsSelect"
 import { useGetDevicesimcardsSelect } from "../../hooks/Simcards/useGetDevicesimcardsSelect"
 import { useGetLinesSelect } from "../../hooks/Simcards/useGetLinesSelect"
 import TextArea from "../TextArea"
+import { SimCardData } from "../../../domain/models/forms/SimCardData"
+import { simcardsService } from "../../../domain/services/api/Simcards.service"
 
 export default function SimCardForm() {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(
+      formData.entries()
+    ) as unknown as SimCardData;
+    simcardsService.createSimcard(formJson);
   }
+
 
   const usersOptions = useGetUsersSelect()
   const locationOptions = useGetLocationsSelect()
@@ -30,6 +39,7 @@ export default function SimCardForm() {
     stateOptions.get()
     linesOptions.get()
     devicesimcardsOptions.get()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

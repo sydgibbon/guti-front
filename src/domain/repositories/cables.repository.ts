@@ -1,8 +1,14 @@
 
 import { CableDTO } from "../dto/CableDTO";
+import { CableData } from "../models/forms/CableData";
 import http from "../services/api/http";
 
 export const cablesRepository = {
+  createCable: async (body: CableData) => {
+    const response = await http.post<CableDTO>("createCable/", body);
+
+    return response;
+  },
   getAllCables: async () => {
     const response = await http.get<CableDTO>("getCables/");
 

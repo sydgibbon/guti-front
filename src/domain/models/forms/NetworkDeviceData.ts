@@ -1,0 +1,35 @@
+export interface NetworkDeviceData {
+  is_recursive: number | null;
+  name: string | null;
+  ram: string | null;
+  serial: string | null;
+  otherserial: string | null;
+  contact: string | null;
+  contact_num: string | null;
+  date_mod: string | null;
+  comment: string | null;
+  is_deleted: number | null;
+  is_template: number | null;
+  template_name: string | null;
+  ticket_tco: string | null;
+  is_dynamic: number | null;
+  uuid: string | null;
+  date_creation: string | null;
+  sysdescr: string | null;
+  cpu: number | null;
+  uptime: string | null;
+  last_inventory_update: string | null;
+  entities: string | null;
+  users_tech: number | null;
+  groups_tech: string | null;
+  locations: number | null;
+  networks: number | null;
+  networkequipmenttypes: number | null;
+  networkequipmentmodels: number | null;
+  manufacturers: number | null;
+  users: number | null;
+  groups: string | null;
+  states: number | null;
+  autoupdatesystems: number | null;
+  snmpcredentials: number | null;
+}
