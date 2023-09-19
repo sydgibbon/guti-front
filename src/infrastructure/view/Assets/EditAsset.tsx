@@ -12,17 +12,19 @@ export default function EditAsset() {
 
   const assetPath = useLocation().pathname;
   const asset = assetPath.substring(assetPath.lastIndexOf("/") + 1);
-
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const idParam = urlParams.get('id');
+  const idParam = urlParams.get("id");
   const id = idParam !== null ? parseInt(idParam) : NaN;
 
   const assetOptions: EditAssetOption | undefined = AssetOptions.find(
     (locName) => locName.name === capitalize(asset)
   );
 
-  const assetData = (assetOptions && assetOptions.useGetAssetData) ? assetOptions.useGetAssetData() : null
+  const assetData =
+    assetOptions && assetOptions.useGetAssetData
+      ? assetOptions.useGetAssetData()
+      : null;
 
   const handleOptionClick = (optionName: string) => {
     setSelectedOption(optionName);
@@ -41,23 +43,20 @@ export default function EditAsset() {
     //set Data if exists
 
     if (assetData) {
-      assetData.get(id)
+      assetData.get(id);
     }
-
   }, []);
 
   useEffect(() => {
-    if(assetData?.data != undefined){
+    if (assetData?.data != undefined) {
       for (const [key, value] of Object.entries(assetData.data)) {
-        let elementInput = document.getElementById(key) as HTMLInputElement
+        let elementInput = document.getElementById(key) as HTMLInputElement;
         if (elementInput != null) {
-          elementInput.value = value as string
+          elementInput.value = value as string;
         }
       }
     }
-
-  }, [assetData?.data, selectedOption])
-  
+  }, [assetData?.data, selectedOption]);
 
   return (
     <div className="flex flex-col edit-asset-container">
@@ -81,7 +80,7 @@ export default function EditAsset() {
           {selectedOption && (
             <div className="box-border block title">
               <span className="p-2 text-lg font-semibold bg-white rounded-md form-title">
-                {`${assetOptions?.name} - ExampleAsset`}
+                {`${selectedOption} - ${assetData?.data?.name}`}
               </span>
             </div>
           )}

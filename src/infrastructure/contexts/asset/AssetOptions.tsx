@@ -26,7 +26,7 @@ export interface EditAssetOption {
     isLoading: boolean;
     get: (id: number) => Promise<void>;
   };
-  options: { name: string; content: any;}[];
+  options: { name: string; content: any }[];
 }
 
 export const AssetOptions: EditAssetOption[] = [
@@ -94,7 +94,7 @@ export const AssetOptions: EditAssetOption[] = [
     name: "Software",
     useGetAssetData: useGetSoftwareById,
     options: [
-      { name: "Software", content: <SoftwareForm /> },
+      { name: "Software", content: <SoftwareForm isEditing={true} /> },
       { name: "Impact Analysis", content: "" },
       { name: "Versions", content: "" },
       { name: "Licenses", content: "" },

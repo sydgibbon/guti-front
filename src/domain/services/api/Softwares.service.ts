@@ -5,6 +5,9 @@ export const softwaresService = {
   createSoftware: (body: SoftwareData) => {
     return softwaresRepository.createSoftware(body);
   },
+  editSoftware: (body: SoftwareData, id: number) => {
+    return softwaresRepository.editSoftware(body, id);
+  },
   getAllSoftwares: () => {
     return softwaresRepository.getAllSoftwares();
   },

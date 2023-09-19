@@ -1,71 +1,82 @@
-import { useEffect, useState } from "react"
-import SelectOption from "../SelectOption"
-import TextArea from "../TextArea"
-import TextInput from "../TextInput"
-import Form from "./Form"
-import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect"
-import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect"
-import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect"
-import { useGetGroupsSelect } from "../../hooks/Groups/useGetGroupsSelect"
-import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect"
-import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect"
-import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect"
-import { useGetSoftwareCategoriesSelect } from "../../hooks/Softwares/useGetSoftwareCategoriesSelect"
-import { useGetAllSoftwares } from "../../hooks/Softwares/useGetAllSoftwares"
-import Checkbox from "../CheckBox"
-import ImageInput from "../ImageInput"
-import { SoftwareData } from "../../../domain/models/forms/SoftwareData"
-import { softwaresService } from "../../../domain/services/api/Softwares.service"
+import { useEffect, useState } from "react";
+import SelectOption from "../SelectOption";
+import TextArea from "../TextArea";
+import TextInput from "../TextInput";
+import Form from "./Form";
+import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
+import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect";
+import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
+import { useGetGroupsSelect } from "../../hooks/Groups/useGetGroupsSelect";
+import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
+import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
+import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
+import { useGetSoftwareCategoriesSelect } from "../../hooks/Softwares/useGetSoftwareCategoriesSelect";
+import { useGetAllSoftwares } from "../../hooks/Softwares/useGetAllSoftwares";
+import Checkbox from "../CheckBox";
+import ImageInput from "../ImageInput";
+import { SoftwareData } from "../../../domain/models/forms/SoftwareData";
+import { softwaresService } from "../../../domain/services/api/Softwares.service";
 
-export default function SoftwareForm() {
+interface formProps {
+  isEditing?: boolean;
+}
+
+export default function SoftwareForm(formProps: formProps) {
+  const { isEditing } = formProps;
   const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
-    const formJson = Object.fromEntries(formData.entries()) as unknown as SoftwareData;
-    softwaresService.createSoftware(formJson)
+    const formJson = Object.fromEntries(
+      formData.entries()
+    ) as unknown as SoftwareData;
 
+    if (isEditing) {
+      console.log(formJson);
+      // aca pondria simplemente el nombre del metodo del servicio
+      // softwaresService.editSoftware(formJson, id);
+    }
+    softwaresService.createSoftware(formJson);
   };
 
-
-  const userInChargeOptions = useGetUserInChargeSelect()
-  const usersOptions = useGetUsersSelect()
-  const groupInChargeOptions = useGetGroupInChargeSelect()
-  const groupsOptions = useGetGroupsSelect()
-  const locationOptions = useGetLocationsSelect()
-  const manufacturerOptions = useGetManufacturersSelect()
-  const softwarecategoryOptions = useGetSoftwareCategoriesSelect()
-  const autoupdatesystemOptions = useGetAutoupdatesystemsSelect()
-  const upgradeOptions = useGetAllSoftwares()
+  const userInChargeOptions = useGetUserInChargeSelect();
+  const usersOptions = useGetUsersSelect();
+  const groupInChargeOptions = useGetGroupInChargeSelect();
+  const groupsOptions = useGetGroupsSelect();
+  const locationOptions = useGetLocationsSelect();
+  const manufacturerOptions = useGetManufacturersSelect();
+  const softwarecategoryOptions = useGetSoftwareCategoriesSelect();
+  const autoupdatesystemOptions = useGetAutoupdatesystemsSelect();
+  const upgradeOptions = useGetAllSoftwares();
 
   interface CheckboxState {
-    associable: boolean
-    upgrade: boolean
+    associable: boolean;
+    upgrade: boolean;
   }
 
   useEffect(() => {
-    usersOptions.get()
-    userInChargeOptions.get()
-    groupsOptions.get()
-    groupInChargeOptions.get()
-    locationOptions.get()
-    manufacturerOptions.get()
-    softwarecategoryOptions.get()
-    autoupdatesystemOptions.get()
-    upgradeOptions.get()
-  }, [])
+    usersOptions.get();
+    userInChargeOptions.get();
+    groupsOptions.get();
+    groupInChargeOptions.get();
+    locationOptions.get();
+    manufacturerOptions.get();
+    softwarecategoryOptions.get();
+    autoupdatesystemOptions.get();
+    upgradeOptions.get();
+  }, []);
 
   const [checkboxes, setCheckboxes] = useState({
     associable: false,
     upgrade: false,
-  })
+  });
 
   const handleCheckboxChange = (checkboxName: keyof CheckboxState) => {
     setCheckboxes((prevCheckboxes) => ({
       ...prevCheckboxes,
       [checkboxName]: !prevCheckboxes[checkboxName],
-    }))
-  }
+    }));
+  };
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -73,6 +84,7 @@ export default function SoftwareForm() {
         handleSubmit={handleSubmit}
         formHeader={"Software"}
         iconName={"Software"}
+        isEditing={isEditing}
       >
         <div className="flex flex-col items-start">
           <label
@@ -210,9 +222,7 @@ export default function SoftwareForm() {
         </div>
 
         <div className="flex flex-col items-start">
-          <label className="text-sm mb-2 font-semibold block">
-            Upgrade
-          </label>
+          <label className="text-sm mb-2 font-semibold block">Upgrade</label>
           <div className="grid grid-cols-4 gap-2">
             <Checkbox
               id="is_update"
@@ -242,5 +252,5 @@ export default function SoftwareForm() {
         </div>
       </Form>
     </div>
-  )
-};
+  );
+}

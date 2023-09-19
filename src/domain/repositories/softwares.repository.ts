@@ -9,6 +9,12 @@ export const softwaresRepository = {
     return response;
   },
 
+  editSoftware: async (body: SoftwareData, id: number) => {
+    const response = await http.patch<SoftwareDTO>(`softwares/${id}`, body);
+
+    return response;
+  },
+
   getAllSoftwares: async () => {
     const response = await http.get<SoftwareDTO>("getSoftwares/");
 
