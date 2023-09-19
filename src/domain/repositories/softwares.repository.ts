@@ -10,7 +10,7 @@ export const softwaresRepository = {
   },
 
   editSoftware: async (body: SoftwareData, id: number) => {
-    const response = await http.patch<SoftwareDTO>(`softwares/${id}`, body);
+    const response = await http.patch<SoftwareDTO>(`softwares/${id}/`, body);
 
     return response;
   },

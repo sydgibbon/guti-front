@@ -48,7 +48,7 @@ export default function EditAsset() {
   }, []);
 
   useEffect(() => {
-    if (assetData?.data != undefined) {
+    if (assetData?.data !== undefined) {
       for (const [key, value] of Object.entries(assetData.data)) {
         let elementInput = document.getElementById(key) as HTMLInputElement;
         if (elementInput != null) {
@@ -80,7 +80,11 @@ export default function EditAsset() {
           {selectedOption && (
             <div className="box-border block title">
               <span className="p-2 text-lg font-semibold bg-white rounded-md form-title">
-                {`${selectedOption} - ${assetData?.data?.name}`}
+                {`${selectedOption} - ${
+                  assetData?.data?.name === undefined
+                    ? ""
+                    : assetData?.data?.name
+                }`}
               </span>
             </div>
           )}

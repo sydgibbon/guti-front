@@ -23,6 +23,10 @@ interface formProps {
 
 export default function SoftwareForm(formProps: formProps) {
   const { isEditing } = formProps;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const idParam = urlParams.get("id");
+  const id = idParam !== null ? parseInt(idParam) : NaN;
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -32,9 +36,7 @@ export default function SoftwareForm(formProps: formProps) {
     ) as unknown as SoftwareData;
 
     if (isEditing) {
-      console.log(formJson);
-      // aca pondria simplemente el nombre del metodo del servicio
-      // softwaresService.editSoftware(formJson, id);
+      softwaresService.editSoftware(formJson, id);
     }
     softwaresService.createSoftware(formJson);
   };
