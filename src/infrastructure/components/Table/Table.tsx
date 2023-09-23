@@ -10,13 +10,20 @@ export default function TableComponent(
 
   const rowsPerPage = [5, 10, 20, 50];
 
+  const rowsWithAnchor = Array.isArray(rows)
+    ? rows.map((row) => ({
+        ...row, // Copia todas las propiedades del objeto original
+        name: <a href={`/assets/edit/computers?id=${row.id}`}>{row.name}</a>, // Modifica 'name' como enlace
+      }))
+    : [];
+
   return (
     <div className="table_container">
       <DataTable
         progressPending={progressPending}
         progressComponent={progressComponent ?? <SkeletonTable />}
         columns={columns}
-        data={rows ?? []}
+        data={rowsWithAnchor ?? []}
         pagination
         paginationPerPage={20}
         paginationRowsPerPageOptions={rowsPerPage}
