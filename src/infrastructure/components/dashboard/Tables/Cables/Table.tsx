@@ -103,6 +103,7 @@ export default function TableCables() {
         progressPending={cables.isLoading}
         columns={columns}
         rows={cables.data}
+        assetPath="cables"
       />
     </div>
   );

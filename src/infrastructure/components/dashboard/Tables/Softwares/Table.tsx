@@ -23,14 +23,14 @@ export default function TableSoftwares() {
 
   useEffect(() => {
     softwares.get();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (softwares.error) {
       showError.get(MessageError.FETCH_FAILED);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [softwares.error]);
 
   return (
@@ -115,6 +115,7 @@ export default function TableSoftwares() {
         progressPending={softwares.isLoading}
         columns={columns}
         rows={softwares.data}
+        assetPath="software"
       />
     </div>
   );

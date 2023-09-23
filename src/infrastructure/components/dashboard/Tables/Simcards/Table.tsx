@@ -11,9 +11,8 @@ import Switch from "react-switch";
 import useShowError from "../../../../hooks/useShowError";
 import { MessageError } from "../../../../utils/MessagesErrors";
 import TableComponent from "../../../Table/Table";
-import { columns } from "./TableData"; 
+import { columns } from "./TableData";
 import { useGetAllSimcards } from "../../../../hooks/Simcards/useGetAllSimcards";
-
 
 export default function TableSimcards() {
   const [checked, setChecked] = useState(false);
@@ -116,6 +115,7 @@ export default function TableSimcards() {
         progressPending={simcards.isLoading}
         columns={columns}
         rows={simcards.data}
+        assetPath="simcards"
       />
     </div>
   );

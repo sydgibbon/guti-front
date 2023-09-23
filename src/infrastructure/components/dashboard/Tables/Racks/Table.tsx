@@ -23,14 +23,14 @@ export default function TableRacks() {
 
   useEffect(() => {
     racks.get();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (racks.error) {
       showError.get(MessageError.FETCH_FAILED);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [racks.error]);
 
   return (
@@ -115,6 +115,7 @@ export default function TableRacks() {
         progressPending={racks.isLoading}
         columns={columns}
         rows={racks.data}
+        assetPath="racks"
       />
     </div>
   );

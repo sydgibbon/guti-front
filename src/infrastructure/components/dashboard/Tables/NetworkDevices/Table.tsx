@@ -115,6 +115,7 @@ export default function TableNetworkDevices() {
         progressPending={networkDevices.isLoading}
         columns={columns}
         rows={networkDevices.data}
+        assetPath="networkequipments"
       />
     </div>
   );

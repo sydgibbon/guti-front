@@ -5,7 +5,7 @@ import { TableComponentProps } from "./types";
 export default function TableComponent(
   tableComponentProps: TableComponentProps
 ) {
-  const { progressPending, progressComponent, columns, rows } =
+  const { progressPending, progressComponent, columns, rows, assetPath } =
     tableComponentProps;
 
   const rowsPerPage = [5, 10, 20, 50];
@@ -13,7 +13,7 @@ export default function TableComponent(
   const rowsWithAnchor = Array.isArray(rows)
     ? rows.map((row) => ({
         ...row, // Copia todas las propiedades del objeto original
-        name: <a href={`/assets/edit/computers?id=${row.id}`}>{row.name}</a>, // Modifica 'name' como enlace
+        name: <a href={`/assets/edit/${assetPath}?id=${row.id}`}>{row.name}</a>, // Modifica 'name' como enlace
       }))
     : [];
 

@@ -103,6 +103,7 @@ export default function TableCartridges() {
         progressPending={cartridges.isLoading}
         columns={columns}
         rows={cartridges.data}
+        assetPath="cartridges"
       />
     </div>
   );
