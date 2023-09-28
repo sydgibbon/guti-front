@@ -14,7 +14,6 @@ import TableComponent from "../../../Table/Table";
 import { columns } from "./TableData";
 import { useGetAllDevices } from "../../../../hooks/Devices/GetAllDevices";
 
-
 export default function TableDevices() {
   const [checked, setChecked] = useState(false);
 
@@ -116,6 +115,7 @@ export default function TableDevices() {
         progressPending={devices.isLoading}
         columns={columns}
         rows={devices.data}
+        assetPath="devices"
       />
     </div>
   );

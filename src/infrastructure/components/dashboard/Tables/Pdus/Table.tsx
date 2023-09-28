@@ -11,7 +11,7 @@ import Switch from "react-switch";
 import useShowError from "../../../../hooks/useShowError";
 import { MessageError } from "../../../../utils/MessagesErrors";
 import TableComponent from "../../../Table/Table";
-import { columns } from "./TableData"; 
+import { columns } from "./TableData";
 import { useGetAllPdus } from "../../../../hooks/Pdus/useGetAllPdus";
 
 export default function TablePdus() {
@@ -115,6 +115,7 @@ export default function TablePdus() {
         progressPending={pdus.isLoading}
         columns={columns}
         rows={pdus.data}
+        assetPath="pdu"
       />
     </div>
   );

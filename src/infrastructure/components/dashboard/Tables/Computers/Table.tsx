@@ -103,6 +103,7 @@ export default function TableComputers() {
         progressPending={computers.isLoading}
         columns={columns}
         rows={computers.data}
+        assetPath="computers"
       />
     </div>
   );

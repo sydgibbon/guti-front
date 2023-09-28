@@ -23,7 +23,7 @@ export default function TableMonitors() {
 
   useEffect(() => {
     monitors.get();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -115,6 +115,7 @@ export default function TableMonitors() {
         progressPending={monitors.isLoading}
         columns={columns}
         rows={monitors.data}
+        assetPath="monitors"
       />
     </div>
   );
