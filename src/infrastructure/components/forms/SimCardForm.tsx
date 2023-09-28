@@ -29,7 +29,9 @@ export default function SimCardForm(formProps: formProps) {
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as SimCardData;
-    simcardsService.createSimcard(formJson);
+    if (!isEditing) {
+      simcardsService.createSimcard(formJson);
+    }
   };
 
   const usersOptions = useGetUsersSelect();

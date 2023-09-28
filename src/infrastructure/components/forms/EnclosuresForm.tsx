@@ -29,7 +29,9 @@ export default function EnclosuresForm(formProps: formProps) {
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as EnclosureData;
-    enclosuresService.createEnclosure(formJson);
+    if (!isEditing) {
+      enclosuresService.createEnclosure(formJson);
+    }
     // debugger;
   };
 

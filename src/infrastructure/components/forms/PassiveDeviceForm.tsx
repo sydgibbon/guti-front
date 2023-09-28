@@ -31,7 +31,9 @@ export default function PassiveDeviceForm(formProps: formProps) {
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as PassiveDeviceData;
-    PassiveDevicesService.createPassiveDevice(formJson);
+    if (!isEditing) {
+      PassiveDevicesService.createPassiveDevice(formJson);
+    }
   };
 
   const userInChargeOptions = useGetUserInChargeSelect();

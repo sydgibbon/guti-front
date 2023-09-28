@@ -32,7 +32,9 @@ export default function RackForm(formProps: formProps) {
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as RackData;
-    racksService.createRack(formJson);
+    if (!isEditing) {
+      racksService.createRack(formJson);
+    }
     // debugger;
   };
 

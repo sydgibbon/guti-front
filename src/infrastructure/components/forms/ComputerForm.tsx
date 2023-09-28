@@ -34,7 +34,9 @@ export default function ComputersForm(formProps: formProps) {
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as ComputerData;
-    computersService.createComputer(formJson);
+    if (!isEditing) {
+      computersService.createComputer(formJson);
+    }
     // debugger;
   };
 

@@ -29,7 +29,9 @@ export default function ConsumableForm(formProps: formProps) {
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as ConsumableItemData;
-    consumablesService.createConsumableItem(formJson);
+    if (!isEditing) {
+      consumablesService.createConsumableItem(formJson);
+    }
     // debugger;
   };
 

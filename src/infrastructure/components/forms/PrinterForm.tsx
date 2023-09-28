@@ -62,7 +62,9 @@ export default function PrinterForm(formProps: formProps) {
       formData.entries()
     ) as unknown as PrinterData;
 
-    printersService.createPrinter(formJson);
+    if (!isEditing) {
+      printersService.createPrinter(formJson);
+    }
   };
 
   const userInChargeOptions = useGetUserInChargeSelect();

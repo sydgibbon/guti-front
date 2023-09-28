@@ -35,7 +35,9 @@ export default function PhoneForm(formProps: formProps) {
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as PhoneData;
-    phonesService.createPhone(formJson);
+    if (!isEditing) {
+      phonesService.createPhone(formJson);
+    }
   };
 
   interface CheckboxState {

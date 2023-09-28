@@ -29,7 +29,9 @@ export default function CartridgeForm(formProps: formProps) {
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as CartridgeData;
-    cartridgesService.createCartridge(formJson);
+    if (!isEditing) {
+      cartridgesService.createCartridge(formJson);
+    }
   };
 
   const numbers = (): OptionValue[] => {

@@ -35,7 +35,9 @@ export default function NetDeviceForm(formProps: formProps) {
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as NetworkDeviceData;
-    networkDevicesService.createNetworkDevice(formJson);
+    if (!isEditing) {
+      networkDevicesService.createNetworkDevice(formJson);
+    }
   };
 
   const userInChargeOptions = useGetUserInChargeSelect();
