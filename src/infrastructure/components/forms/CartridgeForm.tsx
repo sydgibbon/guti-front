@@ -1,55 +1,64 @@
-import { useEffect } from "react"
-import SelectOption, { OptionValue } from "../SelectOption"
-import ImageInput from "../ImageInput"
-import TextArea from "../TextArea"
-import TextInput from "../TextInput"
-import Form from "./Form"
-import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect"
-import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect"
-import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect"
-import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect"
-import { useGetCartridgetypesSelect } from "../../hooks/Cartridges/useGetCartridgetypesSelect"
-import { CartridgeData } from "../../../domain/models/forms/CartridgesData"
-import { cartridgesService } from "../../../domain/services/api/Cartridges.service"
+import { useEffect } from "react";
+import SelectOption, { OptionValue } from "../SelectOption";
+import ImageInput from "../ImageInput";
+import TextArea from "../TextArea";
+import TextInput from "../TextInput";
+import Form from "./Form";
+import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
+import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
+import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
+import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
+import { useGetCartridgetypesSelect } from "../../hooks/Cartridges/useGetCartridgetypesSelect";
+import { CartridgeData } from "../../../domain/models/forms/CartridgesData";
+import { cartridgesService } from "../../../domain/services/api/Cartridges.service";
 
-export default function CartridgeForm() {
+interface formProps {
+  isEditing?: boolean;
+}
+
+export default function CartridgeForm(formProps: formProps) {
+  const { isEditing } = formProps;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const idParam = urlParams.get("id");
+  const id = idParam !== null ? parseInt(idParam) : NaN;
   const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as CartridgeData;
     cartridgesService.createCartridge(formJson);
-  }
+  };
 
   const numbers = (): OptionValue[] => {
-    const options: OptionValue[] = []
+    const options: OptionValue[] = [];
     for (let i = 1; i <= 100; i++) {
       const option: OptionValue = {
         id: i.toString(),
         name: i.toString(),
-      }
-      options.push(option)
+      };
+      options.push(option);
     }
 
-    return options
-  }
+    return options;
+  };
 
-  const threshold = numbers()
-  const userInChargeOptions = useGetUserInChargeSelect()
-  const groupInChargeOptions = useGetGroupInChargeSelect()
-  const locationOptions = useGetLocationsSelect()
-  const manufacturerOptions = useGetManufacturersSelect()
-  const cartridgeTypeOptions = useGetCartridgetypesSelect()
+  const threshold = numbers();
+  const userInChargeOptions = useGetUserInChargeSelect();
+  const groupInChargeOptions = useGetGroupInChargeSelect();
+  const locationOptions = useGetLocationsSelect();
+  const manufacturerOptions = useGetManufacturersSelect();
+  const cartridgeTypeOptions = useGetCartridgetypesSelect();
 
   useEffect(() => {
-    userInChargeOptions.get()
-    groupInChargeOptions.get()
-    locationOptions.get()
-    manufacturerOptions.get()
-    cartridgeTypeOptions.get()
-  }, [])
+    userInChargeOptions.get();
+    groupInChargeOptions.get();
+    locationOptions.get();
+    manufacturerOptions.get();
+    cartridgeTypeOptions.get();
+  }, []);
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -57,6 +66,7 @@ export default function CartridgeForm() {
         handleSubmit={handleSubmit}
         formHeader={"Cartridge Models"}
         iconName={"Cartridges"}
+        isEditing={isEditing}
       >
         <div className="Name">
           <label
@@ -190,5 +200,5 @@ export default function CartridgeForm() {
         </div>
       </Form>
     </div>
-  )
-};
+  );
+}

@@ -1,46 +1,55 @@
-import { useEffect, useState } from "react"
-import SelectOption, { OptionValue } from "../SelectOption"
-import TextArea from "../TextArea"
-import TextInput from "../TextInput"
-import Form from "./Form"
-import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect"
-import { useGetCabletypesSelect } from "../../hooks/Cables/useGetCabletypesSelect"
-import { useGetCablestrandsSelect } from "../../hooks/Cables/useGetCablestrandsSelect"
-import { useGetSocketmodelsSelect } from "../../hooks/Cables/useGetSocketmodelsSelect"
-import { useGetSocketsSelect } from "../../hooks/Cables/useGetSocketsSelect"
-import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect"
-import { useGetAllComputers } from "../../hooks/Computers/useGetAllComputers"
-import { useGetAllNetworkDevices } from "../../hooks/NetworksDevices/useGetAllNetworkDevices"
-import { useGetAllDevices } from "../../hooks/Devices/GetAllDevices"
-import { useGetAllPhones } from "../../hooks/Phones/useGetAllPhones"
-import { useGetAllPrinters } from "../../hooks/Printers/useGetAllPrinters"
-import { useGetAllPassiveDevices } from "../../hooks/PassiveDevices/useGetAllPassiveDevices"
-import { CableData } from "../../../domain/models/forms/CableData"
-import { cablesService } from "../../../domain/services/api/Cable.service"
+import { useEffect, useState } from "react";
+import SelectOption, { OptionValue } from "../SelectOption";
+import TextArea from "../TextArea";
+import TextInput from "../TextInput";
+import Form from "./Form";
+import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect";
+import { useGetCabletypesSelect } from "../../hooks/Cables/useGetCabletypesSelect";
+import { useGetCablestrandsSelect } from "../../hooks/Cables/useGetCablestrandsSelect";
+import { useGetSocketmodelsSelect } from "../../hooks/Cables/useGetSocketmodelsSelect";
+import { useGetSocketsSelect } from "../../hooks/Cables/useGetSocketsSelect";
+import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
+import { useGetAllComputers } from "../../hooks/Computers/useGetAllComputers";
+import { useGetAllNetworkDevices } from "../../hooks/NetworksDevices/useGetAllNetworkDevices";
+import { useGetAllDevices } from "../../hooks/Devices/GetAllDevices";
+import { useGetAllPhones } from "../../hooks/Phones/useGetAllPhones";
+import { useGetAllPrinters } from "../../hooks/Printers/useGetAllPrinters";
+import { useGetAllPassiveDevices } from "../../hooks/PassiveDevices/useGetAllPassiveDevices";
+import { CableData } from "../../../domain/models/forms/CableData";
+import { cablesService } from "../../../domain/services/api/Cable.service";
 
-export default function CableForm() {
+interface formProps {
+  isEditing?: boolean;
+}
+
+export default function CableForm(formProps: formProps) {
+  const { isEditing } = formProps;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const idParam = urlParams.get("id");
+  const id = idParam !== null ? parseInt(idParam) : NaN;
   const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as CableData;
     cablesService.createCable(formJson);
-  }
+  };
 
-  const stateOptions = useGetStatesSelect()
-  const cabletypesOption = useGetCabletypesSelect()
-  const userInChargeOptions = useGetUserInChargeSelect()
-  const cablestrandsOption = useGetCablestrandsSelect()
-  const socketmodelsOption = useGetSocketmodelsSelect()
-  const socketOption = useGetSocketsSelect()
-  const allComputers = useGetAllComputers()
-  const allNetworkDevices = useGetAllNetworkDevices()
-  const allDevices = useGetAllDevices()
-  const allPhones = useGetAllPhones()
-  const allPrinters = useGetAllPrinters()
-  const allPassiveDevices = useGetAllPassiveDevices()
+  const stateOptions = useGetStatesSelect();
+  const cabletypesOption = useGetCabletypesSelect();
+  const userInChargeOptions = useGetUserInChargeSelect();
+  const cablestrandsOption = useGetCablestrandsSelect();
+  const socketmodelsOption = useGetSocketmodelsSelect();
+  const socketOption = useGetSocketsSelect();
+  const allComputers = useGetAllComputers();
+  const allNetworkDevices = useGetAllNetworkDevices();
+  const allDevices = useGetAllDevices();
+  const allPhones = useGetAllPhones();
+  const allPrinters = useGetAllPrinters();
+  const allPassiveDevices = useGetAllPassiveDevices();
 
   const assetOption = [
     { id: "0", name: "Computers" },
@@ -49,57 +58,57 @@ export default function CableForm() {
     { id: "3", name: "Phones" },
     { id: "4", name: "Printers" },
     { id: "5", name: "Passive Devices" },
-  ]
+  ];
 
   const [selectedAssetA, setSelectedAssetA] = useState<OptionValue>({
     id: "0",
     name: "Computers",
-  })
+  });
   const [selectedAssetB, setSelectedAssetB] = useState<OptionValue>({
     id: "0",
     name: "Computers",
-  })
-  const [dataOptionsA, setDataOptionsA] = useState<OptionValue[]>([])
-  const [dataOptionsB, setDataOptionsB] = useState<OptionValue[]>([])
+  });
+  const [dataOptionsA, setDataOptionsA] = useState<OptionValue[]>([]);
+  const [dataOptionsB, setDataOptionsB] = useState<OptionValue[]>([]);
 
-  const [isDataVisibleA, setIsDataVisibleA] = useState(true)
-  const [isDataVisibleB, setIsDataVisibleB] = useState(true)
+  const [isDataVisibleA, setIsDataVisibleA] = useState(true);
+  const [isDataVisibleB, setIsDataVisibleB] = useState(true);
 
   useEffect(() => {
-    stateOptions.get()
-    cabletypesOption.get()
-    userInChargeOptions.get()
-    cablestrandsOption.get()
-    socketmodelsOption.get()
-    socketOption.get()
-    allComputers.get()
-    allNetworkDevices.get()
-    allDevices.get()
-    allPhones.get()
-    allPrinters.get()
-    allPassiveDevices.get()
+    stateOptions.get();
+    cabletypesOption.get();
+    userInChargeOptions.get();
+    cablestrandsOption.get();
+    socketmodelsOption.get();
+    socketOption.get();
+    allComputers.get();
+    allNetworkDevices.get();
+    allDevices.get();
+    allPhones.get();
+    allPrinters.get();
+    allPassiveDevices.get();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  },    [])
+  }, []);
 
   useEffect(() => {
     const fetchData = async () => {
       if (selectedAssetA) {
         if (selectedAssetA.name === "Computers") {
-          setDataOptionsA(allComputers?.data)
+          setDataOptionsA(allComputers?.data);
         } else if (selectedAssetA.name === "Network Devices") {
-          setDataOptionsA(allNetworkDevices?.data)
+          setDataOptionsA(allNetworkDevices?.data);
         } else if (selectedAssetA?.name === "Devices") {
-          setDataOptionsA(allDevices?.data)
+          setDataOptionsA(allDevices?.data);
         } else if (selectedAssetA.name === "Phones") {
-          setDataOptionsA(allPhones?.data)
+          setDataOptionsA(allPhones?.data);
         } else if (selectedAssetA.name === "Printers") {
-          setDataOptionsA(allPrinters?.data)
+          setDataOptionsA(allPrinters?.data);
         } else if (selectedAssetA.name === "Passive Devices") {
-          setDataOptionsA(allPassiveDevices?.data)
+          setDataOptionsA(allPassiveDevices?.data);
         }
       }
-    }
-    fetchData()
+    };
+    fetchData();
   }, [
     selectedAssetA,
     allComputers,
@@ -108,61 +117,62 @@ export default function CableForm() {
     allPhones,
     allPrinters,
     allPassiveDevices,
-  ])
+  ]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      if (selectedAssetB) {
-        if (selectedAssetB.name === "Computers") {
-          setDataOptionsB(allComputers?.data)
-        } else if (selectedAssetB.name === "Network Devices") {
-          setDataOptionsB(allNetworkDevices?.data)
-        } else if (selectedAssetA?.name === "Devices") {
-          setDataOptionsB(allDevices?.data)
-        } else if (selectedAssetB.name === "Phones") {
-          setDataOptionsB(allPhones?.data)
-        } else if (selectedAssetB.name === "Printers") {
-          setDataOptionsB(allPrinters?.data)
-        } else if (selectedAssetB.name === "Passive Devices") {
-          setDataOptionsB(allPassiveDevices?.data)
+  useEffect(
+    () => {
+      const fetchData = async () => {
+        if (selectedAssetB) {
+          if (selectedAssetB.name === "Computers") {
+            setDataOptionsB(allComputers?.data);
+          } else if (selectedAssetB.name === "Network Devices") {
+            setDataOptionsB(allNetworkDevices?.data);
+          } else if (selectedAssetA?.name === "Devices") {
+            setDataOptionsB(allDevices?.data);
+          } else if (selectedAssetB.name === "Phones") {
+            setDataOptionsB(allPhones?.data);
+          } else if (selectedAssetB.name === "Printers") {
+            setDataOptionsB(allPrinters?.data);
+          } else if (selectedAssetB.name === "Passive Devices") {
+            setDataOptionsB(allPassiveDevices?.data);
+          }
         }
-      }
-    }
-    fetchData()
-  },
+      };
+      fetchData();
+    },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-   [
-    selectedAssetB,
-    allComputers,
-    allNetworkDevices,
-    allDevices,
-    allPhones,
-    allPrinters,
-    allPassiveDevices,
-    
-  ])
+    [
+      selectedAssetB,
+      allComputers,
+      allNetworkDevices,
+      allDevices,
+      allPhones,
+      allPrinters,
+      allPassiveDevices,
+    ]
+  );
 
   useEffect(() => {
     if (
       selectedAssetA?.name === "Phones" ||
       selectedAssetA?.name === "Printers"
     ) {
-      setIsDataVisibleA(false)
+      setIsDataVisibleA(false);
     } else {
-      setIsDataVisibleA(true)
+      setIsDataVisibleA(true);
     }
-  }, [selectedAssetA])
+  }, [selectedAssetA]);
 
   useEffect(() => {
     if (
       selectedAssetB?.name === "Phones" ||
       selectedAssetB?.name === "Printers"
     ) {
-      setIsDataVisibleB(false)
+      setIsDataVisibleB(false);
     } else {
-      setIsDataVisibleB(true)
+      setIsDataVisibleB(true);
     }
-  }, [selectedAssetB])
+  }, [selectedAssetB]);
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -170,6 +180,7 @@ export default function CableForm() {
         handleSubmit={handleSubmit}
         formHeader={"Cable"}
         iconName={"Cables"}
+        isEditing={isEditing}
       >
         <div>
           <label
@@ -380,5 +391,5 @@ export default function CableForm() {
         </div>
       </Form>
     </div>
-  )
-};
+  );
+}

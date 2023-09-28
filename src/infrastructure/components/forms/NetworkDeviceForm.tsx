@@ -18,7 +18,16 @@ import { useGetSnmpCredentialsSelect } from "../../hooks/SnmpCredentials/useGetS
 import { NetworkDeviceData } from "../../../domain/models/forms/NetworkDeviceData";
 import { networkDevicesService } from "../../../domain/services/api/NetworkDevices.service";
 
-export default function NetDeviceForm() {
+interface formProps {
+  isEditing?: boolean;
+}
+
+export default function NetDeviceForm(formProps: formProps) {
+  const { isEditing } = formProps;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const idParam = urlParams.get("id");
+  const id = idParam !== null ? parseInt(idParam) : NaN;
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -63,6 +72,7 @@ export default function NetDeviceForm() {
         handleSubmit={handleSubmit}
         formHeader={"Network Devices"}
         iconName={"NetworkDevices"}
+        isEditing={isEditing}
       >
         <div>
           <label

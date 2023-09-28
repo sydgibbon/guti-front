@@ -34,7 +34,7 @@ export const AssetOptions: EditAssetOption[] = [
     name: "Computers",
     useGetAssetData: useGetComputerById,
     options: [
-      { name: "Computers", content: <ComputerForm /> },
+      { name: "Computers", content: <ComputerForm isEditing={true} /> },
       { name: "Impact Analysis", content: "" },
       { name: "Operating Systems", content: "" },
       { name: "Components", content: "" },
@@ -68,7 +68,7 @@ export const AssetOptions: EditAssetOption[] = [
     name: "Monitors",
     useGetAssetData: useGetMonitorById,
     options: [
-      { name: "Monitors", content: <MonitorForm /> },
+      { name: "Monitors", content: <MonitorForm isEditing={true} /> },
       { name: "Impact Analysis", content: "" },
       { name: "Operating Systems", content: "" },
       { name: "Software", content: "" },
@@ -119,7 +119,7 @@ export const AssetOptions: EditAssetOption[] = [
     name: "Networkequipments",
     useGetAssetData: useGetNetworkDeviceById,
     options: [
-      { name: "Network Devices", content: <NetDeviceForm /> },
+      { name: "Network Devices", content: <NetDeviceForm isEditing={true} /> },
       { name: "Impact Analysis", content: "" },
       { name: "Operating Systems", content: "" },
       { name: "Software", content: "" },
@@ -149,7 +149,7 @@ export const AssetOptions: EditAssetOption[] = [
     name: "Devices",
     useGetAssetData: useGetComputerById,
     options: [
-      { name: "Devices", content: <DeviceForm /> },
+      { name: "Devices", content: <DeviceForm isEditing={true} /> },
       { name: "Impact Analysis", content: "" },
       { name: "Operating Systems", content: "" },
       { name: "Software", content: "" },
@@ -178,7 +178,7 @@ export const AssetOptions: EditAssetOption[] = [
     name: "Printers",
     useGetAssetData: useGetComputerById,
     options: [
-      { name: "Printers", content: <PrinterForm /> },
+      { name: "Printers", content: <PrinterForm isEditing={true} /> },
       { name: "Impact Analysis", content: "" },
       { name: "Operating Systems", content: "" },
       { name: "Software", content: "" },
@@ -210,7 +210,7 @@ export const AssetOptions: EditAssetOption[] = [
     name: "Cartridges",
     useGetAssetData: useGetComputerById,
     options: [
-      { name: "Cartridge Models", content: <CartridgeForm /> },
+      { name: "Cartridge Models", content: <CartridgeForm isEditing={true} /> },
       { name: "Cartridges", content: "" },
       { name: "Printer Models", content: "" },
       { name: "Management", content: "" },
@@ -225,7 +225,10 @@ export const AssetOptions: EditAssetOption[] = [
     name: "Consumables",
     useGetAssetData: useGetComputerById,
     options: [
-      { name: "Consumable Models", content: <ConsumableForm /> },
+      {
+        name: "Consumable Models",
+        content: <ConsumableForm isEditing={true} />,
+      },
       { name: "Consumables", content: "" },
       { name: "Management", content: "" },
       { name: "Documents", content: "" },
@@ -239,7 +242,7 @@ export const AssetOptions: EditAssetOption[] = [
     name: "Phones",
     useGetAssetData: useGetComputerById,
     options: [
-      { name: "Phones", content: <PhoneForm /> },
+      { name: "Phones", content: <PhoneForm isEditing={true} /> },
       { name: "Impact Analysis", content: "" },
       { name: "Operating Systems", content: "" },
       { name: "Software", content: "" },
@@ -270,7 +273,7 @@ export const AssetOptions: EditAssetOption[] = [
     useGetAssetData: useGetComputerById,
     options: [
       { name: "Items", content: "" },
-      { name: "Racks", content: <RackForm /> },
+      { name: "Racks", content: <RackForm isEditing={true} /> },
       { name: "Impact Analysis", content: "" },
       { name: "Management", content: "" },
       { name: "Contracts", content: "" },
@@ -286,7 +289,7 @@ export const AssetOptions: EditAssetOption[] = [
     name: "Enclosures",
     useGetAssetData: useGetComputerById,
     options: [
-      { name: "Enclosures", content: <EnclosuresForm /> },
+      { name: "Enclosures", content: <EnclosuresForm isEditing={true} /> },
       { name: "Impact Analysis", content: "" },
       { name: "Items", content: "" },
       { name: "Components", content: "" },
@@ -305,7 +308,7 @@ export const AssetOptions: EditAssetOption[] = [
     name: "Pdu",
     useGetAssetData: useGetComputerById,
     options: [
-      { name: "PDUs", content: <PduForm /> },
+      { name: "PDUs", content: <PduForm isEditing={true} /> },
       { name: "Impact Analysis", content: "" },
       { name: "PDU plugs", content: "" },
       { name: "Network Ports", content: "" },
@@ -323,7 +326,10 @@ export const AssetOptions: EditAssetOption[] = [
     name: "Passivedevices",
     useGetAssetData: useGetComputerById,
     options: [
-      { name: "Passive Devices", content: <PassiveDeviceForm /> },
+      {
+        name: "Passive Devices",
+        content: <PassiveDeviceForm isEditing={true} />,
+      },
       { name: "Sockets", content: "" },
       { name: "Management", content: "" },
       { name: "Contracts", content: "" },
@@ -344,7 +350,7 @@ export const AssetOptions: EditAssetOption[] = [
     name: "Cables",
     useGetAssetData: useGetComputerById,
     options: [
-      { name: "Cable", content: <CableForm /> },
+      { name: "Cable", content: <CableForm isEditing={true} /> },
       { name: "Management", content: "" },
       { name: "Tickets", content: "" },
       { name: "Problems", content: "" },
@@ -357,7 +363,7 @@ export const AssetOptions: EditAssetOption[] = [
     name: "Simcards",
     useGetAssetData: useGetComputerById,
     options: [
-      { name: "Simcards", content: <SimCardForm /> },
+      { name: "Simcards", content: <SimCardForm isEditing={true} /> },
       { name: "Management", content: "" },
       { name: "Documents", content: "" },
       { name: "Historical", content: "" },
