@@ -23,14 +23,14 @@ export default function TablePrinters() {
 
   useEffect(() => {
     printers.get();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (printers.error) {
       showError.get(MessageError.FETCH_FAILED);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [printers.error]);
 
   return (
@@ -115,6 +115,7 @@ export default function TablePrinters() {
         progressPending={printers.isLoading}
         columns={columns}
         rows={printers.data}
+        assetPath="printers"
       />
     </div>
   );

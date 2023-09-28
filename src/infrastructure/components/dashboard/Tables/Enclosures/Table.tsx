@@ -23,14 +23,14 @@ export default function TableEnclosures() {
 
   useEffect(() => {
     enclosures.get();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     if (enclosures.error) {
       showError.get(MessageError.FETCH_FAILED);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [enclosures.error]);
 
   return (
@@ -115,6 +115,7 @@ export default function TableEnclosures() {
         progressPending={enclosures.isLoading}
         columns={columns}
         rows={enclosures.data}
+        assetPath="enclosures"
       />
     </div>
   );

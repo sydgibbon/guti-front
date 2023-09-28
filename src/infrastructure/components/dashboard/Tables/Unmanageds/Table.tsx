@@ -11,7 +11,7 @@ import Switch from "react-switch";
 import useShowError from "../../../../hooks/useShowError";
 import { MessageError } from "../../../../utils/MessagesErrors";
 import TableComponent from "../../../Table/Table";
-import { columns } from "./TableData"; 
+import { columns } from "./TableData";
 import { useGetAllUnmanageds } from "../../../../hooks/Unmanageds/useGetAllUnmanageds";
 
 export default function TableUnmanaged() {
@@ -115,6 +115,7 @@ export default function TableUnmanaged() {
         progressPending={unmanageds.isLoading}
         columns={columns}
         rows={unmanageds.data}
+        assetPath="unmanageds"
       />
     </div>
   );

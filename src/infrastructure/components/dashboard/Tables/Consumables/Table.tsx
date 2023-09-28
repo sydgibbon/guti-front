@@ -115,6 +115,7 @@ export default function TableSimcards() {
         progressPending={consumables.isLoading}
         columns={columns}
         rows={consumables.data}
+        assetPath="consumables"
       />
     </div>
   );
