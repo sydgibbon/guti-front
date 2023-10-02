@@ -109,6 +109,14 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: "/assets",
+        element: (
+          <Main>
+            <AssetsDashboard />
+          </Main>
+        ),
+      },
+      {
         path: "assets/dashboard",
         element: (
           <Main>
