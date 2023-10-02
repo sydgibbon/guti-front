@@ -135,8 +135,7 @@ const SearchCard = ({ asset, columns }: SearchCardProps) => {
         </div>
       </div>
       <DataTable
-      
-      selectableRows
+        selectableRows
         columns={columns}
         data={computers.data}
         pagination
