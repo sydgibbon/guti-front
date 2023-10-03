@@ -8,6 +8,14 @@ export const printersRepository = {
 
     return response;
   },
+  editPrinter: async (body: PrinterData, id: number) => {
+    const response = await http.put<PrinterDTO>(
+      `updatePrinterById/${id}/`,
+      body
+    );
+
+    return response;
+  },
   getAllPrinters: async () => {
     const response = await http.get<PrinterDTO>("getPrinters/");
 

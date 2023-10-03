@@ -30,9 +30,10 @@ export default function PduForm(formProps: formProps) {
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as PduData;
-    if (!isEditing) {
-      pdusService.createPdu(formJson);
-    }
+
+    return isEditing
+      ? pdusService.editPdu(formJson, id)
+      : pdusService.createPdu(formJson);
   };
 
   const userInChargeOptions = useGetUserInChargeSelect();

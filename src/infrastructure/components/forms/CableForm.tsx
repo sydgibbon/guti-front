@@ -35,9 +35,10 @@ export default function CableForm(formProps: formProps) {
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as CableData;
-    if (!isEditing) {
-      cablesService.createCable(formJson);
-    }
+
+    return isEditing
+      ? cablesService.editCable(formJson, id)
+      : cablesService.createCable(formJson);
   };
 
   const stateOptions = useGetStatesSelect();

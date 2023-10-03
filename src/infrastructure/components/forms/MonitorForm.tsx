@@ -35,9 +35,9 @@ export default function MonitorForm(formProps: formProps) {
       formData.entries()
     ) as unknown as MonitorData;
 
-    if (!isEditing) {
-      monitorsService.createMonitors(formJson);
-    }
+    return isEditing
+      ? monitorsService.editMonitors(formJson, id)
+      : monitorsService.createMonitors(formJson);
   };
 
   const userInChargeOptions = useGetUserInChargeSelect();

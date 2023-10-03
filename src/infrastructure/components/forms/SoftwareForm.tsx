@@ -35,12 +35,9 @@ export default function SoftwareForm(formProps: formProps) {
       formData.entries()
     ) as unknown as SoftwareData;
 
-    if (isEditing) {
-      softwaresService.editSoftware(formJson, id);
-    }
-    if (!isEditing) {
-      softwaresService.createSoftware(formJson);
-    }
+    return isEditing
+      ? softwaresService.editSoftware(formJson, id)
+      : softwaresService.createSoftware(formJson);
   };
 
   const userInChargeOptions = useGetUserInChargeSelect();

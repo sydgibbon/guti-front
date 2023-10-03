@@ -8,6 +8,15 @@ export const computersRepository = {
 
     return response;
   },
+
+  editComputer: async (body: ComputerData, id: number) => {
+    const response = await http.put<ComputerDTO>(
+      `updateComputerById/${id}/`,
+      body
+    );
+
+    return response;
+  },
   getAllComputers: async () => {
     const response = await http.get<ComputerDTO>("getComputers/");
 
@@ -38,19 +47,20 @@ export const computersRepository = {
     return response.data;
   },
   getComputertypesSelect: async () => {
-    const response = await http.get<ComputerDTO>("getComputertypesSelect/");    
+    const response = await http.get<ComputerDTO>("getComputertypesSelect/");
 
     return response.data;
   },
   getComputermodelsSelect: async () => {
-    const response = await http.get<ComputerDTO>("getComputermodelsSelect/");    
+    const response = await http.get<ComputerDTO>("getComputermodelsSelect/");
 
     return response.data;
   },
   getComputerById: async (id: number) => {
-    const response = await http.get<ComputerDTO>("getComputersById/" + id + "/");    
+    const response = await http.get<ComputerDTO>(
+      "getComputersById/" + id + "/"
+    );
 
     return response.data;
   },
-  
 };
