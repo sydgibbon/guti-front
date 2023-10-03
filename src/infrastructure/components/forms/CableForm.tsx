@@ -27,7 +27,7 @@ export default function CableForm() {
       formData.entries()
     ) as unknown as CableData;
     cablesService.createCable(formJson);
-  }
+  } 
 
   const stateOptions = useGetStatesSelect()
   const cabletypesOption = useGetCabletypesSelect()
