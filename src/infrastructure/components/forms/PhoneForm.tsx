@@ -1,88 +1,100 @@
-import { useEffect, useState } from "react"
-import SelectOption from "../SelectOption"
-import TextArea from "../TextArea"
-import TextInput from "../TextInput"
-import Form from "./Form"
-import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect"
-import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect"
-import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect"
-import { useGetGroupsSelect } from "../../hooks/Groups/useGetGroupsSelect"
-import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect"
-import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect"
-import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect"
-import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect"
-import { useGetPhonetypesSelect } from "../../hooks/Phones/useGetPhonetypesSelect"
-import { useGetPhonemodelsSelect } from "../../hooks/Phones/useGetPhonemodelsSelect"
-import { useGetPhonePowerSuppliesSelect } from "../../hooks/Phones/useGetPhonePowerSuppliesSelect"
-import Checkbox from "../CheckBox"
-import { PhoneData } from "../../../domain/models/forms/PhoneData"
-import { phonesService } from "../../../domain/services/api/Phones.service"
+import { useEffect, useState } from "react";
+import SelectOption from "../SelectOption";
+import TextArea from "../TextArea";
+import TextInput from "../TextInput";
+import Form from "./Form";
+import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
+import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect";
+import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
+import { useGetGroupsSelect } from "../../hooks/Groups/useGetGroupsSelect";
+import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
+import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect";
+import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
+import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
+import { useGetPhonetypesSelect } from "../../hooks/Phones/useGetPhonetypesSelect";
+import { useGetPhonemodelsSelect } from "../../hooks/Phones/useGetPhonemodelsSelect";
+import { useGetPhonePowerSuppliesSelect } from "../../hooks/Phones/useGetPhonePowerSuppliesSelect";
+import Checkbox from "../CheckBox";
+import { PhoneData } from "../../../domain/models/forms/PhoneData";
+import { phonesService } from "../../../domain/services/api/Phones.service";
 
-export default function PhoneForm() {
+interface formProps {
+  isEditing?: boolean;
+}
 
+export default function PhoneForm(formProps: formProps) {
+  const { isEditing } = formProps;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const idParam = urlParams.get("id");
+  const id = idParam !== null ? parseInt(idParam) : NaN;
   const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as PhoneData;
-    phonesService.createPhone(formJson);
-  }
+
+    return isEditing
+      ? phonesService.editPhone(formJson, id)
+      : phonesService.createPhone(formJson);
+  };
 
   interface CheckboxState {
-    headset: boolean
-    speaker: boolean
+    headset: boolean;
+    speaker: boolean;
   }
 
   const [checkboxes, setCheckboxes] = useState({
     headset: false,
     speaker: false,
-  })
+  });
 
   const handleCheckboxChange = (checkboxName: keyof CheckboxState) => {
     setCheckboxes((prevCheckboxes) => ({
       ...prevCheckboxes,
       [checkboxName]: !prevCheckboxes[checkboxName],
-    }))
-  }
+    }));
+  };
 
-  const userInChargeOptions = useGetUserInChargeSelect()
-  const usersOptions = useGetUsersSelect()
-  const groupInChargeOptions = useGetGroupInChargeSelect()
-  const groupsOptions = useGetGroupsSelect()
-  const locationOptions = useGetLocationsSelect()
-  const stateOptions = useGetStatesSelect()
-  const manufacturerOptions = useGetManufacturersSelect()
-  const phoneModelOptions = useGetPhonemodelsSelect()
-  const phoneTypeOptions = useGetPhonetypesSelect()
-  const phonePowerSupplyTypeOptions = useGetPhonePowerSuppliesSelect()
-  const autoupdatesystemOptions = useGetAutoupdatesystemsSelect()
+  const userInChargeOptions = useGetUserInChargeSelect();
+  const usersOptions = useGetUsersSelect();
+  const groupInChargeOptions = useGetGroupInChargeSelect();
+  const groupsOptions = useGetGroupsSelect();
+  const locationOptions = useGetLocationsSelect();
+  const stateOptions = useGetStatesSelect();
+  const manufacturerOptions = useGetManufacturersSelect();
+  const phoneModelOptions = useGetPhonemodelsSelect();
+  const phoneTypeOptions = useGetPhonetypesSelect();
+  const phonePowerSupplyTypeOptions = useGetPhonePowerSuppliesSelect();
+  const autoupdatesystemOptions = useGetAutoupdatesystemsSelect();
 
   const managementTypeOptions = [
     { id: "0", name: "Unit Management" },
     { id: "1", name: "Global Management" },
-  ]
+  ];
 
   useEffect(() => {
-    usersOptions.get()
-    userInChargeOptions.get()
-    groupsOptions.get()
-    groupInChargeOptions.get()
-    locationOptions.get()
-    stateOptions.get()
-    manufacturerOptions.get()
-    phoneModelOptions.get()
-    phoneTypeOptions.get()
-    phonePowerSupplyTypeOptions.get()
-    autoupdatesystemOptions.get()
-  }, [])
+    usersOptions.get();
+    userInChargeOptions.get();
+    groupsOptions.get();
+    groupInChargeOptions.get();
+    locationOptions.get();
+    stateOptions.get();
+    manufacturerOptions.get();
+    phoneModelOptions.get();
+    phoneTypeOptions.get();
+    phonePowerSupplyTypeOptions.get();
+    autoupdatesystemOptions.get();
+  }, []);
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Phones"}
         iconName={"Phones"}
+        isEditing={isEditing}
       >
         <div>
           <label
@@ -317,9 +329,7 @@ export default function PhoneForm() {
           >
             Brand
           </label>
-          <TextInput
-            id={"brand"}
-          />
+          <TextInput id={"brand"} />
         </div>
 
         <div>
@@ -367,5 +377,5 @@ export default function PhoneForm() {
         </div>
       </Form>
     </div>
-  )
-};
+  );
+}

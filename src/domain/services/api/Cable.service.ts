@@ -5,6 +5,9 @@ export const cablesService = {
   createCable: (body: CableData) => {
     return cablesRepository.createCable(body);
   },
+  editCable: (body: CableData, id: number) => {
+    return cablesRepository.editCable(body, id);
+  },
   getAllCables: () => {
     return cablesRepository.getAllCables();
   },

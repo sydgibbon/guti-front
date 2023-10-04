@@ -1,4 +1,3 @@
-
 import { CableDTO } from "../dto/CableDTO";
 import { CableData } from "../models/forms/CableData";
 import http from "../services/api/http";
@@ -6,6 +5,11 @@ import http from "../services/api/http";
 export const cablesRepository = {
   createCable: async (body: CableData) => {
     const response = await http.post<CableDTO>("createCable/", body);
+
+    return response;
+  },
+  editCable: async (body: CableData, id: number) => {
+    const response = await http.put<CableDTO>(`updateCableById/${id}/`, body);
 
     return response;
   },

@@ -8,6 +8,14 @@ export const enclosuresRepository = {
 
     return response;
   },
+  editEnclosure: async (body: EnclosureData, id: number) => {
+    const response = await http.put<EnclosureDTO>(
+      `updateEnclosureById/${id}/`,
+      body
+    );
+
+    return response;
+  },
   getAllEnclosures: async () => {
     const response = await http.get<EnclosureDTO>("getEnclosures/");
 

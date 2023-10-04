@@ -13,7 +13,16 @@ import { useGetPassivedctypesSelect } from "../../hooks/PassiveDevices/useGetPas
 import { PassiveDevicesService } from "../../../domain/services/api/PassiveDevices.service";
 import { PassiveDeviceData } from "../../../domain/models/forms/PassiveDeviceData";
 
-export default function PassiveDeviceForm() {
+interface formProps {
+  isEditing?: boolean;
+}
+
+export default function PassiveDeviceForm(formProps: formProps) {
+  const { isEditing } = formProps;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const idParam = urlParams.get("id");
+  const id = idParam !== null ? parseInt(idParam) : NaN;
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     e.preventDefault();
@@ -22,7 +31,10 @@ export default function PassiveDeviceForm() {
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as PassiveDeviceData;
-    PassiveDevicesService.createPassiveDevice(formJson);
+
+    return isEditing
+      ? PassiveDevicesService.editPassiveDevice(formJson, id)
+      : PassiveDevicesService.createPassiveDevice(formJson);
   };
 
   const userInChargeOptions = useGetUserInChargeSelect();
@@ -49,6 +61,7 @@ export default function PassiveDeviceForm() {
         handleSubmit={handleSubmit}
         formHeader={"Passive Devices"}
         iconName={"PassiveDevices"}
+        isEditing={isEditing}
       >
         <div>
           <label

@@ -21,7 +21,16 @@ import Checkbox from "../CheckBox";
 import { PrinterData } from "../../../domain/models/forms/PrinterData";
 import { printersService } from "../../../domain/services/api/Printers.service";
 
-export default function PrinterForm() {
+interface formProps {
+  isEditing?: boolean;
+}
+
+export default function PrinterForm(formProps: formProps) {
+  const { isEditing } = formProps;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const idParam = urlParams.get("id");
+  const id = idParam !== null ? parseInt(idParam) : NaN;
   interface CheckboxState {
     serial: boolean;
     parallel: boolean;
@@ -53,7 +62,9 @@ export default function PrinterForm() {
       formData.entries()
     ) as unknown as PrinterData;
 
-    printersService.createPrinter(formJson);
+    return isEditing
+      ? printersService.editPrinter(formJson, id)
+      : printersService.createPrinter(formJson);
   };
 
   const userInChargeOptions = useGetUserInChargeSelect();
@@ -95,6 +106,7 @@ export default function PrinterForm() {
         handleSubmit={handleSubmit}
         formHeader={"Printers"}
         iconName={"Printers"}
+        isEditing={isEditing}
       >
         <div className="Name">
           <label
@@ -429,5 +441,4 @@ export default function PrinterForm() {
       </Form>
     </div>
   );
-};
-
+}

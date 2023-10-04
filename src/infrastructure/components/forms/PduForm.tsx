@@ -13,7 +13,16 @@ import { useGetPdutypesSelect } from "../../hooks/Pdus/useGetPdutypesSelect";
 import { pdusService } from "../../../domain/services/api/Pdus.service";
 import { PduData } from "../../../domain/models/forms/PduData";
 
-export default function PduForm() {
+interface formProps {
+  isEditing?: boolean;
+}
+
+export default function PduForm(formProps: formProps) {
+  const { isEditing } = formProps;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const idParam = urlParams.get("id");
+  const id = idParam !== null ? parseInt(idParam) : NaN;
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -21,7 +30,10 @@ export default function PduForm() {
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as PduData;
-    pdusService.createPdu(formJson);
+
+    return isEditing
+      ? pdusService.editPdu(formJson, id)
+      : pdusService.createPdu(formJson);
   };
 
   const userInChargeOptions = useGetUserInChargeSelect();
@@ -48,6 +60,7 @@ export default function PduForm() {
         handleSubmit={handleSubmit}
         formHeader={"PDUs"}
         iconName={"PDUs"}
+        isEditing={isEditing}
       >
         <div>
           <label

@@ -11,6 +11,14 @@ export const networkDevicesRepository = {
 
     return response;
   },
+  editNetworkDevice: async (body: NetworkDeviceData, id: number) => {
+    const response = await http.put<NetworkDevicesDTO>(
+      `updateNetworkDeviceById/${id}/`,
+      body
+    );
+
+    return response;
+  },
   getAllNewtorkDevices: async () => {
     const response = await http.get<NetworkDevicesDTO[]>(
       "getNetworkequipments/"
@@ -43,7 +51,7 @@ export const networkDevicesRepository = {
   },
 
   getNetworkDeviceById: async (id: number) => {
-    const response = await http.get("getNetworkequipmentsById/" + id +"/");
+    const response = await http.get("getNetworkequipmentsById/" + id + "/");
 
     return response.data;
   },

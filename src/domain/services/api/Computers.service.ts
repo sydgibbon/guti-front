@@ -5,6 +5,9 @@ export const computersService = {
   createComputer: (body: ComputerData) => {
     return computersRepository.createComputer(body);
   },
+  editComputer: (body: ComputerData, id: number) => {
+    return computersRepository.editComputer(body, id);
+  },
   getAllComputers: () => {
     return computersRepository.getAllComputers();
   },

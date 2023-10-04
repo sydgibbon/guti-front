@@ -8,7 +8,11 @@ export const racksRepository = {
 
     return response;
   },
+  editRack: async (body: RackData, id: number) => {
+    const response = await http.put<RackDTO>(`updateRackById/${id}/`, body);
 
+    return response;
+  },
   getAllRacks: async () => {
     const response = await http.get<RackDTO>("getRacks/");
 

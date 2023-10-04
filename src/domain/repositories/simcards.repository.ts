@@ -8,6 +8,14 @@ export const simcardsRepository = {
 
     return response;
   },
+  editSimCard: async (body: SimCardData, id: number) => {
+    const response = await http.put<SimCardsDTO>(
+      `updateSimCardById/${id}/`,
+      body
+    );
+
+    return response;
+  },
   getAllSimcards: async () => {
     const response = await http.get<any>("getDevicesimcards/");
 
