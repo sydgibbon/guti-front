@@ -12,9 +12,11 @@ import { useGetPassivedcmodelsSelect } from "../../hooks/PassiveDevices/useGetPa
 import { useGetPassivedctypesSelect } from "../../hooks/PassiveDevices/useGetPassivedctypesSelect";
 import { PassiveDevicesService } from "../../../domain/services/api/PassiveDevices.service";
 import { PassiveDeviceData } from "../../../domain/models/forms/PassiveDeviceData";
+import { errorNotification, successNotification } from "../../redux/Global";
+import { useDispatch } from "react-redux";
 
 export default function PassiveDeviceForm() {
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -23,7 +25,21 @@ export default function PassiveDeviceForm() {
       formData.entries()
     ) as unknown as PassiveDeviceData;
     PassiveDevicesService.createPassiveDevice(formJson);
+
+    try {
+      await PassiveDevicesService.createPassiveDevice(formJson);
+      dispatch(
+        successNotification()
+      );
+      form.reset();
+    } catch (error) {
+      dispatch(
+        errorNotification()
+      );
+    }
   };
+
+  const dispatch = useDispatch();
 
   const userInChargeOptions = useGetUserInChargeSelect();
   const groupInChargeOptions = useGetGroupInChargeSelect();

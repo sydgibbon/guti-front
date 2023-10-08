@@ -14,11 +14,12 @@ import { useGetRacktypesSelect } from "../../hooks/Racks/useGetRacktypesSelect"
 import { useGetDcroomsSelect } from "../../hooks/Racks/useGetDcroomsSelect"
 import { RackData } from "../../../domain/models/forms/RackData"
 import { racksService } from "../../../domain/services/api/Racks.service"
-
+import { errorNotification, successNotification } from "../../redux/Global";
+import { useDispatch } from "react-redux"
 
 export default function RackForm() {
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -26,8 +27,21 @@ export default function RackForm() {
       formData.entries()
     ) as unknown as RackData;
     racksService.createRack(formJson);
-    // debugger;
+
+    try {
+      await racksService.createRack (formJson);
+      dispatch(
+        successNotification()
+      );
+      form.reset();
+    } catch (error) {
+      dispatch(
+        errorNotification()
+      );
+    }
   };
+
+  const dispatch = useDispatch();
 
   const userInChargeOptions = useGetUserInChargeSelect()
   const groupInChargeOptions = useGetGroupInChargeSelect()

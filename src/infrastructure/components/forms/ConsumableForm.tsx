@@ -11,10 +11,11 @@ import Form from "./Form"
 import ImageInput from "../ImageInput"
 import { ConsumableItemData } from "../../../domain/models/forms/ConsumableItemData"
 import { consumablesService } from "../../../domain/services/api/Consumables.service"
-
+import { useDispatch } from "react-redux";
+import { errorNotification, successNotification } from "../../redux/Global";
 
 export default function ConsumableForm() {
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -22,8 +23,21 @@ export default function ConsumableForm() {
       formData.entries()
     ) as unknown as ConsumableItemData;
     consumablesService.createConsumableItem(formJson);
-    // debugger;
+   
+    try {
+      await consumablesService.createConsumableItem(formJson);
+      dispatch(
+        successNotification()
+      );
+      form.reset();
+    } catch (error) {
+      dispatch(
+        errorNotification()
+      );
+    }
   };
+
+  const dispatch = useDispatch();
 
   const numbers = (): OptionValue[] => {
     const options: OptionValue[] = []

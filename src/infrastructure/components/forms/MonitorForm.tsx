@@ -16,19 +16,34 @@ import { useGetMonitormodelsSelect } from "../../hooks/Monitors/useGetMonitormod
 import { useGetMonitortypesSelect } from "../../hooks/Monitors/useGetMonitortypesSelect";
 import { MonitorData } from "../../../domain/models/forms/MonitorData";
 import { monitorsService } from "../../../domain/services/api/Monitors.service";
+import { useDispatch } from "react-redux";
+import { errorNotification, successNotification } from "../../redux/Global";
 
 export default function MonitorForm() {
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as MonitorData;
-
     monitorsService.createMonitors(formJson);
+
+    try {
+      await monitorsService.createMonitors(formJson);
+      dispatch(
+        successNotification()
+      );
+      form.reset();
+    } catch (error) {
+      dispatch(
+        errorNotification()
+      );
+    }
   };
+
+  const dispatch = useDispatch();
 
   const userInChargeOptions = useGetUserInChargeSelect();
   const usersOptions = useGetUsersSelect();

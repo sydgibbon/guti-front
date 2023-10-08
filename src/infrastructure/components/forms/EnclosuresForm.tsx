@@ -11,10 +11,13 @@ import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSele
 import { useGetEnclosuremodelsSelect } from "../../hooks/Enclosures/useGetEnclosuremodelsSelect"
 import { EnclosureData } from "../../../domain/models/forms/EnclosureData"
 import { enclosuresService } from "../../../domain/services/api/Enclosures.service"
+import { useDispatch } from "react-redux";
+import { errorNotification, successNotification } from "../../redux/Global";
+
 
 export default function EnclosuresForm() {
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -22,8 +25,21 @@ export default function EnclosuresForm() {
       formData.entries()
     ) as unknown as EnclosureData;
     enclosuresService.createEnclosure(formJson);
-    // debugger;
+    
+    try {
+      await enclosuresService.createEnclosure(formJson);
+      dispatch(
+        successNotification()
+      );
+      form.reset();
+    } catch (error) {
+      dispatch(
+        errorNotification()
+      );
+    }
   };
+
+  const dispatch = useDispatch();
 
   const userInChargeOptions = useGetUserInChargeSelect()
   const groupInChargeOptions = useGetGroupInChargeSelect()
