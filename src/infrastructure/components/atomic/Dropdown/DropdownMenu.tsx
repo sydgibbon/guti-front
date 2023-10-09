@@ -7,7 +7,7 @@ import Menu from "@mui/material/Menu";
 
 const theme = createTheme({
   palette: {
-    primary: { main: "#FFF" },
+    primary: { main: "#FFF", dark: "#E8594B" },
     action: {
       hover: "rgba(0,0,0, 0.1)",
     },
@@ -50,6 +50,12 @@ export default function DropdownMenu({ title }: DropdownMenuProps) {
           startIcon={<BsArrow90DegDown className="w-3 h-3" />}
           color="primary"
           size="small"
+          sx={{
+            "&:hover": {
+              backgroundColor: "primary.hover",
+              color: "#FFF",
+            },
+          }}
         >
           {title}
         </Button>
