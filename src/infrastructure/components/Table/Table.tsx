@@ -20,6 +20,8 @@ export default function TableComponent(
   return (
     <div className="table_container">
       <DataTable
+      
+      selectableRows
         progressPending={progressPending}
         progressComponent={progressComponent ?? <SkeletonTable />}
         columns={columns}
