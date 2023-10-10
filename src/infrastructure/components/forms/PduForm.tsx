@@ -12,9 +12,11 @@ import { useGetPdumodelsSelect } from "../../hooks/Pdus/useGetPdumodelsSelect";
 import { useGetPdutypesSelect } from "../../hooks/Pdus/useGetPdutypesSelect";
 import { pdusService } from "../../../domain/services/api/Pdus.service";
 import { PduData } from "../../../domain/models/forms/PduData";
+import { useDispatch } from "react-redux";
+import { errorNotification, successNotification } from "../../redux/Global";
 
 export default function PduForm() {
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -22,6 +24,18 @@ export default function PduForm() {
       formData.entries()
     ) as unknown as PduData;
     pdusService.createPdu(formJson);
+
+    try {
+      await pdusService.createPdu(formJson);
+      dispatch(
+        successNotification()
+      );
+      form.reset();
+    } catch (error) {
+      dispatch(
+        errorNotification()
+      );
+    }
   };
 
   const userInChargeOptions = useGetUserInChargeSelect();
@@ -41,6 +55,8 @@ export default function PduForm() {
     pduModelOptions.get();
     pduTypeOptions.get();
   }, []);
+
+  const dispatch = useDispatch();
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">

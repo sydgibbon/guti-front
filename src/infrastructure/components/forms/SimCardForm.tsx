@@ -11,10 +11,12 @@ import { useGetLinesSelect } from "../../hooks/Simcards/useGetLinesSelect"
 import TextArea from "../TextArea"
 import { SimCardData } from "../../../domain/models/forms/SimCardData"
 import { simcardsService } from "../../../domain/services/api/Simcards.service"
+import { errorNotification, successNotification } from "../../redux/Global";
+import { useDispatch } from "react-redux"
 
 export default function SimCardForm() {
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault()
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -22,8 +24,21 @@ export default function SimCardForm() {
       formData.entries()
     ) as unknown as SimCardData;
     simcardsService.createSimcard(formJson);
+
+    try {
+      await simcardsService.createSimcard (formJson);
+      dispatch(
+        successNotification()
+      );
+      form.reset();
+    } catch (error) {
+      dispatch(
+        errorNotification()
+      );
+    }
   }
 
+  const dispatch = useDispatch();
 
   const usersOptions = useGetUsersSelect()
   const locationOptions = useGetLocationsSelect()

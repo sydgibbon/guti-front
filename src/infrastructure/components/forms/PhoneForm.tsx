@@ -17,10 +17,12 @@ import { useGetPhonePowerSuppliesSelect } from "../../hooks/Phones/useGetPhonePo
 import Checkbox from "../CheckBox"
 import { PhoneData } from "../../../domain/models/forms/PhoneData"
 import { phonesService } from "../../../domain/services/api/Phones.service"
+import { errorNotification, successNotification } from "../../redux/Global";
+import { useDispatch } from "react-redux"
 
 export default function PhoneForm() {
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault()
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -28,8 +30,22 @@ export default function PhoneForm() {
       formData.entries()
     ) as unknown as PhoneData;
     phonesService.createPhone(formJson);
+
+    try {
+      await phonesService.createPhone (formJson);
+      dispatch(
+        successNotification()
+      );
+      form.reset();
+    } catch (error) {
+      dispatch(
+        errorNotification()
+      );
+    }
   }
 
+  const dispatch = useDispatch();
+  
   interface CheckboxState {
     headset: boolean
     speaker: boolean

@@ -11,9 +11,11 @@ import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManuf
 import { useGetCartridgetypesSelect } from "../../hooks/Cartridges/useGetCartridgetypesSelect"
 import { CartridgeData } from "../../../domain/models/forms/CartridgesData"
 import { cartridgesService } from "../../../domain/services/api/Cartridges.service"
+import { useDispatch } from "react-redux";
+import { errorNotification, successNotification } from "../../redux/Global";
 
 export default function CartridgeForm() {
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault()
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -21,7 +23,21 @@ export default function CartridgeForm() {
       formData.entries()
     ) as unknown as CartridgeData;
     cartridgesService.createCartridge(formJson);
-  }
+
+    try {
+      await cartridgesService.createCartridge(formJson);
+      dispatch(
+        successNotification()
+      );
+      form.reset();
+    } catch (error) {
+      dispatch(
+        errorNotification()
+      );
+    }
+  };
+
+  const dispatch = useDispatch();
 
   const numbers = (): OptionValue[] => {
     const options: OptionValue[] = []

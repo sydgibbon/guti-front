@@ -20,5 +20,19 @@ export const globalStatusSlice = createSlice({
 
 export const { setNotification } = globalStatusSlice.actions;
 
+export const successNotification =  () =>       
+ setNotification({
+  status: true,
+  type: "success",
+  message: "El formulario se ha cargado exitosamente.",
+})
+
+export const errorNotification =  () =>       
+ setNotification({
+  status: true,
+  type: "error",
+  message: "Error al cargar el formulario, por favor intentalo nuevamente.",
+})
+
 export const getNotification = (state: RootState) =>
   state.globalStatus.data.notification;

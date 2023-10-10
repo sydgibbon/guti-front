@@ -17,9 +17,11 @@ import { useGetAllPrinters } from "../../hooks/Printers/useGetAllPrinters"
 import { useGetAllPassiveDevices } from "../../hooks/PassiveDevices/useGetAllPassiveDevices"
 import { CableData } from "../../../domain/models/forms/CableData"
 import { cablesService } from "../../../domain/services/api/Cable.service"
+import { useDispatch } from "react-redux";
+import { errorNotification, successNotification } from "../../redux/Global";
 
 export default function CableForm() {
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault()
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -27,7 +29,22 @@ export default function CableForm() {
       formData.entries()
     ) as unknown as CableData;
     cablesService.createCable(formJson);
-  }
+
+    try {
+      await cablesService.createCable(formJson);
+      dispatch(
+        successNotification()
+      );
+      form.reset();
+    } catch (error) {
+      dispatch(
+        errorNotification()
+      );
+    }
+  };
+
+
+  const dispatch = useDispatch();
 
   const stateOptions = useGetStatesSelect()
   const cabletypesOption = useGetCabletypesSelect()
