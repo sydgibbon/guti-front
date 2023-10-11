@@ -6,7 +6,7 @@ import {
   TbSearch,
   TbFileDownload,
 } from "react-icons/tb";
-import { BsChevronCompactDown, BsArrow90DegDown } from "react-icons/bs";
+import { BsChevronCompactDown } from "react-icons/bs";
 import Switch from "react-switch";
 import { useGetAllComputers } from "../../../../hooks/Computers/useGetAllComputers";
 import TableComponent from "../../../Table/Table";
@@ -25,12 +25,6 @@ export default function TableComputers() {
   return (
     <div className="mx-4 my-4 border rounded search-card border-secondary-dark">
       <div className="flex h-16 gap-2 pl-5 border-b search-card-header align-center border-secondary-light bg-medium-gray">
-        {/* <div className="actions-button w-20 h-8 mt-4 ml-5 border border-black gap-2 flex rounded-md items-center px-2 py-0.5 bg-white">
-          <BsArrow90DegDown className="w-3 h-3" />
-          <span className="font-sans text-xs font-normal leading-4">
-            Actions
-          </span>
-        </div> */}
         <DropdownMenu title="Actions" />
         <div className="flex flex-row h-6 gap-5 p-0 my-5 buttons w-72">
           <div className="flex items-center gap-2 switches ">
