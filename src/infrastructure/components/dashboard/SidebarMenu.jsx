@@ -11,19 +11,20 @@ const SidebarMenu = ({
   context,
 }) => {
   const setSidebarMenuItemSelected = () => {
-    if (selected !== text) setSelected(text);
+    if (selected !== text) {setSelected(text)}
+    else if (context !== "editAsset") {setSelected(false)}
+    
   };
   return (
     <>
       <div
         className={`py-2 px-3 flex justify-between hover:border-l-2 border-primary-light cursor-normal select-none 
-        ${
-          context === "edditAsset"
+        ${context !== "editAsset"
             ? selected === text && "shadow-md border-l-2"
             : selected === text &&
-              !hasOptions &&
-              "border-l-2 bg-white font-bold"
-        } 
+            !hasOptions &&
+            "border-l-2 bg-white font-bold"
+          } 
         `}
         onClick={setSidebarMenuItemSelected}
       >
