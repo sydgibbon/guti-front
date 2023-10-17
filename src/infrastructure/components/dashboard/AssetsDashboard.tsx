@@ -31,6 +31,8 @@ import { useGetSoftwarelicensesCount } from "../../hooks/Softwares/useGetSoftwar
 import { useGetPrintersCount } from "../../hooks/Printers/useGetPrintersCount";
 import { useGetPdusCount } from "../../hooks/Pdus/useGetPdusCount";
 import { useGetPhonesCount } from "../../hooks/Phones/useGetPhonesCount";
+import { useTranslation } from "react-i18next";
+import i18n from "../../../i18n";
 
 const AssetsDashboard = () => {
   const computersByState = useGetComputersByStates();
@@ -73,25 +75,29 @@ const AssetsDashboard = () => {
   }, []);
 
   const assetCounters: Record<string, any> = {
-    "computers": computersCount.data?.computersCount,
-    "softwares": softwaresCount.data?.softwaresCount,
-    "networkequipments": networkequipmentsCount.data?.networkequipmentsCount,
-    "racks": racksCount.data?.racksCount,
-    "enclosures": enclosuresCount.data?.enclosuresCount,
-    "monitors": monitorsCount.data?.monitorsCount,
-    "softwarelicenses": softwarelicensesCount.data?.softwarelicensesCount,
-    "printers": printersCount.data?.printersCount,
-    "pdus": pdusCount.data?.pdusCount,
-    "phones": phonesCount.data?.phonesCount,}
-  ;
+    computers: computersCount.data?.computersCount,
+    softwares: softwaresCount.data?.softwaresCount,
+    networkequipments: networkequipmentsCount.data?.networkequipmentsCount,
+    racks: racksCount.data?.racksCount,
+    enclosures: enclosuresCount.data?.enclosuresCount,
+    monitors: monitorsCount.data?.monitorsCount,
+    softwarelicenses: softwarelicensesCount.data?.softwarelicensesCount,
+    printers: printersCount.data?.printersCount,
+    pdus: pdusCount.data?.pdusCount,
+    phones: phonesCount.data?.phonesCount,
+  };
+  const { t } = useTranslation("AppItems", { i18n });
 
   return (
     <div className="flex flex-col items-start mx-6 my-5 bg-white border rounded-md assets-dashboard border-secondary-dark">
       <div className="flex items-center justify-between w-full h-16 px-5 py-4 dashboard-header">
         <div className="flex items-center justify-between w-full dashboard-options md:w-auto md:gap-2">
           <select className="h-10 border rounded-md cursor-pointer w-36 border-secondary-dark">
-            <option value="Assets" className="text-sm">
-              Assets
+            <option
+              value="Assets"
+              className="text-sm"
+            >
+              {t("Assets")}
             </option>
           </select>
           <div className="p-2 mx-2 border-2 border-transparent rounded cursor-pointer hover:bg-primary-light hover:text-white hover:border-orange-dark hover:border-2">
@@ -143,7 +149,12 @@ const AssetsDashboard = () => {
       <div className="grid w-full grid-flow-row grid-cols-1 gap-5 px-5 py-5 graphs-grid md:grid-cols-3 lg:grid-cols-5">
         <GraphGrid
           icon={<TbSubtask className="w-6 h-6 stroke-2" />}
-          graph={<Donut data={computersByState?.data} criteria="states" />}
+          graph={
+            <Donut
+              data={computersByState?.data}
+              criteria="states"
+            />
+          }
           text="Computers by Status"
           bgColor="bg-[#fbf7f7]"
           textColor="text-[#b76f6f]"
