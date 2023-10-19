@@ -5,7 +5,7 @@ import http from "../services/api/http";
 
 export const devicesRepository = {
   createDevice: async (body: DevicesData) => {
-    const response = await http.post<DevicesDTO>("createPeripherals/", body);
+    const response = await http.post<DevicesDTO>("createPeripheral/", body);
 
     return response;
   },
