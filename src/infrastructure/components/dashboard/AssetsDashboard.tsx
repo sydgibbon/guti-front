@@ -86,7 +86,11 @@ const AssetsDashboard = () => {
     pdus: pdusCount.data?.pdusCount,
     phones: phonesCount.data?.phonesCount,
   };
-  const { t } = useTranslation("AppItems", { i18n });
+  const { t } = useTranslation("translation", {
+    keyPrefix: "AppItems",
+  });
+
+  const text = t("Assets");
 
   return (
     <div className="flex flex-col items-start mx-6 my-5 bg-white border rounded-md assets-dashboard border-secondary-dark">
@@ -97,7 +101,7 @@ const AssetsDashboard = () => {
               value="Assets"
               className="text-sm"
             >
-              {t("Assets")}
+              {text}
             </option>
           </select>
           <div className="p-2 mx-2 border-2 border-transparent rounded cursor-pointer hover:bg-primary-light hover:text-white hover:border-orange-dark hover:border-2">
