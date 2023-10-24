@@ -15,6 +15,8 @@ import TextInput from "../TextInput";
 import Form from "./Form";
 import { useGetDevicemodelsSelect } from "../../hooks/Devices/useGetDevicemodelsSelect";
 import { useGetDevicetypesSelect } from "../../hooks/Devices/useGetDevicetypesSelect";
+import { DevicesData } from "../../../domain/models/forms/DevicesData";
+import { devicesService } from "../../../domain/services/api/Devices.service";
 
 interface formProps {
   isEditing?: boolean;
@@ -27,7 +29,13 @@ export default function DeviceForm(formProps: formProps) {
   const idParam = urlParams.get("id");
   const id = idParam !== null ? parseInt(idParam) : NaN;
   const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault();
+    e.preventDefault()
+  const form = e.target as HTMLFormElement;
+  const formData = new FormData(form);
+  const formJson = Object.fromEntries(
+      formData.entries()
+    ) as unknown as DevicesData;
+    devicesService.createDevices(formJson);
   };
 
   const userInChargeOptions = useGetUserInChargeSelect();
@@ -74,12 +82,12 @@ export default function DeviceForm(formProps: formProps) {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="testing"
+            htmlFor="name"
           >
             Name
           </label>
           <TextInput
-            id={"testing"}
+            id={"name"}
             placeholder={"ingrese su nombre"}
           />
         </div>
@@ -87,12 +95,12 @@ export default function DeviceForm(formProps: formProps) {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="status"
+            htmlFor="states"
           >
             Status
           </label>
           <SelectOption
-            id={"status"}
+            id={"states"}
             options={stateOptions.data?.data}
           />
         </div>
@@ -100,12 +108,12 @@ export default function DeviceForm(formProps: formProps) {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="location"
+            htmlFor="locations"
           >
             Locations
           </label>
           <SelectOption
-            id={"location"}
+            id={"locations"}
             options={locationOptions.data?.data}
           />
         </div>
@@ -113,12 +121,12 @@ export default function DeviceForm(formProps: formProps) {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="type"
+            htmlFor="peripheraltypes"
           >
             Devices Types
           </label>
           <SelectOption
-            id="type"
+            id="peripheraltypes"
             options={deviceTypeOptions?.data}
           />
         </div>
@@ -126,12 +134,12 @@ export default function DeviceForm(formProps: formProps) {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="hardware"
+            htmlFor="users"
           >
             Technician in charge of the hardware
           </label>
           <SelectOption
-            id={"hardware"}
+            id={"users"}
             options={userInChargeOptions.data?.data}
           />
         </div>
@@ -139,12 +147,12 @@ export default function DeviceForm(formProps: formProps) {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="manufacturer"
+            htmlFor="manufacturers"
           >
             Manufacturers
           </label>
           <SelectOption
-            id="manufacturer"
+            id="manufacturers"
             options={manufacturerOptions.data?.data}
           />
         </div>
@@ -152,12 +160,12 @@ export default function DeviceForm(formProps: formProps) {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="group-hardware"
+            htmlFor="groups_tech"
           >
             Group in charge of the hardware
           </label>
           <SelectOption
-            id={"group-hardware"}
+            id={"groups_tech"}
             options={groupInChargeOptions.data?.data}
           />
         </div>
@@ -165,12 +173,12 @@ export default function DeviceForm(formProps: formProps) {
         <div>
           <label
             className="text-sm mb-2 font-semibold block"
-            htmlFor="model"
+            htmlFor="peripheralmodels"
           >
             Model
           </label>
           <SelectOption
-            id="model"
+            id="peripheralmodels"
             options={deviceModelOptions?.data}
           />
         </div>
@@ -183,7 +191,7 @@ export default function DeviceForm(formProps: formProps) {
             Alternate Username Number
           </label>
           <TextInput
-            id={"alternativeusernamenumber"}
+            id={"contact"}
             placeholder="Enter your Alternate Username number here"
             required
           />
@@ -197,7 +205,7 @@ export default function DeviceForm(formProps: formProps) {
             Serial Number
           </label>
           <TextInput
-            id={"serialnumber"}
+            id={"serial"}
             placeholder="Enter your Serial Number here"
             required
           />
@@ -211,7 +219,7 @@ export default function DeviceForm(formProps: formProps) {
             Alternate Username
           </label>
           <TextInput
-            id={"alternativeusername"}
+            id={"contact_num"}
             placeholder="Enter your Alternate Username here"
             required
           />
@@ -239,7 +247,7 @@ export default function DeviceForm(formProps: formProps) {
             User
           </label>
           <SelectOption
-            id="user"
+            id="users"
             options={usersOptions.data?.data}
           />
         </div>
@@ -252,7 +260,7 @@ export default function DeviceForm(formProps: formProps) {
             Managment Type
           </label>
           <SelectOption
-            id="managmenttype"
+            id="is_global"
             options={managementTypeOptions}
           />
         </div>
@@ -265,7 +273,7 @@ export default function DeviceForm(formProps: formProps) {
             Groups
           </label>
           <SelectOption
-            id="group"
+            id="groups"
             options={groupsOptions.data?.data}
           />
         </div>
