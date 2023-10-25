@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import useShowError from "../../../../hooks/useShowError";
 import { MessageError } from "../../../../utils/MessagesErrors";
 import TableComponent from "../../../Table/Table";
-import { columns } from "./TableData"; 
+import { columns } from "./TableData";
 import { useGetAllUnmanageds } from "../../../../hooks/Unmanageds/useGetAllUnmanageds";
 import SearchCard from "../../assets/SearchCard";
 
@@ -30,6 +30,7 @@ const unmanageds = useGetAllUnmanageds();
         progressPending={unmanageds.isLoading}
         columns={columns}
         rows={unmanageds.data}
+        assetPath="unmanageds"
       />
     </div>
   );

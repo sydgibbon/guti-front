@@ -12,30 +12,28 @@ import { useGetPdumodelsSelect } from "../../hooks/Pdus/useGetPdumodelsSelect";
 import { useGetPdutypesSelect } from "../../hooks/Pdus/useGetPdutypesSelect";
 import { pdusService } from "../../../domain/services/api/Pdus.service";
 import { PduData } from "../../../domain/models/forms/PduData";
-import { useDispatch } from "react-redux";
-import { errorNotification, successNotification } from "../../redux/Global";
 
-export default function PduForm() {
-  const handleSubmit = async (e: React.SyntheticEvent) => {
+interface formProps {
+  isEditing?: boolean;
+}
+
+export default function PduForm(formProps: formProps) {
+  const { isEditing } = formProps;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const idParam = urlParams.get("id");
+  const id = idParam !== null ? parseInt(idParam) : NaN;
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as PduData;
-    pdusService.createPdu(formJson);
 
-    try {
-      await pdusService.createPdu(formJson);
-      dispatch(
-        successNotification()
-      );
-      form.reset();
-    } catch (error) {
-      dispatch(
-        errorNotification()
-      );
-    }
+    return isEditing
+      ? pdusService.editPdu(formJson, id)
+      : pdusService.createPdu(formJson);
   };
 
   const userInChargeOptions = useGetUserInChargeSelect();
@@ -56,14 +54,13 @@ export default function PduForm() {
     pduTypeOptions.get();
   }, []);
 
-  const dispatch = useDispatch();
-
   return (
     <div className="m-6 bg-white rounded container_form_computer">
       <Form
         handleSubmit={handleSubmit}
         formHeader={"PDUs"}
         iconName={"PDUs"}
+        isEditing={isEditing}
       >
         <div>
           <label

@@ -17,33 +17,29 @@ import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/use
 import { useGetSnmpCredentialsSelect } from "../../hooks/SnmpCredentials/useGetSnmpCredentialsSelect";
 import { NetworkDeviceData } from "../../../domain/models/forms/NetworkDeviceData";
 import { networkDevicesService } from "../../../domain/services/api/NetworkDevices.service";
-import { errorNotification, successNotification } from "../../redux/Global";
-import { useDispatch } from "react-redux";
 
-export default function NetDeviceForm() {
-  const handleSubmit = async (e: React.SyntheticEvent) => {
+interface formProps {
+  isEditing?: boolean;
+}
+
+export default function NetDeviceForm(formProps: formProps) {
+  const { isEditing } = formProps;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const idParam = urlParams.get("id");
+  const id = idParam !== null ? parseInt(idParam) : NaN;
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as NetworkDeviceData;
-    networkDevicesService.createNetworkDevice(formJson);
 
-    try {
-      await networkDevicesService.createNetworkDevice(formJson);
-      dispatch(
-        successNotification()
-      );
-      form.reset();
-    } catch (error) {
-      dispatch(
-        errorNotification()
-      );
-    }
+    return isEditing
+      ? networkDevicesService.editNetworkDevice(formJson, id)
+      : networkDevicesService.createNetworkDevice(formJson);
   };
-
-  const dispatch = useDispatch();
 
   const userInChargeOptions = useGetUserInChargeSelect();
   const networkDeviceModelOptions = useGetNetworkDevicesModelsSelect();
@@ -79,6 +75,7 @@ export default function NetDeviceForm() {
         handleSubmit={handleSubmit}
         formHeader={"Network Devices"}
         iconName={"NetworkDevices"}
+        isEditing={isEditing}
       >
         <div>
           <label

@@ -30,6 +30,7 @@ export default function TableSimcards() {
         progressPending={simcards.isLoading}
         columns={columns}
         rows={simcards.data}
+        assetPath="simcards"
       />
     </div>
   );

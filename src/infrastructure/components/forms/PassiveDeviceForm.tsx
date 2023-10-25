@@ -12,11 +12,18 @@ import { useGetPassivedcmodelsSelect } from "../../hooks/PassiveDevices/useGetPa
 import { useGetPassivedctypesSelect } from "../../hooks/PassiveDevices/useGetPassivedctypesSelect";
 import { PassiveDevicesService } from "../../../domain/services/api/PassiveDevices.service";
 import { PassiveDeviceData } from "../../../domain/models/forms/PassiveDeviceData";
-import { errorNotification, successNotification } from "../../redux/Global";
-import { useDispatch } from "react-redux";
 
-export default function PassiveDeviceForm() {
-  const handleSubmit = async (e: React.SyntheticEvent) => {
+interface formProps {
+  isEditing?: boolean;
+}
+
+export default function PassiveDeviceForm(formProps: formProps) {
+  const { isEditing } = formProps;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const idParam = urlParams.get("id");
+  const id = idParam !== null ? parseInt(idParam) : NaN;
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     e.preventDefault();
     const form = e.target as HTMLFormElement;
@@ -24,22 +31,11 @@ export default function PassiveDeviceForm() {
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as PassiveDeviceData;
-    PassiveDevicesService.createPassiveDevice(formJson);
 
-    try {
-      await PassiveDevicesService.createPassiveDevice(formJson);
-      dispatch(
-        successNotification()
-      );
-      form.reset();
-    } catch (error) {
-      dispatch(
-        errorNotification()
-      );
-    }
+    return isEditing
+      ? PassiveDevicesService.editPassiveDevice(formJson, id)
+      : PassiveDevicesService.createPassiveDevice(formJson);
   };
-
-  const dispatch = useDispatch();
 
   const userInChargeOptions = useGetUserInChargeSelect();
   const groupInChargeOptions = useGetGroupInChargeSelect();
@@ -65,6 +61,7 @@ export default function PassiveDeviceForm() {
         handleSubmit={handleSubmit}
         formHeader={"Passive Devices"}
         iconName={"PassiveDevices"}
+        isEditing={isEditing}
       >
         <div>
           <label

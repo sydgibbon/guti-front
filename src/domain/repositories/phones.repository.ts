@@ -8,6 +8,11 @@ export const phonesRepository = {
 
     return response;
   },
+  editPhone: async (body: PhoneData, id: number) => {
+    const response = await http.put<PhoneDTO>(`updatePhoneById/${id}/`, body);
+
+    return response;
+  },
   getAllPhones: async () => {
     const response = await http.get<PhoneDTO>("getPhones/");
 

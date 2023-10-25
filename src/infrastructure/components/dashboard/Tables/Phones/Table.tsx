@@ -30,6 +30,7 @@ export default function TablePhones() {
         progressPending={phones.isLoading}
         columns={columns}
         rows={phones.data}
+        assetPath="phones"
       />
     </div>
   );

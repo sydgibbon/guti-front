@@ -1,76 +1,71 @@
-import Form from "./Form"
-import SelectOption from "../SelectOption"
-import TextArea from "../TextArea"
-import TextInput from "../TextInput"
-import { useEffect } from "react"
-import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect"
-import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect"
-import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect"
-import { useGetGroupsSelect } from "../../hooks/Groups/useGetGroupsSelect"
-import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect"
-import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect"
-import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect"
-import { useGetComputermodelsSelect } from "../../hooks/Computers/useGetComputermodelsSelect"
-import { useGetComputertypesSelect } from "../../hooks/Computers/useGetComputertypesSelect"
-import { useGetNetworksSelect } from "../../hooks/Networks/useGetNetworksSelect"
-import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect"
-import { ComputerData } from "../../../domain/models/forms/ComputerData"
-import { computersService } from "../../../domain/services/api/Computers.service"
-import { useDispatch } from "react-redux";
-import { errorNotification, successNotification } from "../../redux/Global";
+import Form from "./Form";
+import SelectOption from "../SelectOption";
+import TextArea from "../TextArea";
+import TextInput from "../TextInput";
+import { useEffect } from "react";
+import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
+import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect";
+import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
+import { useGetGroupsSelect } from "../../hooks/Groups/useGetGroupsSelect";
+import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
+import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect";
+import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
+import { useGetComputermodelsSelect } from "../../hooks/Computers/useGetComputermodelsSelect";
+import { useGetComputertypesSelect } from "../../hooks/Computers/useGetComputertypesSelect";
+import { useGetNetworksSelect } from "../../hooks/Networks/useGetNetworksSelect";
+import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
+import { ComputerData } from "../../../domain/models/forms/ComputerData";
+import { computersService } from "../../../domain/services/api/Computers.service";
 
-export default function ComputersForm() {
+interface formProps {
+  isEditing?: boolean;
+}
 
-  const handleSubmit = async (e: React.SyntheticEvent) => {
+export default function ComputersForm(formProps: formProps) {
+  const { isEditing } = formProps;
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const idParam = urlParams.get("id");
+  const id = idParam !== null ? parseInt(idParam) : NaN;
+  const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as ComputerData;
-    computersService.createComputer(formJson);
-    
-    try {
-      await computersService.createComputer(formJson);
-      dispatch(
-        successNotification()
-      );
-      form.reset();
-    } catch (error) {
-      dispatch(
-        errorNotification()
-      );
-    }
+    return isEditing
+      ? computersService.editComputer(formJson, id)
+      : computersService.createComputer(formJson);
+    // debugger;
   };
 
-  const dispatch = useDispatch();
-
-  const userInChargeOptions = useGetUserInChargeSelect()
-  const usersOptions = useGetUsersSelect()
-  const groupInChargeOptions = useGetGroupInChargeSelect()
-  const groupsOptions = useGetGroupsSelect()
-  const locationOptions = useGetLocationsSelect()
-  const stateOptions = useGetStatesSelect()
-  const manufacturerOptions = useGetManufacturersSelect()
-  const computerModelOptions = useGetComputermodelsSelect()
-  const computerTypeOptions = useGetComputertypesSelect()
-  const networkOptions = useGetNetworksSelect()
-  const autoupdatesystemOptions = useGetAutoupdatesystemsSelect()
+  const userInChargeOptions = useGetUserInChargeSelect();
+  const usersOptions = useGetUsersSelect();
+  const groupInChargeOptions = useGetGroupInChargeSelect();
+  const groupsOptions = useGetGroupsSelect();
+  const locationOptions = useGetLocationsSelect();
+  const stateOptions = useGetStatesSelect();
+  const manufacturerOptions = useGetManufacturersSelect();
+  const computerModelOptions = useGetComputermodelsSelect();
+  const computerTypeOptions = useGetComputertypesSelect();
+  const networkOptions = useGetNetworksSelect();
+  const autoupdatesystemOptions = useGetAutoupdatesystemsSelect();
 
   useEffect(() => {
-    usersOptions.get()
-    userInChargeOptions.get()
-    groupsOptions.get()
-    groupInChargeOptions.get()
-    locationOptions.get()
-    stateOptions.get()
-    manufacturerOptions.get()
-    computerModelOptions.get()
-    computerTypeOptions.get()
-    networkOptions.get()
-    autoupdatesystemOptions.get()
+    usersOptions.get();
+    userInChargeOptions.get();
+    groupsOptions.get();
+    groupInChargeOptions.get();
+    locationOptions.get();
+    stateOptions.get();
+    manufacturerOptions.get();
+    computerModelOptions.get();
+    computerTypeOptions.get();
+    networkOptions.get();
+    autoupdatesystemOptions.get();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, []);
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -78,6 +73,7 @@ export default function ComputersForm() {
         handleSubmit={handleSubmit}
         formHeader={"Computers"}
         iconName={"Computers"}
+        isEditing={isEditing}
       >
         <div className="Name">
           <label
@@ -319,7 +315,7 @@ export default function ComputersForm() {
             options={autoupdatesystemOptions.data?.data}
           />
         </div>
-      </Form >
-    </div >
-  )
-};
+      </Form>
+    </div>
+  );
+}

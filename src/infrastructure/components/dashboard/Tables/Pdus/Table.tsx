@@ -30,6 +30,7 @@ export default function TablePdus() {
         progressPending={pdus.isLoading}
         columns={columns}
         rows={pdus.data}
+        assetPath="pdu"
       />
     </div>
   );

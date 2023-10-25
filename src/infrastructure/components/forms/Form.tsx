@@ -23,6 +23,7 @@ interface formProps {
   handleSubmit: (event: React.SyntheticEvent) => void;
   formHeader: string;
   iconName: string;
+  isEditing?: boolean;
 }
 
 const formIcons: { [key: string]: React.ReactNode } = {
@@ -48,7 +49,7 @@ const formIcons: { [key: string]: React.ReactNode } = {
 };
 
 export default function Form(formProps: formProps) {
-  const { children, handleSubmit, formHeader, iconName } = formProps;
+  const { children, handleSubmit, formHeader, iconName, isEditing } = formProps;
 
   const icon = formIcons[iconName];
 
@@ -60,7 +61,9 @@ export default function Form(formProps: formProps) {
                     size='24'
                 /> */}
         {icon}
-        <p className="text-base my-auto font-medium">New Item - {formHeader}</p>
+        <p className="text-base my-auto font-medium">
+          {isEditing ? `Edit Item` : `New Item - ${formHeader}`}
+        </p>
       </div>
       <div className="container p-6 bg-white rounded-lg">
         <form onSubmit={handleSubmit}>
@@ -73,7 +76,7 @@ export default function Form(formProps: formProps) {
               className="flex items-center justify-center px-4 py-2 text-white border-2 rounded-md w-[10rem] md:mr-4 border-orange-dark bg-primary-light hover:border-black"
               type="submit"
             >
-              + Add
+              {isEditing ? "Update" : "+ Add"}
             </button>
           </div>
         </form>

@@ -30,6 +30,7 @@ export default function TableRacks() {
         progressPending={racks.isLoading}
         columns={columns}
         rows={racks.data}
+        assetPath="racks"
       />
     </div>
   );
