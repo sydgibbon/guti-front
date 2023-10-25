@@ -25,7 +25,7 @@ const GlobalView = () => {
     // no encontré la tabla GLOBAL ni en glpi ni en nuestro soft
     <div className="global">
       <SearchForm />
-      {/* <SearchCard asset="global" columns={columns} /> */}
+      <SearchCard asset="global" columns={columns} />
     </div>
   );
 };
