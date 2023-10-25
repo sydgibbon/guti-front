@@ -22,13 +22,7 @@ export default function SelectOption(selectOptionProps: SelectOptionProps) {
         name={id.toLocaleLowerCase()}
         className="px-4 bg-gray-100 border rounded-md h-11"
         id={id}
-        onChange={(event) => {
-          const selectedOptionId = event.target.value;
-          const selectedOption = options && options.find(option => option.id === selectedOptionId);
-          if (selectedOption && onSelect) {
-            onSelect(selectedOption);
-          }
-        }}
+        onChange={onChange}
       >
         {options === undefined && <option value={undefined} selected>
           Unassigned

@@ -1,57 +1,62 @@
-import { useEffect } from "react";
-import SelectOption, { OptionValue } from "../SelectOption";
-import TextArea from "../TextArea";
-import TextInput from "../TextInput";
-import Form from "./Form";
-import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
-import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
-import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
-import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect";
-import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
-import { useGetEnclosuremodelsSelect } from "../../hooks/Enclosures/useGetEnclosuremodelsSelect";
-import { EnclosureData } from "../../../domain/models/forms/EnclosureData";
-import { enclosuresService } from "../../../domain/services/api/Enclosures.service";
+import { useEffect } from "react"
+import SelectOption, { OptionValue } from "../SelectOption"
+import TextArea from "../TextArea"
+import TextInput from "../TextInput"
+import Form from "./Form"
+import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect"
+import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect"
+import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect"
+import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect"
+import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect"
+import { useGetEnclosuremodelsSelect } from "../../hooks/Enclosures/useGetEnclosuremodelsSelect"
+import { EnclosureData } from "../../../domain/models/forms/EnclosureData"
+import { enclosuresService } from "../../../domain/services/api/Enclosures.service"
+import { useDispatch } from "react-redux";
+import { errorNotification, successNotification } from "../../redux/Global";
 
-interface formProps {
-  isEditing?: boolean;
-}
 
-export default function EnclosuresForm(formProps: formProps) {
-  const { isEditing } = formProps;
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const idParam = urlParams.get("id");
-  const id = idParam !== null ? parseInt(idParam) : NaN;
-  const handleSubmit = (e: React.SyntheticEvent) => {
+export default function EnclosuresForm() {
+
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as EnclosureData;
-
-    return isEditing
-      ? enclosuresService.editEnclosure(formJson, id)
-      : enclosuresService.createEnclosure(formJson);
-    // debugger;
+    enclosuresService.createEnclosure(formJson);
+    
+    try {
+      await enclosuresService.createEnclosure(formJson);
+      dispatch(
+        successNotification()
+      );
+      form.reset();
+    } catch (error) {
+      dispatch(
+        errorNotification()
+      );
+    }
   };
 
-  const userInChargeOptions = useGetUserInChargeSelect();
-  const groupInChargeOptions = useGetGroupInChargeSelect();
-  const locationOptions = useGetLocationsSelect();
-  const stateOptions = useGetStatesSelect();
-  const manufacturerOptions = useGetManufacturersSelect();
-  const enclosureModelOptions = useGetEnclosuremodelsSelect();
+  const dispatch = useDispatch();
+
+  const userInChargeOptions = useGetUserInChargeSelect()
+  const groupInChargeOptions = useGetGroupInChargeSelect()
+  const locationOptions = useGetLocationsSelect()
+  const stateOptions = useGetStatesSelect()
+  const manufacturerOptions = useGetManufacturersSelect()
+  const enclosureModelOptions = useGetEnclosuremodelsSelect()
 
   useEffect(() => {
-    userInChargeOptions.get();
-    groupInChargeOptions.get();
-    locationOptions.get();
-    stateOptions.get();
-    manufacturerOptions.get();
-    enclosureModelOptions.get();
+    userInChargeOptions.get()
+    groupInChargeOptions.get()
+    locationOptions.get()
+    stateOptions.get()
+    manufacturerOptions.get()
+    enclosureModelOptions.get()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -59,7 +64,6 @@ export default function EnclosuresForm(formProps: formProps) {
         handleSubmit={handleSubmit}
         formHeader={"Enclosures"}
         iconName={"Enclosures"}
-        isEditing={isEditing}
       >
         <div>
           <label
@@ -199,5 +203,5 @@ export default function EnclosuresForm(formProps: formProps) {
         </div>
       </Form>
     </div>
-  );
-}
+  )
+};

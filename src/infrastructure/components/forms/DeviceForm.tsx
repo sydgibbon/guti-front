@@ -1,67 +1,59 @@
-import { useEffect } from "react";
-import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
-import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
-import { useGetGroupsSelect } from "../../hooks/Groups/useGetGroupsSelect";
-import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
-import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
-import { useGetMonitormodelsSelect } from "../../hooks/Monitors/useGetMonitormodelsSelect";
-import { useGetMonitortypesSelect } from "../../hooks/Monitors/useGetMonitortypesSelect";
-import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect";
-import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
-import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect";
-import SelectOption from "../SelectOption";
-import TextArea from "../TextArea";
-import TextInput from "../TextInput";
-import Form from "./Form";
-import { useGetDevicemodelsSelect } from "../../hooks/Devices/useGetDevicemodelsSelect";
-import { useGetDevicetypesSelect } from "../../hooks/Devices/useGetDevicetypesSelect";
+import { useEffect } from "react"
+import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect"
+import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect"
+import { useGetGroupsSelect } from "../../hooks/Groups/useGetGroupsSelect"
+import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect"
+import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect"
+import { useGetMonitormodelsSelect } from "../../hooks/Monitors/useGetMonitormodelsSelect"
+import { useGetMonitortypesSelect } from "../../hooks/Monitors/useGetMonitortypesSelect"
+import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect"
+import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect"
+import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect"
+import SelectOption from "../SelectOption"
+import TextArea from "../TextArea"
+import TextInput from "../TextInput"
+import Form from "./Form"
+import { useGetDevicemodelsSelect } from "../../hooks/Devices/useGetDevicemodelsSelect"
+import { useGetDevicetypesSelect } from "../../hooks/Devices/useGetDevicetypesSelect"
 
-interface formProps {
-  isEditing?: boolean;
-}
+export default function DeviceForm() {
 
-export default function DeviceForm(formProps: formProps) {
-  const { isEditing } = formProps;
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const idParam = urlParams.get("id");
-  const id = idParam !== null ? parseInt(idParam) : NaN;
   const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault();
-  };
+    e.preventDefault()
+  }
 
-  const userInChargeOptions = useGetUserInChargeSelect();
-  const usersOptions = useGetUsersSelect();
-  const groupInChargeOptions = useGetGroupInChargeSelect();
-  const groupsOptions = useGetGroupsSelect();
-  const locationOptions = useGetLocationsSelect();
-  const stateOptions = useGetStatesSelect();
-  const manufacturerOptions = useGetManufacturersSelect();
-  const monitorModelOptions = useGetMonitormodelsSelect();
-  const monitorTypeOptions = useGetMonitortypesSelect();
-  const autoupdatesystemOptions = useGetAutoupdatesystemsSelect();
-  const deviceModelOptions = useGetDevicemodelsSelect();
-  const deviceTypeOptions = useGetDevicetypesSelect();
+  const userInChargeOptions = useGetUserInChargeSelect()
+  const usersOptions = useGetUsersSelect()
+  const groupInChargeOptions = useGetGroupInChargeSelect()
+  const groupsOptions = useGetGroupsSelect()
+  const locationOptions = useGetLocationsSelect()
+  const stateOptions = useGetStatesSelect()
+  const manufacturerOptions = useGetManufacturersSelect()
+  const monitorModelOptions = useGetMonitormodelsSelect()
+  const monitorTypeOptions = useGetMonitortypesSelect()
+  const autoupdatesystemOptions = useGetAutoupdatesystemsSelect()
+  const deviceModelOptions = useGetDevicemodelsSelect()
+  const deviceTypeOptions = useGetDevicetypesSelect()
 
   const managementTypeOptions = [
     { id: "0", name: "Unit Management" },
     { id: "1", name: "Global Management" },
-  ];
+  ]
 
   useEffect(() => {
-    usersOptions.get();
-    userInChargeOptions.get();
-    groupsOptions.get();
-    groupInChargeOptions.get();
-    locationOptions.get();
-    stateOptions.get();
-    manufacturerOptions.get();
-    monitorModelOptions.get();
-    monitorTypeOptions.get();
-    autoupdatesystemOptions.get();
-    deviceModelOptions.get();
-    deviceTypeOptions.get();
-  }, []);
+    usersOptions.get()
+    userInChargeOptions.get()
+    groupsOptions.get()
+    groupInChargeOptions.get()
+    locationOptions.get()
+    stateOptions.get()
+    manufacturerOptions.get()
+    monitorModelOptions.get()
+    monitorTypeOptions.get()
+    autoupdatesystemOptions.get()
+    deviceModelOptions.get()
+    deviceTypeOptions.get()
+  }, [])
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -69,7 +61,6 @@ export default function DeviceForm(formProps: formProps) {
         handleSubmit={handleSubmit}
         formHeader={"Devices"}
         iconName={"Devices"}
-        isEditing={isEditing}
       >
         <div>
           <label
@@ -321,5 +312,5 @@ export default function DeviceForm(formProps: formProps) {
         </div>
       </Form>
     </div>
-  );
-}
+  )
+};

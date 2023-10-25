@@ -30,7 +30,6 @@ export default function TableDevices() {
         progressPending={devices.isLoading}
         columns={columns}
         rows={devices.data}
-        assetPath="devices"
       />
     </div>
   );

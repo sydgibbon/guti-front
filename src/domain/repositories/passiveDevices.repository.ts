@@ -11,14 +11,6 @@ export const passiveDevicesRepository = {
 
     return response;
   },
-  editPassiveDevice: async (body: PassiveDeviceData, id: number) => {
-    const response = await http.put<PassiveDevicesDTO>(
-      `updatePassiveDeviceById/${id}/`,
-      body
-    );
-
-    return response;
-  },
   getAllPassiveDevices: async () => {
     const response = await http.get<PassiveDevicesDTO>(
       "getPassivedcequipments/"

@@ -5,9 +5,6 @@ export const consumablesService = {
   createConsumableItem: (body: ConsumableItemData) => {
     return consumablesRepository.createConsumableItem(body);
   },
-  editConsumableItem: (body: ConsumableItemData, id: number) => {
-    return consumablesRepository.editConsumableItem(body, id);
-  },
   getAllConsumables: () => {
     return consumablesRepository.getAllConsumables();
   },

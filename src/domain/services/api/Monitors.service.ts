@@ -5,9 +5,6 @@ export const monitorsService = {
   createMonitors: (body: MonitorData) => {
     return monitorsRepository.createMonitor(body);
   },
-  editMonitor: (body: MonitorData, id: number) => {
-    return monitorsRepository.editMonitor(body, id);
-  },
   getAllMonitors: () => {
     return monitorsRepository.getAllMonitors();
   },

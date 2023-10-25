@@ -1,70 +1,73 @@
-import { useEffect } from "react";
-import { useGetConsumabletypesSelect } from "../../hooks/Consumables/useGetCartridgetypesSelect";
-import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
-import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
-import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
-import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
-import SelectOption, { OptionValue } from "../SelectOption";
-import TextArea from "../TextArea";
-import TextInput from "../TextInput";
-import Form from "./Form";
-import ImageInput from "../ImageInput";
-import { ConsumableItemData } from "../../../domain/models/forms/ConsumableItemData";
-import { consumablesService } from "../../../domain/services/api/Consumables.service";
+import { useEffect } from "react"
+import { useGetConsumabletypesSelect } from "../../hooks/Consumables/useGetCartridgetypesSelect"
+import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect"
+import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect"
+import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect"
+import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect"
+import SelectOption, { OptionValue } from "../SelectOption"
+import TextArea from "../TextArea"
+import TextInput from "../TextInput"
+import Form from "./Form"
+import ImageInput from "../ImageInput"
+import { ConsumableItemData } from "../../../domain/models/forms/ConsumableItemData"
+import { consumablesService } from "../../../domain/services/api/Consumables.service"
+import { useDispatch } from "react-redux";
+import { errorNotification, successNotification } from "../../redux/Global";
 
-interface formProps {
-  isEditing?: boolean;
-}
-
-export default function ConsumableForm(formProps: formProps) {
-  const { isEditing } = formProps;
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const idParam = urlParams.get("id");
-  const id = idParam !== null ? parseInt(idParam) : NaN;
-  const handleSubmit = (e: React.SyntheticEvent) => {
+export default function ConsumableForm() {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as ConsumableItemData;
-
-    return isEditing
-      ? consumablesService.editConsumableItem(formJson, id)
-      : consumablesService.createConsumableItem(formJson);
-    // debugger;
+    consumablesService.createConsumableItem(formJson);
+   
+    try {
+      await consumablesService.createConsumableItem(formJson);
+      dispatch(
+        successNotification()
+      );
+      form.reset();
+    } catch (error) {
+      dispatch(
+        errorNotification()
+      );
+    }
   };
 
+  const dispatch = useDispatch();
+
   const numbers = (): OptionValue[] => {
-    const options: OptionValue[] = [];
+    const options: OptionValue[] = []
     for (let i = 1; i <= 100; i++) {
       const option: OptionValue = {
         id: i.toString(),
         name: i.toString(),
-      };
-      options.push(option);
+      }
+      options.push(option)
     }
 
-    return options;
-  };
+    return options
+  }
 
-  const threshold = numbers();
+  const threshold = numbers()
 
-  const userInChargeOptions = useGetUserInChargeSelect();
-  const groupInChargeOptions = useGetGroupInChargeSelect();
-  const locationOptions = useGetLocationsSelect();
-  const manufacturerOptions = useGetManufacturersSelect();
-  const consumableTypeOptions = useGetConsumabletypesSelect();
+  const userInChargeOptions = useGetUserInChargeSelect()
+  const groupInChargeOptions = useGetGroupInChargeSelect()
+  const locationOptions = useGetLocationsSelect()
+  const manufacturerOptions = useGetManufacturersSelect()
+  const consumableTypeOptions = useGetConsumabletypesSelect()
 
   useEffect(() => {
-    userInChargeOptions.get();
-    groupInChargeOptions.get();
-    locationOptions.get();
-    manufacturerOptions.get();
-    consumableTypeOptions.get();
+    userInChargeOptions.get()
+    groupInChargeOptions.get()
+    locationOptions.get()
+    manufacturerOptions.get()
+    consumableTypeOptions.get()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -72,7 +75,6 @@ export default function ConsumableForm(formProps: formProps) {
         handleSubmit={handleSubmit}
         formHeader={"Consumable Models"}
         iconName={"Consumables"}
-        isEditing={isEditing}
       >
         <div>
           <label
@@ -221,5 +223,5 @@ export default function ConsumableForm(formProps: formProps) {
         </div>
       </Form>
     </div>
-  );
-}
+  )
+};

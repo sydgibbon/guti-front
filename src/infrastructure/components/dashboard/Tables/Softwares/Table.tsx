@@ -30,7 +30,6 @@ export default function TableSoftwares() {
         progressPending={softwares.isLoading}
         columns={columns}
         rows={softwares.data}
-        assetPath="software"
       />
     </div>
   );

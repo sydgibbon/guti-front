@@ -5,9 +5,6 @@ export const PassiveDevicesService = {
   createPassiveDevice: (body: PassiveDeviceData) => {
     return passiveDevicesRepository.createPassiveDevice(body);
   },
-  editPassiveDevice: (body: PassiveDeviceData, id: number) => {
-    return passiveDevicesRepository.editPassiveDevice(body, id);
-  },
   getAllPassiveDevices: () => {
     return passiveDevicesRepository.getAllPassiveDevices();
   },

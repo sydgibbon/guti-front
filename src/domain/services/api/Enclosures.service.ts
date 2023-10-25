@@ -5,9 +5,6 @@ export const enclosuresService = {
   createEnclosure: (body: EnclosureData) => {
     return enclosuresRepository.createEnclosure(body);
   },
-  editEnclosure: (body: EnclosureData, id: number) => {
-    return enclosuresRepository.editEnclosure(body, id);
-  },
   getAllEnclosures: () => {
     return enclosuresRepository.getAllEnclosures();
   },

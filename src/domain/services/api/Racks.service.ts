@@ -5,9 +5,6 @@ export const racksService = {
   createRack: (body: RackData) => {
     return racksRepository.createRack(body);
   },
-  editRack: (body: RackData, id: number) => {
-    return racksRepository.editRack(body, id);
-  },
   getAllRacks: () => {
     return racksRepository.getAllRacks();
   },

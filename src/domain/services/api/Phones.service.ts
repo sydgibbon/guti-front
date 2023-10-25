@@ -5,9 +5,6 @@ export const phonesService = {
   createPhone: (body: PhoneData) => {
     return phonesRepository.createPhone(body);
   },
-  editPhone: (body: PhoneData, id: number) => {
-    return phonesRepository.editPhone(body, id);
-  },
   getAllphones: () => {
     return phonesRepository.getAllPhones();
   },

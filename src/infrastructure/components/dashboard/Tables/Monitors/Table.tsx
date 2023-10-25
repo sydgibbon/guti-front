@@ -30,7 +30,6 @@ export default function TableMonitors() {
         progressPending={monitors.isLoading}
         columns={columns}
         rows={monitors.data}
-        assetPath="monitors"
       />
     </div>
   );

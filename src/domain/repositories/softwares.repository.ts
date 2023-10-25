@@ -9,15 +9,6 @@ export const softwaresRepository = {
     return response;
   },
 
-  editSoftware: async (body: SoftwareData, id: number) => {
-    const response = await http.put<SoftwareDTO>(
-      `updateSoftwareById/${id}/`,
-      body
-    );
-
-    return response;
-  },
-
   getAllSoftwares: async () => {
     const response = await http.get<SoftwareDTO>("getSoftwares/");
 
