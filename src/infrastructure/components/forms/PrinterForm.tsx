@@ -20,17 +20,10 @@ import Form from "./Form";
 import Checkbox from "../CheckBox";
 import { PrinterData } from "../../../domain/models/forms/PrinterData";
 import { printersService } from "../../../domain/services/api/Printers.service";
+import { errorNotification, successNotification } from "../../redux/Global";
+import { useDispatch } from "react-redux"
 
-interface formProps {
-  isEditing?: boolean;
-}
-
-export default function PrinterForm(formProps: formProps) {
-  const { isEditing } = formProps;
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const idParam = urlParams.get("id");
-  const id = idParam !== null ? parseInt(idParam) : NaN;
+export default function PrinterForm() {
   interface CheckboxState {
     serial: boolean;
     parallel: boolean;
@@ -54,7 +47,7 @@ export default function PrinterForm(formProps: formProps) {
     }));
   };
 
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
@@ -62,10 +55,22 @@ export default function PrinterForm(formProps: formProps) {
       formData.entries()
     ) as unknown as PrinterData;
 
-    return isEditing
-      ? printersService.editPrinter(formJson, id)
-      : printersService.createPrinter(formJson);
+    printersService.createPrinter(formJson);
+
+    try {
+      await printersService.createPrinter (formJson);
+      dispatch(
+        successNotification()
+      );
+      form.reset();
+    } catch (error) {
+      dispatch(
+        errorNotification()
+      );
+    }
   };
+
+  const dispatch = useDispatch();
 
   const userInChargeOptions = useGetUserInChargeSelect();
   const usersOptions = useGetUsersSelect();
@@ -106,7 +111,6 @@ export default function PrinterForm(formProps: formProps) {
         handleSubmit={handleSubmit}
         formHeader={"Printers"}
         iconName={"Printers"}
-        isEditing={isEditing}
       >
         <div className="Name">
           <label
@@ -441,4 +445,5 @@ export default function PrinterForm(formProps: formProps) {
       </Form>
     </div>
   );
-}
+};
+

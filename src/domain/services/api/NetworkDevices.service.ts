@@ -5,9 +5,6 @@ export const networkDevicesService = {
   createNetworkDevice: (body: NetworkDeviceData) => {
     return networkDevicesRepository.createNetworkDevice(body);
   },
-  editNetworkDevice: (body: NetworkDeviceData, id: number) => {
-    return networkDevicesRepository.editNetworkDevice(body, id);
-  },
   getAllNetworkDevices: () => {
     return networkDevicesRepository.getAllNewtorkDevices();
   },

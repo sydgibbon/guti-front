@@ -5,7 +5,8 @@ const AssetsView = () => {
   return (
     <div className="assets">
       <SearchForm />
-      <SearchCard asset={""} columns={[]} />
+      {/* <SearchCard asset={""} columns={[]} /> */}
+      <SearchCard />
     </div>
   );
 };

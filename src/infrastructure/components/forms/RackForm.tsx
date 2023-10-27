@@ -1,53 +1,57 @@
-import { useEffect } from "react";
-import SelectOption, { OptionValue } from "../SelectOption";
-import TextArea from "../TextArea";
-import TextInput from "../TextInput";
-import Form from "./Form";
-import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect";
-import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
-import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
-import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect";
-import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
-import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
-import { useGetRackmodelsSelect } from "../../hooks/Racks/useGetRackmodelsSelect";
-import { useGetRacktypesSelect } from "../../hooks/Racks/useGetRacktypesSelect";
-import { useGetDcroomsSelect } from "../../hooks/Racks/useGetDcroomsSelect";
-import { RackData } from "../../../domain/models/forms/RackData";
-import { racksService } from "../../../domain/services/api/Racks.service";
+import { useEffect } from "react"
+import SelectOption, { OptionValue } from "../SelectOption"
+import TextArea from "../TextArea"
+import TextInput from "../TextInput"
+import Form from "./Form"
+import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect"
+import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect"
+import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect"
+import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect"
+import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect"
+import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect"
+import { useGetRackmodelsSelect } from "../../hooks/Racks/useGetRackmodelsSelect"
+import { useGetRacktypesSelect } from "../../hooks/Racks/useGetRacktypesSelect"
+import { useGetDcroomsSelect } from "../../hooks/Racks/useGetDcroomsSelect"
+import { RackData } from "../../../domain/models/forms/RackData"
+import { racksService } from "../../../domain/services/api/Racks.service"
+import { errorNotification, successNotification } from "../../redux/Global";
+import { useDispatch } from "react-redux"
 
-interface formProps {
-  isEditing?: boolean;
-}
+export default function RackForm() {
 
-export default function RackForm(formProps: formProps) {
-  const { isEditing } = formProps;
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const idParam = urlParams.get("id");
-  const id = idParam !== null ? parseInt(idParam) : NaN;
-  const handleSubmit = (e: React.SyntheticEvent) => {
+  const handleSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault();
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as RackData;
+    racksService.createRack(formJson);
 
-    return isEditing
-      ? racksService.editRack(formJson, id)
-      : racksService.createRack(formJson);
-    // debugger;
+    try {
+      await racksService.createRack (formJson);
+      dispatch(
+        successNotification()
+      );
+      form.reset();
+    } catch (error) {
+      dispatch(
+        errorNotification()
+      );
+    }
   };
 
-  const userInChargeOptions = useGetUserInChargeSelect();
-  const groupInChargeOptions = useGetGroupInChargeSelect();
-  const locationOptions = useGetLocationsSelect();
-  const stateOptions = useGetStatesSelect();
-  const manufacturerOptions = useGetManufacturersSelect();
-  const rackModelOptions = useGetRackmodelsSelect();
-  const rackTypeOptions = useGetRacktypesSelect();
-  const autoupdatesystemOptions = useGetAutoupdatesystemsSelect();
-  const dcRoomOptions = useGetDcroomsSelect();
+  const dispatch = useDispatch();
+
+  const userInChargeOptions = useGetUserInChargeSelect()
+  const groupInChargeOptions = useGetGroupInChargeSelect()
+  const locationOptions = useGetLocationsSelect()
+  const stateOptions = useGetStatesSelect()
+  const manufacturerOptions = useGetManufacturersSelect()
+  const rackModelOptions = useGetRackmodelsSelect()
+  const rackTypeOptions = useGetRacktypesSelect()
+  const autoupdatesystemOptions = useGetAutoupdatesystemsSelect()
+  const dcRoomOptions = useGetDcroomsSelect()
 
   const orientationOptions: OptionValue[] = [
     {
@@ -66,20 +70,20 @@ export default function RackForm(formProps: formProps) {
       name: "West",
       id: "4",
     },
-  ];
+  ]
 
   useEffect(() => {
-    userInChargeOptions.get();
-    groupInChargeOptions.get();
-    locationOptions.get();
-    stateOptions.get();
-    manufacturerOptions.get();
-    rackModelOptions.get();
-    rackTypeOptions.get();
-    dcRoomOptions.get();
-    autoupdatesystemOptions.get();
+    userInChargeOptions.get()
+    groupInChargeOptions.get()
+    locationOptions.get()
+    stateOptions.get()
+    manufacturerOptions.get()
+    rackModelOptions.get()
+    rackTypeOptions.get()
+    dcRoomOptions.get()
+    autoupdatesystemOptions.get()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -87,7 +91,6 @@ export default function RackForm(formProps: formProps) {
         handleSubmit={handleSubmit}
         formHeader={"Racks"}
         iconName={"Racks"}
-        isEditing={isEditing}
       >
         <div>
           <label
@@ -385,5 +388,5 @@ export default function RackForm(formProps: formProps) {
         </div>
       </Form>
     </div>
-  );
-}
+  )
+};

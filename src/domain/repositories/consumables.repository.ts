@@ -5,18 +5,7 @@ import http from "../services/api/http";
 
 export const consumablesRepository = {
   createConsumableItem: async (body: ConsumableItemData) => {
-    const response = await http.post<ConsumableItemsDTO>(
-      "createConsumableItems/",
-      body
-    );
-
-    return response;
-  },
-  editConsumableItem: async (body: ConsumableItemData, id: number) => {
-    const response = await http.put<ConsumableItemsDTO>(
-      `updateConsumableItemById/${id}/`,
-      body
-    );
+    const response = await http.post<ConsumableItemsDTO>("createConsumableItems/", body);
 
     return response;
   },
@@ -26,9 +15,7 @@ export const consumablesRepository = {
     return response.data;
   },
   getConsumabletypesSelect: async () => {
-    const response = await http.get<ConsumablesDTO>(
-      "getConsumableitemtypesSelect/"
-    );
+    const response = await http.get<ConsumablesDTO>("getConsumableitemtypesSelect/");
 
     return response.data;
   },

@@ -5,9 +5,6 @@ export const pdusService = {
   createPdu: (body: PduData) => {
     return pdusRepository.createPdu(body);
   },
-  editPdu: (body: PduData, id: number) => {
-    return pdusRepository.editPdu(body, id);
-  },
   getAllPdus: () => {
     return pdusRepository.getAllPdus();
   },

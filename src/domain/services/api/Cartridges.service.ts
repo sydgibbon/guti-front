@@ -5,9 +5,6 @@ export const cartridgesService = {
   createCartridge: (body: CartridgeData) => {
     return cartridgesRepository.createCartridge(body);
   },
-  editCartridge: (body: CartridgeData, id: number) => {
-    return cartridgesRepository.editCartridge(body, id);
-  },
   getAllCartrdiges: () => {
     return cartridgesRepository.getAllCartridges();
   },

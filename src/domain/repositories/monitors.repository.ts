@@ -8,14 +8,6 @@ export const monitorsRepository = {
 
     return response;
   },
-  editMonitor: async (body: MonitorData, id: number) => {
-    const response = await http.put<MonitorDTO>(
-      `updateMonitorById/${id}/`,
-      body
-    );
-
-    return response;
-  },
   getAllMonitors: async () => {
     const response = await http.get<MonitorDTO>("getMonitors/");
 

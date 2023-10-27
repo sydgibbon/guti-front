@@ -8,11 +8,6 @@ export const pdusRepository = {
 
     return response;
   },
-  editPdu: async (body: PduData, id: number) => {
-    const response = await http.put<PdusDTO>(`updatePduById/${id}/`, body);
-
-    return response;
-  },
   getAllPdus: async () => {
     const response = await http.get<PdusDTO>("getPdus/");
 

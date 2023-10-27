@@ -1,56 +1,61 @@
-import { useEffect } from "react";
-import SelectOption from "../SelectOption";
-import TextInput from "../TextInput";
-import Form from "./Form";
-import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect";
-import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
-import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect";
-import { useGetGroupsSelect } from "../../hooks/Groups/useGetGroupsSelect";
-import { useGetDevicesimcardsSelect } from "../../hooks/Simcards/useGetDevicesimcardsSelect";
-import { useGetLinesSelect } from "../../hooks/Simcards/useGetLinesSelect";
-import TextArea from "../TextArea";
-import { SimCardData } from "../../../domain/models/forms/SimCardData";
-import { simcardsService } from "../../../domain/services/api/Simcards.service";
+import { useEffect } from "react"
+import SelectOption from "../SelectOption"
+import TextInput from "../TextInput"
+import Form from "./Form"
+import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect"
+import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect"
+import { useGetStatesSelect } from "../../hooks/States/useGetStatesSelect"
+import { useGetGroupsSelect } from "../../hooks/Groups/useGetGroupsSelect"
+import { useGetDevicesimcardsSelect } from "../../hooks/Simcards/useGetDevicesimcardsSelect"
+import { useGetLinesSelect } from "../../hooks/Simcards/useGetLinesSelect"
+import TextArea from "../TextArea"
+import { SimCardData } from "../../../domain/models/forms/SimCardData"
+import { simcardsService } from "../../../domain/services/api/Simcards.service"
+import { errorNotification, successNotification } from "../../redux/Global";
+import { useDispatch } from "react-redux"
 
-interface formProps {
-  isEditing?: boolean;
-}
+export default function SimCardForm() {
 
-export default function SimCardForm(formProps: formProps) {
-  const { isEditing } = formProps;
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const idParam = urlParams.get("id");
-  const id = idParam !== null ? parseInt(idParam) : NaN;
-  const handleSubmit = (e: React.SyntheticEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (e: React.SyntheticEvent) => {
+    e.preventDefault()
     const form = e.target as HTMLFormElement;
     const formData = new FormData(form);
     const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as SimCardData;
+    simcardsService.createSimcard(formJson);
 
-    return isEditing
-      ? simcardsService.editSimcard(formJson, id)
-      : simcardsService.createSimcard(formJson);
-  };
+    try {
+      await simcardsService.createSimcard (formJson);
+      dispatch(
+        successNotification()
+      );
+      form.reset();
+    } catch (error) {
+      dispatch(
+        errorNotification()
+      );
+    }
+  }
 
-  const usersOptions = useGetUsersSelect();
-  const locationOptions = useGetLocationsSelect();
-  const stateOptions = useGetStatesSelect();
-  const groupsOptions = useGetGroupsSelect();
-  const linesOptions = useGetLinesSelect();
-  const devicesimcardsOptions = useGetDevicesimcardsSelect();
+  const dispatch = useDispatch();
+
+  const usersOptions = useGetUsersSelect()
+  const locationOptions = useGetLocationsSelect()
+  const stateOptions = useGetStatesSelect()
+  const groupsOptions = useGetGroupsSelect()
+  const linesOptions = useGetLinesSelect()
+  const devicesimcardsOptions = useGetDevicesimcardsSelect()
 
   useEffect(() => {
-    usersOptions.get();
-    groupsOptions.get();
-    locationOptions.get();
-    stateOptions.get();
-    linesOptions.get();
-    devicesimcardsOptions.get();
+    usersOptions.get()
+    groupsOptions.get()
+    locationOptions.get()
+    stateOptions.get()
+    linesOptions.get()
+    devicesimcardsOptions.get()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
@@ -58,7 +63,6 @@ export default function SimCardForm(formProps: formProps) {
         handleSubmit={handleSubmit}
         formHeader={"Simcards"}
         iconName={"Simcards"}
-        isEditing={isEditing}
       >
         <div>
           <label
@@ -145,7 +149,9 @@ export default function SimCardForm(formProps: formProps) {
           >
             Mobile Subscriber Identification Number
           </label>
-          <TextInput id={"mobilesuscriber"} />
+          <TextInput
+            id={"mobilesuscriber"}
+          />
         </div>
 
         <div>
@@ -240,5 +246,5 @@ export default function SimCardForm(formProps: formProps) {
         </div>
       </Form>
     </div>
-  );
-}
+  )
+};
