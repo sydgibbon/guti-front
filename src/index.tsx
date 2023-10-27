@@ -12,9 +12,7 @@ const root = ReactDOM.createRoot(
 root.render(
   // <React.StrictMode>
   <UserContextProvider>
-    <React.Suspense fallback="loading">
       <App />
-    </React.Suspense>
   </UserContextProvider>
   /* </React.StrictMode> */
 );

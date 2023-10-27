@@ -32,7 +32,7 @@ import { useGetPrintersCount } from "../../hooks/Printers/useGetPrintersCount";
 import { useGetPdusCount } from "../../hooks/Pdus/useGetPdusCount";
 import { useGetPhonesCount } from "../../hooks/Phones/useGetPhonesCount";
 import { useTranslation } from "react-i18next";
-import i18n from "../../../i18n";
+
 
 const AssetsDashboard = () => {
   const computersByState = useGetComputersByStates();
@@ -86,11 +86,9 @@ const AssetsDashboard = () => {
     pdus: pdusCount.data?.pdusCount,
     phones: phonesCount.data?.phonesCount,
   };
-  const { t } = useTranslation("translation", {
-    keyPrefix: "AppItems",
-  });
+   const { t } = useTranslation()
 
-  const text = t("Assets");
+  // const text = t("Assets");
 
   return (
     <div className="flex flex-col items-start mx-6 my-5 bg-white border rounded-md assets-dashboard border-secondary-dark">
@@ -101,7 +99,7 @@ const AssetsDashboard = () => {
               value="Assets"
               className="text-sm"
             >
-              {text}
+              {t('Assets')}
             </option>
           </select>
           <div className="p-2 mx-2 border-2 border-transparent rounded cursor-pointer hover:bg-primary-light hover:text-white hover:border-orange-dark hover:border-2">
