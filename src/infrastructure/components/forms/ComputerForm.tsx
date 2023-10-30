@@ -1,8 +1,9 @@
 import Form from "./Form"
+import FormModal from "../../utils/modals/FormModal"
 import SelectOption from "../SelectOption"
 import TextArea from "../TextArea"
 import TextInput from "../TextInput"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useGetUserInChargeSelect } from "../../hooks/Users/useGetUserInChargeSelect"
 import { useGetUsersSelect } from "../../hooks/Users/useGetUsersSelect"
 import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect"
@@ -57,6 +58,14 @@ export default function ComputersForm() {
   const networkOptions = useGetNetworksSelect()
   const autoupdatesystemOptions = useGetAutoupdatesystemsSelect()
 
+  const [modalContent, setModalContent] = useState(<></>)
+  const [modalTitle, setModalTitle] = useState("")
+
+  const setFormModal = (title:string, component:any) => {
+    setModalTitle(title)
+    setModalContent(component)
+  }
+
   useEffect(() => {
     usersOptions.get()
     userInChargeOptions.get()
@@ -74,6 +83,7 @@ export default function ComputersForm() {
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
+      <FormModal title={"asd"} form={"asd"} />
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Computers"}

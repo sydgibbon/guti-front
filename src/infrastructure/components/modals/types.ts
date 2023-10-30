@@ -1,11 +1,11 @@
 export interface ModalCustomProps {
   children?: React.ReactNode;
   state: boolean;
-  handleClose: () => void;
+  handleClose: any;
   title?: string
   titleClassName?: string
   crossClassName?: string
-  content?: string
+  content?: any
   contentClassName?: string
   primaryButtonText?: string
   secondaryButtonText?: string
