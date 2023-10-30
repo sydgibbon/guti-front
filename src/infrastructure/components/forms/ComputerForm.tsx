@@ -19,6 +19,10 @@ import { ComputerData } from "../../../domain/models/forms/ComputerData"
 import { computersService } from "../../../domain/services/api/Computers.service"
 import { useDispatch } from "react-redux";
 import { errorNotification, successNotification } from "../../redux/Global";
+import AddButton from "../AddButton"
+import LocationForm from "./LocationForm"
+import ComputerTypeForm from "./ComputerTypeForm"
+import ComputerModelForm from "./ComputerModelForm"
 
 export default function ComputersForm() {
 
@@ -58,13 +62,9 @@ export default function ComputersForm() {
   const networkOptions = useGetNetworksSelect()
   const autoupdatesystemOptions = useGetAutoupdatesystemsSelect()
 
-  const [modalContent, setModalContent] = useState(<></>)
-  const [modalTitle, setModalTitle] = useState("")
+  const [modalContent, setModalContent] = useState<any>("")
 
-  const setFormModal = (title:string, component:any) => {
-    setModalTitle(title)
-    setModalContent(component)
-  }
+
 
   useEffect(() => {
     usersOptions.get()
@@ -83,7 +83,7 @@ export default function ComputersForm() {
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
-      <FormModal title={"asd"} form={"asd"} />
+      <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Computers"}
@@ -123,10 +123,13 @@ export default function ComputersForm() {
           >
             Locations
           </label>
-          <SelectOption
-            id="locations"
-            options={locationOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="locations"
+              options={locationOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<LocationForm />)} />
+            </div>
         </div>
 
         <div>
@@ -136,10 +139,13 @@ export default function ComputersForm() {
           >
             Computer Types
           </label>
-          <SelectOption
-            id="computertypes"
-            options={computerTypeOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="computertypes"
+              options={computerTypeOptions?.data}
+            />            
+            <AddButton onClick={() => setModalContent(<ComputerTypeForm />)} />
+          </div>
         </div>
 
         <div>
@@ -188,10 +194,13 @@ export default function ComputersForm() {
           >
             Model
           </label>
-          <SelectOption
-            id="computermodels"
-            options={computerModelOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="computermodels"
+              options={computerModelOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<ComputerModelForm />)} />
+          </div>
         </div>
 
         <div>

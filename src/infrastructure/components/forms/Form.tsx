@@ -55,10 +55,6 @@ export default function Form(formProps: formProps) {
   return (
     <>
       <div className="form-header flex justify-center md:justify-start bg-medium-gray h-1/6 w-full border-b mx-auto py-4 px-5 gap-2">
-        {/* <BsLaptop
-                    className='inline my-auto mr-2'
-                    size='24'
-                /> */}
         {icon}
         <p className="text-base my-auto font-medium">New Item - {formHeader}</p>
       </div>
