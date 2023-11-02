@@ -5,9 +5,11 @@ import TableComponent from "../../../Table/Table";
 import { columns } from "./TableData";
 import { useGetAllNetworkDevices } from "../../../../hooks/NetworksDevices/useGetAllNetworkDevices";
 import SearchCard from "../../assets/SearchCard";
+import { useTranslation } from 'react-i18next';
 
 export default function TableNetworkDevices() {
   const networkDevices = useGetAllNetworkDevices();
+  const { t } = useTranslation('TableTitles', { keyPrefix: 'NetworkDevices' });
 
   const showError = useShowError();
 
@@ -23,12 +25,17 @@ export default function TableNetworkDevices() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [networkDevices.error]);
 
+  const translatedColumns = columns?.map((column) => {
+    return {...column,
+    name: t(column.name)}
+  })
+
   return (
     <div className="mx-4 my-4 border rounded search-card border-secondary-dark">
       <SearchCard />
       <TableComponent
         progressPending={networkDevices.isLoading}
-        columns={columns}
+        columns={translatedColumns}
         rows={networkDevices.data}
       />
     </div>

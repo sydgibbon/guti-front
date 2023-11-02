@@ -86,9 +86,7 @@ const AssetsDashboard = () => {
     pdus: pdusCount.data?.pdusCount,
     phones: phonesCount.data?.phonesCount,
   };
-   const { t } = useTranslation()
-
-  // const text = t("Assets");
+   const { t } = useTranslation('AppItems')
 
   return (
     <div className="flex flex-col items-start mx-6 my-5 bg-white border rounded-md assets-dashboard border-secondary-dark">

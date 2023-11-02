@@ -10,5 +10,96 @@
     "ASSOCIATEDA": "Associated Item (Endpoint A)",
     "SOCKETB": "Socket (Endpoint B)",
     "SOCKETA": "Socket (Enpoint A)"
-  }
+  },
+  "Cartridges": {
+    "Name": "Name",
+    "Reference": "Reference",
+    "Type": "Type",
+    "Manufacturers": "Manufacturers",
+    "Locations": "Locations",
+    "Cartridges": "Cartridges"
+  },
+  "Computers": {
+    "Name": "Name",
+    "Status": "Status",
+    "Manufacturers": "Manufacturers",
+    "Serial Number": "Serial Number",
+    "Type": "Type",
+    "Model": "Model",
+    "Operating System-Name": "Operating System-Name",
+    "Locations": "Locations",
+    "LastUpdate": "Last Update",
+    "ComponentsProcessors": "Components Processors"
+  },
+  "Consumables": {
+    "Name": "Name",
+    "Reference": "Reference",
+    "Type": "Type",
+    "Manufacturers": "Manufacturers",
+    "Locations": "Locations",
+    "Consumables": "Consumables"
+  },
+  "Devices": {
+    "Name": "Name",
+    "Status": "Status",
+    "Manufacturers": "Manufacturers",
+    "Locations": "Locations",
+    "Type": "Type",
+    "Model": "Model",
+    "Last Update": "Last Update",
+    "Alternate Username": "Alternate Username"
+  },
+  "Enclosures": { "Name": "Name" },
+  "Monitors": {
+    "name": "Name",
+    "status": "Status",
+    "manufacturers": "Manufacturers",
+    "locations": "Locations",
+    "types": "Types",
+    "model": "Model",
+    "lastUpdate": "Last Update",
+    "alternateUsername": "Alternate Username"
+  },
+  "NetworkDevices": {
+    "NAME": "Name",
+    "STATUS": "Status",
+    "MANUFACTURERS": "Manufacturers",
+    "LOCATIONS": "Locations",
+    "TYPE": "Type",
+    "MODEL": "Model",
+    "FIRMWARE": "Firmware",
+    "LAST UPDATE": "Last Update"
+  },
+  "PassiveDevices": { "name": "Name" },
+  "Pdus": { "NAME": "Name" },
+  "Phones": {
+    "Name": "Name",
+    "Status": "Status",
+    "Manufacturers": "Manufacturers",
+    "Location": "Location",
+    "Type": "Type",
+    "Model": "Model",
+    "Last Update": "Last Update",
+    "Alternate Username": "Alternate Username"
+  },
+  "Printers": {
+    "NAME": "Name",
+    "STATUS": "Status",
+    "MANUFACTURERS": "Manufacturers",
+    "LOCATIONS": "Locations",
+    "TYPES": "Types",
+    "MODEL": "Model",
+    "LAST UPDATE": "Last Update"
+  },
+  "Racks": { "NAME": "Name" },
+  "Simcards": { "ID": "ID" },
+  "Softwares": {
+    "NAME": "Name",
+    "PUBLISHER": "Publisher",
+    "VERSIONS - NAME": "Versions - Name",
+    "VERSION - OPERATING SYSTEMS": "Version - Operating Systems",
+    "NUMBER OF INSTALLATIONS": "Number of Installations",
+    "NUMBEROFLICENSES": "Licenses - Number of Licenses"
+  },
+  "Unmanageds": { "NAME": "Name" }
 }

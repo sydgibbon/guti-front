@@ -28,7 +28,7 @@ export const columns: TableColumn<DataRow>[] = [
     selector: (row) => row.installations,
   },
   {
-    name: "LICENSES - NUMBER OF LICESNSES",
+    name: "NUMBEROFLICENSES",
     sortable: true,
     selector: (row) => row.softwarelicenses,
   },
