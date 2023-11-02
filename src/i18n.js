@@ -18,12 +18,12 @@ i18n
   // init i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
-    lng: 'es',
+    lng: 'en',
     debug: true,
     interpolation: {
       escapeValue: false
     },
-    fallbackLng: "es",
+    fallbackLng: "en",
     ns: ['AppItems'],
     backend: {
       loadPath: "/locales/{{lng}}/{{ns}}.json",

@@ -1,0 +1,14 @@
+{
+  "Cables": {
+    "NAME": "Name",
+    "TYPES": "Types",
+    "STATUS": "Status",
+    "INVENTORYNUMBER": "Inventory Number",
+    "COLOR": "Color",
+    "TECHNICIAN": "Technician in charge of the hardware",
+    "ASSOCIATEDB": "Associated Item (Endpoint B)",
+    "ASSOCIATEDA": "Associated Item (Endpoint A)",
+    "SOCKETB": "Socket (Endpoint B)",
+    "SOCKETA": "Socket (Enpoint A)"
+  }
+}

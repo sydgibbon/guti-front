@@ -18,7 +18,7 @@ export const columns: TableColumn<DataRow>[] = [
     selector: (row) => row.states
   },
   {
-    name: "INVENTORY NUMBER",
+    name: "INVENTORYNUMBER",
     sortable: true,
     selector: (row) => row.otherserial,
   },
@@ -28,27 +28,27 @@ export const columns: TableColumn<DataRow>[] = [
     selector: (row) => row.color,
   },
   {
-    name: "TECHNICIAN IN CHARGE OF THE HARDWARE",
+    name: "TECHNICIAN",
     sortable: true,
     selector: (row) => row.users_tech
   },
   {
-    name: "ASSOCIATED ITEM (ENDPOINT B)",
+    name: "ASSOCIATEDB",
     sortable: true,
     selector: (row) => row.items_endpoint_b
   },
   {
-    name: "ASSOCIATED ITEM (ENDPOINT A)",
+    name: "ASSOCIATEDA",
     sortable: true,
     selector: (row) => row.items_endpoint_a
   },
   {
-    name: "SOCKET (ENDPOINT B)",
+    name: "SOCKETB",
     sortable: true,
     selector: (row) => row.sockets_endpoint_b,
   },
   {
-    name: "SOCKET (ENDPOINT A)",
+    name: "SOCKETA",
     sortable: true,
     selector: (row) => row.sockets_endpoint_a,
   },

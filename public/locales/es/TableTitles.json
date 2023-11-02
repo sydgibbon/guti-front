@@ -1,0 +1,14 @@
+{
+  "Cables": {
+    "NAME": "Nombre",
+    "TYPES": "Tipos",
+    "STATUS": "Estado",
+    "INVENTORYNUMBER": "Número de Inventario",
+    "COLOR": "Color",
+    "TECHNICIAN": "Técnico a Cargo del Hardware",
+    "ASSOCIATEDB": "Elemento Asociado (Extremo B)",
+    "ASSOCIATEDA": "Elemento Asociado (Extremo A)",
+    "SOCKETB": "Enchufe (Extremo B)",
+    "SOCKETA": "Enchufe (Extremo A)"
+  }
+}
