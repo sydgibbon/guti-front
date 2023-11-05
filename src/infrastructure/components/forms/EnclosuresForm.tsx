@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import SelectOption, { OptionValue } from "../SelectOption"
 import TextArea from "../TextArea"
 import TextInput from "../TextInput"
@@ -13,6 +13,13 @@ import { EnclosureData } from "../../../domain/models/forms/EnclosureData"
 import { enclosuresService } from "../../../domain/services/api/Enclosures.service"
 import { useDispatch } from "react-redux";
 import { errorNotification, successNotification } from "../../redux/Global";
+import FormModal from "../../utils/modals/FormModal"
+import AddButton from "../AddButton"
+import StatusForm from "./StatusForm"
+import LocationForm from "./LocationForm"
+import ManufacturerForm from "./ManufacturerForm"
+import GroupInChargeForm from "./GroupInChargeForm"
+import EnclosuresModelForm from "./EnclosuresModelForm"
 
 
 export default function EnclosuresForm() {
@@ -41,6 +48,8 @@ export default function EnclosuresForm() {
 
   const dispatch = useDispatch();
 
+  const [modalContent, setModalContent] = useState<any>("")
+
   const userInChargeOptions = useGetUserInChargeSelect()
   const groupInChargeOptions = useGetGroupInChargeSelect()
   const locationOptions = useGetLocationsSelect()
@@ -60,6 +69,7 @@ export default function EnclosuresForm() {
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
+      <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Enclosures"}
@@ -85,10 +95,13 @@ export default function EnclosuresForm() {
           >
             Status
           </label>
-          <SelectOption
-            id={"states"}
-            options={stateOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="states"
+              options={stateOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<StatusForm />)} />
+          </div>
         </div>
         <div>
           <label
@@ -97,10 +110,13 @@ export default function EnclosuresForm() {
           >
             Locations
           </label>
-          <SelectOption
-            id={"locations"}
-            options={locationOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="locations"
+              options={locationOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<LocationForm />)} />
+          </div>
         </div>
         <div>
           <label
@@ -121,10 +137,13 @@ export default function EnclosuresForm() {
           >
             Manufacturers
           </label>
-          <SelectOption
-            id="manufacturers"
-            options={manufacturerOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="manufacturers"
+              options={manufacturerOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<ManufacturerForm />)} />
+          </div>
         </div>
         <div>
           <label
@@ -133,10 +152,13 @@ export default function EnclosuresForm() {
           >
             Group in charge of the hardware
           </label>
-          <SelectOption
-            id={"groups_tech"}
-            options={groupInChargeOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups_tech"
+              options={groupInChargeOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupInChargeForm />)} />
+          </div>
         </div>
         <div>
           <label
@@ -145,10 +167,13 @@ export default function EnclosuresForm() {
           >
             Model
           </label>
+          <div className="flex gap-2">
           <SelectOption
             id="enclosuremodels"
             options={enclosureModelOptions?.data}
           />
+          <AddButton onClick={() => setModalContent(<EnclosuresModelForm />)} />
+          </div>
         </div>
         <div>
           <label

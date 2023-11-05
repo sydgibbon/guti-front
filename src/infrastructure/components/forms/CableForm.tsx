@@ -19,6 +19,12 @@ import { CableData } from "../../../domain/models/forms/CableData"
 import { cablesService } from "../../../domain/services/api/Cable.service"
 import { useDispatch } from "react-redux";
 import { errorNotification, successNotification } from "../../redux/Global";
+import FormModal from "../../utils/modals/FormModal"
+import AddButton from "../AddButton"
+import StatusForm from "./StatusForm"
+import CableTypeForm from "./CableTypeForm"
+import CableStrandForm from "./CableStrandForm"
+import SocketModelForm from "./SocketModelForm"
 
 export default function CableForm() {
   const handleSubmit = async (e: React.SyntheticEvent) => {
@@ -43,6 +49,7 @@ export default function CableForm() {
     }
   };
 
+  const [modalContent, setModalContent] = useState<any>("")
 
   const dispatch = useDispatch();
 
@@ -96,7 +103,7 @@ export default function CableForm() {
     allPrinters.get()
     allPassiveDevices.get()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  },    [])
+  }, [])
 
   useEffect(() => {
     const fetchData = async () => {
@@ -148,16 +155,16 @@ export default function CableForm() {
     fetchData()
   },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-   [
-    selectedAssetB,
-    allComputers,
-    allNetworkDevices,
-    allDevices,
-    allPhones,
-    allPrinters,
-    allPassiveDevices,
-    
-  ])
+    [
+      selectedAssetB,
+      allComputers,
+      allNetworkDevices,
+      allDevices,
+      allPhones,
+      allPrinters,
+      allPassiveDevices,
+
+    ])
 
   useEffect(() => {
     if (
@@ -183,6 +190,7 @@ export default function CableForm() {
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
+      <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Cable"}
@@ -207,10 +215,13 @@ export default function CableForm() {
           >
             Status
           </label>
-          <SelectOption
-            id={"states"}
-            options={stateOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="states"
+              options={stateOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<StatusForm />)} />
+          </div>
         </div>
         <div>
           <label
@@ -219,11 +230,14 @@ export default function CableForm() {
           >
             Cable type
           </label>
-          <SelectOption
-            id={"cabletypes"}
-            label="Type"
-            options={cabletypesOption?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id={"cabletypes"}
+              label="Type"
+              options={cabletypesOption?.data}
+            />
+            <AddButton onClick={() => setModalContent(<CableTypeForm />)} />
+          </div>
         </div>
 
         <div>
@@ -273,10 +287,13 @@ export default function CableForm() {
           >
             Cable strand
           </label>
-          <SelectOption
-            id={"cablestrands"}
-            options={cablestrandsOption?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id={"cablestrands"}
+              options={cablestrandsOption?.data}
+            />
+            <AddButton onClick={() => setModalContent(<CableStrandForm />)} />
+          </div>
         </div>
 
         <div>
@@ -351,10 +368,13 @@ export default function CableForm() {
           >
             Socket Model
           </label>
-          <SelectOption
-            id={"socketmodels_endpoint_a"}
-            options={socketmodelsOption?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id={"socketmodels_endpoint_a"}
+              options={socketmodelsOption?.data}
+            />
+            <AddButton onClick={() => setModalContent(<SocketModelForm />)} />
+          </div>
         </div>
 
         <div>
@@ -363,11 +383,14 @@ export default function CableForm() {
             className="text-sm mb-2 font-semibold block"
           >
             Socket Model
-          </label>{" "}
-          <SelectOption
-            id={"socketmodels_endpoint_b"}
-            options={socketmodelsOption?.data}
-          />
+          </label>
+          <div className="flex gap-2">
+            <SelectOption
+              id={"socketmodels_endpoint_b"}
+              options={socketmodelsOption?.data}
+            />
+            <AddButton onClick={() => setModalContent(<SocketModelForm />)} />
+          </div>
         </div>
 
         <div>

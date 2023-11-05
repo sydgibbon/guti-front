@@ -18,6 +18,13 @@ import { SoftwareData } from "../../../domain/models/forms/SoftwareData"
 import { softwaresService } from "../../../domain/services/api/Softwares.service"
 import { errorNotification, successNotification } from "../../redux/Global";
 import { useDispatch } from "react-redux"
+import FormModal from "../../utils/modals/FormModal"
+import AddButton from "../AddButton"
+import LocationForm from "./LocationForm"
+import ManufacturerForm from "./ManufacturerForm"
+import GroupInChargeForm from "./GroupInChargeForm"
+import GroupForm from "./GroupForm"
+import SoftwareCategoryForm from "./SoftwareCategory"
 
 export default function SoftwareForm() {
   const handleSubmit = async (e: React.SyntheticEvent) => {
@@ -41,6 +48,8 @@ export default function SoftwareForm() {
   };
 
   const dispatch = useDispatch();
+
+  const [modalContent, setModalContent] = useState<any>("")
 
   const userInChargeOptions = useGetUserInChargeSelect()
   const usersOptions = useGetUsersSelect()
@@ -83,6 +92,7 @@ export default function SoftwareForm() {
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
+      <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Software"}
@@ -117,17 +127,20 @@ export default function SoftwareForm() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start">
+        <div className="flex-col items-start">
           <label
             className="text-sm mb-2 font-semibold block"
             htmlFor="location"
           >
             Locations
           </label>
-          <SelectOption
-            id={"locations"}
-            options={locationOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="locations"
+              options={locationOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<LocationForm />)} />
+          </div>
         </div>
 
         <div className="flex flex-col items-start">
@@ -143,30 +156,36 @@ export default function SoftwareForm() {
           />
         </div>
 
-        <div className="flex flex-col items-start">
+        <div className="flex-col items-start">
           <label
             className="text-sm mb-2 font-semibold block"
             htmlFor="publisher"
           >
             Publisher
           </label>
-          <SelectOption
-            id={"manufacturers"}
-            options={manufacturerOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="manufacturers"
+              options={manufacturerOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<ManufacturerForm />)} />
+          </div>
         </div>
 
-        <div className="flex flex-col items-start">
+        <div className="flex-col items-start">
           <label
             className="text-sm mb-2 font-semibold block"
             htmlFor="group-hardware"
           >
             Group in charge of the hardware
           </label>
-          <SelectOption
-            id={"groups_tech"}
-            options={groupInChargeOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups_tech"
+              options={groupInChargeOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupInChargeForm />)} />
+          </div>
         </div>
 
         <div className="flex flex-col items-start">
@@ -182,17 +201,20 @@ export default function SoftwareForm() {
           />
         </div>
 
-        <div className="flex flex-col items-start">
+        <div className="flex-col items-start">
           <label
             className="text-sm mb-2 font-semibold block"
             htmlFor="groups"
           >
             Groups
           </label>
-          <SelectOption
-            id={"groups"}
-            options={groupsOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups"
+              options={groupsOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupForm />)} />
+          </div>
         </div>
 
         <div className="flex flex-col items-start">
@@ -242,17 +264,20 @@ export default function SoftwareForm() {
           </div>
         </div>
 
-        <div className="flex flex-col items-start">
+        <div className="flex-col items-start">
           <label
             className="text-sm mb-2 font-semibold block"
             htmlFor="softwarecategories"
           >
             Software Category
           </label>
-          <SelectOption
-            id={"softwarecategories"}
-            options={softwarecategoryOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="softwarecategories"
+              options={softwarecategoryOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<SoftwareCategoryForm />)} />
+          </div>
         </div>
       </Form>
     </div>

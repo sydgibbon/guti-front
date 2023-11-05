@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import SelectOption from "../SelectOption"
 import TextInput from "../TextInput"
 import Form from "./Form"
@@ -13,6 +13,12 @@ import { SimCardData } from "../../../domain/models/forms/SimCardData"
 import { simcardsService } from "../../../domain/services/api/Simcards.service"
 import { errorNotification, successNotification } from "../../redux/Global";
 import { useDispatch } from "react-redux"
+import FormModal from "../../utils/modals/FormModal"
+import AddButton from "../AddButton"
+import SimCardComponentForm from "./SimCardComponentForm"
+import LocationForm from "./LocationForm"
+import StatusForm from "./StatusForm"
+import GroupForm from "./GroupForm"
 
 export default function SimCardForm() {
 
@@ -26,7 +32,7 @@ export default function SimCardForm() {
     simcardsService.createSimcard(formJson);
 
     try {
-      await simcardsService.createSimcard (formJson);
+      await simcardsService.createSimcard(formJson);
       dispatch(
         successNotification()
       );
@@ -39,6 +45,8 @@ export default function SimCardForm() {
   }
 
   const dispatch = useDispatch();
+
+  const [modalContent, setModalContent] = useState<any>("")
 
   const usersOptions = useGetUsersSelect()
   const locationOptions = useGetLocationsSelect()
@@ -59,6 +67,7 @@ export default function SimCardForm() {
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
+      <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Simcards"}
@@ -71,10 +80,13 @@ export default function SimCardForm() {
           >
             Component
           </label>
-          <SelectOption
-            id={"component"}
-            options={devicesimcardsOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id={"component"}
+              options={devicesimcardsOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<SimCardComponentForm />)} />
+          </div>
         </div>
 
         <div>
@@ -187,10 +199,13 @@ export default function SimCardForm() {
           >
             Locations
           </label>
-          <SelectOption
-            id="locations"
-            options={locationOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="locations"
+              options={locationOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<LocationForm />)} />
+          </div>
         </div>
 
         <div>
@@ -200,10 +215,13 @@ export default function SimCardForm() {
           >
             Status
           </label>
-          <SelectOption
-            id="status"
-            options={stateOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="states"
+              options={stateOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<StatusForm />)} />
+          </div>
         </div>
 
         <div>
@@ -226,10 +244,13 @@ export default function SimCardForm() {
           >
             Groups
           </label>
-          <SelectOption
-            id="group"
-            options={groupsOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups"
+              options={groupsOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupForm />)} />
+          </div>
         </div>
 
         <div>
