@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useGetConsumabletypesSelect } from "../../hooks/Consumables/useGetCartridgetypesSelect"
 import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect"
 import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect"
@@ -13,6 +13,12 @@ import { ConsumableItemData } from "../../../domain/models/forms/ConsumableItemD
 import { consumablesService } from "../../../domain/services/api/Consumables.service"
 import { useDispatch } from "react-redux";
 import { errorNotification, successNotification } from "../../redux/Global";
+import FormModal from "../../utils/modals/FormModal"
+import AddButton from "../AddButton"
+import LocationForm from "./LocationForm"
+import ConsumableTypeForm from "./ConsumableTypeForm"
+import ManufacturerForm from "./ManufacturerForm"
+import GroupInChargeForm from "./GroupInChargeForm"
 
 export default function ConsumableForm() {
   const handleSubmit = async (e: React.SyntheticEvent) => {
@@ -23,7 +29,7 @@ export default function ConsumableForm() {
       formData.entries()
     ) as unknown as ConsumableItemData;
     consumablesService.createConsumableItem(formJson);
-   
+
     try {
       await consumablesService.createConsumableItem(formJson);
       dispatch(
@@ -38,6 +44,8 @@ export default function ConsumableForm() {
   };
 
   const dispatch = useDispatch();
+
+  const [modalContent, setModalContent] = useState<any>("")
 
   const numbers = (): OptionValue[] => {
     const options: OptionValue[] = []
@@ -71,6 +79,7 @@ export default function ConsumableForm() {
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
+      <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Consumable Models"}
@@ -96,10 +105,13 @@ export default function ConsumableForm() {
           >
             Locations
           </label>
-          <SelectOption
-            id={"locations"}
-            options={locationOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="locations"
+              options={locationOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<LocationForm />)} />
+          </div>
         </div>
         <div>
           <label
@@ -108,10 +120,13 @@ export default function ConsumableForm() {
           >
             Consumable Types
           </label>
-          <SelectOption
-            id="consumableitemtypes"
-            options={consumableTypeOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="consumableitemtypes"
+              options={consumableTypeOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<ConsumableTypeForm />)} />
+          </div>
         </div>
         <div>
           <label
@@ -141,10 +156,13 @@ export default function ConsumableForm() {
           >
             Manufacturers
           </label>
-          <SelectOption
-            id="manufacturers"
-            options={manufacturerOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="manufacturers"
+              options={manufacturerOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<ManufacturerForm />)} />
+          </div>
         </div>
         <div>
           <label
@@ -153,10 +171,13 @@ export default function ConsumableForm() {
           >
             Group in charge of the hardware
           </label>
-          <SelectOption
-            id={"groups_tech"}
-            options={groupInChargeOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups_tech"
+              options={groupInChargeOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupInChargeForm />)} />
+          </div>
         </div>
         <div>
           <label

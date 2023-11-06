@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
 import { useGetLocationsSelect } from "../../hooks/Locations/useGetLocationsSelect";
 import { useGetManufacturersSelect } from "../../hooks/Manufacturers/useGetManufacturersSelect";
@@ -14,6 +14,14 @@ import { PassiveDevicesService } from "../../../domain/services/api/PassiveDevic
 import { PassiveDeviceData } from "../../../domain/models/forms/PassiveDeviceData";
 import { errorNotification, successNotification } from "../../redux/Global";
 import { useDispatch } from "react-redux";
+import FormModal from "../../utils/modals/FormModal"
+import AddButton from "../AddButton"
+import StatusForm from "./StatusForm";
+import LocationForm from "./LocationForm";
+import PassiveDeviceTypeForm from "./PassiveDeviceTypeForm";
+import ManufacturerForm from "./ManufacturerForm";
+import GroupInChargeForm from "./GroupInChargeForm";
+import PassiveDeviceModelForm from "./PassiveDeviceModelForm";
 
 export default function PassiveDeviceForm() {
   const handleSubmit = async (e: React.SyntheticEvent) => {
@@ -41,6 +49,8 @@ export default function PassiveDeviceForm() {
 
   const dispatch = useDispatch();
 
+  const [modalContent, setModalContent] = useState<any>("")
+
   const userInChargeOptions = useGetUserInChargeSelect();
   const groupInChargeOptions = useGetGroupInChargeSelect();
   const locationOptions = useGetLocationsSelect();
@@ -61,6 +71,7 @@ export default function PassiveDeviceForm() {
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
+      <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Passive Devices"}
@@ -86,10 +97,13 @@ export default function PassiveDeviceForm() {
           >
             Status
           </label>
-          <SelectOption
-            id={"states"}
-            options={stateOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="states"
+              options={stateOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<StatusForm />)} />
+          </div>
         </div>
 
         <div>
@@ -99,10 +113,13 @@ export default function PassiveDeviceForm() {
           >
             Locations
           </label>
-          <SelectOption
-            id={"locations"}
-            options={locationOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="locations"
+              options={locationOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<LocationForm />)} />
+          </div>
         </div>
 
         <div>
@@ -112,10 +129,13 @@ export default function PassiveDeviceForm() {
           >
             Passive device types
           </label>
-          <SelectOption
-            id={"passivedcequipmenttypes"}
-            options={passiveDeviceTypeOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id={"passivedcequipmenttypes"}
+              options={passiveDeviceTypeOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<PassiveDeviceTypeForm />)} />
+          </div>
         </div>
 
         <div>
@@ -138,10 +158,13 @@ export default function PassiveDeviceForm() {
           >
             Manufacturers
           </label>
-          <SelectOption
-            id={"manufacturers"}
-            options={manufacturerOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="manufacturers"
+              options={manufacturerOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<ManufacturerForm />)} />
+          </div>
         </div>
 
         <div>
@@ -151,10 +174,13 @@ export default function PassiveDeviceForm() {
           >
             Group in charge of the hardware
           </label>
-          <SelectOption
-            id={"groups_tech"}
-            options={groupInChargeOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups_tech"
+              options={groupInChargeOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupInChargeForm />)} />
+          </div>
         </div>
 
         <div>
@@ -164,10 +190,13 @@ export default function PassiveDeviceForm() {
           >
             Model
           </label>
-          <SelectOption
-            id={"passivedcequipmentmodels"}
-            options={passiveDeviceModelOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id={"passivedcequipmentmodels"}
+              options={passiveDeviceModelOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<PassiveDeviceModelForm />)} />
+          </div>
         </div>
 
         <div>

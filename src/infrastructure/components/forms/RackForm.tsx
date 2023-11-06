@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import SelectOption, { OptionValue } from "../SelectOption"
 import TextArea from "../TextArea"
 import TextInput from "../TextInput"
@@ -16,6 +16,14 @@ import { RackData } from "../../../domain/models/forms/RackData"
 import { racksService } from "../../../domain/services/api/Racks.service"
 import { errorNotification, successNotification } from "../../redux/Global";
 import { useDispatch } from "react-redux"
+import FormModal from "../../utils/modals/FormModal"
+import AddButton from "../AddButton"
+import StatusForm from "./StatusForm"
+import LocationForm from "./LocationForm"
+import RackTypeForm from "./RackTypeForm"
+import ManufacturerForm from "./ManufacturerForm"
+import GroupInChargeForm from "./GroupInChargeForm"
+import RackModelForm from "./RackModelForm"
 
 export default function RackForm() {
 
@@ -29,7 +37,7 @@ export default function RackForm() {
     racksService.createRack(formJson);
 
     try {
-      await racksService.createRack (formJson);
+      await racksService.createRack(formJson);
       dispatch(
         successNotification()
       );
@@ -42,6 +50,8 @@ export default function RackForm() {
   };
 
   const dispatch = useDispatch();
+
+  const [modalContent, setModalContent] = useState<any>("")
 
   const userInChargeOptions = useGetUserInChargeSelect()
   const groupInChargeOptions = useGetGroupInChargeSelect()
@@ -87,6 +97,7 @@ export default function RackForm() {
 
   return (
     <div className="m-6 bg-white rounded container_form_computer">
+      <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Racks"}
@@ -113,10 +124,13 @@ export default function RackForm() {
           >
             Status
           </label>
-          <SelectOption
-            id={"states"}
-            options={stateOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="states"
+              options={stateOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<StatusForm />)} />
+          </div>
         </div>
 
         <div>
@@ -126,10 +140,13 @@ export default function RackForm() {
           >
             Locations
           </label>
-          <SelectOption
-            id={"locations"}
-            options={locationOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="locations"
+              options={locationOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<LocationForm />)} />
+          </div>
         </div>
 
         <div>
@@ -139,10 +156,13 @@ export default function RackForm() {
           >
             Rack types
           </label>
-          <SelectOption
-            id="racktypes"
-            options={rackTypeOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="racktypes"
+              options={rackTypeOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<RackTypeForm />)} />
+          </div>
         </div>
 
         <div>
@@ -165,10 +185,13 @@ export default function RackForm() {
           >
             Manufacturers
           </label>
-          <SelectOption
-            id="manufacturers"
-            options={manufacturerOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="manufacturers"
+              options={manufacturerOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<ManufacturerForm />)} />
+          </div>
         </div>
 
         <div>
@@ -178,10 +201,13 @@ export default function RackForm() {
           >
             Group in charge of the hardware
           </label>
-          <SelectOption
-            id={"groups_tech"}
-            options={groupInChargeOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups_tech"
+              options={groupInChargeOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupInChargeForm />)} />
+          </div>
         </div>
 
         <div>
@@ -191,10 +217,13 @@ export default function RackForm() {
           >
             Model
           </label>
-          <SelectOption
-            id="rackmodels"
-            options={rackModelOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="rackmodels"
+              options={rackModelOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<RackModelForm />)} />
+          </div>
         </div>
 
         <div>
