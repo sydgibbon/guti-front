@@ -59,7 +59,7 @@ export default function Form(formProps: formProps) {
         <p className="text-base my-auto font-medium">New Item - {formHeader}</p>
       </div>
       <div className="container p-6 bg-white rounded-lg">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='max-h-[42rem] overflow-y-auto'>
           <div className="grid grid-cols-2 gap-10 p-6 container__content">
             {children}
           </div>
