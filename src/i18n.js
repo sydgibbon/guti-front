@@ -1,6 +1,6 @@
 // ** I18n Imports
 import i18n from 'i18next'
-import Backend from 'i18next-http-backend'
+import HttpApi from 'i18next-http-backend'
 import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
@@ -16,7 +16,7 @@ const languages = {
 i18n
 
   // Enables the i18next backend
-  .use(Backend)
+  .use(HttpApi)
 
   // Enable automatic language detection
   .use(LanguageDetector)
@@ -30,7 +30,7 @@ i18n
       loadPath: lng => languages[lng]
     },
     fallbackLng: 'en',
-    debug: false,
+    debug: true,
     keySeparator: false,
     react: {
       useSuspense: false
