@@ -1,54 +1,55 @@
 import { TableColumn } from "react-data-table-component";
 import { DataRow } from "./types";
+import i18n from "i18next";
 
 export const columns: TableColumn<DataRow>[] = [
   {
-    name: "Name",
+    name: i18n.t("Asset.Name"),
     sortable: true,
     selector: (row) => row.name,
   },
   {
-    name: "Status",
+    name: i18n.t("Asset.Status"),
     sortable: true,
     selector: (row) => row.states, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
-    name: "Manufacturers",
+    name: i18n.t("Asset.Manufacturers"),
     sortable: true,
     selector: (row) => row.manufacturers,
   },
   {
-    name: "Serial Number",
+    name: i18n.t("Asset.SerialNumber"),
     sortable: true,
     selector: (row) => row.serial,
   },
   {
-    name: "Type",
+    name: i18n.t("Asset.Type"),
     sortable: true,
     selector: (row) => row.computertypes, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
-    name: "Model",
+    name: i18n.t("Asset.Model"),
     sortable: true,
     selector: (row) => row.computermodels, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
-    name: "Operating System-Name",
+    name: i18n.t("Asset.OperatingSystem"),
     sortable: true,
     selector: (row) => row.computertypes, // codigo de momento hasta que se puedan relacionar sistemas operativos con computers
   },
   {
-    name: "Locations",
+    name: i18n.t("Asset.Locations"),
     sortable: true,
     selector: (row) => row.locations, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
-    name: "LastUpdate",
+    name: i18n.t("Asset.LastUpdate"),
     sortable: true,
     selector: (row) => row.date_mod, // hace referencia al objeto que contiene states dentro (mirar consola chrome)
   },
   {
-    name: "ComponentsProcessors",
+    name: i18n.t("Asset.ComponentsProcessors"),
     sortable: true,
     selector: (row) => row.computertypes, // No anda en el GLPI, se verá como arreglar mas tarde
   },

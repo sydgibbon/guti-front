@@ -1,0 +1,12 @@
+{
+  "Asset.Name": "Name",
+  "Asset.Status": "Status",
+  "Asset.Manufacturers": "Manufacturers",
+  "Asset.SerialNumber": "Serial Number",
+  "Asset.Type": "Type",
+  "Asset.Model": "Model",
+  "Asset.OperatingSystem": "Operating System",
+  "Asset.Locations": "Locations",
+  "Asset.LastUpdate": "Last Update",
+  "Asset.ComponentsProcessors": "Components - Processors"
+}
