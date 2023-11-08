@@ -1,5 +1,5 @@
 import "./Sidebar.css";
-import logo from "../../../assets/guti-logo.png";
+import logo from "../../../assets/img/logo/guti-logo.png";
 import SidebarMenu from "../SidebarMenu";
 import { useState } from "react";
 import { appItems } from "../../../contexts/AppItems"

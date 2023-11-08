@@ -3,7 +3,7 @@ import "./LoginView.css";
 import { useNavigate } from "react-router-dom"
 import { authService } from "../../../domain/services/api/Auth.service";
 
-import Logo from "../../assets/guti-logo.png"
+import Logo from "../../assets/img/logo/guti-logo.png"
 
 const LoginView = () => {
   const [isLogged, setIsLogged] = useState(false)
