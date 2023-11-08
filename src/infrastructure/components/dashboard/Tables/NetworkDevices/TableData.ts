@@ -1,44 +1,46 @@
 import { TableColumn } from "react-data-table-component";
 import { DataRow } from "./types";
+import i18n from "i18next";
+
 
 export const columns: TableColumn<DataRow>[] = [
   {
-    name: "NAME",
+    name: i18n.t("Asset.Name"),
     sortable: true,
     selector: (row) => row.name,
   },
   {
-    name: "STATUS",
+    name: i18n.t("Asset.Status"),
     sortable: true,
     selector: (row) => row.states,
   },
   {
-    name: "MANUFACTURERS",
+    name: i18n.t("Asset.Manufacturers"),
     sortable: true,
     selector: (row) => row.manufacturers,
   },
   {
-    name: "LOCATIONS",
+    name: i18n.t("Asset.Locations"),
     sortable: true,
     selector: (row) => row.locations,
   },
   {
-    name: "TYPE",
+    name: i18n.t("Asset.Type"),
     sortable: true,
     selector: (row) => row.networkequipmenttypes,
   },
   {
-    name: "MODEL",
+    name: i18n.t("Asset.Model"),
     sortable: true,
     selector: (row) => row.networkequipmentmodels,
   },
   {
-    name: "FIRMWARE",
+    name: i18n.t("NetworkDevice.Firmware"),
     sortable: true,
     selector: (row) => row.devicefirmwares, // Corresponde a una tabla que no esta vinculada a networkequipments de ninguna manera
   },
   {
-    name: "LAST UPDATE",
+    name: i18n.t("Asset.LastUpdate"),
     sortable: true,
     selector: (row) => row.date_mod,
   },

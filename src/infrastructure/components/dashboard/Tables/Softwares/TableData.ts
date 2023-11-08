@@ -1,34 +1,36 @@
 import { TableColumn } from "react-data-table-component";
 import { DataRow } from "./types";
+import i18n from "i18next";
+
 
 export const columns: TableColumn<DataRow>[] = [
   {
-    name: "NAME",
+    name: i18n.t("Asset.Name"),
     sortable: true,
     selector: (row) => row.name,
   },
   {
-    name: "PUBLISHER",
+    name: i18n.t("Asset.Publisher"),
     sortable: true,
     selector: (row) => row.manufacturers,
   },
   {
-    name: "VERSIONS - NAME",
+    name: i18n.t("Software.VersionsName"),
     sortable: true,
     selector: (row) => row.softwareversions,
   },
   {
-    name: "VERSION - OPERATING SYSTEMS",
+    name: i18n.t("Software.VersionsOperatingSystems"),
     sortable: true,
     selector: (row) => row.operatingsystems,
   },
   {
-    name: "NUMBER OF INSTALLATIONS",
+    name: i18n.t("Asset.NumberOfInstallations"),
     sortable: true,
     selector: (row) => row.installations,
   },
   {
-    name: "LICENSES - NUMBER OF LICESNSES",
+    name: i18n.t("Software.NumberOfLicenses"),
     sortable: true,
     selector: (row) => row.softwarelicenses,
   },

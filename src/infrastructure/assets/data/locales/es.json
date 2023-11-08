@@ -1,4 +1,5 @@
 {
+  "Asset.Id": "Id",
   "Asset.Name": "Nombre",
   "Asset.Status": "Estado",
   "Asset.Manufacturers": "Fabricantes",
@@ -8,5 +9,24 @@
   "Asset.OperatingSystem": "Sistema Operativo",
   "Asset.Locations": "Ubicacion",
   "Asset.LastUpdate": "Ultima Modificacion",
-  "Asset.ComponentsProcessors": "Componentes - Procesadores"
+  "Asset.ComponentsProcessors": "Componentes - Procesadores",
+  "Asset.AlternateUsername": "Usuario Alternativo",
+  "Asset.Publisher": "Editor",
+  "Asset.NumberOfInstallations": "Numero De Instalaciones",
+  "Asset.Reference": "Referencia",
+  "Asset.TechInChargeOfHardware": "Tecnico A Cargo Del Hardware",
+  "Software.VersionsName": "Version - Nombre",
+  "Software.VersionsOperatingSystems": "Version - Sistema Operativo",
+  "Software.NumberOfLicenses": "Version - Numero De Licencia",
+  "NetworkDevice.Firmware": "Firmware",
+  "Cartridge.Cartridges": "Cartuchos",
+  "Consumable.Consumables": "Consumibles",
+  "Cable.CableType": "Tipo De Cable",
+  "Cable.AssetNumber": "Numero de Inventario",
+  "Cable.Color": "Color",
+  "Cable.AssociatedItemB": "Items Asociados (Endpoint B)",
+  "Cable.AssociatedItemA": "Items Asociados (Endpoint A)",
+  "Cable.SocketB": "Socket (Endpoint B)",
+  "Cable.SocketA": "Socket (Endpoint A)"
+}
 }
