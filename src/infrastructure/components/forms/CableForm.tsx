@@ -141,7 +141,7 @@ export default function CableForm() {
           setDataOptionsB(allComputers?.data)
         } else if (selectedAssetB.name === "Network Devices") {
           setDataOptionsB(allNetworkDevices?.data)
-        } else if (selectedAssetA?.name === "Devices") {
+        } else if (selectedAssetB?.name === "Devices") {
           setDataOptionsB(allDevices?.data)
         } else if (selectedAssetB.name === "Phones") {
           setDataOptionsB(allPhones?.data)
