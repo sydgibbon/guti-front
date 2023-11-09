@@ -40,7 +40,7 @@ export default function ComputerModelForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Computer Models"}
@@ -158,6 +158,6 @@ export default function ComputerModelForm() {
           />
         </div>
       </Form >
-    </div >
+    </>
   )
 };

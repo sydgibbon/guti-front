@@ -13,10 +13,8 @@ const FormModal = ({form}:FormModalProps) => {
   
   return (
     <Modal open={showModal} onClose={handleClose}
-    ><Box className="max-w-6xl mt-6 mx-auto rounded-lg relative">
-        <div className='mx-6 py-4 px-5 absolute top-0 right-0'>
-          <button onClick={handleClose}>X</button>
-        </div>
+    ><Box className="max-w-6xl mx-auto outline-none relative">
+          <button onClick={handleClose} className='absolute right-12 top-4'>X</button>
       {form}
       </Box >
     </Modal>

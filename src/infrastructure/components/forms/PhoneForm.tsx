@@ -94,7 +94,7 @@ export default function PhoneForm() {
     autoupdatesystemOptions.get()
   }, [])
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Phones"}
@@ -382,6 +382,6 @@ export default function PhoneForm() {
           </div>
         </div>
       </Form>
-    </div>
+    </>
   )
 };

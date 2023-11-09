@@ -68,7 +68,7 @@ export default function CartridgeForm() {
   }, [])
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Cartridge Models"}
@@ -205,6 +205,6 @@ export default function CartridgeForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

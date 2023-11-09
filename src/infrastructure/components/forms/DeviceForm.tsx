@@ -64,7 +64,7 @@ export default function DeviceForm() {
   }, [])
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Devices"}
@@ -319,6 +319,6 @@ export default function DeviceForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

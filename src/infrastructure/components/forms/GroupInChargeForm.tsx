@@ -21,7 +21,7 @@ export default function GroupInChargeForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Groups"}
@@ -167,6 +167,6 @@ export default function GroupInChargeForm() {
           />
         </div>
       </Form >
-    </div >
+    </>
   )
 };

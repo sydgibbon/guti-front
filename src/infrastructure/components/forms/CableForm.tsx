@@ -182,7 +182,7 @@ export default function CableForm() {
   }, [selectedAssetB])
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Cable"}
@@ -396,6 +396,6 @@ export default function CableForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

@@ -59,7 +59,7 @@ export default function EnclosuresForm() {
   }, [])
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Enclosures"}
@@ -202,6 +202,6 @@ export default function EnclosuresForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

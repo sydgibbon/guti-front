@@ -74,7 +74,7 @@ export default function NetDeviceForm() {
   }, []);
 
   return (
-    <div className="bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Network Devices"}
@@ -358,6 +358,6 @@ export default function NetDeviceForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   );
 }

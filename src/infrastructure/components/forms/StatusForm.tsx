@@ -21,7 +21,7 @@ export default function StatusForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Statuses of items"}
@@ -278,6 +278,6 @@ export default function StatusForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

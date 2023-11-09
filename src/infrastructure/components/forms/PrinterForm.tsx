@@ -106,7 +106,7 @@ export default function PrinterForm() {
   }, []);
 
   return (
-    <div className="bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Printers"}
@@ -443,7 +443,7 @@ export default function PrinterForm() {
           </div>
         </div>
       </Form>
-    </div>
+    </>
   );
 };
 

@@ -10,7 +10,7 @@ export default function LocationForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Locations"}
@@ -174,6 +174,6 @@ export default function LocationForm() {
           />
         </div>
       </Form >
-    </div >
+    </>
   )
 };

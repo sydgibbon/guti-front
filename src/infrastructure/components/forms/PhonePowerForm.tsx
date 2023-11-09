@@ -9,7 +9,7 @@ export default function PhonePowerForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Phone power supply types"}
@@ -41,6 +41,6 @@ export default function PhonePowerForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

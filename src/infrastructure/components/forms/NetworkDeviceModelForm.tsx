@@ -40,7 +40,7 @@ export default function NetworkDeviceModelForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Networking Equipment Models"}
@@ -158,6 +158,6 @@ export default function NetworkDeviceModelForm() {
           />
         </div>
       </Form >
-    </div >
+    </>
   )
 };

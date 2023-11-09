@@ -40,7 +40,7 @@ export default function MonitorModelForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Monitor Models"}
@@ -158,6 +158,6 @@ export default function MonitorModelForm() {
           />
         </div>
       </Form >
-    </div >
+    </>
   )
 };

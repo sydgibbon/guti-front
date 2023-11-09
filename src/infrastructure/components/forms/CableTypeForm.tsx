@@ -9,7 +9,7 @@ export default function CableTypeForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Cable Type"}
@@ -41,6 +41,6 @@ export default function CableTypeForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

@@ -70,7 +70,7 @@ export default function ConsumableForm() {
   }, [])
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Consumable Models"}
@@ -222,6 +222,6 @@ export default function ConsumableForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

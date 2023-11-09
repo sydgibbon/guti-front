@@ -53,7 +53,8 @@ export default function Form(formProps: formProps) {
   const icon = formIcons[iconName];
 
   return (
-    <>
+    <div className="m-6 bg-white rounded container_form"> 
+    {/* Reemplazar fragment con el m6 // SACAR EL MARGIN A LA MIERDA div className="m-6 bg-white rounded container_form_computer" */}
       <div className="form-header flex justify-center md:justify-start bg-medium-gray h-1/6 w-full border-b mx-auto py-4 px-5 gap-2">
         {icon}
         <p className="text-base my-auto font-medium">New Item - {formHeader}</p>
@@ -74,6 +75,6 @@ export default function Form(formProps: formProps) {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }

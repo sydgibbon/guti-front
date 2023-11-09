@@ -82,7 +82,7 @@ export default function SoftwareForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Software"}
@@ -255,6 +255,6 @@ export default function SoftwareForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };
