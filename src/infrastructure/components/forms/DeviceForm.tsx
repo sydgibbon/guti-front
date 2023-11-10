@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useGetAutoupdatesystemsSelect } from "../../hooks/Autoupdatesystems/useGetAutoupdatesystemsSelect";
 import { useGetGroupInChargeSelect } from "../../hooks/Groups/useGetGroupInChargeSelect";
 import { useGetGroupsSelect } from "../../hooks/Groups/useGetGroupsSelect";
@@ -17,18 +17,30 @@ import { useGetDevicemodelsSelect } from "../../hooks/Devices/useGetDevicemodels
 import { useGetDevicetypesSelect } from "../../hooks/Devices/useGetDevicetypesSelect";
 import { DevicesData } from "../../../domain/models/forms/DevicesData";
 import { devicesService } from "../../../domain/services/api/Devices.service";
+import FormModal from "../../utils/modals/FormModal"
+import AddButton from "../AddButton"
+import StatusForm from "./StatusForm";
+import LocationForm from "./LocationForm";
+import DeviceTypeForm from "./DeviceTypeForm";
+import ManufacturerForm from "./ManufacturerForm";
+import GroupInChargeForm from "./GroupInChargeForm";
+import DeviceModelForm from "./DeviceModelForm";
+import GroupForm from "./GroupForm";
+import UpdateSourceForm from "./UpdateSourceForm";
 
 export default function DeviceForm() {
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault()
-  const form = e.target as HTMLFormElement;
-  const formData = new FormData(form);
-  const formJson = Object.fromEntries(
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const formJson = Object.fromEntries(
       formData.entries()
     ) as unknown as DevicesData;
     devicesService.createDevices(formJson);
   };
+
+  const [modalContent, setModalContent] = useState<any>("")
 
   const userInChargeOptions = useGetUserInChargeSelect()
   const usersOptions = useGetUsersSelect()
@@ -65,6 +77,7 @@ export default function DeviceForm() {
 
   return (
     <>
+      <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Devices"}
@@ -90,10 +103,13 @@ export default function DeviceForm() {
           >
             Status
           </label>
-          <SelectOption
-            id={"states"}
-            options={stateOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="states"
+              options={stateOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<StatusForm />)} />
+          </div>
         </div>
 
         <div>
@@ -103,10 +119,13 @@ export default function DeviceForm() {
           >
             Locations
           </label>
-          <SelectOption
-            id={"locations"}
-            options={locationOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="locations"
+              options={locationOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<LocationForm />)} />
+          </div>
         </div>
 
         <div>
@@ -116,10 +135,13 @@ export default function DeviceForm() {
           >
             Devices Types
           </label>
-          <SelectOption
-            id="peripheraltypes"
-            options={deviceTypeOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="peripheraltypes"
+              options={deviceTypeOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<DeviceTypeForm />)} />
+          </div>
         </div>
 
         <div>
@@ -142,10 +164,13 @@ export default function DeviceForm() {
           >
             Manufacturers
           </label>
-          <SelectOption
-            id="manufacturers"
-            options={manufacturerOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="manufacturers"
+              options={manufacturerOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<ManufacturerForm />)} />
+          </div>
         </div>
 
         <div>
@@ -155,10 +180,13 @@ export default function DeviceForm() {
           >
             Group in charge of the hardware
           </label>
-          <SelectOption
-            id={"groups_tech"}
-            options={groupInChargeOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups_tech"
+              options={groupInChargeOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupInChargeForm />)} />
+          </div>
         </div>
 
         <div>
@@ -168,10 +196,13 @@ export default function DeviceForm() {
           >
             Model
           </label>
-          <SelectOption
-            id="peripheralmodels"
-            options={deviceModelOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="peripheralmodels"
+              options={deviceModelOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<DeviceModelForm />)} />
+          </div>
         </div>
 
         <div>
@@ -263,10 +294,13 @@ export default function DeviceForm() {
           >
             Groups
           </label>
-          <SelectOption
-            id="groups"
-            options={groupsOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups"
+              options={groupsOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupForm />)} />
+          </div>
         </div>
 
         <div>
@@ -313,10 +347,13 @@ export default function DeviceForm() {
           >
             Update Source
           </label>
-          <SelectOption
-            id="updatesource"
-            options={autoupdatesystemOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="autoupdatesystems"
+              options={autoupdatesystemOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<UpdateSourceForm />)} />
+          </div>
         </div>
       </Form>
     </>

@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import SelectOption, { OptionValue } from "../SelectOption"
 import ImageInput from "../ImageInput"
 import TextArea from "../TextArea"
@@ -13,6 +13,12 @@ import { CartridgeData } from "../../../domain/models/forms/CartridgesData"
 import { cartridgesService } from "../../../domain/services/api/Cartridges.service"
 import { useDispatch } from "react-redux";
 import { errorNotification, successNotification } from "../../redux/Global";
+import FormModal from "../../utils/modals/FormModal"
+import AddButton from "../AddButton"
+import LocationForm from "./LocationForm"
+import CartridgeTypeForm from "./CartridgesTypeForm"
+import ManufacturerForm from "./ManufacturerForm"
+import GroupInChargeForm from "./GroupInChargeForm"
 
 export default function CartridgeForm() {
   const handleSubmit = async (e: React.SyntheticEvent) => {
@@ -38,6 +44,8 @@ export default function CartridgeForm() {
   };
 
   const dispatch = useDispatch();
+
+  const [modalContent, setModalContent] = useState<any>("")
 
   const numbers = (): OptionValue[] => {
     const options: OptionValue[] = []
@@ -69,6 +77,7 @@ export default function CartridgeForm() {
 
   return (
     <>
+      <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Cartridge Models"}
@@ -93,10 +102,13 @@ export default function CartridgeForm() {
           >
             Locations
           </label>
-          <SelectOption
-            id={"locations"}
-            options={locationOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="locations"
+              options={locationOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<LocationForm />)} />
+          </div>
         </div>
         <div className="Cartridge Types">
           <label
@@ -105,10 +117,13 @@ export default function CartridgeForm() {
           >
             Cartridge Types
           </label>
-          <SelectOption
-            id="cartridgeitemtypes"
-            options={cartridgeTypeOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="cartridgeitemtypes"
+              options={cartridgeTypeOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<CartridgeTypeForm />)} />
+          </div>
         </div>
         <div className="Reference">
           <label
@@ -138,10 +153,13 @@ export default function CartridgeForm() {
           >
             Manufacturers
           </label>
-          <SelectOption
-            id="manufacturers"
-            options={manufacturerOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="manufacturers"
+              options={manufacturerOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<ManufacturerForm />)} />
+          </div>
         </div>
         <div className="Group in charge of the hardware">
           <label
@@ -150,10 +168,13 @@ export default function CartridgeForm() {
           >
             Group in charge of the hardware
           </label>
-          <SelectOption
-            id={"group-hardware"}
-            options={groupInChargeOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups_tech"
+              options={groupInChargeOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupInChargeForm />)} />
+          </div>
         </div>
         <div className="Comments">
           <label

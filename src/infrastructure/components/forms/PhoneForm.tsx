@@ -19,6 +19,17 @@ import { PhoneData } from "../../../domain/models/forms/PhoneData"
 import { phonesService } from "../../../domain/services/api/Phones.service"
 import { errorNotification, successNotification } from "../../redux/Global";
 import { useDispatch } from "react-redux"
+import FormModal from "../../utils/modals/FormModal"
+import AddButton from "../AddButton"
+import StatusForm from "./StatusForm"
+import LocationForm from "./LocationForm"
+import PhoneTypeForm from "./PhoneTypeForm"
+import ManufacturerForm from "./ManufacturerForm"
+import GroupInChargeForm from "./GroupInChargeForm"
+import PhoneModelForm from "./PhoneModelForm"
+import GroupForm from "./GroupForm"
+import UpdateSourceForm from "./UpdateSourceForm"
+import PhonePowerForm from "./PhonePowerForm"
 
 export default function PhoneForm() {
 
@@ -32,7 +43,7 @@ export default function PhoneForm() {
     phonesService.createPhone(formJson);
 
     try {
-      await phonesService.createPhone (formJson);
+      await phonesService.createPhone(formJson);
       dispatch(
         successNotification()
       );
@@ -45,7 +56,9 @@ export default function PhoneForm() {
   }
 
   const dispatch = useDispatch();
-  
+
+  const [modalContent, setModalContent] = useState<any>("")
+
   interface CheckboxState {
     headset: boolean
     speaker: boolean
@@ -95,6 +108,7 @@ export default function PhoneForm() {
   }, [])
   return (
     <>
+      <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Phones"}
@@ -120,10 +134,13 @@ export default function PhoneForm() {
           >
             Status
           </label>
-          <SelectOption
-            id={"states"}
-            options={stateOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="states"
+              options={stateOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<StatusForm />)} />
+          </div>
         </div>
 
         <div>
@@ -133,10 +150,13 @@ export default function PhoneForm() {
           >
             Locations
           </label>
-          <SelectOption
-            id={"locations"}
-            options={locationOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="locations"
+              options={locationOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<LocationForm />)} />
+          </div>
         </div>
 
         <div>
@@ -146,10 +166,13 @@ export default function PhoneForm() {
           >
             Phone types
           </label>
-          <SelectOption
-            id="phonetypes"
-            options={phoneTypeOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="phonetypes"
+              options={phoneTypeOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<PhoneTypeForm />)} />
+          </div>
         </div>
 
         <div>
@@ -172,10 +195,13 @@ export default function PhoneForm() {
           >
             Manufacturers
           </label>
-          <SelectOption
-            id="manufacturers"
-            options={manufacturerOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="manufacturers"
+              options={manufacturerOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<ManufacturerForm />)} />
+          </div>
         </div>
 
         <div>
@@ -185,10 +211,13 @@ export default function PhoneForm() {
           >
             Group in charge of the hardware
           </label>
-          <SelectOption
-            id={"grouptech"}
-            options={groupInChargeOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups_tech"
+              options={groupInChargeOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupInChargeForm />)} />
+          </div>
         </div>
 
         <div>
@@ -198,10 +227,13 @@ export default function PhoneForm() {
           >
             Model
           </label>
-          <SelectOption
-            id="phonemodels"
-            options={phoneModelOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="phonemodels"
+              options={phoneModelOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<PhoneModelForm />)} />
+          </div>
         </div>
 
         <div>
@@ -293,10 +325,13 @@ export default function PhoneForm() {
           >
             Groups
           </label>
-          <SelectOption
-            id="groups"
-            options={groupsOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups"
+              options={groupsOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupForm />)} />
+          </div>
         </div>
 
         <div>
@@ -345,10 +380,13 @@ export default function PhoneForm() {
           >
             Update Source
           </label>
-          <SelectOption
-            id="autoupdatesystems"
-            options={autoupdatesystemOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="autoupdatesystems"
+              options={autoupdatesystemOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<UpdateSourceForm />)} />
+          </div>
         </div>
 
         <div>
@@ -362,6 +400,22 @@ export default function PhoneForm() {
             id={"number_line"}
             type={"number"}
           />
+        </div>
+
+        <div>
+          <label
+            className="text-sm mb-2 font-semibold block"
+            htmlFor="phonepowersupplies"
+          >
+            Phone power supply types
+          </label>
+          <div className="flex gap-2">
+            <SelectOption
+              id="phonepowersupplies"
+              options={phonePowerSupplyTypeOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<PhonePowerForm />)} />
+          </div>
         </div>
 
         <div className="  rounded-lg">

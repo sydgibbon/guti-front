@@ -18,6 +18,17 @@ import { MonitorData } from "../../../domain/models/forms/MonitorData";
 import { monitorsService } from "../../../domain/services/api/Monitors.service";
 import { useDispatch } from "react-redux";
 import { errorNotification, successNotification } from "../../redux/Global";
+import AddButton from "../AddButton"
+import StatusForm from "./StatusForm"
+import LocationForm from "./LocationForm"
+import MonitorTypeForm from "./MonitorTypeForm";
+import GroupInChargeForm from "./GroupInChargeForm"
+import ManufacturerForm from "./ManufacturerForm";
+import MonitorModelForm from "./MonitorModelForm";
+import GroupForm from "./GroupForm";
+import UpdateSourceForm from "./UpdateSourceForm";
+import FormModal from "../../utils/modals/FormModal";
+
 
 export default function MonitorForm() {
 
@@ -60,6 +71,8 @@ export default function MonitorForm() {
     { id: "0", name: "Unit Management" },
     { id: "1", name: "Global Management" },
   ];
+
+  const [modalContent, setModalContent] = useState<any>("")
 
   interface CheckboxState {
     microphone: boolean;
@@ -105,6 +118,7 @@ export default function MonitorForm() {
 
   return (
     <>
+      <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Monitors"}
@@ -120,58 +134,79 @@ export default function MonitorForm() {
 
         <div className="Status">
           <label className="text-sm mb-2 font-semibold block" htmlFor="status">Status</label>
-          <SelectOption
-            id={"states"}
-            options={stateOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="states"
+              options={stateOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<StatusForm />)} />
+          </div>
         </div>
 
         <div className="Locations">
           <label className="text-sm mb-2 font-semibold block" htmlFor="location">Locations</label>
-          <SelectOption
-            id={"locations"}
-            options={locationOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="locations"
+              options={locationOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<LocationForm />)} />
+          </div>
         </div>
 
         <div className="Monitor Type">
           <label className="text-sm mb-2 font-semibold block" htmlFor="type">Monitor Type</label>
-          <SelectOption
-            id="monitortypes"
-            options={monitorTypeOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="monitortypes"
+              options={monitorTypeOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<MonitorTypeForm />)} />
+          </div>
         </div>
 
         <div className="Technician in charge of the hardware">
           <label className="text-sm mb-2 font-semibold block" htmlFor="hardware">Technician in charge of the hardware</label>
-          <SelectOption
-            id={"users_tech"}
-            options={userInChargeOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="users_tech"
+              options={userInChargeOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupInChargeForm />)} />
+          </div>
         </div>
 
         <div className="Manufacturers">
           <label className="text-sm mb-2 font-semibold block" htmlFor="manufacturer">Manufacturers</label>
-          <SelectOption
-            id="manufacturers"
-            options={manufacturerOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="manufacturers"
+              options={manufacturerOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<ManufacturerForm />)} />
+          </div>
         </div>
 
         <div className="Group in charge of the hardware">
           <label className="text-sm mb-2 font-semibold block" htmlFor="group-hardware">Group in charge of the hardware</label>
-          <SelectOption
-            id={"groups_tech"}
-            options={groupInChargeOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="users_tech"
+              options={userInChargeOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupInChargeForm />)} />
+          </div>
         </div>
 
         <div className="Model">
-          <label className="text-sm mb-2 font-semibold block" htmlFor="model">Model</label>
-          <SelectOption
-            id="monitormodels"
-            options={monitorModelOptions?.data}
-          />
+          <label className="text-sm mb-2 font-semibold block" htmlFor="model">Monitor Model</label>
+          <div className="flex gap-2">
+            <SelectOption
+              id="monitormodels"
+              options={monitorModelOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<MonitorModelForm />)} />
+          </div>
         </div>
 
         <div className="Alternate Username Number">
@@ -236,10 +271,13 @@ export default function MonitorForm() {
 
         <div className="Groups">
           <label className="text-sm mb-2 font-semibold block" htmlFor="group">Groups</label>
-          <SelectOption
-            id="groups"
-            options={groupsOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups"
+              options={groupsOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupForm />)} />
+          </div>
         </div>
 
         <div className="UUID">
@@ -262,8 +300,13 @@ export default function MonitorForm() {
 
         <div className="Update Source">
           <label className="text-sm mb-2 font-semibold block" htmlFor="updatesource">Update Source</label>
-          <SelectOption
-            id="updatesource" />
+          <div className="flex gap-2">
+            <SelectOption
+              id="autoupdatesystems"
+              options={autoupdatesystemOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<UpdateSourceForm />)} />
+          </div>
         </div>
 
         <div className="Ports" >

@@ -22,6 +22,17 @@ import { PrinterData } from "../../../domain/models/forms/PrinterData";
 import { printersService } from "../../../domain/services/api/Printers.service";
 import { errorNotification, successNotification } from "../../redux/Global";
 import { useDispatch } from "react-redux"
+import FormModal from "../../utils/modals/FormModal"
+import AddButton from "../AddButton"
+import StatusForm from "./StatusForm";
+import LocationForm from "./LocationForm";
+import PrinterTypeForm from "./PrinterTypeForm";
+import ManufacturerForm from "./ManufacturerForm";
+import GroupInChargeForm from "./GroupInChargeForm";
+import PrinterModelForm from "./PrinterModelForm";
+import NetworkForm from "./NetworkForm";
+import GroupForm from "./GroupForm";
+import UpdateSourceForm from "./UpdateSourceForm";
 
 export default function PrinterForm() {
   interface CheckboxState {
@@ -58,7 +69,7 @@ export default function PrinterForm() {
     printersService.createPrinter(formJson);
 
     try {
-      await printersService.createPrinter (formJson);
+      await printersService.createPrinter(formJson);
       dispatch(
         successNotification()
       );
@@ -71,6 +82,8 @@ export default function PrinterForm() {
   };
 
   const dispatch = useDispatch();
+
+  const [modalContent, setModalContent] = useState<any>("")
 
   const userInChargeOptions = useGetUserInChargeSelect();
   const usersOptions = useGetUsersSelect();
@@ -107,6 +120,7 @@ export default function PrinterForm() {
 
   return (
     <>
+      <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Printers"}
@@ -132,10 +146,13 @@ export default function PrinterForm() {
           >
             Status
           </label>
-          <SelectOption
-            id={"states"}
-            options={stateOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="states"
+              options={stateOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<StatusForm />)} />
+          </div>
         </div>
         <div className="Locations">
           <label
@@ -144,10 +161,13 @@ export default function PrinterForm() {
           >
             Locations
           </label>
-          <SelectOption
-            id={"locations"}
-            options={locationOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="locations"
+              options={locationOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<LocationForm />)} />
+          </div>
         </div>
         <div className="Printer Types">
           <label
@@ -156,10 +176,13 @@ export default function PrinterForm() {
           >
             Printer Types
           </label>
-          <SelectOption
-            id="printertypes"
-            options={printerTypeOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="printertypes"
+              options={printerTypeOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<PrinterTypeForm />)} />
+          </div>
         </div>
         <div className="Technician in charge of the hardware">
           <label
@@ -180,10 +203,13 @@ export default function PrinterForm() {
           >
             Manufacturers
           </label>
-          <SelectOption
-            id="manufacturers"
-            options={manufacturerOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="manufacturers"
+              options={manufacturerOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<ManufacturerForm />)} />
+          </div>
         </div>
         <div className="Group in charge of the hardware">
           <label
@@ -192,10 +218,13 @@ export default function PrinterForm() {
           >
             Group in charge of the hardware
           </label>
-          <SelectOption
-            id={"groups_tech"}
-            options={groupInChargeOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups_tech"
+              options={groupInChargeOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupInChargeForm />)} />
+          </div>
         </div>
         <div className="Model">
           <label
@@ -204,10 +233,13 @@ export default function PrinterForm() {
           >
             Model
           </label>
-          <SelectOption
-            id="printermodels"
-            options={printerModelOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="printermodels"
+              options={printerModelOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<PrinterModelForm />)} />
+          </div>
         </div>
         <div className="Alternate Username Number">
           <label
@@ -316,10 +348,13 @@ export default function PrinterForm() {
           >
             Network
           </label>
-          <SelectOption
-            id="networks"
-            options={networkOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="networks"
+              options={networkOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<NetworkForm />)} />
+          </div>
         </div>
         <div className="Groups">
           <label
@@ -328,10 +363,13 @@ export default function PrinterForm() {
           >
             Groups
           </label>
-          <SelectOption
-            id="groups"
-            options={groupsOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups"
+              options={groupsOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupForm />)} />
+          </div>
         </div>
         <div className="UUID">
           <label
@@ -365,10 +403,13 @@ export default function PrinterForm() {
           >
             Update Source
           </label>
-          <SelectOption
-            id="autoupdatesystems"
-            options={autoupdatesystemOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="autoupdatesystems"
+              options={autoupdatesystemOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<UpdateSourceForm />)} />
+          </div>
         </div>
         <div className="Memory">
           <label

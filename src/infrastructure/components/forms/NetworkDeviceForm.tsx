@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useGetNetworkDevicesModelsSelect } from "../../hooks/NetworksDevices/useGetNetworkDevicesModelsSelect";
 import { useGetNetworkDevicesTypesSelect } from "../../hooks/NetworksDevices/useGetNetworkDevicesTypesSelect";
 import SelectOption from "../SelectOption";
@@ -19,6 +19,17 @@ import { NetworkDeviceData } from "../../../domain/models/forms/NetworkDeviceDat
 import { networkDevicesService } from "../../../domain/services/api/NetworkDevices.service";
 import { errorNotification, successNotification } from "../../redux/Global";
 import { useDispatch } from "react-redux";
+import FormModal from "../../utils/modals/FormModal"
+import AddButton from "../AddButton"
+import StatusForm from "./StatusForm";
+import LocationForm from "./LocationForm";
+import NetworkDeviceTypeForm from "./NetworkDevicesTypeForm";
+import ManufacturerForm from "./ManufacturerForm";
+import GroupInChargeForm from "./GroupInChargeForm";
+import NetworkDeviceModelForm from "./NetworkDeviceModelForm";
+import NetworkForm from "./NetworkForm";
+import GroupForm from "./GroupForm";
+import UpdateSourceForm from "./UpdateSourceForm";
 
 export default function NetDeviceForm() {
   const handleSubmit = async (e: React.SyntheticEvent) => {
@@ -44,6 +55,8 @@ export default function NetDeviceForm() {
   };
 
   const dispatch = useDispatch();
+
+  const [modalContent, setModalContent] = useState<any>("")
 
   const userInChargeOptions = useGetUserInChargeSelect();
   const networkDeviceModelOptions = useGetNetworkDevicesModelsSelect();
@@ -75,6 +88,7 @@ export default function NetDeviceForm() {
 
   return (
     <>
+      <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Network Devices"}
@@ -100,10 +114,13 @@ export default function NetDeviceForm() {
           >
             Status
           </label>
-          <SelectOption
-            id={"states"}
-            options={stateOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="states"
+              options={stateOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<StatusForm />)} />
+          </div>
         </div>
 
         <div>
@@ -113,10 +130,13 @@ export default function NetDeviceForm() {
           >
             Locations
           </label>
-          <SelectOption
-            id={"locations"}
-            options={locationOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="locations"
+              options={locationOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<LocationForm />)} />
+          </div>
         </div>
 
         <div>
@@ -126,10 +146,13 @@ export default function NetDeviceForm() {
           >
             Networking Equipment Types
           </label>
-          <SelectOption
-            id="networkequipmenttypes"
-            options={networkDeviceTypeOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="networkequipmenttypes"
+              options={networkDeviceTypeOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<NetworkDeviceTypeForm />)} />
+          </div>
         </div>
 
         <div>
@@ -152,10 +175,13 @@ export default function NetDeviceForm() {
           >
             Manufacturers
           </label>
-          <SelectOption
-            id="manufacturers"
-            options={manufacturerOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="manufacturers"
+              options={manufacturerOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<ManufacturerForm />)} />
+          </div>
         </div>
 
         <div>
@@ -165,10 +191,13 @@ export default function NetDeviceForm() {
           >
             Group in charge of the hardware
           </label>
-          <SelectOption
-            id={"groups_tech"}
-            options={groupInChargeOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups_tech"
+              options={groupInChargeOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupInChargeForm />)} />
+          </div>
         </div>
 
         <div>
@@ -178,10 +207,13 @@ export default function NetDeviceForm() {
           >
             Model
           </label>
-          <SelectOption
-            id="networkequipmentmodels"
-            options={networkDeviceModelOptions?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="networkequipmentmodels"
+              options={networkDeviceModelOptions?.data}
+            />
+            <AddButton onClick={() => setModalContent(<NetworkDeviceModelForm />)} />
+          </div>
         </div>
 
         <div>
@@ -286,10 +318,13 @@ export default function NetDeviceForm() {
           >
             Network
           </label>
-          <SelectOption
-            id="networks"
-            options={networkOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="networks"
+              options={networkOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<NetworkForm />)} />
+          </div>
         </div>
 
         <div>
@@ -299,10 +334,13 @@ export default function NetDeviceForm() {
           >
             Groups
           </label>
-          <SelectOption
-            id="groups"
-            options={groupsOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="groups"
+              options={groupsOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<GroupForm />)} />
+          </div>
         </div>
 
         <div>
@@ -352,10 +390,13 @@ export default function NetDeviceForm() {
           >
             Update Source
           </label>
-          <SelectOption
-            id="autoupdatesystems"
-            options={autoupdatesystemOptions.data?.data}
-          />
+          <div className="flex gap-2">
+            <SelectOption
+              id="autoupdatesystems"
+              options={autoupdatesystemOptions.data?.data}
+            />
+            <AddButton onClick={() => setModalContent(<UpdateSourceForm />)} />
+          </div>
         </div>
       </Form>
     </>
