@@ -5,4 +5,5 @@ export interface TableComponentProps {
   progressComponent?: React.ReactNode;
   columns: TableColumn<any>[];
   rows: any[];
+  assetPath: string;
 }

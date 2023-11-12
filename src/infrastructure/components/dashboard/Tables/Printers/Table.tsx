@@ -30,6 +30,7 @@ export default function TablePrinters() {
         progressPending={printers.isLoading}
         columns={columns}
         rows={printers.data}
+        assetPath="printers"
       />
     </div>
   );

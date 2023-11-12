@@ -30,6 +30,7 @@ const unmanageds = useGetAllUnmanageds();
         progressPending={unmanageds.isLoading}
         columns={columns}
         rows={unmanageds.data}
+        assetPath="unmanageds"
       />
     </div>
   );

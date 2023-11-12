@@ -30,6 +30,7 @@ export default function TablePassiveDevices() {
         progressPending={passiveDevices.isLoading}
         columns={columns}
         rows={passiveDevices.data}
+        assetPath="passivedevices"
       />
     </div>
   );
