@@ -30,6 +30,7 @@ export default function TableEnclosures() {
         progressPending={enclosures.isLoading}
         columns={columns}
         rows={enclosures.data}
+        assetPath="enclosures"
       />
     </div>
   );
