@@ -76,7 +76,7 @@ export default function CartridgeForm() {
   }, [])
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
@@ -226,6 +226,6 @@ export default function CartridgeForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

@@ -9,7 +9,7 @@ export default function PrinterModelForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Printer Models"}
@@ -53,6 +53,6 @@ export default function PrinterModelForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

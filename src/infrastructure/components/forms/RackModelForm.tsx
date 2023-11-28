@@ -9,7 +9,7 @@ export default function RackModelForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Rack models"}
@@ -53,6 +53,6 @@ export default function RackModelForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

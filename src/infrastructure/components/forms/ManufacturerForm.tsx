@@ -10,7 +10,7 @@ export default function ManufacturerForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Manufacturers"}
@@ -54,6 +54,6 @@ export default function ManufacturerForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

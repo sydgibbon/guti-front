@@ -119,7 +119,7 @@ export default function PrinterForm() {
   }, []);
 
   return (
-    <div className="bg-white rounded container_form_computer">
+    <>
       <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
@@ -484,7 +484,7 @@ export default function PrinterForm() {
           </div>
         </div>
       </Form>
-    </div>
+    </>
   );
 };
 

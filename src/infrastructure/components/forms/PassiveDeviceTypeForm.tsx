@@ -9,7 +9,7 @@ export default function PassiveDeviceTypeForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Passive device types"}
@@ -41,6 +41,6 @@ export default function PassiveDeviceTypeForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

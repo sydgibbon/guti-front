@@ -9,7 +9,7 @@ export default function CableStrandForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form handleSubmit={handleSubmit}
         formHeader={"Cable Strand"}
         iconName={"Cables"}
@@ -40,6 +40,6 @@ export default function CableStrandForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

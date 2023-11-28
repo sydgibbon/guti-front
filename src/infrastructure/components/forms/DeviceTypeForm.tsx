@@ -9,7 +9,7 @@ export default function DeviceTypeForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Devices Types"}
@@ -41,6 +41,6 @@ export default function DeviceTypeForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

@@ -9,7 +9,7 @@ export default function PhoneModelForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Phone Models"}
@@ -53,6 +53,6 @@ export default function PhoneModelForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

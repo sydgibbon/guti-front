@@ -9,7 +9,7 @@ export default function NetworkForm() {
   }
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <Form
         handleSubmit={handleSubmit}
         formHeader={"Network"}
@@ -41,6 +41,6 @@ export default function NetworkForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

@@ -96,7 +96,7 @@ export default function RackForm() {
   }, [])
 
   return (
-    <div className="m-6 bg-white rounded container_form_computer">
+    <>
       <FormModal form={modalContent} />
       <Form
         handleSubmit={handleSubmit}
@@ -416,6 +416,6 @@ export default function RackForm() {
           />
         </div>
       </Form>
-    </div>
+    </>
   )
 };

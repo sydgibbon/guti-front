@@ -1,4 +1,4 @@
-import { ReactComponentElement, useEffect, useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Box, Modal } from "@mui/material";
 import Form from "../../components/forms/Form";
 interface FormModalProps {
@@ -13,10 +13,9 @@ const FormModal = ({form}:FormModalProps) => {
   
   return (
     <Modal open={showModal} onClose={handleClose}
-    ><Box>
-      <div className="max-h-screen mb-4">
+    ><Box className="max-w-6xl mx-auto outline-none relative">
+          <button onClick={handleClose} className='absolute right-12 top-4'>X</button>
       {form}
-      </div>
       </Box >
     </Modal>
   )
